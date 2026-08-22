@@ -1,0 +1,84 @@
+COSMOS PROPRIETARY SOFTWARE LICENSE
+
+Copyright (c) 2026 COSMOS PVT LTD. All Rights Reserved.
+
+IMPORTANT NOTICE
+
+This repository is publicly visible for development, collaboration, source
+control, issue tracking, CI/CD development, version control, and technical
+transparency where appropriate. Public visibility does NOT constitute an
+open-source license and does NOT grant the public unrestricted rights to use
+this software.
+
+1. PROPRIETARY OWNERSHIP
+
+COSMOS - Cryogenic Optimization and Simulation Multiphysics Operating System
+("COSMOS") and all original source code, algorithms, engineering models,
+computational methods, software architecture, documentation, databases,
+AI/ML implementations, optimization methods, engineering workflows, internal
+tooling, and other original technical material contained in this repository
+are proprietary intellectual property of COSMOS PVT LTD.
+
+COSMOS PVT LTD retains all rights, title, and interest in its proprietary
+software and intellectual property, subject to applicable third-party rights
+and licenses.
+
+2. RESERVATION OF RIGHTS
+
+Except as expressly authorized in writing by COSMOS PVT LTD, all rights are
+reserved. No general permission is granted to any person or entity to:
+
+  (a) use COSMOS;
+  (b) reproduce COSMOS;
+  (c) modify COSMOS;
+  (d) distribute COSMOS;
+  (e) sublicense COSMOS;
+  (f) commercially exploit COSMOS;
+  (g) create derivative works based on COSMOS;
+  (h) incorporate COSMOS proprietary source code into another product;
+  (i) use COSMOS trademarks, trade names, or branding; or
+  (j) exercise any patent rights except where explicitly stated in a separate
+      written agreement.
+
+3. AUTHORIZED USE
+
+Authorized employees, contractors, consultants, partners, and contributors
+may use COSMOS only under applicable company authorization, employment
+agreements, contractor agreements, confidentiality agreements, intellectual
+property assignment agreements, contributor agreements, and company policy.
+
+Unauthorized access, use, copying, modification, distribution, or
+exploitation is prohibited.
+
+4. THIRD-PARTY SOFTWARE
+
+Third-party libraries, frameworks, datasets, models, tools, and dependencies
+included in or used with COSMOS remain subject to their respective licenses
+and ownership rights. Nothing in this license transfers ownership of
+third-party software to COSMOS PVT LTD or to any user of COSMOS.
+
+5. NO WARRANTY
+
+COSMOS is provided "AS IS" without warranty of any kind, whether express or
+implied, including but not limited to warranties of merchantability, fitness
+for a particular purpose, title, and non-infringement, to the maximum extent
+permitted by applicable law.
+
+6. LIMITATION OF LIABILITY
+
+To the maximum extent permitted by applicable law, COSMOS PVT LTD shall not
+be liable for any direct, indirect, incidental, special, consequential, or
+punitive damages arising out of or related to COSMOS or this license.
+
+7. GOVERNING INTERPRETATION
+
+This license is intended to establish the proprietary status of COSMOS. It
+is a project license and should be reviewed by qualified legal counsel for
+COSMOS PVT LTD before being adopted as the company's final legal licensing
+instrument. Pending such review, the proprietary nature of this repository
+shall not be weakened.
+
+8. CONTACT
+
+For licensing, authorization, or permission inquiries, contact COSMOS PVT LTD
+through official company channels.

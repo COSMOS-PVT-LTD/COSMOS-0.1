@@ -1,0 +1,127 @@
+# =============================================================================
+# COSMOS 0.1 — Git ignore rules
+# Proprietary repository — prevent accidental commit of secrets and local artifacts
+# =============================================================================
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+credentials.json
+credentials.yaml
+credentials.yml
+secrets.json
+secrets.yaml
+secrets.yml
+service-account*.json
+*.token
+*.secret
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.pytype/
+cython_debug/
+*.cover
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.envrc
+
+# IDE and editor metadata
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# OS metadata
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs and temporary files
+logs/
+*.log
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+*.orig
+
+# Local databases and generated credentials
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+local.db
+generated_credentials/
+
+# Sensitive local datasets (explicit patterns — review before adding exceptions)
+*_private_dataset/
+*_confidential/
+*_internal_only/
+
+# Build and export artifacts (regenerable)
+output/
+exports/
+reports/render_*/
+qa/cosmos_architecture_render/
+
+# Optional local tooling caches
+.cache/
+*.prof

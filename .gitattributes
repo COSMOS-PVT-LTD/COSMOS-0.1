@@ -1,0 +1,45 @@
+# COSMOS 0.1 — Git attributes
+
+# Default text normalization
+* text=auto
+
+# Source code
+*.py text eol=lf
+*.pyi text eol=lf
+
+# Documentation
+*.md text eol=lf
+*.rst text eol=lf
+*.txt text eol=lf
+
+# Configuration
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.ini text eol=lf
+*.cfg text eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+*.bash text eol=lf
+
+# GitHub workflows
+.github/** text eol=lf
+
+# Binary assets (do not normalize)
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.7z binary
+*.docx binary
+*.xlsx binary
+*.pkl binary
+*.pickle binary
