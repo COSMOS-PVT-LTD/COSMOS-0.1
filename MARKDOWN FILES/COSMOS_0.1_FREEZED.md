@@ -227,8 +227,6 @@ knowledge/
 │ ├── manufacturing_process.py
 │ ├── experiment.py
 │ ├── simulation.py
-
-
 │ ├── design_rule.py
 │ ├── failure_mode.py
 │ │
@@ -271,8 +269,6 @@ knowledge/
 ├── extraction/
 │ │
 │ ├── extraction_pipeline.py
-
-
 │ │
 │ ├── equation_extractor.py
 │ ├── variable_extractor.py
@@ -315,8 +311,6 @@ knowledge/
 │ ├── heat_transfer.py
 │ ├── cryogenics.py
 │ ├── materials.py
-
-
 │ ├── structures.py
 │ ├── manufacturing.py
 │ ├── controls.py
@@ -359,8 +353,6 @@ knowledge/
 │ ├── keyword_index.py
 │ ├── semantic_index.py
 │ ├── equation_index.py
-
-
 │ ├── variable_index.py
 │ ├── citation_index.py
 │ └── graph_index.py
@@ -562,8 +554,6 @@ physics/
 │ ├── __init__.py
 │ ├── copper_alloys.py
 │ ├── nickel_alloys.py
-
-
 │ ├── stainless_steel.py
 │ ├── aluminum_alloys.py
 │ ├── titanium_alloys.py
@@ -605,8 +595,6 @@ physics/
 │ ├── k_omega.py
 │ ├── sst.py
 │ ├── les.py
-
-
 │ └── dns.py
 │
 ├── dynamics/

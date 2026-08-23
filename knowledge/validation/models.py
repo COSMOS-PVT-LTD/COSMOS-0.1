@@ -13,6 +13,7 @@ if TYPE_CHECKING:
     from knowledge.extraction.w4.models import ExtractionResult
     from knowledge.graph.contracts import ImmutableGraphRecord
     from knowledge.ontology.models import CanonicalizationResult
+    from knowledge.parsers.w3.models import StructuredParsedDocument
 
 __all__ = (
     "ConflictClassification",
@@ -209,3 +210,4 @@ class ValidationContext:
     extraction_result: ExtractionResult | None = None
     canonicalization_result: CanonicalizationResult | None = None
     graph_record: ImmutableGraphRecord | None = None
+    parsed_document: StructuredParsedDocument | None = None

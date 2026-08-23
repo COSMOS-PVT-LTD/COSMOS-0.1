@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0",
+  "block_id": "KG-BLOCK-013",
+  "phase": "A",
+  "authority": "Human Technical Owner — Tk Nayak",
+  "prompt": "COSMOS_KG-BLOCK-013_PHASE-A_MASTER_CURSOR_PROMPT.md",
+  "closure_date": "2026-08-23",
+  "implementation_performed": false,
+  "decisions": [
+    {
+      "decision_id": "KG-DEC-013A-001",
+      "subject": "ADR-001 closure — graph-primary architecture",
+      "decision": "Graph-oriented knowledge architecture is authoritative; plural entity repositories removed from architecture",
+      "authority": "Human Technical Owner — Tk Nayak",
+      "evidence": "knowledge/graph/*; knowledge/repository/*; kg_governance_block012_adr_approval_report.md",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/graph/, knowledge/repository/, frozen repositories/*",
+      "affected_block": "KG-BLOCK-013 Phase A",
+      "status": "CLOSED"
+    },
+    {
+      "decision_id": "KG-DEC-013A-002",
+      "subject": "ADR-003 closure — subpackage evolution",
+      "decision": "W3/W4/W7/W8/W10/W11/interface subpackages are canonical; do not flatten",
+      "authority": "Human Technical Owner — Tk Nayak",
+      "evidence": "knowledge/parsers/w3/, extraction/w4/, indexing/w7/, search/w8/, reasoning/w10/, interface/",
+      "date": "2026-08-23",
+      "affected_architecture": "All W* subpackages",
+      "affected_block": "KG-BLOCK-013 Phase A",
+      "status": "CLOSED"
+    },
+    {
+      "decision_id": "KG-DEC-013A-003",
+      "subject": "ADR-008 closure — dynamic ontology registry",
+      "decision": "OntologyRegistry is canonical; static domain modules superseded",
+      "authority": "Human Technical Owner — Tk Nayak",
+      "evidence": "knowledge/ontology/registry.py; 14 SUPERSEDED domain files in traceability matrix",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/ontology/",
+      "affected_block": "KG-BLOCK-013 Phase A",
+      "status": "CLOSED"
+    },
+    {
+      "decision_id": "KG-DEC-013A-004",
+      "subject": "ADR-010 closure — controlled RAG supersedes recommender",
+      "decision": "ControlledRAGOrchestrator supersedes recommendation_engine; provider_invoked=False preserved",
+      "authority": "Human Technical Owner — Tk Nayak",
+      "evidence": "knowledge/interface/rag.py; BLOCK-012 contract tests",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/interface/, knowledge/reasoning/",
+      "affected_block": "KG-BLOCK-013 Phase A",
+      "status": "CLOSED"
+    },
+    {
+      "decision_id": "KG-DEC-013A-005",
+      "subject": "ADR-011 — compatibility facade strategy",
+      "decision": "Thin delegating facades approved; implementation deferred to Phase B separate authorization",
+      "authority": "Human Technical Owner — Tk Nayak",
+      "evidence": "knowledge_compatibility_layer_plan.md; facade governance gate in phase A report",
+      "date": "2026-08-23",
+      "affected_architecture": "COMPAT-001 through COMPAT-006",
+      "affected_block": "KG-BLOCK-013 Phase B (not authorized)",
+      "status": "APPROVED — PHASE-B READY"
+    },
+    {
+      "decision_id": "KG-DEC-013A-006",
+      "subject": "ADR-012 closure — BLOCK-012 freeze",
+      "decision": "BLOCK-012 frozen TEST-QUALIFIED / INTEGRATION-QUALIFIED / NOT PRODUCTION-QUALIFIED",
+      "authority": "Human Technical Owner — Tk Nayak",
+      "evidence": "batch_status.json; kg_block_freeze_ledger.md; 1219 passed 5 skipped",
+      "date": "2026-08-23",
+      "affected_architecture": "tests/integration_tests/kg_block012/",
+      "affected_block": "KG-BLOCK-012",
+      "status": "CLOSED"
+    },
+    {
+      "decision_id": "KG-DEC-013A-007",
+      "subject": "DEV-001 closure",
+      "decision": "Repository path deviation closed per ADR-001",
+      "authority": "Human Technical Owner — Tk Nayak",
+      "evidence": "knowledge_architecture_deviation_register.md DEV-001",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/repository/",
+      "affected_block": "KG-BLOCK-013 Phase A",
+      "status": "CLOSED"
+    },
+    {
+      "decision_id": "KG-DEC-013A-008",
+      "subject": "DEV-004 closure",
+      "decision": "Subpackage deviation closed per ADR-003",
+      "authority": "Human Technical Owner — Tk Nayak",
+      "evidence": "knowledge_architecture_deviation_register.md DEV-004",
+      "date": "2026-08-23",
+      "affected_architecture": "W3/W4/W7/W8/W10/W11",
+      "affected_block": "KG-BLOCK-013 Phase A",
+      "status": "CLOSED"
+    },
+    {
+      "decision_id": "KG-DEC-013A-009",
+      "subject": "DEV-007 closure",
+      "decision": "Static ontology domain deviation closed per ADR-008",
+      "authority": "Human Technical Owner — Tk Nayak",
+      "evidence": "knowledge_architecture_deviation_register.md DEV-007",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/ontology/",
+      "affected_block": "KG-BLOCK-013 Phase A",
+      "status": "CLOSED"
+    },
+    {
+      "decision_id": "KG-DEC-013A-010",
+      "subject": "DEV-009 closure",
+      "decision": "Controlled RAG deviation closed per ADR-010",
+      "authority": "Human Technical Owner — Tk Nayak",
+      "evidence": "knowledge_architecture_deviation_register.md DEV-009",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/interface/rag.py",
+      "affected_block": "KG-BLOCK-013 Phase A",
+      "status": "CLOSED"
+    },
+    {
+      "decision_id": "KG-DEC-013A-011",
+      "subject": "DEV-002 exporters gap",
+      "decision": "No authoritative closure; deferred pending ADR-004",
+      "authority": "—",
+      "evidence": "7 missing exporter files; no consumer in codebase",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/exporters/",
+      "affected_block": "KG-BLOCK-014 (proposed)",
+      "status": "OPEN"
+    },
+    {
+      "decision_id": "KG-DEC-013A-012",
+      "subject": "DEV-003 model consolidation",
+      "decision": "No authoritative closure; deferred pending ADR-002",
+      "authority": "—",
+      "evidence": "knowledge_model_architecture_decisions.md",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/models/",
+      "affected_block": "KG-BLOCK-017 (proposed)",
+      "status": "OPEN — REQUIRES ADR-002"
+    },
+    {
+      "decision_id": "KG-DEC-013A-013",
+      "subject": "DEV-008 production embeddings",
+      "decision": "No authoritative closure; deferred pending ADR-009",
+      "authority": "—",
+      "evidence": "indexing/w7/vector.py reference vectors",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/indexing/w7/",
+      "affected_block": "KG-BLOCK-016 (proposed)",
+      "status": "OPEN — REQUIRES ADR-009"
+    },
+    {
+      "decision_id": "KG-DEC-013A-014",
+      "subject": "DEV-010 pdf_normalizer test gap",
+      "decision": "Test coverage gap acknowledged; deferred to Phase C or hardening",
+      "authority": "—",
+      "evidence": "knowledge_evolution_baseline_audit.md",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/parsers/pdf_normalizer.py",
+      "affected_block": "KG-BLOCK-013 Phase C (not authorized)",
+      "status": "OPEN"
+    },
+    {
+      "decision_id": "KG-DEC-013A-015",
+      "subject": "Decision gate DG-033 concept_graph",
+      "decision": "CONSOLIDATE recommended; requires ADR-007 human decision before implementation",
+      "authority": "—",
+      "evidence": "knowledge_architecture_decision_gate_table.md DG-033",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/graph/",
+      "affected_block": "REQUIRES ADR-007",
+      "status": "REQUIRES HUMAN DECISION"
+    },
+    {
+      "decision_id": "KG-DEC-013A-016",
+      "subject": "Decision gate DG-067 empirical_relation",
+      "decision": "CONSOLIDATE recommended; requires ADR-006 human decision",
+      "authority": "—",
+      "evidence": "knowledge_architecture_decision_gate_table.md DG-067",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/models/",
+      "affected_block": "REQUIRES ADR-006",
+      "status": "REQUIRES HUMAN DECISION"
+    },
+    {
+      "decision_id": "KG-DEC-013A-017",
+      "subject": "Decision gate DG-154 text_utils",
+      "decision": "IMPLEMENT recommended; requires explicit Phase C authorization",
+      "authority": "—",
+      "evidence": "knowledge_architecture_decision_gate_table.md DG-154",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/utils/",
+      "affected_block": "KG-BLOCK-013 Phase C (not authorized)",
+      "status": "REQUIRES HUMAN DECISION"
+    },
+    {
+      "decision_id": "KG-DEC-013A-018",
+      "subject": "Phase A implementation prohibition",
+      "decision": "No knowledge/ implementation in Phase A; git diff knowledge/ must remain empty",
+      "authority": "COSMOS_KG-BLOCK-013_PHASE-A_MASTER_CURSOR_PROMPT.md",
+      "evidence": "Phase A verification",
+      "date": "2026-08-23",
+      "affected_architecture": "knowledge/",
+      "affected_block": "KG-BLOCK-013 Phase A",
+      "status": "CLOSED"
+    }
+  ],
+  "decision_gate_summary": {
+    "total": 199,
+    "closed": 153,
+    "deferred": 43,
+    "requires_human_decision": 3
+  },
+  "adr_summary": {
+    "ADR-001": "CLOSED",
+    "ADR-002": "PENDING",
+    "ADR-003": "CLOSED",
+    "ADR-004": "PENDING",
+    "ADR-005": "PENDING",
+    "ADR-006": "PENDING",
+    "ADR-007": "PENDING",
+    "ADR-008": "CLOSED",
+    "ADR-009": "PENDING",
+    "ADR-010": "CLOSED",
+    "ADR-011": "APPROVED — PHASE-B READY",
+    "ADR-012": "CLOSED"
+  }
+}

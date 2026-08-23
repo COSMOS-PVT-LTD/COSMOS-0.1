@@ -1,0 +1,50 @@
+{
+  "document_count": 25,
+  "environment": {
+    "hardware_note": "local benchmark runner \u2014 read-heavy concurrent queries",
+    "platform": "macOS-26.5.2-x86_64-i386-64bit",
+    "python_version": "3.11.7"
+  },
+  "results": [
+    {
+      "concurrency": 1,
+      "document_count": 25,
+      "error_message": null,
+      "mean_query_ms": 8.575,
+      "p95_query_ms": 8.718,
+      "query_count": 16,
+      "total_ms": 155.986,
+      "verification": "VERIFIED"
+    },
+    {
+      "concurrency": 2,
+      "document_count": 25,
+      "error_message": null,
+      "mean_query_ms": 16.062,
+      "p95_query_ms": 17.307,
+      "query_count": 16,
+      "total_ms": 153.963,
+      "verification": "VERIFIED"
+    },
+    {
+      "concurrency": 4,
+      "document_count": 25,
+      "error_message": null,
+      "mean_query_ms": 30.008,
+      "p95_query_ms": 36.557,
+      "query_count": 16,
+      "total_ms": 163.496,
+      "verification": "VERIFIED"
+    },
+    {
+      "concurrency": 8,
+      "document_count": 25,
+      "error_message": null,
+      "mean_query_ms": 53.521,
+      "p95_query_ms": 71.829,
+      "query_count": 16,
+      "total_ms": 158.921,
+      "verification": "CHARACTERIZED"
+    }
+  ]
+}

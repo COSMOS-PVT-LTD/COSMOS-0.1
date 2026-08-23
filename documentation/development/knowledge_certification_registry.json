@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.2",
+  "document_id": "COSMOS-KG-CERT-REGISTRY-001",
+  "project": "COSMOS_0.1",
+  "domain": "knowledge_graph",
+  "certification_date": "2026-08-23",
+  "certification_authority": "Human Technical Owner — Tk Nayak",
+  "git_sha": "32dd3170440342ade8d879239b40707465553ad4",
+  "architecture": {
+    "architecturally_conformant": true,
+    "file_level_100_percent_match": false,
+    "disposition_addressed_count": 105,
+    "disposition_total": 175,
+    "disposition_addressed_percent": 60.0
+  },
+  "qualification": {
+    "implemented": true,
+    "test_qualified": true,
+    "integration_qualified": true,
+    "architecturally_conformant": true,
+    "production_capable": true,
+    "production_qualified": true,
+    "production_qualified_conditional": true,
+    "production_qualified_envelope": "ENVELOPE_B",
+    "production_qualified_envelope_a_preserved": true,
+    "production_qualified_decision_id": "KG-STEP7-GATE6-OPTION-B-2026-08-23",
+    "production_qualified_decision_date": "2026-08-23",
+    "production_qualified_prior_decision_id": "KG-STEP7-GATE-CLOSURE-2026-08-23",
+    "production_ready": false,
+    "frozen": false
+  },
+  "step7_production_local_rag": {
+    "persistence_technology": "json-local-store-v1.0.0",
+    "persistence_gate": "CLOSED — ACCEPTED WITH CONDITIONS",
+    "embedding_backend_envelope_a": "cosmos-local-deterministic-v1",
+    "embedding_backend_envelope_b": "cosmos-local-neural-mini-v1",
+    "embedding_gate": "CLOSED — DETERMINISTIC V1 (A) + NEURAL V1 (B)",
+    "neural_semantic_model": "APPROVED — ENVELOPE B",
+    "qualification_gate": "CLOSED — CONDITIONAL ENVELOPE B",
+    "readiness_gate": "CLOSED — OPTION B (NOT PRODUCTION-READY)",
+    "gate_6_status": "CLOSED — OPTION B",
+    "provider_invoked": false,
+    "qualification_conditions_envelope_b": [
+      "Single-writer JSON persistence only",
+      "≤25 document corpus maximum (VERIFIED scale evidence)",
+      "Neural embedding cosmos-local-neural-mini-v1 within Envelope B",
+      "Deterministic v1 retained as fallback",
+      "1–4 concurrent queries VERIFIED",
+      "Offline execution, provider_invoked=False",
+      "Not qualified for 100+ document production corpus",
+      "Not qualified for production deployment readiness",
+      "Not qualified for production operational monitoring"
+    ]
+  },
+  "regression": {
+    "passed": 1332,
+    "skipped": 5,
+    "failed": 0,
+    "verified_at": "2026-08-23"
+  },
+  "rag": {
+    "controlled_local_rag_verified": true,
+    "provider_invoked": false,
+    "mandatory_cloud_dependency": false,
+    "production_embedding_backend_envelope_a": "cosmos-local-deterministic-v1",
+    "production_embedding_backend_envelope_b": "cosmos-local-neural-mini-v1",
+    "production_vector_persistence": true,
+    "mandatory_external_llm_provider": false
+  },
+  "blocks": {
+    "KG-BLOCK-001": { "status": "FROZEN" },
+    "KG-BLOCK-002": { "status": "FROZEN" },
+    "KG-BLOCK-003": { "status": "FROZEN" },
+    "KG-BLOCK-004": { "status": "FROZEN" },
+    "KG-BLOCK-005": { "status": "FROZEN" },
+    "KG-BLOCK-006": { "status": "FROZEN" },
+    "KG-BLOCK-007": { "status": "FROZEN" },
+    "KG-BLOCK-008": { "status": "FROZEN" },
+    "KG-BLOCK-009": { "status": "FROZEN" },
+    "KG-BLOCK-010": { "status": "FROZEN" },
+    "KG-BLOCK-011": { "status": "FROZEN" },
+    "KG-BLOCK-012": {
+      "status": "FROZEN",
+      "qualification": "TEST-QUALIFIED / INTEGRATION-QUALIFIED / NOT PRODUCTION-QUALIFIED"
+    },
+    "KG-BLOCK-013-A": { "status": "COMPLETE" },
+    "KG-BLOCK-013-B": {
+      "status": "FROZEN",
+      "freeze_decision_id": "KG-FREEZE-013B-2026-08-23"
+    },
+    "KG-BLOCK-013-C": {
+      "status": "FROZEN",
+      "freeze_decision_id": "KG-FREEZE-013C-2026-08-23"
+    },
+    "KG-BLOCK-013-D": {
+      "status": "FROZEN",
+      "freeze_decision_id": "KG-FREEZE-013D-2026-08-23"
+    },
+    "KG-BLOCK-013-E": {
+      "status": "CERTIFICATION_CLOSURE_COMPLETE",
+      "completion_date": "2026-08-23"
+    },
+    "STEP-7-PRODUCTION-LOCAL-RAG": {
+      "status": "GATE6_OPTION_B_CLOSURE_COMPLETE",
+      "decision_id": "KG-STEP7-GATE6-OPTION-B-2026-08-23",
+      "prior_decision_id": "KG-STEP7-GATE-CLOSURE-2026-08-23",
+      "classification": "STATE_B_ENVELOPE_B",
+      "production_qualified": "CONDITIONAL_ENVELOPE_B",
+      "production_ready": false,
+      "gate_6": "CLOSED_OPTION_B"
+    }
+  },
+  "compat_surfaces": [
+    { "id": "COMPAT-001", "status": "FROZEN", "tests": "test_compat_ingestion.py" },
+    { "id": "COMPAT-002", "status": "FROZEN", "tests": "test_compat_search.py" },
+    { "id": "COMPAT-003", "status": "FROZEN", "tests": "test_compat_indexing.py" },
+    { "id": "COMPAT-004", "status": "FROZEN", "tests": "test_compat_graph.py" },
+    { "id": "COMPAT-005", "status": "FROZEN", "tests": "test_compat_ontology.py" },
+    { "id": "COMPAT-006", "status": "FROZEN", "tests": "test_compat_pipeline.py" }
+  ],
+  "phase_c_capabilities": [
+    { "id": "GAP-C-001", "module": "knowledge/validation/citation_validator.py", "status": "FROZEN" },
+    { "id": "GAP-C-002", "module": "knowledge/validation/ambiguity_detector.py", "status": "FROZEN" },
+    { "id": "GAP-C-003", "module": "knowledge/parsers/pdf_normalizer.py", "status": "TEST_COVERED" }
+  ],
+  "phase_c_validation_interface_diff": {
+    "decision_id": "KG-FREEZE-PHASEC-VALIDATION-DIFF-2026-08-23",
+    "status": "FROZEN",
+    "files": [
+      "knowledge/validation/__init__.py",
+      "knowledge/validation/models.py"
+    ],
+    "classification": "additive_phase_c_validation_implementation"
+  },
+  "known_limitations": [
+    { "id": "F-D-001", "class": "D2", "description": "4 pre-existing Ruff findings in frozen model/repository modules" },
+    { "id": "F-D-003", "class": "INFO", "description": "File-level 100% architectural match not achieved (by design)" },
+    { "id": "PROD-001", "description": "Qualification bounded to Envelope B: ≤25 docs, neural v1, 1–4 concurrency" },
+    { "id": "PROD-002", "description": "Envelope A (1–5 doc deterministic) preserved as historical qualification path" },
+    { "id": "PROD-003", "description": "100+ document production corpus not qualified" },
+    { "id": "PROD-004", "description": "Production readiness not established — PRODUCTION-READY: NO" },
+    { "id": "PROD-005", "description": "Production operational monitoring not qualified" },
+    { "id": "PROD-006", "description": "Neural semantic quality evaluated on finite representative corpus only" }
+  ],
+  "evidence_index": [
+    "documentation/development/knowledge_step7_gate6_option_b_final_handoff.md",
+    "documentation/development/knowledge_step7_gate6_option_b_authorization_report.md",
+    "documentation/development/knowledge_step7_gate6_phase_c_diff_reconciliation.md",
+    "documentation/development/knowledge_step7_final_semantic_evaluation_data.json",
+    "documentation/development/knowledge_step7_final_scale_benchmark_data.json",
+    "documentation/development/knowledge_step7_final_concurrency_benchmark_data.json",
+    "documentation/development/kg_block_013_phase_d_qualification_report.md",
+    "documentation/development/kg_block_013_phase_c_capability_matrix.md",
+    "tests/unit_tests/knowledge/production/",
+    "tests/unit_tests/knowledge/validation/test_phase_c_validation.py",
+    "documentation/development/batch_status.json",
+    "documentation/development/kg_block_freeze_ledger.md"
+  ],
+  "next_authorized_block": "KG-BLOCK-014 — NOT AUTHORIZED"
+}
