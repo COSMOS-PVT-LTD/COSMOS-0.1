@@ -1,0 +1,197 @@
+"""Step-6 extended knowledge pipeline with Phase-C validation wiring.
+
+Additive module — does not modify the frozen Phase-B orchestrator.
+The default ``run_knowledge_pipeline`` intentionally preserves BLOCK-012
+base validation parity. This module provides an opt-in extended path that
+supplies ``parsed_document`` and invokes ``validate_context_extended``.
+"""
+
+from __future__ import annotations
+
+from knowledge.extraction import CandidateEntityExtraction, ExtractedEntityKind
+from knowledge.extraction.w4 import ExtractionContext, extract_document
+from knowledge.extraction.w4.models import ExtractionResult
+from knowledge.graph.construction import GraphConstructionBatch, GraphConstructor
+from knowledge.graph import GraphQueryService, ProvenanceReference
+from knowledge.graph.entity import CanonicalEntityType
+from knowledge.graph.provenance import SourceProvenanceRecord
+from knowledge.indexing.w7 import W7IndexBuilder
+from knowledge.ingestion import (
+    IngestionArtifactRef,
+    IngestionRequest,
+    IngestionStage,
+    SourceFormat,
+)
+from knowledge.ingestion_adapters import MarkdownIngestionAdapter
+from knowledge.interface import (
+    ContextPackager,
+    ControlledRAGOrchestrator,
+    ControlledRAGRequest,
+    CursorContextBuilder,
+    EngineeringKnowledgeInterface,
+)
+from knowledge.ontology import OntologyRegistry, canonicalize_extraction_result
+from knowledge.parsers.w3 import ParseContext, parse_document
+from knowledge.parsers.w3.models import StructuredParsedDocument
+from knowledge.pipelines.orchestrator import (
+    KnowledgePipelineArtifacts,
+    _build_default_registry,
+    normalize_markdown_text,
+)
+from knowledge.search import RetrievalMode, SearchQuery
+from knowledge.source import InMemorySourceVault, VaultArtifact, VaultArtifactMetadata
+from knowledge.source.integrity import sha256_text_digest
+from knowledge.validation import ValidationContext, validate_context_extended
+
+__all__ = (
+    "run_knowledge_pipeline_extended",
+)
+
+
+def _parse_extract_with_document(
+    content: str,
+    *,
+    source_id: str,
+    artifact_id: str,
+) -> tuple[StructuredParsedDocument, ExtractionResult]:
+    """Parse and extract while retaining the W3 parsed document for validation."""
+
+    normalized = normalize_markdown_text(content)
+    digest = sha256_text_digest(normalized)
+    vault = InMemorySourceVault()
+    vault.store(
+        VaultArtifact(
+            source_id=source_id,
+            artifact_id=artifact_id,
+            content=normalized.encode("utf-8"),
+            content_hash=digest,
+            metadata=VaultArtifactMetadata(
+                source_format=SourceFormat.MARKDOWN.value,
+            ),
+        ),
+    )
+    artifact = IngestionArtifactRef(
+        source_id=source_id,
+        artifact_id=artifact_id,
+        source_format=SourceFormat.MARKDOWN,
+        content_hash=digest,
+    )
+    adapter = MarkdownIngestionAdapter(vault)
+    ingestion = adapter.ingest(
+        IngestionRequest(
+            artifact=artifact,
+            adapter_name=adapter.adapter_name,
+            adapter_version=adapter.adapter_version,
+        ),
+    )
+    parse_result = parse_document(
+        ParseContext(
+            ingestion_result=ingestion,
+            normalized_content=normalized,
+        ),
+    )
+    if parse_result.ingestion_result.stage is not IngestionStage.PARSED:
+        msg = "Expected parsed ingestion stage after W3 parse."
+        raise RuntimeError(msg)
+
+    parsed_document = parse_result.parsed_document
+    extraction = extract_document(
+        ExtractionContext(
+            parsed_document=parsed_document,
+            normalized_content=normalized,
+        ),
+    )
+    return parsed_document, extraction
+
+
+def run_knowledge_pipeline_extended(
+    content: str,
+    *,
+    task: str = "Knowledge pipeline extended qualification",
+    query_text: str = "chamber pressure LOX",
+    request_id: str = "step6-extended-pipeline",
+    source_id: str = "SRC-GOLDEN",
+    artifact_id: str = "ART-GOLDEN",
+    extra_entities: tuple[CandidateEntityExtraction, ...] = (),
+    ontology_registry: OntologyRegistry | None = None,
+) -> KnowledgePipelineArtifacts:
+    """Execute W1→W11 with Phase-C extended validation and parsed-document context."""
+
+    parsed_document, extraction = _parse_extract_with_document(
+        content,
+        source_id=source_id,
+        artifact_id=artifact_id,
+    )
+    registry = ontology_registry or _build_default_registry()
+    canonical = canonicalize_extraction_result(extraction, registry)
+    validation_report = validate_context_extended(
+        ValidationContext(
+            document_id=extraction.document_id,
+            source_id=extraction.source_id,
+            extraction_result=extraction,
+            canonicalization_result=canonical,
+            parsed_document=parsed_document,
+            graph_record=None,
+        ),
+    )
+
+    entities = tuple(extraction.entities) + extra_entities
+    if not entities:
+        entities = (
+            CandidateEntityExtraction(
+                extraction_id=f"ENT-CHAMBER-PRESSURE-{extraction.document_id}",
+                document_id=extraction.document_id,
+                extracted_label="Chamber Pressure",
+                entity_kind=ExtractedEntityKind.QUANTITY,
+                canonical_entity_type=CanonicalEntityType.QUANTITY,
+                provenance=SourceProvenanceRecord(
+                    anchor=ProvenanceReference(
+                        document_id=extraction.document_id,
+                        page=1,
+                    ),
+                ),
+            ),
+        )
+
+    graph_result = GraphConstructor(registry).construct(
+        GraphConstructionBatch(entity_extractions=entities),
+    )
+    store = graph_result.store
+    graph_query = GraphQueryService(store)
+    index_bundle = W7IndexBuilder().build(store)
+
+    rag_result = ControlledRAGOrchestrator(
+        index_bundle=index_bundle,
+        graph_query=graph_query,
+        store=store,
+    ).retrieve(
+        ControlledRAGRequest(
+            request_id=request_id,
+            task=task,
+            query=SearchQuery(text=query_text, mode=RetrievalMode.HYBRID),
+            allowed_document_ids=(extraction.document_id,),
+        ),
+        validation_report=validation_report,
+    )
+
+    package = ContextPackager().package(rag_result)
+    cursor_context = CursorContextBuilder().build(
+        project_id="COSMOS",
+        engineering_task_id="STEP-6-EXTENDED",
+        package=package,
+        constraints=("evidence-only", "extended-validation"),
+    )
+    payload = EngineeringKnowledgeInterface().build_payload(cursor_context)
+
+    return KnowledgePipelineArtifacts(
+        extraction=extraction,
+        canonical=canonical,
+        validation_report=validation_report,
+        store=store,
+        graph_query=graph_query,
+        index_bundle=index_bundle,
+        rag_result=rag_result,
+        package=package,
+        cursor_context=cursor_context,
+        payload=payload,
+    )

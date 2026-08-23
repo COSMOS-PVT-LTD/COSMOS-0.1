@@ -1,0 +1,113 @@
+{
+  "corpus_results": [
+    {
+      "document_count": 5,
+      "error_message": null,
+      "graph_node_count": 15,
+      "ingestion_per_doc_ms": 17.066,
+      "ingestion_total_ms": 85.369,
+      "peak_memory_bytes": 32616448,
+      "persistence_reload_ms": 2.2,
+      "query_cold_ms": 14.258,
+      "query_deterministic_repeat_ms": 14.136,
+      "query_warm_ms": 14.382,
+      "recovery_ms": 6.323,
+      "registered_document_count": 5,
+      "storage_bytes": 27528,
+      "verification": "VERIFIED"
+    },
+    {
+      "document_count": 25,
+      "error_message": null,
+      "graph_node_count": 75,
+      "ingestion_per_doc_ms": 43.471,
+      "ingestion_total_ms": 1086.946,
+      "peak_memory_bytes": 35315712,
+      "persistence_reload_ms": 5.984,
+      "query_cold_ms": 61.573,
+      "query_deterministic_repeat_ms": 62.888,
+      "query_warm_ms": 61.273,
+      "recovery_ms": 27.386,
+      "registered_document_count": 25,
+      "storage_bytes": 133531,
+      "verification": "VERIFIED"
+    },
+    {
+      "document_count": 50,
+      "error_message": null,
+      "graph_node_count": 150,
+      "ingestion_per_doc_ms": 75.65,
+      "ingestion_total_ms": 3782.805,
+      "peak_memory_bytes": 37212160,
+      "persistence_reload_ms": 11.378,
+      "query_cold_ms": 120.761,
+      "query_deterministic_repeat_ms": 123.235,
+      "query_warm_ms": 121.807,
+      "recovery_ms": 57.032,
+      "registered_document_count": 50,
+      "storage_bytes": 266065,
+      "verification": "PARTIALLY_VERIFIED"
+    },
+    {
+      "document_count": 100,
+      "error_message": null,
+      "graph_node_count": 300,
+      "ingestion_per_doc_ms": 144.736,
+      "ingestion_total_ms": 14474.279,
+      "peak_memory_bytes": 43270144,
+      "persistence_reload_ms": 22.19,
+      "query_cold_ms": 241.32,
+      "query_deterministic_repeat_ms": 239.462,
+      "query_warm_ms": 241.565,
+      "recovery_ms": 117.178,
+      "registered_document_count": 100,
+      "storage_bytes": 531133,
+      "verification": "PARTIALLY_VERIFIED"
+    },
+    {
+      "document_count": 250,
+      "error_message": null,
+      "graph_node_count": 750,
+      "ingestion_per_doc_ms": 353.627,
+      "ingestion_total_ms": 88408.411,
+      "peak_memory_bytes": 66871296,
+      "persistence_reload_ms": 55.296,
+      "query_cold_ms": 627.805,
+      "query_deterministic_repeat_ms": 635.232,
+      "query_warm_ms": 628.524,
+      "recovery_ms": 328.805,
+      "registered_document_count": 250,
+      "storage_bytes": 1326899,
+      "verification": "CHARACTERIZED"
+    },
+    {
+      "document_count": 500,
+      "error_message": null,
+      "graph_node_count": 1500,
+      "ingestion_per_doc_ms": 739.367,
+      "ingestion_total_ms": 369688.14,
+      "peak_memory_bytes": 94085120,
+      "persistence_reload_ms": 113.348,
+      "query_cold_ms": 1347.507,
+      "query_deterministic_repeat_ms": 1406.191,
+      "query_warm_ms": 1357.734,
+      "recovery_ms": 745.1,
+      "registered_document_count": 500,
+      "storage_bytes": 2653261,
+      "verification": "CHARACTERIZED"
+    }
+  ],
+  "environment": {
+    "hardware_note": "local benchmark runner",
+    "platform": "macOS-26.5.2-x86_64-i386-64bit",
+    "python_version": "3.11.7"
+  },
+  "scale_points": [
+    5,
+    25,
+    50,
+    100,
+    250,
+    500
+  ]
+}

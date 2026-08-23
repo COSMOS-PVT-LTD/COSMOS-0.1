@@ -1,0 +1,96 @@
+{
+  "corpus_results": [
+    {
+      "document_count": 5,
+      "error_message": null,
+      "graph_node_count": 15,
+      "ingestion_per_doc_ms": 16.582,
+      "ingestion_total_ms": 82.952,
+      "peak_memory_bytes": 29761536,
+      "persistence_reload_ms": 2.35,
+      "query_cold_ms": 13.606,
+      "query_deterministic_repeat_ms": 13.376,
+      "query_warm_ms": 13.382,
+      "recovery_ms": 6.106,
+      "registered_document_count": 5,
+      "storage_bytes": 27266,
+      "verification": "VERIFIED"
+    },
+    {
+      "document_count": 10,
+      "error_message": null,
+      "graph_node_count": 30,
+      "ingestion_per_doc_ms": 21.463,
+      "ingestion_total_ms": 214.694,
+      "peak_memory_bytes": 30941184,
+      "persistence_reload_ms": 2.954,
+      "query_cold_ms": 25.083,
+      "query_deterministic_repeat_ms": 24.963,
+      "query_warm_ms": 24.761,
+      "recovery_ms": 11.365,
+      "registered_document_count": 10,
+      "storage_bytes": 53722,
+      "verification": "VERIFIED"
+    },
+    {
+      "document_count": 25,
+      "error_message": null,
+      "graph_node_count": 75,
+      "ingestion_per_doc_ms": 38.078,
+      "ingestion_total_ms": 952.114,
+      "peak_memory_bytes": 33710080,
+      "persistence_reload_ms": 5.956,
+      "query_cold_ms": 97.545,
+      "query_deterministic_repeat_ms": 62.225,
+      "query_warm_ms": 61.153,
+      "recovery_ms": 73.354,
+      "registered_document_count": 25,
+      "storage_bytes": 133102,
+      "verification": "VERIFIED"
+    },
+    {
+      "document_count": 50,
+      "error_message": null,
+      "graph_node_count": 150,
+      "ingestion_per_doc_ms": 69.495,
+      "ingestion_total_ms": 3475.154,
+      "peak_memory_bytes": 38428672,
+      "persistence_reload_ms": 11.511,
+      "query_cold_ms": 120.329,
+      "query_deterministic_repeat_ms": 122.047,
+      "query_warm_ms": 121.427,
+      "recovery_ms": 56.18,
+      "registered_document_count": 50,
+      "storage_bytes": 265367,
+      "verification": "PARTIALLY_VERIFIED"
+    },
+    {
+      "document_count": 100,
+      "error_message": null,
+      "graph_node_count": 300,
+      "ingestion_per_doc_ms": 128.326,
+      "ingestion_total_ms": 12833.382,
+      "peak_memory_bytes": 41226240,
+      "persistence_reload_ms": 22.953,
+      "query_cold_ms": 241.68,
+      "query_deterministic_repeat_ms": 239.361,
+      "query_warm_ms": 240.68,
+      "recovery_ms": 117.967,
+      "registered_document_count": 100,
+      "storage_bytes": 529985,
+      "verification": "PARTIALLY_VERIFIED"
+    }
+  ],
+  "environment": {
+    "hardware_note": "local benchmark runner",
+    "platform": "macOS-26.5.2-x86_64-i386-64bit",
+    "python_version": "3.11.7"
+  },
+  "scale_points": [
+    5,
+    10,
+    25,
+    50,
+    100
+  ]
+}

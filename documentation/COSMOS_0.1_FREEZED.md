@@ -117,8 +117,6 @@ Root Repository Architecture
 ├── projects/
 ├── examples/
 ├── docs/
-
-
 ├── infrastructure/
 ├── governance/
 ├── scripts/
@@ -227,8 +225,6 @@ knowledge/
 │ ├── manufacturing_process.py
 │ ├── experiment.py
 │ ├── simulation.py
-
-
 │ ├── design_rule.py
 │ ├── failure_mode.py
 │ │
@@ -271,8 +267,6 @@ knowledge/
 ├── extraction/
 │ │
 │ ├── extraction_pipeline.py
-
-
 │ │
 │ ├── equation_extractor.py
 │ ├── variable_extractor.py
@@ -315,8 +309,6 @@ knowledge/
 │ ├── heat_transfer.py
 │ ├── cryogenics.py
 │ ├── materials.py
-
-
 │ ├── structures.py
 │ ├── manufacturing.py
 │ ├── controls.py
@@ -359,8 +351,6 @@ knowledge/
 │ ├── keyword_index.py
 │ ├── semantic_index.py
 │ ├── equation_index.py
-
-
 │ ├── variable_index.py
 │ ├── citation_index.py
 │ └── graph_index.py
@@ -403,8 +393,6 @@ knowledge/
 │ ├── json_exporter.py
 │ ├── yaml_exporter.py
 │ ├── html_exporter.py
-
-
 │ ├── latex_exporter.py
 │ ├── graph_exporter.py
 │ └── database_exporter.py

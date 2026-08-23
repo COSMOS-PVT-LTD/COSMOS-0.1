@@ -1,0 +1,24 @@
+{
+  "decision_conditions": [
+    "Select and bundle a local neural model artifact under separate ADR",
+    "Pin model version and document reproducibility envelope",
+    "Re-index all persisted bundles on model change",
+    "Run retrieval comparison on representative engineering corpus",
+    "Obtain human Gate-2 amendment before replacing deterministic-only qualification"
+  ],
+  "deterministic_metrics": {
+    "backend_id": "cosmos-local-deterministic-v1@1.0.0:8",
+    "bitwise_deterministic": true,
+    "dimension": 8,
+    "embed_latency_max_ms": 0.0744,
+    "embed_latency_p50_ms": 0.0118,
+    "locally_evaluated": true,
+    "notes": "Approved Gate-2 Option A backend; qualification plumbing only.",
+    "requires_network": false
+  },
+  "licensing_ip_notes": "Deterministic backend has no external model licensing burden. Neural candidate not present in repository dependencies.",
+  "neural_metrics": null,
+  "offline_notes": "Deterministic backend is fully offline. Neural evaluation deferred \u2014 no approved local model artifact bundled.",
+  "recommendation": "DEFER_NEURAL_BACKEND",
+  "retrieval_comparison_available": false
+}
