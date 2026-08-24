@@ -2,7 +2,7 @@
   "schema_version": "1.1",
   "project": "COSMOS_0.1",
   "domain": "knowledge_graph",
-  "last_updated": "2026-08-23",
+  "last_updated": "2026-08-24",
   "architecture_reconciliation": {
     "document_id": "COSMOS-KG-ARCH-RECON-001",
     "status": "AUTHORITATIVE — HUMAN APPROVED",
@@ -39,11 +39,11 @@
     }
   },
   "regression_baseline": {
-    "passed": 1332,
+    "passed": 1452,
     "skipped": 5,
     "failed": 0,
-    "verified_at": "2026-08-23",
-    "note": "Step 7 final knowledge system completion"
+    "verified_at": "2026-08-24",
+    "note": "Knowledge Foundation completion workstream (math-OCR path, reconstruction, rights, SQLite). PRODUCTION-READY remains NO."
   },
   "static_analysis": {
     "ruff_scope": "knowledge/graph + knowledge/indexing + knowledge/search + knowledge/reasoning + knowledge/source + knowledge/ingestion_adapters + knowledge/parsers/w3 + tests",
@@ -999,5 +999,83 @@
         "documentation/development/knowledge_step7_gate6_final_handoff.md"
       ]
     }
+  },
+  "real_pdf_ocr_equation": {
+    "status": "QUALIFIED_CONDITIONAL",
+    "freeze_id": "KG-KF-REAL-PDF-OCR-EQ-2026-08-24",
+    "production_ready": false,
+    "kg_block_014": "NOT_AUTHORIZED",
+    "ocr_provisioned": false,
+    "rasterizer_provisioned": false,
+    "frozen_pdf_adapter_modified": false,
+    "qualified_corpus": "COSMOS-authored originals only",
+    "regression_at_qualification": {
+      "passed": 1423,
+      "skipped": 5,
+      "failed": 0
+    },
+    "reports": [
+      "documentation/development/real_pdf_knowledge_qualification_report.md",
+      "documentation/development/ocr_image_layer_qualification_notes.md",
+      "documentation/development/equation_extraction_qualification_notes.md",
+      "documentation/development/real_pdf_ocr_equation_gap_matrix.md"
+    ]
+  },
+  "provisioned_ocr": {
+    "status": "QUALIFIED_FOR_DEVELOPMENT",
+    "freeze_id": "KG-KF-PROVISIONED-OCR-2026-08-24",
+    "production_ready": false,
+    "kg_block_014": "NOT_AUTHORIZED",
+    "qualification_state": "QUALIFIED FOR DEVELOPMENT",
+    "ocr_provisioned": true,
+    "ocr_backend": "tesseract",
+    "ocr_version": "5.4.1",
+    "ocr_invocation": "controlled-subprocess",
+    "rasterizer_provisioned": true,
+    "rasterizer_backend": "pypdfium2",
+    "rasterizer_version": "5.13.0",
+    "ci_hard_dependency": false,
+    "unprovisioned_environments": "provisioned tests skip; fail-closed tests remain",
+    "frozen_pdf_adapter_modified": false,
+    "qualified_corpus": "COSMOS-authored scanned originals",
+    "observed_ocr_equation_span": "Re =rho* V* D/ mu",
+    "regression_at_qualification": {
+      "passed": 1433,
+      "skipped": 5,
+      "failed": 0
+    },
+    "reports": [
+      "documentation/development/real_pdf_ocr_qualification_report.md",
+      "documentation/development/real_pdf_ocr_equation_gap_matrix.md"
+    ]
+  },
+  "knowledge_foundation_completion": {
+    "status": "QUALIFIED_FOR_DEVELOPMENT",
+    "freeze_id": "KG-KF-FOUNDATION-COMPLETION-2026-08-24",
+    "production_ready": false,
+    "kg_block_014": "NOT_AUTHORIZED",
+    "qualification_state": "QUALIFIED FOR DEVELOPMENT",
+    "math_ocr_backend": "tesseract-equation-span",
+    "dedicated_math_ocr": false,
+    "sqlite_persistence": true,
+    "json_snapshot_preserved": true,
+    "unknown_rights_ingestible": false,
+    "nasa_huzel_prose_ingested": false,
+    "frozen_pdf_adapter_modified": false,
+    "regression_at_qualification": {
+      "passed": 1452,
+      "skipped": 5,
+      "failed": 0
+    },
+    "reports": [
+      "documentation/development/knowledge_foundation_completion_report.md",
+      "documentation/development/math_ocr_qualification_report.md",
+      "documentation/development/equation_reconstruction_qualification_report.md",
+      "documentation/development/reference_ingestion_qualification_report.md",
+      "documentation/development/production_ocr_qualification_report.md",
+      "documentation/development/production_persistence_qualification_report.md",
+      "documentation/development/knowledge_foundation_production_qualification_report.md",
+      "documentation/development/knowledge_foundation_master_gap_matrix.md"
+    ]
   }
 }

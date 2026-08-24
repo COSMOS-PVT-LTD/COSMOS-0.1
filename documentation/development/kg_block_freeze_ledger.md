@@ -19,6 +19,14 @@ This ledger records human engineering freeze decisions for Knowledge Graph devel
 | KG-BLOCK-005 | NEW KG-006→013 (W1+W2) | **FROZEN** | 2026-08-23 | 987 passed, 5 skipped | PASS WITH MINOR HARDENING |
 | KG-BLOCK-006 | NEW KG-014→018 (W3) | **FROZEN** | 2026-08-23 | 1016 passed, 5 skipped | PASS WITH MINOR HARDENING |
 
+### Additive Knowledge Foundation freezes
+
+| Freeze ID | Status | Freeze Date | Regression | Qualification |
+|-----------|--------|-------------|------------|---------------|
+| `KG-KF-REAL-PDF-OCR-EQ-2026-08-24` | **FROZEN** | 2026-08-24 | 1423 passed, 5 skipped | native PDF + fail-closed OCR |
+| `KG-KF-PROVISIONED-OCR-2026-08-24` | **FROZEN** | 2026-08-24 | 1433 passed, 5 skipped | QUALIFIED FOR DEVELOPMENT |
+| `KG-KF-FOUNDATION-COMPLETION-2026-08-24` | **FROZEN** | 2026-08-24 | 1452 passed, 5 skipped | QUALIFIED FOR DEVELOPMENT; PRODUCTION-READY = NO |
+
 ---
 
 ## Architecture Reconciliation Baseline (2026-08-23)
@@ -996,6 +1004,214 @@ Envelope B:
 
 Prior Envelope A decision preserved: KG-STEP7-GATE-CLOSURE-2026-08-23
 KG-BLOCK-014: NOT AUTHORIZED
+```
+
+---
+
+## Knowledge Foundation Completion Freeze Record
+
+**Decision ID:** `KG-KF-COMPLETION-FREEZE-2026-08-23`  
+**Authorization:** HUMAN TECHNICAL OWNER — Tk Nayak — Knowledge Foundation completion checklist  
+**Effective status:** **FROZEN** (new implementation only)
+
+```text
+KNOWLEDGE FOUNDATION COMPLETION: FROZEN
+
+Architecture E/F/H remaining: 0 / 175
+Frozen prior blocks modified: 0
+provider_invoked: FALSE
+PRODUCTION-READY: NO (unchanged)
+```
+
+New implementation includes canonical engineering models, repositories, candidate extractors, indexes/search, exporters, engineering query interface, architecture registry.
+
+---
+
+## Knowledge Foundation Remaining-Phases Freeze Record
+
+**Decision ID:** `KG-KF-REMAINING-PHASES-FREEZE-2026-08-23`  
+**Authorization:** HUMAN TECHNICAL OWNER — Tk Nayak — continue remaining checklist phases  
+**Effective status:** **FROZEN** (additive remaining-phase implementation only)
+
+```text
+KNOWLEDGE FOUNDATION REMAINING PHASES: FROZEN
+
+Regression:                   1366 passed, 5 skipped, 0 failed
+Frozen prior blocks modified: 0
+provider_invoked:             FALSE
+PRODUCTION-READY:             NO (unchanged)
+KG-BLOCK-014:                 NOT AUTHORIZED
+Gate-6 Envelope B:            unchanged
+```
+
+Additive packages:
+
+```text
+knowledge/foundation/
+knowledge/persistence/
+knowledge/repositories/  (new typed facades)
+knowledge/interface/engineering_query.py  (extended find_* surface)
+tests/unit_tests/knowledge/foundation/
+tests/fixtures/knowledge/golden/
+```
+
+Not claimed:
+
+```text
+Real NASA/Huzel PDF library ingestion
+Provisioned OCR
+PRODUCTION-READY = YES
+```
+
+---
+
+## Knowledge Infrastructure Master-Plan Execution Freeze
+
+**Decision ID:** `KG-KF-MASTER-PLAN-EXEC-2026-08-23`  
+**Authorization:** HUMAN TECHNICAL OWNER — Tk Nayak — execute remaining master-plan gaps  
+**Effective status:** **FROZEN** (additive remaining-gap implementation only)
+
+```text
+MASTER PLAN EXECUTION: FROZEN
+
+Frozen prior blocks modified: 0
+provider_invoked:             FALSE
+PRODUCTION-READY:             NO
+KG-BLOCK-014:                 NOT AUTHORIZED
+```
+
+Closes remaining master-plan gaps: `find_source`, relationship specs, typed graph views, integrity cycles, variable/constant candidate extractors, ManufacturingProcess fields, full snapshot records, ADRs KF-006–010, dedicated model tests, golden PDF identity fixture, specification pack.
+
+---
+
+## Real PDF / OCR / Equation Extraction Freeze
+
+**Decision ID:** `KG-KF-REAL-PDF-OCR-EQ-2026-08-24`  
+**Authorization:** HUMAN TECHNICAL OWNER request — execute the three development specs  
+**Effective status:** **FROZEN** (additive real-document pipeline only)
+
+```text
+REAL PDF / OCR / EQUATION: FROZEN
+
+Frozen prior blocks modified: 0
+Frozen PdfIngestionAdapter modified: 0
+provider_invoked:             FALSE
+PRODUCTION-READY:             NO
+KG-BLOCK-014:                 NOT AUTHORIZED
+OCR engine:                   UNAVAILABLE (fail-closed)
+Rasterizer:                   UNAVAILABLE (fail-closed)
+Qualified corpus:             COSMOS-authored originals only
+Regression:                   1423 passed, 5 skipped, 0 failed
+```
+
+Closes the real-PDF qualification path on rights-cleared COSMOS originals: source registry + hash identity, native Tj extraction, fail-closed OCR/image layer, source-faithful equation candidates, staged validation, review package, governed approval, graph/index/search/answer.
+
+Not claimed:
+
+```text
+Provisioned Tesseract or math-OCR
+Vendor-PDF library ingestion
+NASA / Huzel source prose
+PRODUCTION-READY = YES
+```
+
+Reports:
+
+```text
+documentation/development/real_pdf_knowledge_qualification_report.md
+documentation/development/ocr_image_layer_qualification_notes.md
+documentation/development/equation_extraction_qualification_notes.md
+documentation/development/real_pdf_ocr_equation_gap_matrix.md
+```
+
+---
+
+## Provisioned OCR / Rasterizer Freeze
+
+**Decision ID:** `KG-KF-PROVISIONED-OCR-2026-08-24`  
+**Authorization:** HUMAN TECHNICAL OWNER request — next workstream (provisioned OCR + real scanned qualification)  
+**Effective status:** **FROZEN** (additive rasterizer/OCR provisioning only)
+
+```text
+PROVISIONED OCR / RASTERIZER: FROZEN
+
+Frozen prior blocks modified: 0
+Frozen PdfIngestionAdapter modified: 0
+provider_invoked:             FALSE
+PRODUCTION-READY:             NO
+KG-BLOCK-014:                 NOT AUTHORIZED
+OCR engine:                   tesseract 5.4.1 (local subprocess)
+Rasterizer:                   pypdfium2 5.13.0
+Qualification state:          QUALIFIED FOR DEVELOPMENT
+Qualified corpus:             COSMOS-authored scanned originals
+Regression:                   1433 passed, 5 skipped, 0 failed
+```
+
+Closes provisioned PDF rasterization and real local OCR on rights-cleared COSMOS scanned pages, connected to the existing candidate → review → approval pipeline.
+
+Not claimed:
+
+```text
+PRODUCTION QUALIFIED
+Vendor/library scanned PDFs
+Math-OCR
+PRODUCTION-READY = YES
+KG-BLOCK-014 authorized
+```
+
+Report:
+
+```text
+documentation/development/real_pdf_ocr_qualification_report.md
+```
+
+---
+
+## Knowledge Foundation Completion Freeze
+
+**Decision ID:** `KG-KF-FOUNDATION-COMPLETION-2026-08-24`  
+**Authorization:** HUMAN TECHNICAL OWNER request — master Knowledge Foundation completion prompt  
+**Effective status:** **FROZEN** (additive math-OCR path, reconstruction, rights, OCR service, SQLite)  
+**Baseline:** `KG-KF-PROVISIONED-OCR-2026-08-24`
+
+```text
+KNOWLEDGE FOUNDATION COMPLETION: FROZEN
+
+Frozen prior blocks modified: 0
+Frozen PdfIngestionAdapter modified: 0
+provider_invoked:             FALSE
+PRODUCTION-READY:             NO
+KG-BLOCK-014:                 NOT AUTHORIZED
+Qualification state:          QUALIFIED FOR DEVELOPMENT
+Math-OCR backend:             tesseract-equation-span (no pix2tex/nougat)
+Persistence:                  SQLite production boundary + JSON snapshot
+Rights:                       UNKNOWN never treated as cleared
+NASA/Huzel prose:             not ingested
+Regression:                   1452 passed, 5 skipped, 0 failed
+```
+
+Not claimed:
+
+```text
+PRODUCTION QUALIFIED
+PRODUCTION-READY = YES
+Dedicated math-OCR engine
+Unicode Greek OCR fidelity
+Vendor/library NASA or Huzel source prose
+KG-BLOCK-014 authorized
+```
+
+Reports:
+
+```text
+documentation/development/knowledge_foundation_completion_report.md
+documentation/development/math_ocr_qualification_report.md
+documentation/development/equation_reconstruction_qualification_report.md
+documentation/development/reference_ingestion_qualification_report.md
+documentation/development/production_ocr_qualification_report.md
+documentation/development/production_persistence_qualification_report.md
+documentation/development/knowledge_foundation_production_qualification_report.md
+documentation/development/knowledge_foundation_master_gap_matrix.md
 ```
 
 ---

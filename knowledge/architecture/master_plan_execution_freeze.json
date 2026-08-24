@@ -1,0 +1,15 @@
+{
+  "decision_id": "KG-KF-MASTER-PLAN-EXEC-2026-08-23",
+  "authority": "Human Technical Owner — Tk Nayak",
+  "architecture_closed": true,
+  "frozen_prior_blocks_modified": 0,
+  "provider_invoked": false,
+  "production_ready": false,
+  "kg_block_014": "NOT_AUTHORIZED",
+  "regression": {
+    "passed": 1391,
+    "skipped": 5,
+    "failed": 0
+  },
+  "schema_version": "1.0.0"
+}
