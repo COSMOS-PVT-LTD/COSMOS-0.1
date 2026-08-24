@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>COSMOS 0.1 — User Administration</title>
+  <link rel="stylesheet" href="/assets/cosmos.css" />
+</head>
+<body class="cosmos-app cosmos-scrollable">
+  <div class="app-frame page-shell">
+    <header class="app-header">
+      <button type="button" class="avatar" id="avatar" title="Profile"></button>
+      <div class="header-meta">
+        <div class="header-pill">USER ADMINISTRATION</div>
+        <div class="header-pill">CREDENTIAL ISSUE</div>
+        <a class="header-pill header-link" href="/app/workbenches">BACK</a>
+      </div>
+      <button type="button" class="user-badge" id="user-badge">COSMOS</button>
+    </header>
+    <div class="app-body admin-body">
+      <aside class="sidebar">
+        <button class="sidebar-btn" data-tip="Workbenches" onclick="location.href='/app/workbenches'">W</button>
+        <button class="sidebar-btn" data-tip="Maharshi Bharadwaj" onclick="location.href='/app/workbench/knowledge'">M</button>
+        <button class="sidebar-btn" data-tip="Audit Trail" onclick="location.href='/app/audit'">A</button>
+        <button class="sidebar-btn active" data-tip="User Administration" onclick="location.href='/app/admin'">U</button>
+        <button class="sidebar-btn" data-tip="Log Out" id="logout-btn">⎋</button>
+      </aside>
+      <main class="content-area admin-content">
+        <div class="admin-center">
+          <section class="clean-block admin-register-block">
+            <div class="block-head">
+              <h1>Register Company User</h1>
+              <p>COSMOS generates login credentials automatically. They are shown <strong>once</strong> after registration.</p>
+            </div>
+            <form id="register-form" class="admin-form-grid">
+              <label class="field-block">Display Name<input id="display_name" required placeholder="Maharshi Bhardwaj" /></label>
+              <label class="field-block">Employee ID<input id="employee_id" required placeholder="EMP-204" /></label>
+              <label class="field-block">Designation<select id="designation"></select></label>
+              <label class="field-block">Team<select id="team"></select></label>
+              <label class="field-block field-span">Role<select id="role"></select></label>
+              <div class="field-span admin-actions">
+                <button type="submit" class="primary profile-save">REGISTER &amp; ISSUE CREDENTIALS</button>
+              </div>
+              <div class="error-text field-span" id="register-error"></div>
+            </form>
+          </section>
+
+          <section class="clean-block admin-users-block">
+            <div class="block-head"><h2>Registered Users</h2></div>
+            <div class="admin-table-wrap">
+              <table class="clean-table">
+                <thead><tr><th>Login ID</th><th>Name</th><th>Role</th><th>Team</th><th>Employee ID</th></tr></thead>
+                <tbody id="users-body"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <div class="status-bar in-frame" id="status-bar">COSMOS 0.1 — Admin</div>
+  </div>
+
+  <div class="profile-modal" id="credential-modal">
+    <div class="profile-panel credential-panel">
+      <div class="profile-panel-header">
+        <h2>One-Time Credentials</h2>
+        <button type="button" id="credential-close" class="profile-close">✕</button>
+      </div>
+      <p class="credential-warning">Copy these credentials now and hand them to the employee through your secure channel. They will <strong>not</strong> be shown again in COSMOS.</p>
+      <div class="credential-grid">
+        <div class="metric-block">
+          <span class="metric-label">Login ID</span>
+          <div class="metric-row">
+            <code id="cred-login-id">—</code>
+            <button type="button" class="mini-btn" id="copy-login-id">Copy</button>
+          </div>
+        </div>
+        <div class="metric-block">
+          <span class="metric-label">Password</span>
+          <div class="metric-row">
+            <code id="cred-password">—</code>
+            <button type="button" class="mini-btn" id="copy-password">Copy</button>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="primary profile-save" id="credential-ack">I HAVE COPIED THE CREDENTIALS</button>
+    </div>
+  </div>
+
+  <script src="/assets/app.js"></script>
+  <script>COSMOS.initAdminPanel();</script>
+</body>
+</html>

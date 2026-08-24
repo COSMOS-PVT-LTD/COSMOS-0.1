@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>COSMOS 0.1 — Audit</title>
+  <link rel="stylesheet" href="/assets/cosmos.css" />
+  <style>
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th, td { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 8px; text-align: left; vertical-align: top; }
+  </style>
+</head>
+<body class="cosmos-app">
+  <div class="page-shell">
+    <header class="app-header">
+      <div class="avatar"></div>
+      <div class="header-meta">
+        <div class="header-pill">AUDIT TRAIL</div>
+        <div class="header-pill">COMPANY ACTIONS</div>
+        <div class="header-pill"><a href="/app/workbenches" style="color:inherit;text-decoration:none;">BACK</a></div>
+      </div>
+      <div class="user-badge" id="user-badge">COSMOS</div>
+    </header>
+    <main class="content-area">
+      <section class="workbench-detail">
+        <h1>Application Audit Log</h1>
+        <table>
+          <thead><tr><th>Time</th><th>User</th><th>Action</th><th>Resource</th><th>Detail</th></tr></thead>
+          <tbody id="audit-body"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="/assets/app.js"></script>
+  <script>
+    COSMOS.session().then(async (session) => {
+      if (!session) return;
+      document.getElementById("user-badge").textContent = session.user.display_name;
+      const response = await fetch("/api/audit/events");
+      const body = await response.json();
+      const tbody = document.getElementById("audit-body");
+      tbody.innerHTML = "";
+      (body.events || []).forEach((event) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${event.timestamp}</td><td>${event.login_id}</td><td>${event.action}</td><td>${event.resource}</td><td>${event.detail}</td>`;
+        tbody.appendChild(row);
+      });
+    });
+  </script>
+</body>
+</html>

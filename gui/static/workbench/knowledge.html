@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>COSMOS 0.1 — Maharshi Bharadwaj</title>
+  <link rel="stylesheet" href="/assets/cosmos.css" />
+  <link rel="stylesheet" href="/assets/maharshi.css" />
+</head>
+<body class="cosmos-app">
+  <div class="app-frame page-shell">
+    <header class="app-header">
+      <button type="button" class="avatar" id="avatar"></button>
+      <div class="header-meta">
+        <div class="header-pill">MAHARSHI BHARADWAJ</div>
+        <div class="header-pill">KNOWLEDGE INFRASTRUCTURE</div>
+        <a class="header-pill header-link" id="back-link" href="/app/workbenches">BACK</a>
+      </div>
+      <button type="button" class="user-badge" id="user-badge">COSMOS</button>
+    </header>
+    <div class="app-body" style="grid-template-columns: 72px 1fr;">
+      <aside class="sidebar">
+        <button class="sidebar-btn" onclick="location.href='/app/workbenches'">W</button>
+        <button class="sidebar-btn active" onclick="location.href='/app/workbench/knowledge'">M</button>
+        <button class="sidebar-btn" id="logout-btn">⎋</button>
+      </aside>
+      <main class="content-area" style="overflow: auto;">
+        <div class="maharshi-workspace">
+          <div class="mh-workspace-head">
+            <div>
+              <h1>Maharshi Bharadwaj</h1>
+              <div class="sub">Local intake, governed review, evidence-backed chat, live knowledge graph</div>
+            </div>
+            <div class="mh-health" id="mh-health">loading…</div>
+          </div>
+
+          <section class="mh-panel mh-upload">
+            <div class="mh-panel-head"><h2>Upload</h2></div>
+            <div class="mh-panel-body">
+              <div class="mh-dropzone" id="mh-dropzone">
+                <strong>Choose a document</strong>
+                <span class="mh-dropzone-hint">Click or drag &amp; drop · PDF, Markdown, CSV, Office, images</span>
+                <div class="mh-upload-status" id="mh-upload-status">No file selected</div>
+                <div class="mh-btn-row mh-upload-actions">
+                  <button type="button" class="mh-btn secondary" id="mh-choose-btn">Choose file</button>
+                  <button type="button" class="mh-btn" id="mh-upload-btn" disabled>Upload</button>
+                </div>
+                <input class="mh-file-input" type="file" id="mh-file" accept=".pdf,.md,.txt,.csv,.json,.xml,.html,.docx,.pptx,.xlsx,.epub,.png,.jpg,.jpeg,.tif,.tiff,.webp,.tex" />
+              </div>
+              <input type="hidden" id="mh-rights" value="INTERNAL" />
+              <div class="mh-sources-bar">
+                <button type="button" class="mh-sources-toggle" id="mh-sources-toggle">
+                  SOURCES <span class="count" id="mh-sources-count">0 documents</span>
+                </button>
+                <div class="mh-sources-drawer open" id="mh-sources-drawer"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="mh-panel mh-graph">
+            <div class="mh-panel-head"><h2>Knowledge graph</h2></div>
+            <div class="mh-panel-body" style="padding: 0; position: relative;">
+              <div class="mh-graph-canvas-wrap">
+                <canvas id="mh-graph-canvas"></canvas>
+                <div class="mh-graph-overlay">
+                  <span class="mh-graph-badge" id="mh-graph-node-count">0 nodes</span>
+                  <span class="mh-graph-badge" id="mh-graph-edge-count">0 links</span>
+                </div>
+                <div class="mh-node-detail" id="mh-node-detail">
+                  <button type="button" class="close" id="mh-detail-close" aria-label="Close">×</button>
+                  <h3 id="mh-detail-title">Node</h3>
+                  <p id="mh-detail-body"></p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="mh-panel mh-chat">
+            <div class="mh-panel-head"><h2>Knowledge chat</h2></div>
+            <div class="mh-panel-body" style="display: flex; flex-direction: column; padding-bottom: 0;">
+              <div class="mh-chat-messages" id="mh-chat-messages"></div>
+              <div class="mh-chat-compose">
+                <textarea id="mh-chat-input" placeholder="Ask about ingested sources or approved engineering knowledge…"></textarea>
+                <div class="mh-btn-row">
+                  <button type="button" class="mh-btn" id="mh-ask-btn">Send</button>
+                  <button type="button" class="mh-btn secondary" id="mh-new-conv-btn">New conversation</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="mh-bottom">
+            <section class="mh-panel">
+              <div class="mh-panel-head">
+                <h2>Sources &amp; jobs</h2>
+                <div class="mh-btn-row" style="margin: 0;">
+                  <button type="button" class="mh-btn secondary" id="mh-refresh-btn">Refresh</button>
+                  <button type="button" class="mh-btn secondary" id="mh-backup-btn">Backup</button>
+                </div>
+              </div>
+              <div class="mh-panel-body mh-table-wrap">
+                <table class="mh-table">
+                  <thead>
+                    <tr><th>Source</th><th>Format</th><th>Text</th><th>Job</th><th>Actions</th></tr>
+                  </thead>
+                  <tbody id="mh-sources-jobs-body"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="mh-panel">
+              <div class="mh-panel-head"><h2>Review workbench</h2></div>
+              <div class="mh-panel-body mh-table-wrap">
+                <table class="mh-table">
+                  <thead>
+                    <tr><th>Document</th><th>Summary</th><th></th></tr>
+                  </thead>
+                  <tbody id="mh-review-body"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div class="mh-tooltip" id="mh-tooltip"></div>
+  <div class="mh-source-modal" id="mh-source-modal" hidden>
+    <div class="mh-source-modal-backdrop" id="mh-source-modal-backdrop"></div>
+    <div class="mh-source-modal-card" role="dialog" aria-modal="true" aria-labelledby="mh-source-modal-title">
+      <button type="button" class="close" id="mh-source-modal-close" aria-label="Close">×</button>
+      <h3 id="mh-source-modal-title">Source</h3>
+      <div class="mh-source-modal-meta" id="mh-source-modal-meta"></div>
+      <pre class="mh-source-modal-text" id="mh-source-modal-text"></pre>
+    </div>
+  </div>
+  <script src="/assets/app.js"></script>
+  <script src="/assets/maharshi.js"></script>
+  <script>
+    COSMOS.initShell().then(() => {
+      COSMOS.hubPage = COSMOS.hubPageFromUrl();
+      const back = document.getElementById("back-link");
+      if (back) back.href = COSMOS.hubUrl(COSMOS.hubPage);
+      return Maharshi.init();
+    });
+  </script>
+</body>
+</html>

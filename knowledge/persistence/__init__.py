@@ -8,11 +8,19 @@ from knowledge.persistence.sqlite_store import (
     DuplicateSourceError,
     KnowledgeDatabase,
 )
+from knowledge.persistence.backend import (
+    InMemoryPersistenceBackend,
+    PersistenceBackend,
+    SQLitePersistenceBackend,
+)
 
 __all__ = (
     "DatabaseUnavailableError",
     "DuplicateSourceError",
+    "InMemoryPersistenceBackend",
     "KnowledgeDatabase",
+    "PersistenceBackend",
+    "SQLitePersistenceBackend",
     "dump_snapshot",
     "load_snapshot",
 )

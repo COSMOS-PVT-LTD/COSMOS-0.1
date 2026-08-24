@@ -39,11 +39,11 @@
     }
   },
   "regression_baseline": {
-    "passed": 1452,
+    "passed": 1476,
     "skipped": 5,
     "failed": 0,
     "verified_at": "2026-08-24",
-    "note": "Knowledge Foundation completion workstream (math-OCR path, reconstruction, rights, SQLite). PRODUCTION-READY remains NO."
+    "note": "Knowledge Workspace and Brain workstream. PRODUCTION-READY remains NO. KG-BLOCK-014 remains NOT AUTHORIZED."
   },
   "static_analysis": {
     "ruff_scope": "knowledge/graph + knowledge/indexing + knowledge/search + knowledge/reasoning + knowledge/source + knowledge/ingestion_adapters + knowledge/parsers/w3 + tests",
@@ -1076,6 +1076,40 @@
       "documentation/development/production_persistence_qualification_report.md",
       "documentation/development/knowledge_foundation_production_qualification_report.md",
       "documentation/development/knowledge_foundation_master_gap_matrix.md"
+    ]
+  },
+  "knowledge_workspace_brain": {
+    "status": "QUALIFIED_FOR_DEVELOPMENT",
+    "freeze_id": "KG-KF-WORKSPACE-BRAIN-2026-08-24",
+    "production_ready": false,
+    "kg_block_014": "NOT_AUTHORIZED",
+    "qualification_state": "QUALIFIED FOR DEVELOPMENT",
+    "intake_gateway": "knowledge.ingest / KnowledgeWorkspace.ingest",
+    "durable_vault": true,
+    "job_orchestrator": "local-sync",
+    "dataset_ingestion": true,
+    "knowledge_chat": true,
+    "workspace_ui": "stdlib-http",
+    "sqlite_is_production_multinode": false,
+    "dedicated_math_ocr": false,
+    "nasa_huzel_prose_ingested": false,
+    "frozen_pdf_adapter_modified": false,
+    "kg_block_001_013_modified": false,
+    "regression_at_qualification": {
+      "passed": 1476,
+      "skipped": 5,
+      "failed": 0,
+      "delta_from_foundation_completion": 24
+    },
+    "reports": [
+      "documentation/development/knowledge_workspace_architecture.md",
+      "documentation/development/knowledge_workspace_gap_matrix.md",
+      "documentation/development/knowledge_workspace_qualification_report.md",
+      "documentation/development/knowledge_brain_chat_qualification_report.md",
+      "documentation/development/knowledge_ingestion_qualification_report.md",
+      "documentation/development/knowledge_persistence_qualification_report.md",
+      "documentation/development/knowledge_recovery_qualification_report.md",
+      "documentation/development/knowledge_production_readiness_report.md"
     ]
   }
 }

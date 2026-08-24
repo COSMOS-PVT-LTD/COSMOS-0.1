@@ -111,6 +111,12 @@ temp/
 local.db
 generated_credentials/
 
+# Local Knowledge Workspace runtime (never commit originals)
+workspace_data/
+knowledge_vault/
+cosmos_app_data/
+credentials/
+
 # Sensitive local datasets (explicit patterns — review before adding exceptions)
 *_private_dataset/
 *_confidential/
@@ -125,3 +131,7 @@ qa/cosmos_architecture_render/
 # Optional local tooling caches
 .cache/
 *.prof
+
+# Local benchmark / qualification run artifacts
+documentation/development/concurrency-tmp/
+documentation/development/scale-tmp/
