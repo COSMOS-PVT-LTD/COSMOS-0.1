@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>COSMOS Knowledge Workspace</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0f1419; --panel:#18202a; --line:#2a3644; --text:#e8eef4; --muted:#93a4b5; --accent:#6cb6ff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, sans-serif; background: var(--bg); color: var(--text); }
+    header { padding: 16px 20px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; }
+    h1 { font-size: 18px; margin: 0; }
+    .sub { color: var(--muted); font-size: 13px; }
+    main { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 16px; padding: 16px; }
+    section { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px; min-height: 180px; }
+    h2 { margin: 0 0 10px; font-size: 14px; }
+    #drop { border: 1px dashed var(--accent); border-radius: 10px; padding: 28px; text-align: center; color: var(--muted); }
+    #drop.over { background: #1d2b3b; }
+    button, select { background: #223040; color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+    input, textarea { width: 100%; background: #101820; color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 8px; }
+    textarea { min-height: 70px; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    td, th { border-bottom: 1px solid var(--line); padding: 6px 4px; text-align: left; vertical-align: top; }
+    #log { white-space: pre-wrap; color: var(--muted); font-size: 12px; max-height: 220px; overflow: auto; }
+    .chat { display: flex; flex-direction: column; gap: 8px; }
+    .row { display: flex; gap: 8px; margin: 8px 0; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>COSMOS Knowledge Workspace</h1>
+      <div class="sub">Local intake, governed review, evidence-backed chat. Conversation is not canonical knowledge.</div>
+    </div>
+    <div class="sub" id="health">health: loading</div>
+  </header>
+  <main>
+    <div>
+      <section>
+        <h2>Drag and drop</h2>
+        <div id="drop">Drop a permitted engineering file here, or choose one.
+          <div class="row">
+            <input type="file" id="file" />
+            <select id="rights">
+              <option value="INTERNAL">INTERNAL</option>
+              <option value="RIGHTS_CLEARED">RIGHTS_CLEARED</option>
+              <option value="LICENSED">LICENSED</option>
+              <option value="PUBLIC_DOMAIN">PUBLIC_DOMAIN</option>
+              <option value="UNKNOWN">UNKNOWN (blocked)</option>
+              <option value="RESTRICTED">RESTRICTED (blocked)</option>
+            </select>
+            <input id="project" placeholder="project_id (default GLOBAL)" />
+            <button id="upload">Ingest</button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Sources and jobs</h2>
+        <div class="row">
+          <button id="refresh">Refresh</button>
+          <button id="backup">Backup</button>
+        </div>
+        <table>
+          <thead><tr><th>Source</th><th>Format</th><th>Rights</th><th>Job</th></tr></thead>
+          <tbody id="sources"></tbody>
+        </table>
+      </section>
+      <section>
+        <h2>Review workbench</h2>
+        <table>
+          <thead><tr><th>Candidate</th><th>Expression</th><th></th></tr></thead>
+          <tbody id="review"></tbody>
+        </table>
+      </section>
+    </div>
+    <div>
+      <section class="chat">
+        <h2>Knowledge chat</h2>
+        <div id="log"></div>
+        <textarea id="message" placeholder="Ask about ingested sources or approved engineering knowledge."></textarea>
+        <div class="row">
+          <button id="ask">Ask</button>
+          <button id="newconv">New conversation</button>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script>
+    let conversationId = null;
+    const log = (text) => { const el = document.getElementById("log"); el.textContent += text + "\\n"; el.scrollTop = el.scrollHeight; };
+    async function jget(path) { const r = await fetch(path); return r.json(); }
+    async function jpost(path, body) {
+      const r = await fetch(path, { method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify(body) });
+      return r.json();
+    }
+    async function refresh() {
+      const health = await jget("/api/health");
+      document.getElementById("health").textContent = "sources " + health.source_count + " · production-ready " + health.production_ready;
+      const sources = await jget("/api/sources");
+      const jobs = await jget("/api/jobs");
+      const jobBySource = {};
+      (jobs.jobs || []).forEach(j => jobBySource[j.source_id] = j.status);
+      const body = document.getElementById("sources");
+      body.innerHTML = "";
+      (sources.sources || []).forEach(s => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + s.filename + "</td><td>" + s.workspace_format + "</td><td>" + s.rights_status + "</td><td>" + (jobBySource[s.source_id] || "") + "</td>";
+        body.appendChild(tr);
+      });
+      const review = await jget("/api/review");
+      const rb = document.getElementById("review");
+      rb.innerHTML = "";
+      (review.items || []).forEach(item => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + item.candidate_id + "</td><td>" + item.expression + "</td><td></td>";
+        const btn = document.createElement("button");
+        btn.textContent = "Approve";
+        btn.onclick = async () => {
+          await jpost("/api/review", { source_id: item.source_id, candidate_id: item.candidate_id, decision: "APPROVE" });
+          refresh();
+        };
+        tr.children[2].appendChild(btn);
+        rb.appendChild(tr);
+      });
+    }
+    async function ingestFile(file) {
+      const data = new FormData();
+      data.append("file", file, file.name);
+      data.append("rights_status", document.getElementById("rights").value);
+      const project = document.getElementById("project").value;
+      if (project) data.append("project_id", project);
+      const r = await fetch("/api/ingest", { method: "POST", body: data });
+      const payload = await r.json();
+      log("ingest " + file.name + " → " + (payload.job && payload.job.status));
+      refresh();
+    }
+    document.getElementById("upload").onclick = () => {
+      const file = document.getElementById("file").files[0];
+      if (file) ingestFile(file);
+    };
+    const drop = document.getElementById("drop");
+    drop.ondragover = (e) => { e.preventDefault(); drop.classList.add("over"); };
+    drop.ondragleave = () => drop.classList.remove("over");
+    drop.ondrop = (e) => {
+      e.preventDefault(); drop.classList.remove("over");
+      if (e.dataTransfer.files[0]) ingestFile(e.dataTransfer.files[0]);
+    };
+    document.getElementById("refresh").onclick = refresh;
+    document.getElementById("backup").onclick = async () => {
+      const payload = await jpost("/api/backup", {});
+      log("backup " + payload.archive);
+    };
+    document.getElementById("newconv").onclick = async () => {
+      const payload = await jpost("/api/conversations", {});
+      conversationId = payload.conversation_id;
+      log("conversation " + conversationId);
+    };
+    document.getElementById("ask").onclick = async () => {
+      const message = document.getElementById("message").value;
+      const payload = await jpost("/api/chat", { conversation_id: conversationId, message });
+      conversationId = payload.conversation_id;
+      log("Q: " + message + "\\nA: " + payload.conclusion + " [" + payload.validation_state + "]");
+    };
+    refresh();
+  </script>
+</body>
+</html>

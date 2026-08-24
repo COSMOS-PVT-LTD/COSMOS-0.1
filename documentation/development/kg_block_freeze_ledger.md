@@ -26,6 +26,7 @@ This ledger records human engineering freeze decisions for Knowledge Graph devel
 | `KG-KF-REAL-PDF-OCR-EQ-2026-08-24` | **FROZEN** | 2026-08-24 | 1423 passed, 5 skipped | native PDF + fail-closed OCR |
 | `KG-KF-PROVISIONED-OCR-2026-08-24` | **FROZEN** | 2026-08-24 | 1433 passed, 5 skipped | QUALIFIED FOR DEVELOPMENT |
 | `KG-KF-FOUNDATION-COMPLETION-2026-08-24` | **FROZEN** | 2026-08-24 | 1452 passed, 5 skipped | QUALIFIED FOR DEVELOPMENT; PRODUCTION-READY = NO |
+| `KG-KF-WORKSPACE-BRAIN-2026-08-24` | **FROZEN** | 2026-08-24 | 1476 passed, 5 skipped | QUALIFIED FOR DEVELOPMENT; PRODUCTION-READY = NO |
 
 ---
 

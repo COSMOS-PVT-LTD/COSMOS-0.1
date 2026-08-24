@@ -32,3 +32,7 @@ class ConceptGraph:
             for edge in self._edges
             if edge.source_id == entity_id and edge.relationship is relationship
         )
+
+    @property
+    def edges(self) -> tuple[ConceptEdge, ...]:
+        return tuple(self._edges)

@@ -14,8 +14,8 @@ __all__ = (
     "validate_pdf_bytes",
 )
 
-MAX_PDF_BYTES = 25 * 1024 * 1024
-MAX_PAGE_COUNT = 50
+MAX_PDF_BYTES = 100 * 1024 * 1024
+MAX_PAGE_COUNT = 250
 MAX_IMAGE_BYTES = 20 * 1024 * 1024
 
 
