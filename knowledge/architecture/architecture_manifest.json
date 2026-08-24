@@ -1,0 +1,1240 @@
+{
+  "architecture_closed": true,
+  "counts": {
+    "A": 79,
+    "B": 27,
+    "C": 53,
+    "D": 16
+  },
+  "document_id": "COSMOS-KF-ARCHITECTURE-MANIFEST-001",
+  "entries": [
+    {
+      "current_path": "knowledge/__init__.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/__init__.py",
+      "justification": "Exact match",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/exporters/database_exporter.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/exporters/database_exporter.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/exporters/graph_exporter.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/exporters/graph_exporter.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/exporters/html_exporter.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/exporters/html_exporter.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/exporters/json_exporter.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/exporters/json_exporter.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/exporters/latex_exporter.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/exporters/latex_exporter.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/exporters/markdown_exporter.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/exporters/markdown_exporter.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/exporters/yaml_exporter.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/exporters/yaml_exporter.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/abbreviation_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/abbreviation_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/assumption_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/assumption_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/boundary_condition_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/boundary_condition_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/w4/entities.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/extraction/component_extractor.py",
+      "justification": "W4",
+      "symbols": "extract_entities"
+    },
+    {
+      "current_path": "knowledge/extraction/w4/entities.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/extraction/constant_extractor.py",
+      "justification": "W4",
+      "symbols": "extract_entities"
+    },
+    {
+      "current_path": "knowledge/extraction/correlation_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/correlation_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/design_rule_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/design_rule_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/w4/entities.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/extraction/dimension_extractor.py",
+      "justification": "W4",
+      "symbols": "extract_entities"
+    },
+    {
+      "current_path": "knowledge/extraction/w4/entities.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/extraction/engineering_domain_extractor.py",
+      "justification": "W4",
+      "symbols": "extract_entities"
+    },
+    {
+      "current_path": "knowledge/extraction/w4/equations.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/extraction/equation_extractor.py",
+      "justification": "Extraction",
+      "symbols": "extract_equation_candidates"
+    },
+    {
+      "current_path": "knowledge/extraction/experiment_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/experiment_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/w4/pipeline.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/extraction/extraction_pipeline.py",
+      "justification": "Extraction",
+      "symbols": "extract_document; W4ExtractionPipeline"
+    },
+    {
+      "current_path": "knowledge/extraction/failure_mode_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/failure_mode_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/glossary_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/glossary_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/manufacturing_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/manufacturing_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/w4/entities.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/extraction/material_extractor.py",
+      "justification": "Extraction",
+      "symbols": "extract_entities"
+    },
+    {
+      "current_path": "knowledge/extraction/physical_law_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/physical_law_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/process_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/process_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/property_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/property_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/w4/quantities.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/extraction/quantity_extractor.py",
+      "justification": "Extraction",
+      "symbols": "extract_quantities"
+    },
+    {
+      "current_path": "knowledge/extraction/simulation_extractor.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/extraction/simulation_extractor.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/extraction/w4/entities.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/extraction/subsystem_extractor.py",
+      "justification": "W4",
+      "symbols": "extract_entities"
+    },
+    {
+      "current_path": "knowledge/extraction/w4/entities.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/extraction/unit_extractor.py",
+      "justification": "W4",
+      "symbols": "extract_entities"
+    },
+    {
+      "current_path": "knowledge/extraction/w4/entities.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/extraction/variable_extractor.py",
+      "justification": "Extraction",
+      "symbols": "extract_entities"
+    },
+    {
+      "current_path": "knowledge/graph/citation_graph.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/graph/citation_graph.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/graph/concept_graph.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/graph/concept_graph.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/graph/query.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/graph/dependency_graph.py",
+      "justification": "Graph layer",
+      "symbols": "GraphQueryService.traverse"
+    },
+    {
+      "current_path": "knowledge/graph/construction.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/graph/engineering_graph.py",
+      "justification": "Graph layer",
+      "symbols": "GraphConstructor"
+    },
+    {
+      "current_path": "knowledge/graph/construction.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/graph/equation_graph.py",
+      "justification": "Graph layer",
+      "symbols": "GraphConstructor"
+    },
+    {
+      "current_path": "knowledge/graph/construction.py + query.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/graph/graph_manager.py",
+      "justification": "Graph layer",
+      "symbols": "GraphConstructor.construct; GraphQueryService"
+    },
+    {
+      "current_path": "knowledge/graph/construction.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/graph/relationship_builder.py",
+      "justification": "Graph layer",
+      "symbols": "GraphConstructor + extraction/w4/relationships.py"
+    },
+    {
+      "current_path": "knowledge/graph/construction.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/graph/variable_graph.py",
+      "justification": "Graph layer",
+      "symbols": "GraphConstructor"
+    },
+    {
+      "current_path": "knowledge/indexing/citation_index.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/indexing/citation_index.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/indexing/equation_index.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/indexing/equation_index.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/indexing/w7/graph_index.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/indexing/graph_index.py",
+      "justification": "Indexing",
+      "symbols": "InMemoryGraphIndex"
+    },
+    {
+      "current_path": "knowledge/indexing/builder.py + w7/bundle.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/indexing/index_manager.py",
+      "justification": "Indexing",
+      "symbols": "KnowledgeIndexBuilder.build; W7IndexBuilder.build"
+    },
+    {
+      "current_path": "knowledge/indexing/lexical.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/indexing/keyword_index.py",
+      "justification": "Indexing",
+      "symbols": "InMemoryLexicalIndex"
+    },
+    {
+      "current_path": "knowledge/indexing/semantic.py + w7/vector.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/indexing/semantic_index.py",
+      "justification": "Indexing",
+      "symbols": "InMemorySemanticIndex; InMemoryVectorIndex"
+    },
+    {
+      "current_path": "knowledge/indexing/variable_index.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/indexing/variable_index.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/ingestion/batch_loader.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/ingestion/batch_loader.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/ingestion_adapters/docx.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/ingestion/docx_loader.py",
+      "justification": "Ingestion layer",
+      "symbols": "DocxIngestionAdapter.ingest"
+    },
+    {
+      "current_path": "knowledge/ingestion/epub_loader.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/ingestion/epub_loader.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/ingestion_adapters/html.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/ingestion/html_loader.py",
+      "justification": "Ingestion layer",
+      "symbols": "HtmlIngestionAdapter.ingest"
+    },
+    {
+      "current_path": "knowledge/ingestion/image_loader.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/ingestion/image_loader.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/ingestion_adapters/registry.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/ingestion/ingestion_pipeline.py",
+      "justification": "Ingestion layer",
+      "symbols": "IngestionOrchestrator"
+    },
+    {
+      "current_path": "knowledge/ingestion/latex_loader.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/ingestion/latex_loader.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/ingestion_adapters/html.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/ingestion/markdown_loader.py",
+      "justification": "Ingestion layer",
+      "symbols": "MarkdownIngestionAdapter.ingest"
+    },
+    {
+      "current_path": "knowledge/ingestion/markitdown_loader.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/ingestion/markitdown_loader.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/ingestion/models.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/ingestion/metadata_loader.py",
+      "justification": "Ingestion layer",
+      "symbols": "IngestionResult"
+    },
+    {
+      "current_path": "knowledge/ingestion/ocr_loader.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/ingestion/ocr_loader.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/ingestion_adapters/pdf.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/ingestion/pdf_loader.py",
+      "justification": "Ingestion layer",
+      "symbols": "PdfIngestionAdapter.ingest"
+    },
+    {
+      "current_path": "knowledge/models/document_structure.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/appendix.py",
+      "justification": "Canonical Appendix wraps W3 heading/section artifacts.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/assumption.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/assumption.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/boundary_condition.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/boundary_condition.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/document_structure.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/chapter.py",
+      "justification": "Canonical Chapter wraps W3 ParsedSection; no duplicate parser.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/models.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/citation.py",
+      "justification": "Model disposition C",
+      "symbols": "ParsedCitation"
+    },
+    {
+      "current_path": "knowledge/graph/entity.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/component.py",
+      "justification": "Model disposition C",
+      "symbols": "CanonicalEntityType"
+    },
+    {
+      "current_path": "knowledge/models/constant.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/constant.py",
+      "justification": "Exact path match",
+      "symbols": "knowledge.models.constant.Constant"
+    },
+    {
+      "current_path": "knowledge/models/correlation.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/correlation.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/design_rule.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/design_rule.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/dimension.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/dimension.py",
+      "justification": "Exact path match",
+      "symbols": "knowledge.models.dimension.Dimension"
+    },
+    {
+      "current_path": "knowledge/models/document.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/document.py",
+      "justification": "Exact path match",
+      "symbols": "knowledge.models.document.Document"
+    },
+    {
+      "current_path": "knowledge/models/empirical_relation.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/empirical_relation.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/engineering_domain.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/engineering_domain.py",
+      "justification": "Exact path match",
+      "symbols": "knowledge.models.engineering_domain.EngineeringDomain"
+    },
+    {
+      "current_path": "knowledge/models/equation.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/equation.py",
+      "justification": "Exact path match",
+      "symbols": "knowledge.models.equation.Equation"
+    },
+    {
+      "current_path": "knowledge/models/experiment.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/experiment.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/failure_mode.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/failure_mode.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/models.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/figure.py",
+      "justification": "Model disposition C",
+      "symbols": "ParsedFigure"
+    },
+    {
+      "current_path": "knowledge/models/document_structure.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/glossary.py",
+      "justification": "Canonical Glossary wraps W3 definitional sections.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/manufacturing_process.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/manufacturing_process.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/material.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/material.py",
+      "justification": "Exact path match",
+      "symbols": "knowledge.models.material.Material"
+    },
+    {
+      "current_path": "knowledge/ingestion/models.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/metadata.py",
+      "justification": "Model disposition C",
+      "symbols": "IngestionResult"
+    },
+    {
+      "current_path": "knowledge/ontology/models.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/ontology_edge.py",
+      "justification": "Model disposition C",
+      "symbols": "TaxonomyEdge"
+    },
+    {
+      "current_path": "knowledge/ontology/models.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/ontology_node.py",
+      "justification": "Model disposition C",
+      "symbols": "OntologyTerm"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/models.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/paragraph.py",
+      "justification": "Model disposition C",
+      "symbols": "ParsedParagraph"
+    },
+    {
+      "current_path": "knowledge/models/physical_law.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/physical_law.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/process.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/process.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/property.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/property.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/quantity.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/quantity.py",
+      "justification": "Exact path match",
+      "symbols": "knowledge.models.quantity.Quantity"
+    },
+    {
+      "current_path": "knowledge/models/reference.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/reference.py",
+      "justification": "Exact path match",
+      "symbols": "knowledge.models.reference.Reference"
+    },
+    {
+      "current_path": "knowledge/models/document_structure.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/section.py",
+      "justification": "Canonical Section wraps W3 ParsedSection.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/document_structure.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/sentence.py",
+      "justification": "Sentence is a provenance span over a W3 paragraph (ADR-KF-002).",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/simulation.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/simulation.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/models/subsystem.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/subsystem.py",
+      "justification": "Exact path match",
+      "symbols": "knowledge.models.subsystem.Subsystem"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/models.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/models/table.py",
+      "justification": "Model disposition C",
+      "symbols": "ParsedTable"
+    },
+    {
+      "current_path": "knowledge/models/unit.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/unit.py",
+      "justification": "Exact path match",
+      "symbols": "knowledge.models.unit.Unit"
+    },
+    {
+      "current_path": "knowledge/models/variable.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/models/variable.py",
+      "justification": "Exact path match",
+      "symbols": "knowledge.models.variable.Variable"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/aerospace.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/combustion.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/compressible_flow.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/controls.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/cryogenics.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py + ontology/models.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/ontology/engineering_domains.py",
+      "justification": "Static domain module consolidated into registry + models",
+      "symbols": "OntologyRegistry; EngineeringDomain taxonomy"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/fluid_mechanics.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/heat_transfer.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/manufacturing.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/materials.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/ontology/ontology_manager.py",
+      "justification": "Registry replaces manager",
+      "symbols": "OntologyRegistry"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/optimization.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/propulsion.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/structures.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/thermochemistry.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/ontology/registry.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/ontology/thermodynamics.py",
+      "justification": "Static module superseded by registry",
+      "symbols": "OntologyRegistry.register_term"
+    },
+    {
+      "current_path": "knowledge/parsers/appendix_parser.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/parsers/appendix_parser.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/references.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/parsers/bibliography_parser.py",
+      "justification": "Parser layer",
+      "symbols": "extract_references"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/structure.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/parsers/chapter_parser.py",
+      "justification": "Parser layer",
+      "symbols": "parse_document_structure"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/references.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/parsers/citation_parser.py",
+      "justification": "Parser layer",
+      "symbols": "extract_citations"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/pipeline.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/parsers/document_parser.py",
+      "justification": "Parser layer",
+      "symbols": "parse_document"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/figures.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/parsers/figure_parser.py",
+      "justification": "Parser layer",
+      "symbols": "extract_figures"
+    },
+    {
+      "current_path": "knowledge/parsers/glossary_parser.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/parsers/glossary_parser.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/structure.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/parsers/heading_parser.py",
+      "justification": "Parser layer",
+      "symbols": "parse_document_structure"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/content.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/parsers/metadata_parser.py",
+      "justification": "Parser layer",
+      "symbols": "ParseContext"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/structure.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/parsers/paragraph_parser.py",
+      "justification": "Parser layer",
+      "symbols": "parse_document_structure"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/structure.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/parsers/section_parser.py",
+      "justification": "Parser layer",
+      "symbols": "parse_document_structure"
+    },
+    {
+      "current_path": "knowledge/parsers/sentence_parser.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/parsers/sentence_parser.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/tables.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/parsers/table_parser.py",
+      "justification": "Parser layer",
+      "symbols": "extract_tables"
+    },
+    {
+      "current_path": "tests/integration_tests/kg_block012/helpers/pipeline.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/pipelines/document_pipeline.py.py",
+      "justification": "Pipeline",
+      "symbols": "run_full_pipeline"
+    },
+    {
+      "current_path": "knowledge/extraction/w4/pipeline.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/pipelines/extraction_pipeline.py.py",
+      "justification": "Pipeline",
+      "symbols": "extract_document"
+    },
+    {
+      "current_path": "knowledge/indexing/w7/bundle.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/pipelines/indexing_pipeline.py.py",
+      "justification": "Pipeline",
+      "symbols": "W7IndexBuilder.build"
+    },
+    {
+      "current_path": "tests/integration_tests/kg_block012/helpers/pipeline.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/pipelines/knowledge_pipeline.py.py",
+      "justification": "Pipeline",
+      "symbols": "run_full_pipeline"
+    },
+    {
+      "current_path": "knowledge/validation/engine.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/pipelines/validation_pipeline.py.py",
+      "justification": "Pipeline",
+      "symbols": "ValidationEngine.validate_context"
+    },
+    {
+      "current_path": "knowledge/validation/conflicts.py + w10/classification.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/reasoning/consistency_reasoner.py",
+      "justification": "Reasoning",
+      "symbols": "detect_conflicts; classify_evidence_item"
+    },
+    {
+      "current_path": "knowledge/reasoning/w10/chains.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/reasoning/dependency_reasoner.py",
+      "justification": "Reasoning",
+      "symbols": "EvidenceChainBuilder"
+    },
+    {
+      "current_path": "knowledge/reasoning/reasoner.py + w10/reasoner.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/reasoning/engineering_reasoner.py",
+      "justification": "Reasoning",
+      "symbols": "ProvenanceAwareReasoner; W10ProvenanceAwareReasoner"
+    },
+    {
+      "current_path": "knowledge/reasoning/equation_reasoner.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/reasoning/equation_reasoner.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/interface/rag.py",
+      "disposition": "D",
+      "frozen_path": "knowledge/reasoning/recommendation_engine.py",
+      "justification": "Superseded by controlled RAG",
+      "symbols": "ControlledRAGOrchestrator (retrieval only)"
+    },
+    {
+      "current_path": "knowledge/reasoning/w10/chains.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/reasoning/traceability_engine.py",
+      "justification": "Reasoning",
+      "symbols": "EvidenceChainBuilder.build_chain"
+    },
+    {
+      "current_path": "knowledge/repositories/chapter_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/chapter_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repositories/component_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/component_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repositories/constant_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/constant_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repositories/correlation_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/correlation_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repositories/design_rule_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/design_rule_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repository/repository.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/repositories/document_repository.py",
+      "justification": "Singular repository path",
+      "symbols": "DocumentRepository"
+    },
+    {
+      "current_path": "knowledge/repositories/equation_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/equation_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repositories/figure_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/figure_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repositories/material_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/material_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repositories/property_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/property_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repository/source_registry.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/repositories/repository_manager.py",
+      "justification": "Source registry",
+      "symbols": "SourceRegistry"
+    },
+    {
+      "current_path": "knowledge/repositories/section_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/section_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repositories/simulation_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/simulation_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repositories/subsystem_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/subsystem_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repositories/table_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/table_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/repositories/variable_repository.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/repositories/variable_repository.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/search/citation_search.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/search/citation_search.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/search/equation_search.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/search/equation_search.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/search/w8/graph_search.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/search/graph_search.py",
+      "justification": "Search",
+      "symbols": "GraphSearchEngine"
+    },
+    {
+      "current_path": "knowledge/search/w8/hybrid.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/search/hybrid_search.py",
+      "justification": "Search",
+      "symbols": "HybridSearchEngine"
+    },
+    {
+      "current_path": "knowledge/search/w8/keyword.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/search/keyword_search.py",
+      "justification": "Search",
+      "symbols": "KeywordSearchEngine"
+    },
+    {
+      "current_path": "knowledge/search/engine.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/search/search_engine.py",
+      "justification": "Search",
+      "symbols": "KnowledgeSearchEngine"
+    },
+    {
+      "current_path": "knowledge/search/w8/semantic.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/search/semantic_search.py",
+      "justification": "Search",
+      "symbols": "SemanticVectorSearchEngine"
+    },
+    {
+      "current_path": "knowledge/search/variable_search.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/search/variable_search.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/equations.py + extraction/w4/equations.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/utils/equation_utils.py",
+      "justification": "Utils",
+      "symbols": "extract_equations; extract_equation_candidates"
+    },
+    {
+      "current_path": "knowledge/graph/serialization.py + query.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/utils/graph_utils.py",
+      "justification": "Utils",
+      "symbols": "canonical_graph_record_digest; GraphQueryService"
+    },
+    {
+      "current_path": "knowledge/source/integrity.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/utils/hashing.py",
+      "justification": "Utils",
+      "symbols": "sha256_text_digest; sha256_bytes_digest"
+    },
+    {
+      "current_path": "core project logging (outside knowledge/)",
+      "disposition": "D",
+      "frozen_path": "knowledge/utils/logging_utils.py",
+      "justification": "Superseded by project-level logging",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/ingestion_adapters/html.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/utils/markdown_utils.py",
+      "justification": "Utils",
+      "symbols": "Markdown normalization"
+    },
+    {
+      "current_path": "knowledge/parsers/w3/structure.py + ingestion_adapters/normalize.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/utils/parsing_utils.py",
+      "justification": "Utils",
+      "symbols": "parse_document_structure; normalize"
+    },
+    {
+      "current_path": "knowledge/utils/text_utils.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/utils/text_utils.py",
+      "justification": "Implemented in Knowledge Foundation completion; tests attached.",
+      "symbols": "\u2014"
+    },
+    {
+      "current_path": "knowledge/validation/ambiguity_detector.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/validation/ambiguity_detector.py",
+      "justification": "Implemented Phase C \u2014 ambiguity detection",
+      "symbols": "detect_ambiguities"
+    },
+    {
+      "current_path": "knowledge/validation/citation_validator.py",
+      "disposition": "A",
+      "frozen_path": "knowledge/validation/citation_validator.py",
+      "justification": "Implemented Phase C \u2014 citation integrity validation",
+      "symbols": "validate_citations"
+    },
+    {
+      "current_path": "knowledge/validation/conflicts.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/validation/consistency_validator.py",
+      "justification": "Validation",
+      "symbols": "detect_conflicts"
+    },
+    {
+      "current_path": "knowledge/validation/units.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/validation/dimension_validator.py",
+      "justification": "Validation",
+      "symbols": "validate_units"
+    },
+    {
+      "current_path": "knowledge/validation/duplicates.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/validation/duplicate_detector.py",
+      "justification": "Validation",
+      "symbols": "detect_duplicates"
+    },
+    {
+      "current_path": "knowledge/validation/schema.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/validation/equation_validator.py",
+      "justification": "Validation",
+      "symbols": "validate_schema"
+    },
+    {
+      "current_path": "knowledge/ontology/validation.py",
+      "disposition": "B",
+      "frozen_path": "knowledge/validation/ontology_validator.py",
+      "justification": "Validation",
+      "symbols": "validate_taxonomy_edge"
+    },
+    {
+      "current_path": "knowledge/validation/provenance.py + source/integrity.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/validation/source_validator.py",
+      "justification": "Validation",
+      "symbols": "validate_provenance; verify_digest"
+    },
+    {
+      "current_path": "knowledge/validation/units.py",
+      "disposition": "C",
+      "frozen_path": "knowledge/validation/unit_validator.py",
+      "justification": "Validation",
+      "symbols": "validate_units"
+    }
+  ],
+  "open_dispositions": 0,
+  "schema_version": "1.0.0",
+  "total": 175
+}

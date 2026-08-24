@@ -1,0 +1,111 @@
+{
+  "corpus_id": "COSMOS-KF-OCR-GOLDEN-001",
+  "version": "1.0.0",
+  "freeze_id": "KG-KF-FOUNDATION-COMPLETION-2026-08-24",
+  "rights": "COSMOS-authored originals. No third-party copyrighted prose.",
+  "rights_status": "COSMOS original",
+  "notes": "On-disk SHA-256 values are the qualification-machine catalog. Live generator bytes may differ across fonts/OS; tests lock committed files, not live re-render.",
+  "documents": [
+    {
+      "document_id": "DOC-SCAN-RE",
+      "title": "COSMOS scanned Reynolds original",
+      "source_identity": "REF-SCAN-RE",
+      "path": "scanned_reynolds.pdf",
+      "type": "A scanned engineering reference / D equation-heavy",
+      "expected_extraction_mode": "OCR",
+      "sha256": "f7817b92db80ea489b06b9920816e2fe3808cf34151fa360c473068f86c61c57",
+      "page_count": 1,
+      "expected_equation": "Re = rho * V * D / mu",
+      "observed_ocr_equation_span": "Re =rho* V* D/ mu",
+      "qualification_page_image_hash": "13be8fe0a4fa18449dbbaa8e9b21ff36efc2b7d57297277a9224ba6ab0ba7cfb"
+    },
+    {
+      "document_id": "DOC-SCAN-TAB",
+      "title": "COSMOS scanned symbol table",
+      "source_identity": "REF-SCAN-TAB",
+      "path": "scanned_table.pdf",
+      "type": "E table-heavy",
+      "expected_extraction_mode": "OCR",
+      "sha256": "7a9e38bfbe75d519a14fc970b458d24d6dadcb948c495db82f5d188f9ed9db6e",
+      "page_count": 1
+    },
+    {
+      "document_id": "DOC-SCAN-NOT",
+      "title": "COSMOS scanned engineering notation",
+      "source_identity": "REF-SCAN-NOT",
+      "path": "scanned_notation.pdf",
+      "type": "B image-heavy notation",
+      "expected_extraction_mode": "OCR",
+      "sha256": "39d988d727c88367230898d60e4c88aec89ffc045e07f700b852f1263168792c",
+      "page_count": 1
+    },
+    {
+      "document_id": "DOC-COSMOS-RE-E2E",
+      "title": "COSMOS native Reynolds original",
+      "source_identity": "REF-COSMOS-RE-E2E",
+      "path": "reynolds_identities.pdf",
+      "type": "D native-text equation document",
+      "expected_extraction_mode": "NATIVE_TEXT",
+      "sha256": "03160cbe3bccfbc250cbce35c5c7849ffcd6fea5fb5f67d07e069ecc783afc47",
+      "page_count": 1,
+      "expected_equation": "Re = rho * V * D / mu"
+    },
+    {
+      "document_id": "DOC-COSMOS-MIX",
+      "title": "COSMOS mixed native/empty page",
+      "source_identity": "REF-COSMOS-MIX",
+      "path": "mixed_reynolds.pdf",
+      "type": "C mixed native-text/scanned",
+      "expected_extraction_mode": "MIXED",
+      "sha256": "8027ee7a4d3a28ec087ba0d4fde54fc3b7d21e8887e44886e79458e175e40582",
+      "page_count": 2
+    },
+    {
+      "document_id": "DOC-COSMOS-IMG",
+      "title": "COSMOS image-only blank page",
+      "source_identity": "REF-COSMOS-IMG",
+      "path": "image_only.pdf",
+      "type": "fail-closed blank scan",
+      "expected_extraction_mode": "EXTRACTION_UNAVAILABLE if OCR empty",
+      "sha256": "ae60acee6b0cd6e5c9d9a99a73e90e5eb9b829e0355e72f1196419fb63d1c847",
+      "page_count": 1
+    },
+    {
+      "document_id": "DOC-COMPLEX",
+      "title": "COSMOS nested equation original",
+      "source_identity": "REF-COMPLEX",
+      "path": "complex_equations.pdf",
+      "type": "D complex equation-heavy",
+      "expected_extraction_mode": "NATIVE_TEXT",
+      "sha256": "f5db169f28032901e4d033312078bd48723e92dc119d4ec8b116323513f67d9a",
+      "page_count": 1,
+      "expected_equation": "Re = (rho * V * D) / mu",
+      "validation_expectation": "REVIEW_REQUIRED"
+    },
+    {
+      "document_id": "DOC-GREEK",
+      "title": "COSMOS Greek/symbol catalogue original",
+      "source_identity": "REF-GREEK",
+      "path": "greek_symbols.pdf",
+      "type": "Greek symbols / OCR ambiguity",
+      "expected_extraction_mode": "NATIVE_TEXT",
+      "sha256": "9e677de889fc7105844227b95b782d52af33d7e79adefaa411a16f2d40441106",
+      "page_count": 1,
+      "expected_equation": "Re = rho * V * D / mu",
+      "validation_expectation": "REVIEW_REQUIRED; ASCII names retained"
+    },
+    {
+      "document_id": "DOC-NASA-CLASS",
+      "title": "COSMOS NASA-class structural fixture",
+      "source_identity": "REF-NASA-CLASS",
+      "path": "nasa_class_fixture.pdf",
+      "type": "NASA-class permitted corpus (COSMOS original, not a NASA publication)",
+      "expected_extraction_mode": "NATIVE_TEXT",
+      "sha256": "933682b0b7cbf24da179575de40b30404882e83c8c8ba0cbbc8a7d547c7db2de",
+      "page_count": 1,
+      "rights_status": "INTERNAL",
+      "expected_equation": "Re = rho * V * D / mu",
+      "validation_expectation": "REVIEW_REQUIRED"
+    }
+  ]
+}

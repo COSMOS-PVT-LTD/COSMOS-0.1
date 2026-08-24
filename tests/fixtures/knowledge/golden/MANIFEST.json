@@ -1,0 +1,78 @@
+{
+  "corpus_id": "COSMOS-KF-GOLDEN-001",
+  "version": "1.0.0",
+  "immutable": true,
+  "notes": "Original COSMOS fixtures. Bibliographic identity only. No proprietary source prose.",
+  "artifacts": [
+    {
+      "path": "regenerative_cooling.md",
+      "role": "extractable-normalized-text",
+      "source_identity": "REF-NASA-SP-8087"
+    },
+    {
+      "path": "isentropic_identities.md",
+      "role": "extractable-normalized-text",
+      "source_identity": "REF-PUBLIC-GAS-DYNAMICS"
+    },
+    {
+      "path": "regenerative_cooling.pdf",
+      "role": "binary-source-identity",
+      "source_identity": "REF-NASA-SP-8087",
+      "text_extraction": "not-provisioned-by-pdf-adapter"
+    },
+    {
+      "path": "real_pdf/reynolds_identities.pdf",
+      "role": "cosmos-authored-native-text-qualification",
+      "source_identity": "REF-COSMOS-RE-E2E",
+      "rights": "COSMOS original. No third-party prose."
+    },
+    {
+      "path": "real_pdf/image_only.pdf",
+      "role": "fail-closed-image-only-negative",
+      "rights": "COSMOS original."
+    },
+    {
+      "path": "real_pdf/mixed_reynolds.pdf",
+      "role": "mixed-page-qualification",
+      "rights": "COSMOS original."
+    },
+    {
+      "path": "real_pdf/no_equation.pdf",
+      "role": "missing-equation-negative",
+      "rights": "COSMOS original."
+    },
+    {
+      "path": "real_pdf/scanned_reynolds.pdf",
+      "role": "scanned-ocr-equation-qualification",
+      "rights": "COSMOS original rasterized page. No third-party prose.",
+      "sha256": "f7817b92db80ea489b06b9920816e2fe3808cf34151fa360c473068f86c61c57"
+    },
+    {
+      "path": "real_pdf/scanned_table.pdf",
+      "role": "scanned-ocr-table-qualification",
+      "rights": "COSMOS original.",
+      "sha256": "7a9e38bfbe75d519a14fc970b458d24d6dadcb948c495db82f5d188f9ed9db6e"
+    },
+    {
+      "path": "real_pdf/scanned_notation.pdf",
+      "role": "scanned-ocr-notation-qualification",
+      "rights": "COSMOS original.",
+      "sha256": "39d988d727c88367230898d60e4c88aec89ffc045e07f700b852f1263168792c"
+    },
+    {
+      "path": "real_pdf/complex_equations.pdf",
+      "role": "complex-equation-reconstruction",
+      "rights": "COSMOS original."
+    },
+    {
+      "path": "real_pdf/greek_symbols.pdf",
+      "role": "greek-symbol-catalogue",
+      "rights": "COSMOS original."
+    },
+    {
+      "path": "real_pdf/nasa_class_fixture.pdf",
+      "role": "nasa-class-structural-fixture",
+      "rights": "COSMOS original. Not a NASA publication."
+    }
+  ]
+}
