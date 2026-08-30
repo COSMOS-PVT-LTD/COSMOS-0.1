@@ -1,0 +1,51 @@
+{
+  "qualification_id": "KI-INTEG-2026-08-30",
+  "head_sha": "0295e022381b7482e6a5ad6c9e0807ee305b8e1d",
+  "workflow_mode": "API-EQUIVALENT",
+  "gui_browser_verified": false,
+  "provider_invoked": false,
+  "production_ready": false,
+  "production_qualified": "YES — CONDITIONAL / ENVELOPE B",
+  "regression": {
+    "passed": 1519,
+    "skipped": 5,
+    "failed": 0,
+    "new_tests": 7
+  },
+  "integration_tests": {
+    "module": "tests/integration_tests/knowledge/test_gui_backend_integration_qualification.py",
+    "results": [
+      {"id": "KI-T01", "name": "test_unauthenticated_knowledge_api_blocked", "result": "PASS"},
+      {"id": "KI-T02", "name": "test_full_chain_login_ingest_graph_chat_evidence", "result": "PASS"},
+      {"id": "KI-T03", "name": "test_persistence_survives_workspace_reload", "result": "PASS"},
+      {"id": "KI-T04", "name": "test_delete_and_reingest_clean_restoration", "result": "PASS"},
+      {"id": "KI-T05", "name": "test_viewer_cannot_ingest_through_desktop_proxy", "result": "PASS"},
+      {"id": "KI-T06", "name": "test_gui_backend_contract_endpoints_match_maharshi_js", "result": "PASS"},
+      {"id": "KI-T07", "name": "test_insufficient_evidence_does_not_fabricate_mission_specific_answer", "result": "PASS"}
+    ]
+  },
+  "acceptance_matrix_summary": {
+    "gui_authentication": "PASS",
+    "document_upload": "PASS",
+    "ingestion": "PASS",
+    "graph": "PASS",
+    "indexing": "PASS",
+    "chat": "PASS",
+    "evidence": "PASS",
+    "provenance": "PASS",
+    "approval": "PASS",
+    "deletion": "PASS",
+    "persistence": "PASS",
+    "restart": "PASS",
+    "offline_execution": "PASS",
+    "security_rbac": "PASS",
+    "neural_embeddings": "PASS",
+    "hybrid_retrieval": "PASS",
+    "performance_scale": "CHARACTERIZED",
+    "gui_browser": "NOT VERIFIED"
+  },
+  "defects_found": 0,
+  "defects_fixed": 0,
+  "deferred": 2,
+  "frozen_files_modified": 0
+}

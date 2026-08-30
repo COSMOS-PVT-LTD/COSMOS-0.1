@@ -17,6 +17,8 @@ KNOWLEDGE_API_PREFIXES = (
     "/api/review",
     "/api/ingest",
     "/api/chat",
+    "/api/search",
+    "/api/validation",
     "/api/backup",
     "/api/restore",
     "/api/reprocess",

@@ -53,6 +53,11 @@ def test_login_workbench_flow_and_audit(tmp_path: Path) -> None:
 
         hub_page = opener.open(f"{base}/app/workbenches", timeout=5).read().decode("utf-8")
         assert "workbench-grid" in hub_page
+        assert "engineering-ux.js" in hub_page
+
+        ux_asset = opener.open(f"{base}/assets/engineering-ux.js", timeout=5).read().decode("utf-8")
+        assert "initEngineeringUX" in ux_asset
+        assert "openCommandPalette" in ux_asset
 
         audit = json.loads(opener.open(f"{base}/api/audit/events", timeout=5).read())
         assert any(event["action"] == "LOGIN" for event in audit["events"])
@@ -65,8 +70,91 @@ def test_login_page_requires_credentials(tmp_path: Path) -> None:
     base, server = _start_server(tmp_path)
     try:
         login_page = urllib.request.urlopen(f"{base}/", timeout=5).read().decode("utf-8")
-        assert "LOGIN ID" in login_page
-        assert "LOG IN" in login_page
+        assert "Username" in login_page
+        assert "LOGIN" in login_page
+        assert "login-profile-grid" in login_page
+        assert "cosmos-tokens.css" in login_page
+    finally:
+        server.shutdown()
+        server.server_close()
+
+
+def test_login_profile_routes_to_infrastructure(tmp_path: Path) -> None:
+    base, server = _start_server(tmp_path)
+    opener = _client_with_cookies()
+    try:
+        login_request = urllib.request.Request(
+            f"{base}/api/auth/login",
+            data=json.dumps(
+                {
+                    "login_id": "cosmos-admin",
+                    "password": "COSMOS-Dev-2026!",
+                    "login_profile": "ADMIN",
+                },
+            ).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        login_body = json.loads(opener.open(login_request, timeout=5).read())
+        assert login_body["login_profile"] == "ADMIN"
+        assert login_body["infrastructure"] == "Administration Infrastructure"
+        assert login_body["redirect"] == "/app/workbenches"
+    finally:
+        server.shutdown()
+        server.server_close()
+
+
+def test_login_profile_mismatch_is_rejected(tmp_path: Path) -> None:
+    base, server = _start_server(tmp_path)
+    opener = _client_with_cookies()
+    try:
+        admin_login = urllib.request.Request(
+            f"{base}/api/auth/login",
+            data=json.dumps({"login_id": "cosmos-admin", "password": "COSMOS-Dev-2026!"}).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        opener.open(admin_login, timeout=5)
+
+        register_request = urllib.request.Request(
+            f"{base}/api/admin/users",
+            data=json.dumps(
+                {
+                    "auto_generate": True,
+                    "display_name": "Viewer User",
+                    "designation": "Analyst",
+                    "employee_id": "EMP-VIEW",
+                    "team": "Operations",
+                    "role": "VIEWER",
+                },
+            ).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        created = json.loads(opener.open(register_request, timeout=5).read())
+        viewer_login_id = created["one_time_credentials"]["login_id"]
+        viewer_password = created["one_time_credentials"]["password"]
+
+        login_request = urllib.request.Request(
+            f"{base}/api/auth/login",
+            data=json.dumps(
+                {
+                    "login_id": viewer_login_id,
+                    "password": viewer_password,
+                    "login_profile": "ADMIN",
+                },
+            ).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        try:
+            opener.open(login_request, timeout=5)
+            raised = False
+        except urllib.error.HTTPError as exc:
+            raised = exc.code == 401
+            body = json.loads(exc.read().decode("utf-8"))
+            assert "not authorized" in body["error"].lower()
+        assert raised
     finally:
         server.shutdown()
         server.server_close()

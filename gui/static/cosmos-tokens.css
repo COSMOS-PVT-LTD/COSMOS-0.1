@@ -1,0 +1,85 @@
+/**
+ * COSMOS 0.1 — Deep Space Engineering design tokens
+ * Baseline: docs/COSMOS_0.1_UI_UX_DESIGN_SYSTEM.md
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@500;600;700;800&display=swap");
+
+:root {
+  /* Base palette */
+  --cosmos-void: #030609;
+  --cosmos-deep: #060C14;
+  --cosmos-panel: #0A1220;
+  --cosmos-raised: #0E192C;
+  --cosmos-border: #162438;
+  --cosmos-border-strong: #1F3550;
+
+  --cosmos-text: #B0CCE0;
+  --cosmos-muted: #365570;
+  --cosmos-dim: #1A3048;
+
+  /* Primary + semantic accents */
+  --cosmos-cyan: #00D4FF;
+  --cosmos-orange: #FF4D00;
+  --cosmos-green: #39FF14;
+  --cosmos-yellow: #FFD000;
+  --cosmos-violet: #BF5FFF;
+  --cosmos-red: #FF4D4D;
+
+  /* Typography */
+  --font-brand: "Orbitron", "Segoe UI", sans-serif;
+  --font-ui: "Exo 2", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Radii — engineering sharp (design system §14) */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-glass: 18px;
+  --radius-pill: 999px;
+
+  /* Legacy aliases consumed by existing shell */
+  --bg-space: #000000;
+  --bg-panel: color-mix(in srgb, var(--cosmos-panel) 88%, transparent);
+  --bg-surface: color-mix(in srgb, var(--cosmos-panel) 92%, transparent);
+  --bg-surface-elevated: var(--cosmos-raised);
+  --accent-orange: var(--cosmos-orange);
+  --accent-yellow: var(--cosmos-yellow);
+  --accent-blue: var(--cosmos-cyan);
+  --text-main: #EAF4FF;
+  --text-muted: var(--cosmos-text);
+  --text-label: var(--cosmos-muted);
+  --success: var(--cosmos-green);
+  --warning: var(--cosmos-yellow);
+  --error: var(--cosmos-red);
+  --info: var(--cosmos-cyan);
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+  --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --transition-fast: 140ms ease;
+  --transition-med: 280ms ease;
+
+  /* Shell layout */
+  --frame-pad: 14px;
+  --nav-width: 84px;
+  --nav-width-expanded: 196px;
+  --console-height: 32px;
+  --header-zone-height: 28px;
+
+  /* Shell surfaces — derived from palette */
+  --bg-header: linear-gradient(135deg, color-mix(in srgb, var(--cosmos-panel) 96%, var(--cosmos-cyan) 4%) 0%, var(--cosmos-deep) 100%);
+  --bg-panel: color-mix(in srgb, var(--cosmos-panel) 88%, transparent);
+  --bg-surface: color-mix(in srgb, var(--cosmos-panel) 92%, transparent);
+  --bg-surface-elevated: var(--cosmos-raised);
+  --bg-nav: linear-gradient(180deg, var(--cosmos-panel) 0%, var(--cosmos-deep) 100%);
+  --disabled: rgba(54, 85, 112, 0.35);
+  --card-gradient: linear-gradient(180deg, color-mix(in srgb, var(--cosmos-orange) 80%, #ffb347) 0%, var(--cosmos-orange) 55%, var(--cosmos-deep) 100%);
+}

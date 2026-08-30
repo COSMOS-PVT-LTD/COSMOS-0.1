@@ -8,6 +8,9 @@ const Maharshi = (() => {
   let canDelete = false;
   let uploadInProgress = false;
   let pollTimer = null;
+  let lastTrace = null;
+  let lastEvidenceContext = null;
+  let inspectorSourceId = null;
 
   function setUploadStatus(text, kind) {
     const el = $("mh-upload-status");
@@ -31,16 +34,221 @@ const Maharshi = (() => {
     }
   }
 
+  function classifyError(error) {
+    const message = String(error?.message || error || "Unknown error");
+    const upper = message.toUpperCase();
+    if (upper.includes("403") || upper.includes("FORBIDDEN") || upper.includes("AUTHORIZATION")) {
+      return { kind: "AUTHORIZATION ERROR", message };
+    }
+    if (upper.includes("COULD NOT REACH") || upper.includes("CONNECTION")) {
+      return { kind: "BACKEND UNAVAILABLE", message };
+    }
+    if (upper.includes("INGEST") || upper.includes("UPLOAD")) {
+      return { kind: "INGESTION ERROR", message };
+    }
+    if (upper.includes("VALIDATION")) {
+      return { kind: "VALIDATION ERROR", message };
+    }
+    if (upper.includes("SEARCH") || upper.includes("RETRIEV")) {
+      return { kind: "RETRIEVAL ERROR", message };
+    }
+    if (upper.includes("GRAPH")) {
+      return { kind: "GRAPH ERROR", message };
+    }
+    if (upper.includes("INPUT") || upper.includes("REQUIRED")) {
+      return { kind: "USER INPUT ERROR", message };
+    }
+    return { kind: "INTERNAL ERROR", message };
+  }
+
+  function setTrace(trace) {
+    lastTrace = trace;
+    const view = $("mh-trace-view");
+    const copyBtn = $("mh-trace-copy");
+    if (!view) return;
+    if (!trace) {
+      view.textContent = "Trace appears after search or chat with evidence.";
+      if (copyBtn) copyBtn.disabled = true;
+      return;
+    }
+    const lines = [
+      `USER QUERY\n  ${trace.user_query || "—"}`,
+      `RETRIEVAL\n  ${JSON.stringify(trace.retrieval || {}, null, 2)}`,
+      `DOCUMENT\n  ${(trace.documents || []).join(", ") || "—"}`,
+      `EVIDENCE\n  ${(trace.evidence || []).slice(0, 6).join("\n  ") || "—"}`,
+      `GRAPH ENTITY\n  ${(trace.graph_entities || []).join(", ") || "—"}`,
+      `VALIDATION\n  ${trace.validation || "—"}`,
+      `ANSWER\n  ${trace.answer || "—"}`,
+    ];
+    view.textContent = lines.join("\n\n");
+    if (copyBtn) copyBtn.disabled = false;
+  }
+
+  function renderOverview(health) {
+    const set = (id, value) => {
+      const el = $(id);
+      if (el) el.textContent = value ?? "NOT AVAILABLE";
+    };
+    set("mh-m-corpus", health.source_count ?? 0);
+    set("mh-m-indexed", health.indexed_document_count ?? "NOT AVAILABLE");
+    set("mh-m-nodes", health.graph_node_count ?? "NOT AVAILABLE");
+    set("mh-m-edges", health.graph_edge_count ?? "NOT AVAILABLE");
+    set("mh-m-index-state", health.retrieval_index_state ?? "NOT AVAILABLE");
+    set("mh-m-validation", health.validation_pending_count ?? health.jobs_pending_review ?? 0);
+    set("mh-m-persistence", health.persistence ?? "NOT AVAILABLE");
+    set("mh-m-last-ingest", health.last_ingestion_at ?? "NOT AVAILABLE");
+    set("mh-m-offline", health.offline_state ?? "NOT AVAILABLE");
+    set("mh-m-provider", health.provider_invoked === true ? "TRUE" : "FALSE");
+    set("mh-embed-backend", health.embedding_backend ?? "cosmos-local-neural-mini-v1");
+    set("mh-embed-mode", health.embedding_mode ?? "LOCAL / OFFLINE");
+    set("mh-embed-qualified", health.production_qualified ?? "YES — CONDITIONAL / ENVELOPE B");
+    set("mh-embed-ready", health.production_ready === true ? "YES" : "NO");
+    const hash = health.embedding_metadata?.embedding_configuration_hash;
+    set("mh-embed-hash", hash ? `${String(hash).slice(0, 16)}…` : "NOT AVAILABLE");
+    const hashEl = $("mh-embed-hash");
+    if (hashEl && hash) hashEl.title = String(hash);
+  }
+
+  function renderValidationFindings(payload) {
+    const tbody = $("mh-validation-body");
+    if (!tbody) return;
+    const items = payload?.findings || [];
+    if (!items.length) {
+      tbody.innerHTML = '<tr><td colspan="4" class="mh-empty">No validation findings.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = items
+      .map((item) => {
+        const severity = String(item.severity || "INFO").toLowerCase();
+        return `<tr>
+          <td><span class="mh-severity-${severity}">${escapeHtml(item.severity || "INFO")}</span></td>
+          <td>${escapeHtml(item.category || "—")}</td>
+          <td>${escapeHtml(item.source_id || "—")}</td>
+          <td>${escapeHtml(item.message || "—")}</td>
+        </tr>`;
+      })
+      .join("");
+  }
+
+  function renderSearchResults(payload) {
+    const container = $("mh-search-results");
+    const diagnostics = $("mh-search-diagnostics");
+    if (!container || !diagnostics) return;
+    const diag = payload?.diagnostics;
+    if (!diag) {
+      diagnostics.textContent = "DIAGNOSTICS UNAVAILABLE FOR THIS OPERATION";
+      container.innerHTML = "";
+      return;
+    }
+    const methods = (diag.methods || []).join(", ") || "—";
+    const note = diag.note ? ` · ${diag.note}` : "";
+    diagnostics.textContent =
+      `QUERY → ${payload.query} · MODE → ${payload.mode} · CANDIDATES → ${diag.total_count} · ` +
+      `RETURNED → ${diag.returned_count} · METHODS → ${methods}${note}`;
+    const results = payload.results || [];
+    if (!results.length) {
+      container.innerHTML = '<div class="mh-empty">No retrieval hits.</div>';
+      return;
+    }
+    container.innerHTML = results
+      .map(
+        (hit) => `<article class="mh-search-hit" data-doc="${escapeHtml(hit.document_id || "")}" data-snippet="${escapeHtml(hit.snippet || "")}">
+          <div class="rank">#${hit.rank} · ${escapeHtml(hit.retrieval_mode || "—")} · score ${hit.score ?? "NOT AVAILABLE"}</div>
+          <div class="title">${escapeHtml(hit.title || hit.entity_id || "Hit")}</div>
+          <div class="meta">${escapeHtml((hit.snippet || "").slice(0, 160))}</div>
+        </article>`,
+      )
+      .join("");
+    container.querySelectorAll(".mh-search-hit").forEach((node) => {
+      node.addEventListener("click", () => {
+        openEvidenceViewer({
+          title: node.querySelector(".title")?.textContent || "Evidence",
+          snippet: node.dataset.snippet || "",
+          document_id: node.dataset.doc || null,
+          retrieval_mode: payload.mode,
+          score: node.querySelector(".rank")?.textContent || "",
+        });
+        setTrace(payload.trace);
+      });
+    });
+    setTrace(payload.trace);
+    if (window.COSMOS?.appendEngineeringEvent) {
+      COSMOS.appendEngineeringEvent("retrieval", `Search: ${payload.query} (${payload.mode})`, "info");
+    }
+  }
+
+  function openEvidenceViewer(context) {
+    lastEvidenceContext = context;
+    const modal = $("mh-evidence-modal");
+    const title = $("mh-evidence-modal-title");
+    const meta = $("mh-evidence-modal-meta");
+    const text = $("mh-evidence-modal-text");
+    if (!modal || !title || !meta || !text) return;
+    title.textContent = context.title || "Evidence";
+    meta.innerHTML = [
+      `<div><strong>Document:</strong> ${escapeHtml(context.document_id || "NOT AVAILABLE")}</div>`,
+      `<div><strong>Retrieval mode:</strong> ${escapeHtml(context.retrieval_mode || "—")}</div>`,
+      `<div><strong>Score:</strong> ${escapeHtml(String(context.score ?? "NOT AVAILABLE"))}</div>`,
+      `<div><strong>Validation:</strong> ${escapeHtml(context.validation_state || "Unverified")}</div>`,
+    ].join("");
+    text.textContent = context.snippet || context.text || "No evidence text.";
+    modal.hidden = false;
+  }
+
+  function closeEvidenceViewer() {
+    const modal = $("mh-evidence-modal");
+    if (modal) modal.hidden = true;
+  }
+
+  function groundingClass(state) {
+    const upper = String(state || "").toUpperCase();
+    if (upper.includes("GROUNDED") && !upper.includes("PARTIALLY")) return "grounded";
+    if (upper.includes("PARTIAL")) return "partial";
+    if (upper.includes("INSUFFICIENT") || upper.includes("NO ")) return "insufficient";
+    if (upper.includes("FAIL") || upper.includes("ERROR")) return "failure";
+    return "partial";
+  }
+
   async function openSourceViewer(sourceId) {
     try {
       const detail = await apiGet(`/api/sources/${encodeURIComponent(sourceId)}`);
+      inspectorSourceId = sourceId;
       const modal = $("mh-source-modal");
       const title = $("mh-source-modal-title");
       const meta = $("mh-source-modal-meta");
       const text = $("mh-source-modal-text");
+      const inspector = $("mh-source-inspector");
       if (!modal || !title || !meta || !text) return;
       title.textContent = detail.title || detail.filename || sourceId;
-      const jobStatus = detail.job?.status || detail.extraction?.job_status || "—";
+      const jobStatus = detail.job?.status || detail.extraction?.job_status || detail.job_status || "—";
+      if (inspector) {
+        inspector.innerHTML = [
+          sectionBlock("Identity", {
+            "Document ID": detail.source_id,
+            Filename: detail.filename,
+            Title: detail.title || "—",
+            Checksum: detail.sha256 ? `${detail.sha256.slice(0, 16)}…` : "NOT AVAILABLE",
+          }),
+          sectionBlock("Lifecycle", {
+            "Ingestion status": jobStatus,
+            "Indexing status": detail.extraction?.text_chars ? "INDEXED" : "NOT INDEXED",
+            "Graph status": "See graph explorer",
+            "Validation status": detail.needs_approval ? "REVIEW_REQUIRED" : "AVAILABLE",
+            "Ingested at": detail.ingested_at || "—",
+          }),
+          sectionBlock("Provenance", {
+            Format: detail.workspace_format,
+            "Pipeline version": detail.pipeline_version || "NOT AVAILABLE",
+            "Adapter version": detail.adapter_version || "NOT AVAILABLE",
+            "Rights status": detail.rights_status,
+          }),
+          sectionBlock("Knowledge", {
+            "Text chars": Number(detail.text_chars || detail.extraction?.text_chars || 0).toLocaleString(),
+            "Equation candidates": detail.extraction?.equation_candidate_count ?? "NOT AVAILABLE",
+            Domains: detail.project_id || "GLOBAL",
+          }),
+        ].join("");
+      }
       meta.innerHTML = [
         `<div><strong>Format:</strong> ${escapeHtml(detail.workspace_format)}</div>`,
         `<div><strong>Size:</strong> ${formatBytes(detail.size_bytes)} · <strong>Text:</strong> ${Number(detail.text_chars || detail.extraction?.text_chars || 0).toLocaleString()} chars</div>`,
@@ -50,8 +258,16 @@ const Maharshi = (() => {
       text.textContent = detail.text_content || detail.text_preview || "No extracted text yet.";
       modal.hidden = false;
     } catch (error) {
-      appendSystemMessage(String(error.message || error));
+      const classified = classifyError(error);
+      appendSystemMessage(`${classified.kind}: ${classified.message}`);
     }
+  }
+
+  function sectionBlock(name, entries) {
+    const rows = Object.entries(entries)
+      .map(([key, value]) => `<dt>${escapeHtml(key)}</dt><dd>${escapeHtml(String(value ?? "—"))}</dd>`)
+      .join("");
+    return `<div class="mh-inspector-block"><h4>${escapeHtml(name)}</h4><dl>${rows}</dl></div>`;
   }
 
   function closeSourceViewer() {
@@ -390,7 +606,7 @@ const Maharshi = (() => {
     container.scrollTop = container.scrollHeight;
   }
 
-  function renderMessages(messages) {
+  function renderMessages(messages, chatPayload) {
     const container = $("mh-chat-messages");
     if (!container) return;
     container.innerHTML = "";
@@ -402,7 +618,35 @@ const Maharshi = (() => {
       const node = document.createElement("div");
       node.className = `mh-msg ${message.role === "user" ? "user" : "assistant"}`;
       node.textContent = message.content;
-      if (message.role === "assistant" && message.validation_state) {
+      if (message.role === "assistant") {
+        const grounding = document.createElement("div");
+        const state = chatPayload?.grounding_state || message.validation_state || "UNKNOWN";
+        grounding.className = `mh-grounding ${groundingClass(state)}`;
+        grounding.textContent = `Grounding: ${state} · Validation: ${chatPayload?.validation_state || message.validation_state || "—"}`;
+        node.appendChild(grounding);
+      }
+      if (message.role === "assistant" && message === messages[messages.length - 1] && chatPayload?.evidence?.length) {
+        const list = document.createElement("div");
+        list.className = "mh-evidence-list";
+        chatPayload.evidence.slice(0, 8).forEach((item, index) => {
+          const docId = chatPayload.document_ids?.[index] || chatPayload.document_ids?.[0] || null;
+          const chip = document.createElement("button");
+          chip.type = "button";
+          chip.className = "mh-evidence-item";
+          chip.textContent = String(item).slice(0, 220);
+          chip.addEventListener("click", () =>
+            openEvidenceViewer({
+              title: "Chat evidence",
+              snippet: String(item),
+              document_id: docId,
+              retrieval_mode: chatPayload.plan || "chat",
+              validation_state: chatPayload.validation_state,
+            }),
+          );
+          list.appendChild(chip);
+        });
+        node.appendChild(list);
+      } else if (message.role === "assistant" && message.validation_state) {
         const badge = document.createElement("div");
         badge.className = "mh-evidence";
         badge.innerHTML = `<span>${escapeHtml(message.validation_state)}</span>`;
@@ -413,29 +657,161 @@ const Maharshi = (() => {
     container.scrollTop = container.scrollHeight;
   }
 
+  async function runSearch() {
+    const input = $("mh-search-input");
+    const mode = $("mh-search-mode");
+    const topk = $("mh-search-topk");
+    const query = input?.value?.trim();
+    if (!query) {
+      setUploadStatus("Enter a search query first.", "error");
+      return;
+    }
+    const btn = $("mh-search-btn");
+    if (btn) btn.disabled = true;
+    try {
+      const payload = await apiPost("/api/search", {
+        query,
+        mode: mode?.value || "hybrid",
+        top_k: Number(topk?.value || 8),
+      });
+      renderSearchResults(payload);
+    } catch (error) {
+      const classified = classifyError(error);
+      const diagnostics = $("mh-search-diagnostics");
+      if (diagnostics) diagnostics.textContent = `${classified.kind}: ${classified.message}`;
+    } finally {
+      if (btn) btn.disabled = false;
+    }
+  }
+
+  function bindSearch() {
+    $("mh-search-btn")?.addEventListener("click", runSearch);
+    $("mh-search-input")?.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        runSearch();
+      }
+    });
+  }
+
+  function bindValidation() {
+    $("mh-validation-refresh")?.addEventListener("click", async () => {
+      try {
+        renderValidationFindings(await apiGet("/api/validation"));
+      } catch (error) {
+        appendSystemMessage(classifyError(error).message);
+      }
+    });
+  }
+
+  function bindTrace() {
+    $("mh-trace-copy")?.addEventListener("click", async () => {
+      if (!lastTrace) return;
+      try {
+        await navigator.clipboard.writeText($("mh-trace-view")?.textContent || "");
+        appendSystemMessage("Trace copied to clipboard.");
+      } catch {
+        appendSystemMessage("Could not copy trace.");
+      }
+    });
+  }
+
+  function bindEvidenceModal() {
+    $("mh-evidence-modal-close")?.addEventListener("click", closeEvidenceViewer);
+    $("mh-evidence-modal-backdrop")?.addEventListener("click", closeEvidenceViewer);
+    $("mh-evidence-open-source")?.addEventListener("click", () => {
+      if (lastEvidenceContext?.document_id) openSourceViewer(lastEvidenceContext.document_id);
+    });
+    $("mh-evidence-show-graph")?.addEventListener("click", () => {
+      $("mh-graph-canvas")?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+    $("mh-evidence-copy-ref")?.addEventListener("click", async () => {
+      const ref = [
+        lastEvidenceContext?.document_id,
+        lastEvidenceContext?.snippet?.slice(0, 120),
+      ]
+        .filter(Boolean)
+        .join(" · ");
+      try {
+        await navigator.clipboard.writeText(ref);
+        appendSystemMessage("Evidence reference copied.");
+      } catch {
+        appendSystemMessage("Could not copy reference.");
+      }
+    });
+  }
+
+  function bindInspectorActions() {
+    $("mh-inspector-search")?.addEventListener("click", () => {
+      if (!inspectorSourceId) return;
+      const searchInput = $("mh-search-input");
+      const mode = $("mh-search-mode");
+      if (searchInput) searchInput.value = inspectorSourceId;
+      if (mode) mode.value = "documents";
+      closeSourceViewer();
+      runSearch();
+    });
+    $("mh-inspector-trace")?.addEventListener("click", () => {
+      if (!inspectorSourceId) return;
+      setTrace({
+        user_query: `trace:${inspectorSourceId}`,
+        retrieval: { mode: "document-inspector" },
+        documents: [inspectorSourceId],
+        evidence: [$("mh-source-modal-text")?.textContent?.slice(0, 240) || ""],
+        validation: "—",
+        answer: "NOT AVAILABLE",
+      });
+    });
+    $("mh-inspector-reingest")?.addEventListener("click", () => {
+      if (!inspectorSourceId) return;
+      const label = $("mh-source-modal-title")?.textContent || inspectorSourceId;
+      reprocessSource(inspectorSourceId, label);
+    });
+  }
+
   async function refreshAll(options = {}) {
     const quiet = options.quiet === true;
     const healthEl = $("mh-health");
     try {
-      const [health, sourcesPayload, jobsPayload, reviewPayload, graphPayload] = await Promise.all([
+      const [health, sourcesPayload, jobsPayload, reviewPayload, graphPayload, validationPayload] = await Promise.all([
         apiGet("/api/health"),
         apiGet("/api/sources"),
         apiGet("/api/jobs"),
         apiGet("/api/review"),
         apiGet("/api/graph"),
+        apiGet("/api/validation").catch(() => ({ findings: [] })),
       ]);
       if (healthEl) {
         const pending = health.jobs_pending_review || 0;
-        healthEl.textContent = `${health.source_count || 0} sources · ${health.jobs_available || 0} ready · ${pending} pending`;
+        healthEl.textContent = `${health.source_count || 0} sources · ${health.jobs_available || 0} ready · ${pending} pending · provider ${health.provider_invoked ? "TRUE" : "FALSE"}`;
       }
+      renderOverview(health);
+      renderValidationFindings(validationPayload);
       const sources = sourcesPayload.sources || [];
       renderSourcesDrawer(sources);
       renderJobsTable(sources, jobsPayload.jobs || []);
       renderReview(reviewPayload.items || []);
       if (graphEngine) graphEngine.load(graphPayload);
+      if (window.COSMOS?.updateJobManager) {
+        COSMOS.updateJobManager(jobsPayload.jobs || []);
+      }
+      if (window.COSMOS?.appendEngineeringEvent) {
+        for (const job of (jobsPayload.jobs || []).filter((item) => String(item.status || "").toUpperCase().includes("FAIL"))) {
+          COSMOS.appendEngineeringEvent("knowledge-job", `${job.source_id}: ${job.status}`, "error");
+        }
+      }
+      if (window.COSMOS?.notify && !options.quiet) {
+        const pending = (jobsPayload.jobs || []).filter((job) => String(job.status || "").toUpperCase().includes("PEND")).length;
+        if (pending > 0) {
+          COSMOS.setStatusBar?.(`Knowledge workspace · ${pending} jobs pending`, "processing", "Maharshi Bharadwaj");
+        }
+      }
     } catch (error) {
       if (healthEl) healthEl.textContent = "connection error";
-      if (!quiet) appendSystemMessage(String(error.message || error));
+      if (!quiet) {
+        const classified = classifyError(error);
+        appendSystemMessage(`${classified.kind}: ${classified.message}`);
+      }
       throw error;
     }
   }
@@ -490,8 +866,17 @@ const Maharshi = (() => {
         if (payload.source?.source_id) {
           await openSourceViewer(payload.source.source_id);
         }
+        if (window.COSMOS?.trackRecentFile) {
+          COSMOS.trackRecentFile(uploadedName, { source_id: payload.source?.source_id || "" });
+        }
+        if (window.COSMOS?.notify) {
+          COSMOS.notify(`Uploaded ${uploadedName}`, "success", "Knowledge Infrastructure");
+        }
       } else {
         await refreshAll();
+        if (window.COSMOS?.notify) {
+          COSMOS.notify(`Upload failed for ${uploadedName}`, "error", payload.job?.error_message || "");
+        }
       }
     } catch (error) {
       const message = String(error.message || error);
@@ -530,21 +915,15 @@ const Maharshi = (() => {
         message: text,
       });
       conversationId = payload.conversation_id;
-      renderMessages(payload.messages || []);
-      if (payload.evidence?.length) {
-        const last = container.querySelector(".mh-msg.assistant:last-child");
-        if (last) {
-          const evidence = document.createElement("div");
-          evidence.className = "mh-evidence";
-          evidence.innerHTML = payload.evidence
-            .slice(0, 6)
-            .map((item) => `<span>${escapeHtml(String(item).slice(0, 80))}</span>`)
-            .join("");
-          last.appendChild(evidence);
-        }
+      renderMessages(payload.messages || [], payload);
+      setTrace(payload.trace);
+      if (window.COSMOS?.appendEngineeringEvent) {
+        COSMOS.appendEngineeringEvent("chat", `Query: ${text.slice(0, 80)}`, "info");
       }
     } catch (error) {
-      thinking.textContent = String(error.message || error);
+      const classified = classifyError(error);
+      thinking.textContent = `${classified.kind}: ${classified.message}`;
+      thinking.classList.add("error");
     } finally {
       if (askBtn) askBtn.disabled = false;
       input?.focus();
@@ -635,6 +1014,9 @@ const Maharshi = (() => {
       try {
         const payload = await apiPost("/api/backup", {});
         appendSystemMessage(`Backup saved: ${payload.filename || payload.archive}`);
+        if (window.COSMOS?.notify) {
+          COSMOS.notify("Knowledge vault backup completed", "success", payload.filename || payload.archive || "");
+        }
       } catch (error) {
         appendSystemMessage(String(error.message || error));
       } finally {
@@ -788,6 +1170,36 @@ const Maharshi = (() => {
           .filter(Boolean)
           .join("\n\n");
       }
+      document.dispatchEvent(new CustomEvent("cosmos:properties", {
+        detail: {
+          title: node.label,
+          ai: true,
+          sections: [
+            {
+              name: "Identity",
+              entries: {
+                Label: node.label,
+                Type: node.kind || "entity",
+                Validation: node.validation_state || "Unverified",
+                Source: node.source_id || "Knowledge graph",
+              },
+            },
+            {
+              name: "Evidence",
+              entries: {
+                Summary: node.summary || "—",
+                Keywords: (node.keywords || []).join(", ") || "—",
+              },
+              actions: [
+                { id: "trace", label: "Trace" },
+                { id: "explain", label: "Explain", ai: true },
+                { id: "find-evidence", label: "Find Evidence", ai: true },
+                { id: "explain-equation", label: "Explain Equation", ai: true },
+              ],
+            },
+          ],
+        },
+      }));
     }
 
     simulate() {
@@ -912,14 +1324,22 @@ const Maharshi = (() => {
     bindChat();
     bindPanels();
     bindSourceModal();
+    bindSearch();
+    bindValidation();
+    bindTrace();
+    bindEvidenceModal();
+    bindInspectorActions();
     const canvas = $("mh-graph-canvas");
     if (canvas) graphEngine = new ForceGraph(canvas);
     try {
       const session = await fetch("/api/auth/session").then((response) => response.json());
       const role = session?.user?.role || "";
-      canDelete = role === "ADMIN" || role === "APPROVER";
+      const isAdmin = role === "ADMIN" || window.COSMOS?.canKnowledgeAdmin?.(session?.user);
+      canDelete = isAdmin;
+      document.body.classList.toggle("mh-admin", Boolean(isAdmin));
     } catch {
       canDelete = false;
+      document.body.classList.remove("mh-admin");
     }
     try {
       await refreshAll();
@@ -928,5 +1348,6 @@ const Maharshi = (() => {
     }
   }
 
-  return { init };
+  return { init, refreshAll, openSourceViewer };
 })();
+window.Maharshi = Maharshi;

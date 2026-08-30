@@ -40,7 +40,14 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
             self._send_file(STATIC_DIR / "index.html", "text/html; charset=utf-8")
             return
         if parsed.path == "/api/health":
-            self._json(200, self.workspace.health())
+            from knowledge.workspace.operational import enriched_health
+
+            self._json(200, enriched_health(self.workspace))
+            return
+        if parsed.path == "/api/validation":
+            from knowledge.workspace.operational import validation_snapshot
+
+            self._json(200, validation_snapshot(self.workspace))
             return
         if parsed.path == "/api/sources":
             jobs_by_source = {
@@ -167,6 +174,9 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
                 job = self.workspace.approve_source(source_id)
                 self._json(200, {"source_id": source_id, "job_status": job.status.value, "approved": True})
                 return
+            if parsed.path == "/api/search":
+                self._search()
+                return
             if parsed.path == "/api/conversations":
                 payload = self._read_json()
                 record = self.workspace.conversations.create(
@@ -202,6 +212,20 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
         )
         self._json(200, _intake_payload(result))
 
+    def _search(self) -> None:
+        from knowledge.workspace.operational import operational_search
+
+        payload = self._read_json()
+        result = operational_search(
+            self.workspace,
+            str(payload.get("query") or ""),
+            mode=str(payload.get("mode") or "hybrid"),
+            top_k=int(payload.get("top_k") or 8),
+            source_id=str(payload["source_id"]) if payload.get("source_id") else None,
+            project_id=str(payload["project_id"]) if payload.get("project_id") else None,
+        )
+        self._json(200, result)
+
     def _chat(self) -> None:
         payload = self._read_json()
         conversation_id = str(payload.get("conversation_id") or "")
@@ -219,11 +243,21 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
                 "conversation_id": turn.conversation_id,
                 "conclusion": turn.answer.conclusion,
                 "validation_state": turn.answer.validation_state,
+                "grounding_state": _grounding_state(turn),
                 "evidence": list(turn.answer.evidence),
                 "document_ids": list(turn.document_ids),
                 "plan": turn.plan.kind.value,
                 "routed_to_solver": turn.routed_to_solver,
                 "lifecycle": turn.answer.lifecycle.value,
+                "provider_invoked": False,
+                "trace": {
+                    "user_query": str(payload["message"]),
+                    "retrieval": {"plan": turn.plan.kind.value, "document_ids": list(turn.document_ids)},
+                    "documents": list(turn.document_ids),
+                    "evidence": list(turn.answer.evidence),
+                    "validation": turn.answer.validation_state,
+                    "answer": turn.answer.conclusion,
+                },
                 "messages": [
                     {
                         "role": item.role,
@@ -287,6 +321,24 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(data)))
         self.end_headers()
         self.wfile.write(data)
+
+
+def _grounding_state(turn: object) -> str:
+    from knowledge.brain.chat import ChatTurn
+
+    if not isinstance(turn, ChatTurn):
+        return "UNKNOWN"
+    if turn.routed_to_solver:
+        return "ROUTED_TO_SOLVER"
+    if not turn.document_ids and not turn.answer.evidence:
+        return "INSUFFICIENT_EVIDENCE"
+    if turn.document_ids and turn.answer.evidence:
+        if turn.answer.validation_state.upper().startswith("APPROVED"):
+            return "GROUNDED"
+        return "PARTIALLY_GROUNDED"
+    if turn.answer.evidence:
+        return "PARTIALLY_GROUNDED"
+    return "INSUFFICIENT_EVIDENCE"
 
 
 def _intake_payload(result: object) -> dict[str, object]:

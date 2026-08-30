@@ -1,0 +1,528 @@
+/**
+ * COSMOS 0.1 — Global application shell
+ * Header zones · engineering console · contextual layout
+ * Baseline: COSMOS_0.1_UI_UX_DESIGN_SYSTEM.md §2–5
+ */
+
+/* ── Global header zones ── */
+.app-header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--cosmos-panel) 96%, var(--cosmos-cyan) 4%) 0%,
+    color-mix(in srgb, var(--cosmos-deep) 98%, transparent) 100%
+  );
+  border-bottom: 1px solid var(--cosmos-border);
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+  font-family: var(--font-ui);
+}
+
+.header-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.cosmos-global-zones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.zone-brand {
+  font-family: var(--font-brand);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--cosmos-cyan);
+  padding: 4px 8px 4px 0;
+  border-right: 1px solid var(--cosmos-border);
+  margin-right: 4px;
+}
+
+.zone-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--cosmos-border);
+  background: color-mix(in srgb, var(--cosmos-panel) 80%, transparent);
+  color: var(--cosmos-text);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: default;
+  font-family: var(--font-mono);
+}
+
+.zone-pill.clickable {
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.zone-pill.clickable:hover {
+  border-color: color-mix(in srgb, var(--cosmos-cyan) 45%, var(--cosmos-border));
+  background: color-mix(in srgb, var(--cosmos-cyan) 8%, var(--cosmos-panel));
+}
+
+.zone-pill .zone-label {
+  color: var(--cosmos-muted);
+  font-size: 9px;
+}
+
+.zone-pill .zone-value {
+  color: #eaf4ff;
+  font-weight: 600;
+}
+
+.zone-pill.status-ready .zone-value { color: var(--cosmos-green); }
+.zone-pill.status-active .zone-value { color: var(--cosmos-cyan); }
+.zone-pill.status-warn .zone-value { color: var(--cosmos-yellow); }
+.zone-pill.status-idle .zone-value { color: var(--cosmos-muted); }
+
+.header-context {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.header-context .context-primary {
+  font-family: var(--font-brand);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: #eaf4ff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-context .context-secondary {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--cosmos-muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-badge {
+  min-width: 160px;
+  text-align: center;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--cosmos-cyan) 10%, var(--cosmos-panel));
+  border: 1px solid color-mix(in srgb, var(--cosmos-cyan) 30%, var(--cosmos-border));
+  cursor: pointer;
+  color: #eaf4ff;
+  font-weight: 600;
+  font-size: 12px;
+  font-family: var(--font-ui);
+  transition: background var(--transition-fast);
+}
+
+.user-badge:hover {
+  background: color-mix(in srgb, var(--cosmos-cyan) 18%, var(--cosmos-panel));
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: radial-gradient(circle at 30% 30%, #ffe082, var(--cosmos-orange));
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px var(--cosmos-border-strong);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.avatar:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 0 1px var(--cosmos-cyan);
+}
+
+/* ── Sidebar — engineering rail ── */
+.sidebar {
+  background: color-mix(in srgb, var(--cosmos-panel) 94%, transparent);
+  padding: var(--space-3) var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-radius: var(--radius-lg);
+  margin: var(--space-3) 0 var(--space-3) var(--space-3);
+  border: 1px solid var(--cosmos-border);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 2;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-btn {
+  border-radius: var(--radius-sm);
+}
+
+.sidebar-btn.active {
+  background: color-mix(in srgb, var(--cosmos-cyan) 14%, var(--cosmos-panel));
+  border-color: color-mix(in srgb, var(--cosmos-cyan) 35%, var(--cosmos-border));
+}
+
+/* ── Engineering console (bottom bar) ── */
+.engineering-console {
+  position: absolute;
+  left: calc(var(--nav-width) + 10px);
+  right: 10px;
+  bottom: 8px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--cosmos-border);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--cosmos-deep) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+}
+
+.app-body.nav-expanded ~ .engineering-console {
+  left: calc(var(--nav-width-expanded) + 10px);
+}
+
+.console-strip {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0;
+  min-height: 32px;
+}
+
+.console-seg {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 0;
+  border-right: 1px solid var(--cosmos-border);
+  background: transparent;
+  color: var(--cosmos-text);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background var(--transition-fast);
+}
+
+.console-seg:last-child {
+  border-right: 0;
+}
+
+.console-seg:hover,
+.console-seg.active {
+  background: color-mix(in srgb, var(--cosmos-cyan) 10%, var(--cosmos-panel));
+}
+
+.console-seg .console-count {
+  color: var(--cosmos-cyan);
+  font-weight: 700;
+}
+
+.console-seg .console-val {
+  color: #eaf4ff;
+  font-weight: 600;
+}
+
+.console-seg .console-val.idle { color: var(--cosmos-muted); }
+.console-seg .console-val.running { color: var(--cosmos-cyan); }
+.console-seg .console-val.ok { color: var(--cosmos-green); }
+.console-seg .console-val.warn { color: var(--cosmos-yellow); }
+
+.console-expand {
+  border-top: 1px solid var(--cosmos-border);
+  max-height: 180px;
+  overflow: auto;
+  padding: var(--space-2) var(--space-3);
+  background: color-mix(in srgb, var(--cosmos-panel) 95%, transparent);
+}
+
+.console-expand[hidden] {
+  display: none;
+}
+
+.console-expand pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--cosmos-text);
+  white-space: pre-wrap;
+}
+
+.console-progress {
+  height: 4px;
+  background: var(--cosmos-dim);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.console-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cosmos-cyan), var(--cosmos-green));
+  transition: width 280ms ease;
+}
+
+/* Legacy status-bar coexists until migrated */
+.status-bar.in-frame {
+  display: none;
+}
+
+.engineering-console + .status-bar.in-frame {
+  display: none;
+}
+
+/* ── Workbench cards — dark engineering surfaces ── */
+.workbench-card {
+  min-height: 360px;
+  padding: 0;
+  background: color-mix(in srgb, var(--cosmos-panel) 92%, transparent);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+  border: 1px solid var(--cosmos-border);
+  text-align: left;
+}
+
+.workbench-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--cosmos-cyan);
+  z-index: 3;
+}
+
+.workbench-card.domain-propulsion::before { background: var(--cosmos-orange); }
+.workbench-card.domain-knowledge::before { background: var(--cosmos-violet); }
+.workbench-card.domain-structures::before { background: var(--cosmos-cyan); }
+.workbench-card.domain-simulation::before { background: var(--cosmos-yellow); }
+.workbench-card.domain-manufacturing::before { background: var(--cosmos-green); }
+
+.workbench-card:hover,
+.workbench-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--cosmos-border-strong);
+}
+
+.workbench-card-meta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.workbench-meta-chip {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--cosmos-border);
+  background: color-mix(in srgb, var(--cosmos-deep) 85%, transparent);
+  color: var(--cosmos-text);
+}
+
+.workbench-meta-chip.status-active { color: var(--cosmos-green); border-color: color-mix(in srgb, var(--cosmos-green) 35%, var(--cosmos-border)); }
+.workbench-meta-chip.status-planned { color: var(--cosmos-yellow); border-color: color-mix(in srgb, var(--cosmos-yellow) 35%, var(--cosmos-border)); }
+
+.workbench-art-wrap {
+  position: absolute;
+  inset: 28px 0 72px 0;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--cosmos-raised) 60%, transparent), var(--cosmos-deep));
+}
+
+.workbench-card.domain-propulsion .workbench-art-wrap {
+  background: radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--cosmos-orange) 12%, var(--cosmos-deep)), var(--cosmos-deep));
+}
+
+.workbench-art-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, color-mix(in srgb, var(--cosmos-deep) 90%, transparent) 100%);
+  pointer-events: none;
+}
+
+.workbench-card-footer {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px 12px;
+  border-top: 1px solid var(--cosmos-border);
+  background: color-mix(in srgb, var(--cosmos-panel) 95%, transparent);
+}
+
+.workbench-card h3 {
+  margin: 0;
+  background: transparent;
+  color: #eaf4ff;
+  text-align: left;
+  padding: 0;
+  border-radius: 0;
+  font-family: var(--font-brand);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.workbench-desc {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.45;
+  color: var(--cosmos-muted);
+  padding: 0;
+  font-family: var(--font-ui);
+}
+
+.workbench-status-badge {
+  display: none;
+}
+
+/* Contextual properties — engineering sections */
+.cosmos-properties-body {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.cosmos-prop-section {
+  border: 1px solid var(--cosmos-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.cosmos-prop-section-head {
+  padding: 6px 10px;
+  font-family: var(--font-brand);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cosmos-cyan);
+  background: color-mix(in srgb, var(--cosmos-panel) 90%, transparent);
+  border-bottom: 1px solid var(--cosmos-border);
+}
+
+.cosmos-prop-section dl {
+  margin: 0;
+  padding: 8px 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 38%) 1fr;
+  gap: 4px 8px;
+}
+
+.cosmos-prop-section dt {
+  color: var(--cosmos-muted);
+  font-size: 10px;
+  font-family: var(--font-mono);
+}
+
+.cosmos-prop-section dd {
+  margin: 0;
+  color: #eaf4ff;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  word-break: break-word;
+}
+
+.cosmos-prop-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 10px;
+  border-top: 1px solid var(--cosmos-border);
+}
+
+.cosmos-prop-action {
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--cosmos-border);
+  background: color-mix(in srgb, var(--cosmos-panel) 85%, transparent);
+  color: var(--cosmos-text);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.cosmos-prop-action:hover {
+  border-color: var(--cosmos-cyan);
+  background: color-mix(in srgb, var(--cosmos-cyan) 10%, var(--cosmos-panel));
+}
+
+.cosmos-prop-action.ai-action {
+  border-color: color-mix(in srgb, var(--cosmos-violet) 40%, var(--cosmos-border));
+  color: color-mix(in srgb, var(--cosmos-violet) 80%, #eaf4ff);
+}
+
+.cosmos-show-recent .cosmos-recent-panel-wrap {
+  display: block;
+}
+
+@media (max-width: 1280px) {
+  .cosmos-global-zones .zone-pill:nth-child(n+6) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .cosmos-global-zones .zone-pill:nth-child(n+4) {
+    display: none;
+  }
+  .engineering-console {
+    left: 8px;
+    right: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workbench-card:hover {
+    transform: none;
+  }
+  .console-progress-fill {
+    transition: none;
+  }
+}

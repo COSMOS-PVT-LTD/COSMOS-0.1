@@ -133,3 +133,14 @@ def test_viewer_cannot_ingest(tmp_path: Path) -> None:
     authz = WorkspaceAuthorization()
     with pytest.raises(KnowledgeGovernanceError):
         authz.authorize(WorkspaceRole.ENGINEER, WorkspaceAction.APPROVE)
+
+
+def test_engineer_cannot_ingest_or_administer_knowledge(tmp_path: Path) -> None:
+    workspace = KnowledgeWorkspace(tmp_path, role=WorkspaceRole.ENGINEER)
+    with pytest.raises(KnowledgeGovernanceError):
+        workspace.ingest(cooling_markdown_bytes(), filename="cooling.md")
+    authz = WorkspaceAuthorization()
+    with pytest.raises(KnowledgeGovernanceError):
+        authz.authorize(WorkspaceRole.ENGINEER, WorkspaceAction.INGEST)
+    with pytest.raises(KnowledgeGovernanceError):
+        authz.authorize(WorkspaceRole.ENGINEER, WorkspaceAction.REVIEW)
