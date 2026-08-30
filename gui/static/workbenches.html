@@ -9,23 +9,20 @@
 <body class="cosmos-app">
   <div class="app-frame page-shell">
     <header class="app-header">
-      <button type="button" class="avatar" id="avatar" title="Edit profile photo"></button>
+      <button type="button" class="avatar" id="avatar" title="Double-click to edit profile" aria-label="Profile"></button>
       <div class="header-meta">
-        <button type="button" class="header-pill" id="meta-name" title="Edit name">NAME</button>
-        <button type="button" class="header-pill" id="meta-designation" title="Edit designation">DESIGNATION</button>
-        <button type="button" class="header-pill" id="meta-team" title="Edit team">TEAM</button>
+        <div class="header-context">
+          <span class="context-primary" id="header-context-primary">COSMOS</span>
+          <span class="context-secondary" id="header-context-secondary">Engineering Workspace</span>
+        </div>
       </div>
       <button type="button" class="user-badge" id="user-badge" title="View profile">Loading…</button>
     </header>
     <div class="app-body">
-      <aside class="sidebar">
-        <button class="sidebar-btn active" data-tip="Workbenches" onclick="location.href=COSMOS.hubUrl(COSMOS.hubPage)">W</button>
-        <button class="sidebar-btn" data-tip="Maharshi Bharadwaj — Knowledge" onclick="location.href='/app/workbench/knowledge'">M</button>
-        <button class="sidebar-btn" data-tip="Audit Trail" onclick="location.href='/app/audit'">A</button>
-        <button class="sidebar-btn" data-tip="User Administration" onclick="location.href='/app/admin'">U</button>
-        <button class="sidebar-btn" data-tip="Log Out" id="logout-btn">⎋</button>
-      </aside>
+      <aside class="sidebar" aria-label="Primary navigation"></aside>
       <main class="content-area">
+        <div id="cosmos-recent-host" class="cosmos-recent-host"></div>
+        <div class="quick-status" id="quick-status" aria-label="System status"></div>
         <div class="carousel-shell">
           <button type="button" class="page-arrow page-arrow-left" id="page-prev" aria-label="Previous page">‹</button>
           <div class="carousel-viewport" id="carousel-viewport">
@@ -34,29 +31,33 @@
           <button type="button" class="page-arrow page-arrow-right" id="page-next" aria-label="Next page">›</button>
         </div>
         <div class="pager-row">
-          <span class="page-label" id="page-label">Workbench Page 1 / 3</span>
-          <div class="page-dots" id="page-dots"></div>
+          <span class="page-label" id="page-label">Page <strong>1</strong> of <strong>3</strong></span>
+          <div class="page-dots" id="page-dots" aria-label="Workbench pages"></div>
         </div>
       </main>
     </div>
-    <button type="button" class="maharshi-module" id="maharshi-module" title="Maharshi Bharadwaj — Knowledge Infrastructure">
+    <button type="button" class="maharshi-module" id="maharshi-module" title="Maharshi Bharadwaj — Knowledge pop-up">
       <img src="/assets/maharshi_bharadwaj.png" alt="Maharshi Bharadwaj" />
       <span>MAHARSHI BHARADWAJ</span>
     </button>
-    <div class="status-bar in-frame" id="status-bar">COSMOS 0.1 desktop shell</div>
+    <div class="status-bar in-frame" id="status-bar" role="status">
+      <span class="status-indicator ready" aria-hidden="true"></span>
+      <span class="status-bar-text">COSMOS 0.1 desktop shell</span>
+      <span class="status-bar-meta">COSMOS 0.1</span>
+    </div>
   </div>
 
   <div class="profile-modal" id="profile-modal">
     <div class="profile-panel">
       <div class="profile-panel-header">
         <h2>Employee Profile</h2>
-        <button type="button" id="profile-close" class="profile-close">✕</button>
+        <button type="button" id="profile-close" class="profile-close" aria-label="Close">✕</button>
       </div>
       <div class="profile-photo-row">
         <button type="button" class="profile-photo-preview" id="profile-photo-preview" onclick="document.getElementById('profile-photo-input').click()"></button>
         <div>
           <input type="file" id="profile-photo-input" accept="image/jpeg,image/png,image/webp" hidden />
-          <p class="profile-hint">Click photo to upload. JPEG, PNG, or WebP up to 5 MB.</p>
+          <p class="profile-hint">Click photo to upload. Double-click avatar anytime to open this panel.</p>
           <p><strong>Login:</strong> <span id="profile-login-id"></span></p>
           <p><strong>Role:</strong> <span id="profile-role"></span></p>
           <p><strong>Employee ID:</strong> <span id="profile-employee-id"></span></p>
@@ -71,7 +72,10 @@
     </div>
   </div>
 
+  <script src="/assets/rbac.js"></script>
   <script src="/assets/app.js"></script>
+  <script src="/assets/engineering-ux.js"></script>
+  <script src="/assets/maharshi-popup.js"></script>
   <script>COSMOS.initWorkbenchHub();</script>
 </body>
 </html>

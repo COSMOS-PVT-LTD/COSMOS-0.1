@@ -1,0 +1,28 @@
+{
+  "matrix_version": "1.0",
+  "qualification_id": "KI-INTEG-2026-08-30",
+  "capabilities": [
+    {"capability": "GUI authentication", "tested": true, "result": "PASS", "evidence": "KI-T02", "qualification": "API-EQUIVALENT"},
+    {"capability": "document upload", "tested": true, "result": "PASS", "evidence": "KI-T02", "qualification": "Envelope B"},
+    {"capability": "ingestion", "tested": true, "result": "PASS", "evidence": "KI-T02", "qualification": "Envelope B"},
+    {"capability": "parsing", "tested": true, "result": "PASS", "evidence": "test_intake.py", "qualification": "Envelope B"},
+    {"capability": "extraction", "tested": true, "result": "PASS", "evidence": "test_e2e_workspace.py", "qualification": "Envelope B"},
+    {"capability": "validation", "tested": true, "result": "PASS", "evidence": "KG-BLOCK-009 tests", "qualification": "Envelope B"},
+    {"capability": "graph", "tested": true, "result": "PASS", "evidence": "KI-T02,KI-T04", "qualification": "Envelope B"},
+    {"capability": "indexing", "tested": true, "result": "PASS", "evidence": "KI-T02 search_documents", "qualification": "Envelope B"},
+    {"capability": "neural embeddings", "tested": true, "result": "PASS", "evidence": "test_step7_neural_embeddings.py", "qualification": "Envelope B"},
+    {"capability": "hybrid retrieval", "tested": true, "result": "PASS", "evidence": "test_step7_hybrid_neural_retrieval.py", "qualification": "Envelope B"},
+    {"capability": "chat", "tested": true, "result": "PASS", "evidence": "KI-T02", "qualification": "Envelope B"},
+    {"capability": "evidence", "tested": true, "result": "PASS", "evidence": "KI-T02", "qualification": "Envelope B"},
+    {"capability": "provenance", "tested": true, "result": "PASS", "evidence": "KI-T02 document_ids", "qualification": "Envelope B"},
+    {"capability": "approval", "tested": true, "result": "PASS", "evidence": "test_approve_source.py", "qualification": "Envelope B"},
+    {"capability": "deletion", "tested": true, "result": "PASS", "evidence": "KI-T04", "qualification": "Envelope B"},
+    {"capability": "re-extraction", "tested": true, "result": "PASS", "evidence": "test_approve_source.py", "qualification": "Envelope B"},
+    {"capability": "persistence", "tested": true, "result": "PASS", "evidence": "KI-T03", "qualification": "Envelope B"},
+    {"capability": "recovery", "tested": true, "result": "PASS", "evidence": "test_e2e_workspace backup", "qualification": "Envelope B"},
+    {"capability": "offline execution", "tested": true, "result": "PASS", "evidence": "test_step7_offline.py", "qualification": "Envelope B"},
+    {"capability": "security", "tested": true, "result": "PASS WITH FINDING", "evidence": "KI-T01,KI-T05,S-001", "qualification": "Envelope B"},
+    {"capability": "observability", "tested": true, "result": "PARTIAL", "evidence": "audit + jobs API", "qualification": "Envelope B"},
+    {"capability": "GUI browser", "tested": false, "result": "NOT VERIFIED", "evidence": "R-001", "qualification": "Deferred"}
+  ]
+}

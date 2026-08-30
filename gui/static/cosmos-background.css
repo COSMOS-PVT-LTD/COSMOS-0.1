@@ -1,0 +1,78 @@
+/**
+ * COSMOS 0.1 — Universal brand backdrop
+ * Seamless logo blend across login + application shell.
+ */
+
+:root {
+  --cosmos-bg-base: #000000;
+  --cosmos-bg-logo: url("/assets/cosmos_logo.png");
+  --cosmos-bg-logo-size: min(920px, 94vw);
+  --cosmos-bg-logo-y: 40%;
+  --cosmos-bg-logo-opacity-login: 1;
+  --cosmos-bg-logo-opacity-app: 1;
+}
+
+html,
+body {
+  background-color: var(--cosmos-bg-base);
+}
+
+body.cosmos-login,
+body.cosmos-app {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Layer 1 — hero logo + orbital accent glow */
+body.cosmos-login::before,
+body.cosmos-app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 22% 74%, rgba(74, 144, 226, 0.09), transparent 34%),
+    radial-gradient(circle at 78% 26%, rgba(255, 77, 77, 0.07), transparent 30%),
+    var(--cosmos-bg-logo) center var(--cosmos-bg-logo-y) / var(--cosmos-bg-logo-size) no-repeat;
+  opacity: var(--cosmos-bg-logo-opacity-login);
+  filter: brightness(0.92) saturate(0.96);
+}
+
+body.cosmos-app::before {
+  opacity: var(--cosmos-bg-logo-opacity-app);
+  filter: brightness(0.62) saturate(0.78);
+}
+
+/* Layer 2 — edge vignette so logo melts into pure black at viewport borders */
+body.cosmos-login::after,
+body.cosmos-app::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 118% 96% at 50% 42%, transparent 22%, rgba(0, 0, 0, 0.42) 58%, rgba(0, 0, 0, 0.92) 82%, #000000 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, transparent 18%, transparent 78%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+body.cosmos-app::after {
+  background:
+    radial-gradient(ellipse 118% 96% at 50% 42%, transparent 16%, rgba(0, 0, 0, 0.52) 54%, rgba(0, 0, 0, 0.94) 80%, #000000 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, transparent 14%, transparent 82%, rgba(0, 0, 0, 0.62) 100%);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --cosmos-bg-logo-size: min(680px, 98vw);
+    --cosmos-bg-logo-y: 38%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.cosmos-login::before,
+  body.cosmos-app::before {
+    transition: filter 420ms ease, opacity 420ms ease;
+  }
+}

@@ -4,42 +4,59 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>COSMOS 0.1 — Login</title>
+  <link rel="stylesheet" href="/assets/cosmos-tokens.css" />
+  <link rel="stylesheet" href="/assets/cosmos-background.css" />
   <link rel="stylesheet" href="/assets/cosmos.css" />
+  <link rel="stylesheet" href="/assets/login.css" />
 </head>
 <body class="cosmos-login">
-  <div class="page-shell login-wrap">
-    <form class="login-card" id="login-form">
-      <input id="login-id" name="login_id" placeholder="LOGIN ID" autocomplete="username" required />
-      <input id="password" name="password" type="password" placeholder="PASSWORD" autocomplete="current-password" required />
-      <button type="submit" class="primary">LOG IN</button>
-      <div class="error-text" id="login-error"></div>
-    </form>
+  <div class="login-scene">
+    <div class="login-glass">
+      <div class="login-avatar-ring" id="login-avatar-icon" aria-hidden="true"></div>
+      <div class="login-title">
+        <h1>COSMOS 0.1</h1>
+        <p>Deep Space Engineering</p>
+      </div>
+
+      <label class="login-profile-label" for="login-profile-grid">Select infrastructure profile</label>
+      <div class="login-profile-grid" id="login-profile-grid" role="group" aria-label="Infrastructure profile"></div>
+      <div class="login-profile-desc" id="login-profile-desc"></div>
+
+      <form class="login-form" id="login-form">
+        <div class="login-input-wrap">
+          <span class="login-input-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+          </span>
+          <input id="login-id" name="login_id" type="text" placeholder="Username" autocomplete="username" required aria-label="Username" />
+        </div>
+
+        <div class="login-input-wrap">
+          <span class="login-input-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg>
+          </span>
+          <input id="password" name="password" type="password" placeholder="Password" autocomplete="current-password" required aria-label="Password" />
+          <button type="button" class="login-password-toggle" id="password-toggle" aria-label="Show password">Show</button>
+        </div>
+
+        <div class="login-options">
+          <label class="login-remember">
+            <input type="checkbox" id="login-remember" />
+            Remember me
+          </label>
+          <button type="button" class="login-forgot" id="login-forgot">Forgot Password?</button>
+        </div>
+
+        <button type="submit" class="login-submit" id="login-submit">LOGIN</button>
+        <div class="login-error" id="login-error" role="alert"></div>
+      </form>
+    </div>
   </div>
+
   <div class="login-footer">
     <span>Copyright © 2026 COSMOS PVT LTD. All Rights Reserved.</span>
     <span>COSMOS_0.1</span>
   </div>
-  <script>
-    document.getElementById("login-form").addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const error = document.getElementById("login-error");
-      error.textContent = "";
-      const payload = {
-        login_id: document.getElementById("login-id").value,
-        password: document.getElementById("password").value,
-      };
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const body = await response.json();
-      if (!response.ok) {
-        error.textContent = body.error || "Login failed.";
-        return;
-      }
-      window.location.href = "/app/workbenches";
-    });
-  </script>
+
+  <script src="/assets/login.js"></script>
 </body>
 </html>

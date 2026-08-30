@@ -18,13 +18,7 @@
       <button type="button" class="user-badge" id="user-badge">COSMOS</button>
     </header>
     <div class="app-body admin-body">
-      <aside class="sidebar">
-        <button class="sidebar-btn" data-tip="Workbenches" onclick="location.href='/app/workbenches'">W</button>
-        <button class="sidebar-btn" data-tip="Maharshi Bharadwaj" onclick="location.href='/app/workbench/knowledge'">M</button>
-        <button class="sidebar-btn" data-tip="Audit Trail" onclick="location.href='/app/audit'">A</button>
-        <button class="sidebar-btn active" data-tip="User Administration" onclick="location.href='/app/admin'">U</button>
-        <button class="sidebar-btn" data-tip="Log Out" id="logout-btn">⎋</button>
-      </aside>
+      <aside class="sidebar" aria-label="Primary navigation"></aside>
       <main class="content-area admin-content">
         <div class="admin-center">
           <section class="clean-block admin-register-block">
@@ -47,9 +41,10 @@
 
           <section class="clean-block admin-users-block">
             <div class="block-head"><h2>Registered Users</h2></div>
+            <input type="search" class="admin-search" id="user-search" placeholder="Search users…" aria-label="Search users" />
             <div class="admin-table-wrap">
               <table class="clean-table">
-                <thead><tr><th>Login ID</th><th>Name</th><th>Role</th><th>Team</th><th>Employee ID</th></tr></thead>
+                <thead><tr><th>Login ID</th><th>Name</th><th>Role</th><th>Team</th><th>Employee ID</th><th>Status</th></tr></thead>
                 <tbody id="users-body"></tbody>
               </table>
             </div>
@@ -57,7 +52,11 @@
         </div>
       </main>
     </div>
-    <div class="status-bar in-frame" id="status-bar">COSMOS 0.1 — Admin</div>
+    <div class="status-bar in-frame" id="status-bar" role="status">
+      <span class="status-indicator ready" aria-hidden="true"></span>
+      <span class="status-bar-text">COSMOS 0.1 — Admin</span>
+      <span class="status-bar-meta">COSMOS 0.1</span>
+    </div>
   </div>
 
   <div class="profile-modal" id="credential-modal">
@@ -87,7 +86,10 @@
     </div>
   </div>
 
+  <script src="/assets/rbac.js"></script>
   <script src="/assets/app.js"></script>
+  <script src="/assets/engineering-ux.js"></script>
+  <script src="/assets/maharshi-popup.js"></script>
   <script>COSMOS.initAdminPanel();</script>
 </body>
 </html>

@@ -12,10 +12,33 @@ import secrets
 import threading
 
 from api.authentication import AuthenticationError, AuthService, UserRole
-from api.authorization import map_user_role_to_workspace, role_can_administer, role_can_audit
+from api.authorization import (
+    assert_login_profile,
+    infrastructure_for_profile,
+    map_user_role_to_workspace,
+    redirect_for_profile,
+    role_can_administer,
+    role_can_audit,
+)
 from api.profile import ProfileService
 from gui.knowledge_proxy import dispatch_knowledge_request, is_knowledge_api_path
 from gui.workbenches.registry import WORKBENCH_PAGES, workbench_by_id
+
+
+def _workbench_payload(item) -> dict[str, object]:
+    return {
+        "workbench_id": item.workbench_id,
+        "title": item.title,
+        "route": item.route,
+        "status": item.status,
+        "description": item.description,
+        "design_type": item.design_type,
+        "revision": item.revision,
+        "validation_state": item.validation_state,
+        "domain": item.domain,
+    }
+
+
 from infrastructure.security.audit import AppAuditLog
 from infrastructure.security.credential_vault import (
     CredentialVault,
@@ -30,7 +53,19 @@ __all__ = ("CosmosApplication", "serve_application")
 SESSION_COOKIE = "cosmos_session"
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 ASSETS_DIR = Path(__file__).resolve().parent / "assets"
-STATIC_ASSETS = {"cosmos.css", "app.js", "maharshi.css", "maharshi.js"}
+STATIC_ASSETS = {
+    "cosmos-tokens.css",
+    "cosmos-shell.css",
+    "cosmos.css",
+    "login.css",
+    "login.js",
+    "app.js",
+    "rbac.js",
+    "engineering-ux.js",
+    "maharshi-popup.js",
+    "maharshi.css",
+    "maharshi.js",
+}
 
 
 class CosmosApplication:
@@ -316,15 +351,7 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
                 pages.append(
                     {
                         "page": index,
-                        "items": [
-                            {
-                                "workbench_id": item.workbench_id,
-                                "title": item.title,
-                                "route": item.route,
-                                "status": item.status,
-                            }
-                            for item in page
-                        ],
+                        "items": [_workbench_payload(item) for item in page],
                     },
                 )
             return self._json(200, {"pages": pages})
@@ -394,13 +421,17 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
                     str(payload.get("password") or ""),
                     client_info=self.headers.get("User-Agent", "cosmos-desktop"),
                 )
+                login_profile = assert_login_profile(
+                    record.user.role,
+                    str(payload.get("login_profile") or "ENGINEER"),
+                )
             except (AuthenticationError, ValueError) as exc:
                 self.application.audit.record(
                     user_id="anonymous",
                     login_id=str(payload.get("login_id") or "unknown"),
                     action="LOGIN_FAILED",
                     resource="/api/auth/login",
-                    detail={"reason": str(exc)},
+                    detail={"reason": str(exc), "profile": payload.get("login_profile")},
                     source_ip=self.client_address[0],
                     user_agent=self.headers.get("User-Agent", "cosmos-desktop"),
                 )
@@ -409,11 +440,20 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
                 record,
                 action="LOGIN",
                 resource="/api/auth/login",
-                detail={"role": record.user.role.value},
+                detail={"role": record.user.role.value, "login_profile": login_profile},
                 source_ip=self.client_address[0],
                 user_agent=self.headers.get("User-Agent", "cosmos-desktop"),
             )
-            return self._json(200, {"user": self.application.profiles.profile_mapping(record.user)}, set_token=record.token)
+            return self._json(
+                200,
+                {
+                    "user": self.application.profiles.profile_mapping(record.user),
+                    "login_profile": login_profile,
+                    "infrastructure": infrastructure_for_profile(login_profile),
+                    "redirect": redirect_for_profile(login_profile),
+                },
+                set_token=record.token,
+            )
 
         if path == "/api/profile":
             current = self._require_session()

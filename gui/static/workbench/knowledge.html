@@ -18,12 +18,8 @@
       </div>
       <button type="button" class="user-badge" id="user-badge">COSMOS</button>
     </header>
-    <div class="app-body" style="grid-template-columns: 72px 1fr;">
-      <aside class="sidebar">
-        <button class="sidebar-btn" onclick="location.href='/app/workbenches'">W</button>
-        <button class="sidebar-btn active" onclick="location.href='/app/workbench/knowledge'">M</button>
-        <button class="sidebar-btn" id="logout-btn">⎋</button>
-      </aside>
+    <div class="app-body">
+      <aside class="sidebar" aria-label="Primary navigation"></aside>
       <main class="content-area" style="overflow: auto;">
         <div class="maharshi-workspace">
           <div class="mh-workspace-head">
@@ -34,12 +30,38 @@
             <div class="mh-health" id="mh-health">loading…</div>
           </div>
 
-          <section class="mh-panel mh-upload">
+          <section class="mh-panel mh-overview" aria-label="Knowledge overview">
+            <div class="mh-panel-head"><h2>Knowledge overview</h2></div>
+            <div class="mh-panel-body mh-overview-grid" id="mh-overview-grid">
+              <div class="mh-metric"><span class="label">Corpus</span><span class="value" id="mh-m-corpus">—</span></div>
+              <div class="mh-metric"><span class="label">Indexed</span><span class="value" id="mh-m-indexed">—</span></div>
+              <div class="mh-metric"><span class="label">Graph nodes</span><span class="value" id="mh-m-nodes">—</span></div>
+              <div class="mh-metric"><span class="label">Graph links</span><span class="value" id="mh-m-edges">—</span></div>
+              <div class="mh-metric"><span class="label">Retrieval index</span><span class="value" id="mh-m-index-state">—</span></div>
+              <div class="mh-metric"><span class="label">Validation pending</span><span class="value" id="mh-m-validation">—</span></div>
+              <div class="mh-metric"><span class="label">Persistence</span><span class="value" id="mh-m-persistence">—</span></div>
+              <div class="mh-metric"><span class="label">Last ingestion</span><span class="value" id="mh-m-last-ingest">—</span></div>
+              <div class="mh-metric"><span class="label">Offline state</span><span class="value" id="mh-m-offline">—</span></div>
+              <div class="mh-metric"><span class="label">Provider invoked</span><span class="value" id="mh-m-provider">FALSE</span></div>
+            </div>
+          </section>
+
+          <section class="mh-panel mh-embedding-strip" aria-label="Embedding and qualification status">
+            <div class="mh-panel-body mh-embedding-body" id="mh-embedding-strip">
+              <span><strong>Backend:</strong> <span id="mh-embed-backend">cosmos-local-neural-mini-v1</span></span>
+              <span><strong>Mode:</strong> <span id="mh-embed-mode">LOCAL / OFFLINE</span></span>
+              <span><strong>Production-qualified:</strong> <span id="mh-embed-qualified">YES — CONDITIONAL / ENVELOPE B</span></span>
+              <span><strong>Production-ready:</strong> <span id="mh-embed-ready">NO</span></span>
+              <span><strong>Config hash:</strong> <span id="mh-embed-hash" title="NOT AVAILABLE">—</span></span>
+            </div>
+          </section>
+
+          <section class="mh-panel mh-upload mh-admin-only">
             <div class="mh-panel-head"><h2>Upload</h2></div>
             <div class="mh-panel-body">
               <div class="mh-dropzone" id="mh-dropzone">
-                <strong>Choose a document</strong>
-                <span class="mh-dropzone-hint">Click or drag &amp; drop · PDF, Markdown, CSV, Office, images</span>
+                <strong>Drag &amp; Drop Files Here</strong>
+                <span class="mh-dropzone-hint">or choose a file · PDF, Markdown, CSV, Office, images · up to 100 MB</span>
                 <div class="mh-upload-status" id="mh-upload-status">No file selected</div>
                 <div class="mh-btn-row mh-upload-actions">
                   <button type="button" class="mh-btn secondary" id="mh-choose-btn">Choose file</button>
@@ -48,7 +70,7 @@
                 <input class="mh-file-input" type="file" id="mh-file" accept=".pdf,.md,.txt,.csv,.json,.xml,.html,.docx,.pptx,.xlsx,.epub,.png,.jpg,.jpeg,.tif,.tiff,.webp,.tex" />
               </div>
               <input type="hidden" id="mh-rights" value="INTERNAL" />
-              <div class="mh-sources-bar">
+              <div class="mh-sources-bar mh-admin-only">
                 <button type="button" class="mh-sources-toggle" id="mh-sources-toggle">
                   SOURCES <span class="count" id="mh-sources-count">0 documents</span>
                 </button>
@@ -89,8 +111,52 @@
             </div>
           </section>
 
-          <div class="mh-bottom">
-            <section class="mh-panel">
+          <div class="mh-bottom mh-admin-only">
+            <section class="mh-panel mh-search">
+              <div class="mh-panel-head"><h2>Semantic search</h2></div>
+              <div class="mh-panel-body">
+                <div class="mh-search-controls">
+                  <input type="search" id="mh-search-input" placeholder="Engineering retrieval query…" />
+                  <select id="mh-search-mode" aria-label="Retrieval mode">
+                    <option value="hybrid">Hybrid</option>
+                    <option value="documents">Documents</option>
+                    <option value="unified">Unified foundation</option>
+                    <option value="semantic">Semantic (Step-7 index)</option>
+                  </select>
+                  <input type="number" id="mh-search-topk" min="1" max="50" value="8" aria-label="Top K" />
+                  <button type="button" class="mh-btn" id="mh-search-btn">Search</button>
+                </div>
+                <div class="mh-search-diagnostics" id="mh-search-diagnostics">Run a query to inspect retrieval diagnostics.</div>
+                <div class="mh-search-results" id="mh-search-results"></div>
+              </div>
+            </section>
+
+            <section class="mh-panel mh-validation">
+              <div class="mh-panel-head">
+                <h2>Validation center</h2>
+                <button type="button" class="mh-btn secondary" id="mh-validation-refresh">Refresh</button>
+              </div>
+              <div class="mh-panel-body mh-table-wrap">
+                <table class="mh-table">
+                  <thead>
+                    <tr><th>Severity</th><th>Category</th><th>Source</th><th>Message</th></tr>
+                  </thead>
+                  <tbody id="mh-validation-body"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="mh-panel mh-trace">
+              <div class="mh-panel-head"><h2>Knowledge trace</h2></div>
+              <div class="mh-panel-body">
+                <pre class="mh-trace-view" id="mh-trace-view">Trace appears after search or chat with evidence.</pre>
+                <div class="mh-btn-row">
+                  <button type="button" class="mh-btn secondary" id="mh-trace-copy" disabled>Copy trace</button>
+                </div>
+              </div>
+            </section>
+
+            <section class="mh-panel mh-sources-panel">
               <div class="mh-panel-head">
                 <h2>Sources &amp; jobs</h2>
                 <div class="mh-btn-row" style="margin: 0;">
@@ -108,7 +174,7 @@
               </div>
             </section>
 
-            <section class="mh-panel">
+            <section class="mh-panel mh-review">
               <div class="mh-panel-head"><h2>Review workbench</h2></div>
               <div class="mh-panel-body mh-table-wrap">
                 <table class="mh-table">
@@ -123,26 +189,63 @@
         </div>
       </main>
     </div>
+    <div class="status-bar in-frame" id="status-bar" role="status">
+      <span class="status-indicator ready" aria-hidden="true"></span>
+      <span class="status-bar-text">Knowledge Infrastructure</span>
+      <span class="status-bar-meta">Maharshi Bharadwaj</span>
+    </div>
   </div>
   <div class="mh-tooltip" id="mh-tooltip"></div>
+  <div class="mh-evidence-modal" id="mh-evidence-modal" hidden>
+    <div class="mh-source-modal-backdrop" id="mh-evidence-modal-backdrop"></div>
+    <div class="mh-source-modal-card mh-evidence-card" role="dialog" aria-modal="true" aria-labelledby="mh-evidence-modal-title">
+      <button type="button" class="close" id="mh-evidence-modal-close" aria-label="Close">×</button>
+      <h3 id="mh-evidence-modal-title">Evidence</h3>
+      <div class="mh-source-modal-meta" id="mh-evidence-modal-meta"></div>
+      <pre class="mh-source-modal-text" id="mh-evidence-modal-text"></pre>
+      <div class="mh-btn-row">
+        <button type="button" class="mh-btn secondary" id="mh-evidence-open-source">Open source</button>
+        <button type="button" class="mh-btn secondary" id="mh-evidence-show-graph">Show graph</button>
+        <button type="button" class="mh-btn secondary" id="mh-evidence-copy-ref">Copy reference</button>
+      </div>
+    </div>
+  </div>
   <div class="mh-source-modal" id="mh-source-modal" hidden>
     <div class="mh-source-modal-backdrop" id="mh-source-modal-backdrop"></div>
     <div class="mh-source-modal-card" role="dialog" aria-modal="true" aria-labelledby="mh-source-modal-title">
       <button type="button" class="close" id="mh-source-modal-close" aria-label="Close">×</button>
-      <h3 id="mh-source-modal-title">Source</h3>
+      <h3 id="mh-source-modal-title">Document inspector</h3>
+      <div class="mh-inspector-sections" id="mh-source-inspector"></div>
       <div class="mh-source-modal-meta" id="mh-source-modal-meta"></div>
       <pre class="mh-source-modal-text" id="mh-source-modal-text"></pre>
+      <div class="mh-btn-row">
+        <button type="button" class="mh-btn secondary" id="mh-inspector-search">Search within</button>
+        <button type="button" class="mh-btn secondary" id="mh-inspector-trace">Trace evidence</button>
+        <button type="button" class="mh-btn secondary" id="mh-inspector-reingest">Re-ingest</button>
+      </div>
     </div>
   </div>
+  <script src="/assets/rbac.js"></script>
   <script src="/assets/app.js"></script>
+  <script src="/assets/engineering-ux.js"></script>
+  <script src="/assets/maharshi-popup.js"></script>
   <script src="/assets/maharshi.js"></script>
   <script>
-    COSMOS.initShell().then(() => {
-      COSMOS.hubPage = COSMOS.hubPageFromUrl();
-      const back = document.getElementById("back-link");
-      if (back) back.href = COSMOS.hubUrl(COSMOS.hubPage);
-      return Maharshi.init();
-    });
+    (function applyKnowledgeViewMode() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("embed") === "1") document.body.classList.add("mh-embed");
+      if (params.get("view") === "compact") document.body.classList.add("mh-compact");
+    })();
+    if (!document.body.classList.contains("mh-embed")) {
+      COSMOS.initShell({ activeNav: "knowledge" }).then(() => {
+        COSMOS.hubPage = COSMOS.hubPageFromUrl();
+        const back = document.getElementById("back-link");
+        if (back) back.href = COSMOS.hubUrl(COSMOS.hubPage);
+        return Maharshi.init();
+      });
+    } else {
+      Maharshi.init();
+    }
   </script>
 </body>
 </html>

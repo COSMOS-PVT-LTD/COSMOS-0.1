@@ -16,6 +16,10 @@ class WorkbenchDefinition:
     status: str
     description: str
     modules: tuple[str, ...] = ()
+    design_type: str = "Engineering Module"
+    revision: str = "REV 0.1"
+    validation_state: str = "PLANNED"
+    domain: str = "general"
 
 
 WORKBENCH_PAGES: tuple[tuple[WorkbenchDefinition, ...], ...] = (
@@ -27,6 +31,10 @@ WORKBENCH_PAGES: tuple[tuple[WorkbenchDefinition, ...], ...] = (
             route="/app/workbench/rocket-engine",
             status="active",
             description="Engine design modules for chamber, injector, cooling, and nozzle.",
+            design_type="Propulsion",
+            revision="REV 0.4",
+            validation_state="ACTIVE",
+            domain="propulsion",
             modules=(
                 "Engine Design",
                 "Nozzle Optimization",
@@ -43,6 +51,8 @@ WORKBENCH_PAGES: tuple[tuple[WorkbenchDefinition, ...], ...] = (
             route="/app/workbench/turbopumps",
             status="planned",
             description="Pump, turbine, and feed-system rotordynamics.",
+            design_type="Turbomachinery",
+            domain="propulsion",
         ),
         WorkbenchDefinition(
             workbench_id="pid",
@@ -127,6 +137,10 @@ WORKBENCH_PAGES: tuple[tuple[WorkbenchDefinition, ...], ...] = (
             route="/app/workbench/knowledge",
             status="active",
             description="COSMOS knowledge infrastructure — governed intake, review, search, and engineering chat.",
+            design_type="Knowledge Infrastructure",
+            revision="REV 0.1",
+            validation_state="ACTIVE",
+            domain="knowledge",
         ),
     ),
 )

@@ -55,18 +55,12 @@ _ROLE_MAP: dict[WorkspaceRole, frozenset[KnowledgeRole]] = {
 
 _WORKSPACE_PERMISSIONS: dict[WorkspaceAction, frozenset[WorkspaceRole]] = {
     WorkspaceAction.VIEW: frozenset(WorkspaceRole),
-    WorkspaceAction.INGEST: frozenset(
-        {WorkspaceRole.ENGINEER, WorkspaceRole.APPROVER, WorkspaceRole.ADMIN},
-    ),
-    WorkspaceAction.EXTRACT: frozenset(
-        {WorkspaceRole.ENGINEER, WorkspaceRole.REVIEWER, WorkspaceRole.APPROVER, WorkspaceRole.ADMIN},
-    ),
-    WorkspaceAction.REVIEW: frozenset(
-        {WorkspaceRole.REVIEWER, WorkspaceRole.APPROVER, WorkspaceRole.ADMIN},
-    ),
-    WorkspaceAction.APPROVE: frozenset({WorkspaceRole.APPROVER, WorkspaceRole.ADMIN}),
+    WorkspaceAction.INGEST: frozenset({WorkspaceRole.ADMIN}),
+    WorkspaceAction.EXTRACT: frozenset({WorkspaceRole.ADMIN}),
+    WorkspaceAction.REVIEW: frozenset({WorkspaceRole.ADMIN}),
+    WorkspaceAction.APPROVE: frozenset({WorkspaceRole.ADMIN}),
     WorkspaceAction.ADMINISTER: frozenset({WorkspaceRole.ADMIN}),
-    WorkspaceAction.DESTROY: frozenset({WorkspaceRole.APPROVER, WorkspaceRole.ADMIN}),
+    WorkspaceAction.DESTROY: frozenset({WorkspaceRole.ADMIN}),
 }
 
 
