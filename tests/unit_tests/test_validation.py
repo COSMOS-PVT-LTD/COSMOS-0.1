@@ -64,6 +64,11 @@ def test_validate_gamma_success() -> None:
     assert validate_gamma(1.4) == 1.4
 
 
+def test_validate_gamma_at_one_rejected() -> None:
+    with pytest.raises(InvalidInputError):
+        validate_gamma(1.0)
+
+
 def test_validate_gamma_failure() -> None:
     with pytest.raises(InvalidInputError):
         validate_gamma(0.9)

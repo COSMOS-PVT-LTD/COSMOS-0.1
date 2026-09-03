@@ -1,0 +1,39 @@
+---
+description: COSMOS Figma MCP design-system rules — tokens, shell patterns, no React; map Figma → gui/static CSS/JS
+globs: gui/**/*.{html,css,js},docs/**/*DESIGN*,docs/**/*FIGMA*,**/*figma*
+alwaysApply: false
+---
+
+# COSMOS × Figma Design System Rules
+
+Authoritative visual source in code: `gui/static/cosmos-tokens.css` + `docs/COSMOS_0.1_UI_UX_DESIGN_SYSTEM.md`.
+
+Full agent reference: `docs/FIGMA_MCP_DESIGN_SYSTEM_RULES.md`.
+
+## Stack (do not invent frameworks)
+
+- **Not React/Vue.** Desktop shell = pywebview + vanilla HTML/CSS/JS served by `gui/server.py`.
+- Styling = global CSS variables + plain CSS files (no CSS Modules, no Tailwind, no styled-components).
+- Fonts loaded via Google Fonts `@import` in `cosmos-tokens.css`.
+
+## When translating Figma → code
+
+1. Prefer existing tokens (`--cosmos-*`, `--space-*`, `--font-*`, `--radius-*`). Do not introduce Inter/Roboto/purple-on-white.
+2. Shell chrome: `.app-frame` / `.app-header` / `.sidebar` / `.content-area` / `.status-bar` / Maharshi FAB.
+3. Engineering UI: sharp radii (`--radius-sm: 2px`), mono for numbers, Orbitron only for brand/headings.
+4. Propulsion workflow results: GUI calls `/api/*` only — **no equations in JS**.
+5. Icons: inline SVG via `COSMOS.NAV_ICONS` or workbench SVGs under `gui/assets/workbenches/`.
+6. Assets served as `/assets/...` (static whitelist + `gui/assets/`).
+
+## Figma library build order (figma-generate-library)
+
+1. Variables from `cosmos-tokens.css` (primitives → semantic aliases).
+2. Text styles: Orbitron / Exo 2 / JetBrains Mono.
+3. Components: zone-pill, sidebar-btn, workbench-card, suite-card, status pills (live/partial/planned).
+4. Code Connect later — map to CSS class names, not React components.
+
+## Forbidden visual drift
+
+- Soft consumer SaaS cards, purple gradients, cream/serif editorial looks.
+- Decorative glow as primary identity.
+- Claiming ANSYS/NX/COMSOL equivalence in UI copy.

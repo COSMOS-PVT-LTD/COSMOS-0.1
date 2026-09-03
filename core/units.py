@@ -6,6 +6,11 @@ Author: COSMOS Development Team
 Version: 0.1.0
 Purpose: Convert engineering values between supported units and SI units.
 
+.. deprecated::
+    Legacy scalar conversion helpers. For dimensional engineering calculations
+    use ``core.unit``, ``core.quantity``, and ``core.dimension`` instead.
+    This module remains for backward-compatible I/O and display conversions.
+
 Description:
     Provides deterministic scalar conversion functions for values entering or
     leaving COSMOS. Solvers shall use SI units internally and shall not call

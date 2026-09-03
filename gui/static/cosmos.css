@@ -303,22 +303,26 @@ body.cosmos-scrollable { overflow: auto; }
 }
 .page-dot.active { background: white; transform: scale(1.25); }
 
-/* Maharshi floating module */
+/* Maharshi floating module — fixed so it stays visible above scroll/content */
 .maharshi-module {
-  position: absolute;
-  bottom: 52px;
-  right: 18px;
+  position: fixed;
+  bottom: 64px;
+  right: 28px;
   width: 108px;
   padding: 8px;
   border: 0;
   border-radius: 20px;
-  background: linear-gradient(160deg, rgba(12, 40, 68, 0.55), rgba(4, 16, 32, 0.35));
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(76, 201, 240, 0.35);
+  background: linear-gradient(160deg, rgba(12, 40, 68, 0.92), rgba(4, 16, 32, 0.88));
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(76, 201, 240, 0.45);
   cursor: pointer;
-  z-index: 20;
+  z-index: 80;
   animation: maharshi-float 4s ease-in-out infinite;
   color: #dff7ff;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .maharshi-module img {
   width: 100%;
@@ -326,8 +330,9 @@ body.cosmos-scrollable { overflow: auto; }
   object-fit: contain;
   border-radius: 14px;
   display: block;
-  background: transparent;
-  mix-blend-mode: screen;
+  background: rgba(8, 24, 40, 0.35);
+  /* screen blend made the portrait disappear on dark frames */
+  mix-blend-mode: normal;
   filter: drop-shadow(0 0 14px rgba(76, 201, 240, 0.45));
 }
 .maharshi-module span {

@@ -165,9 +165,17 @@
   box-shadow: var(--shadow-sm);
   position: relative;
   z-index: 2;
+  /* Grid item must shrink so overflow-y can scroll long nav lists. */
   min-height: 0;
+  max-height: 100%;
+  align-self: stretch;
   overflow-y: auto;
   overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.sidebar .sidebar-group {
+  flex: 0 0 auto;
 }
 
 .sidebar-btn {

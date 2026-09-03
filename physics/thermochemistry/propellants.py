@@ -13,8 +13,11 @@ Description:
     serialization, registry management, and database loading
     infrastructure for all propellants used throughout COSMOS.
 
-    This module serves as the single source of truth for
-    propellant definitions.
+    This module serves as the legacy propellant database and naming adapter.
+
+    **Computational authority:** use ``physics.thermochemistry.species`` for
+    NASA7 species properties in new physics code. This module remains for
+    database-backed propellant records and CEA name compatibility.
 
     Propellant records are loaded from external databases and
     are intentionally not hardcoded into the source code.

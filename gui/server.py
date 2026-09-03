@@ -20,9 +20,32 @@ from api.authorization import (
     role_can_administer,
     role_can_audit,
 )
+from api.physics_compressible import (
+    evaluate_area_mach,
+    evaluate_bartz_htc,
+    evaluate_isentropic_stagnation,
+    evaluate_thin_wall_stress,
+    map_engineering_error,
+)
 from api.profile import ProfileService
+from api.propulsion_workflow import (
+    create_design,
+    export_design,
+    get_design_payload,
+    get_stage_result_payload,
+    get_workflow_payload,
+    load_design,
+    map_systems_error,
+    run_isentropic,
+    run_phase3,
+    run_phase4,
+    run_phase6,
+    update_requirements,
+)
 from gui.knowledge_proxy import dispatch_knowledge_request, is_knowledge_api_path
+from gui.workbenches.propulsion_suite import PROPULSION_SUITE_MODULES
 from gui.workbenches.registry import WORKBENCH_PAGES, workbench_by_id
+from systems.persistence.design_store import DesignStore
 
 
 def _workbench_payload(item) -> dict[str, object]:
@@ -65,6 +88,9 @@ STATIC_ASSETS = {
     "maharshi-popup.js",
     "maharshi.css",
     "maharshi.js",
+    "physics-compressible.js",
+    "propulsion-suite.js",
+    "propulsion-suite.css",
 }
 
 
@@ -80,6 +106,7 @@ class CosmosApplication:
         master_secret = secret_path.read_text(encoding="utf-8").strip() if secret_path.is_file() else "cosmos-bootstrap"
         self.credentials = CredentialVault(self.root / "credentials", master_secret=master_secret)
         self.audit = AppAuditLog(self.root / "audit" / "app_audit.sqlite")
+        self.design_store = DesignStore(self.root / "propulsion_designs")
         self._knowledge_workspace = None
         self._workspace_lock = threading.RLock()
 
@@ -289,11 +316,19 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
             if not role_can_administer(session.user.role):
                 return self._json(403, {"error": "forbidden"})
             return self._send_file(STATIC_DIR / "admin.html", "text/html; charset=utf-8")
+        if path == "/app/physics/compressible":
+            # Deep link retained; primary UX lives in Rocket Engine propulsion suite.
+            return self._redirect("/app/workbench/rocket-engine?module=nozzle-flow")
         if path.startswith("/app/workbench/"):
             workbench_id = path.removeprefix("/app/workbench/").strip("/")
             if workbench_id == "knowledge":
                 self.application.bind_session_to_workspace(session)
                 return self._send_file(STATIC_DIR / "workbench" / "knowledge.html", "text/html; charset=utf-8")
+            if workbench_id == "rocket-engine":
+                return self._send_file(
+                    STATIC_DIR / "workbench" / "rocket-engine.html",
+                    "text/html; charset=utf-8",
+                )
             item = workbench_by_id(workbench_id)
             if item is None:
                 return self._json(404, {"error": "workbench_not_found"})
@@ -355,6 +390,73 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
                     },
                 )
             return self._json(200, {"pages": pages})
+        if path == "/api/workbenches/rocket-engine/suite":
+            if session is None:
+                return self._json(401, {"error": "authentication_required"})
+            self._audit_request(session, path)
+            modules = [
+                {
+                    "module_id": item.module_id,
+                    "title": item.title,
+                    "group": item.group,
+                    "description": item.description,
+                    "status": item.status,
+                    "physics_ops": list(item.physics_ops),
+                    "reference_note": item.reference_note,
+                }
+                for item in PROPULSION_SUITE_MODULES
+            ]
+            return self._json(200, {"workbench_id": "rocket-engine", "modules": modules})
+        if path.startswith("/api/propulsion/designs/"):
+            if session is None:
+                return self._json(401, {"error": "authentication_required"})
+            self._audit_request(session, path)
+            remainder = path.removeprefix("/api/propulsion/designs/").strip("/")
+            if remainder.endswith("/workflow"):
+                design_id = remainder.removesuffix("/workflow").strip("/")
+                try:
+                    design = load_design(design_id, self.application.design_store)
+                except Exception as exc:
+                    status, payload = map_systems_error(exc)
+                    return self._json(status, payload)
+                return self._json(200, {"ok": True, "workflow": get_workflow_payload(design)})
+            if remainder.endswith("/export"):
+                design_id = remainder.removesuffix("/export").strip("/")
+                try:
+                    design = load_design(design_id, self.application.design_store)
+                    package = export_design(design)
+                except Exception as exc:
+                    status, payload = map_systems_error(exc)
+                    return self._json(status, payload)
+                return self._json(200, {"ok": True, "package": package})
+            if "/stages/" in remainder:
+                design_id, _, stage_part = remainder.partition("/stages/")
+                stage_id = stage_part.strip("/")
+                allow_stale = False
+                try:
+                    from urllib.parse import parse_qs
+
+                    query = parse_qs(urlparse(self.path).query)
+                    allow_stale = str(query.get("allow_stale", ["0"])[0]) in {
+                        "1",
+                        "true",
+                        "True",
+                    }
+                    design = load_design(design_id, self.application.design_store)
+                    payload = get_stage_result_payload(
+                        design, stage_id, allow_stale=allow_stale
+                    )
+                except Exception as exc:
+                    status, err = map_systems_error(exc)
+                    return self._json(status, err)
+                return self._json(200, payload)
+            design_id = remainder
+            try:
+                design = load_design(design_id, self.application.design_store)
+            except Exception as exc:
+                status, payload = map_systems_error(exc)
+                return self._json(status, payload)
+            return self._json(200, {"ok": True, "design": get_design_payload(design)})
         if path.startswith("/api/workbenches/"):
             if session is None:
                 return self._json(401, {"error": "authentication_required"})
@@ -412,6 +514,269 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
     def _dispatch_api_post(self, path: str, session) -> None:
         if is_knowledge_api_path(path):
             return self._dispatch_knowledge_api(session, path)
+        if path in {
+            "/api/physics/compressible/isentropic",
+            "/api/physics/compressible/area-mach",
+            "/api/physics/heat-transfer/bartz",
+            "/api/physics/structures/thin-wall",
+        }:
+            current = self._require_session()
+            if current is None:
+                return
+            try:
+                payload = _read_json(self)
+                if path.endswith("/isentropic"):
+                    result = evaluate_isentropic_stagnation(
+                        float(payload["mach"]),
+                        float(payload["gamma"]),
+                    )
+                elif path.endswith("/area-mach"):
+                    result = evaluate_area_mach(
+                        mode=str(payload.get("mode") or "forward"),
+                        gamma=float(payload["gamma"]),
+                        mach=None if payload.get("mach") is None else float(payload["mach"]),
+                        area_ratio_value=(
+                            None
+                            if payload.get("area_ratio") is None
+                            else float(payload["area_ratio"])
+                        ),
+                        branch=str(payload.get("branch") or "supersonic"),
+                    )
+                elif path.endswith("/bartz"):
+                    result = evaluate_bartz_htc(payload)
+                else:
+                    result = evaluate_thin_wall_stress(payload)
+            except Exception as exc:
+                status, error_payload = map_engineering_error(exc)
+                # Unexpected non-engineering failures must not be converted into
+                # plausible calculation responses.
+                if status >= 500:
+                    raise
+                return self._json(status, error_payload)
+            self.application.audit_action(
+                current,
+                action="PHYSICS_EVAL",
+                resource=path,
+                detail={"operation": result.get("operation")},
+                source_ip=self.client_address[0],
+                user_agent=self.headers.get("User-Agent", "cosmos-desktop"),
+            )
+            return self._json(200, result)
+        if path == "/api/propulsion/designs":
+            current = self._require_session()
+            if current is None:
+                return
+            try:
+                payload = _read_json(self)
+                design = create_design(
+                    name=str(payload.get("name") or "Untitled Propulsion Design"),
+                    description=str(payload.get("description") or ""),
+                    engineer=(
+                        None
+                        if payload.get("engineer") is None
+                        else str(payload["engineer"])
+                    ),
+                    store=self.application.design_store,
+                )
+            except Exception as exc:
+                status, error_payload = map_systems_error(exc)
+                if status >= 500:
+                    raise
+                return self._json(status, error_payload)
+            self.application.audit_action(
+                current,
+                action="PROPULSION_DESIGN_CREATE",
+                resource=path,
+                detail={"design_id": design.design_id},
+                source_ip=self.client_address[0],
+                user_agent=self.headers.get("User-Agent", "cosmos-desktop"),
+            )
+            return self._json(200, {"ok": True, "design": get_design_payload(design)})
+        if path.startswith("/api/propulsion/designs/") and path.endswith("/requirements"):
+            current = self._require_session()
+            if current is None:
+                return
+            design_id = path.removeprefix("/api/propulsion/designs/").removesuffix(
+                "/requirements"
+            ).strip("/")
+            try:
+                payload = _read_json(self)
+                design = load_design(design_id, self.application.design_store)
+                update_requirements(
+                    design,
+                    dict(payload.get("updates") or payload),
+                    store=self.application.design_store,
+                )
+            except Exception as exc:
+                status, error_payload = map_systems_error(exc)
+                if status >= 500:
+                    raise
+                return self._json(status, error_payload)
+            return self._json(200, {"ok": True, "design": get_design_payload(design)})
+        if path.startswith("/api/propulsion/designs/") and path.endswith(
+            "/calculate/isentropic"
+        ):
+            current = self._require_session()
+            if current is None:
+                return
+            design_id = (
+                path.removeprefix("/api/propulsion/designs/")
+                .removesuffix("/calculate/isentropic")
+                .strip("/")
+            )
+            try:
+                payload = _read_json(self)
+                design = load_design(design_id, self.application.design_store)
+                result = run_isentropic(
+                    design,
+                    mach=float(payload["mach"]),
+                    gamma=None if payload.get("gamma") is None else float(payload["gamma"]),
+                    store=self.application.design_store,
+                )
+            except Exception as exc:
+                status, error_payload = map_systems_error(exc)
+                if status >= 500:
+                    raise
+                return self._json(status, error_payload)
+            self.application.audit_action(
+                current,
+                action="PROPULSION_ISENTROPIC",
+                resource=path,
+                detail={"design_id": design_id, "status": result.status.value},
+                source_ip=self.client_address[0],
+                user_agent=self.headers.get("User-Agent", "cosmos-desktop"),
+            )
+            return self._json(
+                200,
+                {
+                    "ok": True,
+                    "result": result.to_canonical_dict(),
+                    "workflow": get_workflow_payload(design),
+                },
+            )
+        if path.startswith("/api/propulsion/designs/") and path.endswith("/run/phase3"):
+            current = self._require_session()
+            if current is None:
+                return
+            design_id = (
+                path.removeprefix("/api/propulsion/designs/")
+                .removesuffix("/run/phase3")
+                .strip("/")
+            )
+            try:
+                payload = _read_json(self)
+                design = load_design(design_id, self.application.design_store)
+                summary = run_phase3(
+                    design,
+                    chamber_temperature_k=(
+                        None
+                        if payload.get("chamber_temperature_k") is None
+                        else float(payload["chamber_temperature_k"])
+                    ),
+                    gamma=None if payload.get("gamma") is None else float(payload["gamma"]),
+                    molecular_weight_kg_per_mol=(
+                        None
+                        if payload.get("molecular_weight_kg_per_mol") is None
+                        else float(payload["molecular_weight_kg_per_mol"])
+                    ),
+                    throat_area_m2=(
+                        None
+                        if payload.get("throat_area_m2") is None
+                        else float(payload["throat_area_m2"])
+                    ),
+                    expansion_ratio=(
+                        None
+                        if payload.get("expansion_ratio") is None
+                        else float(payload["expansion_ratio"])
+                    ),
+                    store=self.application.design_store,
+                )
+            except Exception as exc:
+                status, error_payload = map_systems_error(exc)
+                if status >= 500:
+                    raise
+                return self._json(status, error_payload)
+            self.application.audit_action(
+                current,
+                action="PROPULSION_PHASE3",
+                resource=path,
+                detail={"design_id": design_id, "ok": summary.get("ok")},
+                source_ip=self.client_address[0],
+                user_agent=self.headers.get("User-Agent", "cosmos-desktop"),
+            )
+            return self._json(200, summary)
+        if path.startswith("/api/propulsion/designs/") and path.endswith("/run/phase4"):
+            current = self._require_session()
+            if current is None:
+                return
+            design_id = (
+                path.removeprefix("/api/propulsion/designs/")
+                .removesuffix("/run/phase4")
+                .strip("/")
+            )
+            try:
+                payload = _read_json(self)
+                design = load_design(design_id, self.application.design_store)
+                summary = run_phase4(
+                    design,
+                    characteristic_length_m=(
+                        None
+                        if payload.get("characteristic_length_m") is None
+                        else float(payload["characteristic_length_m"])
+                    ),
+                    contraction_ratio=(
+                        None
+                        if payload.get("contraction_ratio") is None
+                        else float(payload["contraction_ratio"])
+                    ),
+                    wall_thickness_m=(
+                        None
+                        if payload.get("wall_thickness_m") is None
+                        else float(payload["wall_thickness_m"])
+                    ),
+                    material_id=str(payload.get("material_id") or "stainless_304"),
+                    store=self.application.design_store,
+                )
+            except Exception as exc:
+                status, error_payload = map_systems_error(exc)
+                if status >= 500:
+                    raise
+                return self._json(status, error_payload)
+            self.application.audit_action(
+                current,
+                action="PROPULSION_PHASE4",
+                resource=path,
+                detail={"design_id": design_id, "ok": summary.get("ok")},
+                source_ip=self.client_address[0],
+                user_agent=self.headers.get("User-Agent", "cosmos-desktop"),
+            )
+            return self._json(200, summary)
+        if path.startswith("/api/propulsion/designs/") and path.endswith("/run/phase6"):
+            current = self._require_session()
+            if current is None:
+                return
+            design_id = (
+                path.removeprefix("/api/propulsion/designs/")
+                .removesuffix("/run/phase6")
+                .strip("/")
+            )
+            try:
+                design = load_design(design_id, self.application.design_store)
+                summary = run_phase6(design, store=self.application.design_store)
+            except Exception as exc:
+                status, error_payload = map_systems_error(exc)
+                if status >= 500:
+                    raise
+                return self._json(status, error_payload)
+            self.application.audit_action(
+                current,
+                action="PROPULSION_PHASE6",
+                resource=path,
+                detail={"design_id": design_id, "ok": summary.get("ok")},
+                source_ip=self.client_address[0],
+                user_agent=self.headers.get("User-Agent", "cosmos-desktop"),
+            )
+            return self._json(200, summary)
         if path == "/api/auth/login":
             payload: dict[str, object] = {}
             try:
