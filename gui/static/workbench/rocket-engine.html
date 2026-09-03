@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>COSMOS 0.1 — Rocket Engine Propulsion Suite</title>
+  <link rel="stylesheet" href="/assets/cosmos.css" />
+  <link rel="stylesheet" href="/assets/propulsion-suite.css" />
+</head>
+<body class="cosmos-app">
+  <div class="app-frame page-shell">
+    <header class="app-header">
+      <button type="button" class="avatar" id="avatar" title="Edit profile photo" aria-label="Edit profile photo"></button>
+      <div class="header-meta">
+        <div class="header-pill">ROCKET ENGINE</div>
+        <div class="header-pill">PROPULSION SUITE</div>
+        <a class="header-pill header-link" href="/app/workbenches">BACK</a>
+      </div>
+      <button type="button" class="user-badge" id="user-badge">COSMOS</button>
+    </header>
+    <div class="app-body">
+      <aside class="sidebar" aria-label="Primary navigation"></aside>
+      <main class="content-area propulsion-suite">
+        <section class="suite-hero">
+          <div>
+            <h1>Rocket Engine Propulsion Design Suite</h1>
+            <p class="suite-lede">
+              Conceptual / preliminary liquid-rocket design workspace inside the Rocket Engine workbench.
+              Module layout is informed by RPA (rocket-propulsion.com) and RPL Engine Workbench analysis flow.
+              Live calculations call frozen COSMOS Physics through the application API — equations are not duplicated in the GUI.
+            </p>
+          </div>
+          <div class="suite-legend">
+            <span class="pill live">LIVE</span>
+            <span class="pill partial">PARTIAL</span>
+            <span class="pill planned">PLANNED</span>
+          </div>
+        </section>
+
+        <div class="suite-layout">
+          <nav class="suite-nav" id="suite-nav" aria-label="Propulsion modules"></nav>
+          <section class="suite-workspace">
+            <header class="suite-module-header">
+              <h2 id="suite-module-title">Select a module</h2>
+              <p id="suite-module-desc" class="suite-meta"></p>
+              <p id="suite-module-ref" class="suite-meta muted"></p>
+            </header>
+            <div id="suite-forms" class="suite-forms"></div>
+            <div class="suite-result-card">
+              <h3>Result</h3>
+              <pre id="suite-result" class="suite-result">No calculation yet.</pre>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <button type="button" class="maharshi-module" id="maharshi-module" title="Maharshi Bharadwaj — Knowledge pop-up">
+      <img src="/assets/maharshi_bharadwaj.png" alt="Maharshi Bharadwaj" />
+      <span>MAHARSHI BHARADWAJ</span>
+    </button>
+    <div class="status-bar in-frame" id="status-bar" role="status">
+      <span class="status-indicator ready" aria-hidden="true"></span>
+      <span class="status-bar-text">Rocket Engine propulsion suite</span>
+      <span class="status-bar-meta">COSMOS 0.1</span>
+    </div>
+  </div>
+  <script src="/assets/rbac.js"></script>
+  <script src="/assets/app.js"></script>
+  <script src="/assets/engineering-ux.js"></script>
+  <script src="/assets/maharshi-popup.js"></script>
+  <script src="/assets/propulsion-suite.js"></script>
+  <script>COSMOS.initPropulsionSuite();</script>
+</body>
+</html>

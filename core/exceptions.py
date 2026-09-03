@@ -28,19 +28,34 @@ from __future__ import annotations
 
 __all__ = (
     "CFDError",
+    "ConfigurationError",
+    "ContractError",
+    "CoreError",
     "CosmosError",
     "DatabaseError",
+    "DimensionError",
     "GeometryError",
     "GUIError",
     "InvalidInputError",
+    "RegistryError",
+    "SerializationError",
     "SolverConvergenceError",
     "SolverError",
+    "UnitError",
     "ValidationError",
 )
 
 
-class CosmosError(Exception):
+class CoreError(Exception):
+    """Base class for domain-independent Core layer failures."""
+
+
+class CosmosError(CoreError):
     """Base class for every application-defined COSMOS exception."""
+
+
+class ConfigurationError(CosmosError):
+    """Indicate invalid or inconsistent Core configuration."""
 
 
 class ValidationError(CosmosError):
@@ -49,6 +64,26 @@ class ValidationError(CosmosError):
 
 class InvalidInputError(ValidationError):
     """Indicate that an input value or input combination is invalid."""
+
+
+class UnitError(CosmosError):
+    """Indicate a unit definition, conversion, or compatibility failure."""
+
+
+class DimensionError(CosmosError):
+    """Indicate a dimensional analysis or compatibility failure."""
+
+
+class SerializationError(CosmosError):
+    """Indicate deterministic serialization or deserialization failure."""
+
+
+class ContractError(CosmosError):
+    """Indicate violation of a Core interface contract."""
+
+
+class RegistryError(CosmosError):
+    """Indicate failure in a Core registry operation."""
 
 
 class GeometryError(CosmosError):

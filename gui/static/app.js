@@ -155,13 +155,12 @@ const COSMOS = {
     const expandedClass = this.navExpanded ? " nav-expanded" : "";
     document.querySelector(".app-body")?.classList.toggle("nav-expanded", this.navExpanded);
 
+    // Propulsion / Physics live inside Rocket Engine workbench suite — not top-level nav.
     const primary = [
       { id: "command", label: "Command", icon: "command", href: this.hubUrl(this.hubPageFromUrl()), tip: "Workbench launcher & command workspace" },
       { id: "design-contract", label: "Design Contract", icon: "design-contract", href: null, tip: "Requirements & design contract (coming soon)", disabled: true },
       { id: "knowledge", label: "Knowledge", icon: "knowledge", href: "/app/workbench/knowledge", tip: "Maharshi Bharadwaj — evidence & knowledge infrastructure" },
-      { id: "propulsion", label: "Propulsion", icon: "propulsion", href: "/app/workbenches?page=1", tip: "Rocket engine, turbopumps, staging" },
       { id: "cad", label: "CAD / Geometry", icon: "cad", href: null, tip: "Parametric CAD studio (coming soon)", disabled: true },
-      { id: "physics", label: "Physics", icon: "physics", href: null, tip: "Physics analysis workspace (coming soon)", disabled: true },
       { id: "simulation", label: "Simulation", icon: "simulation", href: "/app/workbenches?page=2", tip: "Simulation hub — CFD, FEA, multiphysics" },
       { id: "optimization", label: "Optimization", icon: "optimization", href: null, tip: "Design space & Pareto exploration (coming soon)", disabled: true },
       { id: "comparison", label: "Comparison", icon: "comparison", href: "/app/workbenches?page=3", tip: "Comparison cockpit & OTCS validation" },
@@ -579,7 +578,8 @@ const COSMOS = {
     if (path.includes("/workbench/knowledge")) return "knowledge";
     if (path.includes("/audit")) return "audit";
     if (path.includes("/admin")) return "admin";
-    if (path.includes("/workbench/rocket-engine")) return "propulsion";
+    if (path.includes("/workbench/rocket-engine")) return "command";
+    if (path.includes("/physics/")) return "command";
     if (path.includes("/workbench/")) return "command";
     const page = this.hubPageFromUrl?.() || 1;
     if (path.includes("/workbenches")) {
@@ -892,6 +892,17 @@ const COSMOS = {
         button.className = "module-btn";
         button.textContent = name.toUpperCase();
         button.onclick = () => {
+          const suiteMap = {
+            "Propulsion Design Suite": "nozzle-flow",
+            "Nozzle Flow": "nozzle-flow",
+            "Heat Transfer": "heat-transfer",
+            "Chamber Structures": "structures",
+            "Compressible Flow (Physics Slice)": "nozzle-flow",
+          };
+          if (Object.prototype.hasOwnProperty.call(suiteMap, name)) {
+            window.location.href = `/app/workbench/rocket-engine?module=${suiteMap[name]}`;
+            return;
+          }
           alert(`${name} is registered. Solver integration is routed through governed backend APIs.`);
         };
         modules.appendChild(button);

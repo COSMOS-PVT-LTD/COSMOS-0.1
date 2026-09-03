@@ -425,7 +425,10 @@ def _seed_correlations(service: Any) -> None:
         Correlation(
             correlation_id="CORR-BARTZ",
             name="Bartz",
-            equation="hg = (0.026/Dt**0.2)*(mu**0.2*cp/Pr**0.6)*(pc/cstar)**0.8*(Dt/R)**0.1*sigma",
+            equation=(
+                "Nu_D = 0.026 Re_D**0.8 Pr**0.4; "
+                "h = (Nu_D k / D) sigma (D/R)**0.1  [physics SI executable form]"
+            ),
             variables=("hg", "Dt", "mu", "cp", "Pr", "pc", "cstar", "R", "sigma"),
             dimensionless_groups=("Re", "Pr"),
             applicable_fluid="hot gas / regenerative coolant side as published",

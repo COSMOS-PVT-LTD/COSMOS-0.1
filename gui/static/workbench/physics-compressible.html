@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>COSMOS 0.1 — Compressible Flow</title>
+  <link rel="stylesheet" href="/assets/cosmos.css" />
+  <style>
+    .physics-panel { max-width: 920px; display: grid; gap: 1.25rem; }
+    .physics-card {
+      border: 1px solid var(--cosmos-border, #2a3a4a);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      background: rgba(8, 16, 28, 0.72);
+    }
+    .physics-card h2 { margin: 0 0 0.75rem; font-size: 1rem; letter-spacing: 0.04em; }
+    .physics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .physics-grid label { display: grid; gap: 0.35rem; font-size: 0.8rem; color: #9fb3c8; }
+    .physics-grid input, .physics-grid select {
+      background: #0b1520;
+      border: 1px solid #33485c;
+      color: #e8f1f8;
+      border-radius: 4px;
+      padding: 0.45rem 0.55rem;
+      font-family: inherit;
+    }
+    .physics-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .physics-actions button {
+      border: 1px solid #3d6d88;
+      background: #123047;
+      color: #d7ecf8;
+      border-radius: 4px;
+      padding: 0.45rem 0.8rem;
+      cursor: pointer;
+    }
+    .physics-result {
+      white-space: pre-wrap;
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: #cfe3f2;
+      min-height: 8rem;
+    }
+    .physics-result.error { color: #ffb4a8; }
+    .physics-meta { font-size: 0.8rem; color: #8ea4b8; }
+  </style>
+</head>
+<body class="cosmos-app">
+  <div class="app-frame page-shell">
+    <header class="app-header">
+      <button type="button" class="avatar" id="avatar" title="Edit profile photo" aria-label="Edit profile photo"></button>
+      <div class="header-meta">
+        <div class="header-pill">PHYSICS</div>
+        <div class="header-pill">COMPRESSIBLE FLOW</div>
+        <a class="header-pill header-link" href="/app/workbenches">BACK</a>
+      </div>
+      <button type="button" class="user-badge" id="user-badge">COSMOS</button>
+    </header>
+    <div class="app-body">
+      <aside class="sidebar" aria-label="Primary navigation"></aside>
+      <main class="content-area">
+        <section class="physics-panel">
+          <div>
+            <h1>Compressible Flow</h1>
+            <p class="physics-meta">
+              Vertical slice against the frozen Core + Physics baseline.
+              Equations execute in Physics via the application API — not in this page.
+              Validation status is never fabricated.
+            </p>
+          </div>
+
+          <div class="physics-card">
+            <h2>Isentropic stagnation</h2>
+            <div class="physics-grid">
+              <label>Mach [-]
+                <input id="isen-mach" type="number" step="any" value="2" />
+              </label>
+              <label>gamma [-]
+                <input id="isen-gamma" type="number" step="any" value="1.4" />
+              </label>
+            </div>
+            <div class="physics-actions">
+              <button type="button" id="isen-run">Evaluate</button>
+            </div>
+          </div>
+
+          <div class="physics-card">
+            <h2>Area–Mach</h2>
+            <div class="physics-grid">
+              <label>Mode
+                <select id="am-mode">
+                  <option value="forward">Forward A/A*(M)</option>
+                  <option value="inverse">Inverse M(A/A*)</option>
+                </select>
+              </label>
+              <label>Mach [-]
+                <input id="am-mach" type="number" step="any" value="2" />
+              </label>
+              <label>A/A* [-]
+                <input id="am-area" type="number" step="any" value="1.6875" />
+              </label>
+              <label>gamma [-]
+                <input id="am-gamma" type="number" step="any" value="1.4" />
+              </label>
+              <label>Inverse branch
+                <select id="am-branch">
+                  <option value="supersonic" selected>supersonic</option>
+                  <option value="subsonic">subsonic</option>
+                </select>
+              </label>
+            </div>
+            <div class="physics-actions">
+              <button type="button" id="am-run">Evaluate</button>
+            </div>
+          </div>
+
+          <div class="physics-card">
+            <h2>Result</h2>
+            <div id="physics-result" class="physics-result">No calculation yet.</div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="status-bar in-frame" id="status-bar" role="status">
+      <span class="status-indicator ready" aria-hidden="true"></span>
+      <span class="status-bar-text">Physics compressible-flow slice</span>
+      <span class="status-bar-meta">COSMOS 0.1</span>
+    </div>
+  </div>
+  <script src="/assets/rbac.js"></script>
+  <script src="/assets/app.js"></script>
+  <script src="/assets/engineering-ux.js"></script>
+  <script src="/assets/physics-compressible.js"></script>
+  <script>COSMOS.initPhysicsCompressiblePage();</script>
+</body>
+</html>
