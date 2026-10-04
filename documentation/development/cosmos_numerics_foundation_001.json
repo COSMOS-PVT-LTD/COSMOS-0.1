@@ -195,10 +195,18 @@
       ]
     },
     "NUM-014": {
-      "name": "Numerical optimization",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "Deterministic numerical optimization",
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "5 tests passed: three algorithms reach independent quadratic stationary solution with gradient-norm acceptance",
+        "BFGS Rosenbrock converges to (1,1); objectives decrease and deterministic replay matches",
+        "Invalid gradients/objectives, invalid step and exhausted budget rejected; Ruff and Mypy passed"
+      ],
+      "limitations": [
+        "Unconstrained gradient descent, Polak-Ribiere+ CG and inverse BFGS only; stationary point is not global optimum",
+        "L-BFGS, Nelder-Mead, annealing, genetic, particle swarm, Bayesian and multi-objective are explicitly DEFERRED",
+        "Armijo and recorded curvature/direction restarts are safeguards, not global convergence proofs"
+      ]
     },
     "NUM-015": {
       "name": "Parallel utilities",
