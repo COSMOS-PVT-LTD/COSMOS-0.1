@@ -156,10 +156,17 @@
       ]
     },
     "NUM-011": {
-      "name": "Mesh",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "Mesh and connectivity",
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "3 tests passed: 1D/2D node/cell indexing, shared-face counts, refinement and quality metrics",
+        "Canonical serialization replay and actual unstructured triangle data validated",
+        "Inverted, repeated, out-of-range and nonmanifold cells rejected; Ruff and Mypy passed"
+      ],
+      "limitations": [
+        "Unstructured support is a convex CCW triangle/quad data model, not CAD-grade automatic meshing",
+        "Structured refinement uniformly bisects axes; no adaptive remeshing"
+      ]
     },
     "NUM-012": {
       "name": "Random/UQ/sensitivity",
