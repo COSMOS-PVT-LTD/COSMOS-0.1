@@ -28,6 +28,13 @@ ScalarFunction = Callable[[float], float]
 LOGGER = get_logger(__name__)
 
 
+def finite_output(value: FloatArray) -> FloatArray:
+    """Reject nonfinite calculated arrays as solver failures, without copying."""
+    if not np.isfinite(value).all():
+        failure("Numerical output is nonfinite.")
+    return value
+
+
 def invalid(message: str) -> NoReturn:
     """Raise the existing Core invalid-input error with concise diagnostics."""
     LOGGER.debug("INVALID_INPUT: %s", message)

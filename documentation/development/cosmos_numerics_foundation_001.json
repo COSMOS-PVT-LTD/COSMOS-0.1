@@ -104,9 +104,17 @@
     },
     "NUM-007": {
       "name": "Finite difference",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "9 tests passed: sin derivative refinement first/second/fourth orders and x^4 polynomial stencils",
+        "Uniform Laplacian and explicit/implicit discrete equations independently checked",
+        "Three overflow defects reproduced failing, repaired to Core solver failures; cumulative Numerics 132 passed",
+        "Ruff and Mypy passed"
+      ],
+      "limitations": [
+        "Uniform 1D stencils only; second/fourth derivatives return valid interior nodes explicitly",
+        "Generic explicit update requires caller-provided qualified stability bound"
+      ]
     },
     "NUM-008": {
       "name": "PDE foundation",
