@@ -89,10 +89,18 @@
       ]
     },
     "NUM-006": {
-      "name": "ODE",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "ODE integration",
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "9 tests passed: Euler first, RK2 second and RK4 fourth observed orders; backward Euler first order",
+        "Exponential growth/decay, oscillator invariant, embedded-error rejection and tighter tolerance behavior",
+        "Minimum-step, attempt-budget, wrong-shape and nonfinite failure tests; reproducible adaptive histories",
+        "Ruff and Mypy passed"
+      ],
+      "limitations": [
+        "Forward-time normalized first-order systems only; no event/dense-output or general stiff solver",
+        "Embedded tolerance controls local error, not a rigorous global error bound; caller qualifies general RHS explicit stability"
+      ]
     },
     "NUM-007": {
       "name": "Finite difference",
