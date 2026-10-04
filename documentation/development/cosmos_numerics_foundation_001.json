@@ -182,10 +182,17 @@
       ]
     },
     "NUM-013": {
-      "name": "Automatic differentiation",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "Forward automatic differentiation",
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "10 tests passed: eight scalar analytic derivatives, multivariable gradient and rectangular Jacobian",
+        "Tiny-value derivative confirms actual tangent propagation, not finite-difference sampling",
+        "Domains, incompatible tangents, unsupported math callbacks and exponential overflow rejected; Ruff and Mypy passed"
+      ],
+      "limitations": [
+        "First-order real forward mode with explicit supported arithmetic/functions only",
+        "Reverse mode and Hessians explicitly DEFERRED; no NumPy ufunc tracing or nonsmooth derivatives claimed"
+      ]
     },
     "NUM-014": {
       "name": "Numerical optimization",
