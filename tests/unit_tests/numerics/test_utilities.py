@@ -39,7 +39,8 @@ def test_reject_nonfinite_or_nonreal(bad):
 
 @pytest.mark.parametrize("kwargs", [{"absolute": -1}, {"relative": math.inf}, {"residual": 0},
                                     {"absolute": 0, "relative": 0}, {"max_iterations": 0},
-                                    {"max_iterations": True}, {"stagnation_window": 1}])
+                                    {"max_iterations": True}, {"stagnation_window": 1},
+                                    {"absolute": "0.1"}, {"relative": None}])
 def test_invalid_tolerance_policy(kwargs):
     with pytest.raises(InvalidInputError):
         Tolerances(**kwargs)

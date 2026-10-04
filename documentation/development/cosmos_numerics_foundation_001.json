@@ -25,15 +25,27 @@
         "tests/unit_tests/numerics/test_utilities.py: 31 passed",
         "Core independence neighboring tests: 5 passed",
         "Three overflow regressions reproduced failing before repair",
-        "Ruff and Mypy numerics passed"
+        "Ruff and Mypy numerics passed",
+        "Additional nonnumeric tolerance cases reproduced and repaired; final utilities 33 tests"
       ],
       "limitations": []
     },
     "NUM-002": {
       "name": "Root finding",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "status": "PASS",
+      "evidence": [
+        "39 independent root/negative/determinism tests",
+        "270 neighboring Numerics/Physics/Core regression cases passed",
+        "Newton/Secant near-root ordering regressions repaired",
+        "Brent-style jump/bracket-collapse regression reproduced and repaired",
+        "Expanded all-layer Mypy gap resolved by the qualified compatibility function"
+      ],
+      "limitations": [
+        "Brent-style safeguarded IQI/secant hybrid, not optimized canonical Brent transcription",
+        "Unbracketed methods require documented local regularity; fixed point requires an explicit qualified contraction bound",
+        "Bisection interval accuracy assumes residual continuity; residual history is reported separately",
+        "Existing Physics port auto-selects qualified Numerics; unused fallback retirement reserved for NUM-016"
+      ]
     },
     "NUM-003": {
       "name": "Linear algebra",

@@ -18,8 +18,10 @@ from physics.contracts import numerics_port
 GAMMA = 1.4
 
 
-def test_bracketed_root_uses_documented_fallback() -> None:
-    assert numerics_port.bracketed_root is numerics_port._fallback_bisection
+def test_bracketed_root_uses_canonical_numerics_when_present() -> None:
+    from numerics.root_finding.bisection import find_root
+
+    assert numerics_port.bracketed_root is find_root
 
 
 def test_fallback_invalid_bracket_raises() -> None:

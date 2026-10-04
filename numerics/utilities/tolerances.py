@@ -17,6 +17,7 @@ import math
 from dataclasses import dataclass
 
 from core.exceptions import InvalidInputError
+from numerics.utilities.numerical_checks import finite
 
 
 @dataclass(frozen=True, slots=True)
@@ -32,7 +33,7 @@ class Tolerances:
     def __post_init__(self) -> None:
         for name in ("absolute", "relative", "residual"):
             value = getattr(self, name)
-            if isinstance(value, bool) or not math.isfinite(value) or value < 0:
+            if finite(value, f"{name} tolerance") < 0:
                 raise InvalidInputError(f"{name} tolerance must be finite and nonnegative.")
         if self.absolute == 0 and self.relative == 0:
             raise InvalidInputError("At least one solution tolerance must be positive.")
@@ -45,8 +46,7 @@ class Tolerances:
 
     def threshold(self, scale: float = 0.0) -> float:
         """Return atol + rtol*|scale|, rejecting nonfinite scales."""
-        if not math.isfinite(scale):
-            raise InvalidInputError("Tolerance scale must be finite.")
+        scale = finite(scale, "Tolerance scale")
         result = self.absolute + self.relative * abs(scale)
         if not math.isfinite(result):
             raise InvalidInputError("Tolerance threshold overflowed; normalize input/scales.")
