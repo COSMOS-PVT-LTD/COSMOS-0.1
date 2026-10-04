@@ -76,10 +76,17 @@
       ]
     },
     "NUM-005": {
-      "name": "Nonlinear solvers",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "Nonlinear solver",
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "5 tests passed: coupled analytic root, independent centered Jacobian, actual residual and monotone merit histories",
+        "Singular Jacobian, nonfinite residual, unsolvable system and exhausted-budget paths reject success",
+        "Ruff and Mypy passed"
+      ],
+      "limitations": [
+        "Trust-region interface is an explicit Euclidean step cap plus backtracking, not dogleg/model-ratio optimization",
+        "Numerical Jacobian is explicitly finite differences with caller-selected perturbation"
+      ]
     },
     "NUM-006": {
       "name": "ODE",
