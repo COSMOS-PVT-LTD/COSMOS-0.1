@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from unittest.mock import patch
+
 from knowledge.mathocr import (
     MathOCRFailure,
     UnavailableMathOCRAdapter,
@@ -9,6 +11,7 @@ from knowledge.mathocr import (
     select_math_ocr_adapter,
 )
 from knowledge.mathocr.tesseract_math import tesseract_math_is_provisioned
+from knowledge.pdf.image_pdf import render_text_page_image
 
 
 def test_unavailable_math_ocr_does_not_invent() -> None:
@@ -40,7 +43,7 @@ def test_empty_image_is_corrupt_or_unavailable() -> None:
 def test_tesseract_span_reconstructs_from_source_text_when_provisioned() -> None:
     if not tesseract_math_is_provisioned():
         result = run_math_ocr(
-            b"",
+            render_text_page_image(("Re = (rho * V * D) / mu",)),
             source_id="SRC",
             document_id="DOC",
             page_number=1,
@@ -63,3 +66,21 @@ def test_tesseract_span_reconstructs_from_source_text_when_provisioned() -> None
     assert result.backend.startswith("cosmos-mathocr-tesseract")
     adapter = select_math_ocr_adapter()
     assert adapter.adapter_name != "cosmos-mathocr-unavailable"
+
+
+def test_missing_math_ocr_backend_does_not_reconstruct_supplied_equation() -> None:
+    image = render_text_page_image(("Re = (rho * V * D) / mu",))
+    with patch("knowledge.mathocr.adapter.tesseract_math_is_provisioned", return_value=False):
+        result = run_math_ocr(
+            image,
+            source_id="SRC",
+            document_id="DOC",
+            page_number=1,
+            region_id="eq-1",
+            source_text="Re = (rho * V * D) / mu",
+        )
+    assert result.failure is MathOCRFailure.MATH_OCR_UNAVAILABLE
+    assert result.source_representation == ""
+    assert result.latex is None
+    assert result.reconstruction is None
+    assert result.image_hash
