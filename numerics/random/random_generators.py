@@ -4,7 +4,7 @@ COSMOS Rocket Propulsion Platform
 Module: numerics.random.random_generators
 Author: COSMOS Development Team
 Version: 0.1.0
-Purpose: DEFERRED architecture slot; no operational API is exported.
+Purpose: Domain-neutral random.random_generators foundation.
 Copyright (c) 2026 COSMOS PVT LTD. All Rights Reserved.
 
 Description:
@@ -13,5 +13,11 @@ Description:
 
 from __future__ import annotations
 
-CAPABILITY_STATE = "DEFERRED"
-__all__: tuple[str, ...] = ()
+import numpy as np
+
+from numerics.random.seeds import validate
+
+
+def generator(seed: int) -> np.random.Generator:
+    """Explicit PCG64, never a mutable global PRNG or wall-clock seed."""
+    return np.random.Generator(np.random.PCG64(validate(seed)))

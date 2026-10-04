@@ -169,10 +169,17 @@
       ]
     },
     "NUM-012": {
-      "name": "Random/UQ/sensitivity",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "Seeded random uncertainty and sensitivity",
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "4 tests passed: deterministic PCG64 replay/child streams, distribution moments and exact LHS stratum occupancy",
+        "Independent linear-model analytic mean/variance, known-normal confidence interval and explicit approximate interval semantics",
+        "Analytic local sensitivities, ordered parameter scans and nonfinite model rejection; Ruff and Mypy passed"
+      ],
+      "limitations": [
+        "Independent uniform Monte Carlo inputs only; estimated-sigma confidence intervals use a >=30-sample IID normal approximation, not small-sample t",
+        "Sobol, Morris, global sensitivity and polynomial chaos explicitly DEFERRED"
+      ]
     },
     "NUM-013": {
       "name": "Automatic differentiation",
