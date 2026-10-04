@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
-from knowledge.ocr.symbols import ENGINEERING_GREEK, GREEK_ALPHABET, propose_symbol_resolutions
+from knowledge.ocr.symbols import (
+    ENGINEERING_GREEK,
+    GREEK_ALPHABET,
+    propose_symbol_resolutions,
+)
 
 
 def test_symbol_hypotheses_do_not_mutate_source() -> None:

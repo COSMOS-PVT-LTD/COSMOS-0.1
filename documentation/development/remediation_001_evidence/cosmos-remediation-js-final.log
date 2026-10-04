@@ -1,0 +1,15 @@
+✔ blank/non-finite inputs remain missing; explicit zero remains zero (2.891ms)
+✔ runWorkflow preserves explicit solver inputs across form refresh (0.7395ms)
+✔ runWorkflowFromDesign preserves explicit solver inputs across form refresh (0.776958ms)
+✔ blank engineering fields send missing values, never invented fallbacks (1.157042ms)
+✔ UI distinguishes execution success from completeness and validation (0.639167ms)
+✔ UI preserves structured FAILED stage diagnostics (0.4145ms)
+✔ UI preserves structured OUT_OF_RANGE stage diagnostics (0.338042ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 75.961333

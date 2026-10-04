@@ -15,8 +15,11 @@ Description:
 
 from __future__ import annotations
 
-from core.exceptions import InvalidInputError
+import math
 
+from core.exceptions import InvalidInputError, SolverConvergenceError
+from core.logger import get_logger
+from core.validation import validate_finite
 from physics.compressible_flow.isentropic import ISENTROPIC
 from physics.contracts.numerics_port import bracketed_root
 from physics.model import ModelIdentity
@@ -33,8 +36,8 @@ AREA_MACH = ModelIdentity(
     model_name="Isentropic area-Mach relation",
     physical_domain="compressible_flow",
     equations=(
-        "A/A* = (1/M) * [(1 + ((gamma-1)/2) M^2) / ((gamma+1)/2)] "
-        "^ ((gamma+1)/(2(gamma-1)))",
+        ("A/A* = (1/M) * [(1 + ((gamma-1)/2) M^2) / ((gamma+1)/2)] "
+        "^ ((gamma+1)/(2(gamma-1)))"),
     ),
     inputs=("M [-]", "gamma [-]"),
     outputs=("A/A* [-]",),
@@ -45,6 +48,11 @@ AREA_MACH = ModelIdentity(
     verification_status="analytical_verification: A/A*(M=1)=1; A/A* >= 1; two-branch inverse",
     limitations=("Sonic throat assumed; not a shocked nozzle solution.",),
 )
+
+# Numerical search bound, not a physical validity limit. Doubling from M=2
+# takes at most 19 expansions; the existing numerics port still owns solving.
+_MAX_SUPERSONIC_MACH = 1.0e6
+_LOGGER = get_logger(__name__)
 
 
 def area_ratio(mach: float, gamma: float) -> float:
@@ -75,24 +83,36 @@ def mach_from_area_ratio(
     """
 
     g = require_gamma(gamma)
-    if area_over_star < 1.0:
+    target = validate_finite(area_over_star, "A/A*")
+    if branch not in {"subsonic", "supersonic"}:
+        raise InvalidInputError("branch must be 'subsonic' or 'supersonic'.")
+    if target < 1.0:
         raise InvalidInputError("A/A* must be >= 1 for isentropic 1D flow.")
-    if abs(area_over_star - 1.0) <= 1.0e-14:
+    if target == 1.0:
         return 1.0
 
     def residual(mach: float) -> float:
-        return area_ratio(mach, g) - area_over_star
+        # The log residual has the same root and sign as A(M)-target,
+        # without overflowing the power at a distant bracket endpoint.
+        term = 0.5 * (g - 1.0) * (mach * mach - 1.0) / (0.5 * (g + 1.0))
+        exponent = (g + 1.0) / (2.0 * (g - 1.0))
+        return -math.log(mach) + exponent * math.log1p(term) - math.log(target)
 
     if branch == "subsonic":
         return bracketed_root(residual, 1.0e-8, 1.0)
     if branch == "supersonic":
-        # Large but finite search cap; extreme area ratios remain valid.
-        upper = 50.0
-        if residual(upper) > 0.0:
-            # Still below the target at M=50; expand once.
-            upper = 80.0
+        upper = 2.0
+        while residual(upper) < 0.0:
+            if upper >= _MAX_SUPERSONIC_MACH:
+                message = (
+                    f"Supersonic bracket search limit M={_MAX_SUPERSONIC_MACH:g} "
+                    f"exceeded for A/A*={target:g}, gamma={g:g}."
+                )
+                _LOGGER.error(message)
+                raise SolverConvergenceError(message)
+            upper = min(2.0 * upper, _MAX_SUPERSONIC_MACH)
         return bracketed_root(residual, 1.0, upper)
-    raise InvalidInputError("branch must be 'subsonic' or 'supersonic'.")
+    raise AssertionError("Unreachable validated branch.")
 
 
 # Re-export isentropic identity for documentation coupling.

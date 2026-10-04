@@ -10,7 +10,6 @@ Purpose: Thin-shell membrane stresses (cylinder/sphere aliases).
 from __future__ import annotations
 
 from core.quantity import Quantity
-
 from physics.solid_mechanics.pressure_vessels import ThinWallCylinder, cylinder, sphere
 
 __all__ = ("cylindrical_membrane", "spherical_membrane")

@@ -9,7 +9,10 @@ from knowledge.extraction.claim import (
     CandidateRelationshipExtraction,
 )
 from knowledge.extraction.entity import CandidateEntityExtraction
-from knowledge.extraction.equation import CandidateEquationExtraction, ExtractionConfidence
+from knowledge.extraction.equation import (
+    CandidateEquationExtraction,
+    ExtractionConfidence,
+)
 from knowledge.extraction.exceptions import ExtractionValidationError
 from knowledge.graph.provenance import SourceProvenanceRecord
 from knowledge.parsers.w3.models import StructuredParsedDocument

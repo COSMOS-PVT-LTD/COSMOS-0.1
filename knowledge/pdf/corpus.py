@@ -4,30 +4,34 @@ from __future__ import annotations
 
 __all__ = (
     "AMBIGUOUS_REYNOLDS_PAGE",
-    "INCONSISTENT_REYNOLDS_PAGE",
-    "NO_EQUATION_PAGE",
-    "NOTATION_PAGE",
     "COMPLEX_EQUATION_PAGE",
     "GREEK_SYMBOL_PAGE",
+    "INCONSISTENT_REYNOLDS_PAGE",
     "NASA_CLASS_PAGE",
+    "NOTATION_PAGE",
+    "NO_EQUATION_PAGE",
     "REYNOLDS_PAGE",
     "TABLE_PAGE",
     "ambiguous_reynolds_pdf_bytes",
+    "complex_equation_pdf_bytes",
+    "greek_symbol_pdf_bytes",
     "image_only_pdf_bytes",
     "inconsistent_reynolds_pdf_bytes",
     "mixed_reynolds_pdf_bytes",
+    "nasa_class_pdf_bytes",
     "no_equation_pdf_bytes",
     "notation_scanned_pdf_bytes",
-    "complex_equation_pdf_bytes",
-    "greek_symbol_pdf_bytes",
-    "nasa_class_pdf_bytes",
     "reynolds_pdf_bytes",
     "scanned_reynolds_pdf_bytes",
     "table_scanned_pdf_bytes",
 )
 
 from knowledge.pdf.image_pdf import write_scanned_pdf
-from knowledge.pdf.writer import write_extractable_pdf, write_image_only_pdf, write_mixed_pdf
+from knowledge.pdf.writer import (
+    write_extractable_pdf,
+    write_image_only_pdf,
+    write_mixed_pdf,
+)
 
 REYNOLDS_PAGE: tuple[str, ...] = (
     "Chapter 1 Fluid Mechanics Identities",

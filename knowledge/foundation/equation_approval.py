@@ -6,7 +6,11 @@ from dataclasses import dataclass
 from enum import Enum
 
 from knowledge.extraction.equation import CandidateEquationExtraction
-from knowledge.models.dimension_check import DimensionCheckResult, DimensionExponents, check_dimensional_consistency
+from knowledge.models.dimension_check import (
+    DimensionCheckResult,
+    DimensionExponents,
+    check_dimensional_consistency,
+)
 from knowledge.models.lifecycle import KnowledgeLifecycle
 
 __all__ = (

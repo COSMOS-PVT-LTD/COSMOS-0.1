@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from enum import Enum
-import re
 
 from knowledge.foundation.query_classification import QueryKind, classify_query
 

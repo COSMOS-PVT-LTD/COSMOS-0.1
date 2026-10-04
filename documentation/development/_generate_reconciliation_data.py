@@ -160,7 +160,7 @@ def build_registry() -> dict[str, dict[str, str]]:
     # Ontology
     r["knowledge/ontology/ontology_manager.py"] = e("B", "knowledge/ontology/registry.py", "OntologyRegistry", "Ontology management", "KG-024", "BLOCK-008", "test_w5_ontology.py", "Registry replaces manager")
     r["knowledge/ontology/engineering_domains.py"] = e("C", "knowledge/ontology/registry.py + ontology/models.py", "OntologyRegistry; EngineeringDomain taxonomy", "Engineering domain taxonomy", "KG-026", "BLOCK-008", "test_w5_ontology.py", "Static domain module consolidated into registry + models")
-    for d in "propulsion thermodynamics thermochemistry combustion fluid_mechanics compressible_flow heat_transfer cryogenics materials structures manufacturing controls optimization aerospace".split():
+    for d in ["propulsion", "thermodynamics", "thermochemistry", "combustion", "fluid_mechanics", "compressible_flow", "heat_transfer", "cryogenics", "materials", "structures", "manufacturing", "controls", "optimization", "aerospace"]:
         r[f"knowledge/ontology/{d}.py"] = e("D", "knowledge/ontology/registry.py", "OntologyRegistry.register_term", f"Domain {d}", "KG-026", "BLOCK-008", "test_w5_ontology.py", "Static module superseded by registry")
 
     # Graph
@@ -180,7 +180,7 @@ def build_registry() -> dict[str, dict[str, str]]:
     # Repositories
     r["knowledge/repositories/repository_manager.py"] = e("C", "knowledge/repository/source_registry.py", "SourceRegistry", "Repository management", "KG-005", "BLOCK-001", "test_source_registry.py", "Source registry")
     r["knowledge/repositories/document_repository.py"] = e("B", "knowledge/repository/repository.py", "DocumentRepository", "Document persistence", "Pre-KG", "—", "test_repository.py", "Singular repository path")
-    for repo in "chapter section equation variable constant material property component subsystem figure table design_rule correlation simulation".split():
+    for repo in ["chapter", "section", "equation", "variable", "constant", "material", "property", "component", "subsystem", "figure", "table", "design_rule", "correlation", "simulation"]:
         r[f"knowledge/repositories/{repo}_repository.py"] = e("E", "—", "—", f"{repo} repository", "—", "—", "NO", "Entity repo deferred — graph store primary")
 
     # Indexing

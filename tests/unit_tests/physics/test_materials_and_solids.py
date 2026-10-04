@@ -15,7 +15,6 @@ import pytest
 
 from core.quantity import Quantity
 from core.unit import SI
-
 from physics.exceptions import InsufficientDataError, OutOfRangeError
 from physics.materials.catalog import OFHC_COPPER, STAINLESS_304, get_material
 from physics.materials.creep_models import norton_rate

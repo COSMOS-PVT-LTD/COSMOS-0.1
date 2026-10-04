@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 from knowledge.extraction import CandidateEntityExtraction, ExtractedEntityKind
+from knowledge.extraction.w4.models import ExtractionResult
 from knowledge.graph import ProvenanceReference
 from knowledge.graph.entity import CanonicalEntityType
 from knowledge.graph.provenance import SourceProvenanceRecord
-from knowledge.extraction.w4.models import ExtractionResult
 from knowledge.validation import ValidationContext, validate_evidence_chain
 
 

@@ -11,7 +11,6 @@ from knowledge.graph.entity import CanonicalEntityType
 from knowledge.graph.provenance import SourceProvenanceRecord
 from knowledge.reasoning.evidence import EvidenceBundle, EvidenceItem, RankingMetadata
 from knowledge.reasoning.w10 import EvidenceClassification, W10ProvenanceAwareReasoner
-
 from tests.integration_tests.kg_block012.helpers.pipeline import run_full_pipeline
 
 

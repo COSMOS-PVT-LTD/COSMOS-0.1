@@ -17,7 +17,7 @@ from knowledge.graph import (
 from knowledge.graph.entity import CanonicalEntityType
 from knowledge.graph.provenance import SourceProvenanceRecord
 from knowledge.graph.repository import GraphStore
-from knowledge.indexing.w7 import W7IndexBundle, W7IndexBuilder
+from knowledge.indexing.w7 import W7IndexBuilder, W7IndexBundle
 from knowledge.ingestion import (
     IngestionArtifactRef,
     IngestionRequest,

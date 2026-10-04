@@ -25,8 +25,8 @@ from knowledge.indexing.semantic import (
 )
 
 __all__ = (
-    "KnowledgeIndexBundle",
     "KnowledgeIndexBuilder",
+    "KnowledgeIndexBundle",
 )
 
 

@@ -7,18 +7,18 @@ from dataclasses import dataclass
 from knowledge.extraction import CandidateEntityExtraction, ExtractedEntityKind
 from knowledge.extraction.w4 import ExtractionContext, extract_document
 from knowledge.extraction.w4.models import ExtractionResult
-from knowledge.graph.construction import (
-    GraphConstructionBatch,
-    GraphConstructor,
-)
 from knowledge.graph import (
     GraphQueryService,
     ProvenanceReference,
 )
+from knowledge.graph.construction import (
+    GraphConstructionBatch,
+    GraphConstructor,
+)
 from knowledge.graph.entity import CanonicalEntityType
 from knowledge.graph.provenance import SourceProvenanceRecord
 from knowledge.graph.repository import GraphStore
-from knowledge.indexing.w7 import W7IndexBundle, W7IndexBuilder
+from knowledge.indexing.w7 import W7IndexBuilder, W7IndexBundle
 from knowledge.ingestion import (
     IngestionArtifactRef,
     IngestionRequest,

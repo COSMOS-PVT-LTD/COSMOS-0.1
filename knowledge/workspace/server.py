@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
+import json
 from http.server import BaseHTTPRequestHandler, HTTPServer, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
-import json
 
 from knowledge.foundation.equation_approval import EquationReviewDecision
 from knowledge.foundation.governance import KnowledgeGovernanceError
@@ -34,7 +34,7 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
     def log_message(self, format: str, *args: object) -> None:
         del format, args
 
-    def do_GET(self) -> None:  # noqa: N802
+    def do_GET(self) -> None:
         parsed = urlparse(self.path)
         if parsed.path in {"/", "/index.html"}:
             self._send_file(STATIC_DIR / "index.html", "text/html; charset=utf-8")
@@ -119,7 +119,7 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
             return
         self._json(404, {"error": "not_found"})
 
-    def do_DELETE(self) -> None:  # noqa: N802
+    def do_DELETE(self) -> None:
         parsed = urlparse(self.path)
         try:
             self._apply_role()
@@ -136,7 +136,7 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
             return
         self._json(404, {"error": "not_found"})
 
-    def do_POST(self) -> None:  # noqa: N802
+    def do_POST(self) -> None:
         parsed = urlparse(self.path)
         try:
             self._apply_role()
@@ -229,19 +229,30 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
     def _chat(self) -> None:
         payload = self._read_json()
         conversation_id = str(payload.get("conversation_id") or "")
+        message = str(payload.get("message") or payload.get("query") or "")
+        if not message.strip():
+            return self._json(400, {"error": "message is required"})
         if not conversation_id:
             record = self.workspace.conversations.create(
                 user=str(payload.get("user") or "engineer"),
                 project_id=str(payload["project_id"]) if payload.get("project_id") else None,
             )
             conversation_id = record.conversation_id
-        turn = self.workspace.conversations.ask(conversation_id, str(payload["message"]))
+        turn = self.workspace.conversations.ask(conversation_id, message)
         record = self.workspace.conversations.store.get(conversation_id)
+        validation = str(turn.answer.validation_state or "").upper()
+        conclusion = turn.answer.conclusion
+        if validation == "CANDIDATE":
+            conclusion = (
+                "UNREVIEWED CANDIDATE — this text is not approved engineering knowledge "
+                "and must not be treated as a verified answer.\n\n"
+                + str(turn.answer.conclusion)
+            )
         self._json(
             200,
             {
                 "conversation_id": turn.conversation_id,
-                "conclusion": turn.answer.conclusion,
+                "conclusion": conclusion,
                 "validation_state": turn.answer.validation_state,
                 "grounding_state": _grounding_state(turn),
                 "evidence": list(turn.answer.evidence),
@@ -251,12 +262,12 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
                 "lifecycle": turn.answer.lifecycle.value,
                 "provider_invoked": False,
                 "trace": {
-                    "user_query": str(payload["message"]),
+                    "user_query": message,
                     "retrieval": {"plan": turn.plan.kind.value, "document_ids": list(turn.document_ids)},
                     "documents": list(turn.document_ids),
                     "evidence": list(turn.answer.evidence),
                     "validation": turn.answer.validation_state,
-                    "answer": turn.answer.conclusion,
+                    "answer": conclusion,
                 },
                 "messages": [
                     {
@@ -303,7 +314,7 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
         raw = self.rfile.read(length) if length else b"{}"
         payload = json.loads(raw.decode("utf-8") or "{}")
         if not isinstance(payload, dict):
-            raise ValueError("JSON body must be an object.")
+            raise TypeError("JSON body must be an object.")
         return payload
 
     def _json(self, status: int, payload: dict[str, object]) -> None:
@@ -467,6 +478,8 @@ def serve_workspace(
         f"COSMOS Knowledge Workspace listening on http://{host}:{port}\n"
         f"  root={resolved_root}\n"
         f"  threaded={threaded}\n"
+        "  DEVELOPMENT-ONLY: this standalone server is unauthenticated.\n"
+        "  Production knowledge access is via the COSMOS desktop app login.\n"
         "  Press Ctrl+C to stop.",
         flush=True,
     )

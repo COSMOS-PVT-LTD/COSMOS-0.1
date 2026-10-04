@@ -30,31 +30,34 @@
             <div class="mh-health" id="mh-health">loading…</div>
           </div>
 
-          <section class="mh-panel mh-overview" aria-label="Knowledge overview">
-            <div class="mh-panel-head"><h2>Knowledge overview</h2></div>
-            <div class="mh-panel-body mh-overview-grid" id="mh-overview-grid">
-              <div class="mh-metric"><span class="label">Corpus</span><span class="value" id="mh-m-corpus">—</span></div>
-              <div class="mh-metric"><span class="label">Indexed</span><span class="value" id="mh-m-indexed">—</span></div>
-              <div class="mh-metric"><span class="label">Graph nodes</span><span class="value" id="mh-m-nodes">—</span></div>
-              <div class="mh-metric"><span class="label">Graph links</span><span class="value" id="mh-m-edges">—</span></div>
-              <div class="mh-metric"><span class="label">Retrieval index</span><span class="value" id="mh-m-index-state">—</span></div>
-              <div class="mh-metric"><span class="label">Validation pending</span><span class="value" id="mh-m-validation">—</span></div>
-              <div class="mh-metric"><span class="label">Persistence</span><span class="value" id="mh-m-persistence">—</span></div>
-              <div class="mh-metric"><span class="label">Last ingestion</span><span class="value" id="mh-m-last-ingest">—</span></div>
-              <div class="mh-metric"><span class="label">Offline state</span><span class="value" id="mh-m-offline">—</span></div>
-              <div class="mh-metric"><span class="label">Provider invoked</span><span class="value" id="mh-m-provider">FALSE</span></div>
-            </div>
-          </section>
+          <details class="mh-diagnostics" id="mh-diagnostics">
+            <summary>Diagnostics and qualification</summary>
+            <section class="mh-panel mh-overview" aria-label="Knowledge overview">
+              <div class="mh-panel-head"><h2>Knowledge overview</h2></div>
+              <div class="mh-panel-body mh-overview-grid" id="mh-overview-grid">
+                <div class="mh-metric"><span class="label">Corpus</span><span class="value" id="mh-m-corpus">—</span></div>
+                <div class="mh-metric"><span class="label">Indexed</span><span class="value" id="mh-m-indexed">—</span></div>
+                <div class="mh-metric"><span class="label">Graph nodes</span><span class="value" id="mh-m-nodes">—</span></div>
+                <div class="mh-metric"><span class="label">Graph links</span><span class="value" id="mh-m-edges">—</span></div>
+                <div class="mh-metric"><span class="label">Retrieval index</span><span class="value" id="mh-m-index-state">—</span></div>
+                <div class="mh-metric"><span class="label">Validation pending</span><span class="value" id="mh-m-validation">—</span></div>
+                <div class="mh-metric"><span class="label">Persistence</span><span class="value" id="mh-m-persistence">—</span></div>
+                <div class="mh-metric"><span class="label">Last ingestion</span><span class="value" id="mh-m-last-ingest">—</span></div>
+                <div class="mh-metric"><span class="label">Offline state</span><span class="value" id="mh-m-offline">—</span></div>
+                <div class="mh-metric"><span class="label">Provider invoked</span><span class="value" id="mh-m-provider">FALSE</span></div>
+              </div>
+            </section>
 
-          <section class="mh-panel mh-embedding-strip" aria-label="Embedding and qualification status">
-            <div class="mh-panel-body mh-embedding-body" id="mh-embedding-strip">
-              <span><strong>Backend:</strong> <span id="mh-embed-backend">cosmos-local-neural-mini-v1</span></span>
-              <span><strong>Mode:</strong> <span id="mh-embed-mode">LOCAL / OFFLINE</span></span>
-              <span><strong>Production-qualified:</strong> <span id="mh-embed-qualified">YES — CONDITIONAL / ENVELOPE B</span></span>
-              <span><strong>Production-ready:</strong> <span id="mh-embed-ready">NO</span></span>
-              <span><strong>Config hash:</strong> <span id="mh-embed-hash" title="NOT AVAILABLE">—</span></span>
-            </div>
-          </section>
+            <section class="mh-panel mh-embedding-strip" aria-label="Embedding and qualification status">
+              <div class="mh-panel-body mh-embedding-body" id="mh-embedding-strip">
+                <span><strong>Backend:</strong> <span id="mh-embed-backend">cosmos-local-neural-mini-v1</span></span>
+                <span><strong>Mode:</strong> <span id="mh-embed-mode">LOCAL / OFFLINE</span></span>
+                <span><strong>Production-qualified:</strong> <span id="mh-embed-qualified">YES — CONDITIONAL / ENVELOPE B</span></span>
+                <span><strong>Flight-certified:</strong> <span id="mh-embed-ready">NO — not claimed</span></span>
+                <span><strong>Config hash:</strong> <span id="mh-embed-hash" title="NOT AVAILABLE">—</span></span>
+              </div>
+            </section>
+          </details>
 
           <section class="mh-panel mh-upload mh-admin-only">
             <div class="mh-panel-head"><h2>Upload</h2></div>

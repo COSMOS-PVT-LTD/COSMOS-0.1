@@ -12,11 +12,12 @@ from __future__ import annotations
 from core.dimension import PRESSURE, VOLUME
 from core.quantity import Quantity
 from core.unit import SI
-
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity
 from physics.si import SPECIFIC_ENERGY, UNIT_SPECIFIC_ENERGY
-from physics.thermodynamics.ideal_gas import specific_enthalpy as ideal_specific_enthalpy
+from physics.thermodynamics.ideal_gas import (
+    specific_enthalpy as ideal_specific_enthalpy,
+)
 
 __all__ = (
     "ENTHALPY_DEFINITION",

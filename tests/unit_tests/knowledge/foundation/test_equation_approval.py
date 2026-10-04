@@ -4,8 +4,14 @@ from __future__ import annotations
 
 import pytest
 
-from knowledge.extraction.equation import CandidateEquationExtraction, ExtractionConfidence
-from knowledge.foundation.equation_approval import EquationApprovalPipeline, EquationReviewDecision
+from knowledge.extraction.equation import (
+    CandidateEquationExtraction,
+    ExtractionConfidence,
+)
+from knowledge.foundation.equation_approval import (
+    EquationApprovalPipeline,
+    EquationReviewDecision,
+)
 from knowledge.graph.contracts import ProvenanceReference
 from knowledge.graph.lifecycle import GraphLifecycleState
 from knowledge.graph.provenance import SourceProvenanceRecord

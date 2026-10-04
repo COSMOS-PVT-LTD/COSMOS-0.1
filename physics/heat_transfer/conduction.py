@@ -22,12 +22,11 @@ from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.unit import SI
 from core.validation import validate_positive
-
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity
 from physics.si import THERMAL_CONDUCTIVITY, UNIT_HEAT_FLUX
 
-__all__ = ("CONDUCTION", "plane_wall_heat_rate", "heat_flux")
+__all__ = ("CONDUCTION", "heat_flux", "plane_wall_heat_rate")
 
 CONDUCTION = ModelIdentity(
     model_id="PHYS-005.conduction.fourier_plane_wall",

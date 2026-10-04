@@ -17,15 +17,12 @@ Description:
 from __future__ import annotations
 
 # Standard Library
-
 import json
 
 # Third Party
-
 import pytest
 
 # COSMOS Core
-
 from core.config_v0_1_1 import CONFIG
 from core.settings import (
     SettingsAlreadyInitializedError,
@@ -45,7 +42,6 @@ from core.settings import (
     verify_bootstrap,
 )
 
-
 # ============================================================================
 # Fixtures
 # ============================================================================
@@ -58,17 +54,13 @@ def reset_settings_state():
     before and after each test.
     """
 
-    try:
+    if is_initialized():
         shutdown_settings()
-    except Exception:
-        pass
 
     yield
 
-    try:
+    if is_initialized():
         shutdown_settings()
-    except Exception:
-        pass
 
 
 # ============================================================================

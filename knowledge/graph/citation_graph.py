@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from knowledge.indexing.citation_index import CitationIndex, CitationIndexEntry
+from knowledge.indexing.citation_index import CitationIndex
 
-__all__ = ("CitationGraph", "CitationEdge")
+__all__ = ("CitationEdge", "CitationGraph")
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)

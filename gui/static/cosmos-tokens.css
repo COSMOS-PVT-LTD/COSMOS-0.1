@@ -3,7 +3,7 @@
  * Baseline: docs/COSMOS_0.1_UI_UX_DESIGN_SYSTEM.md
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&family=STIX+Two+Math&display=swap");
 
 :root {
   /* Base palette */
@@ -26,10 +26,12 @@
   --cosmos-violet: #BF5FFF;
   --cosmos-red: #FF4D4D;
 
-  /* Typography */
-  --font-brand: "Orbitron", "Segoe UI", sans-serif;
-  --font-ui: "Exo 2", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+  /* Typography — product sketch baseline */
+  --font-brand: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-ui: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", "Consolas", monospace;
+  --font-math: "STIX Two Math", "Cambria Math", serif;
+  --font-heading: "IBM Plex Sans", "Segoe UI", sans-serif;
 
   /* Spacing */
   --space-1: 4px;

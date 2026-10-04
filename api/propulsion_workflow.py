@@ -6,32 +6,43 @@ No engineering equations live here — DTO mapping and service calls only.
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from uuid import uuid4
 
 from core.exceptions import CosmosError, InvalidInputError, UnitError
 from core.quantity import Quantity
 from core.unit import SI, Unit
 from physics.exceptions import OutOfRangeError, PhysicsError
-
 from systems.calculations.isentropic import evaluate_isentropic_stagnation
 from systems.contracts.results import CalculationResult, is_current_displayable
 from systems.cycle.models import CycleConfiguration, CycleType
 from systems.export.design_package import build_design_export_package
 from systems.persistence.design_store import DesignStore
 from systems.projects.models import PropulsionDesign
+from systems.workflow.graph import (
+    BYPASSABLE_WHEN_UNIMPLEMENTED,
+    STAGE_ENGINEERING_NOTES,
+    ordered_stage_ids,
+    stage_index,
+)
 from systems.workflow.orchestrator import (
+    Phase3Result,
     run_phase3_chain,
     run_phase4_chain,
     run_phase6_chain,
 )
+from systems.workflow.readiness import dependency_assessment, readiness_payload
 
 __all__ = (
+    "clone_design",
     "create_design",
     "export_design",
     "get_design_payload",
     "get_stage_result_payload",
     "get_workflow_payload",
+    "list_designs",
     "load_design",
     "map_systems_error",
     "run_isentropic",
@@ -40,13 +51,67 @@ __all__ = (
     "run_phase6",
     "save_design",
     "set_operating_gamma",
+    "update_cycle",
+    "update_propellants",
     "update_requirements",
 )
+
+
+def _utc_now_iso() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
 
 def _quantity_si(value: float, unit_symbol: str) -> Quantity:
     unit: Unit = SI.get(unit_symbol)
     return Quantity(float(value), unit)
+
+
+def _phase_payload(outcome: Phase3Result) -> dict[str, object]:
+    return {
+        "ok": outcome.ok,
+        "ok_semantics": "Deprecated alias of execution_ok; does not claim workflow completeness or validation.",
+        "execution_ok": outcome.execution_ok,
+        **outcome.readiness,
+        "phase_status": outcome.phase_status,
+        "design_id": outcome.design.design_id,
+        "revision": outcome.design.revision,
+        "stages": {
+            key: value.to_canonical_dict() for key, value in outcome.stages.items()
+        },
+        "workflow": get_workflow_payload(outcome.design),
+        "default_assumptions": _collect_default_assumptions(outcome.stages),
+    }
+
+
+def _collect_default_assumptions(
+    stages: dict[str, CalculationResult],
+) -> list[dict[str, object]]:
+    rows: list[dict[str, object]] = []
+    for stage_id, result in stages.items():
+        used = result.inputs.get("used_defaults")
+        if isinstance(used, dict):
+            for field, flag in used.items():
+                if flag:
+                    rows.append(
+                        {
+                            "stage_id": stage_id,
+                            "field": field,
+                            "source": "ASSUMPTION",
+                            "reason": "Default applied because the user did not supply a value.",
+                        }
+                    )
+        for assumption in result.assumptions:
+            text = str(assumption)
+            if "default" in text.lower() or "ASSUMED" in text.upper():
+                rows.append(
+                    {
+                        "stage_id": stage_id,
+                        "field": None,
+                        "source": "ASSUMPTION",
+                        "reason": text,
+                    }
+                )
+    return rows
 
 
 def create_design(
@@ -58,7 +123,6 @@ def create_design(
 ) -> PropulsionDesign:
     design = PropulsionDesign(name=name, description=description, engineer=engineer)
     design.cycle_configuration = CycleConfiguration.for_type(CycleType.UNSPECIFIED)
-    # Mark design_project / requirements nodes as partial CURRENT scaffolding.
     from systems.contracts.results import ResultStatus
 
     design.workflow.graph.get("design_project").status = ResultStatus.CURRENT
@@ -76,6 +140,29 @@ def load_design(design_id: str, store: DesignStore) -> PropulsionDesign:
     return store.load(design_id)
 
 
+def list_designs(store: DesignStore) -> list[dict[str, object]]:
+    return store.list_summaries()
+
+
+def clone_design(
+    design: PropulsionDesign,
+    *,
+    name: str | None = None,
+    store: DesignStore | None = None,
+) -> PropulsionDesign:
+    data = design.to_canonical_dict()
+    cloned = PropulsionDesign.from_canonical_dict(data)
+    cloned.design_id = str(uuid4())
+    cloned.name = name or f"{design.name} (copy)"
+    cloned.revision = 0
+    cloned.created_at = _utc_now_iso()
+    cloned.updated_at = cloned.created_at
+    cloned.change_log = []
+    if store is not None:
+        store.save(cloned)
+    return cloned
+
+
 def update_requirements(
     design: PropulsionDesign,
     updates: dict[str, Any],
@@ -84,7 +171,8 @@ def update_requirements(
 ) -> PropulsionDesign:
     """
     Apply requirement updates. Quantity fields accept {magnitude, unit_symbol}
-    with SI symbols (Pa, K, m, s, N) or bare floats interpreted as SI.
+    with Core registry symbols (Pa, kPa, MPa, bar, N, kN, m, mm, K, s) or
+    bare floats interpreted as SI.
     """
 
     req = design.requirements
@@ -106,7 +194,6 @@ def update_requirements(
             ):
                 new_value = value  # type: ignore[assignment]
             elif isinstance(value, dict) and "magnitude" in value:
-                # Accept either SI symbol shortcut or full Core unit dict.
                 if isinstance(value.get("magnitude"), (int, float)):
                     symbol = str(value.get("unit_symbol") or quantity_fields[key])
                     if "unit" in value and isinstance(value["unit"], dict):
@@ -129,6 +216,56 @@ def update_requirements(
             design.record_input_change(key, old, new_value)
         else:
             raise InvalidInputError(f"Unknown requirements field: {key!r}.")
+    if store is not None:
+        store.save(design)
+    return design
+
+
+def update_propellants(
+    design: PropulsionDesign,
+    *,
+    oxidizer_id: str,
+    fuel_id: str,
+    mixture_ratio: float | None = None,
+    store: DesignStore | None = None,
+) -> PropulsionDesign:
+    """Store Physics registry IDs. Display pairs are derived, never authoritative."""
+
+    from api.catalogs import ensure_propellant_registry
+    from physics.thermochemistry.propellants import get_propellant_by_alias
+
+    ensure_propellant_registry()
+    oxidizer = get_propellant_by_alias(str(oxidizer_id))
+    fuel = get_propellant_by_alias(str(fuel_id))
+    cfg = design.propellant_configuration
+    old = cfg.to_canonical_dict()
+    cfg.oxidizer_id = oxidizer.short_name
+    cfg.fuel_id = fuel.short_name
+    if mixture_ratio is not None:
+        cfg.mixture_ratio = float(mixture_ratio)
+        design.requirements.mixture_ratio = float(mixture_ratio)
+    design.record_input_change("propellant_configuration", old, cfg.to_canonical_dict())
+    if store is not None:
+        store.save(design)
+    return design
+
+
+def update_cycle(
+    design: PropulsionDesign,
+    cycle_type: str,
+    *,
+    store: DesignStore | None = None,
+) -> PropulsionDesign:
+    """Record cycle class. All cycle types remain NOT_IMPLEMENTED in this foundation."""
+
+    try:
+        enum_type = CycleType(str(cycle_type))
+    except ValueError as exc:
+        raise InvalidInputError(f"Unknown cycle type: {cycle_type!r}.") from exc
+    old = design.cycle_configuration.to_canonical_dict()
+    design.cycle_configuration = CycleConfiguration.for_type(enum_type)
+    design.requirements.cycle_type = enum_type.value
+    design.record_input_change("cycle_configuration", old, design.cycle_configuration.to_canonical_dict())
     if store is not None:
         store.save(design)
     return design
@@ -185,15 +322,7 @@ def run_phase3(
     )
     if store is not None:
         store.save(design)
-    return {
-        "ok": outcome.ok,
-        "design_id": design.design_id,
-        "revision": design.revision,
-        "stages": {
-            key: value.to_canonical_dict() for key, value in outcome.stages.items()
-        },
-        "workflow": get_workflow_payload(design),
-    }
+    return _phase_payload(outcome)
 
 
 def run_phase4(
@@ -202,7 +331,15 @@ def run_phase4(
     characteristic_length_m: float | None = None,
     contraction_ratio: float | None = None,
     wall_thickness_m: float | None = None,
-    material_id: str = "stainless_304",
+    material_id: str | None = None,
+    external_pressure_pa: float | Quantity | None = None,
+    external_pressure_source: str | None = None,
+    material_temperature_k: float | None = None,
+    viscosity_pa_s: float | None = None,
+    conductivity_w_m_k: float | None = None,
+    cp_j_kg_k: float | None = None,
+    wall_temperature_k: float | None = None,
+    throat_curvature_radius_m: float | None = None,
     store: DesignStore | None = None,
 ) -> dict[str, object]:
     outcome = run_phase4_chain(
@@ -211,18 +348,19 @@ def run_phase4(
         contraction_ratio=contraction_ratio,
         wall_thickness_m=wall_thickness_m,
         material_id=material_id,
+        external_pressure=(external_pressure_pa if isinstance(external_pressure_pa, Quantity)
+            else None if external_pressure_pa is None else _quantity_si(external_pressure_pa, "Pa")),
+        external_pressure_source=external_pressure_source,
+        material_temperature_k=material_temperature_k,
+        viscosity_pa_s=viscosity_pa_s,
+        conductivity_w_m_k=conductivity_w_m_k,
+        cp_j_kg_k=cp_j_kg_k,
+        wall_temperature_k=wall_temperature_k,
+        throat_curvature_radius_m=throat_curvature_radius_m,
     )
     if store is not None:
         store.save(design)
-    return {
-        "ok": outcome.ok,
-        "design_id": design.design_id,
-        "revision": design.revision,
-        "stages": {
-            key: value.to_canonical_dict() for key, value in outcome.stages.items()
-        },
-        "workflow": get_workflow_payload(design),
-    }
+    return _phase_payload(outcome)
 
 
 def run_phase6(
@@ -235,15 +373,7 @@ def run_phase6(
     outcome = run_phase6_chain(design)
     if store is not None:
         store.save(design)
-    return {
-        "ok": outcome.ok,
-        "design_id": design.design_id,
-        "revision": design.revision,
-        "stages": {
-            key: value.to_canonical_dict() for key, value in outcome.stages.items()
-        },
-        "workflow": get_workflow_payload(design),
-    }
+    return _phase_payload(outcome)
 
 
 def export_design(design: PropulsionDesign) -> dict[str, object]:
@@ -298,15 +428,23 @@ def get_design_payload(design: PropulsionDesign) -> dict[str, object]:
 
 def get_workflow_payload(design: PropulsionDesign) -> dict[str, object]:
     nodes = []
-    for stage_id, node in sorted(design.workflow.graph.nodes.items()):
+    for stage_id in ordered_stage_ids(design.workflow.graph.nodes):
+        node = design.workflow.graph.nodes[stage_id]
         result = design.workflow.results.get(stage_id)
         display_status = node.status.value
         current = design.workflow.current_result(stage_id)
+        bypass = [
+            {"upstream": upstream, "reason": reason}
+            for (downstream, upstream), reason in BYPASSABLE_WHEN_UNIMPLEMENTED.items()
+            if downstream == stage_id
+        ]
         nodes.append(
             {
+                "stage_index": stage_index(stage_id),
                 "stage_id": stage_id,
                 "name": node.name,
-                "dependencies": list(node.dependencies),
+                "dependencies": [edge.stage_id for edge in node.dependencies],
+                "dependency_edges": dependency_assessment(design.workflow, stage_id),
                 "implementation_status": node.implementation_status.value,
                 "status": display_status,
                 "has_current_result": current is not None,
@@ -314,13 +452,17 @@ def get_workflow_payload(design: PropulsionDesign) -> dict[str, object]:
                 "result_is_current": (
                     False if result is None else is_current_displayable(result.status)
                 ),
+                "dependency_policy": bypass,
+                "engineering_note": STAGE_ENGINEERING_NOTES.get(stage_id, ""),
             }
         )
-    return {"design_id": design.design_id, "revision": design.revision, "nodes": nodes}
+    return {"design_id": design.design_id, "revision": design.revision, "nodes": nodes, **readiness_payload(design.workflow)}
 
 
 def map_systems_error(exc: BaseException) -> tuple[int, dict[str, object]]:
-    if isinstance(exc, (InvalidInputError, UnitError, ValueError, TypeError, KeyError)):
+    from physics.thermochemistry.propellants import PropellantNotFoundError
+
+    if isinstance(exc, (InvalidInputError, UnitError, ValueError, TypeError, KeyError, PropellantNotFoundError)):
         status = 400
         code = type(exc).__name__
         message = str(exc) if not isinstance(exc, KeyError) else f"Missing field: {exc.args[0]!r}"

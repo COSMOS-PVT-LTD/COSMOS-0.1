@@ -17,7 +17,7 @@ from __future__ import annotations
 
 try:
     import pytest  # type: ignore
-except Exception:  # pragma: no cover - fallback for environments without pytest
+except ImportError:  # pragma: no cover - fallback for environments without pytest
     class _Raises:
         def __init__(self, exc):
             self._exc = exc
@@ -43,13 +43,11 @@ except Exception:  # pragma: no cover - fallback for environments without pytest
     pytest = _PytestStub()
 
 import json
-
 from pathlib import Path
 
 # ============================================================================
 # COSMOS Physics
 # ============================================================================
-
 from physics.thermochemistry.propellants import (
     DuplicatePropellantError,
     Phase,
@@ -59,18 +57,18 @@ from physics.thermochemistry.propellants import (
     PropellantType,
     PropellantValidationError,
     clear_registry,
+    database_exists,
+    default_database_path,
     exists,
     get_all_aliases,
     get_all_names,
     is_registry_empty,
-    registry_size,
-    database_exists,
-    default_database_path,
     load_database,
     load_json_database,
-    reload_database,
     load_sqlite_database,
-     load_yaml_database,
+    load_yaml_database,
+    registry_size,
+    reload_database,
 )
 
 # ============================================================================
@@ -586,7 +584,7 @@ def test_invalid_propellant_type_fails() -> None:
     ):
         Propellant.from_dict(
             data,
-        )    
+        )
 # ============================================================================
 # Serialization Tests
 # ============================================================================
@@ -925,8 +923,6 @@ def test_traceability_fields_survive_serialization() -> None:
 # ============================================================================
 
 from physics.thermochemistry.propellants import (
-    DuplicatePropellantError,
-    PropellantNotFoundError,
     get_propellant,
     get_propellant_by_alias,
     list_fuels,
@@ -1669,4 +1665,4 @@ def test_reload_clears_old_registry(
         registry_size()
         == 1
     )
-    
+

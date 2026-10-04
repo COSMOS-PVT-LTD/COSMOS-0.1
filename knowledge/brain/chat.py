@@ -2,16 +2,19 @@
 
 from __future__ import annotations
 
+import json
+import re
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 from uuid import uuid4
-import json
-import re
 
 from knowledge.brain.hybrid import hybrid_search
 from knowledge.brain.planner import PlannedQueryKind, QueryPlan, QueryPlanner
-from knowledge.foundation.reasoning_answer import EngineeringAnswer, assemble_engineering_answer
+from knowledge.foundation.reasoning_answer import (
+    EngineeringAnswer,
+    assemble_engineering_answer,
+)
 from knowledge.models.lifecycle import KnowledgeLifecycle
 from knowledge.workspace.session import KnowledgeWorkspace
 

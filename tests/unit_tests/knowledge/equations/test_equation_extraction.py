@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from knowledge.equations import (
     CONTRADICTION_DETECTED,
-    EquationValidationState,
     REPRESENTATION_CONFLICT,
+    EquationValidationState,
     SourceEquationCandidate,
     detect_equation_conflicts,
     detect_representation_conflicts,

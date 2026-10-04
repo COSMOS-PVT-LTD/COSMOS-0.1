@@ -5,10 +5,17 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
-from knowledge.extraction.equation import CandidateEquationExtraction, ExtractionConfidence
+from knowledge.extraction.equation import (
+    CandidateEquationExtraction,
+    ExtractionConfidence,
+)
 from knowledge.graph.contracts import ProvenanceReference
 from knowledge.graph.lifecycle import GraphLifecycleState
-from knowledge.graph.provenance import ExtractionProvenance, ReviewStatus, SourceProvenanceRecord
+from knowledge.graph.provenance import (
+    ExtractionProvenance,
+    ReviewStatus,
+    SourceProvenanceRecord,
+)
 from knowledge.models.lifecycle import KnowledgeLifecycle, ProvenanceTrace
 
 __all__ = (

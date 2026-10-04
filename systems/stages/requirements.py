@@ -2,14 +2,21 @@
 
 from __future__ import annotations
 
-from systems.contracts.results import ResultStatus, ValidityInfo, ValidityState, VerificationInfo
+from systems.contracts.results import (
+    CalculationResult,
+    ResultStatus,
+    ValidityInfo,
+    ValidityState,
+    VerificationInfo,
+)
 from systems.projects.models import PropulsionDesign
-from systems.stages._helpers import failed_result, make_result
+from systems.stages._helpers import failed_result, make_result, stage_guard
 
 __all__ = ("run_requirements_stage",)
 
 
-def run_requirements_stage(design: PropulsionDesign) -> object:
+@stage_guard("requirements")
+def run_requirements_stage(design: PropulsionDesign) -> CalculationResult:
     """
     Capture requirements into a CURRENT stage result.
 

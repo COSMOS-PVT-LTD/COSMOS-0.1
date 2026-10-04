@@ -3,13 +3,15 @@
 from __future__ import annotations
 
 from systems.contracts.results import (
+    CalculationResult,
     ResultStatus,
     ValidityInfo,
     ValidityState,
     VerificationInfo,
 )
 from systems.projects.models import PropulsionDesign
-from systems.stages._helpers import make_result
+from systems.stages._helpers import make_result, stage_guard
+from systems.workflow.readiness import dependency_assessment
 
 __all__ = ("run_consistency_stage",)
 
@@ -21,7 +23,8 @@ _REQUIRED_FOR_REVIEW = (
 )
 
 
-def run_consistency_stage(design: PropulsionDesign) -> object:
+@stage_guard("consistency")
+def run_consistency_stage(design: PropulsionDesign) -> CalculationResult:
     """
     Check design-state consistency across the workflow graph.
 
@@ -43,21 +46,20 @@ def run_consistency_stage(design: PropulsionDesign) -> object:
             checks.append(f"required_current:{sid}=PASS")
 
     # Graph dependency: if a stage is CURRENT, its dependencies should not be STALE.
-    for sid, node in design.workflow.graph.nodes.items():
+    for sid in design.workflow.graph.nodes:
         current = design.workflow.current_result(sid)
         if current is None:
             continue
-        for dep in node.dependencies:
-            dep_stored = design.workflow.results.get(dep)
-            if dep_stored is None:
-                continue
-            if dep_stored.status is ResultStatus.STALE:
+        for dep in dependency_assessment(design.workflow, sid):
+            if dep["satisfied"] == "false" and dep["requirement"] == "REQUIRED":
                 violations.append(
-                    f"Stage {sid!r} is CURRENT while dependency {dep!r} is STALE."
+                    f"Stage {sid!r} is CURRENT while REQUIRED dependency {dep['stage_id']!r} is {dep['status']}."
                 )
-                checks.append(f"stale_dependency:{sid}->{dep}=FAIL")
-            elif dep_stored.status is ResultStatus.CURRENT:
-                checks.append(f"stale_dependency:{sid}->{dep}=PASS")
+                checks.append(f"required_dependency:{sid}->{dep['stage_id']}=FAIL")
+            elif dep["satisfied"] == "false":
+                warnings.append(f"{sid}: {dep['requirement']} dependency {dep['stage_id']}={dep['status']}: {dep['reason']}")
+            else:
+                checks.append(f"dependency:{sid}->{dep['stage_id']}=PASS")
 
     # Mixture ratio continuity when both are present.
     req_mr = design.requirements.mixture_ratio

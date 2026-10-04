@@ -6,7 +6,7 @@ from __future__ import annotations
 
 from dataclasses import FrozenInstanceError
 
-import pytest # type: ignore
+import pytest  # type: ignore
 
 from knowledge.models.constant import (
     Constant,

@@ -16,7 +16,11 @@ from core.exceptions import (
     UnitError,
 )
 from core.version import COSMOS_VERSION
-from physics.compressible_flow.area_mach import AREA_MACH, area_ratio, mach_from_area_ratio
+from physics.compressible_flow.area_mach import (
+    AREA_MACH,
+    area_ratio,
+    mach_from_area_ratio,
+)
 from physics.compressible_flow.isentropic import (
     ISENTROPIC,
     stagnation_density_ratio,
@@ -24,7 +28,7 @@ from physics.compressible_flow.isentropic import (
     stagnation_temperature_ratio,
 )
 from physics.exceptions import OutOfRangeError, PhysicsError
-from physics.model import ModelIdentity, PHYSICS_SCHEMA_VERSION
+from physics.model import PHYSICS_SCHEMA_VERSION, ModelIdentity
 
 __all__ = (
     "evaluate_area_mach",
@@ -90,7 +94,7 @@ def map_engineering_error(exc: BaseException) -> tuple[int, dict[str, object]]:
     }
 
 
-def evaluate_bartz_htc(payload: dict[str, object]) -> dict[str, object]:
+def evaluate_bartz_htc(payload: dict[str, Any]) -> dict[str, object]:
     """Evaluate Bartz gas-side heat-transfer coefficient from SI inputs."""
 
     from core.quantity import Quantity
@@ -166,14 +170,14 @@ def evaluate_bartz_htc(payload: dict[str, object]) -> dict[str, object]:
     }
 
 
-def evaluate_thin_wall_stress(payload: dict[str, object]) -> dict[str, object]:
+def evaluate_thin_wall_stress(payload: dict[str, Any]) -> dict[str, object]:
     """Thin-wall cylinder hoop/longitudinal stress from Physics."""
 
     from physics.materials.catalog import STAINLESS_304
     from physics.materials.elastic_properties import yield_strength
+    from physics.model import ModelIdentity
     from physics.quantities import kelvin, metre, pascal
     from physics.solid_mechanics.pressure_vessels import cylinder
-    from physics.model import ModelIdentity
 
     pressure = float(payload["pressure_pa"])
     radius = float(payload["radius_m"])

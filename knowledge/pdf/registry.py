@@ -6,10 +6,14 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from enum import Enum
 
-from knowledge.source.integrity import sha256_bytes_digest
-from knowledge.source.vault import InMemorySourceVault, VaultArtifact, VaultArtifactMetadata
 from knowledge.references.document_class import DocumentClass
 from knowledge.references.rights import RightsStatus
+from knowledge.source.integrity import sha256_bytes_digest
+from knowledge.source.vault import (
+    InMemorySourceVault,
+    VaultArtifact,
+    VaultArtifactMetadata,
+)
 
 __all__ = ("DuplicateKind", "RegisteredSource", "SourceModifiedError", "SourceRegistry")
 

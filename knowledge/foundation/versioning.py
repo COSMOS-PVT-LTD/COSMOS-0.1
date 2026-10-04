@@ -27,7 +27,7 @@ def supersede_entity(
     entity_version: str,
 ) -> SupersedeRecord:
     current = repository.get(entity_id)
-    lifecycle = repository._lifecycle_of(current)  # noqa: SLF001 — typed facade uses shared store
+    lifecycle = repository._lifecycle_of(current)
     if lifecycle is KnowledgeLifecycle.APPROVED:
         # Historical record is retained by KnowledgeRepository.supersede.
         pass

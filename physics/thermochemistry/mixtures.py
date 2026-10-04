@@ -17,7 +17,6 @@ from dataclasses import dataclass
 
 from core.exceptions import InvalidInputError
 from core.quantity import Quantity
-
 from physics.exceptions import InvalidCompositionError
 from physics.quantities import quantity
 from physics.si import UNIT_MOLAR_MASS
@@ -25,9 +24,9 @@ from physics.thermochemistry.species import Species, get_species
 
 __all__ = (
     "Mixture",
+    "elemental_moles",
     "from_mass_fractions",
     "from_mole_fractions",
-    "elemental_moles",
 )
 
 _FRACTION_TOLERANCE = 1.0e-9

@@ -27,8 +27,8 @@ __all__ = (
     "GraphNodeIdentity",
     "GraphRecord",
     "GraphRelationship",
-    "ProvenanceReference",
     "PropertyValue",
+    "ProvenanceReference",
     "is_property_value",
     "normalize_properties",
 )

@@ -10,8 +10,8 @@ Purpose:
 
 from __future__ import annotations
 
-from knowledge.indexing.exceptions import IndexError
 from knowledge.graph.exceptions import GraphValidationError
+from knowledge.indexing.exceptions import IndexError
 
 __all__ = (
     "ContextAssemblyError",

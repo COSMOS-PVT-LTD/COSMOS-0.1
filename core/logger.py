@@ -20,18 +20,17 @@ Description:
 from __future__ import annotations
 
 # Standard Library
-
 import logging
 import time
 import uuid
-
 from contextlib import AbstractContextManager
 from dataclasses import dataclass
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from types import TracebackType
-from typing import Final
+from typing import Final, Literal
 
+from typing_extensions import Self
 
 __all__ = (
     "CosmosLoggerConfig",
@@ -106,7 +105,7 @@ class SolverTimer(AbstractContextManager["SolverTimer"]):
         self._operation_name = operation_name
         self._start_time = 0.0
 
-    def __enter__(self) -> "SolverTimer":
+    def __enter__(self) -> Self:
         self._start_time = time.perf_counter()
 
         self._logger.debug(
@@ -121,7 +120,7 @@ class SolverTimer(AbstractContextManager["SolverTimer"]):
         exc_type: type[BaseException] | None,
         exc_value: BaseException | None,
         traceback: TracebackType | None,
-    ) -> bool:
+    ) -> Literal[False]:
         elapsed = time.perf_counter() - self._start_time
 
         if exc_value is None:

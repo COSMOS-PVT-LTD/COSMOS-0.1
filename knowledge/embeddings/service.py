@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from knowledge.embeddings.neural_backend import LocalNeuralEmbeddingBackend
 from knowledge.embeddings.local_backend import DeterministicLocalEmbeddingBackend
+from knowledge.embeddings.neural_backend import LocalNeuralEmbeddingBackend
 from knowledge.embeddings.protocol import EmbeddingBackend
 from knowledge.indexing.exceptions import IndexValidationError
 

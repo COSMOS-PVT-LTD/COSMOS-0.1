@@ -19,8 +19,8 @@ from knowledge.graph.provenance import SourceProvenanceRecord
 from knowledge.indexing import KnowledgeIndexBuilder
 from knowledge.ontology import OntologyRegistry
 from knowledge.search import (
-    KnowledgeSearchEngine,
     NO_VERIFIED_RESULT,
+    KnowledgeSearchEngine,
     RetrievalMode,
     SearchQuery,
     SearchValidationError,

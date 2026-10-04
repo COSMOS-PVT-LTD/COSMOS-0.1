@@ -4,21 +4,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from knowledge.ontology import (
-    OntologyAlias,
-    OntologyRegistry,
-    OntologyTerm,
-    canonicalize_extraction_result,
-)
+from knowledge.extraction.w4 import ExtractionContext, extract_document
 from knowledge.graph.entity import CanonicalEntityType
-from knowledge.parsers.w3 import ParseContext, parse_document
-from knowledge.validation import (
-    ValidationContext,
-    detect_ambiguities,
-    validate_citations,
-    validate_context,
-    validate_context_extended,
-)
 from knowledge.ingestion import (
     IngestionArtifactRef,
     IngestionRequest,
@@ -26,9 +13,22 @@ from knowledge.ingestion import (
     SourceFormat,
 )
 from knowledge.ingestion_adapters import MarkdownIngestionAdapter
+from knowledge.ontology import (
+    OntologyAlias,
+    OntologyRegistry,
+    OntologyTerm,
+    canonicalize_extraction_result,
+)
+from knowledge.parsers.w3 import ParseContext, parse_document
 from knowledge.source import InMemorySourceVault, VaultArtifact, VaultArtifactMetadata
 from knowledge.source.integrity import sha256_text_digest
-from knowledge.extraction.w4 import ExtractionContext, extract_document
+from knowledge.validation import (
+    ValidationContext,
+    detect_ambiguities,
+    validate_citations,
+    validate_context,
+    validate_context_extended,
+)
 
 _GOLDEN_DOCUMENT = (
     Path(__file__).resolve().parents[3]
@@ -109,17 +109,7 @@ def _parse_pipeline(content: str):
 def test_citation_validator_flags_unresolved_citation_key() -> None:
     """Citation validator must warn on unresolved citation keys."""
 
-    content = "\n".join(
-        [
-            "# Spec",
-            "",
-            "Design guidance [unknown-ref].",
-            "",
-            "# References",
-            "",
-            "1. NASA SP-125 (2020)",
-        ],
-    )
+    content = "# Spec\n\nDesign guidance [unknown-ref].\n\n# References\n\n1. NASA SP-125 (2020)"
     parsed_document, extraction = _parse_pipeline(content)
     findings = validate_citations(
         ValidationContext(
@@ -135,17 +125,7 @@ def test_citation_validator_flags_unresolved_citation_key() -> None:
 def test_citation_validator_flags_orphan_reference() -> None:
     """Citation validator must warn when bibliography entries are never cited."""
 
-    content = "\n".join(
-        [
-            "# Spec",
-            "",
-            "No citations here.",
-            "",
-            "# References",
-            "",
-            "1. NASA SP-125 (2020)",
-        ],
-    )
+    content = "# Spec\n\nNo citations here.\n\n# References\n\n1. NASA SP-125 (2020)"
     parsed_document, extraction = _parse_pipeline(content)
     findings = validate_citations(
         ValidationContext(

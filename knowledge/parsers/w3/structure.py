@@ -8,7 +8,10 @@ import json
 import re
 
 from knowledge.parsers.models import DocumentSection, PageAnchor
-from knowledge.parsers.w3.exceptions import ParserStructureError, UnsupportedStructureError
+from knowledge.parsers.w3.exceptions import (
+    ParserStructureError,
+    UnsupportedStructureError,
+)
 from knowledge.parsers.w3.identity import deterministic_element_id
 from knowledge.parsers.w3.models import LocationAnchor, ParsedParagraph, ParseProvenance
 

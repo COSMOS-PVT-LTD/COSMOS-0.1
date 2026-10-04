@@ -7,9 +7,12 @@ import re
 from knowledge.extraction.equation import ExtractionConfidence
 from knowledge.extraction.w4.exceptions import ExtractionQuantityError
 from knowledge.extraction.w4.identity import deterministic_extraction_id
-from knowledge.parsers.w3.models import ParseProvenance
-from knowledge.extraction.w4.models import CandidateQuantityExtraction, ExtractionContext
+from knowledge.extraction.w4.models import (
+    CandidateQuantityExtraction,
+    ExtractionContext,
+)
 from knowledge.extraction.w4.provenance import to_source_provenance
+from knowledge.parsers.w3.models import ParseProvenance
 
 __all__ = (
     "extract_quantities",

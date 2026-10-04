@@ -1,0 +1,662 @@
+api/authentication.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+api/authentication.py:15:11: RUF022 [*] `__all__` is not sorted
+api/authentication.py:217:37: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+api/authentication.py:250:37: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+api/authentication.py:283:35: SIM118 Use `key in dict` instead of `key in dict.keys()`
+api/authentication.py:284:55: SIM118 Use `key in dict` instead of `key in dict.keys()`
+api/authentication.py:296:37: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+api/authentication.py:344:35: SIM118 Use `key in dict` instead of `key in dict.keys()`
+api/authentication.py:345:55: SIM118 Use `key in dict` instead of `key in dict.keys()`
+api/catalogs.py:28:11: RUF022 [*] `__all__` is not sorted
+api/physics_compressible.py:8:1: I001 [*] Import block is un-sorted or un-formatted
+api/physics_compressible.py:172:5: I001 [*] Import block is un-sorted or un-formatted
+api/profile.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+api/propulsion_workflow.py:7:1: I001 [*] Import block is un-sorted or un-formatted
+core/config_v0_1_1.py:40:1: I001 [*] Import block is un-sorted or un-formatted
+core/config_v0_1_1.py:64:1: UP035 [*] Import from `collections.abc` instead: `Mapping`
+core/config_v0_1_1.py:77:11: RUF022 [*] `__all__` is not sorted
+core/constants.py:30:11: RUF022 [*] `__all__` is not sorted
+core/dimension.py:15:11: RUF022 [*] `__all__` is not sorted
+core/exceptions.py:29:11: RUF022 [*] `__all__` is not sorted
+core/logger.py:20:1: I001 [*] Import block is un-sorted or un-formatted
+core/logger.py:109:9: PYI034 `__enter__` methods in classes like `SolverTimer` usually return `self` at runtime
+core/logger.py:109:28: UP037 [*] Remove quotes from type annotation
+core/physical_constant.py:26:11: RUF022 [*] `__all__` is not sorted
+core/physical_constant.py:75:13: TRY004 Prefer `TypeError` exception for invalid type
+core/quantity.py:36:14: UP007 Use `X | Y` for type annotations
+core/settings.py:29:1: I001 [*] Import block is un-sorted or un-formatted
+core/settings.py:43:21: F401 [*] `pathlib.Path` imported but unused
+core/settings.py:62:11: RUF022 [*] `__all__` is not sorted
+core/settings.py:509:17: DTZ003 `datetime.datetime.utcnow()` used
+core/settings.py:946:13: DTZ003 `datetime.datetime.utcnow()` used
+core/settings.py:1413:11: RUF022 [*] `__all__` is not sorted
+core/unit.py:38:11: RUF022 [*] `__all__` is not sorted
+core/units.py:22:1: I001 [*] Import block is un-sorted or un-formatted
+core/validation.py:42:11: RUF022 [*] `__all__` is not sorted
+gui/application.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+gui/native_window.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+gui/native_window.py:88:13: S110 `try`-`except`-`pass` detected, consider logging the exception
+gui/native_window.py:88:20: BLE001 Do not catch blind exception: `Exception`
+gui/server.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+gui/server.py:166:9: TRY004 Prefer `TypeError` exception for invalid type
+gui/server.py:278:32: RUF100 [*] Unused `noqa` directive (non-enabled: `N802`)
+gui/server.py:300:33: RUF100 [*] Unused `noqa` directive (non-enabled: `N802`)
+gui/server.py:308:35: RUF100 [*] Unused `noqa` directive (non-enabled: `N802`)
+gui/server.py:425:20: BLE001 Do not catch blind exception: `Exception`
+gui/server.py:450:24: BLE001 Do not catch blind exception: `Exception`
+gui/server.py:459:24: BLE001 Do not catch blind exception: `Exception`
+gui/server.py:480:24: BLE001 Do not catch blind exception: `Exception`
+gui/server.py:487:20: BLE001 Do not catch blind exception: `Exception`
+infrastructure/security/audit.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+infrastructure/security/credential_vault.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+infrastructure/security/credential_vault.py:178:28: F821 Undefined name `auth_root`
+infrastructure/security/credential_vault.py:178:53: F821 Undefined name `auth_root`
+knowledge/architecture/dispositions.py:7:11: RUF022 [*] `__all__` is not sorted
+knowledge/architecture/reconciliation_registry.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/brain/chat.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/brain/planner.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/embeddings/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/embeddings/local_backend.py:37:13: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+knowledge/embeddings/mlp.py:13:12: FURB136 [*] Replace `value if value > 0.0 else 0.0` with `max(0.0, value)`
+knowledge/embeddings/service.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/equations/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/equations/__init__.py:27:11: RUF022 [*] `__all__` is not sorted
+knowledge/equations/ast.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/equations/models.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/equations/review.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/equations/review.py:76:5: I001 [*] Import block is un-sorted or un-formatted
+knowledge/extraction/boundary_condition_extractor.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/extraction/claim.py:11:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/extraction/constant_extractor.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/extraction/entity.py:11:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/extraction/equation.py:11:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/extraction/variable_extractor.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/extraction/w4/__init__.py:8:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/extraction/w4/entities.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/extraction/w4/models.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/extraction/w4/quantities.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/extraction/w4/relationships.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/audit.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/document_pipeline.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/engineering_taxonomy.py:10:11: RUF022 [*] `__all__` is not sorted
+knowledge/foundation/equation_approval.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/governance.py:10:11: RUF022 [*] `__all__` is not sorted
+knowledge/foundation/knowledge_service.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/knowledge_service.py:67:11: RUF022 [*] `__all__` is not sorted
+knowledge/foundation/material_binding.py:63:12: BLE001 Do not catch blind exception: `Exception`
+knowledge/foundation/persistence.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/physics_boundary.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/physics_boundary.py:10:11: RUF022 [*] `__all__` is not sorted
+knowledge/foundation/query_classification.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/real_document_pipeline.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/real_document_pipeline.py:494:13: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/seed_corpus.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/variable_catalog.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/foundation/versioning.py:30:52: RUF100 [*] Unused `noqa` directive (non-enabled: `SLF001`)
+knowledge/graph/__init__.py:9:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/graph/__init__.py:80:11: RUF022 [*] `__all__` is not sorted
+knowledge/graph/citation_graph.py:7:62: F401 [*] `knowledge.indexing.citation_index.CitationIndexEntry` imported but unused
+knowledge/graph/citation_graph.py:9:11: RUF022 [*] `__all__` is not sorted
+knowledge/graph/contracts.py:25:11: RUF022 [*] `__all__` is not sorted
+knowledge/graph/entity.py:19:11: RUF022 [*] `__all__` is not sorted
+knowledge/graph/exceptions.py:21:11: RUF022 [*] `__all__` is not sorted
+knowledge/graph/relationship.py:84:9: SIM114 [*] Combine `if` branches using logical `or` operator
+knowledge/indexing/__init__.py:33:11: RUF022 [*] `__all__` is not sorted
+knowledge/indexing/builder.py:27:11: RUF022 [*] `__all__` is not sorted
+knowledge/indexing/keyword_index.py:7:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/indexing/lexical.py:11:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/indexing/semantic.py:11:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/indexing/w7/graph_index.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/indexing/w7/graph_index.py:14:11: RUF022 [*] `__all__` is not sorted
+knowledge/indexing/w7/vector.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/ingestion_adapters/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/ingestion_adapters/registry.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/ingestion_adapters/repository.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/ingestion_adapters/xlsx.py:43:18: FURB192 Prefer `min` over `sorted()` to compute the minimum value in a sequence
+knowledge/interface/engineering.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/interface/engineering_query.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/interface/identity.py:25:9: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+knowledge/interface/identity.py:37:9: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+knowledge/interface/identity.py:48:9: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+knowledge/interface/models.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/mathocr/adapter.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/mathocr/tesseract_math.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/constant.py:35:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/constant.py:39:1: UP035 [*] Import from `collections.abc` instead: `Iterable`
+knowledge/models/constant.py:633:31: RUF010 [*] Use explicit conversion flag
+knowledge/models/constant.py:657:33: RUF010 [*] Use explicit conversion flag
+knowledge/models/constant.py:1666:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/constant.py:1763:9: PLW0127 Self-assignment of variable `name`
+knowledge/models/constant.py:1775:9: PLW0127 Self-assignment of variable `symbol`
+knowledge/models/constant.py:1787:9: PLW0127 Self-assignment of variable `description`
+knowledge/models/constant.py:1938:26: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/constant.py:1962:23: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/constant.py:1964:24: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/constant.py:1966:30: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/constant.py:1968:31: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/constant.py:1970:31: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/constant.py:1996:28: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/constant.py:2002:32: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/constant.py:2008:29: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/constant.py:2014:27: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/constant.py:2092:29: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/constant.py:2098:31: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/constant.py:2300:30: PLC3002 Lambda expression called directly. Execute the expression inline instead.
+knowledge/models/correlation.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/design_rule.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/dimension.py:50:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/dimension.py:56:19: F401 [*] `types.MappingProxyType` imported but unused
+knowledge/models/dimension.py:57:1: UP035 [*] Import from `collections.abc` instead: `Mapping`
+knowledge/models/dimension.py:1454:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/dimension.py:1862:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/dimension.py:1894:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/document.py:25:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/document.py:26:1: UP035 [*] Import from `collections.abc` instead: `Mapping`
+knowledge/models/document.py:383:49: UP037 [*] Remove quotes from type annotation
+knowledge/models/empirical_relation.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/engineering_domain.py:62:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/engineering_domain.py:1454:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/engineering_domain.py:2260:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/engineering_domain.py:2282:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/engineering_relation.py:61:13: TRY004 Prefer `TypeError` exception for invalid type
+knowledge/models/engineering_relation.py:63:13: TRY004 Prefer `TypeError` exception for invalid type
+knowledge/models/equation.py:30:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/equation.py:182:13: TRY004 Prefer `TypeError` exception for invalid type
+knowledge/models/equation.py:186:13: TRY004 Prefer `TypeError` exception for invalid type
+knowledge/models/equation.py:189:9: SIM102 Use a single `if` statement instead of nested `if` statements
+knowledge/models/equation.py:194:9: SIM102 Use a single `if` statement instead of nested `if` statements
+knowledge/models/equation.py:237:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/experiment.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/manufacturing_process.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/material.py:48:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/material.py:2448:16: PYI041 [*] Use `float` instead of `int | float`
+knowledge/models/material.py:2476:16: PYI041 [*] Use `float` instead of `int | float`
+knowledge/models/material.py:2786:13: SIM118 Use `key in dict` instead of `key in dict.keys()`
+knowledge/models/material.py:3214:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/material.py:5578:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/material.py:5612:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/physical_law.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/physical_law.py:37:13: TRY004 Prefer `TypeError` exception for invalid type
+knowledge/models/property.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/property.py:54:13: TRY004 Prefer `TypeError` exception for invalid type
+knowledge/models/quantity.py:476:30: RUF009 Do not perform function call `datetime.now` in dataclass defaults
+knowledge/models/quantity.py:719:35: RUF009 Do not perform function call `datetime.now` in dataclass defaults
+knowledge/models/quantity.py:2512:9: SIM102 Use a single `if` statement instead of nested `if` statements
+knowledge/models/quantity.py:2514:13: SIM102 Use a single `if` statement instead of nested `if` statements
+knowledge/models/quantity.py:2574:9: SIM102 Use a single `if` statement instead of nested `if` statements
+knowledge/models/quantity.py:5659:9: SIM103 Return the negated condition directly
+knowledge/models/quantity.py:5926:16: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:5936:16: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:5946:16: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:5974:16: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:6006:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:6875:23: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:6882:24: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:6889:28: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:6899:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:6999:16: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:7032:16: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:7066:16: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:7101:16: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:7195:16: UP037 [*] Remove quotes from type annotation
+knowledge/models/quantity.py:7448:55: UP037 [*] Remove quotes from type annotation
+knowledge/models/reference.py:25:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/reference.py:181:24: DTZ005 `datetime.datetime.now()` called without a `tz` argument
+knowledge/models/reference.py:245:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/simulation.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/subsystem.py:58:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/subsystem.py:1705:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/subsystem.py:2751:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/subsystem.py:2769:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/unit.py:45:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/unit.py:142:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/models/unit.py:142:25: F811 [*] Redefinition of unused `dataclass` from line 49: `dataclass` redefined here
+knowledge/models/unit.py:231:16: UP037 [*] Remove quotes from type annotation
+knowledge/models/unit.py:1040:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/unit.py:1133:24: C408 Unnecessary `tuple()` call (rewrite as a literal)
+knowledge/models/unit.py:1384:23: UP037 [*] Remove quotes from type annotation
+knowledge/models/unit.py:1412:10: UP037 [*] Remove quotes from type annotation
+knowledge/models/variable.py:963:10: UP037 [*] Remove quotes from type annotation
+knowledge/ocr/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/ocr/embedded.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/ocr/rasterize.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/ocr/rasterize.py:147:16: BLE001 Do not catch blind exception: `Exception`
+knowledge/ocr/rasterize.py:161:17: S110 `try`-`except`-`pass` detected, consider logging the exception
+knowledge/ocr/rasterize.py:161:24: BLE001 Do not catch blind exception: `Exception`
+knowledge/ocr/rasterize.py:285:12: BLE001 Do not catch blind exception: `Exception`
+knowledge/ocr/regions.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/ocr/service.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/ocr/tesseract.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/ocr/tesseract.py:152:12: PIE810 Call `startswith` once with a `tuple`
+knowledge/ocr/tesseract.py:157:14: SIM115 Use a context manager for opening files
+knowledge/ocr/tesseract.py:242:8: PIE810 Call `startswith` once with a `tuple`
+knowledge/ocr/unavailable.py:9:11: RUF022 [*] `__all__` is not sorted
+knowledge/ontology/aliases.py:42:5: TRY203 Remove exception handler; error is immediately re-raised
+knowledge/ontology/aliases.py:44:5: TRY203 Remove exception handler; error is immediately re-raised
+knowledge/parsers/w3/__init__.py:8:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/parsers/w3/content.py:80:22: UP037 [*] Remove quotes from type annotation
+knowledge/parsers/w3/models.py:15:11: RUF022 [*] `__all__` is not sorted
+knowledge/parsers/w3/models.py:82:9: SIM102 Use a single `if` statement instead of nested `if` statements
+knowledge/parsers/w3/pipeline.py:5:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/parsers/w3/structure.py:5:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/pdf/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/pdf/corpus.py:5:11: RUF022 [*] `__all__` is not sorted
+knowledge/pdf/corpus.py:29:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/pdf/extractor.py:18:11: RUF022 [*] `__all__` is not sorted
+knowledge/pdf/extractor.py:126:12: BLE001 Do not catch blind exception: `Exception`
+knowledge/pdf/extractor.py:131:12: BLE001 Do not catch blind exception: `Exception`
+knowledge/pdf/models.py:8:11: RUF022 [*] `__all__` is not sorted
+knowledge/pdf/registry.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/pdf/structure.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/persistence/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/persistence/backend.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/persistence/backend.py:67:13: TRY004 Prefer `TypeError` exception for invalid type
+knowledge/persistence/sqlite_store.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/pipelines/extended_pipeline.py:9:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/pipelines/orchestrator.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/production/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/production/benchmark_suite.py:14:11: RUF022 [*] `__all__` is not sorted
+knowledge/production/concurrency_benchmark.py:160:16: BLE001 Do not catch blind exception: `Exception`
+knowledge/production/incremental_ingestion.py:127:16: BLE001 Do not catch blind exception: `Exception`
+knowledge/production/local_rag_pipeline.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/production/observability.py:113:9: PYI034 `__enter__` methods in classes like `_TimedObservation` usually return `self` at runtime
+knowledge/production/recovery.py:61:16: BLE001 Do not catch blind exception: `Exception`
+knowledge/production/retrieval_service.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/production/scale_benchmark.py:251:16: BLE001 Do not catch blind exception: `Exception`
+knowledge/reasoning/context.py:21:11: RUF022 [*] `__all__` is not sorted
+knowledge/reasoning/context.py:106:9: SIM102 Use a single `if` statement instead of nested `if` statements
+knowledge/reasoning/equation_reasoner.py:6:40: F401 [*] `knowledge.models.lifecycle.KnowledgeLifecycle` imported but unused
+knowledge/reasoning/evidence.py:11:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/reasoning/w10/chains.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/reasoning/w10/context.py:103:9: SIM102 Use a single `if` statement instead of nested `if` statements
+knowledge/references/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/references/ingestion.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/repositories/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/repository/repository.py:34:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/repository/repository.py:37:20: F401 [*] `typing.Final` imported but unused
+knowledge/repository/repository.py:168:17: UP034 [*] Avoid extraneous parentheses
+knowledge/repository/repository.py:194:17: UP034 [*] Avoid extraneous parentheses
+knowledge/repository/repository.py:363:17: UP034 [*] Avoid extraneous parentheses
+knowledge/search/__init__.py:23:11: RUF022 [*] `__all__` is not sorted
+knowledge/search/contracts.py:93:9: SIM102 Use a single `if` statement instead of nested `if` statements
+knowledge/search/contracts.py:97:9: SIM102 Use a single `if` statement instead of nested `if` statements
+knowledge/search/contracts.py:101:9: SIM102 Use a single `if` statement instead of nested `if` statements
+knowledge/search/exceptions.py:11:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/search/search_engine.py:15:11: RUF022 [*] `__all__` is not sorted
+knowledge/search/w8/keyword.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/storage/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/storage/__init__.py:20:11: RUF022 [*] `__all__` is not sorted
+knowledge/storage/exceptions.py:5:11: RUF022 [*] `__all__` is not sorted
+knowledge/storage/index_lifecycle.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/storage/local_store.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/validation/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/validation/__init__.py:33:11: RUF022 [*] `__all__` is not sorted
+knowledge/validation/engine.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/validation/extended.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/validation/registry.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/workspace/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/workspace/backup.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/workspace/classify.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/workspace/classify.py:135:8: PIE810 Call `startswith` once with a `tuple`
+knowledge/workspace/classify.py:138:8: PIE810 Call `startswith` once with a `tuple`
+knowledge/workspace/corpus.py:9:11: RUF022 [*] `__all__` is not sorted
+knowledge/workspace/datasets.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/workspace/extract.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/workspace/extract.py:50:33: RUF009 Do not perform function call `JobCheckpoint` in dataclass defaults
+knowledge/workspace/jobs.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/workspace/office.py:7:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/workspace/review_store.py:36:12: BLE001 Do not catch blind exception: `Exception`
+knowledge/workspace/review_store.py:55:12: BLE001 Do not catch blind exception: `Exception`
+knowledge/workspace/security.py:8:36: F401 [*] `knowledge.ocr.security.MAX_PDF_BYTES` imported but unused
+knowledge/workspace/server.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/workspace/server.py:37:32: RUF100 [*] Unused `noqa` directive (non-enabled: `N802`)
+knowledge/workspace/server.py:122:35: RUF100 [*] Unused `noqa` directive (non-enabled: `N802`)
+knowledge/workspace/server.py:139:33: RUF100 [*] Unused `noqa` directive (non-enabled: `N802`)
+knowledge/workspace/server.py:317:13: TRY004 Prefer `TypeError` exception for invalid type
+knowledge/workspace/session.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+knowledge/workspace/session.py:167:9: I001 [*] Import block is un-sorted or un-formatted
+knowledge/workspace/session.py:205:31: RUF100 [*] Unused `noqa` directive (non-enabled: `ANN201`)
+knowledge/workspace/session.py:619:17: S112 `try`-`except`-`continue` detected, consider logging the exception
+knowledge/workspace/session.py:619:24: BLE001 Do not catch blind exception: `Exception`
+knowledge/workspace/vault.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/__init__.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/__init__.py:24:11: RUF022 [*] `__all__` is not sorted
+physics/compressible_flow/area_mach.py:16:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/area_mach.py:36:9: ISC004 Unparenthesized implicit string concatenation in collection
+physics/compressible_flow/choked_flow.py:19:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/choked_flow.py:35:11: RUF022 [*] `__all__` is not sorted
+physics/compressible_flow/choked_flow.py:47:9: ISC004 Unparenthesized implicit string concatenation in collection
+physics/compressible_flow/expansion_fan.py:16:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/expansion_fan.py:26:11: RUF022 [*] `__all__` is not sorted
+physics/compressible_flow/expansion_fan.py:38:9: ISC004 Unparenthesized implicit string concatenation in collection
+physics/compressible_flow/fanno.py:20:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/fanno.py:39:9: ISC004 Unparenthesized implicit string concatenation in collection
+physics/compressible_flow/isentropic.py:24:11: RUF022 [*] `__all__` is not sorted
+physics/compressible_flow/losses.py:21:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/moc_nozzle.py:27:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/moc_nozzle.py:39:11: RUF022 [*] `__all__` is not sorted
+physics/compressible_flow/normal_shock.py:18:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/nozzle_1d.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/oblique_shock.py:16:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/oblique_shock.py:28:11: RUF022 [*] `__all__` is not sorted
+physics/compressible_flow/oblique_shock.py:41:9: ISC004 Unparenthesized implicit string concatenation in collection
+physics/compressible_flow/pressure_profile.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/thrust_relations.py:25:1: I001 [*] Import block is un-sorted or un-formatted
+physics/compressible_flow/thrust_relations.py:37:11: RUF022 [*] `__all__` is not sorted
+physics/exceptions.py:19:11: RUF022 [*] `__all__` is not sorted
+physics/fluids/__init__.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/compressibility.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/conductivity.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/cp.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/cp.py:17:11: RUF022 [*] `__all__` is not sorted
+physics/fluids/cv.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/cv.py:17:11: RUF022 [*] `__all__` is not sorted
+physics/fluids/density.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/density.py:17:11: RUF022 [*] `__all__` is not sorted
+physics/fluids/fluid_properties.py:14:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/helium.py:16:11: RUF022 [*] `__all__` is not sorted
+physics/fluids/hydrogen.py:16:11: RUF022 [*] `__all__` is not sorted
+physics/fluids/lox.py:15:11: RUF022 [*] `__all__` is not sorted
+physics/fluids/mach.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/mach.py:20:11: RUF022 [*] `__all__` is not sorted
+physics/fluids/methane.py:16:11: RUF022 [*] `__all__` is not sorted
+physics/fluids/nitrogen.py:16:11: RUF022 [*] `__all__` is not sorted
+physics/fluids/prandtl.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/records.py:15:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/reynolds.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/rp1.py:20:11: RUF022 [*] `__all__` is not sorted
+physics/fluids/speed_of_sound.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/sutherland.py:25:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/viscosity.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/fluids/viscosity.py:17:11: RUF022 [*] `__all__` is not sorted
+physics/fluids/water.py:22:11: RUF022 [*] `__all__` is not sorted
+physics/heat_transfer/bartz.py:34:1: I001 [*] Import block is un-sorted or un-formatted
+physics/heat_transfer/bartz.py:104:9: ISC004 Unparenthesized implicit string concatenation in collection
+physics/heat_transfer/conduction.py:18:1: I001 [*] Import block is un-sorted or un-formatted
+physics/heat_transfer/conduction.py:30:11: RUF022 [*] `__all__` is not sorted
+physics/heat_transfer/conjugate_heat_transfer.py:14:1: I001 [*] Import block is un-sorted or un-formatted
+physics/heat_transfer/convection.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/heat_transfer/heat_flux.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/heat_transfer/radiation.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/heat_transfer/recovery_temperature.py:18:1: I001 [*] Import block is un-sorted or un-formatted
+physics/heat_transfer/thermal_resistance.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/heat_transfer/transient_conduction.py:19:1: I001 [*] Import block is un-sorted or un-formatted
+physics/materials/catalog.py:14:1: I001 [*] Import block is un-sorted or un-formatted
+physics/materials/elastic_properties.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/materials/elastic_properties.py:18:11: RUF022 [*] `__all__` is not sorted
+physics/materials/failure_criteria.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/materials/thermal_expansion.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/materials/thermal_properties.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/model.py:16:1: I001 [*] Import block is un-sorted or un-formatted
+physics/model.py:26:11: RUF022 [*] `__all__` is not sorted
+physics/si.py:32:11: RUF022 [*] `__all__` is not sorted
+physics/solid_mechanics/buckling.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/solid_mechanics/elasticity.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/solid_mechanics/elasticity.py:21:11: RUF022 [*] `__all__` is not sorted
+physics/solid_mechanics/fracture.py:15:1: I001 [*] Import block is un-sorted or un-formatted
+physics/solid_mechanics/plasticity.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/solid_mechanics/pressure_vessels.py:20:1: I001 [*] Import block is un-sorted or un-formatted
+physics/solid_mechanics/safety_factor.py:14:1: I001 [*] Import block is un-sorted or un-formatted
+physics/solid_mechanics/shells.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/solid_mechanics/strain.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/solid_mechanics/stress.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/solid_mechanics/thermal_stress.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermochemistry/__init__.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermochemistry/cache.py:5:11: RUF022 [*] `__all__` is not sorted
+physics/thermochemistry/cache.py:28:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermochemistry/cache.py:234:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermochemistry/cache.py:923:9: S110 `try`-`except`-`pass` detected, consider logging the exception
+physics/thermochemistry/cache.py:923:16: BLE001 Do not catch blind exception: `Exception`
+physics/thermochemistry/cache.py:1013:20: BLE001 Do not catch blind exception: `Exception`
+physics/thermochemistry/cache.py:1036:17: S110 `try`-`except`-`pass` detected, consider logging the exception
+physics/thermochemistry/cache.py:1036:24: BLE001 Do not catch blind exception: `Exception`
+physics/thermochemistry/cache.py:1115:20: BLE001 Do not catch blind exception: `Exception`
+physics/thermochemistry/cache.py:1133:17: S110 `try`-`except`-`pass` detected, consider logging the exception
+physics/thermochemistry/cache.py:1133:24: BLE001 Do not catch blind exception: `Exception`
+physics/thermochemistry/cache.py:1165:17: S110 `try`-`except`-`pass` detected, consider logging the exception
+physics/thermochemistry/cache.py:1165:24: BLE001 Do not catch blind exception: `Exception`
+physics/thermochemistry/cache.py:1218:24: BLE001 Do not catch blind exception: `Exception`
+physics/thermochemistry/cache.py:1238:21: S110 `try`-`except`-`pass` detected, consider logging the exception
+physics/thermochemistry/cache.py:1238:28: BLE001 Do not catch blind exception: `Exception`
+physics/thermochemistry/cache.py:1359:9: PYI034 `__enter__` methods in classes like `ThermochemistryCache` usually return `self` at runtime
+physics/thermochemistry/cache.py:1369:20: PYI036 The third argument in `__exit__` should be annotated with `object` or `types.TracebackType | None`
+physics/thermochemistry/cea_interface.py:17:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermochemistry/mixtures.py:14:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermochemistry/mixtures.py:26:11: RUF022 [*] `__all__` is not sorted
+physics/thermochemistry/nasa_polynomials.py:29:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermochemistry/propellants.py:26:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermochemistry/propellants.py:38:20: F401 [*] `typing.Any` imported but unused
+physics/thermochemistry/propellants.py:50:11: RUF022 [*] `__all__` is not sorted
+physics/thermochemistry/propellants.py:380:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermochemistry/propellants.py:662:10: UP037 [*] Remove quotes from type annotation
+physics/thermochemistry/propellants.py:859:10: UP037 [*] Remove quotes from type annotation
+physics/thermochemistry/propellants.py:1724:11: RUF022 `__all__` is not sorted
+physics/thermochemistry/species.py:18:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermochemistry/transport_properties.py:25:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermodynamics/enthalpy.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermodynamics/entropy.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermodynamics/equations_of_state.py:18:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermodynamics/exergy.py:25:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermodynamics/first_law.py:26:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermodynamics/first_law.py:36:11: RUF022 [*] `__all__` is not sorted
+physics/thermodynamics/gibbs.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermodynamics/helmholtz.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermodynamics/ideal_gas.py:37:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermodynamics/ideal_gas.py:61:11: RUF022 [*] `__all__` is not sorted
+physics/thermodynamics/ideal_gas.py:122:9: ISC004 Unparenthesized implicit string concatenation in collection
+physics/thermodynamics/ideal_gas.py:124:9: ISC004 Unparenthesized implicit string concatenation in collection
+physics/thermodynamics/internal_energy.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermodynamics/phase_equilibrium.py:23:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermodynamics/phase_equilibrium.py:38:11: RUF022 [*] `__all__` is not sorted
+physics/thermodynamics/real_gas.py:22:1: I001 [*] Import block is un-sorted or un-formatted
+physics/thermodynamics/second_law.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+plugins/nasa_cea/engine.py:8:1: I001 [*] Import block is un-sorted or un-formatted
+plugins/nasa_cea/engine.py:112:35: RUF100 [*] Unused `noqa` directive (unused: `BLE001`)
+systems/__init__.py:15:11: RUF022 [*] `__all__` is not sorted
+systems/calculations/isentropic.py:7:1: I001 [*] Import block is un-sorted or un-formatted
+systems/contracts/results.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/cycle/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/export/__init__.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/export/design_package.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/operating_point/models.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/persistence/design_store.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/projects/models.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/propellants/models.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/requirements/models.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/stages/_helpers.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/stages/chamber.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/stages/design_review.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/stages/design_review.py:64:9: SIM102 Use a single `if` statement instead of nested `if` statements
+systems/stages/design_review.py:74:9: SIM102 Use a single `if` statement instead of nested `if` statements
+systems/stages/operating_point.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/stages/performance.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/stages/propellants.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/stages/requirements.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/stages/structure.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/stages/thermal.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/stages/thermochemistry.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/workflow/invalidation.py:8:11: RUF022 [*] `__all__` is not sorted
+systems/workflow/orchestrator.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+systems/workflow/state.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/benchmark_tests/test_anderson_bartz.py:14:1: I001 [*] Import block is un-sorted or un-formatted
+tests/benchmark_tests/test_fluid_nist_references.py:10:8: F401 [*] `pytest` imported but unused
+tests/integration_tests/gui/test_propulsion_e2e_http.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/kg_block012/helpers/pipeline.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/kg_block012/test_contract_boundaries.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/kg_block012/test_contract_boundaries.py:31:5: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/kg_block012/test_pipeline_determinism.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/kg_block012/test_pipeline_e2e.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/kg_block012/test_pipeline_failure_recovery.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/kg_block012/test_pipeline_lifecycle.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/kg_block012/test_pipeline_performance.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/kg_block012/test_pipeline_provenance.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/kg_block012/test_pipeline_security.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/knowledge/test_gui_backend_integration_qualification.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/knowledge/test_gui_backend_integration_qualification.py:59:12: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+tests/integration_tests/knowledge/test_gui_backend_integration_qualification.py:63:35: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+tests/integration_tests/knowledge/test_gui_backend_integration_qualification.py:181:23: RUF059 Unpacked variable `app` is never used
+tests/integration_tests/knowledge/test_gui_operationalization_qualification.py:8:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/knowledge/test_gui_operationalization_qualification.py:20:41: F401 [*] `knowledge.references.rights.RightsStatus` imported but unused
+tests/integration_tests/knowledge/test_gui_operationalization_qualification.py:22:40: F401 [*] `knowledge.workspace.models.JobStatus` imported but unused
+tests/integration_tests/knowledge/test_gui_operationalization_qualification.py:23:41: F401 [*] `knowledge.workspace.session.KnowledgeWorkspace` imported but unused
+tests/integration_tests/knowledge/test_gui_operationalization_qualification.py:64:12: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+tests/integration_tests/knowledge/test_gui_operationalization_qualification.py:68:35: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+tests/integration_tests/knowledge/test_gui_operationalization_qualification.py:216:19: RUF059 Unpacked variable `app` is never used
+tests/integration_tests/systems_layer/test_phase3_chain.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/systems_layer/test_phase3_chain.py:5:27: F401 [*] `core.quantity.Quantity` imported but unused
+tests/integration_tests/systems_layer/test_phase3_chain.py:6:23: F401 [*] `core.unit.SI` imported but unused
+tests/integration_tests/systems_layer/test_phase4_chain.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/systems_layer/test_systems_physics_isentropic.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integration_tests/test_propellant_database_load.py:8:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/api/test_propulsion_catalogs.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/api/test_propulsion_workflow.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/core/test_affine_temperature.py:90:10: B017 Do not assert blind exception: `Exception`
+tests/unit_tests/core/test_contracts.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/core/test_core_layer_independence.py:6:8: F401 [*] `importlib` imported but unused
+tests/unit_tests/core/test_core_layer_independence.py:39:9: SIM102 Use a single `if` statement instead of nested `if` statements
+tests/unit_tests/core/test_core_validation.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/gui/test_desktop_shell.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/gui/test_knowledge_proxy.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/gui/test_physics_gui_boundary.py:18:16: PIE810 Call `startswith` once with a `tuple`
+tests/unit_tests/gui/test_propulsion_suite.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/compat/test_compat_adversarial.py:25:51: F401 [*] `knowledge.indexing.w7.deterministic_reference_vector` imported but unused
+tests/unit_tests/knowledge/compat/test_compat_indexing.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/compat/test_compat_integration.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/compat/test_compat_search.py:126:12: RUF059 Unpacked variable `bundle` is never used
+tests/unit_tests/knowledge/equations/test_equation_extraction.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/extraction/test_extraction.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/extraction/test_w4_extraction.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/extraction/test_w4_extraction.py:73:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/extraction/test_w4_extraction.py:95:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/extraction/test_w4_extraction.py:150:15: FLY002 Consider `"# Combustion Chamber\nOperating pressure 5 MPa."` instead of string join
+tests/unit_tests/knowledge/extraction/test_w4_extraction.py:242:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/foundation/test_equation_approval.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/foundation/test_master_plan_gaps.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/graph/test_block003_hardening.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/graph/test_construction.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/graph/test_graph_diagnostics.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/ingestion_adapters/test_adapters.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/interface/test_engineering_query.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/mathocr/test_mathocr.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/models/test_correlation.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/models/test_engineering_knowledge_models.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/models/test_engineering_knowledge_models.py:14:77: F401 [*] `knowledge.models.lifecycle.UncertaintyRecord` imported but unused
+tests/unit_tests/knowledge/models/test_engineering_knowledge_models.py:14:96: F401 [*] `knowledge.models.lifecycle.VerificationRecord` imported but unused
+tests/unit_tests/knowledge/ocr/test_ocr_fail_closed.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/ocr/test_ocr_fail_closed.py:65:12: BLE001 Do not catch blind exception: `Exception`
+tests/unit_tests/knowledge/ocr/test_provisioned_ocr.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/ocr/test_symbols.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/ontology/test_w5_ontology.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/ontology/test_w5_ontology.py:124:9: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/ontology/test_w5_ontology.py:385:9: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/parsers/test_parsers.py:64:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/parsers/test_w3_parsing.py:70:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/parsers/test_w3_parsing.py:118:10: B017 Do not assert blind exception: `Exception`
+tests/unit_tests/knowledge/parsers/test_w3_parsing.py:125:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/parsers/test_w3_parsing.py:199:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/parsers/test_w3_parsing.py:342:5: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/pipelines/test_step6_extended_pipeline.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/production/test_step7_gate6_operational_failures.py:57:3: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/production/test_step7_multi_document_ingestion.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/production/test_step7_offline.py:5:8: F401 [*] `os` imported but unused
+tests/unit_tests/knowledge/production/test_step7_recovery_adversarial.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/production/test_step7_recovery_adversarial.py:63:5: F841 Local variable `store` is assigned to but never used
+tests/unit_tests/knowledge/production/test_step7_scale_benchmark.py:6:21: F401 [*] `pathlib.Path` imported but unused
+tests/unit_tests/knowledge/search/test_search.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/search/test_w8_search.py:81:5: RUF059 Unpacked variable `store` is never used
+tests/unit_tests/knowledge/search/test_w8_search.py:146:5: RUF059 Unpacked variable `store` is never used
+tests/unit_tests/knowledge/storage/test_step7_storage.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/storage/test_step7_storage.py:51:5: B018 Found useless attribute access. Either assign it to a variable or remove it.
+tests/unit_tests/knowledge/test_block005_hardening.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/test_block005_hardening.py:96:53: RUF100 [*] Unused `noqa` directive (non-enabled: `SLF001`)
+tests/unit_tests/knowledge/test_block005_hardening.py:235:40: RUF100 [*] Unused `noqa` directive (non-enabled: `PLC0415`)
+tests/unit_tests/knowledge/test_block006_hardening.py:132:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/test_block007_hardening.py:43:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/test_block007_hardening.py:62:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/test_block007_hardening.py:83:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/test_block007_hardening.py:114:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/test_block007_hardening.py:182:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/test_block009_hardening.py:52:9: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/test_block009_hardening.py:137:9: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/test_constant.py:5:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/test_dimension.py:9:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/test_document.py:1:8: F401 [*] `os` imported but unused
+tests/unit_tests/knowledge/test_document.py:11:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/test_document.py:34:28: B009 [*] Do not call `getattr` with a constant attribute value. It is not any safer than normal property access.
+tests/unit_tests/knowledge/test_engineering_domain.py:15:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/test_equation.py:5:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/test_knowledge_foundation_acceptance.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/test_material.py:5:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/test_repository.py:24:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/test_subsystem.py:9:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/test_subsystem.py:28:22: F811 [*] Redefinition of unused `timezone` from line 13: `timezone` redefined here
+tests/unit_tests/knowledge/test_subsystem.py:607:5: PLW0127 Self-assignment of variable `subsystem`
+tests/unit_tests/knowledge/test_subsystem.py:607:17: PLW0128 Redeclared variable `subsystem` in assignment
+tests/unit_tests/knowledge/test_unit.py:9:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/test_variable.py:5:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/validation/test_evidence_chain.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/validation/test_phase_c_validation.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/validation/test_phase_c_validation.py:112:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/validation/test_phase_c_validation.py:138:15: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/validation/test_w9_validation.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/validation/test_w9_validation.py:117:9: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/validation/test_w9_validation.py:249:9: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/validation/test_w9_validation.py:270:9: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/validation/test_w9_validation.py:325:9: FLY002 Consider f-string instead of string join
+tests/unit_tests/knowledge/workspace/test_api_mapping.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/workspace/test_e2e_workspace.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/workspace/test_e2e_workspace.py:71:16: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+tests/unit_tests/knowledge/workspace/test_e2e_workspace.py:75:56: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+tests/unit_tests/knowledge/workspace/test_e2e_workspace.py:110:16: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+tests/unit_tests/knowledge/workspace/test_e2e_workspace.py:113:56: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+tests/unit_tests/knowledge/workspace/test_graph_and_delete.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/workspace/test_graph_and_delete.py:141:16: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+tests/unit_tests/knowledge/workspace/test_graph_and_delete.py:144:56: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+tests/unit_tests/knowledge/workspace/test_graph_and_delete.py:189:16: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+tests/unit_tests/knowledge/workspace/test_graph_and_delete.py:192:56: UP012 [*] Unnecessary UTF-8 `encoding` argument to `encode`
+tests/unit_tests/knowledge/workspace/test_intake.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/workspace/test_operational_api.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/workspace/test_operational_api.py:10:8: F401 [*] `pytest` imported but unused
+tests/unit_tests/knowledge/workspace/test_quality.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/knowledge/workspace/test_vault_jobs.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/physics/test_architecture.py:34:20: PIE810 Call `startswith` once with a `tuple`
+tests/unit_tests/physics/test_compressible_flow.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/physics/test_fluids.py:109:10: B017 Do not assert blind exception: `Exception`
+tests/unit_tests/physics/test_heat_transfer.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/physics/test_materials_and_solids.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/physics/test_numerics_port.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/physics/test_thermochemistry.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/physics/test_thermochemistry.py:48:10: B017 Do not assert blind exception: `Exception`
+tests/unit_tests/physics/test_thermodynamics.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/physics/test_thermodynamics.py:132:5: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/plugins/test_nasa_cea_engine.py:7:32: F401 [*] `physics.exceptions.InsufficientDataError` imported but unused
+tests/unit_tests/systems_layer/test_domain_models.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/systems_layer/test_persistence.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/test_cache.py:8:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/test_cache.py:2813:10: B017 Do not assert blind exception: `Exception`
+tests/unit_tests/test_config_v0_1_1.py:17:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/test_config_v0_1_1.py:367:9: B010 [*] Do not call `setattr` with a constant attribute value. It is not any safer than normal property access.
+tests/unit_tests/test_exceptions.py:14:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/test_logger.py:5:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/test_logger.py:68:5: SIM117 [*] Use a single `with` statement with multiple contexts instead of nested `with` statements
+tests/unit_tests/test_logger.py:87:9: SIM117 [*] Use a single `with` statement with multiple contexts instead of nested `with` statements
+tests/unit_tests/test_propellants.py:20:8: BLE001 Do not catch blind exception: `Exception`
+tests/unit_tests/test_propellants.py:45:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/test_propellants.py:928:5: F811 [*] Redefinition of unused `DuplicatePropellantError` from line 54: `DuplicatePropellantError` redefined here
+tests/unit_tests/test_propellants.py:929:5: F811 [*] Redefinition of unused `PropellantNotFoundError` from line 58: `PropellantNotFoundError` redefined here
+tests/unit_tests/test_settings.py:17:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unit_tests/test_settings.py:63:5: S110 `try`-`except`-`pass` detected, consider logging the exception
+tests/unit_tests/test_settings.py:63:12: BLE001 Do not catch blind exception: `Exception`
+tests/unit_tests/test_settings.py:70:5: S110 `try`-`except`-`pass` detected, consider logging the exception
+tests/unit_tests/test_settings.py:70:12: BLE001 Do not catch blind exception: `Exception`
+tests/validation_tests/test_physics_chain.py:21:1: I001 [*] Import block is un-sorted or un-formatted
+tests/validation_tests/test_physics_conservation.py:10:1: I001 [*] Import block is un-sorted or un-formatted
+tools/build_cosmos_architecture_doc.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+tools/build_cosmos_architecture_doc.py:7:31: F401 [*] `docx.enum.section.WD_SECTION` imported but unused
+tools/build_cosmos_architecture_doc.py:239:25: DTZ011 `datetime.date.today()` used
+tools/build_space_ecosystem_vision_pdf.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+tools/build_space_ecosystem_vision_pdf.py:10:33: F401 [*] `reportlab.lib.units.inch` imported but unused
+tools/build_space_ecosystem_vision_pdf.py:333:33: DTZ011 `datetime.date.today()` used
+Found 660 errors.
+[*] 501 fixable with the `--fix` option (60 hidden fixes can be enabled with the `--unsafe-fixes` option).

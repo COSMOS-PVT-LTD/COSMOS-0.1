@@ -7,9 +7,14 @@ from pathlib import Path
 import pytest
 
 from knowledge.foundation.governance import KnowledgeGovernanceError
+from knowledge.ingest import ingest
 from knowledge.pdf.corpus import reynolds_pdf_bytes
 from knowledge.references.rights import RightsStatus
-from knowledge.workspace.access import WorkspaceAction, WorkspaceAuthorization, WorkspaceRole
+from knowledge.workspace.access import (
+    WorkspaceAction,
+    WorkspaceAuthorization,
+    WorkspaceRole,
+)
 from knowledge.workspace.corpus import (
     chamber_csv_bytes,
     component_json_bytes,
@@ -25,7 +30,6 @@ from knowledge.workspace.corpus import (
 )
 from knowledge.workspace.models import DuplicateKind, JobStatus, StageStatus
 from knowledge.workspace.session import KnowledgeWorkspace
-from knowledge.ingest import ingest
 
 
 def test_ingest_markdown_and_pdf_through_gateway(tmp_path: Path) -> None:

@@ -41,7 +41,7 @@ const COSMOS_LOGIN = {
     eye: '<svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.5"/></svg>',
   },
 
-  selectedProfile: "ENGINEER",
+  selectedProfile: "ADMIN",
 
   init() {
     this.renderProfiles();
@@ -77,7 +77,7 @@ const COSMOS_LOGIN = {
   },
 
   currentProfile() {
-    return this.profiles.find((item) => item.id === this.selectedProfile) || this.profiles[1];
+    return this.profiles.find((item) => item.id === this.selectedProfile) || this.profiles[0];
   },
 
   updateProfileUI() {
@@ -117,7 +117,8 @@ const COSMOS_LOGIN = {
     document.getElementById("login-forgot")?.addEventListener("click", () => {
       const error = document.getElementById("login-error");
       if (error) {
-        error.textContent = "Contact your COSMOS administrator to reset credentials.";
+        error.textContent =
+          "Password reset is not implemented. Local development uses the bootstrap administrator printed at server start.";
       }
     });
   },
@@ -137,6 +138,8 @@ const COSMOS_LOGIN = {
     submit.disabled = true;
     submit.textContent = "SIGNING IN…";
     const profile = this.currentProfile();
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 15000);
     try {
       const response = await fetch("/api/auth/login", {
         method: "POST",
@@ -146,10 +149,19 @@ const COSMOS_LOGIN = {
           password,
           login_profile: profile.id,
         }),
+        signal: controller.signal,
       });
-      const body = await response.json();
+      const body = await response.json().catch(() => ({}));
       if (!response.ok) {
-        if (error) error.textContent = body.error || "Login failed.";
+        if (error) {
+          if (body.error_code === "profile_mismatch") {
+            error.textContent =
+              body.error ||
+              "This account is not authorized for the selected infrastructure profile. The bootstrap admin should choose Administrator.";
+          } else {
+            error.textContent = body.error || "Login failed.";
+          }
+        }
         return;
       }
       if (remember) {
@@ -163,9 +175,15 @@ const COSMOS_LOGIN = {
       localStorage.setItem("cosmos_infrastructure", body.infrastructure || profile.infrastructure);
       localStorage.setItem("cosmos_login_redirect", body.redirect || "/app/workbenches");
       window.location.href = body.redirect || "/app/workbenches";
-    } catch {
-      if (error) error.textContent = "Could not reach COSMOS. Check the application and try again.";
+    } catch (err) {
+      if (error) {
+        error.textContent =
+          err && err.name === "AbortError"
+            ? "Login timed out. Confirm COSMOS is running, then retry."
+            : "Could not reach COSMOS. Check the application and try again.";
+      }
     } finally {
+      clearTimeout(timer);
       submit.disabled = false;
       submit.textContent = "LOGIN";
     }

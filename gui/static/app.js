@@ -151,28 +151,17 @@ const COSMOS = {
     const sidebar = document.querySelector(".sidebar");
     if (!sidebar) return;
     this.activeNav = activeNav;
-    this.navExpanded = localStorage.getItem("cosmos_nav_expanded") === "1";
-    const expandedClass = this.navExpanded ? " nav-expanded" : "";
-    document.querySelector(".app-body")?.classList.toggle("nav-expanded", this.navExpanded);
+    this.navExpanded = true;
+    document.querySelector(".app-body")?.classList.add("nav-expanded");
 
-    // Propulsion / Physics live inside Rocket Engine workbench suite — not top-level nav.
     const primary = [
-      { id: "command", label: "Command", icon: "command", href: this.hubUrl(this.hubPageFromUrl()), tip: "Workbench launcher & command workspace" },
-      { id: "design-contract", label: "Design Contract", icon: "design-contract", href: null, tip: "Requirements & design contract (coming soon)", disabled: true },
-      { id: "knowledge", label: "Knowledge", icon: "knowledge", href: "/app/workbench/knowledge", tip: "Maharshi Bharadwaj — evidence & knowledge infrastructure" },
-      { id: "cad", label: "CAD / Geometry", icon: "cad", href: null, tip: "Parametric CAD studio (coming soon)", disabled: true },
-      { id: "simulation", label: "Simulation", icon: "simulation", href: "/app/workbenches?page=2", tip: "Simulation hub — CFD, FEA, multiphysics" },
-      { id: "optimization", label: "Optimization", icon: "optimization", href: null, tip: "Design space & Pareto exploration (coming soon)", disabled: true },
-      { id: "comparison", label: "Comparison", icon: "comparison", href: "/app/workbenches?page=3", tip: "Comparison cockpit & OTCS validation" },
-      { id: "documentation", label: "Documentation", icon: "documentation", href: null, tip: "Controlled documentation (coming soon)", disabled: true },
-      { id: "vv", label: "V&V", icon: "vv", href: null, tip: "Verification & validation (coming soon)", disabled: true },
-      { id: "release", label: "Release", icon: "release", href: null, tip: "Manufacturing release gate (coming soon)", disabled: true },
+      { id: "command", label: "Command", icon: "command", href: "/app/workbenches", tip: "Project hub" },
+      { id: "propulsion", label: "Rocket Engine", icon: "propulsion", href: "/app/workbench/rocket-engine", tip: "Propulsion design suite — live" },
+      { id: "knowledge", label: "Knowledge", icon: "knowledge", href: "/app/workbench/knowledge", tip: "Maharshi Bharadwaj — evidence & knowledge" },
     ];
     const secondary = [
       { id: "project", label: "Project", icon: "project", href: null, tip: "Project context", action: "project" },
-      { id: "files", label: "Files", icon: "files", href: null, tip: "Recent files (hub)", disabled: true },
       { id: "jobs", label: "Jobs", icon: "jobs", href: null, tip: "Background job manager", action: "jobs" },
-      { id: "log", label: "Log", icon: "log", href: null, tip: "Engineering log (coming soon)", disabled: true },
     ];
     const system = [];
     if (this.canAudit(user)) {
@@ -182,13 +171,27 @@ const COSMOS = {
       system.push({ id: "admin", label: "Administration", icon: "admin", href: "/app/admin", tip: "User administration" });
     }
     system.push(
-      { id: "settings", label: "Settings", icon: "settings", href: null, tip: "Application settings (coming soon)", disabled: true },
-      { id: "help", label: "Help", icon: "help", href: null, tip: "COSMOS help (coming soon)", disabled: true },
+      { id: "help", label: "Help", icon: "help", href: "/app/help", tip: "COSMOS help — launch, login, honesty" },
     );
+
+    const workbenchNav = (this.workbenchCatalog?.pages || []).map((page) => ({
+      page: page.page,
+      label: this.hubLaneLabel(page.page),
+      href: `/app/workbenches#hub-lane-${page.page}`,
+    }));
+    const workbenchItems = workbenchNav.map((lane) =>
+      `<button type="button" class="sidebar-sub-btn" data-hub-lane="${lane.page}" data-tip="Scroll to ${lane.label}">${lane.label}</button>`,
+    ).join("");
+    const pythonItems = [
+      `<button type="button" class="sidebar-sub-btn" onclick="location.href='/app/help#launch'">Launch desktop</button>`,
+      `<button type="button" class="sidebar-sub-btn" onclick="location.href='/app/help#knowledge-dev'">Knowledge dev server</button>`,
+      `<button type="button" class="sidebar-sub-btn planned" disabled title="Planned">Scripting add-ons</button>`,
+    ].join("");
 
     const renderBtn = (item) => {
       const active = item.id === activeNav ? " active" : "";
       const disabled = item.disabled ? " disabled" : "";
+      const planned = item.planned ? " planned" : "";
       let action = item.disabled ? "disabled" : "";
       if (item.href) {
         action = `onclick="location.href='${item.href}'"`;
@@ -197,14 +200,28 @@ const COSMOS = {
       } else if (item.action === "jobs") {
         action = 'onclick="COSMOS.toggleJobManager?.(true)"';
       }
-      return `<button type="button" class="sidebar-btn${active}${disabled}" data-nav="${item.id}" data-tip="${item.tip}" ${action} aria-label="${item.label}">${this.navIcon(item.icon)}<span class="nav-label">${item.label}</span></button>`;
+      return `<button type="button" class="sidebar-btn${active}${disabled}${planned}" data-nav="${item.id}" data-tip="${item.tip}" ${action} aria-label="${item.label}">${this.navIcon(item.icon)}<span class="nav-label">${item.label}${item.planned ? " (planned)" : ""}</span></button>`;
     };
 
+    const workbenchOpen = localStorage.getItem("cosmos_nav_workbench_open") !== "0";
+    const pythonOpen = localStorage.getItem("cosmos_nav_python_open") !== "0";
+
     sidebar.innerHTML = `
-      <button type="button" class="sidebar-toggle" id="nav-expand-toggle" aria-label="Expand navigation">${this.navExpanded ? "◂ Collapse" : "▸ Expand"}</button>
       <div class="sidebar-group">
         <div class="sidebar-group-label">Workspaces</div>
         ${primary.map(renderBtn).join("")}
+      </div>
+      <div class="sidebar-collapsible${workbenchOpen ? " open" : ""}" data-collapsible="workbench">
+        <button type="button" class="sidebar-collapsible-trigger" aria-expanded="${workbenchOpen}">
+          ${this.navIcon("command")}<span class="nav-label">Workbench</span><span class="sidebar-chevron" aria-hidden="true">${workbenchOpen ? "▾" : "▸"}</span>
+        </button>
+        <div class="sidebar-collapsible-body">${workbenchItems}</div>
+      </div>
+      <div class="sidebar-collapsible${pythonOpen ? " open" : ""}" data-collapsible="python">
+        <button type="button" class="sidebar-collapsible-trigger" aria-expanded="${pythonOpen}">
+          ${this.navIcon("jobs")}<span class="nav-label">Python</span><span class="sidebar-chevron" aria-hidden="true">${pythonOpen ? "▾" : "▸"}</span>
+        </button>
+        <div class="sidebar-collapsible-body">${pythonItems}</div>
       </div>
       <div class="sidebar-group">
         <div class="sidebar-group-label">Secondary</div>
@@ -216,15 +233,44 @@ const COSMOS = {
         <button type="button" class="sidebar-btn" id="logout-btn" data-nav="logout" data-tip="Sign out of COSMOS" aria-label="Log out">${this.navIcon("logout")}<span class="nav-label">Log out</span></button>
       </div>`;
 
-    document.getElementById("nav-expand-toggle")?.addEventListener("click", () => {
-      this.navExpanded = !this.navExpanded;
-      localStorage.setItem("cosmos_nav_expanded", this.navExpanded ? "1" : "0");
-      document.querySelector(".app-body")?.classList.toggle("nav-expanded", this.navExpanded);
-      const toggle = document.getElementById("nav-expand-toggle");
-      if (toggle) toggle.textContent = this.navExpanded ? "◂ Collapse" : "▸ Expand";
+    sidebar.querySelectorAll(".sidebar-collapsible-trigger").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const group = trigger.closest(".sidebar-collapsible");
+        const key = group?.dataset.collapsible;
+        const open = !group?.classList.contains("open");
+        group?.classList.toggle("open", open);
+        trigger.setAttribute("aria-expanded", open ? "true" : "false");
+        const chevron = trigger.querySelector(".sidebar-chevron");
+        if (chevron) chevron.textContent = open ? "▾" : "▸";
+        if (key) localStorage.setItem(`cosmos_nav_${key}_open`, open ? "1" : "0");
+      });
+    });
+    sidebar.querySelectorAll(".sidebar-sub-btn[data-hub-lane]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const lane = button.dataset.hubLane;
+        if (window.location.pathname.includes("/workbenches")) {
+          this.scrollToHubLane(lane);
+        } else {
+          window.location.href = `/app/workbenches#hub-lane-${lane}`;
+        }
+      });
     });
     this.bindLogout();
     this.bindSidebarTooltips();
+  },
+
+  hubLaneLabel(page) {
+    const labels = {
+      1: "Propulsion & Hardware",
+      2: "Staging & Simulation",
+      3: "Documentation & Knowledge",
+    };
+    return labels[page] || `Workbench row ${page}`;
+  },
+
+  scrollToHubLane(page) {
+    const lane = document.getElementById(`hub-lane-${page}`);
+    lane?.scrollIntoView({ behavior: "smooth", block: "start" });
   },
 
   setStatusBar(message, state = "ready", meta = "COSMOS 0.1") {
@@ -429,16 +475,6 @@ const COSMOS = {
         </div>`;
       document.body.appendChild(modal);
     }
-
-    if (!document.getElementById("maharshi-module") && !window.location.pathname.includes("/workbench/knowledge")) {
-      const fab = document.createElement("button");
-      fab.type = "button";
-      fab.className = "maharshi-module";
-      fab.id = "maharshi-module";
-      fab.title = "Maharshi Bharadwaj — Knowledge pop-up";
-      fab.innerHTML = '<img src="/assets/maharshi_bharadwaj.png" alt="Maharshi Bharadwaj" /><span>MAHARSHI BHARADWAJ</span>';
-      frame.appendChild(fab);
-    }
   },
 
   bindProfileTriggers(user) {
@@ -522,6 +558,9 @@ const COSMOS = {
   },
 
   bindMaharshi() {
+    if (typeof this.mountMaharshiDock === "function") {
+      this.mountMaharshiDock({ page: window.location.pathname.includes("/workbenches") ? "hub" : "app" });
+    }
     if (typeof this.bindMaharshiPopupTrigger === "function") {
       this.bindMaharshiPopupTrigger();
     }
@@ -529,18 +568,15 @@ const COSMOS = {
 
   openWorkbench(item, page) {
     if (!item?.route) return;
-    if (item.status !== "active") {
-      if (typeof this.notify === "function") {
-        this.notify(`${item.title} is planned — not yet available`, "warning");
-      }
-      return;
-    }
     this.rememberHubPage(page);
-    if (typeof this.trackRecentWorkbench === "function") {
+    if (typeof this.trackRecentWorkbench === "function" && item.status === "active") {
       this.trackRecentWorkbench(item);
     }
     if (typeof this.setStatusBar === "function") {
-      this.setStatusBar(`Opening ${item.title}…`, "processing");
+      this.setStatusBar(
+        item.status === "active" ? `Opening ${item.title}…` : `Opening roadmap page for ${item.title}`,
+        item.status === "active" ? "processing" : "ready",
+      );
     }
     window.location.href = this.workbenchUrl(item.route, page);
   },
@@ -565,20 +601,29 @@ const COSMOS = {
     this.renderSidebar(options.activeNav || this.detectActiveNav(), session.user);
     this.mountShellFragments();
     this.bindProfileTriggers(session.user);
-    this.bindMaharshi();
+    try {
+      this.bindMaharshi();
+    } catch (err) {
+      console.warn("Maharshi popup failed; engineering workspace continues.", err);
+    }
     this.bindProfileModalActions();
-    if (typeof this.initEngineeringUX === "function") {
-      this.initEngineeringUX();
+    try {
+      if (typeof this.initEngineeringUX === "function") {
+        this.initEngineeringUX();
+      }
+    } catch (err) {
+      console.warn("Engineering UX extras failed.", err);
     }
     return session;
   },
 
   detectActiveNav() {
     const path = window.location.pathname;
+    if (path.includes("/help")) return "help";
     if (path.includes("/workbench/knowledge")) return "knowledge";
     if (path.includes("/audit")) return "audit";
     if (path.includes("/admin")) return "admin";
-    if (path.includes("/workbench/rocket-engine")) return "command";
+    if (path.includes("/workbench/rocket-engine")) return "propulsion";
     if (path.includes("/physics/")) return "command";
     if (path.includes("/workbench/")) return "command";
     const page = this.hubPageFromUrl?.() || 1;
@@ -590,40 +635,108 @@ const COSMOS = {
     return "command";
   },
 
-  renderWorkbenchCards(items, page) {
-    const track = document.getElementById("workbench-track");
-    if (!track) return;
-    track.innerHTML = "";
-    track.dataset.page = String(page);
-    items.forEach((item) => {
-      const card = document.createElement("button");
-      card.type = "button";
-      const meta = this.workbenchMeta(item);
-      const blendClass = ["structures", "pid", "rocket-staging"].includes(item.workbench_id) ? "art-light" : "art-dark";
-      card.className = `workbench-card domain-${meta.domain} ${blendClass}`;
-      const art = this.workbenchArt(item.workbench_id);
-      card.innerHTML = `
+  renderWorkbenchCard(item) {
+    const meta = this.workbenchMeta(item);
+    const card = document.createElement("button");
+    card.type = "button";
+    const showArt = item.workbench_id === "knowledge";
+    card.className = `workbench-card domain-${meta.domain}${showArt ? "" : " text-only"}${item.status === "active" ? "" : " is-planned"}`;
+    const artBlock = showArt ? `
+        <div class="workbench-art-wrap">
+          <img class="workbench-art-img" src="${this.workbenchArt(item.workbench_id)}" alt="${item.title}" loading="lazy"
+               onerror="this.onerror=null;this.src='${this.workbenchArtFallback(item.workbench_id)}';" />
+          <div class="workbench-art-vignette"></div>
+        </div>` : "";
+    card.innerHTML = `
         <div class="workbench-card-meta">
           <span class="workbench-meta-chip status-${item.status === "active" ? "active" : "planned"}">${item.status}</span>
           <span class="workbench-meta-chip">${meta.revision}</span>
           <span class="workbench-meta-chip">${meta.design_type}</span>
           <span class="workbench-meta-chip">${meta.validation_state}</span>
         </div>
-        <div class="workbench-art-wrap">
-          <img class="workbench-art-img" src="${art}" alt="${item.title}" loading="lazy"
-               onerror="this.onerror=null;this.src='${this.workbenchArtFallback(item.workbench_id)}';" />
-          <div class="workbench-art-vignette"></div>
-        </div>
+        ${artBlock}
         <div class="workbench-card-footer">
           <h3>${item.title.toUpperCase()}</h3>
           <p class="workbench-desc">${item.description || "Engineering workbench module."}</p>
         </div>`;
-      card.addEventListener("click", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        this.openWorkbench(item, page);
+    card.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      this.openWorkbench(item, item.page || 1);
+    });
+    return card;
+  },
+
+  renderHubWorkbenchLanes() {
+    const host = document.getElementById("hub-workbench-lanes");
+    if (!host || !this.workbenchCatalog) return;
+    host.innerHTML = "";
+    this.workbenchCatalog.pages.forEach((page) => {
+      const lane = document.createElement("section");
+      lane.className = "workbench-lane";
+      lane.id = `hub-lane-${page.page}`;
+      lane.innerHTML = `<header class="workbench-lane-head"><h3>${this.hubLaneLabel(page.page)}</h3></header>`;
+      const track = document.createElement("div");
+      track.className = "workbench-lane-track";
+      page.items.forEach((item) => track.appendChild(this.renderWorkbenchCard(item)));
+      lane.appendChild(track);
+      host.appendChild(lane);
+    });
+    const hash = window.location.hash.replace("#", "");
+    const match = hash.match(/^hub-lane-(\d+)$/);
+    if (match) {
+      requestAnimationFrame(() => this.scrollToHubLane(match[1]));
+    }
+  },
+
+  renderHubPms() {
+    const ctx = typeof this.getProjectContext === "function"
+      ? this.getProjectContext()
+      : { name: "Default Project", system: "", component: "" };
+    const lead = document.getElementById("hub-pms-lead");
+    if (lead) {
+      lead.textContent = ctx.system || ctx.component
+        ? `${ctx.name} — ${[ctx.system, ctx.component].filter(Boolean).join(" · ")}`
+        : "Define project scope, system, and component before opening engineering workbenches.";
+    }
+    const context = document.getElementById("hub-pms-context");
+    if (context) {
+      context.innerHTML = `
+        <div><dt>Project</dt><dd>${ctx.name || "Default Project"}</dd></div>
+        <div><dt>System</dt><dd>${ctx.system || "—"}</dd></div>
+        <div><dt>Component</dt><dd>${ctx.component || "—"}</dd></div>`;
+    }
+    const status = document.getElementById("hub-pms-status");
+    if (status) {
+      const activeCount = (this.workbenchCatalog?.pages || [])
+        .flatMap((page) => page.items)
+        .filter((item) => item.status === "active").length;
+      const recentWb = typeof this.getRecentWorkbenches === "function" ? this.getRecentWorkbenches().length : 0;
+      status.innerHTML = `
+        <ul class="hub-pms-status-list">
+          <li><span>Active workbenches</span><strong>${activeCount}</strong></li>
+          <li><span>Recent visits</span><strong>${recentWb}</strong></li>
+          <li><span>Workspace</span><strong>Local</strong></li>
+        </ul>`;
+    }
+    const filesHost = document.getElementById("hub-pms-recent-files");
+    if (filesHost) {
+      const files = typeof this.getRecentFiles === "function" ? this.getRecentFiles().slice(0, 5) : [];
+      filesHost.innerHTML = files.length
+        ? files.map((item) => `<button type="button" class="hub-pms-file" data-file="${item.filename}">${item.filename}</button>`).join("")
+        : `<span class="cosmos-empty-inline">None yet</span>`;
+      filesHost.querySelectorAll(".hub-pms-file").forEach((button) => {
+        button.addEventListener("click", () => { window.location.href = "/app/workbench/knowledge"; });
       });
-      track.appendChild(card);
+    }
+  },
+
+  bindHubPmsActions() {
+    document.getElementById("hub-pms-new-project")?.addEventListener("click", () => {
+      if (typeof COSMOS.openProjectModal === "function") COSMOS.openProjectModal();
+    });
+    document.getElementById("hub-pms-workbench-jump")?.addEventListener("click", () => {
+      document.getElementById("hub-workbenches")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   },
 
@@ -722,30 +835,33 @@ const COSMOS = {
 
     let wheelAccum = 0;
     viewport.addEventListener("wheel", (event) => {
-      const dominant = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+      if (Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return;
+      const dominant = event.deltaX;
       wheelAccum += dominant;
       if (Math.abs(wheelAccum) < 80) return;
-      event.preventDefault();
       this.swipeToPage(wheelAccum > 0 ? 1 : -1);
       wheelAccum = 0;
-    }, { passive: false });
+    }, { passive: true });
   },
 
   async initWorkbenchHub() {
     const session = await this.initShell({ activeNav: "command" });
     if (!session) return;
-    this.hubPage = this.hubPageFromUrl();
-    this.rememberHubPage(this.hubPage);
     this.workbenchCatalog = await fetch("/api/workbenches").then((r) => r.json());
     this.hubPages = this.workbenchCatalog.pages.length;
-    await this.goToHubPage(this.hubPage, { animate: false });
-    this.bindCarouselControls(this.hubPages);
-    this.bindHubKeyboard();
+    this.renderSidebar("command", session.user);
+    this.renderHubPms();
+    this.renderHubWorkbenchLanes();
+    this.bindHubPmsActions();
     this.renderQuickStatus();
     document.body.classList.add("cosmos-show-recent");
+    if (typeof this.mountMaharshiDock === "function") {
+      this.mountMaharshiDock({ page: "hub" });
+    }
     if (typeof this.renderRecentPanel === "function") {
       this.renderRecentPanel();
     }
+    this.setStatusBar("Project hub ready — PMS then Workbench", "ready", "COSMOS 0.1");
   },
 
   bindHubKeyboard() {
@@ -866,7 +982,7 @@ const COSMOS = {
     if (back) back.href = this.hubUrl(this.hubPage);
 
     const detail = await fetch(`/api/workbenches/${workbenchId}`).then((r) => r.json());
-    if (typeof this.trackRecentWorkbench === "function") {
+    if (detail.status === "active" && typeof this.trackRecentWorkbench === "function") {
       this.trackRecentWorkbench({
         workbench_id: workbenchId,
         title: detail.title,
@@ -886,6 +1002,15 @@ const COSMOS = {
     const modules = document.getElementById("module-grid");
     if (modules) {
       modules.innerHTML = "";
+      if (detail.status !== "active") {
+        const notice = document.createElement("div");
+        notice.className = "suite-note";
+        notice.innerHTML = `<p><strong>${detail.title} is PLANNED.</strong></p>
+          <p>${detail.description || ""}</p>
+          <p>This workbench has no solver, no fake calculator, and no live API. It is on the COSMOS 0.1 roadmap.</p>`;
+        modules.appendChild(notice);
+        return;
+      }
       (detail.modules || []).forEach((name) => {
         const button = document.createElement("button");
         button.type = "button";
@@ -893,17 +1018,21 @@ const COSMOS = {
         button.textContent = name.toUpperCase();
         button.onclick = () => {
           const suiteMap = {
-            "Propulsion Design Suite": "nozzle-flow",
+            "Propulsion Design Suite": "workflow-analysis",
             "Nozzle Flow": "nozzle-flow",
             "Heat Transfer": "heat-transfer",
             "Chamber Structures": "structures",
             "Compressible Flow (Physics Slice)": "nozzle-flow",
           };
           if (Object.prototype.hasOwnProperty.call(suiteMap, name)) {
-            window.location.href = `/app/workbench/rocket-engine?module=${suiteMap[name]}`;
+            const moduleId = suiteMap[name];
+            window.location.href = `/app/workbench/rocket-engine?module=${moduleId}`;
             return;
           }
-          alert(`${name} is registered. Solver integration is routed through governed backend APIs.`);
+          const status = document.getElementById("workbench-description");
+          if (status) {
+            status.textContent = `${name} is registered but not implemented. No fake calculator is shown.`;
+          }
         };
         modules.appendChild(button);
       });
@@ -1037,3 +1166,5 @@ const COSMOS = {
       </dl>`;
   },
 };
+
+window.COSMOS = COSMOS;

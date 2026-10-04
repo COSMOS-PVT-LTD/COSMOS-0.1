@@ -8,12 +8,20 @@ from typing import Protocol, TypedDict
 
 from knowledge.graph.repository import GraphStore
 from knowledge.graph.serialization import canonical_graph_record_digest
-from knowledge.indexing.exceptions import IndexNotFoundError, IndexStaleError, IndexValidationError
-from knowledge.indexing.models import IndexLifecycleState, IndexMetadata, IndexStatistics
+from knowledge.indexing.exceptions import (
+    IndexNotFoundError,
+    IndexStaleError,
+    IndexValidationError,
+)
+from knowledge.indexing.models import (
+    IndexLifecycleState,
+    IndexMetadata,
+    IndexStatistics,
+)
 
 __all__ = (
-    "GraphIndexAdjacency",
     "GraphIndex",
+    "GraphIndexAdjacency",
     "InMemoryGraphIndex",
     "build_graph_index_from_store",
     "require_fresh_graph_index",

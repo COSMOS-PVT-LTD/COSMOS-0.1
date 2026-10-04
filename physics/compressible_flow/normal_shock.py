@@ -20,7 +20,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from core.exceptions import InvalidInputError
-
 from physics.model import ModelIdentity
 from physics.quantities import require_gamma, require_mach
 

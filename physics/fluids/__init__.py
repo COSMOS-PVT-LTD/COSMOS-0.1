@@ -9,7 +9,11 @@ Purpose: Fluid-property foundation public surface (PHYS-002).
 
 from __future__ import annotations
 
-from physics.fluids.fluid_properties import PropertyEvaluation, PropertyRecord, evaluate_record
+from physics.fluids.fluid_properties import (
+    PropertyEvaluation,
+    PropertyRecord,
+    evaluate_record,
+)
 from physics.fluids.mach import mach_number
 from physics.fluids.prandtl import prandtl_number
 from physics.fluids.reynolds import reynolds_number

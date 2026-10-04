@@ -36,6 +36,7 @@ from typing import Any
 from knowledge.models.document import Document
 from knowledge.models.reference import Reference
 
+
 class EquationCategory(Enum):
     """
     Engineering equation classification.
@@ -179,21 +180,19 @@ class Equation:
 
     def _validate_document(self) -> None:
         if not isinstance(self.source_document, Document):
-            raise ValueError("source_document must be a Document instance.")
+            raise TypeError("source_document must be a Document instance.")
 
     def _validate_reference(self) -> None:
         if not isinstance(self.source_reference, Reference):
-            raise ValueError("source_reference must be a Reference instance.")
+            raise TypeError("source_reference must be a Reference instance.")
 
     def _validate_page_number(self) -> None:
-        if self.page_number is not None:
-            if not isinstance(self.page_number, int) or self.page_number <= 0:
-                raise ValueError("page_number must be a positive integer if provided.")
+        if (self.page_number is not None) and (not isinstance(self.page_number, int) or self.page_number <= 0):
+            raise ValueError("page_number must be a positive integer if provided.")
 
     def _validate_extraction_confidence(self) -> None:
-        if self.extraction_confidence is not None:
-            if not (isinstance(self.extraction_confidence, (int, float)) and 0.0 <= self.extraction_confidence <= 1.0):
-                raise ValueError("extraction_confidence must be a number between 0.0 and 1.0 if provided.")
+        if (self.extraction_confidence is not None) and (not (isinstance(self.extraction_confidence, (int, float)) and 0.0 <= self.extraction_confidence <= 1.0)):
+            raise ValueError("extraction_confidence must be a number between 0.0 and 1.0 if provided.")
 
     def to_dict(
         self,
@@ -234,7 +233,7 @@ class Equation:
     def from_dict(
         cls,
         data: dict[str, Any],
-    ) -> "Equation":
+    ) -> Equation:
         """
         Construct an Equation from a serialized dictionary.
 

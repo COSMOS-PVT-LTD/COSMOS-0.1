@@ -9,8 +9,8 @@ from dataclasses import replace
 from knowledge.graph.provenance import ExtractionProvenance
 from knowledge.ingestion.models import IngestionStage, NormalizedDocumentFormat
 from knowledge.parsers.w3.content import ParseContext, ParseResult
-from knowledge.parsers.w3.exceptions import ParserContentError
 from knowledge.parsers.w3.equations import extract_equations
+from knowledge.parsers.w3.exceptions import ParserContentError
 from knowledge.parsers.w3.figures import extract_figures
 from knowledge.parsers.w3.models import StructuredParsedDocument
 from knowledge.parsers.w3.references import extract_citations, extract_references

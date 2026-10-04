@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Any
 
 from core.quantity import Quantity
-
 from systems._serialize import optional_quantity_dict, quantity_from_dict
 
 __all__ = ("DesignRequirements",)
@@ -47,7 +47,7 @@ class DesignRequirements:
         }
 
     @classmethod
-    def from_canonical_dict(cls, data: dict[str, object]) -> DesignRequirements:
+    def from_canonical_dict(cls, data: dict[str, Any]) -> DesignRequirements:
         return cls(
             target_thrust=quantity_from_dict(data.get("target_thrust")),
             ambient_pressure=quantity_from_dict(data.get("ambient_pressure")),

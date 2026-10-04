@@ -3,14 +3,24 @@
 from __future__ import annotations
 
 from knowledge.extraction import CandidateEntityExtraction, ExtractedEntityKind
-from knowledge.graph import GraphConstructionBatch, GraphConstructor, ProvenanceReference
+from knowledge.graph import (
+    GraphConstructionBatch,
+    GraphConstructor,
+    ProvenanceReference,
+)
 from knowledge.graph.entity import CanonicalEntityType
 from knowledge.graph.provenance import SourceProvenanceRecord
 from knowledge.indexing.graph_index import GraphIndex, build_graph_index_from_store
-from knowledge.indexing.keyword_index import KeywordIndex, build_keyword_index_from_store
-from knowledge.indexing.semantic_index import SemanticIndex, build_semantic_index_from_store
+from knowledge.indexing.keyword_index import (
+    KeywordIndex,
+    build_keyword_index_from_store,
+)
 from knowledge.indexing.lexical import InMemoryLexicalIndex
 from knowledge.indexing.semantic import InMemorySemanticIndex
+from knowledge.indexing.semantic_index import (
+    SemanticIndex,
+    build_semantic_index_from_store,
+)
 from knowledge.indexing.w7.graph_index import InMemoryGraphIndex
 from knowledge.ontology import OntologyRegistry
 

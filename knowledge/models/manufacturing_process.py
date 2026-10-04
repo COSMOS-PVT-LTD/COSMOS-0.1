@@ -4,7 +4,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from knowledge.models.lifecycle import KnowledgeLifecycle, ProvenanceTrace, VerificationRecord
+from knowledge.models.lifecycle import (
+    KnowledgeLifecycle,
+    ProvenanceTrace,
+    VerificationRecord,
+)
 
 __all__ = ("ManufacturingProcess",)
 

@@ -2,12 +2,17 @@
 
 from __future__ import annotations
 
+import json
 from datetime import datetime, timezone
 from pathlib import Path
-import json
 
 from knowledge.source.integrity import sha256_text_digest
-from knowledge.workspace.models import IngestionJob, JobCheckpoint, JobStatus, PIPELINE_VERSION
+from knowledge.workspace.models import (
+    PIPELINE_VERSION,
+    IngestionJob,
+    JobCheckpoint,
+    JobStatus,
+)
 
 __all__ = (
     "JobStore",

@@ -3,7 +3,11 @@
 from __future__ import annotations
 
 from knowledge.extraction import CandidateEntityExtraction, ExtractedEntityKind
-from knowledge.graph import GraphConstructionBatch, GraphConstructor, ProvenanceReference
+from knowledge.graph import (
+    GraphConstructionBatch,
+    GraphConstructor,
+    ProvenanceReference,
+)
 from knowledge.graph.diagnostics import analyze_graph_integrity
 from knowledge.graph.entity import CanonicalEntityType
 from knowledge.graph.provenance import SourceProvenanceRecord

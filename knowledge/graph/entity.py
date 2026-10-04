@@ -17,10 +17,10 @@ from knowledge.graph.contracts import GraphNode
 from knowledge.graph.exceptions import GraphContractError, GraphValidationError
 
 __all__ = (
+    "CANONICAL_MODEL_NAMES",
     "CanonicalEntityReference",
     "CanonicalEntityType",
     "GraphEntityRecord",
-    "CANONICAL_MODEL_NAMES",
 )
 
 CANONICAL_MODEL_NAMES: frozenset[str] = frozenset(

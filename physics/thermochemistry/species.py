@@ -22,7 +22,6 @@ from dataclasses import dataclass
 from core.constants import UNIVERSAL_GAS_CONSTANT
 from core.exceptions import InvalidInputError
 from core.quantity import Quantity
-
 from physics.exceptions import InvalidCompositionError, ThermochemistryError
 from physics.quantities import quantity
 from physics.si import UNIT_MOLAR_MASS

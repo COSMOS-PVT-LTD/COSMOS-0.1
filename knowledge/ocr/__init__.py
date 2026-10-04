@@ -6,6 +6,7 @@ from knowledge.ocr.adapter import OCRAdapter, select_ocr_adapter
 from knowledge.ocr.cache import OCRCache
 from knowledge.ocr.embedded import EmbeddedImageRef, list_embedded_images
 from knowledge.ocr.engine import run_ocr
+from knowledge.ocr.health import HealthState, OCRHealth, ocr_health
 from knowledge.ocr.images import hash_image, preprocess_record
 from knowledge.ocr.models import (
     BoundingBox,
@@ -16,9 +17,7 @@ from knowledge.ocr.models import (
     RegionType,
     TableCandidate,
 )
-from knowledge.ocr.health import HealthState, OCRHealth, ocr_health
 from knowledge.ocr.provisioning import ocr_is_provisioned, rasterizer_is_provisioned
-from knowledge.ocr.service import OCRJob, OCRService
 from knowledge.ocr.rasterize import (
     PdfRasterizer,
     RasterizeResult,
@@ -26,7 +25,12 @@ from knowledge.ocr.rasterize import (
     rasterize_page,
     select_pdf_rasterizer,
 )
-from knowledge.ocr.regions import detect_equation_regions, detect_figure_candidates, detect_table_candidates
+from knowledge.ocr.regions import (
+    detect_equation_regions,
+    detect_figure_candidates,
+    detect_table_candidates,
+)
+from knowledge.ocr.service import OCRJob, OCRService
 from knowledge.ocr.unavailable import UnavailableOCRAdapter
 
 __all__ = (

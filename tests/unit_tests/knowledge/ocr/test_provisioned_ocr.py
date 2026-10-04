@@ -8,7 +8,11 @@ from knowledge.ocr.metrics import character_error_rate, word_error_rate
 from knowledge.ocr.provisioning import ocr_is_provisioned, rasterizer_is_provisioned
 from knowledge.ocr.rasterize import rasterize_page
 from knowledge.ocr.security import validate_pdf_bytes
-from knowledge.pdf.corpus import image_only_pdf_bytes, reynolds_pdf_bytes, scanned_reynolds_pdf_bytes
+from knowledge.pdf.corpus import (
+    image_only_pdf_bytes,
+    reynolds_pdf_bytes,
+    scanned_reynolds_pdf_bytes,
+)
 from knowledge.pdf.models import ExtractionStatus
 
 pytestmark = pytest.mark.skipif(

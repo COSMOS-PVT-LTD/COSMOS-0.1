@@ -7,7 +7,7 @@ from __future__ import annotations
 from dataclasses import FrozenInstanceError
 from typing import cast
 
-import pytest # type: ignore
+import pytest  # type: ignore
 
 from knowledge.models.document import (
     Document,

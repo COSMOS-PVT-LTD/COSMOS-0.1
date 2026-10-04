@@ -5,18 +5,15 @@ from __future__ import annotations
 from pathlib import Path
 
 from knowledge.foundation.audit import AuditLog
-from knowledge.foundation.document_pipeline import DocumentKnowledgeDraft, ingest_markdown_to_candidates
+from knowledge.foundation.document_pipeline import (
+    DocumentKnowledgeDraft,
+    ingest_markdown_to_candidates,
+)
 from knowledge.foundation.entity_embeddings import EntityEmbeddingIndex
 from knowledge.foundation.equation_approval import (
     EquationApprovalPipeline,
     EquationReviewDecision,
     NormalizedEquationCandidate,
-)
-from knowledge.foundation.real_document_pipeline import (
-    PipelineEvent,
-    PipelineEventKind,
-    RealDocumentPipelineResult,
-    run_real_document_pipeline,
 )
 from knowledge.foundation.governance import (
     KnowledgeAction,
@@ -28,33 +25,60 @@ from knowledge.foundation.keyword_index import KeywordIndex
 from knowledge.foundation.persistence import dump_snapshot, load_snapshot
 from knowledge.foundation.physics_boundary import PhysicsKnowledgeGateway
 from knowledge.foundation.rag_policy import KnowledgePolicy
-from knowledge.foundation.reasoning_answer import EngineeringAnswer, assemble_engineering_answer
+from knowledge.foundation.real_document_pipeline import (
+    PipelineEvent,
+    PipelineEventKind,
+    RealDocumentPipelineResult,
+    run_real_document_pipeline,
+)
+from knowledge.foundation.reasoning_answer import (
+    EngineeringAnswer,
+    assemble_engineering_answer,
+)
 from knowledge.foundation.seed_corpus import populate_seed_corpus
-from knowledge.foundation.unified_search import UnifiedSearchPipeline, UnifiedSearchResult
+from knowledge.foundation.unified_search import (
+    UnifiedSearchPipeline,
+    UnifiedSearchResult,
+)
 from knowledge.graph.concept_graph import ConceptEdge, ConceptGraph
 from knowledge.graph.integrity import validate_concept_graph
 from knowledge.indexing.citation_index import CitationIndex, CitationIndexEntry
 from knowledge.indexing.equation_index import EquationIndex
 from knowledge.indexing.variable_index import VariableIndex, VariableIndexEntry
 from knowledge.interface.engineering_query import EngineeringQueryService, MaterialCard
-from knowledge.models.document import Document, DocumentApprovalStatus, DocumentType, SecurityLevel
+from knowledge.models.document import (
+    Document,
+    DocumentApprovalStatus,
+    DocumentType,
+    SecurityLevel,
+)
 from knowledge.models.equation import Equation, EquationCategory, EquationStatus
 from knowledge.models.lifecycle import KnowledgeLifecycle
 from knowledge.models.reference import Reference, ReferenceStatus, ReferenceType
 from knowledge.ontology.engineering_vocabulary import EngineeringRelationship
-from knowledge.pdf.registry import SourceRegistry
-from knowledge.persistence.sqlite_store import DatabaseUnavailableError, KnowledgeDatabase
-from knowledge.references.document_class import DocumentClass
-from knowledge.references.ingestion import ReferenceIngestRequest, validate_reference_ingest
-from knowledge.references.rights import RightsStatus
 from knowledge.ontology.registry import OntologyRegistry
+from knowledge.pdf.registry import SourceRegistry
+from knowledge.persistence.sqlite_store import (
+    DatabaseUnavailableError,
+    KnowledgeDatabase,
+)
+from knowledge.references.document_class import DocumentClass
+from knowledge.references.ingestion import (
+    ReferenceIngestRequest,
+    validate_reference_ingest,
+)
+from knowledge.references.rights import RightsStatus
 from knowledge.repositories.assumption_repository import AssumptionRepository
-from knowledge.repositories.boundary_condition_repository import BoundaryConditionRepository
+from knowledge.repositories.boundary_condition_repository import (
+    BoundaryConditionRepository,
+)
 from knowledge.repositories.component_repository import ComponentRepository
 from knowledge.repositories.correlation_repository import CorrelationRepository
 from knowledge.repositories.design_rule_repository import DesignRuleRepository
 from knowledge.repositories.document_repository import DocumentRepository
-from knowledge.repositories.empirical_relation_repository import EmpiricalRelationRepository
+from knowledge.repositories.empirical_relation_repository import (
+    EmpiricalRelationRepository,
+)
 from knowledge.repositories.equation_repository import EquationRepository
 from knowledge.repositories.experiment_repository import ExperimentRepository
 from knowledge.repositories.failure_mode_repository import FailureModeRepository
@@ -64,7 +88,7 @@ from knowledge.repositories.reference_repository import ReferenceRepository
 from knowledge.repositories.simulation_repository import SimulationRepository
 from knowledge.repository.knowledge_repository import EntityNotFoundError
 
-__all__ = ("KnowledgeFoundationService", "SYSTEM_APPROVER")
+__all__ = ("SYSTEM_APPROVER", "KnowledgeFoundationService")
 
 SYSTEM_APPROVER = KnowledgeActor(
     actor_id="kf-system-approver",

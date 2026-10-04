@@ -90,19 +90,13 @@ class SearchFilter:
     def matches(self, metadata: dict[str, object]) -> bool:
         """Return True when metadata satisfies the filter."""
 
-        if self.document_id is not None:
-            if metadata.get("document_id") != self.document_id:
-                return False
+        if (self.document_id is not None) and (metadata.get('document_id') != self.document_id):
+            return False
 
-        if self.lifecycle_state is not None:
-            if metadata.get("lifecycle_state") != self.lifecycle_state:
-                return False
+        if (self.lifecycle_state is not None) and (metadata.get('lifecycle_state') != self.lifecycle_state):
+            return False
 
-        if self.target_type is not None:
-            if metadata.get("target_type") != self.target_type:
-                return False
-
-        return True
+        return not (self.target_type is not None and metadata.get("target_type") != self.target_type)
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)

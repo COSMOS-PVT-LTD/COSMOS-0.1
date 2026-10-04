@@ -5,7 +5,11 @@ from __future__ import annotations
 from knowledge.validation.conflicts import detect_conflicts
 from knowledge.validation.duplicates import detect_duplicates
 from knowledge.validation.identity import validation_report_digest
-from knowledge.validation.models import ValidationContext, ValidationFinding, ValidationReport
+from knowledge.validation.models import (
+    ValidationContext,
+    ValidationFinding,
+    ValidationReport,
+)
 from knowledge.validation.provenance import validate_provenance
 from knowledge.validation.registry import ValidationRuleRegistry
 from knowledge.validation.schema import validate_schema

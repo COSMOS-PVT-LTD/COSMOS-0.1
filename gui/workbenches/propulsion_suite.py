@@ -40,9 +40,9 @@ PROPULSION_SUITE_MODULES: tuple[SuiteModule, ...] = (
         module_id="propellants-combustion",
         title="Propellants & Combustion",
         group="Thermochemistry",
-        description="Propellant selection and combustion thermochemistry (CEA interface — not executed in GUI yet).",
-        status="planned",
-        reference_note="RPA Propellant and combustion properties; NASA CEA boundary preserved.",
+        description="Propellant selection against the Physics registry. Combustion equilibrium (CEA) is not bound.",
+        status="partial",
+        reference_note="Physics propellant registry lookup is live; NASA CEA equilibrium is UNAVAILABLE / NOT_BOUND.",
     ),
     SuiteModule(
         module_id="chamber-sizing",

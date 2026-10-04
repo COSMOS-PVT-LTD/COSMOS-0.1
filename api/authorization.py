@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import TypedDict
+
 from api.authentication import UserRole
 from knowledge.workspace.access import WorkspaceRole
 
@@ -16,7 +18,14 @@ __all__ = (
 )
 
 
-LOGIN_PROFILES: dict[str, dict[str, object]] = {
+class LoginProfile(TypedDict):
+    label: str
+    infrastructure: str
+    redirect: str
+    roles: frozenset[UserRole]
+
+
+LOGIN_PROFILES: dict[str, LoginProfile] = {
     "ADMIN": {
         "label": "Administrator",
         "infrastructure": "Administration Infrastructure",

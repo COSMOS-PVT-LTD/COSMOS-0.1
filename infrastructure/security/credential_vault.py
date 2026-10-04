@@ -2,9 +2,6 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from datetime import datetime, timezone
-from pathlib import Path
 import base64
 import hashlib
 import json
@@ -13,6 +10,9 @@ import re
 import secrets
 import sqlite3
 import threading
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
 
 __all__ = ("CredentialIssueService", "CredentialVault", "GeneratedCredentials")
 
@@ -173,10 +173,6 @@ class CredentialIssueService:
         self.vault = CredentialVault(vault_root, master_secret=master_secret)
 
     def issue(self, *, display_name: str, employee_id: str) -> GeneratedCredentials:
-        from api.authentication import AuthService
-
-        auth = AuthService(auth_root) if isinstance(auth_root, Path) else None
-        del auth
         login_id = generate_login_id(display_name=display_name, employee_id=employee_id)
         password = generate_password()
         return GeneratedCredentials(login_id=login_id, password=password, user_id="")

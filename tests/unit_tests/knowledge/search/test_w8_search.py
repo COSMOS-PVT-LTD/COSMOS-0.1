@@ -78,7 +78,7 @@ def _build_w7_stack(*labels: str):
 def test_kg036_keyword_search_exact_match() -> None:
     """KG-036 must return deterministic keyword matches."""
 
-    store, bundle, _ = _build_w7_stack("Chamber Pressure")
+    _store, bundle, _ = _build_w7_stack("Chamber Pressure")
     engine = KeywordSearchEngine(
         bundle.lexical_index,
         source_digest=bundle.source_digest,
@@ -143,7 +143,7 @@ def test_kg037_semantic_search_rejects_invalid_query_vector() -> None:
 def test_kg038_graph_search_returns_provenance_aware_results() -> None:
     """KG-038 must return graph-aware results with provenance metadata."""
 
-    store, bundle, graph_query = _build_w7_stack("Chamber Pressure")
+    _store, bundle, graph_query = _build_w7_stack("Chamber Pressure")
     engine = GraphSearchEngine(
         bundle.graph_index,
         graph_query,

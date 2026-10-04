@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/assets/cosmos.css" />
   <link rel="stylesheet" href="/assets/propulsion-suite.css" />
 </head>
-<body class="cosmos-app">
+<body class="cosmos-app propulsion-workbench">
   <div class="app-frame page-shell">
     <header class="app-header">
       <button type="button" class="avatar" id="avatar" title="Edit profile photo" aria-label="Edit profile photo"></button>
@@ -18,22 +18,44 @@
       </div>
       <button type="button" class="user-badge" id="user-badge">COSMOS</button>
     </header>
-    <div class="app-body">
+    <div class="app-body nav-expanded">
       <aside class="sidebar" aria-label="Primary navigation"></aside>
       <main class="content-area propulsion-suite">
         <section class="suite-hero">
           <div>
             <h1>Rocket Engine Propulsion Design Suite</h1>
             <p class="suite-lede">
-              Conceptual / preliminary liquid-rocket design workspace inside the Rocket Engine workbench.
-              Module layout is informed by RPA (rocket-propulsion.com) and RPL Engine Workbench analysis flow.
-              Live calculations call frozen COSMOS Physics through the application API — equations are not duplicated in the GUI.
+              One design, one workflow, one Physics source of truth. Live modules call COSMOS
+              through the application API — equations are not duplicated in the browser.
             </p>
           </div>
           <div class="suite-legend">
             <span class="pill live">LIVE</span>
             <span class="pill partial">PARTIAL</span>
             <span class="pill planned">PLANNED</span>
+          </div>
+        </section>
+
+        <section class="design-context-bar" aria-label="Active design">
+          <div class="design-context-identity">
+            <strong id="design-context-name">No active design</strong>
+            <span id="design-context-revision">REV —</span>
+            <span id="design-context-state">NONE</span>
+          </div>
+          <div class="design-context-metrics">
+            <span id="design-context-pc">Pc —</span>
+            <span id="design-context-of">O/F —</span>
+            <span id="design-context-thrust">Thrust —</span>
+            <span id="design-context-props">Propellants —</span>
+          </div>
+          <div class="design-context-actions">
+            <select id="design-picker" aria-label="Open saved design"></select>
+            <button type="button" id="design-new">New</button>
+            <button type="button" id="design-save">Save</button>
+            <button type="button" id="design-clone">Clone</button>
+            <button type="button" id="design-recalculate">Recalculate</button>
+            <button type="button" id="design-reload">Reload</button>
+            <button type="button" id="design-review">Review</button>
           </div>
         </section>
 
@@ -48,22 +70,19 @@
             <div id="suite-forms" class="suite-forms"></div>
             <div class="suite-result-card">
               <h3>Result</h3>
-              <pre id="suite-result" class="suite-result">No calculation yet.</pre>
+              <div id="suite-result" class="suite-result">No calculation yet.</div>
             </div>
           </section>
         </div>
       </main>
     </div>
-    <button type="button" class="maharshi-module" id="maharshi-module" title="Maharshi Bharadwaj — Knowledge pop-up">
-      <img src="/assets/maharshi_bharadwaj.png" alt="Maharshi Bharadwaj" />
-      <span>MAHARSHI BHARADWAJ</span>
-    </button>
     <div class="status-bar in-frame" id="status-bar" role="status">
       <span class="status-indicator ready" aria-hidden="true"></span>
       <span class="status-bar-text">Rocket Engine propulsion suite</span>
       <span class="status-bar-meta">COSMOS 0.1</span>
     </div>
   </div>
+  <script src="/assets/cosmos-api.js"></script>
   <script src="/assets/rbac.js"></script>
   <script src="/assets/app.js"></script>
   <script src="/assets/engineering-ux.js"></script>

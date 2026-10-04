@@ -102,7 +102,7 @@ const Maharshi = (() => {
     set("mh-embed-backend", health.embedding_backend ?? "cosmos-local-neural-mini-v1");
     set("mh-embed-mode", health.embedding_mode ?? "LOCAL / OFFLINE");
     set("mh-embed-qualified", health.production_qualified ?? "YES — CONDITIONAL / ENVELOPE B");
-    set("mh-embed-ready", health.production_ready === true ? "YES" : "NO");
+    set("mh-embed-ready", health.production_ready === true ? "YES" : "NO — not claimed");
     const hash = health.embedding_metadata?.embedding_configuration_hash;
     set("mh-embed-hash", hash ? `${String(hash).slice(0, 16)}…` : "NOT AVAILABLE");
     const hashEl = $("mh-embed-hash");
@@ -617,7 +617,15 @@ const Maharshi = (() => {
     for (const message of messages) {
       const node = document.createElement("div");
       node.className = `mh-msg ${message.role === "user" ? "user" : "assistant"}`;
-      node.textContent = message.content;
+      let content = message.content;
+      if (
+        message.role === "assistant" &&
+        message === messages[messages.length - 1] &&
+        chatPayload?.conclusion
+      ) {
+        content = chatPayload.conclusion;
+      }
+      node.textContent = content;
       if (message.role === "assistant") {
         const grounding = document.createElement("div");
         const state = chatPayload?.grounding_state || message.validation_state || "UNKNOWN";

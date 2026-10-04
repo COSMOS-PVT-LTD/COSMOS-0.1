@@ -1,0 +1,274 @@
+{
+  "architecture": "GUI -> API -> Systems -> Physics -> Core preserved; existing numerics port and validation contract reused.",
+  "baseline": {
+    "area_regression_before_repair": {
+      "failed": 5,
+      "passed": 91
+    },
+    "mypy": {
+      "error_files": 19,
+      "errors": 73,
+      "source_files": 167
+    },
+    "pytest": {
+      "failed": 1,
+      "passed": 1781,
+      "skipped": 6
+    },
+    "reference_reproduction_note": "Additional old-stage runtime reproductions use committed HEAD source in memory, not an exact snapshot of the initial dirty tree.",
+    "ruff": {
+      "errors": 660,
+      "scope": "expanded production packages, tests, tools and plugins; excludes generated virtual environment"
+    }
+  },
+  "date": "2026-10-04",
+  "directive_id": "COSMOS_CODEX_IMMEDIATE_REMEDIATION_001",
+  "directive_sha256": "02d170082fd54a2aeefcad5b41b9d15b365e7f5ac4c5230d01b4603d76a9973f",
+  "engineering_qualification": "NOT_CLAIMED; no flight readiness or certification",
+  "final_gate": "PASS WITH DOCUMENTED NON-BLOCKING LIMITATIONS",
+  "nonblocking_skips": [
+    "Knowledge Constant nested-model hashability",
+    "Knowledge Dimension nested Reference/Document hashability",
+    "Knowledge EngineeringDomain hashability",
+    "Knowledge Subsystem hashability",
+    "Knowledge Unit/Document mappingproxy hashability",
+    "Optional NASA CEA engine test: cea is not installed"
+  ],
+  "remediations": [
+    {
+      "evidence": [
+        "documentation/development/remediation_001_evidence/cosmos-remediation-reproduce-area.log",
+        "documentation/development/remediation_001_evidence/cosmos-remediation-targeted-architecture.log"
+      ],
+      "files": [
+        "physics/compressible_flow/area_mach.py"
+      ],
+      "id": "REMEDIATION-001",
+      "limitations": [
+        "Existing subsonic lower Mach bound 1e-8 retained.",
+        "Supersonic search limit M=1e6 is numerical, not a physical validity claim."
+      ],
+      "status": "PASS",
+      "tests": [
+        "tests/regression_tests/test_area_mach_remediation.py::test_forward_inverse_identity",
+        "tests/regression_tests/test_area_mach_remediation.py::test_supersonic_root_beyond_original_mach_cap",
+        "tests/regression_tests/test_area_mach_remediation.py::test_numerical_search_limit_fails_with_diagnostics",
+        "tests/regression_tests/test_area_mach_remediation.py::test_invalid_area_ratio",
+        "tests/regression_tests/test_area_mach_remediation.py::test_invalid_branch_at_sonic_identity"
+      ],
+      "title": "Bounded adaptive supersonic Area-Mach inversion"
+    },
+    {
+      "evidence": [
+        "documentation/development/remediation_001_evidence/cosmos-remediation-head-reproduction.log",
+        "documentation/development/remediation_001_evidence/cosmos-remediation-targeted-architecture.log"
+      ],
+      "files": [
+        "systems/stages/structure.py",
+        "systems/workflow/orchestrator.py",
+        "api/propulsion_workflow.py",
+        "gui/static/propulsion-suite.js"
+      ],
+      "id": "REMEDIATION-002",
+      "limitations": [
+        "Tensile thin-wall membrane model only; external-pressure buckling is OUT_OF_RANGE."
+      ],
+      "status": "PASS",
+      "tests": [
+        "tests/unit_tests/systems_layer/test_immediate_remediation.py::test_pressure_differential_invariants",
+        "tests/unit_tests/systems_layer/test_immediate_remediation.py::test_invalid_external_loading_fails",
+        "tests/unit_tests/systems_layer/test_immediate_remediation.py::test_thick_wall_is_out_of_range",
+        "tests/integration_tests/gui/test_propulsion_e2e_http.py::test_propulsion_design_lifecycle_http"
+      ],
+      "title": "Traceable dimension-checked pressure differential"
+    },
+    {
+      "evidence": [
+        "documentation/development/remediation_001_evidence/cosmos-remediation-head-reproduction.log",
+        "documentation/development/remediation_001_evidence/cosmos-remediation-targeted-architecture.log"
+      ],
+      "files": [
+        "systems/stages/structure.py"
+      ],
+      "id": "REMEDIATION-003",
+      "limitations": [
+        "Typical handbook yield is not a certified material allowable."
+      ],
+      "status": "PASS",
+      "tests": [
+        "tests/unit_tests/systems_layer/test_immediate_remediation.py::test_requested_known_material_is_used",
+        "tests/unit_tests/systems_layer/test_immediate_remediation.py::test_unknown_material_never_substitutes"
+      ],
+      "title": "Fail-closed requested material identity"
+    },
+    {
+      "evidence": [
+        "documentation/development/remediation_001_evidence/cosmos-remediation-targeted-architecture.log",
+        "documentation/development/remediation_001_evidence/cosmos-remediation-head-reproduction.log"
+      ],
+      "files": [
+        "systems/workflow/graph.py",
+        "systems/workflow/readiness.py",
+        "systems/stages/_helpers.py",
+        "systems/projects/models.py",
+        "systems/stages/consistency.py",
+        "api/catalogs.py"
+      ],
+      "id": "REMEDIATION-004",
+      "limitations": [
+        "Injector, cooling and cycle are deferred for preliminary calculations, but keep a complete engine design incomplete."
+      ],
+      "status": "PASS",
+      "tests": [
+        "tests/unit_tests/systems_layer/test_immediate_remediation.py::test_dependency_requirement_semantics",
+        "tests/unit_tests/systems_layer/test_immediate_remediation.py::test_input_change_invalidation",
+        "tests/unit_tests/systems_layer/test_immediate_remediation.py::test_typed_edges_roundtrip_and_legacy_migration",
+        "tests/integration_tests/systems_layer/test_immediate_remediation.py::test_failed_required_thermochemistry_blocks_performance",
+        "tests/integration_tests/systems_layer/test_immediate_remediation.py::test_failed_recalculation_marks_retained_geometry_stale",
+        "tests/integration_tests/gui/test_propulsion_e2e_http.py::test_propulsion_design_lifecycle_http"
+      ],
+      "title": "Typed dependency semantics and required-stage enforcement"
+    },
+    {
+      "evidence": [
+        "documentation/development/remediation_001_evidence/cosmos-remediation-targeted-architecture.log",
+        "documentation/development/remediation_001_evidence/cosmos-remediation-js-final.log"
+      ],
+      "files": [
+        "systems/workflow/readiness.py",
+        "systems/workflow/orchestrator.py",
+        "systems/stages/design_review.py",
+        "systems/export/design_package.py",
+        "api/propulsion_workflow.py",
+        "gui/static/propulsion-suite.js"
+      ],
+      "id": "REMEDIATION-005",
+      "limitations": [
+        "CURRENT denotes freshness, not engineering certification.",
+        "No experimental validation is claimed."
+      ],
+      "status": "PASS",
+      "tests": [
+        "tests/integration_tests/systems_layer/test_immediate_remediation.py::test_execution_success_is_not_complete_design",
+        "tests/integration_tests/systems_layer/test_immediate_remediation.py::test_readiness_cannot_ignore_required_missing_result",
+        "tests/integration_tests/systems_layer/test_immediate_remediation.py::test_review_recalculation_does_not_treat_itself_as_missing_upstream",
+        "tests/integration_tests/gui/test_propulsion_e2e_http.py::test_propulsion_design_lifecycle_http",
+        "tests/js/remediation_workflow.test.cjs"
+      ],
+      "title": "Separate execution, completeness, readiness and validation"
+    },
+    {
+      "evidence": [
+        "documentation/development/remediation_001_evidence/cosmos-remediation-targeted-architecture.log",
+        "documentation/development/remediation_001_evidence/cosmos-remediation-js-final.log",
+        "documentation/development/remediation_001_evidence/cosmos-remediation-head-reproduction.log"
+      ],
+      "files": [
+        "systems/stages/chamber.py",
+        "systems/stages/performance.py",
+        "systems/stages/operating_point.py",
+        "systems/stages/thermal.py",
+        "systems/stages/structure.py",
+        "gui/static/propulsion-suite.js"
+      ],
+      "id": "REMEDIATION-006",
+      "limitations": [
+        "Taw approximated by Tc; recovery temperature not computed.",
+        "Explicitly persisted inputs may be reused by optional-override APIs.",
+        "Standalone prefilled example calculators are labeled and do not populate the design."
+      ],
+      "status": "PASS",
+      "tests": [
+        "tests/unit_tests/systems_layer/test_immediate_remediation.py::test_chamber_defaults_fail_closed",
+        "tests/unit_tests/systems_layer/test_immediate_remediation.py::test_no_hidden_structural_defaults",
+        "tests/integration_tests/systems_layer/test_immediate_remediation.py::test_missing_phase4_inputs_fail_without_defaults",
+        "tests/integration_tests/systems_layer/test_immediate_remediation.py::test_missing_ambient_pressure_fails",
+        "tests/integration_tests/systems_layer/test_immediate_remediation.py::test_missing_thermal_properties_fail",
+        "tests/integration_tests/systems_layer/test_immediate_remediation.py::test_bartz_curvature_and_taw_approximation_are_exposed",
+        "tests/integration_tests/systems_layer/test_immediate_remediation.py::test_explicit_curvature_is_persisted_for_recalculation",
+        "tests/js/remediation_workflow.test.cjs"
+      ],
+      "title": "Explicit engineering inputs and thermal approximation/curvature provenance"
+    },
+    {
+      "evidence": [
+        "documentation/development/remediation_001_evidence/cosmos-remediation-ruff-final.log",
+        "documentation/development/remediation_001_evidence/cosmos-remediation-mypy-final.log",
+        "documentation/development/remediation_001_evidence/cosmos-remediation-pytest-final.log",
+        "documentation/development/remediation_001_evidence/cosmos-remediation-js-final.log"
+      ],
+      "files": [
+        ".github/workflows/ci.yml",
+        "requirements-dev.txt",
+        ".gitignore",
+        "scripts/launch_cosmos.command"
+      ],
+      "id": "REMEDIATION-007",
+      "limitations": [
+        "Hosted GitHub Actions runs were not initiated.",
+        "Default/configured Mypy coverage is Core/Physics/Systems/API, not whole-repository strict typing."
+      ],
+      "status": "PASS",
+      "tests": [
+        "tests/regression_tests/test_remediation_quality_gate.py::test_ci_has_blocking_workflow_quality_checks",
+        "tests/js/remediation_workflow.test.cjs",
+        "Full repository pytest suite"
+      ],
+      "title": "Blocking expanded CI and repaired quality debt"
+    }
+  ],
+  "report": "documentation/development/COSMOS_IMMEDIATE_REMEDIATION_001_REPORT.md",
+  "repository": {
+    "head": "4e0b0d14c8cc507882fa7de63e19d213decdb079",
+    "initial_worktree": "dirty; existing user changes preserved",
+    "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1",
+    "publication": "No commit, push, PR or deployment performed",
+    "url": "https://github.com/COSMOS-PVT-LTD/COSMOS-0.1"
+  },
+  "schema_version": "1.0.0",
+  "test_additions": {
+    "javascript_cases": 7,
+    "python_cases": 155
+  },
+  "verification": {
+    "javascript": {
+      "command": "node --test tests/js/remediation_workflow.test.cjs",
+      "evidence": "documentation/development/remediation_001_evidence/cosmos-remediation-js-final.log",
+      "failed": 0,
+      "passed": 7,
+      "skipped": 0
+    },
+    "mac": {
+      "method": "Live native pywebview/WebKit launch, login, blank engineering workbench and repaired structured blank-propellant error; package compilation and launcher syntax checks.",
+      "signed_app_bundle": false,
+      "status": "PASS",
+      "test_port": 8793,
+      "test_root": "/tmp/cosmos-remediation-native.8qS3Xf"
+    },
+    "mypy": {
+      "command": ".venv-remediation/bin/python -m mypy core physics systems api",
+      "evidence": "documentation/development/remediation_001_evidence/cosmos-remediation-mypy-final.log",
+      "source_files": 168,
+      "status": "PASS",
+      "strict_full_repository_claim": false
+    },
+    "pytest": {
+      "command": ".venv-remediation/bin/python -m pytest -q -ra",
+      "evidence": "documentation/development/remediation_001_evidence/cosmos-remediation-pytest-final.log",
+      "failed": 0,
+      "passed": 1937,
+      "skipped": 6
+    },
+    "ruff": {
+      "command": ".venv-remediation/bin/python -m ruff check .",
+      "evidence": "documentation/development/remediation_001_evidence/cosmos-remediation-ruff-final.log",
+      "status": "PASS"
+    },
+    "targeted_architecture": {
+      "evidence": "documentation/development/remediation_001_evidence/cosmos-remediation-targeted-architecture.log",
+      "failed": 0,
+      "passed": 165
+    }
+  },
+  "worktree_inventory": "documentation/development/remediation_001_evidence/observed_worktree_paths.txt"
+}

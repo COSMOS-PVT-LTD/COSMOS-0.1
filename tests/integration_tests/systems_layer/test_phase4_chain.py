@@ -2,7 +2,12 @@
 
 from __future__ import annotations
 
-from api.propulsion_workflow import create_design, run_phase3, run_phase4, update_requirements
+from api.propulsion_workflow import (
+    create_design,
+    run_phase3,
+    run_phase4,
+    update_requirements,
+)
 from systems.contracts.results import ResultStatus
 
 
@@ -32,8 +37,16 @@ def test_phase3_then_phase4_subsystems() -> None:
         characteristic_length_m=1.0,
         contraction_ratio=2.5,
         wall_thickness_m=0.006,
+        material_id="stainless_304",
+        external_pressure_pa=101325,
+        material_temperature_k=300,
+        viscosity_pa_s=8e-5,
+        conductivity_w_m_k=0.3,
+        cp_j_kg_k=2500,
+        wall_temperature_k=800,
     )
     assert p4["ok"] is True
+    assert p4["phase_status"] == "PARTIAL"
     assert p4["stages"]["injector"]["status"] == ResultStatus.NOT_IMPLEMENTED.value
     assert p4["stages"]["cooling"]["status"] == ResultStatus.NOT_IMPLEMENTED.value
     assert p4["stages"]["chamber"]["status"] == ResultStatus.CURRENT.value

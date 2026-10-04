@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
+import uuid
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from enum import Enum
 from threading import Lock
-import uuid
 
 from knowledge.ocr.engine import run_ocr
 from knowledge.ocr.health import HealthState, OCRHealth, ocr_health

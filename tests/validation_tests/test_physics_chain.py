@@ -22,7 +22,6 @@ from __future__ import annotations
 
 from core.quantity import Quantity
 from core.unit import SI
-
 from physics.compressible_flow.choked_flow import choked_mass_flow
 from physics.compressible_flow.nozzle_1d import station_from_area_ratio
 from physics.compressible_flow.thrust_relations import thrust
@@ -32,7 +31,11 @@ from physics.heat_transfer.recovery_temperature import adiabatic_wall_temperatur
 from physics.materials.catalog import STAINLESS_304
 from physics.materials.elastic_properties import yield_strength
 from physics.quantities import kelvin, metre, pascal, square_metre
-from physics.si import UNIT_DYNAMIC_VISCOSITY, UNIT_SPECIFIC_HEAT, UNIT_THERMAL_CONDUCTIVITY
+from physics.si import (
+    UNIT_DYNAMIC_VISCOSITY,
+    UNIT_SPECIFIC_HEAT,
+    UNIT_THERMAL_CONDUCTIVITY,
+)
 from physics.solid_mechanics.pressure_vessels import cylinder
 from physics.thermochemistry.mixtures import from_mole_fractions
 from physics.thermodynamics.ideal_gas import evaluate_state

@@ -2,14 +2,14 @@
 
 from __future__ import annotations
 
-from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from http import cookies
-from pathlib import Path
-from urllib.parse import urlparse
 import json
 import mimetypes
 import secrets
 import threading
+from http import cookies
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+from urllib.parse import urlparse
 
 from api.authentication import AuthenticationError, AuthService, UserRole
 from api.authorization import (
@@ -20,6 +20,11 @@ from api.authorization import (
     role_can_administer,
     role_can_audit,
 )
+from api.catalogs import (
+    list_material_catalog,
+    list_propellant_catalog,
+    list_workflow_catalog,
+)
 from api.physics_compressible import (
     evaluate_area_mach,
     evaluate_bartz_htc,
@@ -29,19 +34,25 @@ from api.physics_compressible import (
 )
 from api.profile import ProfileService
 from api.propulsion_workflow import (
+    clone_design,
     create_design,
     export_design,
     get_design_payload,
     get_stage_result_payload,
     get_workflow_payload,
+    list_designs,
     load_design,
     map_systems_error,
     run_isentropic,
     run_phase3,
     run_phase4,
     run_phase6,
+    save_design,
+    update_cycle,
+    update_propellants,
     update_requirements,
 )
+from core.logger import get_logger
 from gui.knowledge_proxy import dispatch_knowledge_request, is_knowledge_api_path
 from gui.workbenches.propulsion_suite import PROPULSION_SUITE_MODULES
 from gui.workbenches.registry import WORKBENCH_PAGES, workbench_by_id
@@ -71,6 +82,8 @@ from infrastructure.security.credential_vault import (
 from knowledge.workspace.access import WorkspaceRole
 from knowledge.workspace.server import STATIC_DIR as KNOWLEDGE_STATIC_DIR
 
+logger = get_logger(__name__)
+
 __all__ = ("CosmosApplication", "serve_application")
 
 SESSION_COOKIE = "cosmos_session"
@@ -79,10 +92,12 @@ ASSETS_DIR = Path(__file__).resolve().parent / "assets"
 STATIC_ASSETS = {
     "cosmos-tokens.css",
     "cosmos-shell.css",
+    "cosmos-background.css",
     "cosmos.css",
     "login.css",
     "login.js",
     "app.js",
+    "cosmos-api.js",
     "rbac.js",
     "engineering-ux.js",
     "maharshi-popup.js",
@@ -155,7 +170,7 @@ def _read_json(handler: BaseHTTPRequestHandler) -> dict[str, object]:
     raw = handler.rfile.read(length) if length else b"{}"
     payload = json.loads(raw.decode("utf-8") or "{}")
     if not isinstance(payload, dict):
-        raise ValueError("JSON body must be an object.")
+        raise TypeError("JSON body must be an object.")
     return payload
 
 
@@ -267,7 +282,7 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
             return None
         return session
 
-    def do_GET(self) -> None:  # noqa: N802
+    def do_GET(self) -> None:
         parsed = urlparse(self.path)
         path = parsed.path
         session = _session_from_handler(self, self.application)
@@ -289,7 +304,7 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
             return self._dispatch_api_get(path, session)
         self._json(404, {"error": "not_found"})
 
-    def do_POST(self) -> None:  # noqa: N802
+    def do_POST(self) -> None:
         parsed = urlparse(self.path)
         path = parsed.path
         session = _session_from_handler(self, self.application)
@@ -297,7 +312,7 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
             return self._dispatch_api_post(path, session)
         self._json(404, {"error": "not_found"})
 
-    def do_DELETE(self) -> None:  # noqa: N802
+    def do_DELETE(self) -> None:
         parsed = urlparse(self.path)
         path = parsed.path
         session = _session_from_handler(self, self.application)
@@ -306,6 +321,8 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
         self._json(404, {"error": "not_found"})
 
     def _dispatch_app(self, path: str, session) -> None:
+        if path in {"/app/help", "/app/help.html"}:
+            return self._send_file(STATIC_DIR / "help.html", "text/html; charset=utf-8")
         if path == "/app/workbenches":
             return self._send_file(STATIC_DIR / "workbenches.html", "text/html; charset=utf-8")
         if path == "/app/audit":
@@ -318,7 +335,7 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
             return self._send_file(STATIC_DIR / "admin.html", "text/html; charset=utf-8")
         if path == "/app/physics/compressible":
             # Deep link retained; primary UX lives in Rocket Engine propulsion suite.
-            return self._redirect("/app/workbench/rocket-engine?module=nozzle-flow")
+            return self._redirect("/app/workbench/rocket-engine?stage=nozzle&from=physics")
         if path.startswith("/app/workbench/"):
             workbench_id = path.removeprefix("/app/workbench/").strip("/")
             if workbench_id == "knowledge":
@@ -407,6 +424,28 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
                 for item in PROPULSION_SUITE_MODULES
             ]
             return self._json(200, {"workbench_id": "rocket-engine", "modules": modules})
+        if path == "/api/catalogs/propellants":
+            if session is None:
+                return self._json(401, {"error": "authentication_required"})
+            try:
+                return self._json(200, list_propellant_catalog())
+            except Exception as exc:
+                logger.exception("server: boundary operation failed")
+                status, payload = map_systems_error(exc)
+                return self._json(status, payload)
+        if path == "/api/catalogs/materials":
+            if session is None:
+                return self._json(401, {"error": "authentication_required"})
+            return self._json(200, list_material_catalog())
+        if path == "/api/propulsion/workflow-catalog":
+            if session is None:
+                return self._json(401, {"error": "authentication_required"})
+            return self._json(200, list_workflow_catalog())
+        if path == "/api/propulsion/designs":
+            if session is None:
+                return self._json(401, {"error": "authentication_required"})
+            self._audit_request(session, path)
+            return self._json(200, {"ok": True, "designs": list_designs(self.application.design_store)})
         if path.startswith("/api/propulsion/designs/"):
             if session is None:
                 return self._json(401, {"error": "authentication_required"})
@@ -417,6 +456,7 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
                 try:
                     design = load_design(design_id, self.application.design_store)
                 except Exception as exc:
+                    logger.exception("server: boundary operation failed")
                     status, payload = map_systems_error(exc)
                     return self._json(status, payload)
                 return self._json(200, {"ok": True, "workflow": get_workflow_payload(design)})
@@ -426,6 +466,7 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
                     design = load_design(design_id, self.application.design_store)
                     package = export_design(design)
                 except Exception as exc:
+                    logger.exception("server: boundary operation failed")
                     status, payload = map_systems_error(exc)
                     return self._json(status, payload)
                 return self._json(200, {"ok": True, "package": package})
@@ -447,6 +488,7 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
                         design, stage_id, allow_stale=allow_stale
                     )
                 except Exception as exc:
+                    logger.exception("server: boundary operation failed")
                     status, err = map_systems_error(exc)
                     return self._json(status, err)
                 return self._json(200, payload)
@@ -454,6 +496,7 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
             try:
                 design = load_design(design_id, self.application.design_store)
             except Exception as exc:
+                logger.exception("server: boundary operation failed")
                 status, payload = map_systems_error(exc)
                 return self._json(status, payload)
             return self._json(200, {"ok": True, "design": get_design_payload(design)})
@@ -592,6 +635,93 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
                 user_agent=self.headers.get("User-Agent", "cosmos-desktop"),
             )
             return self._json(200, {"ok": True, "design": get_design_payload(design)})
+        if path.startswith("/api/propulsion/designs/") and path.endswith("/clone"):
+            current = self._require_session()
+            if current is None:
+                return
+            design_id = path.removeprefix("/api/propulsion/designs/").removesuffix("/clone").strip("/")
+            try:
+                payload = _read_json(self)
+                source = load_design(design_id, self.application.design_store)
+                cloned = clone_design(
+                    source,
+                    name=None if payload.get("name") is None else str(payload["name"]),
+                    store=self.application.design_store,
+                )
+            except Exception as exc:
+                status, error_payload = map_systems_error(exc)
+                if status >= 500:
+                    raise
+                return self._json(status, error_payload)
+            return self._json(200, {"ok": True, "design": get_design_payload(cloned)})
+        if path.startswith("/api/propulsion/designs/") and path.endswith("/save"):
+            current = self._require_session()
+            if current is None:
+                return
+            design_id = path.removeprefix("/api/propulsion/designs/").removesuffix("/save").strip("/")
+            try:
+                design = load_design(design_id, self.application.design_store)
+                save_design(design, self.application.design_store)
+            except Exception as exc:
+                status, error_payload = map_systems_error(exc)
+                if status >= 500:
+                    raise
+                return self._json(status, error_payload)
+            return self._json(200, {"ok": True, "design": get_design_payload(design)})
+        if path.startswith("/api/propulsion/designs/") and path.endswith("/propellants"):
+            current = self._require_session()
+            if current is None:
+                return
+            design_id = (
+                path.removeprefix("/api/propulsion/designs/").removesuffix("/propellants").strip("/")
+            )
+            try:
+                payload = _read_json(self)
+                design = load_design(design_id, self.application.design_store)
+                update_propellants(
+                    design,
+                    oxidizer_id=str(payload["oxidizer_id"]),
+                    fuel_id=str(payload["fuel_id"]),
+                    mixture_ratio=(
+                        None
+                        if payload.get("mixture_ratio") is None
+                        else float(payload["mixture_ratio"])
+                    ),
+                    store=self.application.design_store,
+                )
+            except Exception as exc:
+                status, error_payload = map_systems_error(exc)
+                if status >= 500:
+                    raise
+                return self._json(status, error_payload)
+            return self._json(200, {"ok": True, "design": get_design_payload(design)})
+        if path.startswith("/api/propulsion/designs/") and path.endswith("/cycle"):
+            current = self._require_session()
+            if current is None:
+                return
+            design_id = path.removeprefix("/api/propulsion/designs/").removesuffix("/cycle").strip("/")
+            try:
+                payload = _read_json(self)
+                design = load_design(design_id, self.application.design_store)
+                update_cycle(
+                    design,
+                    str(payload.get("cycle_type") or "UNSPECIFIED"),
+                    store=self.application.design_store,
+                )
+            except Exception as exc:
+                status, error_payload = map_systems_error(exc)
+                if status >= 500:
+                    raise
+                return self._json(status, error_payload)
+            return self._json(
+                200,
+                {
+                    "ok": True,
+                    "design": get_design_payload(design),
+                    "implementation_status": design.cycle_configuration.implementation_status.value,
+                    "reason": design.cycle_configuration.reason,
+                },
+            )
         if path.startswith("/api/propulsion/designs/") and path.endswith("/requirements"):
             current = self._require_session()
             if current is None:
@@ -734,7 +864,15 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
                         if payload.get("wall_thickness_m") is None
                         else float(payload["wall_thickness_m"])
                     ),
-                    material_id=str(payload.get("material_id") or "stainless_304"),
+                    material_id=None if payload.get("material_id") is None else str(payload["material_id"]),
+                    external_pressure_pa=payload.get("external_pressure_pa"),
+                    external_pressure_source=payload.get("external_pressure_source"),
+                    material_temperature_k=payload.get("material_temperature_k"),
+                    viscosity_pa_s=payload.get("viscosity_pa_s"),
+                    conductivity_w_m_k=payload.get("conductivity_w_m_k"),
+                    cp_j_kg_k=payload.get("cp_j_kg_k"),
+                    wall_temperature_k=payload.get("wall_temperature_k"),
+                    throat_curvature_radius_m=payload.get("throat_curvature_radius_m"),
                     store=self.application.design_store,
                 )
             except Exception as exc:
@@ -790,7 +928,7 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
                     record.user.role,
                     str(payload.get("login_profile") or "ENGINEER"),
                 )
-            except (AuthenticationError, ValueError) as exc:
+            except AuthenticationError as exc:
                 self.application.audit.record(
                     user_id="anonymous",
                     login_id=str(payload.get("login_id") or "unknown"),
@@ -800,7 +938,24 @@ class CosmosApplicationHandler(BaseHTTPRequestHandler):
                     source_ip=self.client_address[0],
                     user_agent=self.headers.get("User-Agent", "cosmos-desktop"),
                 )
-                return self._json(401, {"error": str(exc)})
+                return self._json(
+                    401,
+                    {"error": str(exc), "error_code": "authentication_failed"},
+                )
+            except ValueError as exc:
+                self.application.audit.record(
+                    user_id="anonymous",
+                    login_id=str(payload.get("login_id") or "unknown"),
+                    action="LOGIN_FAILED",
+                    resource="/api/auth/login",
+                    detail={"reason": str(exc), "profile": payload.get("login_profile")},
+                    source_ip=self.client_address[0],
+                    user_agent=self.headers.get("User-Agent", "cosmos-desktop"),
+                )
+                return self._json(
+                    401,
+                    {"error": str(exc), "error_code": "profile_mismatch"},
+                )
             self.application.audit_action(
                 record,
                 action="LOGIN",

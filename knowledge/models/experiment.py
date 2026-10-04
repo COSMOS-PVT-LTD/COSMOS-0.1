@@ -4,7 +4,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from knowledge.models.lifecycle import KnowledgeLifecycle, ProvenanceTrace, UncertaintyRecord
+from knowledge.models.lifecycle import (
+    KnowledgeLifecycle,
+    ProvenanceTrace,
+    UncertaintyRecord,
+)
 
 __all__ = ("Experiment",)
 

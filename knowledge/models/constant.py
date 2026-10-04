@@ -34,15 +34,15 @@ unit conversion, symbolic algebra, or repository logic.
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
-from enum import Enum
-from typing import Final, cast, Iterable
 from datetime import datetime
+from enum import Enum
+from typing import Final, cast
 
 from knowledge.models.document import Document
 from knowledge.models.reference import Reference
 from knowledge.models.variable import EngineeringDomain
-
 
 # ==========================================================
 # Enumerations
@@ -630,7 +630,7 @@ class Constant:
             raise TypeError(
                 "name must be a string."
             )
-        print(f"DEBUG NAME = {repr(self.name)}")
+        print(f"DEBUG NAME = {self.name!r}")
 
         if not self.name.strip():
             raise ValueError(
@@ -654,7 +654,7 @@ class Constant:
             raise TypeError(
                 "symbol must be a string."
             )
-        print(f"DEBUG SYMBOL = {repr(self.symbol)}")
+        print(f"DEBUG SYMBOL = {self.symbol!r}")
 
         if not self.symbol.strip():
             raise ValueError(
@@ -1663,7 +1663,7 @@ class Constant:
     def from_dict(
         cls,
         data: dict[str, object],
-    ) -> "Constant":
+    ) -> Constant:
         """
         Reconstruct a Constant from its serialized
         dictionary representation.
@@ -1760,7 +1760,6 @@ class Constant:
             raise ValueError(
                 "name cannot be blank."
             )
-        name=name
 
         raw_symbol = data["symbol"]
         if not isinstance(raw_symbol, str):
@@ -1772,7 +1771,6 @@ class Constant:
             raise ValueError(
                 "symbol cannot be blank."
             )
-        symbol=symbol
 
         raw_description = data["description"]
         if not isinstance(raw_description, str):
@@ -1784,7 +1782,6 @@ class Constant:
             raise ValueError(
                 "description cannot be blank."
             )
-        description = description
 
         raw_value = data.get("value")
         if raw_value is None:
@@ -1935,7 +1932,7 @@ class Constant:
 
             si_unit=str(data["si_unit"]),
 
-            display_unit=(lambda v: str(v) if v is not None else None)(data.get("display_unit")),
+            display_unit=str(data.get('display_unit')) if data.get('display_unit') is not None else None,
 
             dimension=(str(data["dimension"])),
 
@@ -1959,15 +1956,15 @@ class Constant:
                 ))
             ],
 
-            subsystem=(lambda v: str(v) if v is not None else None)(data.get("subsystem")),
+            subsystem=str(data.get('subsystem')) if data.get('subsystem') is not None else None,
 
-            discipline=(lambda v: str(v) if v is not None else None)(data.get("discipline")),
+            discipline=str(data.get('discipline')) if data.get('discipline') is not None else None,
 
-            physical_meaning=(lambda v: str(v) if v is not None else None)(data.get("physical_meaning")),
+            physical_meaning=str(data.get('physical_meaning')) if data.get('physical_meaning') is not None else None,
 
-            engineering_notes=(lambda v: str(v) if v is not None else None)(data.get("engineering_notes")),
+            engineering_notes=str(data.get('engineering_notes')) if data.get('engineering_notes') is not None else None,
 
-            applicable_system=(lambda v: str(v) if v is not None else None)(data.get("applicable_system")),
+            applicable_system=str(data.get('applicable_system')) if data.get('applicable_system') is not None else None,
 
             applicable_regimes=applicable_regimes,
 
@@ -1993,29 +1990,13 @@ class Constant:
             # Scientific Metadata
             # --------------------------------------------------
 
-            codata_version=(lambda v: str(v) if v is not None else None)(
-                data.get(
-                    "codata_version"
-                )
-            ),
+            codata_version=str(data.get('codata_version')) if data.get('codata_version') is not None else None,
 
-            si_definition_year=(lambda v: int(str(v)) if v is not None else None)(
-                data.get(
-                    "si_definition_year"
-                )
-            ),
+            si_definition_year=int(str(data.get('si_definition_year'))) if data.get('si_definition_year') is not None else None,
 
-            nist_identifier=(lambda v: str(v) if v is not None else None)(
-                data.get(
-                    "nist_identifier"
-                )
-            ),
+            nist_identifier=str(data.get('nist_identifier')) if data.get('nist_identifier') is not None else None,
 
-            iso_reference=(lambda v: str(v) if v is not None else None)(
-                data.get(
-                    "iso_reference"
-                )
-            ),
+            iso_reference=str(data.get('iso_reference')) if data.get('iso_reference') is not None else None,
 
             measurement_reference=(
                 measurement_reference
@@ -2089,17 +2070,9 @@ class Constant:
                 ))
             ),
 
-            normalized_name=(lambda v: str(v) if v is not None else None)(
-                data.get(
-                    "normalized_name"
-                )
-            ),
+            normalized_name=str(data.get('normalized_name')) if data.get('normalized_name') is not None else None,
 
-            normalized_symbol=(lambda v: str(v) if v is not None else None)(
-                data.get(
-                    "normalized_symbol"
-                )
-            ),
+            normalized_symbol=str(data.get('normalized_symbol')) if data.get('normalized_symbol') is not None else None,
 
             abbreviations=tuple(
                 cast(Iterable, data.get(
@@ -2297,13 +2270,7 @@ class Constant:
                 "validation_status"
             )),
 
-            confidence_level=(
-                lambda v: float(cast(str | int | float, v)) if v is not None else None
-            )(
-                data.get(
-                    "confidence_level"
-                )
-            ),
+            confidence_level=float(cast(str | int | float, data.get('confidence_level'))) if data.get('confidence_level') is not None else None,
         )
 
     # ======================================================
@@ -2664,5 +2631,3 @@ class Constant:
         """
 
         return len(self.external_identifiers) 
-
-

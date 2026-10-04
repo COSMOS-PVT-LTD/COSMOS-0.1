@@ -1,0 +1,217 @@
+........................................................................ [ 75%]
+..................FF.FFF                                                 [100%]
+=================================== FAILURES ===================================
+________________ test_supersonic_root_beyond_original_mach_cap _________________
+
+    def test_supersonic_root_beyond_original_mach_cap() -> None:
+>       mach = mach_from_area_ratio(1e12, 1.67)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/regression_tests/test_area_mach_remediation.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+physics/compressible_flow/area_mach.py:94: in mach_from_area_ratio
+    return bracketed_root(residual, 1.0, upper)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+residual = <function mach_from_area_ratio.<locals>.residual at 0x101e30f40>
+lower = 1.0, upper = 50.0
+
+    def _fallback_bisection(
+        residual: Callable[[float], float],
+        lower: float,
+        upper: float,
+        *,
+        xtol: float = 1.0e-12,
+        max_iter: int = 80,
+    ) -> float:
+        """
+        Temporary scalar bisection pending numerics delivery.
+    
+        NUM-CONTRACT-ISSUE: replace with ``numerics.root_finding.bisection``.
+        """
+    
+        a = validate_finite(lower, "lower")
+        b = validate_finite(upper, "upper")
+        if a >= b:
+            raise InvalidInputError("Root bracket requires lower < upper.")
+    
+        fa = residual(a)
+        fb = residual(b)
+        if not math.isfinite(fa) or not math.isfinite(fb):
+            raise SolverConvergenceError("Residual is non-finite on the bracket.")
+        if fa == 0.0:
+            return a
+        if fb == 0.0:
+            return b
+        if fa * fb > 0.0:
+>           raise SolverConvergenceError(
+                "Residual does not change sign on the supplied bracket."
+            )
+E           core.exceptions.SolverConvergenceError: Residual does not change sign on the supplied bracket.
+
+physics/contracts/numerics_port.py:76: SolverConvergenceError
+______________ test_numerical_search_limit_fails_with_diagnostics ______________
+
+    def test_numerical_search_limit_fails_with_diagnostics() -> None:
+        with pytest.raises(SolverConvergenceError, match="limit.*gamma|gamma.*limit"):
+>           mach_from_area_ratio(1e300, 1.67)
+
+tests/regression_tests/test_area_mach_remediation.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+physics/compressible_flow/area_mach.py:94: in mach_from_area_ratio
+    return bracketed_root(residual, 1.0, upper)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+residual = <function mach_from_area_ratio.<locals>.residual at 0x101e33380>
+lower = 1.0, upper = 50.0
+
+    def _fallback_bisection(
+        residual: Callable[[float], float],
+        lower: float,
+        upper: float,
+        *,
+        xtol: float = 1.0e-12,
+        max_iter: int = 80,
+    ) -> float:
+        """
+        Temporary scalar bisection pending numerics delivery.
+    
+        NUM-CONTRACT-ISSUE: replace with ``numerics.root_finding.bisection``.
+        """
+    
+        a = validate_finite(lower, "lower")
+        b = validate_finite(upper, "upper")
+        if a >= b:
+            raise InvalidInputError("Root bracket requires lower < upper.")
+    
+        fa = residual(a)
+        fb = residual(b)
+        if not math.isfinite(fa) or not math.isfinite(fb):
+            raise SolverConvergenceError("Residual is non-finite on the bracket.")
+        if fa == 0.0:
+            return a
+        if fb == 0.0:
+            return b
+        if fa * fb > 0.0:
+>           raise SolverConvergenceError(
+                "Residual does not change sign on the supplied bracket."
+            )
+E           core.exceptions.SolverConvergenceError: Residual does not change sign on the supplied bracket.
+
+physics/contracts/numerics_port.py:76: SolverConvergenceError
+
+During handling of the above exception, another exception occurred:
+
+    def test_numerical_search_limit_fails_with_diagnostics() -> None:
+>       with pytest.raises(SolverConvergenceError, match="limit.*gamma|gamma.*limit"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'limit.*gamma|gamma.*limit'
+E        Input: 'Residual does not change sign on the supplied bracket.'
+
+tests/regression_tests/test_area_mach_remediation.py:30: AssertionError
+_________________________ test_invalid_area_ratio[nan] _________________________
+
+ratio = nan
+
+    @pytest.mark.parametrize("ratio", [0.9, float("nan"), float("inf")])
+    def test_invalid_area_ratio(ratio: float) -> None:
+        with pytest.raises(InvalidInputError):
+>           mach_from_area_ratio(ratio, 1.4)
+
+tests/regression_tests/test_area_mach_remediation.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+physics/compressible_flow/area_mach.py:94: in mach_from_area_ratio
+    return bracketed_root(residual, 1.0, upper)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+residual = <function mach_from_area_ratio.<locals>.residual at 0x101e33600>
+lower = 1.0, upper = 50.0
+
+    def _fallback_bisection(
+        residual: Callable[[float], float],
+        lower: float,
+        upper: float,
+        *,
+        xtol: float = 1.0e-12,
+        max_iter: int = 80,
+    ) -> float:
+        """
+        Temporary scalar bisection pending numerics delivery.
+    
+        NUM-CONTRACT-ISSUE: replace with ``numerics.root_finding.bisection``.
+        """
+    
+        a = validate_finite(lower, "lower")
+        b = validate_finite(upper, "upper")
+        if a >= b:
+            raise InvalidInputError("Root bracket requires lower < upper.")
+    
+        fa = residual(a)
+        fb = residual(b)
+        if not math.isfinite(fa) or not math.isfinite(fb):
+>           raise SolverConvergenceError("Residual is non-finite on the bracket.")
+E           core.exceptions.SolverConvergenceError: Residual is non-finite on the bracket.
+
+physics/contracts/numerics_port.py:70: SolverConvergenceError
+_________________________ test_invalid_area_ratio[inf] _________________________
+
+ratio = inf
+
+    @pytest.mark.parametrize("ratio", [0.9, float("nan"), float("inf")])
+    def test_invalid_area_ratio(ratio: float) -> None:
+        with pytest.raises(InvalidInputError):
+>           mach_from_area_ratio(ratio, 1.4)
+
+tests/regression_tests/test_area_mach_remediation.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+physics/compressible_flow/area_mach.py:94: in mach_from_area_ratio
+    return bracketed_root(residual, 1.0, upper)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+residual = <function mach_from_area_ratio.<locals>.residual at 0x101e337e0>
+lower = 1.0, upper = 50.0
+
+    def _fallback_bisection(
+        residual: Callable[[float], float],
+        lower: float,
+        upper: float,
+        *,
+        xtol: float = 1.0e-12,
+        max_iter: int = 80,
+    ) -> float:
+        """
+        Temporary scalar bisection pending numerics delivery.
+    
+        NUM-CONTRACT-ISSUE: replace with ``numerics.root_finding.bisection``.
+        """
+    
+        a = validate_finite(lower, "lower")
+        b = validate_finite(upper, "upper")
+        if a >= b:
+            raise InvalidInputError("Root bracket requires lower < upper.")
+    
+        fa = residual(a)
+        fb = residual(b)
+        if not math.isfinite(fa) or not math.isfinite(fb):
+>           raise SolverConvergenceError("Residual is non-finite on the bracket.")
+E           core.exceptions.SolverConvergenceError: Residual is non-finite on the bracket.
+
+physics/contracts/numerics_port.py:70: SolverConvergenceError
+____________________ test_invalid_branch_at_sonic_identity _____________________
+
+    def test_invalid_branch_at_sonic_identity() -> None:
+>       with pytest.raises(InvalidInputError):
+E       Failed: DID NOT RAISE <class 'core.exceptions.InvalidInputError'>
+
+tests/regression_tests/test_area_mach_remediation.py:41: Failed
+=========================== short test summary info ============================
+FAILED tests/regression_tests/test_area_mach_remediation.py::test_supersonic_root_beyond_original_mach_cap
+FAILED tests/regression_tests/test_area_mach_remediation.py::test_numerical_search_limit_fails_with_diagnostics
+FAILED tests/regression_tests/test_area_mach_remediation.py::test_invalid_area_ratio[nan]
+FAILED tests/regression_tests/test_area_mach_remediation.py::test_invalid_area_ratio[inf]
+FAILED tests/regression_tests/test_area_mach_remediation.py::test_invalid_branch_at_sonic_identity
+5 failed, 91 passed in 0.08s

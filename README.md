@@ -49,21 +49,67 @@ COSMOS is designed to support domains including:
 
 ### Implementation status (COSMOS 0.1)
 
-Capabilities are classified against the current repository state and the frozen
-architecture in `documentation/COSMOS_0.1_FREEZED.md`.
+Capabilities are classified against the current repository. Architectural
+documents describe intent; they are not evidence that a capability is live.
 
 | Area | Status |
 |------|--------|
-| Core infrastructure (`core/`) | **PARTIALLY IMPLEMENTED** |
-| Knowledge foundation models (`knowledge/models/`) | **PARTIALLY IMPLEMENTED** (11 models) |
-| Knowledge repository (`knowledge/repository/`) | **PARTIALLY IMPLEMENTED** |
-| Knowledge ingestion, graph, search, reasoning | **PLANNED** |
-| Thermochemistry propellants and cache (`physics/thermochemistry/`) | **PARTIALLY IMPLEMENTED** |
-| Broader physics, numerics, engineering, simulation | **PLANNED** |
-| API, GUI, AI, visualization, optimization | **PLANNED** |
-| Databases layer, infrastructure, governance automation | **PLANNED / FUTURE** |
+| Core infrastructure (`core/`) | **IMPLEMENTED** (units, quantities, validation) |
+| Physics foundation (`physics/`) | **PARTIAL** (frozen compressible / heat-transfer / materials / propellant registry; CEA unbound) |
+| Systems propulsion workflow (`systems/`) | **PARTIAL** (Phases 3–6; injector / cooling / cycle / MOC **NOT_IMPLEMENTED**) |
+| Application API (`api/`) | **PARTIAL** (auth, physics adapters, propulsion design lifecycle) |
+| Desktop GUI (`gui/`) | **PARTIAL** (login, hub, Rocket Engine, Maharshi Bharadwaj) |
+| Knowledge workspace | **PARTIAL** (authenticated in the desktop app; standalone `:8765` is development-only) |
+| Remaining workbenches (turbopumps, CAD, CFD, PLM, …) | **PLANNED** |
 
-**Test suite:** 802 unit and integration tests passing (as of repository initialization).
+## Quick start (native desktop — default)
+
+COSMOS 0.1 is a **local installed desktop application** (native window via pywebview),
+not a website. The UI is served on `127.0.0.1` inside your own app window — the same
+pattern used by many modern engineering tools that embed a local shell.
+
+```bash
+cd /path/to/COSMOS_0.1
+pip install -r requirements-desktop.txt
+python main.py
+```
+
+On macOS you can also double-click `scripts/launch_cosmos.command` after installing
+dependencies once.
+
+Developer browser mode (automation / debugging only — **not** the product experience):
+
+```bash
+python main.py --browser
+```
+
+Headless HTTP only (CI / API testing):
+
+```bash
+python main.py --headless --port 8780
+```
+
+If pywebview is missing, `python main.py` prints install instructions and temporarily
+opens the default browser so you are not blocked — install desktop dependencies and
+relaunch for the native window.
+
+### Bootstrap administrator (local development)
+
+| Field | Value |
+|-------|-------|
+| Login ID | `cosmos-admin` |
+| Password | `COSMOS-Dev-2026!` |
+| Login profile | **Administrator** |
+
+The default login screen profile is Engineer. The bootstrap user is an
+Administrator — select Administrator or the login is rejected as a profile
+mismatch, not a bad password.
+
+Open **Rocket Engine** for the propulsion workspace. Ten other hub cards are
+roadmap pages, not solvers.
+
+**Knowledge** is available only after desktop login. `python -m knowledge.workspace`
+on port 8765 is an unauthenticated development server.
 
 ## Architecture
 
@@ -79,13 +125,9 @@ initialization does not redesign that architecture.
 
 ## Development Status
 
-COSMOS 0.1 is in **early development**. The current codebase establishes
-foundational core services, a partial knowledge model layer, propellant database
-infrastructure, and a substantial automated test suite. Most modules described
-in the frozen architecture are not yet implemented.
-
-Do not interpret architectural documentation as evidence that a capability is
-already implemented.
+COSMOS 0.1 is in **early development**. The desktop application, Rocket Engine
+workflow, and knowledge workspace are usable for local engineering analysis.
+Most other workbenches remain planned. Results are **not** flight-certified.
 
 ## Intellectual Property
 

@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from knowledge.ontology.exceptions import AliasConflictError, OntologyValidationError
+from knowledge.ontology.exceptions import OntologyValidationError
 from knowledge.ontology.models import OntologyAlias
-from knowledge.ontology.registry import OntologyRegistry, OntologyTermNotFoundError
+from knowledge.ontology.registry import OntologyRegistry
 
 __all__ = (
     "list_aliases",
@@ -37,12 +37,7 @@ def register_alias(
         canonical_term_id=canonical_term_id,
     )
 
-    try:
-        registry.register_alias(alias_record)
-    except OntologyTermNotFoundError:
-        raise
-    except AliasConflictError:
-        raise
+    registry.register_alias(alias_record)
 
     return alias_record
 

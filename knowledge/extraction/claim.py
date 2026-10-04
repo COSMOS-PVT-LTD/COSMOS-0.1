@@ -13,9 +13,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
+from knowledge.extraction.exceptions import ExtractionValidationError
 from knowledge.graph.lifecycle import GraphLifecycleState
 from knowledge.graph.provenance import SourceProvenanceRecord
-from knowledge.extraction.exceptions import ExtractionValidationError
 
 __all__ = (
     "CandidateClaimExtraction",

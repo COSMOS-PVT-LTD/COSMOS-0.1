@@ -9,8 +9,12 @@ from systems.workflow.invalidation import invalidate_from_stage
 
 
 def test_stage_registry_has_seventeen_nodes() -> None:
+    from systems.workflow.graph import PROPULSION_STAGE_SEQUENCE
+
     graph = build_default_propulsion_graph()
     assert len(graph.nodes) == 17
+    assert len(PROPULSION_STAGE_SEQUENCE) == 17
+    assert len(set(PROPULSION_STAGE_SEQUENCE)) == 17
     assert "design_project" in graph.nodes
     assert "design_review" in graph.nodes
     assert graph.get("cycle").implementation_status.value == "NOT_IMPLEMENTED"
@@ -18,9 +22,9 @@ def test_stage_registry_has_seventeen_nodes() -> None:
 
 def test_dependencies_follow_architecture() -> None:
     graph = build_default_propulsion_graph()
-    assert "propellants" in graph.get("operating_point").dependencies
-    assert "operating_point" in graph.get("thermochemistry").dependencies
-    assert "chamber" in graph.get("nozzle").dependencies
+    assert "propellants" in [edge.stage_id for edge in graph.get("operating_point").dependencies]
+    assert "operating_point" in [edge.stage_id for edge in graph.get("thermochemistry").dependencies]
+    assert "chamber" in [edge.stage_id for edge in graph.get("nozzle").dependencies]
 
 
 def test_invalidation_marks_dependents_stale_not_deleted() -> None:
@@ -73,3 +77,21 @@ def test_input_change_invalidates_through_design() -> None:
     assert design.revision == 1
     assert design.workflow.results["operating_point"].status is ResultStatus.STALE
     assert "nozzle" in marked or design.workflow.results["nozzle"].status is ResultStatus.STALE
+
+
+def test_input_change_stamps_derived_geometry_stale() -> None:
+    design = PropulsionDesign(name="Geometry stale")
+    design.nozzle_design = {"throat_area_m2": 0.01, "geometry_status": "CURRENT"}
+    design.chamber_design = {"throat_area_m2": 0.01, "geometry_status": "CURRENT"}
+    design.workflow.store_result(
+        "performance",
+        CalculationResult(
+            calculation_type="performance",
+            status=ResultStatus.CURRENT,
+            stage_id="performance",
+        ),
+    )
+    design.record_input_change("target_chamber_pressure", 5.0e6, 7.0e6)
+    assert design.nozzle_design["geometry_status"] == "STALE"
+    assert design.chamber_design["geometry_status"] == "STALE"
+    assert design.nozzle_design["throat_area_m2"] == 0.01

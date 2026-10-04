@@ -2,15 +2,18 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 import importlib.util
 import io
 import re
+from dataclasses import dataclass
 from typing import Protocol, runtime_checkable
 
+from core.logger import get_logger
 from knowledge.ocr.config import RasterConfiguration, configuration_hash
 from knowledge.ocr.images import hash_image
 from knowledge.pdf.models import ExtractionStatus
+
+logger = get_logger(__name__)
 
 __all__ = (
     "EmbeddedImageRasterizer",
@@ -145,6 +148,7 @@ class PypdfiumRasterizer:
             image.save(buffer, format=fmt)
             payload = buffer.getvalue()
         except Exception as exc:
+            logger.exception("rasterize: boundary operation failed")
             return _unavailable(
                 page_number,
                 config,
@@ -159,7 +163,7 @@ class PypdfiumRasterizer:
                 try:
                     document.close()
                 except Exception:
-                    pass
+                    logger.exception("rasterize: boundary operation failed")
         return RasterizeResult(
             page_number=page_number,
             dpi=config.dpi,
@@ -283,6 +287,7 @@ def _pypdfium_version() -> str:
 
         return version("pypdfium2")
     except Exception:
+        logger.exception("rasterize: boundary operation failed")
         return "unknown"
 
 

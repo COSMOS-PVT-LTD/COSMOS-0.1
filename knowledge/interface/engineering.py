@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 from knowledge.interface.exceptions import InterfaceValidationError
-from knowledge.interface.identity import deterministic_engineering_payload_id
-from knowledge.interface.identity import deterministic_package_digest
+from knowledge.interface.identity import (
+    deterministic_engineering_payload_id,
+    deterministic_package_digest,
+)
 from knowledge.interface.models import (
     CursorDevelopmentContext,
     EngineeringKnowledgePayload,

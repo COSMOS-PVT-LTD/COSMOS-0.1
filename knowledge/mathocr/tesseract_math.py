@@ -7,7 +7,11 @@ from datetime import datetime, timezone
 from knowledge.equations.reconstruction import reconstruct_equation
 from knowledge.mathocr.models import MathOCRFailure, MathOCRResult
 from knowledge.ocr.images import hash_image
-from knowledge.ocr.tesseract import TesseractOCRAdapter, tesseract_is_provisioned, tesseract_version
+from knowledge.ocr.tesseract import (
+    TesseractOCRAdapter,
+    tesseract_is_provisioned,
+    tesseract_version,
+)
 
 __all__ = ("TesseractMathOCRAdapter", "tesseract_math_is_provisioned")
 

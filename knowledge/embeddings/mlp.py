@@ -10,7 +10,7 @@ __all__ = ("MLPWeights", "mlp_forward", "seeded_mlp_weights")
 
 
 def _relu(value: float) -> float:
-    return value if value > 0.0 else 0.0
+    return max(0.0, value)
 
 
 @dataclass(frozen=True, slots=True)

@@ -11,7 +11,7 @@ import math
 import pytest
 
 from core.constants import CELSIUS_ZERO_IN_KELVIN
-from core.exceptions import UnitError
+from core.exceptions import InvalidInputError, UnitError
 from core.hashing import canonical_hash
 from core.quantity import Quantity, QuantityKind, temperature_interval
 from core.unit import SI
@@ -87,7 +87,7 @@ def test_interval_serialization_and_hash_stable() -> None:
 
 @pytest.mark.parametrize("bad", (float("nan"), float("inf"), float("-inf")))
 def test_affine_quantity_rejects_non_finite(bad: float) -> None:
-    with pytest.raises(Exception):
+    with pytest.raises(InvalidInputError):
         _ = Quantity(bad, SI.get("degC"))
 
 

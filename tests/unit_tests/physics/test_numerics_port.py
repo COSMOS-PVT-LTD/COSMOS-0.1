@@ -8,7 +8,10 @@ import pytest
 
 from core.exceptions import InvalidInputError, SolverConvergenceError
 from physics.compressible_flow.area_mach import area_ratio, mach_from_area_ratio
-from physics.compressible_flow.expansion_fan import mach_from_prandtl_meyer, prandtl_meyer
+from physics.compressible_flow.expansion_fan import (
+    mach_from_prandtl_meyer,
+    prandtl_meyer,
+)
 from physics.compressible_flow.oblique_shock import evaluate_oblique_shock, wave_angle
 from physics.contracts import numerics_port
 

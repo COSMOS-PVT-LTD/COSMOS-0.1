@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
+import json
+import urllib.request
 from http.server import ThreadingHTTPServer
 from pathlib import Path
 from threading import Thread
-import json
-import urllib.request
 
 
 def test_desktop_shell_serves_knowledge_api(tmp_path: Path) -> None:

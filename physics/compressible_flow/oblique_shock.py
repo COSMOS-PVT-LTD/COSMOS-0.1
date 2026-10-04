@@ -19,7 +19,6 @@ import math
 from dataclasses import dataclass
 
 from core.exceptions import InvalidInputError, SolverConvergenceError
-
 from physics.compressible_flow.normal_shock import evaluate_normal_shock
 from physics.contracts.numerics_port import bracketed_root
 from physics.model import ModelIdentity
@@ -29,8 +28,8 @@ __all__ = (
     "OBLIQUE_SHOCK",
     "ObliqueShockState",
     "deflection_from_wave_angle",
-    "wave_angle",
     "evaluate_oblique_shock",
+    "wave_angle",
 )
 
 OBLIQUE_SHOCK = ModelIdentity(
@@ -38,8 +37,8 @@ OBLIQUE_SHOCK = ModelIdentity(
     model_name="Oblique shock theta-beta-M",
     physical_domain="compressible_flow",
     equations=(
-        "tan theta = 2 cot beta (M1^2 sin^2 beta - 1) "
-        "/ (M1^2 (gamma + cos 2 beta) + 2)",
+        ("tan theta = 2 cot beta (M1^2 sin^2 beta - 1) "
+        "/ (M1^2 (gamma + cos 2 beta) + 2)"),
         "Mn1 = M1 sin beta",
     ),
     inputs=("M1 [-]", "theta [rad]", "gamma [-]"),

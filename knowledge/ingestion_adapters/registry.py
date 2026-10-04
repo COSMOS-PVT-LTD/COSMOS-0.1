@@ -4,9 +4,16 @@ from __future__ import annotations
 
 from knowledge.ingestion.base import IngestionAdapter
 from knowledge.ingestion.exceptions import IngestionAdapterError
-from knowledge.ingestion.models import IngestionArtifactRef, IngestionRequest, IngestionResult
+from knowledge.ingestion.models import (
+    IngestionArtifactRef,
+    IngestionRequest,
+    IngestionResult,
+)
 from knowledge.ingestion_adapters.docx import DocxIngestionAdapter
-from knowledge.ingestion_adapters.html import HtmlIngestionAdapter, MarkdownIngestionAdapter
+from knowledge.ingestion_adapters.html import (
+    HtmlIngestionAdapter,
+    MarkdownIngestionAdapter,
+)
 from knowledge.ingestion_adapters.pdf import PdfIngestionAdapter
 from knowledge.ingestion_adapters.pptx import PptxIngestionAdapter
 from knowledge.ingestion_adapters.xlsx import XlsxIngestionAdapter

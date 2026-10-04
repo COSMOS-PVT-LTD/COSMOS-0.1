@@ -5,7 +5,11 @@ from __future__ import annotations
 from knowledge.graph.repository import GraphStore
 from knowledge.graph.serialization import canonical_graph_record_digest
 from knowledge.indexing.exceptions import IndexStaleError
-from knowledge.indexing.lexical import LexicalIndex, require_fresh_lexical_index, tokenize_text
+from knowledge.indexing.lexical import (
+    LexicalIndex,
+    require_fresh_lexical_index,
+    tokenize_text,
+)
 from knowledge.search.contracts import (
     RetrievalMode,
     SearchOrder,

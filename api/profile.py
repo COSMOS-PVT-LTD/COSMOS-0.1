@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from api.authentication import AuthService, AuthenticationError, UserAccount
+from api.authentication import AuthenticationError, AuthService, UserAccount
 
 __all__ = ("ProfileService",)
 

@@ -26,11 +26,10 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
 from typing import Any
 from urllib.parse import urlparse
-
 
 _DOI_PATTERN = re.compile(
     r"^10\.\d{4,9}/[-._;()/:A-Z0-9]+$",
@@ -178,7 +177,7 @@ class Reference:
         """
         Validate publication year.
         """
-        current_year = datetime.now().year
+        current_year = datetime.now(UTC).year
 
         if not (
             1800 <= year <= current_year + 1
@@ -242,7 +241,7 @@ class Reference:
     def from_dict(
         cls,
         data: dict[str, Any],
-    ) -> "Reference":
+    ) -> Reference:
         """
         Construct Reference from dictionary.
 

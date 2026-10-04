@@ -15,7 +15,6 @@ from physics.compressible_flow.isentropic import (
     stagnation_temperature_ratio,
 )
 from physics.exceptions import OutOfRangeError, PhysicsError
-
 from systems.contracts.results import (
     CalculationResult,
     ProvenanceInfo,

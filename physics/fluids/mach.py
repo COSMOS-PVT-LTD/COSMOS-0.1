@@ -12,12 +12,11 @@ from __future__ import annotations
 from core.dimension import VELOCITY
 from core.exceptions import InvalidInputError
 from core.quantity import Quantity
-
 from physics.model import ModelIdentity
 from physics.quantities import as_si
 from physics.thermodynamics.ideal_gas import speed_of_sound as ideal_speed_of_sound
 
-__all__ = ("MACH", "mach_number", "ideal_gas_speed_of_sound")
+__all__ = ("MACH", "ideal_gas_speed_of_sound", "mach_number")
 
 MACH = ModelIdentity(
     model_id="PHYS-002.dimensionless.mach",

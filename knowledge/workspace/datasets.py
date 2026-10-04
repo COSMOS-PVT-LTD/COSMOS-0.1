@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 import csv
 import io
 import json
 import re
+from dataclasses import dataclass
 from xml.etree import ElementTree
 
 __all__ = (

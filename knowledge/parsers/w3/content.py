@@ -77,7 +77,7 @@ class ParseContext:
 class ParseResult:
     """Complete W3 parse output with stage-advanced ingestion metadata."""
 
-    parsed_document: "StructuredParsedDocument"
+    parsed_document: StructuredParsedDocument
     ingestion_result: IngestionResult
 
     def __post_init__(self) -> None:

@@ -5,7 +5,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from knowledge.references.document_class import DocumentClass
-from knowledge.references.rights import RightsRecord, RightsStatus, rights_allow_ingestion
+from knowledge.references.rights import (
+    RightsRecord,
+    RightsStatus,
+    rights_allow_ingestion,
+)
 
 __all__ = ("ReferenceIngestRequest", "validate_reference_ingest")
 

@@ -5,6 +5,7 @@ from __future__ import annotations
 import pytest
 
 from core.constants import G0, SPEED_OF_LIGHT
+from core.contracts import ValidationResult
 from core.exceptions import InvalidInputError
 from core.physical_constant import CODATA_PHYSICAL_CONSTANTS
 from core.validation import (
@@ -14,7 +15,6 @@ from core.validation import (
     validate_not_none,
     validate_type,
 )
-from core.contracts import ValidationResult
 
 
 def test_validate_finite_rejects_nan() -> None:

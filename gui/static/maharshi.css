@@ -2,7 +2,7 @@
 
 .maharshi-workspace {
   display: grid;
-  grid-template-rows: auto auto auto minmax(280px, 1fr) auto;
+  grid-template-rows: auto minmax(320px, 1fr) auto auto;
   grid-template-columns: minmax(240px, 280px) minmax(0, 1fr) minmax(300px, 360px);
   gap: 12px;
   height: auto;
@@ -47,13 +47,20 @@
   padding: 12px 14px;
 }
 
-.mh-upload { grid-row: 4; grid-column: 1; }
-.mh-graph { grid-row: 4; grid-column: 2; position: relative; }
-.mh-chat { grid-row: 4; grid-column: 3; }
-.mh-overview { grid-row: 2; grid-column: 1 / -1; }
-.mh-embedding-strip { grid-row: 3; grid-column: 1 / -1; }
+.mh-upload { grid-row: 2; grid-column: 1; }
+.mh-graph { grid-row: 2; grid-column: 2; position: relative; }
+.mh-chat { grid-row: 2; grid-column: 3; }
+.mh-diagnostics { grid-row: 3; grid-column: 1 / -1; }
+.mh-diagnostics summary {
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted, #9db0c9);
+  padding: 8px 4px;
+}
 .mh-bottom {
-  grid-row: 5;
+  grid-row: 4;
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: 1.4fr 1fr 0.9fr;
@@ -728,8 +735,9 @@
   }
   .mh-upload { grid-row: 2; grid-column: 1; }
   .mh-chat { grid-row: 2; grid-column: 2; }
-  .mh-graph { grid-row: 3; grid-column: 1 / -1; min-height: 360px; }
-  .mh-bottom { grid-row: 4; grid-column: 1 / -1; }
+  .mh-graph { grid-row: 3; grid-column: 1 / -1; min-height: 280px; }
+  .mh-diagnostics { grid-row: 4; grid-column: 1 / -1; }
+  .mh-bottom { grid-row: 5; grid-column: 1 / -1; }
 }
 
 .mh-admin-only { display: none !important; }

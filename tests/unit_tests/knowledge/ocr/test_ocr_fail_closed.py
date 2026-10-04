@@ -11,8 +11,8 @@ from knowledge.ocr import (
     run_ocr,
 )
 from knowledge.ocr.config import RasterConfiguration
-from knowledge.pdf.corpus import image_only_pdf_bytes, reynolds_pdf_bytes
 from knowledge.ocr.security import validate_pdf_bytes
+from knowledge.pdf.corpus import image_only_pdf_bytes, reynolds_pdf_bytes
 from knowledge.pdf.models import ExtractionStatus
 
 
@@ -62,7 +62,7 @@ def test_unavailable_rasterizer_never_invents_image() -> None:
 def test_image_hash_is_deterministic() -> None:
     try:
         from PIL import Image
-    except Exception:
+    except ImportError:
         payload = b"\x89PNG\r\n\x1a\ncosmos-original"
         assert hash_image(payload) == hash_image(payload)
         return

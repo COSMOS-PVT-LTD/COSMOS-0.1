@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import ast
-import importlib
 import sys
 from pathlib import Path
 
@@ -36,11 +35,10 @@ def _find_physics_imports(path: Path) -> list[tuple[int, str]]:
             for alias in node.names:
                 if alias.name == "physics" or alias.name.startswith("physics."):
                     hits.append((node.lineno, f"import {alias.name}"))
-        elif isinstance(node, ast.ImportFrom):
-            if node.module and (
-                node.module == "physics" or node.module.startswith("physics.")
-            ):
-                hits.append((node.lineno, f"from {node.module} import ..."))
+        elif isinstance(node, ast.ImportFrom) and node.module and (
+            node.module == "physics" or node.module.startswith("physics.")
+        ):
+            hits.append((node.lineno, f"from {node.module} import ..."))
 
     return hits
 

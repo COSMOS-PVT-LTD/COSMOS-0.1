@@ -6,9 +6,9 @@ from datetime import datetime, timezone
 
 from core.serialization import canonical_json_dumps
 from core.version import COSMOS_VERSION
-
 from systems.contracts.results import is_current_displayable
 from systems.projects.models import PropulsionDesign
+from systems.workflow.readiness import readiness_payload
 
 __all__ = ("build_design_export_package", "export_design_json")
 
@@ -36,6 +36,7 @@ def build_design_export_package(design: PropulsionDesign) -> dict[str, object]:
         "design": design.to_canonical_dict(),
         "current_results": current_results,
         "all_results": all_results,
+        "readiness": readiness_payload(design.workflow),
         "disclaimer": (
             "NOT flight-certified. Validation NOT_CLAIMED. "
             "Only current_results may be treated as the active engineering answer."

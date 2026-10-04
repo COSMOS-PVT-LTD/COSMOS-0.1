@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from enum import Enum
+from typing import Any
 
 __all__ = ("CycleConfiguration", "CycleImplementationStatus", "CycleType")
 
@@ -57,7 +58,7 @@ class CycleConfiguration:
         }
 
     @classmethod
-    def from_canonical_dict(cls, data: dict[str, object]) -> CycleConfiguration:
+    def from_canonical_dict(cls, data: dict[str, Any]) -> CycleConfiguration:
         cycle_type = CycleType(str(data.get("cycle_type", CycleType.UNSPECIFIED.value)))
         return cls(
             cycle_type=cycle_type,

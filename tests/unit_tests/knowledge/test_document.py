@@ -1,4 +1,3 @@
-import os
 import sys
 from pathlib import Path
 
@@ -8,14 +7,15 @@ src_path = root_path / 'src'
 sys.path.insert(0, str(src_path))
 sys.path.insert(0, str(root_path))
 
-from knowledge.models.reference import (
-    Reference,
-    ReferenceType,
-)
 from knowledge.models.document import (
     Document,
     DocumentType,
 )
+from knowledge.models.reference import (
+    Reference,
+    ReferenceType,
+)
+
 
 def test_repository_fields_round_trip() -> None:
 
@@ -31,7 +31,7 @@ def test_repository_fields_round_trip() -> None:
             authors=(
                 "Example Author",
             ),
-            reference_type=getattr(ReferenceType, "WEBSITE"),
+            reference_type=ReferenceType.WEBSITE,
             url="https://example.com",
         ),
         chapter="Chapter 1",

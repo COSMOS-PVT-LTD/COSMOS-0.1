@@ -6,7 +6,12 @@ from collections.abc import Callable
 from dataclasses import dataclass
 
 from knowledge.validation.exceptions import ValidationRegistryError, ValidationRuleError
-from knowledge.validation.models import ValidationCategory, ValidationContext, ValidationFinding, ValidationSeverity
+from knowledge.validation.models import (
+    ValidationCategory,
+    ValidationContext,
+    ValidationFinding,
+    ValidationSeverity,
+)
 
 __all__ = (
     "ValidationRule",

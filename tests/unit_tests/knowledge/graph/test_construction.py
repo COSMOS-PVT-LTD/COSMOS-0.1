@@ -13,11 +13,11 @@ from knowledge.extraction import (
 from knowledge.extraction.equation import CandidateEquationExtraction
 from knowledge.graph import (
     GraphConstructionBatch,
+    GraphConstructionError,
     GraphConstructor,
     GraphLifecycleState,
-    ProvenanceReference,
-    GraphConstructionError,
     GraphValidationError,
+    ProvenanceReference,
     graph_node_id_for_extraction,
 )
 from knowledge.graph.entity import CanonicalEntityType

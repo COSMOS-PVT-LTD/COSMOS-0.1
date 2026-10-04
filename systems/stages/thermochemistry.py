@@ -11,19 +11,25 @@ from physics.thermochemistry.cea_interface import (
     CeaRequest,
     run_thermochemistry,
 )
-
 from systems.contracts.results import (
+    CalculationResult,
     ResultStatus,
     ValidityInfo,
     ValidityState,
     VerificationInfo,
 )
 from systems.projects.models import PropulsionDesign
-from systems.stages._helpers import failed_result, make_result, not_implemented_result
+from systems.stages._helpers import (
+    failed_result,
+    make_result,
+    not_implemented_result,
+    stage_guard,
+)
 
 __all__ = ("run_thermochemistry_stage",)
 
 
+@stage_guard("thermochemistry")
 def run_thermochemistry_stage(
     design: PropulsionDesign,
     *,
@@ -31,7 +37,7 @@ def run_thermochemistry_stage(
     assume_chamber_temperature_k: float | None = None,
     assume_gamma: float | None = None,
     assume_molar_mass_kg_per_mol: float | None = None,
-) -> object:
+) -> CalculationResult:
     """
     Attempt CEA-backed thermochemistry when an engine is bound.
 

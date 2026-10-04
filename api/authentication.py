@@ -2,20 +2,19 @@
 
 from __future__ import annotations
 
+import hashlib
+import hmac
+import secrets
+import sqlite3
+import threading
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from enum import Enum
 from pathlib import Path
-import hashlib
-import hmac
-import json
-import secrets
-import sqlite3
-import threading
 
 __all__ = (
-    "AuthenticationError",
     "AuthService",
+    "AuthenticationError",
     "SessionRecord",
     "UserAccount",
     "UserRole",
@@ -215,7 +214,7 @@ class AuthService:
             raise AuthenticationError("Invalid login credentials.")
         token = secrets.token_urlsafe(32)
         session_id = f"SES-{secrets.token_hex(8)}"
-        token_hash = hashlib.sha256(f"{self._secret}:{token}".encode("utf-8")).hexdigest()
+        token_hash = hashlib.sha256(f"{self._secret}:{token}".encode()).hexdigest()
         created = _utc_now()
         expires = created + timedelta(hours=ttl_hours)
         with self._lock:
@@ -248,7 +247,7 @@ class AuthService:
     def validate_token(self, token: str) -> SessionRecord | None:
         if not token:
             return None
-        token_hash = hashlib.sha256(f"{self._secret}:{token}".encode("utf-8")).hexdigest()
+        token_hash = hashlib.sha256(f"{self._secret}:{token}".encode()).hexdigest()
         with self._lock:
             connection = self._connect()
             try:
@@ -281,8 +280,8 @@ class AuthService:
             team=str(row["team"]),
             role=UserRole(str(row["role"])),
             active=True,
-            bio=str(row["bio"] if "bio" in row.keys() else ""),
-            profile_photo=str(row["profile_photo"] if "profile_photo" in row.keys() else ""),
+            bio=str(dict(row).get("bio", "")),
+            profile_photo=str(dict(row).get("profile_photo", "")),
         )
         return SessionRecord(
             session_id=str(row["session_id"]),
@@ -294,7 +293,7 @@ class AuthService:
     def logout(self, token: str) -> None:
         if not token:
             return
-        token_hash = hashlib.sha256(f"{self._secret}:{token}".encode("utf-8")).hexdigest()
+        token_hash = hashlib.sha256(f"{self._secret}:{token}".encode()).hexdigest()
         with self._lock:
             connection = self._connect()
             try:
@@ -342,8 +341,8 @@ class AuthService:
             team=str(row["team"]),
             role=UserRole(str(row["role"])),
             active=bool(int(row["active"])),
-            bio=str(row["bio"] if "bio" in row.keys() else ""),
-            profile_photo=str(row["profile_photo"] if "profile_photo" in row.keys() else ""),
+            bio=str(dict(row).get("bio", "")),
+            profile_photo=str(dict(row).get("profile_photo", "")),
         )
 
     def get_user_by_id(self, user_id: str) -> UserAccount | None:

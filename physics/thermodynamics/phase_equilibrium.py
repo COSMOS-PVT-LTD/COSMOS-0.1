@@ -29,7 +29,6 @@ from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.unit import Unit
 from core.validation import validate_positive
-
 from physics.exceptions import InsufficientDataError
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity
@@ -37,9 +36,9 @@ from physics.si import SPECIFIC_ENERGY, SPECIFIC_HEAT
 
 __all__ = (
     "CLAUSIUS_CLAPEYRON",
-    "slope",
     "integrated_pressure_ratio",
     "saturation_pressure",
+    "slope",
 )
 
 _SPECIFIC_VOLUME = VOLUME / MASS

@@ -20,7 +20,6 @@ from dataclasses import dataclass
 from typing import Protocol
 
 from core.quantity import Quantity
-
 from physics.exceptions import InsufficientDataError, ThermochemistryError
 from physics.model import ModelIdentity
 from physics.validity import ValidityStatus
@@ -110,7 +109,7 @@ def run_thermochemistry(
         raise InsufficientDataError(
             "No external thermochemistry engine is bound. COSMOS physics "
             "does not implement a second CEA. Provide a ThermochemistryEngine "
-            "adapter (for example plugins/rocketcea) to evaluate "
+            "adapter (for example plugins/nasa_cea) to evaluate "
             f"{request.fuel_id}/{request.oxidizer_id}."
         )
     result = engine.evaluate(request)

@@ -22,7 +22,7 @@ from knowledge.graph.graph_manager import GraphManager
 from knowledge.graph.provenance import SourceProvenanceRecord
 from knowledge.indexing.exceptions import IndexStaleError, IndexValidationError
 from knowledge.indexing.keyword_index import build_keyword_index_from_store
-from knowledge.indexing.w7 import W7IndexBuilder, deterministic_reference_vector
+from knowledge.indexing.w7 import W7IndexBuilder
 from knowledge.ingestion.markdown_loader import load_markdown
 from knowledge.ontology import OntologyRegistry, OntologyTerm
 from knowledge.ontology.exceptions import DuplicateOntologyTermError

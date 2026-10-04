@@ -12,7 +12,11 @@ from knowledge.ingestion_adapters.exceptions import (
     RepositoryBoundaryError,
 )
 from knowledge.source.integrity import sha256_bytes_digest
-from knowledge.source.vault import InMemorySourceVault, VaultArtifact, VaultArtifactMetadata
+from knowledge.source.vault import (
+    InMemorySourceVault,
+    VaultArtifact,
+    VaultArtifactMetadata,
+)
 
 __all__ = (
     "RepositoryIngestionAdapter",

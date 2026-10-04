@@ -4,7 +4,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from knowledge.pipelines.knowledge_pipeline import normalize_markdown_text, run_knowledge_pipeline
+from knowledge.pipelines.knowledge_pipeline import (
+    normalize_markdown_text,
+    run_knowledge_pipeline,
+)
 from tests.integration_tests.kg_block012.helpers.pipeline import run_full_pipeline
 
 _GOLDEN_DOCUMENT = (

@@ -5,8 +5,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from knowledge.interface.exceptions import InterfaceValidationError
-from knowledge.reasoning.w10.models import EvidenceClassification, ReasoningOutcome
 from knowledge.reasoning.w10.context import W10EngineeringContext
+from knowledge.reasoning.w10.models import EvidenceClassification, ReasoningOutcome
 from knowledge.search.contracts import SearchQuery
 
 __all__ = (

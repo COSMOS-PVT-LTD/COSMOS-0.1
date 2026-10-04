@@ -7,48 +7,21 @@ Unit Tests:
 
 from __future__ import annotations
 
+import json
+from concurrent.futures import ThreadPoolExecutor
+
 # ============================================================================
 # Standard Library
 # ============================================================================
-
-from datetime import UTC
-from datetime import datetime
-from physics.thermochemistry.cache import (
-    MemoryCache,
-)
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from physics.thermochemistry.cache import (
-    DiskCache,
-)
-from physics.thermochemistry.cache import (
-    ThermochemistryCache,
-    get_global_cache,
-    reset_global_cache,
-)
-from datetime import timedelta
-
-from physics.thermochemistry.cache import (
-    cache_entry_is_expired,
-)
-
 import pytest  # type: ignore
-
-import json
-
-from physics.thermochemistry.cache import (
-    _cache_entry_from_dict,
-    _cache_entry_to_dict,
-    cache_entry_from_json,
-    cache_entry_to_json,
-)
-from concurrent.futures import ThreadPoolExecutor
 
 # ============================================================================
 # Module Under Test
 # ============================================================================
-
 from physics.thermochemistry.cache import (
     CACHE_SCHEMA_VERSION,
     CacheCorruptionError,
@@ -58,6 +31,16 @@ from physics.thermochemistry.cache import (
     CacheSerializationError,
     CacheSource,
     CacheStatistics,
+    DiskCache,
+    MemoryCache,
+    ThermochemistryCache,
+    _cache_entry_from_dict,
+    _cache_entry_to_dict,
+    cache_entry_from_json,
+    cache_entry_is_expired,
+    cache_entry_to_json,
+    get_global_cache,
+    reset_global_cache,
 )
 
 # ============================================================================
@@ -2811,7 +2794,7 @@ def test_invalid_source_in_dict() -> None:
     )
 
     with pytest.raises(
-        Exception
+        ValueError
     ):
 
         _cache_entry_from_dict(
@@ -3989,4 +3972,3 @@ def test_concurrent_set_get_operations() -> None:
         result is not None
         for result in results
     )
-

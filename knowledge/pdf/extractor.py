@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 import time
 
+from core.logger import get_logger
 from knowledge.pdf.models import (
     ExtractionStatus,
     PageClassification,
@@ -15,7 +16,9 @@ from knowledge.pdf.models import (
 from knowledge.source.exceptions import IntegrityMismatchError
 from knowledge.source.integrity import sha256_bytes_digest, verify_digest
 
-__all__ = ("extract_pdf_pages", "ExtractionUnavailableError")
+logger = get_logger(__name__)
+
+__all__ = ("ExtractionUnavailableError", "extract_pdf_pages")
 
 _PAGE_OBJECT = re.compile(rb"/Type\s*/Page(?!s)")
 _TJ = re.compile(rb"\((?:\\.|[^\\)])*\)\s*Tj")
@@ -123,12 +126,13 @@ def _classify(text: str, has_images: bool) -> PageClassification:
 def _extract_via_optional_pypdf(content: bytes) -> tuple[str, ...] | None:
     try:
         from pypdf import PdfReader  # type: ignore[import-not-found]
-    except Exception:
+    except ImportError:
         return None
     try:
         reader = PdfReader(__import__("io").BytesIO(content))
         pages = tuple((page.extract_text() or "") for page in reader.pages)
     except Exception:
+        logger.exception("extractor: boundary operation failed")
         return None
     return pages or None
 

@@ -22,71 +22,86 @@ def _keywords(text: str, limit: int = 12) -> tuple[str, ...]:
     return tuple(token for token, _count in ranked[:limit])
 
 
+def _document_id_for_source(source_id: str) -> str | None:
+    if source_id.startswith("SRC-"):
+        return f"DOC-{source_id[4:]}"
+    return None
+
+
+def _resolve_node_id(node_id: str, alias: dict[str, str]) -> str:
+    return alias.get(node_id, node_id)
+
+
+def _entity_node(workspace: KnowledgeWorkspace, entity_id: str) -> dict[str, object]:
+    return {
+        "id": entity_id,
+        "label": entity_id,
+        "kind": "entity",
+        "summary": "Engineering entity",
+        "project_id": workspace.project_id,
+        "format": "entity",
+        "rights_status": "INTERNAL",
+        "keywords": [],
+    }
+
+
 def build_knowledge_graph(workspace: KnowledgeWorkspace) -> dict[str, object]:
-    workspace._ensure_seed_corpus()
-    nodes: list[dict[str, object]] = []
+    if workspace.seed_corpus_enabled:
+        workspace._ensure_seed_corpus()
+
+    node_index: dict[str, dict[str, object]] = {}
     edges: list[dict[str, object]] = []
-    seen_edges: set[tuple[str, str]] = set()
+    seen_concept_edges: set[tuple[str, str, str]] = set()
+    seen_document_links: set[tuple[str, str]] = set()
 
     sources = workspace.list_sources()
     keyword_map: dict[str, set[str]] = {}
+    alias: dict[str, str] = {}
 
     for source in sources:
         summary = (source.recovered_text or source.title or source.filename)[:220].strip()
         keywords = _keywords(source.recovered_text or source.title or source.filename)
         keyword_map[source.source_id] = set(keywords)
-        nodes.append(
-            {
-                "id": source.source_id,
-                "label": source.title or source.filename,
-                "kind": "document",
-                "summary": summary,
-                "project_id": source.project_id,
-                "format": source.workspace_format,
-                "rights_status": source.rights_status,
-                "keywords": list(keywords),
-            },
-        )
+        node_index[source.source_id] = {
+            "id": source.source_id,
+            "label": source.title or source.filename,
+            "kind": "document",
+            "summary": summary,
+            "project_id": source.project_id,
+            "format": source.workspace_format,
+            "rights_status": source.rights_status,
+            "keywords": list(keywords),
+        }
+        alias[source.source_id] = source.source_id
+        document_id = _document_id_for_source(source.source_id)
+        if document_id is not None:
+            alias[document_id] = source.source_id
+
+    def ensure_node(node_id: str) -> None:
+        if node_id in node_index:
+            return
+        node_index[node_id] = _entity_node(workspace, node_id)
 
     for edge in workspace.service.graph.edges:
-        key = (edge.source_id, edge.target_id)
-        if key in seen_edges:
+        source_id = _resolve_node_id(edge.source_id, alias)
+        target = _resolve_node_id(edge.target_id, alias)
+        if source_id == target:
             continue
-        seen_edges.add(key)
+        relationship = edge.relationship.value
+        key = (source_id, target, relationship)
+        if key in seen_concept_edges:
+            continue
+        seen_concept_edges.add(key)
+        ensure_node(source_id)
+        ensure_node(target)
         edges.append(
             {
-                "source": edge.source_id,
-                "target": edge.target_id,
-                "relationship": edge.relationship.value,
+                "source": source_id,
+                "target": target,
+                "relationship": relationship,
                 "kind": "concept",
             },
         )
-        if not any(node["id"] == edge.source_id for node in nodes):
-            nodes.append(
-                {
-                    "id": edge.source_id,
-                    "label": edge.source_id,
-                    "kind": "entity",
-                    "summary": "Engineering entity",
-                    "project_id": workspace.project_id,
-                    "format": "entity",
-                    "rights_status": "INTERNAL",
-                    "keywords": [],
-                },
-            )
-        if not any(node["id"] == edge.target_id for node in nodes):
-            nodes.append(
-                {
-                    "id": edge.target_id,
-                    "label": edge.target_id,
-                    "kind": "entity",
-                    "summary": "Engineering entity",
-                    "project_id": workspace.project_id,
-                    "format": "entity",
-                    "rights_status": "INTERNAL",
-                    "keywords": [],
-                },
-            )
 
     source_ids = [source.source_id for source in sources]
     for index, left in enumerate(source_ids):
@@ -97,18 +112,29 @@ def build_knowledge_graph(workspace: KnowledgeWorkspace) -> dict[str, object]:
             shared = left_keys.intersection(keyword_map.get(right, set()))
             if not shared:
                 continue
-            key = tuple(sorted((left, right)))
-            if key in seen_edges:
+            link_key = (left, right) if left <= right else (right, left)
+            if link_key in seen_document_links:
                 continue
-            seen_edges.add(key)
+            seen_document_links.add(link_key)
             edges.append(
                 {
-                    "source": key[0],
-                    "target": key[1],
+                    "source": link_key[0],
+                    "target": link_key[1],
                     "relationship": "RELATED_TO",
                     "kind": "document-link",
                     "shared_terms": sorted(shared)[:5],
                 },
             )
 
-    return {"nodes": nodes, "edges": edges, "node_count": len(nodes), "edge_count": len(edges)}
+    nodes = list(node_index.values())
+    renderable_edges = [
+        edge
+        for edge in edges
+        if edge["source"] in node_index and edge["target"] in node_index
+    ]
+    return {
+        "nodes": nodes,
+        "edges": renderable_edges,
+        "node_count": len(nodes),
+        "edge_count": len(renderable_edges),
+    }

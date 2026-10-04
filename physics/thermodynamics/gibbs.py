@@ -11,7 +11,6 @@ from __future__ import annotations
 
 from core.dimension import TEMPERATURE
 from core.quantity import Quantity
-
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity
 from physics.si import SPECIFIC_ENERGY, SPECIFIC_HEAT, UNIT_SPECIFIC_ENERGY

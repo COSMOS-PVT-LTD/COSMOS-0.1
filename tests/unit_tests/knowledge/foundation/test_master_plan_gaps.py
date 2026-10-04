@@ -11,7 +11,10 @@ from knowledge.graph.integrity import validate_concept_graph
 from knowledge.graph.typed_views import typed_views
 from knowledge.models.correlation import Correlation
 from knowledge.models.lifecycle import KnowledgeLifecycle, ProvenanceTrace
-from knowledge.ontology.engineering_vocabulary import EngineeringRelationship, relationship_spec
+from knowledge.ontology.engineering_vocabulary import (
+    EngineeringRelationship,
+    relationship_spec,
+)
 from knowledge.repositories.correlation_repository import CorrelationRepository
 
 

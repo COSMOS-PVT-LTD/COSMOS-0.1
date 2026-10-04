@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
-from tests.integration_tests.kg_block012.helpers.pipeline import PipelineArtifacts, run_full_pipeline
+from tests.integration_tests.kg_block012.helpers.pipeline import (
+    PipelineArtifacts,
+    run_full_pipeline,
+)
 
 
 def test_source_to_extraction_provenance_chain(pipeline_artifacts: PipelineArtifacts) -> None:

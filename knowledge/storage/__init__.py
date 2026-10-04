@@ -8,7 +8,10 @@ from knowledge.storage.exceptions import (
     StaleStateError,
     StorageError,
 )
-from knowledge.storage.index_lifecycle import IndexLifecycleManager, IndexLifecycleOperation
+from knowledge.storage.index_lifecycle import (
+    IndexLifecycleManager,
+    IndexLifecycleOperation,
+)
 from knowledge.storage.local_store import (
     DocumentRecord,
     IngestionState,
@@ -18,13 +21,13 @@ from knowledge.storage.local_store import (
 from knowledge.storage.schema import PRODUCTION_SCHEMA_VERSION
 
 __all__ = (
+    "PRODUCTION_SCHEMA_VERSION",
     "CorruptionError",
     "DocumentRecord",
     "IndexLifecycleManager",
     "IndexLifecycleOperation",
     "IngestionState",
     "LocalKnowledgeStore",
-    "PRODUCTION_SCHEMA_VERSION",
     "SchemaMismatchError",
     "StaleStateError",
     "StorageError",

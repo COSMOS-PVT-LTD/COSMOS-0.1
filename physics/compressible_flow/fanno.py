@@ -23,7 +23,6 @@ import math
 from dataclasses import dataclass
 
 from core.exceptions import InvalidInputError
-
 from physics.model import ModelIdentity
 from physics.quantities import require_gamma, require_mach
 
@@ -36,8 +35,8 @@ FANNO = ModelIdentity(
     equations=(
         "T/T* = (gamma+1) / (2 + (gamma-1) M^2)",
         "p/p* = (1/M) sqrt(T/T*)",
-        "4fLmax/D = ((gamma+1)/(2 gamma)) ln[((gamma+1)M^2)/(2+(gamma-1)M^2)] "
-        "+ (1/gamma)(1/M^2 - 1)",
+        ("4fLmax/D = ((gamma+1)/(2 gamma)) ln[((gamma+1)M^2)/(2+(gamma-1)M^2)] "
+        "+ (1/gamma)(1/M^2 - 1)"),
     ),
     inputs=("M [-]", "gamma [-]"),
     outputs=("T/T* [-]", "p/p* [-]", "4fLmax/D [-]"),

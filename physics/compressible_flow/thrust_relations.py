@@ -30,14 +30,13 @@ from core.dimension import AREA, FORCE, PRESSURE, VELOCITY
 from core.quantity import Quantity
 from core.unit import SI
 from core.validation import validate_non_negative, validate_positive
-
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity, require_gamma
 
 __all__ = (
     "THRUST",
-    "thrust",
     "ideal_thrust_coefficient",
+    "thrust",
 )
 
 THRUST = ModelIdentity(

@@ -9,23 +9,21 @@ Construction and validation tests.
 from __future__ import annotations
 
 from dataclasses import FrozenInstanceError
-from datetime import datetime
-from datetime import timezone
+from datetime import datetime, timezone
 
-import pytest # type: ignore
+import pytest  # type: ignore
 
-from knowledge.models.document import Document
-from knowledge.models.document import DocumentType
-from knowledge.models.reference import Reference
-from knowledge.models.reference import ReferenceType
-from knowledge.models.subsystem import CriticalityLevel
-from knowledge.models.subsystem import Subsystem
-from knowledge.models.subsystem import SubsystemCategory
-from knowledge.models.subsystem import SubsystemStatus
-from knowledge.models.subsystem import SystemLevel
-from knowledge.models.subsystem import TechnologyReadinessLevel
+from knowledge.models.document import Document, DocumentType
+from knowledge.models.reference import Reference, ReferenceType
+from knowledge.models.subsystem import (
+    CriticalityLevel,
+    Subsystem,
+    SubsystemCategory,
+    SubsystemStatus,
+    SystemLevel,
+    TechnologyReadinessLevel,
+)
 from knowledge.models.variable import EngineeringDomain
-from datetime import timezone
 
 
 def create_reference() -> Reference:
@@ -604,7 +602,7 @@ def test_is_active() -> None:
 def test_is_verified() -> None:
     """Verify verified status."""
 
-    subsystem = subsystem = create_subsystem()
+    subsystem = create_subsystem()
 
     object.__setattr__(
         subsystem,
@@ -1216,5 +1214,4 @@ def test_tuple_identity() -> None:
         reconstructed.engineering_disciplines
         == subsystem.engineering_disciplines
     )
-
 

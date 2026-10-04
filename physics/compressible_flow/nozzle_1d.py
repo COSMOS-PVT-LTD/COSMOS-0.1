@@ -15,7 +15,6 @@ from core.dimension import PRESSURE, TEMPERATURE
 from core.quantity import Quantity
 from core.unit import SI
 from core.validation import validate_positive
-
 from physics.compressible_flow.area_mach import mach_from_area_ratio
 from physics.compressible_flow.isentropic import (
     stagnation_density_ratio,

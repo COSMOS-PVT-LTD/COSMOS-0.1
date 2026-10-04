@@ -47,7 +47,6 @@ analysis.
 
 from __future__ import annotations
 
-
 from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import datetime
@@ -2445,7 +2444,7 @@ class Material:
 
     @staticmethod
     def _validate_positive_float(
-        value: float | int | None,
+        value: float | None,
         field_name: str,
     ) -> None:
         """
@@ -2473,7 +2472,7 @@ class Material:
 
     @staticmethod
     def _validate_non_negative_float(
-        value: float | int | None,
+        value: float | None,
         field_name: str,
     ) -> None:
         """
@@ -2783,7 +2782,7 @@ class Material:
                 "Mapping must be serialized as a dictionary."
             )
 
-        for key in mapping.keys():
+        for key in mapping:
 
             if not isinstance(
                 key,
@@ -3211,7 +3210,7 @@ class Material:
     def from_dict(
         cls,
         data: dict[str, object],
-    ) -> "Material":
+    ) -> Material:
         """
         Reconstruct a Material from its serialized
         dictionary representation.
@@ -5575,7 +5574,7 @@ class Material:
 
     def copy(
         self,
-    ) -> "Material":
+    ) -> Material:
         """
         Return an immutable copy of this Material.
 
@@ -5609,7 +5608,7 @@ class Material:
     def deserialize(
         cls,
         data: dict[str, object],
-    ) -> "Material":
+    ) -> Material:
         """
         Deserialize a Material.
 

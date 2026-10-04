@@ -21,9 +21,9 @@ from knowledge.search.exceptions import (
 )
 
 __all__ = (
+    "NO_VERIFIED_RESULT",
     "ContextAssemblyError",
     "KnowledgeSearchEngine",
-    "NO_VERIFIED_RESULT",
     "RankingError",
     "RetrievalError",
     "RetrievalMode",

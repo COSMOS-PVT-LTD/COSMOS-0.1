@@ -8,8 +8,8 @@ import pytest
 
 from knowledge.graph import (
     GraphConstructionBatch,
-    GraphConstructor,
     GraphConstructionError,
+    GraphConstructor,
     GraphQueryService,
     GraphRecordValidator,
     GraphStorageError,

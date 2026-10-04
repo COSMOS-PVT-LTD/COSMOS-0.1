@@ -23,12 +23,12 @@ from physics.quantities import require_gamma, require_mach
 
 __all__ = (
     "ISENTROPIC",
-    "stagnation_temperature_ratio",
-    "stagnation_pressure_ratio",
-    "stagnation_density_ratio",
-    "static_temperature_ratio",
-    "static_pressure_ratio",
     "mach_from_pressure_ratio",
+    "stagnation_density_ratio",
+    "stagnation_pressure_ratio",
+    "stagnation_temperature_ratio",
+    "static_pressure_ratio",
+    "static_temperature_ratio",
 )
 
 ISENTROPIC = ModelIdentity(

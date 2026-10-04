@@ -10,12 +10,11 @@ Purpose: Temperature-windowed elastic property evaluation.
 from __future__ import annotations
 
 from core.quantity import Quantity
-
 from physics.exceptions import InsufficientDataError
 from physics.fluids.fluid_properties import PropertyEvaluation, evaluate_record
 from physics.materials.catalog import MaterialRecord
 
-__all__ = ("youngs_modulus", "poisson_ratio", "yield_strength")
+__all__ = ("poisson_ratio", "yield_strength", "youngs_modulus")
 
 
 def youngs_modulus(

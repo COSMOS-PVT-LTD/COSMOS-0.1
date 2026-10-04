@@ -5,21 +5,27 @@ from __future__ import annotations
 from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.unit import SI
-
-from systems.contracts.results import ResultStatus, ValidityInfo, ValidityState, VerificationInfo
+from systems.contracts.results import (
+    CalculationResult,
+    ResultStatus,
+    ValidityInfo,
+    ValidityState,
+    VerificationInfo,
+)
 from systems.projects.models import PropulsionDesign
-from systems.stages._helpers import failed_result, make_result
+from systems.stages._helpers import failed_result, make_result, stage_guard
 
 __all__ = ("run_operating_point_stage",)
 
 
+@stage_guard("operating_point")
 def run_operating_point_stage(
     design: PropulsionDesign,
     *,
     chamber_temperature: float | None = None,
     gamma: float | None = None,
     molecular_weight_kg_per_mol: float | None = None,
-) -> object:
+) -> CalculationResult:
     """
     Populate operating point from requirements and optional thermo assumptions.
 
@@ -34,8 +40,7 @@ def run_operating_point_stage(
     try:
         if req.target_chamber_pressure is not None:
             op.chamber_pressure = req.target_chamber_pressure
-        if req.ambient_pressure is not None:
-            op.ambient_pressure = req.ambient_pressure
+        op.ambient_pressure = req.ambient_pressure
         if req.ambient_temperature is not None:
             op.ambient_temperature = req.ambient_temperature
         if req.mixture_ratio is not None:

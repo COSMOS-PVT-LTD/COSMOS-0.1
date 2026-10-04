@@ -2,9 +2,6 @@
 
 from __future__ import annotations
 
-from core.quantity import Quantity
-from core.unit import SI
-
 from api.propulsion_workflow import create_design, run_phase3, update_requirements
 from systems.contracts.results import ResultStatus
 from systems.workflow.orchestrator import run_phase3_chain
@@ -66,6 +63,7 @@ def test_api_run_phase3_summary() -> None:
         design,
         {
             "target_chamber_pressure": 7.0e6,
+            "ambient_pressure": 0.0,
             "expansion_ratio": 10.0,
             "propellant_selection": "LOX/LH2",
             "mixture_ratio": 6.0,

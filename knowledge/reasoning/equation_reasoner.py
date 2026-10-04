@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from knowledge.models.equation import Equation
-from knowledge.models.lifecycle import KnowledgeLifecycle
 
 __all__ = ("EquationReasoningResult", "reason_about_equation")
 

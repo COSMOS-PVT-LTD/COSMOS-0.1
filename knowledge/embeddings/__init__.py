@@ -9,7 +9,11 @@ from knowledge.embeddings.local_backend import (
 )
 from knowledge.embeddings.neural_backend import LocalNeuralEmbeddingBackend
 from knowledge.embeddings.protocol import EmbeddingBackend
-from knowledge.embeddings.service import EmbeddingService, EmbeddingServiceMetadata, create_embedding_backend
+from knowledge.embeddings.service import (
+    EmbeddingService,
+    EmbeddingServiceMetadata,
+    create_embedding_backend,
+)
 
 __all__ = (
     "DeterministicLocalEmbeddingBackend",

@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 from knowledge.reasoning.w10 import EvidenceClassification
-
-from tests.integration_tests.kg_block012.helpers.pipeline import PipelineArtifacts, run_full_pipeline
+from tests.integration_tests.kg_block012.helpers.pipeline import (
+    PipelineArtifacts,
+    run_full_pipeline,
+)
 
 
 def test_full_pipeline_executes_without_error(pipeline_artifacts: PipelineArtifacts) -> None:

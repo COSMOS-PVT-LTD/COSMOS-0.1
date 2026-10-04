@@ -2,14 +2,18 @@
 
 from __future__ import annotations
 
-from knowledge.graph import GraphConstructionBatch, GraphConstructor, ProvenanceReference
+from knowledge.embeddings import DeterministicLocalEmbeddingBackend
 from knowledge.extraction import CandidateEntityExtraction, ExtractedEntityKind
+from knowledge.graph import (
+    GraphConstructionBatch,
+    GraphConstructor,
+    ProvenanceReference,
+)
 from knowledge.graph.entity import CanonicalEntityType
 from knowledge.graph.provenance import SourceProvenanceRecord
 from knowledge.ontology import OntologyRegistry
 from knowledge.storage import LocalKnowledgeStore
 from knowledge.storage.index_lifecycle import IndexLifecycleManager
-from knowledge.embeddings import DeterministicLocalEmbeddingBackend
 
 
 def _entity() -> CandidateEntityExtraction:
@@ -48,9 +52,6 @@ def test_index_lifecycle_build_load_validate(tmp_path) -> None:
 
     store = LocalKnowledgeStore(tmp_path)
     store.initialize()
-    GraphConstructor(OntologyRegistry()).construct(
-        GraphConstructionBatch(entity_extractions=(_entity(),)),
-    ).store
     result = GraphConstructor(OntologyRegistry()).construct(
         GraphConstructionBatch(entity_extractions=(_entity(),)),
     )

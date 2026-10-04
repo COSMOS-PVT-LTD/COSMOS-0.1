@@ -18,7 +18,7 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 from enum import Enum
-from typing import Final, Union
+from typing import Final
 
 from core.dimension import DIMENSIONLESS, TEMPERATURE, Dimension
 from core.exceptions import DimensionError, InvalidInputError, UnitError
@@ -33,7 +33,7 @@ __all__ = (
     "temperature_interval",
 )
 
-ScalarLike = Union[int, float]
+ScalarLike = int | float
 _RELATIVE_TOLERANCE: Final[float] = 1.0e-12
 
 

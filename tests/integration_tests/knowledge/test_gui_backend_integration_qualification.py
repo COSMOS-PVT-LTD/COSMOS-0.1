@@ -9,13 +9,13 @@ Marked API-EQUIVALENT — browser GUI not automated in CI.
 
 from __future__ import annotations
 
+import json
+import urllib.error
+import urllib.request
 from http import cookiejar
 from http.server import ThreadingHTTPServer
 from pathlib import Path
 from threading import Thread
-import json
-import urllib.error
-import urllib.request
 
 import pytest
 
@@ -60,7 +60,7 @@ def _multipart_body(filename: str, content: bytes, boundary: str = "qualbound") 
         f"--{boundary}\r\n"
         f'Content-Disposition: form-data; name="file"; filename="{filename}"\r\n'
         f"Content-Type: text/markdown\r\n\r\n"
-    ).encode("utf-8") + content + f"\r\n--{boundary}--\r\n".encode("utf-8")
+    ).encode() + content + f"\r\n--{boundary}--\r\n".encode()
 
 
 def _ingest(opener: urllib.request.OpenerDirector, base: str, filename: str, content: bytes) -> dict:
@@ -178,7 +178,7 @@ class TestKnowledgeIntegrationQualification:
             server.server_close()
 
     def test_delete_and_reingest_clean_restoration(self, tmp_path: Path) -> None:
-        base, server, app = _start_desktop(tmp_path)
+        base, server, _app = _start_desktop(tmp_path)
         opener = _client()
         try:
             _login(opener, base)

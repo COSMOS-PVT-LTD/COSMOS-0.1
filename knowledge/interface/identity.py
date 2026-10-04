@@ -22,7 +22,7 @@ def deterministic_package_digest(*stable_parts: str) -> str:
 
 def deterministic_context_package_id(request_id: str, package_digest: str) -> str:
     digest = hashlib.sha256(
-        f"{request_id}|{package_digest}".encode("utf-8"),
+        f"{request_id}|{package_digest}".encode(),
     ).hexdigest()[:16]
 
     return f"pkg-{digest}"
@@ -34,7 +34,7 @@ def deterministic_cursor_context_id(
     package_digest: str,
 ) -> str:
     digest = hashlib.sha256(
-        f"{project_id}|{engineering_task_id}|{package_digest}".encode("utf-8"),
+        f"{project_id}|{engineering_task_id}|{package_digest}".encode(),
     ).hexdigest()[:16]
 
     return f"ctx-{digest}"
@@ -45,7 +45,7 @@ def deterministic_engineering_payload_id(
     outcome_classification: str,
 ) -> str:
     digest = hashlib.sha256(
-        f"{cursor_context_id}|{outcome_classification}".encode("utf-8"),
+        f"{cursor_context_id}|{outcome_classification}".encode(),
     ).hexdigest()[:16]
 
     return f"ekp-{digest}"

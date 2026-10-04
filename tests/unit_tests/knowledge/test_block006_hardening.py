@@ -129,14 +129,7 @@ def test_unresolved_citation_preserves_citation_key() -> None:
 def test_ragged_markdown_table_preserves_row_order() -> None:
     """Ragged markdown tables must preserve deterministic row ordering."""
 
-    content = "\n".join(
-        [
-            "| A | B |",
-            "| --- | --- |",
-            "| one |",
-            "| one | two | three |",
-        ],
-    )
+    content = "| A | B |\n| --- | --- |\n| one |\n| one | two | three |"
     ingestion = _ingestion_result(content=content)
     context = ParseContext(
         ingestion_result=ingestion,

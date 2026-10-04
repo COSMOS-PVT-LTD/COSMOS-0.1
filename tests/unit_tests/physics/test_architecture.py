@@ -31,9 +31,7 @@ def test_physics_does_not_import_forbidden_packages() -> None:
             if stripped.startswith("#"):
                 continue
             for package in FORBIDDEN_IMPORTS:
-                if stripped.startswith(f"import {package}") or stripped.startswith(
-                    f"from {package}"
-                ):
+                if stripped.startswith((f"import {package}", f"from {package}")):
                     offenders.append(f"{path}: {stripped}")
     assert offenders == []
 

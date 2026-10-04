@@ -2,15 +2,21 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
 import os
 import shutil
 import subprocess
 import tempfile
+from datetime import datetime, timezone
 
 from knowledge.ocr.config import OCRConfiguration
 from knowledge.ocr.images import hash_image
-from knowledge.ocr.models import BoundingBox, OCRFailure, OCRRegion, OCRResult, RegionType
+from knowledge.ocr.models import (
+    BoundingBox,
+    OCRFailure,
+    OCRRegion,
+    OCRResult,
+    RegionType,
+)
 
 __all__ = ("TesseractOCRAdapter", "tesseract_is_provisioned", "tesseract_version")
 
@@ -149,15 +155,14 @@ class TesseractOCRAdapter:
 
 
 def _looks_like_image(image: bytes) -> bool:
-    return image.startswith(b"\x89PNG") or image.startswith(b"\xff\xd8\xff") or image.startswith(b"BM")
+    return image.startswith((b"\x89PNG", b"\xff\xd8\xff", b"BM"))
 
 
 def _run_tesseract(image: bytes, config: OCRConfiguration) -> tuple[str | None, str]:
     suffix = ".png" if image.startswith(b"\x89PNG") else ".jpg"
-    handle = tempfile.NamedTemporaryFile(prefix="cosmos-ocr-", suffix=suffix, delete=False)
-    try:
+    with tempfile.NamedTemporaryFile(prefix="cosmos-ocr-", suffix=suffix, delete=False) as handle:
         handle.write(image)
-        handle.close()
+    try:
         completed = subprocess.run(
             [
                 _TESSERACT_BIN,
@@ -239,7 +244,7 @@ def _region_type(text: str) -> RegionType:
         return RegionType.EQUATION
     if lowered.startswith("chapter") or lowered[:1].isdigit():
         return RegionType.HEADING
-    if lowered.startswith("fig") or lowered.startswith("table"):
+    if lowered.startswith(("fig", "table")):
         return RegionType.CAPTION
     return RegionType.TEXT
 

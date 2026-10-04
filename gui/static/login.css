@@ -19,7 +19,7 @@ body.cosmos-login {
 
 .login-glass {
   position: relative;
-  width: min(380px, 92vw);
+  width: min(420px, 92vw);
   padding: 28px 26px 24px;
   border-radius: var(--radius-glass);
   background: rgba(10, 18, 32, 0.34);
@@ -139,9 +139,9 @@ body.cosmos-login {
 .login-profile-desc {
   min-height: 32px;
   margin-bottom: 14px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.45;
-  color: var(--cosmos-muted);
+  color: #d7e6f2;
   text-align: center;
 }
 
@@ -277,6 +277,16 @@ body.cosmos-login {
   color: var(--cosmos-muted);
   font-size: 11px;
   font-family: var(--font-mono);
+}
+
+.login-dev-hint {
+  margin: 12px 0 0;
+  color: #c5d8e8;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.login-dev-hint code {
+  color: var(--cosmos-text);
 }
 
 @media (max-width: 420px) {

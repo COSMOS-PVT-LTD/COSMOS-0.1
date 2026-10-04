@@ -8,7 +8,6 @@ from typing import Any
 from uuid import uuid4
 
 from core.version import COSMOS_VERSION
-
 from systems import SYSTEMS_SCHEMA_VERSION
 
 __all__ = (
@@ -71,7 +70,7 @@ class ValidityInfo:
         }
 
     @classmethod
-    def from_canonical_dict(cls, data: dict[str, object]) -> ValidityInfo:
+    def from_canonical_dict(cls, data: dict[str, Any]) -> ValidityInfo:
         return cls(
             status=ValidityState(str(data.get("status", ValidityState.UNKNOWN.value))),
             checks=tuple(str(item) for item in (data.get("checks") or ())),
@@ -91,7 +90,7 @@ class VerificationInfo:
         return {"status": self.status, "reference": self.reference}
 
     @classmethod
-    def from_canonical_dict(cls, data: dict[str, object]) -> VerificationInfo:
+    def from_canonical_dict(cls, data: dict[str, Any]) -> VerificationInfo:
         return cls(
             status=str(data.get("status", "UNKNOWN")),
             reference=(
@@ -109,7 +108,7 @@ class ValidationInfo:
         return {"status": self.status, "reference": self.reference}
 
     @classmethod
-    def from_canonical_dict(cls, data: dict[str, object]) -> ValidationInfo:
+    def from_canonical_dict(cls, data: dict[str, Any]) -> ValidationInfo:
         return cls(
             status=str(data.get("status", "NOT_CLAIMED")),
             reference=(
@@ -140,7 +139,7 @@ class ProvenanceInfo:
         }
 
     @classmethod
-    def from_canonical_dict(cls, data: dict[str, object]) -> ProvenanceInfo:
+    def from_canonical_dict(cls, data: dict[str, Any]) -> ProvenanceInfo:
         rev = data.get("calculation_revision")
         return cls(
             source=None if data.get("source") is None else str(data["source"]),
@@ -207,7 +206,7 @@ class CalculationResult:
         }
 
     @classmethod
-    def from_canonical_dict(cls, data: dict[str, object]) -> CalculationResult:
+    def from_canonical_dict(cls, data: dict[str, Any]) -> CalculationResult:
         return cls(
             result_id=str(data.get("result_id") or uuid4()),
             calculation_type=str(data["calculation_type"]),

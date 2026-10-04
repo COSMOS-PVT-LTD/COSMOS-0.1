@@ -8,11 +8,11 @@ from enum import Enum
 from knowledge.models.lifecycle import KnowledgeLifecycle
 
 __all__ = (
+    "KnowledgeAction",
     "KnowledgeActor",
     "KnowledgeGovernance",
     "KnowledgeGovernanceError",
     "KnowledgeRole",
-    "KnowledgeAction",
 )
 
 

@@ -11,7 +11,10 @@ from knowledge.models.design_rule import DesignRule
 from knowledge.models.dimension_check import check_dimensional_consistency
 from knowledge.models.empirical_relation import EmpiricalRelation
 from knowledge.models.engineering_relation import EngineeringRelationKind
-from knowledge.models.lifecycle import KnowledgeLifecycle, ProvenanceTrace, UncertaintyRecord, VerificationRecord
+from knowledge.models.lifecycle import (
+    KnowledgeLifecycle,
+    ProvenanceTrace,
+)
 from knowledge.models.physical_law import PhysicalLaw
 from knowledge.models.property import PropertyDefinition, PropertyValue
 

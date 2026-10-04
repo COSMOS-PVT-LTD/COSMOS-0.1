@@ -2,12 +2,15 @@
 
 from __future__ import annotations
 
-from knowledge.interface.engineering_query import EngineeringQueryService, QueryConstraints
+from knowledge.interface.engineering_query import (
+    EngineeringQueryService,
+    QueryConstraints,
+)
 from knowledge.models.correlation import Correlation
 from knowledge.models.design_rule import DesignRule
 from knowledge.models.physical_law import PhysicalLaw
 
-__all__ = ("PhysicsKnowledgeGateway", "PhysicsKnowledgeError")
+__all__ = ("PhysicsKnowledgeError", "PhysicsKnowledgeGateway")
 
 
 class PhysicsKnowledgeError(LookupError):

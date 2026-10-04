@@ -10,7 +10,6 @@ Purpose: Speed-of-sound evaluation for ideal gases.
 from __future__ import annotations
 
 from core.quantity import Quantity
-
 from physics.thermodynamics.ideal_gas import speed_of_sound as ideal_gas_speed_of_sound
 
 __all__ = ("ideal_gas",)

@@ -5,11 +5,14 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
+from core.logger import get_logger
 from knowledge.pipelines.extended_pipeline import run_knowledge_pipeline_extended
 from knowledge.pipelines.orchestrator import KnowledgePipelineArtifacts
 from knowledge.production.graph_merge import DocumentGraphMerger, GraphMergeResult
 from knowledge.source.integrity import sha256_text_digest
 from knowledge.storage.local_store import IngestionState, LocalKnowledgeStore
+
+logger = get_logger(__name__)
 
 __all__ = (
     "IncrementalIngestionCoordinator",
@@ -125,6 +128,7 @@ class IncrementalIngestionCoordinator:
                 artifacts,
             )
         except Exception:
+            logger.exception("incremental_ingestion: boundary operation failed")
             updated_state = IngestionState(
                 last_processed_document_id=document_id,
                 processed_count=state.processed_count,

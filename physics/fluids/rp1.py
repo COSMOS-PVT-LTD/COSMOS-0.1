@@ -17,7 +17,7 @@ from __future__ import annotations
 from physics.fluids.records import RP1_DENSITY
 from physics.thermodynamics.ideal_gas import molar_mass_from_kg_per_kmol
 
-__all__ = ("FLUID_ID", "MOLAR_MASS_SURROGATE", "AMBIENT_DENSITY")
+__all__ = ("AMBIENT_DENSITY", "FLUID_ID", "MOLAR_MASS_SURROGATE")
 
 FLUID_ID = "rp1"
 # C12H26 surrogate molar mass (CEA-style), not a unique RP-1 molecule.

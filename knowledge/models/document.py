@@ -23,18 +23,18 @@ Version:
 """
 
 from __future__ import annotations
-from typing import Any, Mapping
 
-import math
 import hashlib
+import math
 import re
-
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from enum import Enum
 from types import MappingProxyType
-from knowledge.models.reference import Reference
+from typing import Any
 
+from knowledge.models.reference import Reference
 
 _SHA256_PATTERN = re.compile(r"^[a-fA-F0-9]{64}$")
 
@@ -380,7 +380,7 @@ class Document:
         }
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "Document":
+    def from_dict(cls, data: dict[str, Any]) -> Document:
 
 
         if not isinstance(

@@ -54,8 +54,12 @@ def test_failure_duplicate_ingestion_idempotent(tmp_path) -> None:
 
 
 def test_failure_graph_merge_conflict_recorded(tmp_path) -> None:
-  from knowledge.graph import GraphConstructionBatch, GraphConstructor, ProvenanceReference
   from knowledge.extraction import CandidateEntityExtraction, ExtractedEntityKind
+  from knowledge.graph import (
+      GraphConstructionBatch,
+      GraphConstructor,
+      ProvenanceReference,
+  )
   from knowledge.graph.entity import CanonicalEntityType
   from knowledge.graph.provenance import SourceProvenanceRecord
   from knowledge.ontology import OntologyRegistry

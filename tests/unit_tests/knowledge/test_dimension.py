@@ -8,19 +8,18 @@ Construction and validation tests.
 
 from __future__ import annotations
 
-from datetime import datetime
-from datetime import timezone
+from datetime import datetime, timezone
 
 import pytest  # type: ignore
 
-from knowledge.models.dimension import Dimension
-from knowledge.models.dimension import DimensionCategory
-from knowledge.models.dimension import DimensionStatus
-from knowledge.models.dimension import PhysicalQuantity
-from knowledge.models.document import Document
-from knowledge.models.document import DocumentType
-from knowledge.models.reference import Reference
-from knowledge.models.reference import ReferenceType
+from knowledge.models.dimension import (
+    Dimension,
+    DimensionCategory,
+    DimensionStatus,
+    PhysicalQuantity,
+)
+from knowledge.models.document import Document, DocumentType
+from knowledge.models.reference import Reference, ReferenceType
 from knowledge.models.variable import EngineeringDomain
 
 FIXED_TIME = datetime(

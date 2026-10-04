@@ -10,11 +10,18 @@ Purpose: Dynamic viscosity evaluation (Sutherland or sourced record).
 from __future__ import annotations
 
 from core.quantity import Quantity
+from physics.fluids.fluid_properties import (
+    PropertyEvaluation,
+    PropertyRecord,
+    evaluate_record,
+)
+from physics.fluids.sutherland import (
+    SutherlandEvaluation,
+    SutherlandLaw,
+    evaluate_sutherland,
+)
 
-from physics.fluids.fluid_properties import PropertyEvaluation, PropertyRecord, evaluate_record
-from physics.fluids.sutherland import SutherlandEvaluation, SutherlandLaw, evaluate_sutherland
-
-__all__ = ("sutherland", "from_record")
+__all__ = ("from_record", "sutherland")
 
 
 def sutherland(

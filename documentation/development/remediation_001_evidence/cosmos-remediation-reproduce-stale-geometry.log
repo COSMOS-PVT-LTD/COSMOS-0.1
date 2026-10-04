@@ -1,0 +1,42 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_failed_recalculation_marks_retained_geometry_stale ____________
+
+    def test_failed_recalculation_marks_retained_geometry_stale() -> None:
+        from physics.quantities import pascal
+    
+        design = seeded_design()
+        explicit_phase4(design)
+        result = run_structure_stage(design, external_pressure=pascal(6e6))
+        assert result.status is ResultStatus.OUT_OF_RANGE
+>       assert design.structural_design["geometry_status"] == "STALE"
+E       AssertionError: assert 'CURRENT' == 'STALE'
+E         
+E         - STALE
+E         + CURRENT
+
+tests/integration_tests/systems_layer/test_immediate_remediation.py:180: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  systems.stages._helpers:_helpers.py:116 Stage thermochemistry: Validation: NOT_CLAIMED. Assumed thermo is not CEA equilibrium.
+WARNING  systems.stages._helpers:_helpers.py:116 Stage performance: Validation: NOT_CLAIMED. Ideal 1D performance — not hot-fire validated.
+WARNING  systems.stages._helpers:_helpers.py:116 Stage injector: No validated injector orifice/element calculation in COSMOS_0.1 Physics.
+ERROR    systems.stages._helpers:_helpers.py:118 Stage injector failure: {'code': 'NOT_IMPLEMENTED', 'message': 'No validated injector orifice/element calculation in COSMOS_0.1 Physics.', 'stage': 'injector'}
+WARNING  systems.stages._helpers:_helpers.py:116 Stage chamber: Validation: NOT_CLAIMED. Not a combustor CFD/design code.
+WARNING  systems.stages._helpers:_helpers.py:116 Stage thermal: Validation: NOT_CLAIMED. Bartz correlation — not hot-fire validated here.
+WARNING  systems.stages._helpers:_helpers.py:116 Stage thermal: Taw APPROXIMATION: chamber temperature used; adiabatic-wall recovery temperature not computed.
+WARNING  systems.stages._helpers:_helpers.py:116 Stage thermal: Curvature correction absent (radius unavailable).
+WARNING  systems.stages._helpers:_helpers.py:116 Stage cooling: No validated regenerative/film cooling channel analysis in this foundation.
+ERROR    systems.stages._helpers:_helpers.py:118 Stage cooling failure: {'code': 'NOT_IMPLEMENTED', 'message': 'No validated regenerative/film cooling channel analysis in this foundation.', 'stage': 'cooling'}
+WARNING  systems.stages._helpers:_helpers.py:116 Stage materials: Validation: NOT_CLAIMED. Not a certified material allowables database.
+WARNING  systems.stages._helpers:_helpers.py:116 Stage structure: Not ASME/PED design. Validation: NOT_CLAIMED.
+WARNING  systems.stages._helpers:_helpers.py:116 Stage nozzle: MOC / wall-contour generation is NOT_IMPLEMENTED.
+WARNING  systems.stages._helpers:_helpers.py:116 Stage nozzle: Validation: NOT_CLAIMED.
+ERROR    systems.stages._helpers:_helpers.py:175 Structured failure: stage=structure model=PHYS-007.pressure_vessel.thin_wall code=OutOfRangeError
+Traceback (most recent call last):
+  File "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/systems/stages/structure.py", line 157, in run_structure_stage
+    raise OutOfRangeError(
+physics.exceptions.OutOfRangeError: External pressure exceeds internal pressure; shell buckling is outside the tensile thin-wall model.
+ERROR    systems.stages._helpers:_helpers.py:118 Stage structure failure: {'code': 'OutOfRangeError', 'message': 'External pressure exceeds internal pressure; shell buckling is outside the tensile thin-wall model.', 'stage': 'structure', 'model': 'PHYS-007.pressure_vessel.thin_wall'}
+=========================== short test summary info ============================
+FAILED tests/integration_tests/systems_layer/test_immediate_remediation.py::test_failed_recalculation_marks_retained_geometry_stale
+1 failed in 0.12s

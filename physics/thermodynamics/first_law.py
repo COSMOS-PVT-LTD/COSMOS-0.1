@@ -28,7 +28,6 @@ from __future__ import annotations
 from core.dimension import ACCELERATION, ENERGY, LENGTH, VELOCITY
 from core.quantity import Quantity
 from core.unit import SI
-
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity
 from physics.si import SPECIFIC_ENERGY, UNIT_SPECIFIC_ENERGY
@@ -36,8 +35,8 @@ from physics.si import SPECIFIC_ENERGY, UNIT_SPECIFIC_ENERGY
 __all__ = (
     "FIRST_LAW_CLOSED",
     "closed_system_delta_u",
-    "steady_flow_energy_residual",
     "specific_energy",
+    "steady_flow_energy_residual",
 )
 
 FIRST_LAW_CLOSED = ModelIdentity(

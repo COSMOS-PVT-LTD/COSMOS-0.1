@@ -3,11 +3,11 @@
 from __future__ import annotations
 
 import json
+import threading
 from pathlib import Path
 
 from core.exceptions import InvalidInputError
 from core.serialization import canonical_json_dumps
-
 from systems.projects.models import PropulsionDesign
 
 __all__ = ("DesignStore",)
@@ -18,11 +18,13 @@ class DesignStore:
     JSON-file design store under an application-owned root directory.
 
     Authoritative engineering state — not browser localStorage, not knowledge vault.
+    Writes are atomic (temp file + replace) and serialized with a process lock.
     """
 
     def __init__(self, root: Path | str) -> None:
         self.root = Path(root)
         self.root.mkdir(parents=True, exist_ok=True)
+        self._lock = threading.Lock()
 
     def _path_for(self, design_id: str) -> Path:
         safe = design_id.replace("/", "_").replace("..", "_")
@@ -31,8 +33,11 @@ class DesignStore:
     def save(self, design: PropulsionDesign) -> Path:
         path = self._path_for(design.design_id)
         payload = design.to_canonical_dict()
-        text = canonical_json_dumps(payload)
-        path.write_text(text + "\n", encoding="utf-8")
+        text = canonical_json_dumps(payload) + "\n"
+        tmp = path.with_suffix(".json.tmp")
+        with self._lock:
+            tmp.write_text(text, encoding="utf-8")
+            tmp.replace(path)
         return path
 
     def load(self, design_id: str) -> PropulsionDesign:
@@ -45,8 +50,30 @@ class DesignStore:
         return PropulsionDesign.from_canonical_dict(data)
 
     def list_design_ids(self) -> tuple[str, ...]:
-        ids = sorted(path.stem for path in self.root.glob("*.json"))
+        ids = sorted(path.stem for path in self.root.glob("*.json") if path.suffix == ".json")
         return tuple(ids)
+
+    def list_summaries(self) -> list[dict[str, object]]:
+        """Return design list rows sorted by updated_at descending."""
+
+        items: list[dict[str, object]] = []
+        for design_id in self.list_design_ids():
+            try:
+                design = self.load(design_id)
+            except (InvalidInputError, ValueError, TypeError, KeyError):
+                continue
+            items.append(
+                {
+                    "design_id": design.design_id,
+                    "name": design.name,
+                    "revision": design.revision,
+                    "updated_at": design.updated_at,
+                    "state": design.status.value,
+                    "engineer": design.engineer,
+                }
+            )
+        items.sort(key=lambda row: str(row.get("updated_at") or ""), reverse=True)
+        return items
 
     def exists(self, design_id: str) -> bool:
         return self._path_for(design_id).is_file()

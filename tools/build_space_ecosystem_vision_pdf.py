@@ -1,13 +1,13 @@
 from __future__ import annotations
 
-from datetime import date
+from datetime import UTC, datetime
 from pathlib import Path
 
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
-from reportlab.lib.units import inch, mm
+from reportlab.lib.units import mm
 from reportlab.platypus import (
     Flowable,
     KeepTogether,
@@ -20,7 +20,6 @@ from reportlab.platypus import (
     Table,
     TableStyle,
 )
-
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output" / "pdf" / "COSMOS_Space_Ecosystem_Vision.pdf"
@@ -330,7 +329,7 @@ def build_story() -> list:
                 ["Founder vision", "Build a private Indian space ecosystem spanning materials, propulsion, launch, reusable return, orbital manufacturing, and deep-space communications."],
                 ["Core companies", "COSMOS for engineering intelligence, rocket systems, reusable transport, and space logistics. RecycleGURU for aerospace materials, recycling, process control, and certification intelligence."],
                 ["Strategic partner concept", "A future PPP or JV with HMT/HMT Machine Tools or a government-supported successor entity to scale advanced metals production using public-sector land, capital, and manufacturing infrastructure."],
-                ["Prepared on", date.today().isoformat()],
+                ["Prepared on", datetime.now(UTC).date().isoformat()],
                 ["Status", "Founder vision document - strategic planning draft, not legal, safety, export-control, or investment advice."],
             ],
             [42 * mm, CONTENT_W - 42 * mm],

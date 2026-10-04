@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-from http.server import ThreadingHTTPServer
-from pathlib import Path
-from threading import Thread
 import json
 import urllib.error
 import urllib.request
+from http.server import ThreadingHTTPServer
+from pathlib import Path
+from threading import Thread
 
 from knowledge.pdf.corpus import reynolds_pdf_bytes
 from knowledge.references.rights import RightsStatus
@@ -72,7 +72,7 @@ def test_http_ingest_and_chat(tmp_path: Path) -> None:
             f"--{boundary}\r\n"
             'Content-Disposition: form-data; name="file"; filename="cooling.md"\r\n'
             "Content-Type: text/markdown\r\n\r\n"
-        ).encode("utf-8") + cooling_markdown_bytes() + f"\r\n--{boundary}--\r\n".encode("utf-8")
+        ).encode() + cooling_markdown_bytes() + f"\r\n--{boundary}--\r\n".encode()
         request = urllib.request.Request(
             base + "/api/ingest",
             data=body,
@@ -110,7 +110,7 @@ def test_http_viewer_cannot_ingest(tmp_path: Path) -> None:
         body = (
             f"--{boundary}\r\n"
             'Content-Disposition: form-data; name="file"; filename="cooling.md"\r\n\r\n'
-        ).encode("utf-8") + cooling_markdown_bytes() + f"\r\n--{boundary}--\r\n".encode("utf-8")
+        ).encode() + cooling_markdown_bytes() + f"\r\n--{boundary}--\r\n".encode()
         request = urllib.request.Request(
             f"http://{host}:{port}/api/ingest",
             data=body,

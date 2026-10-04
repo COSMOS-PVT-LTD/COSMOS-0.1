@@ -3,10 +3,18 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from typing import Any
 
-from systems.contracts.results import CalculationResult, ResultStatus, is_current_displayable
+from systems.contracts.results import (
+    CalculationResult,
+    ResultStatus,
+    is_current_displayable,
+)
 from systems.workflow.graph import WorkflowGraph, build_default_propulsion_graph
-from systems.workflow.invalidation import invalidate_for_input_change, invalidate_from_stage
+from systems.workflow.invalidation import (
+    invalidate_for_input_change,
+    invalidate_from_stage,
+)
 
 __all__ = ("WorkflowState",)
 
@@ -69,7 +77,7 @@ class WorkflowState:
         }
 
     @classmethod
-    def from_canonical_dict(cls, data: dict[str, object]) -> WorkflowState:
+    def from_canonical_dict(cls, data: dict[str, Any]) -> WorkflowState:
         graph = WorkflowGraph.from_canonical_dict(dict(data.get("graph") or {}))
         if not graph.nodes:
             graph = build_default_propulsion_graph()

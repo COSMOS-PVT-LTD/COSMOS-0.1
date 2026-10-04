@@ -7,8 +7,6 @@ Expected values are documented from cited sources and are NOT copied from
 
 from __future__ import annotations
 
-import pytest
-
 # NIST Chemistry WebBook, O2, triple point / boiling-related density scale.
 # LOX normal boiling point density commonly cited ≈ 1141 kg/m³ at 1 atm.
 LOX_NBP_DENSITY_KG_M3 = 1141.0

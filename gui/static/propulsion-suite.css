@@ -1,4 +1,22 @@
 /* Rocket Engine propulsion suite — presentation only */
+.propulsion-workbench .content-area.propulsion-suite {
+  min-height: 0;
+  overflow: auto;
+  padding-bottom: 4.5rem;
+}
+
+.propulsion-workbench .suite-hero {
+  padding: 0.75rem 1rem;
+}
+
+.propulsion-workbench .suite-hero h1 {
+  font-size: 1.15rem;
+}
+
+.propulsion-workbench .suite-lede {
+  font-size: 0.82rem;
+}
+
 .propulsion-suite { display: grid; gap: 1rem; align-content: start; }
 .suite-hero {
   display: flex;
@@ -26,20 +44,39 @@
 .pill.live, .status.live { background: rgba(46, 160, 110, 0.22); color: #9be7c4; }
 .pill.partial, .status.partial { background: rgba(230, 162, 60, 0.22); color: #ffd39a; }
 .pill.planned, .status.planned { background: rgba(120, 140, 160, 0.22); color: #c4d0dc; }
+.status.not-implemented, .status.unavailable { background: rgba(180, 70, 70, 0.18); color: #f0b4b4; }
+.status.implemented { background: rgba(46, 160, 110, 0.22); color: #9be7c4; }
+.status.partial { background: rgba(230, 162, 60, 0.22); color: #ffd39a; }
+
+.suite-nav .nav-heading {
+  margin: 0.55rem 0 0.15rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8ea4b8;
+}
+.suite-nav .nav-index {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  color: #7fd3f0;
+}
 
 .suite-layout {
   display: grid;
   grid-template-columns: minmax(200px, 240px) 1fr;
   gap: 0.9rem;
-  min-height: 0;
+  min-height: min(72vh, 760px);
 }
 .suite-nav {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  max-height: calc(100vh - 220px);
+  max-height: min(72vh, 760px);
   overflow-y: auto;
   padding-right: 0.2rem;
+  position: sticky;
+  top: 0;
+  align-self: start;
 }
 .suite-nav button {
   text-align: left;
@@ -115,7 +152,7 @@
 .suite-result {
   margin: 0;
   white-space: pre-wrap;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: var(--font-mono, "IBM Plex Mono", ui-monospace, monospace);
   font-size: 0.76rem;
   line-height: 1.45;
   color: #cfe3f2;
@@ -134,7 +171,7 @@
 .suite-board-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
   font-size: 0.72rem;
   color: var(--cosmos-text, #b0cce0);
 }
@@ -148,7 +185,61 @@
 .suite-board-table tr.is-stale td { color: var(--cosmos-yellow, #ffd000); }
 .suite-board-table tr.is-ni td { color: var(--cosmos-muted, #365570); }
 
+.suite-result {
+  margin: 0;
+  min-height: 8rem;
+  max-height: min(48vh, 420px);
+  overflow: auto;
+  font-family: var(--font-mono, "IBM Plex Mono", ui-monospace, monospace);
+  font-size: 0.78rem;
+  white-space: pre-wrap;
+  color: #d5e6f3;
+}
+.suite-assumption-banner {
+  margin: 0.6rem 0;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid rgba(230, 162, 60, 0.45);
+  background: rgba(230, 162, 60, 0.12);
+  color: #ffd39a;
+  font-size: 0.8rem;
+}
+.design-context-bar {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1.1fr) minmax(14rem, 1.4fr) minmax(16rem, 1.6fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--cosmos-border, #2a3a4a);
+  border-radius: 10px;
+  background: rgba(8, 16, 28, 0.82);
+}
+.design-context-identity,
+.design-context-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.75rem;
+  font-size: 0.8rem;
+  color: #c5d8e8;
+}
+.design-context-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: flex-end;
+}
+.design-context-actions select,
+.design-context-actions button {
+  font: inherit;
+  font-size: 0.75rem;
+}
+.suite-structured { display: grid; gap: 0.65rem; }
+.suite-stage-result pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
 @media (max-width: 980px) {
   .suite-layout { grid-template-columns: 1fr; }
   .suite-nav { max-height: none; flex-direction: row; flex-wrap: wrap; }
+  .design-context-bar { grid-template-columns: 1fr; }
 }

@@ -19,8 +19,8 @@ from __future__ import annotations
 from core.exceptions import CosmosError, ValidationError
 
 __all__ = (
-    "GraphContractError",
     "GraphConstructionError",
+    "GraphContractError",
     "GraphError",
     "GraphQueryError",
     "GraphStorageError",

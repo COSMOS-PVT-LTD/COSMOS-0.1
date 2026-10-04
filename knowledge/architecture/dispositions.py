@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from enum import Enum
 
-__all__ = ("ArchitectureDisposition", "OPEN_DISPOSITIONS")
+__all__ = ("OPEN_DISPOSITIONS", "ArchitectureDisposition")
 
 
 class ArchitectureDisposition(Enum):

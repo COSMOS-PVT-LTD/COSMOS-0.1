@@ -61,8 +61,7 @@ analysis.
 
 from __future__ import annotations
 
-from collections.abc import Iterator
-from collections.abc import Mapping
+from collections.abc import Iterator, Mapping
 from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
@@ -70,6 +69,7 @@ from typing import Final
 
 from knowledge.models.document import Document
 from knowledge.models.reference import Reference
+
 
 class EngineeringDomainCategory(Enum):
     """
@@ -1451,7 +1451,7 @@ class EngineeringDomain:
     def from_dict(
         cls,
         data: dict[str, object],
-    ) -> "EngineeringDomain":
+    ) -> EngineeringDomain:
         """
         Reconstruct an EngineeringDomain from its serialized
         dictionary representation.
@@ -2257,7 +2257,7 @@ class EngineeringDomain:
 
     def copy(
         self,
-    ) -> "EngineeringDomain":
+    ) -> EngineeringDomain:
         """
         Return an immutable copy of this EngineeringDomain.
         """
@@ -2279,7 +2279,7 @@ class EngineeringDomain:
     def deserialize(
         cls,
         payload: dict[str, object],
-    ) -> "EngineeringDomain":
+    ) -> EngineeringDomain:
         """
         Alias for from_dict().
         """

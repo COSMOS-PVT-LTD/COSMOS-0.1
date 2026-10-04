@@ -6,7 +6,6 @@ from pathlib import Path
 
 from core.quantity import Quantity
 from core.unit import SI
-
 from systems.persistence.design_store import DesignStore
 from systems.projects.models import PropulsionDesign
 

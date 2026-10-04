@@ -12,7 +12,7 @@ from knowledge.indexing.builder import KnowledgeIndexBundle
 from knowledge.search.contracts import SearchQuery, SearchResultPage
 from knowledge.search.engine import KnowledgeSearchEngine
 
-__all__ = ("SearchEngine", "KnowledgeSearchEngine")
+__all__ = ("KnowledgeSearchEngine", "SearchEngine")
 
 
 class SearchEngine(KnowledgeSearchEngine):

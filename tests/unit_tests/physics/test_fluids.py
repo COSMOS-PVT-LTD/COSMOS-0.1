@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import pytest
 
+from core.exceptions import InvalidInputError
 from physics.exceptions import OutOfRangeError
 from physics.fluids.fluid_properties import evaluate_record
 from physics.fluids.helium import GAS_GAMMA as HELIUM_GAMMA
@@ -106,7 +107,7 @@ def test_helium_monatomic_gamma() -> None:
 
 
 def test_negative_reynolds_velocity_rejected() -> None:
-    with pytest.raises(Exception):
+    with pytest.raises(InvalidInputError):
         reynolds_number(
             kilogram_per_cubic_metre(1.0),
             metre_per_second(-1.0),

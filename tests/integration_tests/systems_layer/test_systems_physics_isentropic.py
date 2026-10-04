@@ -5,7 +5,6 @@ from __future__ import annotations
 import pytest
 
 from core.exceptions import InvalidInputError
-
 from systems.calculations.isentropic import evaluate_isentropic_stagnation
 from systems.contracts.results import ResultStatus
 from systems.projects.models import PropulsionDesign

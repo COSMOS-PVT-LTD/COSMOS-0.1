@@ -11,9 +11,9 @@ from knowledge.ontology import (
     DuplicateOntologyTermError,
     OntologyAlias,
     OntologyRegistry,
+    OntologyRelationshipError,
     OntologyRelationshipRule,
     OntologyRelationshipRuleType,
-    OntologyRelationshipError,
     OntologyTerm,
     OntologyTermNotFoundError,
     OntologyValidationError,
@@ -121,14 +121,7 @@ def test_canonicalization_collision_prevention_via_distinct_ids() -> None:
 
     registry = _build_registry()
     extraction = _parse_and_extract(
-        "\n".join(
-            [
-                "# Section A",
-                "Material: LOX",
-                "# Section B",
-                "Material: LOX",
-            ],
-        ),
+        "# Section A\nMaterial: LOX\n# Section B\nMaterial: LOX",
     )
     result = canonicalize_extraction_result(extraction, registry)
     lox_mappings = [
@@ -382,13 +375,7 @@ def test_w4_to_w5_integration_preserves_provenance() -> None:
     )
 
     extraction = _parse_and_extract(
-        "\n".join(
-            [
-                "# Propulsion",
-                "Material: LOX",
-                "The chamber pressure is 20 bar.",
-            ],
-        ),
+        "# Propulsion\nMaterial: LOX\nThe chamber pressure is 20 bar.",
     )
     canonical = canonicalize_extraction_result(extraction, registry)
     lox_mapping = next(

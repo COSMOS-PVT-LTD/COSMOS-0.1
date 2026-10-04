@@ -12,8 +12,11 @@ from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
 
+from core.logger import get_logger
 from knowledge.production.local_rag_pipeline import ProductionLocalRAGPipeline
 from knowledge.production.scale_benchmark import generate_scale_corpus
+
+logger = get_logger(__name__)
 
 __all__ = (
     "ConcurrencyBenchmarkReport",
@@ -158,6 +161,7 @@ class ConcurrencyBenchmarkRunner:
                 verification=verification,
             )
         except Exception as exc:
+            logger.exception("concurrency_benchmark: boundary operation failed")
             return ConcurrencyResult(
                 concurrency=concurrency,
                 document_count=document_count,

@@ -9,9 +9,9 @@ import pytest
 from api.propulsion_workflow import (
     create_design,
     get_workflow_payload,
+    load_design,
     run_isentropic,
     save_design,
-    load_design,
     update_requirements,
 )
 from systems.contracts.results import ResultStatus

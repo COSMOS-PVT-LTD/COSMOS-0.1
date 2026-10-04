@@ -5,7 +5,10 @@ from __future__ import annotations
 from pathlib import Path
 
 from knowledge.pipelines.extended_pipeline import run_knowledge_pipeline_extended
-from knowledge.pipelines.knowledge_pipeline import normalize_markdown_text, run_knowledge_pipeline
+from knowledge.pipelines.knowledge_pipeline import (
+    normalize_markdown_text,
+    run_knowledge_pipeline,
+)
 
 _GOLDEN_DOCUMENT = (
     Path(__file__).resolve().parents[3]

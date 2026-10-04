@@ -4,7 +4,7 @@ Unit tests for knowledge.models.equation.
 
 from __future__ import annotations
 
-from dataclasses import FrozenInstanceError
+from dataclasses import FrozenInstanceError, replace
 
 import pytest  # type: ignore[import]
 
@@ -14,18 +14,17 @@ from knowledge.models.document import (
     DocumentType,
     SecurityLevel,
 )
-
 from knowledge.models.equation import (
     Equation,
     EquationCategory,
     EquationStatus,
 )
-
 from knowledge.models.reference import (
     Reference,
     ReferenceStatus,
     ReferenceType,
 )
+
 
 def create_reference() -> Reference:
     """
@@ -147,26 +146,12 @@ def test_blank_expression() -> None:
         )
 
 def test_invalid_page_number() -> None:
-
-    with pytest.raises(ValueError):
-
-        Equation(
-            **{
-                **create_equation().to_dict(),
-                "page_number": -5,
-            }
-        )
+    with pytest.raises(ValueError, match="page_number"):
+        replace(create_equation(), page_number=-5)
 
 def test_invalid_confidence() -> None:
-
-    with pytest.raises(ValueError):
-
-        Equation(
-            **{
-                **create_equation().to_dict(),
-                "extraction_confidence": 1.5,
-            }
-        )
+    with pytest.raises(ValueError, match="extraction_confidence"):
+        replace(create_equation(), extraction_confidence=1.5)
 
 def test_to_dict() -> None:
 
@@ -229,6 +214,5 @@ def test_traceability() -> None:
         equation.source_reference
         is not None
     )
-
 
 

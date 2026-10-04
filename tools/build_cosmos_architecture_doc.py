@@ -1,16 +1,14 @@
 from __future__ import annotations
 
-from datetime import date
+from datetime import UTC, datetime
 from pathlib import Path
 
 from docx import Document
-from docx.enum.section import WD_SECTION
-from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
+from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT, WD_TABLE_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
-
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "reports" / "COSMOS_Proprietary_Computational_Engineering_Architecture.docx"
@@ -236,7 +234,7 @@ def add_title_block(doc: Document) -> None:
         ("Project", "COSMOS - Cryogenic Optimization and Simulation Multiphysics Operating System"),
         ("Document Type", "Internal architecture and product-development specification"),
         ("Status", "Draft for founder/engineering review"),
-        ("Prepared On", date.today().isoformat()),
+        ("Prepared On", datetime.now(UTC).date().isoformat()),
         ("Ownership", "Company proprietary and confidential; not a clone of any external proprietary system"),
     ]
     for label, value in rows:

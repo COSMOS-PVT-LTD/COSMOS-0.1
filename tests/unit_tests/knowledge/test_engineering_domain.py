@@ -14,20 +14,19 @@ of the EngineeringDomain model.
 
 from __future__ import annotations
 
-from datetime import UTC
-from datetime import datetime
+from datetime import UTC, datetime
 
-import pytest # type: ignore[import]
+import pytest  # type: ignore[import]
 
-from knowledge.models.document import Document
-from knowledge.models.document import DocumentType
-from knowledge.models.engineering_domain import DomainCriticality
-from knowledge.models.engineering_domain import DomainMaturityLevel
-from knowledge.models.engineering_domain import EngineeringDomain
-from knowledge.models.engineering_domain import EngineeringDomainCategory
-from knowledge.models.engineering_domain import EngineeringDomainStatus
-from knowledge.models.reference import Reference
-from knowledge.models.reference import ReferenceType
+from knowledge.models.document import Document, DocumentType
+from knowledge.models.engineering_domain import (
+    DomainCriticality,
+    DomainMaturityLevel,
+    EngineeringDomain,
+    EngineeringDomainCategory,
+    EngineeringDomainStatus,
+)
+from knowledge.models.reference import Reference, ReferenceType
 
 # ============================================================
 # Factory Helpers

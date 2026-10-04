@@ -123,7 +123,7 @@ def test_hybrid_search_facade_matches_canonical_engine() -> None:
 def test_search_engine_facade_delegates_to_knowledge_search_engine() -> None:
     """SearchEngine must subclass KnowledgeSearchEngine."""
 
-    store, bundle, graph_query = _build_w7_stack("Chamber Pressure")
+    store, _bundle, graph_query = _build_w7_stack("Chamber Pressure")
     legacy_bundle = KnowledgeIndexBuilder().build(store)
     engine = SearchEngine(legacy_bundle, graph_query, store)
     page = engine.search(

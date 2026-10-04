@@ -58,9 +58,9 @@ class EngineeringRelation:
         object.__setattr__(self, "statement", _require_text("statement", self.statement))
         object.__setattr__(self, "domain", _require_text("domain", self.domain))
         if not isinstance(self.kind, EngineeringRelationKind):
-            raise ValueError("kind must be an EngineeringRelationKind.")
+            raise TypeError("kind must be an EngineeringRelationKind.")
         if not isinstance(self.provenance, ProvenanceTrace):
-            raise ValueError("provenance is required.")
+            raise TypeError("provenance is required.")
         if self.lifecycle is KnowledgeLifecycle.APPROVED and self.verification is None:
             raise ValueError("APPROVED relations require a verification record.")
 

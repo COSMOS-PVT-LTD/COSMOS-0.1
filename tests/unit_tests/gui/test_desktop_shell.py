@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from http.server import HTTPServer
-from http import cookiejar
-from pathlib import Path
 import json
 import threading
 import urllib.error
 import urllib.request
+from http import cookiejar
+from http.server import HTTPServer
+from pathlib import Path
 
 from gui.server import CosmosApplicationHandler
 
@@ -52,7 +52,7 @@ def test_login_workbench_flow_and_audit(tmp_path: Path) -> None:
         assert len(workbenches["pages"]) >= 3
 
         hub_page = opener.open(f"{base}/app/workbenches", timeout=5).read().decode("utf-8")
-        assert "workbench-grid" in hub_page
+        assert 'id="hub-workbench-lanes"' in hub_page
         assert "engineering-ux.js" in hub_page
 
         ux_asset = opener.open(f"{base}/assets/engineering-ux.js", timeout=5).read().decode("utf-8")

@@ -40,11 +40,9 @@ def _extract_xlsx_cells(content: bytes) -> tuple[dict[str, object], ...]:
             for item in shared_root.iter(f"{_MAIN_NS}si")
         ]
 
-    sheet_name = sorted(
-        name
+    sheet_name = min(name
         for name in archive.namelist()
-        if name.startswith("xl/worksheets/sheet") and name.endswith(".xml")
-    )[0]
+        if name.startswith("xl/worksheets/sheet") and name.endswith(".xml"))
 
     sheet_root = ET.fromstring(archive.read(sheet_name))
     cells: list[dict[str, object]] = []

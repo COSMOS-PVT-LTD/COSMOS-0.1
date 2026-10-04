@@ -25,6 +25,7 @@ from knowledge.parsers.w3 import (
     build_default_parser_registry,
     parse_document,
 )
+from knowledge.source.exceptions import IntegrityMismatchError
 from knowledge.source.integrity import sha256_text_digest
 
 
@@ -67,14 +68,7 @@ def _parse(content: str, **kwargs: object) -> object:
 def test_parse_document_structure_hierarchy_and_ordering() -> None:
     """KG-014 must preserve heading hierarchy and paragraph ordering."""
 
-    content = "\n".join(
-        [
-            "# Introduction",
-            "First paragraph.",
-            "## Methods",
-            "Second paragraph.",
-        ],
-    )
+    content = "# Introduction\nFirst paragraph.\n## Methods\nSecond paragraph."
     result = _parse(content)
 
     assert len(result.parsed_document.sections) == 2
@@ -115,21 +109,14 @@ def test_parse_rejects_content_hash_mismatch() -> None:
         normalized_content="# Different",
     )
 
-    with pytest.raises(Exception):
+    with pytest.raises(IntegrityMismatchError):
         parse_document(context)
 
 
 def test_extract_markdown_table() -> None:
     """KG-015 must parse markdown tables with headers and rows."""
 
-    content = "\n".join(
-        [
-            "# Data",
-            "| Name | Value |",
-            "| --- | --- |",
-            "| Pressure | 100 |",
-        ],
-    )
+    content = "# Data\n| Name | Value |\n| --- | --- |\n| Pressure | 100 |"
     result = _parse(content)
 
     assert len(result.parsed_document.tables) == 1
@@ -196,14 +183,7 @@ def test_extract_equations_rejects_executable_patterns() -> None:
 def test_extract_references_and_citations() -> None:
     """KG-018 must distinguish citation occurrences from reference records."""
 
-    content = "\n".join(
-        [
-            "Result shown in prior work [1].",
-            "",
-            "# References",
-            "1. Chamber Design Study (2020)",
-        ],
-    )
+    content = "Result shown in prior work [1].\n\n# References\n1. Chamber Design Study (2020)"
     result = _parse(content)
 
     assert len(result.parsed_document.references) == 1
@@ -340,7 +320,11 @@ def test_ingestion_to_parse_integration_path() -> None:
     """Integration path must preserve provenance from ingestion through parsing."""
 
     from knowledge.ingestion_adapters import MarkdownIngestionAdapter
-    from knowledge.source import InMemorySourceVault, VaultArtifact, VaultArtifactMetadata
+    from knowledge.source import (
+        InMemorySourceVault,
+        VaultArtifact,
+        VaultArtifactMetadata,
+    )
 
     markdown = "# Integration\n\nBody with $x = 1$.\n"
     vault = InMemorySourceVault()

@@ -30,7 +30,6 @@ import math
 from dataclasses import dataclass
 
 from core.exceptions import InvalidInputError
-
 from physics.compressible_flow.expansion_fan import prandtl_meyer
 from physics.exceptions import InsufficientDataError
 from physics.model import ModelIdentity
@@ -39,9 +38,9 @@ from physics.quantities import require_gamma, require_mach
 __all__ = (
     "MOC_PHYSICS",
     "CharacteristicInvariants",
-    "mach_angle",
-    "invariants",
     "generate_contour",
+    "invariants",
+    "mach_angle",
 )
 
 MOC_PHYSICS = ModelIdentity(

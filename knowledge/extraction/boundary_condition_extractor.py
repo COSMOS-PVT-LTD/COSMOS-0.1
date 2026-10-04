@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
+from knowledge.extraction.candidate import candidate_provenance
 from knowledge.models.boundary_condition import BoundaryCondition
 from knowledge.models.lifecycle import KnowledgeLifecycle
-from knowledge.extraction.candidate import candidate_provenance
 
 __all__ = ("extract_boundary_conditions",)
 

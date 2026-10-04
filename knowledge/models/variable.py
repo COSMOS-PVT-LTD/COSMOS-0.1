@@ -960,7 +960,7 @@ class Variable:
     def from_dict(
         cls,
         data: dict[str, object],
-    ) -> "Variable":
+    ) -> Variable:
         """
         Construct a Variable from a serialized dictionary.
 
