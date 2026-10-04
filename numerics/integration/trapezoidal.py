@@ -4,7 +4,7 @@ COSMOS Rocket Propulsion Platform
 Module: numerics.integration.trapezoidal
 Author: COSMOS Development Team
 Version: 0.1.0
-Purpose: DEFERRED architecture slot; no operational API is exported.
+Purpose: Domain-neutral integration.trapezoidal foundation.
 Copyright (c) 2026 COSMOS PVT LTD. All Rights Reserved.
 
 Description:
@@ -13,5 +13,27 @@ Description:
 
 from __future__ import annotations
 
-CAPABILITY_STATE = "DEFERRED"
-__all__: tuple[str, ...] = ()
+import math
+
+from numerics.utilities.numerical_checks import (
+    ScalarFunction,
+    count,
+    evaluate,
+    finite,
+    invalid,
+)
+
+
+def _interval(lower: float, upper: float) -> tuple[float, float]:
+    a, b = finite(lower), finite(upper)
+    if b <= a:
+        invalid("Integration requires finite increasing endpoints.")
+    return a, b
+
+def integrate(function: ScalarFunction, lower: float, upper: float, *, intervals: int = 100) -> float:
+    """Composite trapezoid with explicit positive interval count."""
+    a, b = _interval(lower, upper)
+    n = count(intervals)
+    h = (b-a)/n
+    return finite(h*(0.5*evaluate(function,a)+0.5*evaluate(function,b)
+                     + math.fsum(evaluate(function,a+i*h) for i in range(1,n))))

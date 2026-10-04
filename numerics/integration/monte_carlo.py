@@ -4,7 +4,7 @@ COSMOS Rocket Propulsion Platform
 Module: numerics.integration.monte_carlo
 Author: COSMOS Development Team
 Version: 0.1.0
-Purpose: DEFERRED architecture slot; no operational API is exported.
+Purpose: Domain-neutral integration.monte_carlo foundation.
 Copyright (c) 2026 COSMOS PVT LTD. All Rights Reserved.
 
 Description:
@@ -13,5 +13,26 @@ Description:
 
 from __future__ import annotations
 
-CAPABILITY_STATE = "DEFERRED"
-__all__: tuple[str, ...] = ()
+import math
+from dataclasses import dataclass
+
+import numpy as np
+
+from numerics.integration.trapezoidal import _interval
+from numerics.utilities.numerical_checks import ScalarFunction, count, evaluate
+
+
+@dataclass(frozen=True, slots=True)
+class MonteCarloEstimate:
+    """Fixed budget estimate: standard error is statistical, not a certified bound."""
+    value: float
+    standard_error: float
+    samples: int
+    seed: int
+
+def integrate(function: ScalarFunction, lower: float, upper: float, *, samples: int, seed: int) -> MonteCarloEstimate:
+    a, b = _interval(lower,upper)
+    n, s = count(samples,minimum=2), count(seed,"seed",minimum=0)
+    points = np.random.default_rng(s).uniform(a,b,n)
+    values = np.array([evaluate(function,float(x)) for x in points])
+    return MonteCarloEstimate(float((b-a)*values.mean()),float((b-a)*values.std(ddof=1)/math.sqrt(n)),n,s)

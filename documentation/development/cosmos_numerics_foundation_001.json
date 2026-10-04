@@ -62,10 +62,18 @@
       ]
     },
     "NUM-004": {
-      "name": "Interpolation/integration",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "Interpolation and integration",
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "17 tests passed: polynomial reproduction, clamped cubic reproduction, independent Legendre rule, four analytic integrals",
+        "Trapezoid second and Simpson fourth observed refinement orders",
+        "Seeded Monte Carlo identical replay; budget and nonfinite rejection",
+        "Ruff and Mypy passed"
+      ],
+      "limitations": [
+        "Spline boundary variants limited to natural/clamped cubic; global polynomial interpolation requires modest well-scaled node sets",
+        "Adaptive and Romberg error estimates are asymptotic smooth-integrand estimates; Monte Carlo error is statistical"
+      ]
     },
     "NUM-005": {
       "name": "Nonlinear solvers",
