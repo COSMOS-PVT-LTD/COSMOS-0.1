@@ -117,10 +117,17 @@
       ]
     },
     "NUM-008": {
-      "name": "PDE foundation",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "Representative PDE foundation",
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "5 tests passed: Poisson and wave second-order refinement, Laplace linear solution, heat analytic decay and constant preservation",
+        "Discrete-equation residual histories below tolerance",
+        "Inconsistent initial boundaries and unstable heat/wave time steps rejected; Ruff and Mypy passed"
+      ],
+      "limitations": [
+        "Only scalar 1D uniform grids and static Dirichlet boundaries; no multidimensional/application CFD",
+        "Time-marching residual history measures the discrete equation, not continuum/global solution error"
+      ]
     },
     "NUM-009": {
       "name": "Finite volume",
