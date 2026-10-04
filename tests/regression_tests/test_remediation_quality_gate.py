@@ -10,7 +10,7 @@ def test_ci_has_blocking_workflow_quality_checks() -> None:
     ruff_command = next(
         line for line in workflow.splitlines() if "python -m ruff check" in line
     )
-    for package in ("core", "knowledge", "physics", "systems", "api", "gui", "tests"):
+    for package in ("core", "knowledge", "physics", "numerics", "systems", "api", "gui", "tests"):
         assert package in ruff_command.split()
-    assert "python -m mypy core physics systems api" in workflow
+    assert "python -m mypy core physics numerics systems api" in workflow
     assert "python -m pytest" in workflow

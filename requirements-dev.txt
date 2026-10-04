@@ -1,10 +1,10 @@
 # Development dependencies for COSMOS 0.1 CI and local quality checks.
-# Core runtime modules currently rely primarily on the Python standard library.
+# Core stays stdlib-only; Physics inverses now require the NumPy Numerics runtime.
 
 pytest==8.4.2
 ruff==0.16.10
 mypy==1.20.2
-numpy>=1.26
+-r requirements-numerics.txt
 Pillow>=10.0,<12.0
 pypdf>=5.0,<6.0
 pypdfium2>=4.0,<5.0
