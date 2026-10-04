@@ -4,7 +4,7 @@ COSMOS Rocket Propulsion Platform
 Module: numerics.finite_element.stiffness_matrix
 Author: COSMOS Development Team
 Version: 0.1.0
-Purpose: DEFERRED architecture slot; no operational API is exported.
+Purpose: Domain-neutral finite_element.stiffness_matrix foundation.
 Copyright (c) 2026 COSMOS PVT LTD. All Rights Reserved.
 
 Description:
@@ -13,5 +13,13 @@ Description:
 
 from __future__ import annotations
 
-CAPABILITY_STATE = "DEFERRED"
-__all__: tuple[str, ...] = ()
+import numpy as np
+
+from numerics.finite_element.elements import LinearElement
+from numerics.utilities.numerical_checks import FloatArray, finite_output, positive
+
+
+def stiffness(element: LinearElement, coefficient: float = 1.) -> FloatArray:
+    """Exact integral of constant k B^T B for a normalized scalar equation."""
+    k=positive(coefficient)
+    return finite_output(k/element.length*np.array([[1.,-1.],[-1.,1.]]))

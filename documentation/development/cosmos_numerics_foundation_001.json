@@ -143,10 +143,17 @@
       ]
     },
     "NUM-010": {
-      "name": "Finite element",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "Scalar finite element foundation",
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "4 tests passed: partition of unity, exact element stiffness/Gauss polynomial integral, symmetric assembly",
+        "Dirichlet elimination and original interior weak-equation residual verified",
+        "Manufactured sine piecewise-linear interpolant second-order refinement; Ruff and Mypy passed"
+      ],
+      "limitations": [
+        "Only 1D linear elements with constant positive scalar coefficient; 2D elements deferred",
+        "No structural/thermal engineering validity or production FEA qualification"
+      ]
     },
     "NUM-011": {
       "name": "Mesh",
