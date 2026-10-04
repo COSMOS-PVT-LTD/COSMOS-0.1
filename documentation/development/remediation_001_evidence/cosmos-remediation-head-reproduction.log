@@ -1,0 +1,124 @@
+Stage structure: Not ASME/PED design. Validation: NOT_CLAIMED.
+Stage structure: Not ASME/PED design. Validation: NOT_CLAIMED.
+Stage structure: Not ASME/PED design. Validation: NOT_CLAIMED.
+Stage chamber: Validation: NOT_CLAIMED. Not a combustor CFD/design code.
+Stage thermal: Validation: NOT_CLAIMED. Bartz correlation — not hot-fire validated here.
+[
+  {
+    "actual_hoop_pa": 200000000.0,
+    "errors": [],
+    "external_pressure_pa": 0,
+    "issue": "pressure/material/defaults",
+    "requested_material": "unknown_alloy",
+    "required_hoop_pa_with_explicit_5mm_wall": 200000000.0,
+    "status": "CURRENT",
+    "thickness_used_m": 0.005
+  },
+  {
+    "actual_hoop_pa": 200000000.0,
+    "errors": [],
+    "external_pressure_pa": 2000000.0,
+    "issue": "pressure/material/defaults",
+    "requested_material": "unknown_alloy",
+    "required_hoop_pa_with_explicit_5mm_wall": 160000000.0,
+    "status": "CURRENT",
+    "thickness_used_m": 0.005
+  },
+  {
+    "actual_hoop_pa": 200000000.0,
+    "errors": [],
+    "external_pressure_pa": 10000000.0,
+    "issue": "pressure/material/defaults",
+    "requested_material": "unknown_alloy",
+    "required_hoop_pa_with_explicit_5mm_wall": 0.0,
+    "status": "CURRENT",
+    "thickness_used_m": 0.005
+  },
+  {
+    "assumptions": [
+      "Preliminary geometric sizing only (Vc = L* At).",
+      "Cylindrical approximation; convergent/injector volume neglected.",
+      "L* defaulted to 1.0 m (analysis assumption).",
+      "contraction_ratio defaulted to 2.0."
+    ],
+    "downstream_chamber": "CURRENT",
+    "issue": "required dependency and chamber defaults",
+    "upstream_performance": "FAILED"
+  },
+  {
+    "gamma_was_missing": true,
+    "issue": "thermal defaults and omitted curvature",
+    "result_assumptions": [
+      "Gas properties (\u03bc, k, Cp) are analysis inputs / assumptions.",
+      "Taw approximated by chamber temperature at this stage.",
+      "gamma = 1.2 treated as assumption."
+    ],
+    "result_inputs": {
+      "chamber_pressure": {
+        "magnitude": 5000000.0,
+        "unit": {
+          "dimension": {
+            "amount": 0,
+            "current": 0,
+            "length": -1,
+            "luminous_intensity": 0,
+            "mass": 1,
+            "temperature": 0,
+            "time": -2
+          },
+          "factor_to_si": 1.0,
+          "name": "pascal",
+          "offset_to_si": 0.0,
+          "symbol": "Pa"
+        }
+      },
+      "cstar": {
+        "magnitude": 1500,
+        "unit": {
+          "dimension": {
+            "amount": 0,
+            "current": 0,
+            "length": 1,
+            "luminous_intensity": 0,
+            "mass": 0,
+            "temperature": 0,
+            "time": -1
+          },
+          "factor_to_si": 1.0,
+          "name": "metre per second",
+          "offset_to_si": 0.0,
+          "symbol": "m/s"
+        }
+      },
+      "diameter_m": {
+        "unit": "m",
+        "value": 0.11283791670955126
+      },
+      "gamma": {
+        "unit": "1",
+        "value": 1.2
+      },
+      "mach": {
+        "unit": "1",
+        "value": 1.0
+      },
+      "wall_temperature_k": {
+        "unit": "K",
+        "value": 800.0
+      }
+    },
+    "status": "CURRENT"
+  },
+  {
+    "cooling": "NOT_IMPLEMENTED",
+    "injector": "NOT_IMPLEMENTED",
+    "issue": "ambiguous execution/readiness",
+    "ok": true,
+    "readiness_fields": "Absent in committed Phase3Result/API contract"
+  },
+  {
+    "continue_on_error_occurrences": 1,
+    "issue": "nonblocking CI",
+    "systems_and_api_typechecked": false
+  }
+]

@@ -1,3 +1,6 @@
+
+from core.logger import get_logger
+
 # ============================================================================
 # Public API
 # ============================================================================
@@ -5,20 +8,20 @@
 __all__ = (
     "CACHE_SCHEMA_VERSION",
     "DEFAULT_CACHE_DIRECTORY",
-    "CacheError",
     "CacheCorruptionError",
+    "CacheEntry",
+    "CacheError",
     "CacheKeyError",
     "CacheSerializationError",
     "CacheSource",
-    "CacheEntry",
     "CacheStatistics",
-    "MemoryCache",
     "DiskCache",
+    "MemoryCache",
     "ThermochemistryCache",
+    "cache",
     "generate_cache_key",
     "get_global_cache",
     "reset_global_cache",
-    "cache",
 )
 
 # ============================================================================
@@ -26,10 +29,10 @@ __all__ = (
 # ============================================================================
 
 from dataclasses import dataclass
-from datetime import UTC
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
-from typing import Any
+from types import TracebackType
+from typing import Any, Literal
 
 # ============================================================================
 # Constants
@@ -233,7 +236,6 @@ def utc_now() -> datetime:
 
 import hashlib
 import json
-
 from pathlib import Path
 
 # ============================================================================
@@ -551,6 +553,10 @@ def cache_file_path(
 # ============================================================================
 
 from threading import RLock
+
+from typing_extensions import Self
+
+logger = get_logger(__name__)
 
 # ============================================================================
 # Memory Cache
@@ -921,7 +927,7 @@ class DiskCache:
                 file_path.unlink()
 
         except Exception:
-            pass
+            logger.exception("cache: boundary operation failed")
 
         self._statistics.corrupt_entries += 1
 
@@ -1012,6 +1018,7 @@ class DiskCache:
 
             except Exception:
 
+                logger.exception("cache: boundary operation failed")
                 self._handle_corruption(
                     file_path
                 )
@@ -1034,7 +1041,7 @@ class DiskCache:
                     file_path.unlink()
 
                 except Exception:
-                    pass
+                    logger.exception("cache: boundary operation failed")
 
                 self._statistics.expired_entries += 1
 
@@ -1114,6 +1121,7 @@ class DiskCache:
 
             except Exception:
 
+                logger.exception("cache: boundary operation failed")
                 self._handle_corruption(
                     file_path
                 )
@@ -1131,7 +1139,7 @@ class DiskCache:
                     file_path.unlink()
 
                 except Exception:
-                    pass
+                    logger.exception("cache: boundary operation failed")
 
                 self._statistics.expired_entries += 1
 
@@ -1163,7 +1171,7 @@ class DiskCache:
                     removed += 1
 
                 except Exception:
-                    pass
+                    logger.exception("cache: boundary operation failed")
 
             self._statistics.evictions += (
                 removed
@@ -1217,6 +1225,7 @@ class DiskCache:
 
                 except Exception:
 
+                    logger.exception("cache: boundary operation failed")
                     self._handle_corruption(
                         file_path
                     )
@@ -1236,7 +1245,7 @@ class DiskCache:
                         file_path.unlink()
 
                     except Exception:
-                        pass
+                        logger.exception("cache: boundary operation failed")
 
                     self._statistics.expired_entries += 1
 
@@ -1358,7 +1367,7 @@ class ThermochemistryCache:
 
     def __enter__(
         self,
-    ) -> "ThermochemistryCache":
+    ) -> Self:
 
         return self
 
@@ -1366,8 +1375,8 @@ class ThermochemistryCache:
         self,
         exc_type: type[BaseException] | None,
         exc_value: BaseException | None,
-        traceback: Any,
-    ) -> bool:
+        traceback: TracebackType | None,
+    ) -> Literal[False]:
 
         return False
 

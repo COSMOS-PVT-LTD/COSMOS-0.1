@@ -3,13 +3,15 @@
 from __future__ import annotations
 
 from systems.contracts.results import (
+    CalculationResult,
     ResultStatus,
     ValidityInfo,
     ValidityState,
     VerificationInfo,
 )
 from systems.projects.models import PropulsionDesign
-from systems.stages._helpers import make_result
+from systems.stages._helpers import make_result, stage_guard
+from systems.workflow.readiness import readiness_payload
 
 __all__ = ("run_performance_summary_stage",)
 
@@ -37,7 +39,8 @@ _SUMMARY_KEYS = (
 )
 
 
-def run_performance_summary_stage(design: PropulsionDesign) -> object:
+@stage_guard("performance_summary")
+def run_performance_summary_stage(design: PropulsionDesign) -> CalculationResult:
     """
     Consolidate CURRENT workflow results. Never promotes STALE as current.
 
@@ -104,6 +107,7 @@ def run_performance_summary_stage(design: PropulsionDesign) -> object:
             "current_stage_count": current_count,
             "not_implemented_stages": not_implemented,
             "stale_or_failed_stages": stale_or_failed,
+            "readiness": readiness_payload(design.workflow),
         },
         assumptions=tuple(dict.fromkeys(assumptions)),
         warnings=tuple(dict.fromkeys(warnings)),

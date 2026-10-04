@@ -29,7 +29,6 @@ import math
 from core.dimension import PRESSURE, TEMPERATURE
 from core.quantity import Quantity
 from core.validation import validate_positive
-
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity, require_gamma
 from physics.si import SPECIFIC_HEAT, UNIT_SPECIFIC_ENERGY

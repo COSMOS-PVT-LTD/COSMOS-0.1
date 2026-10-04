@@ -5,7 +5,10 @@ from __future__ import annotations
 from knowledge.extraction.claim import CandidateRelationshipExtraction
 from knowledge.extraction.entity import CandidateEntityExtraction
 from knowledge.extraction.w4.identity import deterministic_extraction_id
-from knowledge.extraction.w4.models import CandidateQuantityExtraction, ExtractionContext
+from knowledge.extraction.w4.models import (
+    CandidateQuantityExtraction,
+    ExtractionContext,
+)
 from knowledge.extraction.w4.provenance import to_source_provenance
 from knowledge.graph.lifecycle import GraphLifecycleState
 

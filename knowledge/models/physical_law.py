@@ -4,8 +4,15 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from knowledge.models.engineering_relation import EngineeringRelation, EngineeringRelationKind
-from knowledge.models.lifecycle import KnowledgeLifecycle, ProvenanceTrace, VersionRecord
+from knowledge.models.engineering_relation import (
+    EngineeringRelation,
+    EngineeringRelationKind,
+)
+from knowledge.models.lifecycle import (
+    KnowledgeLifecycle,
+    ProvenanceTrace,
+    VersionRecord,
+)
 
 __all__ = ("PhysicalLaw",)
 
@@ -34,7 +41,7 @@ class PhysicalLaw:
         if not self.mathematical_formulation.strip():
             raise ValueError("mathematical_formulation is required.")
         if not isinstance(self.provenance, ProvenanceTrace):
-            raise ValueError("provenance is required.")
+            raise TypeError("provenance is required.")
 
     def as_relation(self) -> EngineeringRelation:
         return EngineeringRelation(

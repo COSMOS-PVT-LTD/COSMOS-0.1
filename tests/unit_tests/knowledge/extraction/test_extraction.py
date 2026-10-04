@@ -14,10 +14,9 @@ from knowledge.extraction import (
     ExtractionConfidence,
     ExtractionValidationError,
 )
-from knowledge.graph import GraphLifecycleState
+from knowledge.graph import GraphLifecycleState, ProvenanceReference
 from knowledge.graph.entity import CanonicalEntityType
 from knowledge.graph.provenance import SourceProvenanceRecord
-from knowledge.graph import ProvenanceReference
 
 
 def _provenance() -> SourceProvenanceRecord:

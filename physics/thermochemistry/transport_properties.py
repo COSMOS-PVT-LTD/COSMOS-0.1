@@ -28,7 +28,6 @@ import math
 
 from core.exceptions import InvalidInputError
 from core.quantity import Quantity
-
 from physics.exceptions import InsufficientDataError
 from physics.model import ModelIdentity
 from physics.quantities import quantity

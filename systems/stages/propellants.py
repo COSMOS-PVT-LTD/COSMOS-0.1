@@ -11,10 +11,15 @@ from physics.thermochemistry.propellants import (
     load_json_database,
     registry_size,
 )
-
-from systems.contracts.results import ResultStatus, ValidityInfo, ValidityState, VerificationInfo
+from systems.contracts.results import (
+    CalculationResult,
+    ResultStatus,
+    ValidityInfo,
+    ValidityState,
+    VerificationInfo,
+)
 from systems.projects.models import PropulsionDesign
-from systems.stages._helpers import failed_result, make_result
+from systems.stages._helpers import failed_result, make_result, stage_guard
 
 __all__ = ("run_propellants_stage",)
 
@@ -42,7 +47,8 @@ def _ensure_registry_loaded() -> str:
     return str(_CANDIDATE_DB)
 
 
-def run_propellants_stage(design: PropulsionDesign) -> object:
+@stage_guard("propellants")
+def run_propellants_stage(design: PropulsionDesign) -> CalculationResult:
     """
     Resolve oxidizer/fuel IDs via Physics propellant registry.
 

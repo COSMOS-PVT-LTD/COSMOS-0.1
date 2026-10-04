@@ -7,8 +7,12 @@ import json
 import pytest
 
 from knowledge.embeddings import DeterministicLocalEmbeddingBackend
-from knowledge.graph import GraphConstructionBatch, GraphConstructor, ProvenanceReference
 from knowledge.extraction import CandidateEntityExtraction, ExtractedEntityKind
+from knowledge.graph import (
+    GraphConstructionBatch,
+    GraphConstructor,
+    ProvenanceReference,
+)
 from knowledge.graph.entity import CanonicalEntityType
 from knowledge.graph.provenance import SourceProvenanceRecord
 from knowledge.ontology import OntologyRegistry
@@ -60,7 +64,7 @@ def test_corrupted_graph_snapshot_detected(tmp_path) -> None:
 
 
 def test_incompatible_schema_version(tmp_path) -> None:
-    store = _seed_store(tmp_path)
+    _seed_store(tmp_path)
     manifest_path = tmp_path / STORE_MANIFEST_FILENAME
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     manifest["schema_version"] = "99.0.0"

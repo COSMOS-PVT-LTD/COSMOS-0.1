@@ -15,7 +15,11 @@ from knowledge.graph.serialization import (
     graph_record_to_mapping,
 )
 from knowledge.source.integrity import sha256_text_digest
-from knowledge.storage.exceptions import CorruptionError, SchemaMismatchError, _coerce_int
+from knowledge.storage.exceptions import (
+    CorruptionError,
+    SchemaMismatchError,
+    _coerce_int,
+)
 from knowledge.storage.schema import (
     DOCUMENT_REGISTRY_FILENAME,
     GRAPH_SNAPSHOT_FILENAME,

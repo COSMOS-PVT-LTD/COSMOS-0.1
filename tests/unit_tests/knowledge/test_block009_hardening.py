@@ -49,13 +49,7 @@ def test_schema_accepts_quantity_relationship_endpoints() -> None:
     """KG-040 must not flag valid quantity→entity relationship endpoints."""
 
     extraction = _parse_and_extract(
-        "\n".join(
-            [
-                "# Propulsion",
-                "Material: LOX",
-                "Operating pressure 5 MPa.",
-            ],
-        ),
+        "# Propulsion\nMaterial: LOX\nOperating pressure 5 MPa.",
     )
     findings = validate_schema(
         ValidationContext(
@@ -134,13 +128,7 @@ def test_finding_ids_are_stable_across_repeated_runs() -> None:
     """Validation finding IDs must be stable across repeated evaluation."""
 
     extraction = _parse_and_extract(
-        "\n".join(
-            [
-                "# Chamber",
-                "Pressure is 5 MPa.",
-                "Pressure is 20 MPa.",
-            ],
-        ),
+        "# Chamber\nPressure is 5 MPa.\nPressure is 20 MPa.",
     )
     context = ValidationContext(extraction_result=extraction)
 

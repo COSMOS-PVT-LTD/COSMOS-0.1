@@ -16,12 +16,21 @@ from knowledge.models.boundary_condition import BoundaryCondition
 from knowledge.models.component import Component
 from knowledge.models.correlation import Correlation
 from knowledge.models.design_rule import DesignRule
-from knowledge.models.document import Document, DocumentApprovalStatus, DocumentType, SecurityLevel
+from knowledge.models.document import (
+    Document,
+    DocumentApprovalStatus,
+    DocumentType,
+    SecurityLevel,
+)
 from knowledge.models.empirical_relation import EmpiricalRelation
 from knowledge.models.equation import Equation, EquationCategory, EquationStatus
 from knowledge.models.experiment import Experiment
 from knowledge.models.failure_mode import FailureMode
-from knowledge.models.lifecycle import KnowledgeLifecycle, ProvenanceTrace, UncertaintyRecord
+from knowledge.models.lifecycle import (
+    KnowledgeLifecycle,
+    ProvenanceTrace,
+    UncertaintyRecord,
+)
 from knowledge.models.physical_law import PhysicalLaw
 from knowledge.models.property import PropertyDefinition, PropertyValue
 from knowledge.models.reference import Reference, ReferenceStatus, ReferenceType

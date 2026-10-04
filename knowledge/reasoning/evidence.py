@@ -12,9 +12,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from knowledge.graph.exceptions import GraphQueryError
 from knowledge.graph.lifecycle import GraphLifecycleState
 from knowledge.graph.query import GraphQueryService
-from knowledge.graph.exceptions import GraphQueryError
 from knowledge.search.contracts import NO_VERIFIED_RESULT, SearchResult
 from knowledge.search.exceptions import RankingError, SearchValidationError
 

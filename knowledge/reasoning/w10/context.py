@@ -100,11 +100,10 @@ class W10EngineeringContextBuilder:
                 "evidence chains exceed maximum context chain bound.",
             )
 
-        if not evidence.has_retrieval_results:
-            if outcome.classification is not EvidenceClassification.NO_VERIFIED_RESULT:
-                raise ContextAssemblyError(
-                    "Empty evidence must classify as NO_VERIFIED_RESULT.",
-                )
+        if (not evidence.has_retrieval_results) and (outcome.classification is not EvidenceClassification.NO_VERIFIED_RESULT):
+            raise ContextAssemblyError(
+                "Empty evidence must classify as NO_VERIFIED_RESULT.",
+            )
 
         metadata = dict(retrieval_metadata or {})
 

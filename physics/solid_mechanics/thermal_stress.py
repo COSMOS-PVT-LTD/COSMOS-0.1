@@ -12,7 +12,6 @@ from __future__ import annotations
 from core.dimension import PRESSURE, TEMPERATURE
 from core.quantity import Quantity
 from core.validation import validate_positive
-
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity
 from physics.si import THERMAL_EXPANSION, UNIT_STRESS

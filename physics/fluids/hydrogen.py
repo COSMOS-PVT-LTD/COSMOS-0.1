@@ -13,7 +13,7 @@ from physics.fluids.records import LH2_NBP_DENSITY
 from physics.fluids.sutherland import HYDROGEN_SUTHERLAND
 from physics.thermodynamics.ideal_gas import molar_mass_from_kg_per_kmol
 
-__all__ = ("FLUID_ID", "MOLAR_MASS", "GAS_GAMMA", "NBP_DENSITY", "SUTHERLAND")
+__all__ = ("FLUID_ID", "GAS_GAMMA", "MOLAR_MASS", "NBP_DENSITY", "SUTHERLAND")
 
 FLUID_ID = "hydrogen"
 MOLAR_MASS = molar_mass_from_kg_per_kmol(2.01588)

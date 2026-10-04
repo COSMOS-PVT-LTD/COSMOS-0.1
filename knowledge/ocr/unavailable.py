@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 
 from knowledge.ocr.models import OCRFailure, OCRResult
 
-__all__ = ("UnavailableOCRAdapter", "OCRUnavailableError")
+__all__ = ("OCRUnavailableError", "UnavailableOCRAdapter")
 
 
 class OCRUnavailableError(RuntimeError):

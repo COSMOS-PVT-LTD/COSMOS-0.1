@@ -17,7 +17,6 @@ import pytest
 
 from core.quantity import Quantity
 from core.unit import SI
-
 from physics.compressible_flow.area_mach import area_ratio
 from physics.compressible_flow.isentropic import (
     stagnation_pressure_ratio,
@@ -26,7 +25,11 @@ from physics.compressible_flow.isentropic import (
 from physics.compressible_flow.normal_shock import evaluate_normal_shock
 from physics.heat_transfer.bartz import bartz_heat_transfer_coefficient
 from physics.quantities import kelvin, metre, pascal
-from physics.si import UNIT_DYNAMIC_VISCOSITY, UNIT_SPECIFIC_HEAT, UNIT_THERMAL_CONDUCTIVITY
+from physics.si import (
+    UNIT_DYNAMIC_VISCOSITY,
+    UNIT_SPECIFIC_HEAT,
+    UNIT_THERMAL_CONDUCTIVITY,
+)
 from physics.thermochemistry.nasa_polynomials import evaluate_nasa7
 from physics.thermochemistry.species import get_species
 

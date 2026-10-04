@@ -66,6 +66,7 @@ cython_debug/
 
 # Virtual environments
 .venv/
+.venv-remediation/
 venv/
 ENV/
 env/
@@ -115,6 +116,7 @@ generated_credentials/
 workspace_data/
 knowledge_vault/
 cosmos_app_data/
+cosmos_app_data_verify/
 credentials/
 
 # Sensitive local datasets (explicit patterns — review before adding exceptions)

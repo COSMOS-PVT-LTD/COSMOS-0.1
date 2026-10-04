@@ -11,7 +11,11 @@ from typing import Protocol
 from knowledge.graph.repository import GraphStore
 from knowledge.graph.serialization import canonical_graph_record_digest
 from knowledge.indexing.exceptions import IndexStaleError, IndexValidationError
-from knowledge.indexing.models import IndexLifecycleState, IndexMetadata, IndexStatistics
+from knowledge.indexing.models import (
+    IndexLifecycleState,
+    IndexMetadata,
+    IndexStatistics,
+)
 
 __all__ = (
     "InMemoryVectorIndex",

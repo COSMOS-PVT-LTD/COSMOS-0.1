@@ -3,9 +3,12 @@
 from __future__ import annotations
 
 from knowledge.extraction.correlation_extractor import extract_correlations
-from knowledge.interface.engineering_query import EngineeringQueryService, QueryConstraints
-from knowledge.models.lifecycle import KnowledgeLifecycle, ProvenanceTrace
+from knowledge.interface.engineering_query import (
+    EngineeringQueryService,
+    QueryConstraints,
+)
 from knowledge.models.correlation import Correlation
+from knowledge.models.lifecycle import KnowledgeLifecycle, ProvenanceTrace
 from knowledge.repositories.correlation_repository import CorrelationRepository
 from knowledge.repositories.design_rule_repository import DesignRuleRepository
 from knowledge.repositories.equation_repository import EquationRepository

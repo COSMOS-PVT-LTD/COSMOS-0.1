@@ -7,8 +7,17 @@ from pathlib import Path
 from knowledge.source.integrity import sha256_bytes_digest
 from knowledge.workspace.corpus import chamber_csv_bytes, cooling_markdown_bytes
 from knowledge.workspace.datasets import extract_csv_dataset
-from knowledge.workspace.jobs import JobStore, configuration_hash, processing_fingerprint
-from knowledge.workspace.models import JobCheckpoint, JobStatus, PIPELINE_VERSION, SourceRecord
+from knowledge.workspace.jobs import (
+    JobStore,
+    configuration_hash,
+    processing_fingerprint,
+)
+from knowledge.workspace.models import (
+    PIPELINE_VERSION,
+    JobCheckpoint,
+    JobStatus,
+    SourceRecord,
+)
 from knowledge.workspace.session import KnowledgeWorkspace
 from knowledge.workspace.vault import DurableArtifactVault
 

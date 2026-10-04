@@ -25,7 +25,6 @@ from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.unit import SI
 from core.validation import validate_non_negative, validate_positive
-
 from physics.exceptions import OutOfRangeError
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity

@@ -10,7 +10,6 @@ Purpose: Entropy change of a calorically perfect ideal gas.
 from __future__ import annotations
 
 from core.quantity import Quantity
-
 from physics.model import ModelIdentity
 from physics.thermodynamics.ideal_gas import specific_entropy_change
 

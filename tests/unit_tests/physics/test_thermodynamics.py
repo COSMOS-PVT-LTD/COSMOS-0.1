@@ -15,14 +15,16 @@ from core.constants import G0, UNIVERSAL_GAS_CONSTANT
 from core.exceptions import DimensionError, InvalidInputError
 from core.quantity import Quantity
 from core.unit import SI
-
 from physics.exceptions import InsufficientDataError
 from physics.quantities import kelvin, metre, metre_per_second, pascal
 from physics.si import UNIT_MOLAR_MASS, UNIT_SPECIFIC_ENERGY, UNIT_SPECIFIC_HEAT
 from physics.thermodynamics.enthalpy import specific_from_internal_energy
 from physics.thermodynamics.equations_of_state import compressibility_factor
 from physics.thermodynamics.exergy import ideal_gas_flow_exergy
-from physics.thermodynamics.first_law import closed_system_delta_u, steady_flow_energy_residual
+from physics.thermodynamics.first_law import (
+    closed_system_delta_u,
+    steady_flow_energy_residual,
+)
 from physics.thermodynamics.ideal_gas import (
     cp_from_gamma,
     cv_from_gamma,
@@ -39,7 +41,10 @@ from physics.thermodynamics.ideal_gas import (
 )
 from physics.thermodynamics.phase_equilibrium import integrated_pressure_ratio, slope
 from physics.thermodynamics.real_gas import peng_robinson
-from physics.thermodynamics.second_law import entropy_production_closed, is_possible_process
+from physics.thermodynamics.second_law import (
+    entropy_production_closed,
+    is_possible_process,
+)
 
 
 def _air_molar_mass() -> Quantity:
@@ -129,8 +134,8 @@ def test_steady_flow_residual_zero_for_balanced_case() -> None:
 
 
 def test_second_law_reversible_zero_production() -> None:
-    from core.unit import Unit
     from core.dimension import ENERGY, TEMPERATURE
+    from core.unit import Unit
 
     entropy_unit = Unit("J/K", "joule per kelvin", ENERGY / TEMPERATURE)
     ds = Quantity(1.0, entropy_unit)

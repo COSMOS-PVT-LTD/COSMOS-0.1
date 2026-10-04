@@ -17,7 +17,6 @@ from dataclasses import dataclass
 
 from core.dimension import DENSITY, PRESSURE
 from core.unit import SI, Unit
-
 from physics.fluids.fluid_properties import PropertyRecord
 from physics.si import (
     SPECIFIC_HEAT,

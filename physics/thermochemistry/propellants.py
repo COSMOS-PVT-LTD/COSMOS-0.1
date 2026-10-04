@@ -28,32 +28,29 @@ from __future__ import annotations
 # ============================================================================
 # Standard Library
 # ============================================================================
-
 import json
 import re
-
 from enum import Enum
 from pathlib import Path
 from threading import RLock
-from typing import Any, Final
+from typing import Final
 
 # ============================================================================
 # COSMOS Core
 # ============================================================================
-
 from core.logger import get_logger
 
 # ============================================================================
 # Public API
 # ============================================================================
 
-__all__ = (
-    "Phase",
-    "PropellantType",
-    "PropellantError",
-    "PropellantValidationError",
-    "PropellantNotFoundError",
+__all__: tuple[str, ...] = (
     "DuplicatePropellantError",
+    "Phase",
+    "PropellantError",
+    "PropellantNotFoundError",
+    "PropellantType",
+    "PropellantValidationError",
 )
 
 # ============================================================================
@@ -377,8 +374,7 @@ LOGGER.debug(
 # Standard Library
 # ============================================================================
 
-from dataclasses import asdict
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 
 # ============================================================================
 # Propellant Data Model
@@ -659,7 +655,7 @@ class Propellant:
     def from_dict(
         cls,
         data: dict[str, object],
-    ) -> "Propellant":
+    ) -> Propellant:
         """
         Construct propellant from dictionary.
 
@@ -856,7 +852,7 @@ class Propellant:
     def from_json(
         cls,
         json_text: str,
-    ) -> "Propellant":
+    ) -> Propellant:
         """
         Construct propellant from JSON.
 
@@ -1724,34 +1720,31 @@ def is_registry_empty(
 __all__ = (
     # Data Model
     "Propellant",
-
-    # Registry
-    "register_propellant",
+    "clear_registry",
+    "database_exists",
+    "default_database_path",
+    "exists",
+    "get_all_aliases",
+    "get_all_names",
     "get_propellant",
     "get_propellant_by_alias",
-    "exists",
-    "list_propellants",
+    "is_registry_empty",
     "list_fuels",
+    "list_inerts",
     "list_oxidizers",
     "list_pressurants",
-    "list_inerts",
-    "registry_size",
-    "clear_registry",
-
+    "list_propellants",
     # Database
     "load_database",
-    "reload_database",
     "load_json_database",
-    "load_yaml_database",
     "load_sqlite_database",
-
+    "load_yaml_database",
+    # Registry
+    "register_propellant",
+    "registry_size",
     # Utilities
     "registry_statistics",
-    "default_database_path",
-    "database_exists",
-    "get_all_names",
-    "get_all_aliases",
-    "is_registry_empty",
+    "reload_database",
 )
 
 # ============================================================================

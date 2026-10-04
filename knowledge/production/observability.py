@@ -7,6 +7,8 @@ import time
 from dataclasses import dataclass, field
 from enum import Enum
 
+from typing_extensions import Self
+
 __all__ = (
     "ObservabilityEvent",
     "ObservabilityRecorder",
@@ -110,7 +112,7 @@ class _TimedObservation:
         self._start = 0.0
         self._success = True
 
-    def __enter__(self) -> _TimedObservation:
+    def __enter__(self) -> Self:
         self._start = time.perf_counter()
         return self
 

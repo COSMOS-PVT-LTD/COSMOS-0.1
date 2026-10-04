@@ -6,7 +6,11 @@ from knowledge.validation.ambiguity_detector import detect_ambiguities
 from knowledge.validation.citation_validator import validate_citations
 from knowledge.validation.engine import ValidationEngine
 from knowledge.validation.identity import validation_report_digest
-from knowledge.validation.models import ValidationContext, ValidationFinding, ValidationReport
+from knowledge.validation.models import (
+    ValidationContext,
+    ValidationFinding,
+    ValidationReport,
+)
 
 __all__ = (
     "ValidationEnginePhaseC",

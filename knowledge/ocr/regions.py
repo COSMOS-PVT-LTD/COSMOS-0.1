@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
-from knowledge.ocr.models import EquationRegionCandidate, FigureCandidate, TableCandidate
+from knowledge.ocr.models import (
+    EquationRegionCandidate,
+    FigureCandidate,
+    TableCandidate,
+)
 
 __all__ = ("detect_equation_regions", "detect_figure_candidates", "detect_table_candidates")
 

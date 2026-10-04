@@ -13,8 +13,8 @@ from knowledge.production.performance import PerformanceBenchmark
 
 __all__ = (
     "BenchmarkEnvelope",
-    "ProductionBenchmarkSuite",
     "ProductionBenchmarkReport",
+    "ProductionBenchmarkSuite",
 )
 
 

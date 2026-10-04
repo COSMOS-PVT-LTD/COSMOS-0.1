@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
-from knowledge.production.benchmark_suite import ProductionBenchmarkReport, ProductionBenchmarkSuite
+from knowledge.production.benchmark_suite import (
+    ProductionBenchmarkReport,
+    ProductionBenchmarkSuite,
+)
 from knowledge.production.embedding_evaluation import (
     EmbeddingEvaluationReport,
     EmbeddingRecommendation,
@@ -22,12 +25,15 @@ from knowledge.production.observability_export import (
     ObservabilityExporter,
     StructuredObservabilitySession,
 )
+from knowledge.production.offline_guard import (
+    OfflineExecutionGuard,
+    ProviderInvocationState,
+)
 from knowledge.production.operational_observability import (
-    OperationalObservabilityBridge,
     OperationalEventTaxonomy,
+    OperationalObservabilityBridge,
     redact_sensitive_metadata,
 )
-from knowledge.production.offline_guard import OfflineExecutionGuard, ProviderInvocationState
 from knowledge.production.performance import PerformanceBenchmark
 from knowledge.production.recovery import RecoveryProcedure
 from knowledge.production.retrieval_service import ProductionRetrievalService

@@ -5,8 +5,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import PurePosixPath
 
-from knowledge.ocr.security import MAX_PDF_BYTES
-
 __all__ = (
     "MAX_UPLOAD_BYTES",
     "UploadSecurityFinding",

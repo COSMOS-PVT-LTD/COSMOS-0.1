@@ -81,9 +81,7 @@ class GraphEntityRelationshipRecord:
             "relationship": self.relationship.to_mapping(),
         }
 
-        if isinstance(self.provenance, ProvenanceReference):
-            payload["provenance"] = self.provenance.to_mapping()
-        elif isinstance(self.provenance, SourceProvenanceRecord):
+        if isinstance(self.provenance, (ProvenanceReference, SourceProvenanceRecord)):
             payload["provenance"] = self.provenance.to_mapping()
 
         return payload

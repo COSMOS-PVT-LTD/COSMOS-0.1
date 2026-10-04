@@ -61,14 +61,7 @@ def test_normalized_parsed_document_rejects_duplicate_sections() -> None:
 def test_normalize_pdf_outline_is_deterministic() -> None:
     """PDF normalization must preserve sections and page anchors."""
 
-    outline = "\n".join(
-        [
-            "<!-- page: 1 -->",
-            "# Introduction",
-            "<!-- page: 3 -->",
-            "## Chamber Pressure",
-        ]
-    )
+    outline = "<!-- page: 1 -->\n# Introduction\n<!-- page: 3 -->\n## Chamber Pressure"
 
     normalization_input = PdfNormalizationInput(
         document_id="DOC-001",

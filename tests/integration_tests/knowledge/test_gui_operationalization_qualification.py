@@ -7,20 +7,17 @@ Browser Playwright automation is not available in CI — manual fallback documen
 
 from __future__ import annotations
 
+import json
+import urllib.error
+import urllib.request
 from http import cookiejar
 from http.server import ThreadingHTTPServer
 from pathlib import Path
 from threading import Thread
-import json
-import urllib.error
-import urllib.request
 
 import pytest
 
-from knowledge.references.rights import RightsStatus
 from knowledge.workspace.corpus import cooling_markdown_bytes
-from knowledge.workspace.models import JobStatus
-from knowledge.workspace.session import KnowledgeWorkspace
 
 
 def _client() -> urllib.request.OpenerDirector:
@@ -65,7 +62,7 @@ def _multipart_body(filename: str, content: bytes, boundary: str = "guibound") -
         f"--{boundary}\r\n"
         f'Content-Disposition: form-data; name="file"; filename="{filename}"\r\n'
         f"Content-Type: text/markdown\r\n\r\n"
-    ).encode("utf-8") + content + f"\r\n--{boundary}--\r\n".encode("utf-8")
+    ).encode() + content + f"\r\n--{boundary}--\r\n".encode()
 
 
 def _ingest(opener: urllib.request.OpenerDirector, base: str, filename: str, content: bytes) -> dict:
@@ -213,7 +210,7 @@ def test_gui_ki_010_reingest_no_cross_corruption(desktop) -> None:
 
 def test_gui_ki_011_persistence_survives_reload(desktop, tmp_path: Path) -> None:
     """GUI-KI-011: Persistence survives workspace reload."""
-    base, server, app = desktop
+    base, server, _app = desktop
     opener = _client()
     _login(opener, base)
     payload = _ingest(opener, base, "persist.md", cooling_markdown_bytes())

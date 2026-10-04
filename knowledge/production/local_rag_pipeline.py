@@ -20,7 +20,10 @@ from knowledge.production.incremental_ingestion import (
     IngestionAction,
 )
 from knowledge.production.observability import ObservabilityRecorder, ObservabilityStage
-from knowledge.production.offline_guard import OfflineExecutionGuard, ProviderInvocationState
+from knowledge.production.offline_guard import (
+    OfflineExecutionGuard,
+    ProviderInvocationState,
+)
 from knowledge.production.recovery import RecoveryProcedure
 from knowledge.production.retrieval_service import ProductionRetrievalService
 from knowledge.search import RetrievalMode, SearchQuery

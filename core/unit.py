@@ -36,9 +36,9 @@ from core.dimension import (
 from core.exceptions import UnitError
 
 __all__ = (
+    "SI",
     "Unit",
     "UnitRegistry",
-    "SI",
     "get_unit_registry",
 )
 
@@ -201,8 +201,11 @@ def _build_si_registry() -> UnitRegistry:
         Unit("m/s", "metre per second", VELOCITY),
         Unit("m/s2", "metre per second squared", ACCELERATION),
         Unit("N", "newton", FORCE),
+        Unit("kN", "kilonewton", FORCE, si_scale=1.0e3),
         Unit("lbf", "pound-force", FORCE, si_scale=4.448_221_615_260_5),
         Unit("Pa", "pascal", PRESSURE),
+        Unit("kPa", "kilopascal", PRESSURE, si_scale=1.0e3),
+        Unit("MPa", "megapascal", PRESSURE, si_scale=1.0e6),
         Unit("bar", "bar", PRESSURE, si_scale=1.0e5),
         Unit("psi", "pound per square inch", PRESSURE, si_scale=6894.757_293_168_361),
         Unit("atm", "standard atmosphere", PRESSURE, si_scale=101_325.0),

@@ -8,7 +8,6 @@ from knowledge.graph import GraphConstructionBatch, GraphConstructor
 from knowledge.indexing.w7 import W7IndexBuilder
 from knowledge.search import RetrievalMode, SearchQuery
 from knowledge.search.w8 import HybridSearchEngine
-
 from tests.integration_tests.kg_block012.helpers.pipeline import (
     build_lox_registry,
     load_golden_document,

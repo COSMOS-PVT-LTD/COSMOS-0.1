@@ -20,13 +20,12 @@ from typing import Final
 
 from core.metadata import ObjectMetadata, ProvenanceRecord
 from core.version import COSMOS_VERSION
-
 from physics.validity import ValidityStatus
 
 __all__ = (
     "PHYSICS_SCHEMA_VERSION",
-    "ModelIdentity",
     "ModelEvaluation",
+    "ModelIdentity",
 )
 
 PHYSICS_SCHEMA_VERSION: Final[str] = "0.1.0"

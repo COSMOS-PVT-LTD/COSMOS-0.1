@@ -9,8 +9,8 @@ __all__ = (
     "ExtractionStatus",
     "PageClassification",
     "PageExtraction",
-    "PdfExtractionResult",
     "PdfDiagnostics",
+    "PdfExtractionResult",
 )
 
 

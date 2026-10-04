@@ -12,10 +12,9 @@ from __future__ import annotations
 from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.unit import SI
-
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity
-from physics.si import SPECIFIC_HEAT, THERMAL_CONDUCTIVITY, DYNAMIC_VISCOSITY
+from physics.si import DYNAMIC_VISCOSITY, SPECIFIC_HEAT, THERMAL_CONDUCTIVITY
 
 __all__ = ("PRANDTL", "prandtl_number")
 

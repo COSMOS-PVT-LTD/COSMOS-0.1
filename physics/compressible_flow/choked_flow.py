@@ -25,7 +25,6 @@ from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.unit import SI
 from core.validation import validate_positive
-
 from physics.compressible_flow.isentropic import static_pressure_ratio
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity, require_gamma
@@ -34,9 +33,9 @@ from physics.thermodynamics.ideal_gas import specific_gas_constant
 
 __all__ = (
     "CHOKED_FLOW",
-    "mass_flow_parameter",
     "choked_mass_flow",
     "is_choked",
+    "mass_flow_parameter",
 )
 
 CHOKED_FLOW = ModelIdentity(
@@ -44,8 +43,8 @@ CHOKED_FLOW = ModelIdentity(
     model_name="Isentropic choked mass flow",
     physical_domain="compressible_flow",
     equations=(
-        "mdot = p0 * A_star / sqrt(T0) * sqrt(gamma/R) "
-        "* ((gamma+1)/2)^(-(gamma+1)/(2(gamma-1)))",
+        ("mdot = p0 * A_star / sqrt(T0) * sqrt(gamma/R) "
+        "* ((gamma+1)/2)^(-(gamma+1)/(2(gamma-1)))"),
     ),
     inputs=("p0 [Pa]", "T0 [K]", "A* [m2]", "gamma [-]", "R [J/(kg K)]"),
     outputs=("mdot [kg/s]",),

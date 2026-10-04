@@ -5,11 +5,14 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
+from core.logger import get_logger
 from knowledge.graph.memory_store import InMemoryGraphStore
 from knowledge.indexing.w7.bundle import W7IndexBundle
 from knowledge.storage.exceptions import CorruptionError
 from knowledge.storage.index_lifecycle import IndexLifecycleManager
 from knowledge.storage.local_store import LocalKnowledgeStore
+
+logger = get_logger(__name__)
 
 __all__ = (
     "RecoveryAction",
@@ -59,6 +62,7 @@ class RecoveryProcedure:
         try:
             self._index_manager.validate(self._store.graph_store)
         except Exception as exc:
+            logger.exception("recovery: boundary operation failed")
             return RecoveryPlan(
                 actions=(RecoveryAction.REBUILD_INDEXES,),
                 message=str(exc),

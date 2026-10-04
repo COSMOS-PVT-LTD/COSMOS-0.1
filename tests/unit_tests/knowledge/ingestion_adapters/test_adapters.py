@@ -7,7 +7,11 @@ import zipfile
 
 import pytest
 
-from knowledge.ingestion.models import IngestionArtifactRef, IngestionRequest, SourceFormat
+from knowledge.ingestion.models import (
+    IngestionArtifactRef,
+    IngestionRequest,
+    SourceFormat,
+)
 from knowledge.ingestion_adapters import (
     DocxIngestionAdapter,
     HtmlIngestionAdapter,

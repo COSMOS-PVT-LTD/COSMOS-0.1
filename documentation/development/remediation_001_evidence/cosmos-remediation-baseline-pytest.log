@@ -1,0 +1,58 @@
+........................................................................ [  4%]
+........................................................................ [  8%]
+......................................................F................. [ 12%]
+........................................................................ [ 16%]
+........................................................................ [ 20%]
+........................................................................ [ 24%]
+........................................................................ [ 28%]
+........................................................................ [ 32%]
+........................................................................ [ 36%]
+........................................................................ [ 40%]
+........................................................................ [ 44%]
+............................................s........................... [ 48%]
+..................s..........................................s.......... [ 52%]
+........................................................................ [ 56%]
+........................................................................ [ 60%]
+........................................................................ [ 64%]
+.s....................................s................................. [ 68%]
+........................................................................ [ 72%]
+........................................................................ [ 76%]
+................s....................................................... [ 80%]
+........................................................................ [ 84%]
+........................................................................ [ 88%]
+........................................................................ [ 92%]
+........................................................................ [ 96%]
+............................................................             [100%]
+=================================== FAILURES ===================================
+_____________________ test_login_workbench_flow_and_audit ______________________
+
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-17/test_login_workbench_flow_and_0')
+
+    def test_login_workbench_flow_and_audit(tmp_path: Path) -> None:
+        base, server = _start_server(tmp_path)
+        opener = _client_with_cookies()
+        try:
+            login_request = urllib.request.Request(
+                f"{base}/api/auth/login",
+                data=json.dumps({"login_id": "cosmos-admin", "password": "COSMOS-Dev-2026!"}).encode("utf-8"),
+                headers={"Content-Type": "application/json"},
+                method="POST",
+            )
+            login_body = json.loads(opener.open(login_request, timeout=5).read())
+            assert login_body["user"]["role"] == "ADMIN"
+    
+            session_request = urllib.request.Request(f"{base}/api/auth/session")
+            session_body = json.loads(opener.open(session_request, timeout=5).read())
+            assert session_body["user"]["login_id"] == "cosmos-admin"
+    
+            workbenches = json.loads(opener.open(f"{base}/api/workbenches", timeout=5).read())
+            assert len(workbenches["pages"]) >= 3
+    
+            hub_page = opener.open(f"{base}/app/workbenches", timeout=5).read().decode("utf-8")
+>           assert "workbench-grid" in hub_page
+E           assert 'workbench-grid' in '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="utf-8" />\n  <meta name="viewport" content="width=device-...  <script src="/assets/maharshi-popup.js"></script>\n  <script>COSMOS.initWorkbenchHub();</script>\n</body>\n</html>\n'
+
+tests/unit_tests/gui/test_desktop_shell.py:55: AssertionError
+=========================== short test summary info ============================
+FAILED tests/unit_tests/gui/test_desktop_shell.py::test_login_workbench_flow_and_audit
+1 failed, 1781 passed, 6 skipped in 34.62s

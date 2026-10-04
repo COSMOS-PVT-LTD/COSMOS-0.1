@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from datetime import datetime, timezone
-from pathlib import Path
 import json
 import sqlite3
 import threading
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
 
 __all__ = ("AppAuditEvent", "AppAuditLog")
 

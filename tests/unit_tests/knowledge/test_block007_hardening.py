@@ -40,14 +40,7 @@ def test_entity_extraction_is_deterministic() -> None:
 def test_entity_extraction_avoids_unlabeled_noun_phrase_false_positives() -> None:
     """KG-019 must not classify ordinary prose noun phrases as entities."""
 
-    content = "\n".join(
-        [
-            "# Introduction",
-            "engine pressure varies during startup.",
-            "pressure vessel integrity is monitored.",
-            "combustion chamber temperature rises.",
-        ],
-    )
+    content = "# Introduction\nengine pressure varies during startup.\npressure vessel integrity is monitored.\ncombustion chamber temperature rises."
     result = _parse_and_extract(content)
     labels = {entity.extracted_label.lower() for entity in result.entities}
 
@@ -59,14 +52,7 @@ def test_entity_extraction_avoids_unlabeled_noun_phrase_false_positives() -> Non
 def test_same_entity_label_in_distinct_sections_is_preserved() -> None:
     """KG-019 must not collapse identical labels from different sections."""
 
-    content = "\n".join(
-        [
-            "# Section A",
-            "Component: Main Injector",
-            "# Section B",
-            "Component: Main Injector",
-        ],
-    )
+    content = "# Section A\nComponent: Main Injector\n# Section B\nComponent: Main Injector"
     result = _parse_and_extract(content)
     injector_entities = [
         entity
@@ -80,14 +66,7 @@ def test_same_entity_label_in_distinct_sections_is_preserved() -> None:
 def test_quantity_extraction_preserves_distinct_occurrences() -> None:
     """KG-020 must not collapse identical values from different locations."""
 
-    content = "\n".join(
-        [
-            "# Chamber A",
-            "Pressure is 5 MPa.",
-            "# Chamber B",
-            "Pressure is 5 MPa.",
-        ],
-    )
+    content = "# Chamber A\nPressure is 5 MPa.\n# Chamber B\nPressure is 5 MPa."
     result = _parse_and_extract(content)
 
     assert len(result.quantities) == 2
@@ -111,12 +90,7 @@ def test_quantity_without_unit_does_not_fabricate_units() -> None:
 def test_quantity_parsing_handles_representative_engineering_units() -> None:
     """KG-020 must parse common engineering quantity expressions."""
 
-    content = "\n".join(
-        [
-            "# Data",
-            "Values: 20 MPa, 300 K, 5 kg/s, 1.2 m, 10 kN, 0.85, 3.5e2 Pa.",
-        ],
-    )
+    content = "# Data\nValues: 20 MPa, 300 K, 5 kg/s, 1.2 m, 10 kN, 0.85, 3.5e2 Pa."
     result = _parse_and_extract(content)
     raw_values = {quantity.raw_text for quantity in result.quantities}
 
@@ -179,13 +153,7 @@ def test_claim_extraction_preserves_source_certainty_wording() -> None:
 def test_relationship_extraction_is_deterministically_ordered() -> None:
     """KG-023 must emit stable relationship ordering."""
 
-    content = "\n".join(
-        [
-            "# Combustion Chamber",
-            "Operating pressure 5 MPa.",
-            "The chamber pressure is 20 bar.",
-        ],
-    )
+    content = "# Combustion Chamber\nOperating pressure 5 MPa.\nThe chamber pressure is 20 bar."
     first = _parse_and_extract(content)
     second = _parse_and_extract(content)
 

@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
-from knowledge.models.dimension_check import DimensionExponents, check_dimensional_consistency
+from knowledge.models.dimension_check import (
+    DimensionExponents,
+    check_dimensional_consistency,
+)
 
 __all__ = ("SI_EXPONENTS", "check_known_identity")
 

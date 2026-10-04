@@ -8,8 +8,8 @@ from knowledge.ontology.models import OntologyAlias, OntologyTerm, TaxonomyEdge
 from knowledge.ontology.registry import OntologyRegistry
 
 __all__ = (
-    "ENGINEERING_TAXONOMY",
     "ENGINEERING_ALIASES",
+    "ENGINEERING_TAXONOMY",
     "populate_engineering_taxonomy",
     "resolve_engineering_alias",
 )

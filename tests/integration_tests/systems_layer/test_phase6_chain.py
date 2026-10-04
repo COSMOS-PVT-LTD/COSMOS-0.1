@@ -40,6 +40,13 @@ def _seeded_design():
         characteristic_length_m=1.0,
         contraction_ratio=2.5,
         wall_thickness_m=0.006,
+        material_id="stainless_304",
+        external_pressure_pa=101325,
+        material_temperature_k=300,
+        viscosity_pa_s=8e-5,
+        conductivity_w_m_k=0.3,
+        cp_j_kg_k=2500,
+        wall_temperature_k=800,
     )
     assert p4["ok"] is True
     return design
@@ -49,13 +56,18 @@ def test_phase6_summary_consistency_review() -> None:
     design = _seeded_design()
     p6 = run_phase6(design)
     assert p6["ok"] is True
+    assert p6["phase_status"] == "PARTIAL"
     assert p6["stages"]["performance_summary"]["status"] == ResultStatus.CURRENT.value
     assert p6["stages"]["consistency"]["status"] == ResultStatus.CURRENT.value
     assert p6["stages"]["design_review"]["status"] == ResultStatus.CURRENT.value
     consolidated = p6["stages"]["performance_summary"]["outputs"]["consolidated"]
     assert "thrust" in consolidated
     assert "specific_impulse" in consolidated
-    assert p6["stages"]["design_review"]["outputs"]["review_ready"] is True
+    review = p6["stages"]["design_review"]["outputs"]
+    assert review["review_ready"] is False
+    assert review["review_verdict"] == "INCOMPLETE"
+    assert any("injector" in reason for reason in review["incomplete_reasons"])
+    assert any("cooling" in reason for reason in review["incomplete_reasons"])
     assert design.workflow.graph.get("design_review").implementation_status.value == (
         "IMPLEMENTED"
     )

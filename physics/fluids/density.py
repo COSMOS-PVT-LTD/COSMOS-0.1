@@ -10,11 +10,14 @@ Purpose: Density evaluation routing (ideal gas or sourced liquid record).
 from __future__ import annotations
 
 from core.quantity import Quantity
-
-from physics.fluids.fluid_properties import PropertyEvaluation, PropertyRecord, evaluate_record
+from physics.fluids.fluid_properties import (
+    PropertyEvaluation,
+    PropertyRecord,
+    evaluate_record,
+)
 from physics.thermodynamics.ideal_gas import density as ideal_gas_density
 
-__all__ = ("ideal_gas", "from_record")
+__all__ = ("from_record", "ideal_gas")
 
 
 def ideal_gas(

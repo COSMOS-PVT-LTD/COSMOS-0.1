@@ -7,31 +7,36 @@ from core.quantity import Quantity
 from core.unit import SI
 from physics.compressible_flow.choked_flow import CHOKED_FLOW, choked_mass_flow
 from physics.compressible_flow.nozzle_1d import NOZZLE_1D, station_from_area_ratio
-from physics.compressible_flow.thrust_relations import THRUST, ideal_thrust_coefficient, thrust
+from physics.compressible_flow.thrust_relations import (
+    THRUST,
+    ideal_thrust_coefficient,
+    thrust,
+)
 from physics.exceptions import OutOfRangeError
 from physics.quantities import quantity, square_metre
 from physics.si import UNIT_MOLAR_MASS
-
 from systems.contracts.results import (
+    CalculationResult,
     ResultStatus,
     ValidityInfo,
     ValidityState,
     VerificationInfo,
 )
 from systems.projects.models import PropulsionDesign
-from systems.stages._helpers import failed_result, make_result
+from systems.stages._helpers import failed_result, make_result, stage_guard
 
 __all__ = ("run_performance_stage",)
 
 _G0 = 9.80665  # standard gravity [m/s^2] for Isp definition
 
 
+@stage_guard("performance")
 def run_performance_stage(
     design: PropulsionDesign,
     *,
     throat_area_m2: float | None = None,
     expansion_ratio: float | None = None,
-) -> object:
+) -> CalculationResult:
     """
     Compute choked ṁ, exit station, thrust, Cf, Isp using Physics primitives.
 
@@ -68,10 +73,7 @@ def run_performance_stage(
 
         pa = op.ambient_pressure
         if pa is None:
-            pa = Quantity(101325.0, SI.get("Pa"))
-            ambient_assumption = "ambient_pressure defaulted to 101325 Pa (sea-level)."
-        else:
-            ambient_assumption = None
+            raise InvalidInputError("performance requires explicit ambient_pressure (zero for vacuum).")
 
         throat = square_metre(float(at_value))
         mw = quantity(float(op.molecular_weight), UNIT_MOLAR_MASS)
@@ -107,17 +109,19 @@ def run_performance_stage(
         op.mass_flow = mdot
         op.characteristic_velocity = Quantity(cstar, SI.get("m/s"))
 
-        design.nozzle_design = {
-            **(design.nozzle_design or {}),
-            "throat_area_m2": float(at_value),
-            "expansion_ratio": float(eps),
-            "exit_area_m2": float(at_value) * float(eps),
-            "exit_mach": exit_station.mach,
-        }
+        design.write_derived_slot(
+            "nozzle_design",
+            {
+                **(design.nozzle_design or {}),
+                "throat_area_m2": float(at_value),
+                "expansion_ratio": float(eps),
+                "exit_area_m2": float(at_value) * float(eps),
+                "exit_mach": exit_station.mach,
+            },
+        )
 
         assumptions = [
             "Calorically perfect isentropic choked nozzle (Anderson / Sutton).",
-            *([ambient_assumption] if ambient_assumption else []),
         ]
         if op.gamma_is_assumption or op.chamber_temperature_is_assumption:
             assumptions.append("Thermo inputs include explicit analysis assumptions.")

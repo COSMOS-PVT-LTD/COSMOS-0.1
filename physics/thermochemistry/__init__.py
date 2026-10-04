@@ -15,7 +15,11 @@ from physics.thermochemistry.cea_interface import (
     ThermochemistryEngine,
     run_thermochemistry,
 )
-from physics.thermochemistry.mixtures import Mixture, from_mass_fractions, from_mole_fractions
+from physics.thermochemistry.mixtures import (
+    Mixture,
+    from_mass_fractions,
+    from_mole_fractions,
+)
 from physics.thermochemistry.nasa_polynomials import evaluate_nasa7
 from physics.thermochemistry.species import Species, get_species, list_species
 

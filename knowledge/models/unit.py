@@ -45,9 +45,9 @@ repository logic.
 from __future__ import annotations
 
 from collections.abc import Iterator
-from enum import Enum
 from dataclasses import dataclass
 from datetime import datetime
+from enum import Enum
 
 from knowledge.models.document import Document
 from knowledge.models.reference import Reference
@@ -139,7 +139,6 @@ class UnitStatus(Enum):
     DEPRECATED = "DEPRECATED"
     EXPERIMENTAL = "EXPERIMENTAL"
 
-from dataclasses import dataclass
 
 
 # ============================================================
@@ -228,7 +227,7 @@ class Unit:
     # Engineering Metadata
     # ========================================================
 
-    dimension: "object | None"
+    dimension: object | None
 
     is_si_base: bool
 
@@ -1037,7 +1036,7 @@ class Unit:
     def from_dict(
         cls,
         data: dict[str, object],
-    ) -> "Unit":
+    ) -> Unit:
         """
         Reconstruct a Unit from its serialized dictionary.
 
@@ -1130,7 +1129,7 @@ class Unit:
             raw = data.get(field, [])
 
             if raw is None:
-                return tuple()
+                return ()
 
             if isinstance(raw, (list, tuple)):
                 return tuple(str(x) for x in raw)
@@ -1381,7 +1380,7 @@ class Unit:
 
         return len(self.to_dict())
 
-    def copy(self) -> "Unit":
+    def copy(self) -> Unit:
         """
         Create an identical immutable copy.
 
@@ -1409,7 +1408,7 @@ class Unit:
     def deserialize(
         cls,
         payload: dict[str, object],
-    ) -> "Unit":
+    ) -> Unit:
         """
         Alias for from_dict().
 

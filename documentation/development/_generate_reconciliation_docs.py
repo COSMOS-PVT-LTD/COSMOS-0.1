@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import json
 from collections import Counter
-from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -69,7 +68,7 @@ def write_traceability_matrix(entries: dict, counts: Counter) -> None:
     lines = [
         "# Knowledge File-Level Traceability Matrix",
         "",
-        f"**Document ID:** COSMOS-KG-FILE-TRACE-002",
+        "**Document ID:** COSMOS-KG-FILE-TRACE-002",
         f"**Date:** {TODAY}",
         "**Authority:** Technical Owner Reconciliation Directive",
         "**Phase:** RECONCILIATION ONLY — no implementation",
@@ -267,8 +266,6 @@ def write_reconciliation_master(entries: dict, counts: Counter) -> None:
 
 def write_models_gap(entries: dict) -> None:
     models = {k: v for k, v in entries.items() if k.startswith("knowledge/models/")}
-    disp_map = {"A": "EXACT_MATCH", "B": "RELOCATED", "C": "CONSOLIDATED", "D": "SUPERSEDED",
-                "E": "MISSING_REQUIRED", "F": "MISSING_DECISION_REQUIRED"}
     counts = Counter(v["disposition"] for v in models.values())
 
     lines = [
@@ -283,7 +280,7 @@ def write_models_gap(entries: dict) -> None:
         "",
         "| Metric | Count |",
         "|--------|-------|",
-        f"| Models expected (frozen) | **36** |",
+        "| Models expected (frozen) | **36** |",
         f"| A EXACT_MATCH | **{counts['A']}** |",
         f"| C CONSOLIDATED | **{counts['C']}** |",
         f"| E MISSING_REQUIRED | **{counts['E']}** |",
@@ -516,7 +513,7 @@ def write_certification_report(entries: dict, counts: Counter) -> None:
         "",
         "| Requirement | Status | Blocker |",
         "|-------------|--------|---------|",
-        f"| Every frozen file disposition A–F assigned | **PASS** | — |",
+        "| Every frozen file disposition A–F assigned | **PASS** | — |",
         f"| Exact path match (A) | **FAIL** ({counts['A']}/{total}) | 163 non-exact |",
         f"| Capability addressed (A+B+C+D) | **PARTIAL** ({cap}/{total}) | {counts['E']+counts['F']} gaps |",
         "| Deviations formally approved | **FAIL** | All ADRs PENDING |",
@@ -549,7 +546,6 @@ def write_deviation_register() -> None:
             "**Type:** RECONCILIATION — deviations require explicit approval\n**Approval Status:** All deviations PENDING unless noted",
         )
         for dev in range(1, 11):
-            old = f"### DEV-{dev:03d}"
             if f"DEV-{dev:03d}" in content and "**Approval Status:**" not in content.split(f"DEV-{dev:03d}")[1][:500]:
                 pass
         # Append approval column note
@@ -660,8 +656,8 @@ def write_next_plan(entries: dict, counts: Counter) -> None:
         "",
         "## Reconciliation Metrics Baseline",
         "",
-        f"| Metric | Value |",
-        f"|--------|-------|",
+        "| Metric | Value |",
+        "|--------|-------|",
         f"| E MISSING_REQUIRED | {counts['E']} |",
         f"| F MISSING_DECISION | {counts['F']} |",
         f"| Capability addressed | {capability_addressed(counts)}/175 |",

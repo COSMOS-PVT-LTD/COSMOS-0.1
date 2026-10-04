@@ -34,9 +34,9 @@ Version:
 from __future__ import annotations
 
 from collections.abc import MutableMapping
-from typing import Final
 
 from knowledge.models.document import Document
+
 
 class RepositoryError(Exception):
     """
@@ -165,10 +165,10 @@ class DocumentRepository:
 
         except KeyError as exc:
             raise DocumentNotFoundError(
-                (
+
                     "Unknown document "
                     f"'{document_id}'."
-                )
+
             ) from exc
 
     def remove_document(
@@ -191,10 +191,10 @@ class DocumentRepository:
             not in self._documents
         ):
             raise DocumentNotFoundError(
-                (
+
                     "Unknown document "
                     f"'{document_id}'."
-                )
+
             )
 
         del self._documents[
@@ -360,10 +360,9 @@ class DocumentRepository:
 
         if document_id in self._documents:
             raise DuplicateDocumentError(
-                (
+
                     "Duplicate document "
                     f"identifier: "
                     f"'{document_id}'."
-                )
+
             )
-    

@@ -13,7 +13,7 @@ from physics.fluids.records import LHE_NBP_DENSITY
 from physics.fluids.sutherland import HELIUM_SUTHERLAND
 from physics.thermodynamics.ideal_gas import molar_mass_from_kg_per_kmol
 
-__all__ = ("FLUID_ID", "MOLAR_MASS", "GAS_GAMMA", "NBP_DENSITY", "SUTHERLAND")
+__all__ = ("FLUID_ID", "GAS_GAMMA", "MOLAR_MASS", "NBP_DENSITY", "SUTHERLAND")
 
 FLUID_ID = "helium"
 MOLAR_MASS = molar_mass_from_kg_per_kmol(4.0026)

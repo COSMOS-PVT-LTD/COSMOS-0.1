@@ -1,12 +1,25 @@
 /**
- * Maharshi Bharadwaj — global Knowledge pop-up (graph + chat only).
+ * Maharshi Bharadwaj — draggable dock + Knowledge pop-up.
  */
 (function maharshiPopupModule() {
   let mounted = false;
   let maximized = false;
+  const DOCK_STORAGE = "cosmos_maharshi_dock";
 
   function $(id) {
     return document.getElementById(id);
+  }
+
+  function readDockState() {
+    try {
+      return JSON.parse(localStorage.getItem(DOCK_STORAGE) || "{}");
+    } catch {
+      return {};
+    }
+  }
+
+  function writeDockState(state) {
+    localStorage.setItem(DOCK_STORAGE, JSON.stringify(state));
   }
 
   function mountPopup() {
@@ -49,8 +62,7 @@
     });
     $("maharshi-popup-open-full")?.addEventListener("click", () => {
       COSMOS.closeMaharshiPopup();
-      const page = COSMOS.hubPageFromUrl?.() || 1;
-      window.location.href = COSMOS.workbenchUrl("/app/workbench/knowledge", page);
+      window.location.href = "/app/workbench/knowledge";
     });
     node.addEventListener("click", (event) => {
       if (event.target === node) COSMOS.closeMaharshiPopup();
@@ -62,6 +74,153 @@
     });
     mounted = true;
   }
+
+  function applyDockGeometry(dock, state) {
+    if (!dock) return;
+    const size = Math.max(44, Math.min(120, Number(state.size) || 56));
+    dock.style.width = `${size}px`;
+    dock.style.setProperty("--maharshi-dock-size", `${size}px`);
+    if (Number.isFinite(state.left) && Number.isFinite(state.top)) {
+      dock.style.left = `${state.left}px`;
+      dock.style.top = `${state.top}px`;
+      dock.style.bottom = "auto";
+      dock.style.right = "auto";
+    }
+  }
+
+  function bindDockInteractions(dock) {
+    if (!dock || dock.dataset.bound === "1") return;
+    dock.dataset.bound = "1";
+
+    let dragging = false;
+    let dragOffsetX = 0;
+    let dragOffsetY = 0;
+    let clickTimer = null;
+    let movedDuringDrag = false;
+
+    const persist = () => {
+      const rect = dock.getBoundingClientRect();
+      const size = parseFloat(dock.style.width) || dock.offsetWidth;
+      writeDockState({ left: rect.left, top: rect.top, size });
+    };
+
+    dock.addEventListener("pointerdown", (event) => {
+      if (event.target.closest(".maharshi-resize-handle")) return;
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+      dragging = true;
+      movedDuringDrag = false;
+      const rect = dock.getBoundingClientRect();
+      dragOffsetX = event.clientX - rect.left;
+      dragOffsetY = event.clientY - rect.top;
+      dock.setPointerCapture(event.pointerId);
+      dock.classList.add("dragging");
+      event.preventDefault();
+    });
+
+    dock.addEventListener("pointermove", (event) => {
+      if (!dragging) return;
+      movedDuringDrag = true;
+      const maxLeft = window.innerWidth - dock.offsetWidth - 8;
+      const maxTop = window.innerHeight - dock.offsetHeight - 8;
+      const left = Math.max(8, Math.min(maxLeft, event.clientX - dragOffsetX));
+      const top = Math.max(8, Math.min(maxTop, event.clientY - dragOffsetY));
+      dock.style.left = `${left}px`;
+      dock.style.top = `${top}px`;
+      dock.style.bottom = "auto";
+      dock.style.right = "auto";
+    });
+
+    const endDrag = (event) => {
+      if (!dragging) return;
+      dragging = false;
+      dock.classList.remove("dragging");
+      try {
+        dock.releasePointerCapture(event.pointerId);
+      } catch {
+        /* ignore */
+      }
+      persist();
+    };
+    dock.addEventListener("pointerup", endDrag);
+    dock.addEventListener("pointercancel", endDrag);
+
+    dock.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (movedDuringDrag) return;
+      if (clickTimer) {
+        clearTimeout(clickTimer);
+        clickTimer = null;
+        return;
+      }
+      clickTimer = setTimeout(() => {
+        clickTimer = null;
+        COSMOS.openMaharshiPopup();
+      }, 220);
+    });
+
+    dock.addEventListener("dblclick", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (clickTimer) {
+        clearTimeout(clickTimer);
+        clickTimer = null;
+      }
+      window.location.href = "/app/workbench/knowledge";
+    });
+
+    const handle = dock.querySelector(".maharshi-resize-handle");
+    handle?.addEventListener("pointerdown", (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      const startX = event.clientX;
+      const startSize = dock.offsetWidth;
+      const onMove = (moveEvent) => {
+        const next = Math.max(44, Math.min(120, startSize + (moveEvent.clientX - startX)));
+        dock.style.width = `${next}px`;
+        dock.style.setProperty("--maharshi-dock-size", `${next}px`);
+      };
+      const onUp = () => {
+        window.removeEventListener("pointermove", onMove);
+        window.removeEventListener("pointerup", onUp);
+        persist();
+      };
+      window.addEventListener("pointermove", onMove);
+      window.addEventListener("pointerup", onUp);
+    });
+
+    dock.addEventListener("wheel", (event) => {
+      if (!event.shiftKey) return;
+      event.preventDefault();
+      const current = dock.offsetWidth;
+      const next = Math.max(44, Math.min(120, current + (event.deltaY > 0 ? -4 : 4)));
+      dock.style.width = `${next}px`;
+      dock.style.setProperty("--maharshi-dock-size", `${next}px`);
+      persist();
+    }, { passive: false });
+  }
+
+  COSMOS.mountMaharshiDock = function mountMaharshiDock(options = {}) {
+    if ($("maharshi-module")) {
+      bindDockInteractions($("maharshi-module"));
+      return;
+    }
+    const dock = document.createElement("button");
+    dock.type = "button";
+    dock.className = "maharshi-module maharshi-dock";
+    dock.id = "maharshi-module";
+    dock.title = "Maharshi Bharadwaj — click for pop-up, double-click for Knowledge workbench. Drag to move; Shift+wheel or corner handle to resize.";
+    dock.innerHTML = `
+      <img src="/assets/maharshi_bharadwaj.png" alt="Maharshi Bharadwaj" draggable="false" />
+      <span>Maharshi</span>
+      <span class="maharshi-resize-handle" aria-hidden="true"></span>`;
+    document.body.appendChild(dock);
+    applyDockGeometry(dock, readDockState());
+    bindDockInteractions(dock);
+    if (options.page === "hub") {
+      dock.classList.add("maharshi-dock-hub");
+    }
+  };
 
   COSMOS.openMaharshiPopup = function openMaharshiPopup() {
     mountPopup();
@@ -88,10 +247,9 @@
   };
 
   COSMOS.bindMaharshiPopupTrigger = function bindMaharshiPopupTrigger() {
-    document.getElementById("maharshi-module")?.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      COSMOS.openMaharshiPopup();
-    });
+    const dock = document.getElementById("maharshi-module");
+    if (!dock || dock.dataset.popupBound === "1") return;
+    dock.dataset.popupBound = "1";
+    bindDockInteractions(dock);
   };
 })();

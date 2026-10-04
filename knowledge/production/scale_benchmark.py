@@ -13,7 +13,10 @@ from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
 
+from core.logger import get_logger
 from knowledge.production.local_rag_pipeline import ProductionLocalRAGPipeline
+
+logger = get_logger(__name__)
 
 __all__ = (
     "CorpusBenchmarkResult",
@@ -249,6 +252,7 @@ class ScaleBenchmarkRunner:
                 registered_document_count=registered,
             )
         except Exception as exc:
+            logger.exception("scale_benchmark: boundary operation failed")
             _, peak = tracemalloc.get_traced_memory()
             return CorpusBenchmarkResult(
                 document_count=document_count,

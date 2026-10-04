@@ -6,7 +6,10 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-from knowledge.architecture.dispositions import ArchitectureDisposition, OPEN_DISPOSITIONS
+from knowledge.architecture.dispositions import (
+    OPEN_DISPOSITIONS,
+    ArchitectureDisposition,
+)
 
 __all__ = (
     "ReconciliationEntry",

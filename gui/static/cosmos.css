@@ -226,6 +226,11 @@ body.cosmos-scrollable { overflow: auto; }
   padding: 20px 24px 52px;
   min-height: 0;
   overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.hub-scroll-layout .content-area {
+  padding-bottom: 72px;
 }
 
 /* Carousel */
@@ -263,7 +268,8 @@ body.cosmos-scrollable { overflow: auto; }
 .workbench-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  gap: 14px;
+  align-content: start;
 }
 
 /* Workbench cards — base in cosmos-shell.css */
@@ -278,7 +284,7 @@ body.cosmos-scrollable { overflow: auto; }
 .workbench-art-img {
   width: 100%;
   height: 100%;
-  max-height: 220px;
+  max-height: 140px;
   object-fit: contain;
   object-position: center;
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4)) contrast(1.04) saturate(1.05);
@@ -303,48 +309,67 @@ body.cosmos-scrollable { overflow: auto; }
 }
 .page-dot.active { background: white; transform: scale(1.25); }
 
-/* Maharshi floating module — fixed so it stays visible above scroll/content */
+/* Maharshi floating module — draggable, resizable */
 .maharshi-module {
   position: fixed;
-  bottom: 64px;
-  right: 28px;
-  width: 108px;
-  padding: 8px;
+  bottom: 10px;
+  left: calc(var(--frame-pad) + 16px);
+  right: auto;
+  top: auto;
+  width: var(--maharshi-dock-size, 56px);
+  padding: 6px;
   border: 0;
-  border-radius: 20px;
+  border-radius: 14px;
   background: linear-gradient(160deg, rgba(12, 40, 68, 0.92), rgba(4, 16, 32, 0.88));
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(76, 201, 240, 0.45);
-  cursor: pointer;
-  z-index: 80;
-  animation: maharshi-float 4s ease-in-out infinite;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(76, 201, 240, 0.45);
+  cursor: grab;
+  z-index: 40;
+  animation: none;
   color: #dff7ff;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  opacity: 1;
-  visibility: visible;
+  touch-action: none;
+}
+
+.maharshi-module.dragging {
+  cursor: grabbing;
+  opacity: 0.92;
+}
+
+.maharshi-module.maharshi-dock-hub {
+  z-index: 35;
+}
+
+.maharshi-resize-handle {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid rgba(76, 201, 240, 0.7);
+  border-bottom: 2px solid rgba(76, 201, 240, 0.7);
+  cursor: nwse-resize;
   pointer-events: auto;
 }
 .maharshi-module img {
   width: 100%;
-  height: 118px;
+  height: 44px;
   object-fit: contain;
-  border-radius: 14px;
+  border-radius: 10px;
   display: block;
   background: rgba(8, 24, 40, 0.35);
-  /* screen blend made the portrait disappear on dark frames */
   mix-blend-mode: normal;
-  filter: drop-shadow(0 0 14px rgba(76, 201, 240, 0.45));
 }
 .maharshi-module span {
   display: block;
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-align: center;
-  margin-top: 6px;
-  line-height: 1.2;
+  margin-top: 4px;
+  line-height: 1.1;
 }
-.maharshi-module:hover {
+.maharshi-module:hover:not(.dragging) {
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 16px 48px rgba(76, 201, 240, 0.25), 0 0 0 2px rgba(76, 201, 240, 0.55);
 }

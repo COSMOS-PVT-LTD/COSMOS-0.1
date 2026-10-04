@@ -14,7 +14,9 @@ from knowledge.models.lifecycle import KnowledgeLifecycle
 from knowledge.models.physical_law import PhysicalLaw
 from knowledge.models.property import PropertyValue
 from knowledge.models.simulation import Simulation
-from knowledge.repositories.boundary_condition_repository import BoundaryConditionRepository
+from knowledge.repositories.boundary_condition_repository import (
+    BoundaryConditionRepository,
+)
 from knowledge.repositories.correlation_repository import CorrelationRepository
 from knowledge.repositories.design_rule_repository import DesignRuleRepository
 from knowledge.repositories.document_repository import DocumentRepository

@@ -20,7 +20,6 @@ from core.dimension import PRESSURE, TEMPERATURE, Dimension
 from core.quantity import Quantity
 from core.unit import Unit
 from core.validation import validate_positive
-
 from physics.exceptions import OutOfRangeError
 from physics.model import ModelEvaluation, ModelIdentity
 from physics.quantities import as_si, quantity

@@ -45,7 +45,6 @@ from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.unit import SI
 from core.validation import validate_positive
-
 from physics.model import ModelIdentity
 from physics.quantities import as_dimensionless, as_si, quantity, require_gamma
 from physics.si import (
@@ -61,17 +60,17 @@ from physics.validity import ValidityStatus
 __all__ = (
     "IDEAL_GAS_EOS",
     "IdealGasState",
-    "density",
-    "pressure",
-    "temperature_from_pressure_density",
-    "specific_gas_constant",
     "cp_from_gamma",
     "cv_from_gamma",
+    "density",
     "gamma_from_specific_heats",
-    "speed_of_sound",
+    "pressure",
     "specific_enthalpy",
-    "specific_internal_energy",
     "specific_entropy_change",
+    "specific_gas_constant",
+    "specific_internal_energy",
+    "speed_of_sound",
+    "temperature_from_pressure_density",
 )
 
 IDEAL_GAS_EOS = ModelIdentity(
@@ -119,10 +118,10 @@ IDEAL_GAS_EOS = ModelIdentity(
     ),
     limitations=(
         "Not a real-fluid EOS.",
-        "Not valid near saturation or at supercritical densities "
-        "without a compressibility correction.",
-        "Constant-gamma model is not a substitute for NASA polynomials "
-        "over wide temperature ranges.",
+        ("Not valid near saturation or at supercritical densities "
+        "without a compressibility correction."),
+        ("Constant-gamma model is not a substitute for NASA polynomials "
+        "over wide temperature ranges."),
     ),
 )
 

@@ -4,21 +4,22 @@ Unit tests for knowledge.models.material.
 
 from __future__ import annotations
 
-from datetime import UTC
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any
 
-import pytest # type: ignore[import]
+import pytest  # type: ignore[import]
 
-from knowledge.models.document import Document
-from knowledge.models.document import DocumentType
-from knowledge.models.material import DomainCriticality
-from knowledge.models.material import Material
-from knowledge.models.material import MaterialCategory
-from knowledge.models.material import MaterialClass
-from knowledge.models.material import MaterialMaturityLevel
-from knowledge.models.material import MaterialStatus
+from knowledge.models.document import Document, DocumentType
+from knowledge.models.material import (
+    DomainCriticality,
+    Material,
+    MaterialCategory,
+    MaterialClass,
+    MaterialMaturityLevel,
+    MaterialStatus,
+)
 from knowledge.models.reference import Reference, ReferenceType
+
 
 @pytest.fixture
 def sample_reference() -> Reference:

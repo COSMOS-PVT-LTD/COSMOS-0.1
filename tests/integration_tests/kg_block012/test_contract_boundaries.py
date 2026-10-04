@@ -6,7 +6,12 @@ from knowledge.extraction.w4 import ExtractionContext, extract_document
 from knowledge.graph import GraphConstructionBatch, GraphConstructor, GraphQueryService
 from knowledge.graph.serialization import canonical_graph_record_digest
 from knowledge.indexing.w7 import W7IndexBuilder
-from knowledge.ingestion import IngestionArtifactRef, IngestionRequest, IngestionStage, SourceFormat
+from knowledge.ingestion import (
+    IngestionArtifactRef,
+    IngestionRequest,
+    IngestionStage,
+    SourceFormat,
+)
 from knowledge.ingestion_adapters import MarkdownIngestionAdapter
 from knowledge.ontology import canonicalize_extraction_result
 from knowledge.parsers.w3 import ParseContext, parse_document
@@ -17,7 +22,6 @@ from knowledge.search.w8 import HybridSearchEngine, ValidationAwareSearchEngine
 from knowledge.source import InMemorySourceVault, VaultArtifact, VaultArtifactMetadata
 from knowledge.source.integrity import sha256_text_digest
 from knowledge.validation import ValidationContext, validate_context
-
 from tests.integration_tests.kg_block012.helpers.pipeline import (
     build_lox_registry,
     load_golden_document,
@@ -28,7 +32,9 @@ from tests.integration_tests.kg_block012.helpers.pipeline import (
 
 
 def _ingest_and_parse(content: str, *, source_id: str, artifact_id: str):
-    from tests.integration_tests.kg_block012.helpers.pipeline import normalize_markdown_text
+    from tests.integration_tests.kg_block012.helpers.pipeline import (
+        normalize_markdown_text,
+    )
 
     normalized = normalize_markdown_text(content)
     text_digest = sha256_text_digest(normalized)

@@ -11,8 +11,8 @@ from knowledge.embeddings.identity import EmbeddingModelIdentity
 from knowledge.graph.repository import GraphStore
 from knowledge.graph.serialization import canonical_graph_record_digest
 from knowledge.indexing.exceptions import IndexStaleError, IndexValidationError
-from knowledge.indexing.models import IndexEntry, IndexLifecycleState
 from knowledge.indexing.lexical import InMemoryLexicalIndex
+from knowledge.indexing.models import IndexEntry, IndexLifecycleState
 from knowledge.indexing.semantic import InMemorySemanticIndex
 from knowledge.indexing.w7.bundle import W7IndexBuilder, W7IndexBundle
 from knowledge.indexing.w7.graph_index import GraphIndexAdjacency, InMemoryGraphIndex

@@ -148,6 +148,9 @@
     if (meta && ctx.name) {
       meta.textContent = `COSMOS 0.1 · ${ctx.name}`;
     }
+    if (typeof COSMOS.renderHubPms === "function" && window.location.pathname.includes("/workbenches")) {
+      COSMOS.renderHubPms();
+    }
   };
 
   COSMOS.defaultPropertyActions = function defaultPropertyActions() {
@@ -438,10 +441,9 @@
     const user = COSMOS.currentUser;
     const commands = [
       { id: "nav-command", label: "Go to Command Workspace", group: "Navigation", keywords: "home launcher workbenches", run: () => { window.location.href = COSMOS.hubUrl(COSMOS.hubPageFromUrl()); } },
+      { id: "nav-rocket", label: "Open Rocket Engine", group: "Navigation", keywords: "propulsion nozzle chamber", run: () => { window.location.href = "/app/workbench/rocket-engine"; } },
       { id: "nav-knowledge", label: "Open Maharshi Bharadwaj", group: "Navigation", keywords: "maharshi bharadwaj knowledge evidence graph chat", run: () => { window.location.href = "/app/workbench/knowledge"; } },
-      { id: "trace-feature", label: "Trace Selected Feature", group: "Traceability", keywords: "lineage provenance evidence", run: () => COSMOS.notify("Select a feature to trace — requires active workbench selection", "info") },
-      { id: "open-lineage", label: "Open Design Lineage", group: "Traceability", keywords: "revision compare branch", run: () => COSMOS.notify("Design lineage workspace not yet available", "warning") },
-      { id: "run-validation", label: "Run Validation", group: "V&V", keywords: "verify validate vv", run: () => COSMOS.notify("V&V workspace not yet available", "warning") },
+      { id: "nav-help", label: "Open Help", group: "Help", keywords: "login credentials docs", run: () => { window.location.href = "/app/help"; } },
       { id: "project-context", label: "Edit Project Context", group: "Project", keywords: "system component workspace", run: () => COSMOS.openProjectModal() },
       { id: "job-manager", label: "Open Job Manager", group: "Tasks", keywords: "background processing ingest ocr", run: () => COSMOS.toggleJobManager(true) },
       { id: "notifications", label: "Open Notifications", group: "System", keywords: "alerts warnings", run: () => COSMOS.toggleNotifications(true) },
@@ -791,7 +793,7 @@
             <dt>Ctrl/Cmd + .</dt><dd>Properties panel</dd>
             <dt>?</dt><dd>This help dialog</dd>
             <dt>Esc</dt><dd>Close overlays</dd>
-            <dt>← / →</dt><dd>Workbench carousel (hub page)</dd>
+            <dt>Shift + wheel</dt><dd>Resize Maharshi dock (when focused)</dd>
           </dl>
         </div>
       </div>`;

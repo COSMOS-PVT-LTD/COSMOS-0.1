@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Any
 
 from core.quantity import Quantity
-
 from systems._serialize import optional_quantity_dict, quantity_from_dict
 
 __all__ = ("PropellantConfiguration",)
@@ -37,7 +37,7 @@ class PropellantConfiguration:
         }
 
     @classmethod
-    def from_canonical_dict(cls, data: dict[str, object]) -> PropellantConfiguration:
+    def from_canonical_dict(cls, data: dict[str, Any]) -> PropellantConfiguration:
         return cls(
             oxidizer_id=None if data.get("oxidizer_id") is None else str(data["oxidizer_id"]),
             fuel_id=None if data.get("fuel_id") is None else str(data["fuel_id"]),

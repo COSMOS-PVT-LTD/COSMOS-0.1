@@ -9,7 +9,10 @@ from knowledge.ingestion_adapters.exceptions import (
     RepositoryBoundaryError,
     UnsupportedContentError,
 )
-from knowledge.ingestion_adapters.html import HtmlIngestionAdapter, MarkdownIngestionAdapter
+from knowledge.ingestion_adapters.html import (
+    HtmlIngestionAdapter,
+    MarkdownIngestionAdapter,
+)
 from knowledge.ingestion_adapters.pdf import PdfIngestionAdapter
 from knowledge.ingestion_adapters.pptx import PptxIngestionAdapter
 from knowledge.ingestion_adapters.registry import (

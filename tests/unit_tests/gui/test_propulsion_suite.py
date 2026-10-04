@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
-from gui.workbenches.propulsion_suite import PROPULSION_SUITE_MODULES, suite_module_by_id
+from gui.workbenches.propulsion_suite import (
+    PROPULSION_SUITE_MODULES,
+    suite_module_by_id,
+)
 from gui.workbenches.registry import workbench_by_id
 
 

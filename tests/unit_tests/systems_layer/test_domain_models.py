@@ -4,8 +4,11 @@ from __future__ import annotations
 
 from core.quantity import Quantity
 from core.unit import SI
-
-from systems.cycle.models import CycleConfiguration, CycleImplementationStatus, CycleType
+from systems.cycle.models import (
+    CycleConfiguration,
+    CycleImplementationStatus,
+    CycleType,
+)
 from systems.operating_point.models import OperatingPoint
 from systems.projects.models import PropulsionDesign
 from systems.propellants.models import PropellantConfiguration

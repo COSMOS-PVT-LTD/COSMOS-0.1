@@ -17,16 +17,13 @@ Description:
 from __future__ import annotations
 
 # Standard Library
-
 from dataclasses import FrozenInstanceError
 from pathlib import Path
 
 # Third Party
-
 import pytest
 
 # COSMOS Core
-
 from core.config_v0_1_1 import (
     CONFIG,
     CosmosConfig,
@@ -36,7 +33,6 @@ from core.config_v0_1_1 import (
     load_config,
     validate_config,
 )
-
 
 # ============================================================================
 # Configuration Loading
@@ -364,11 +360,7 @@ def test_metadata_is_immutable() -> None:
     with pytest.raises(
         FrozenInstanceError
     ):
-        setattr(
-            CONFIG.metadata,
-            "app_name",
-            "INVALID",
-        )
+        CONFIG.metadata.app_name = "INVALID"
 
 
 # ============================================================================

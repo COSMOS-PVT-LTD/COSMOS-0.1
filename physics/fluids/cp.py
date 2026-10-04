@@ -10,11 +10,14 @@ Purpose: Specific-heat evaluation (ideal-gas gamma path or sourced record).
 from __future__ import annotations
 
 from core.quantity import Quantity
-
-from physics.fluids.fluid_properties import PropertyEvaluation, PropertyRecord, evaluate_record
+from physics.fluids.fluid_properties import (
+    PropertyEvaluation,
+    PropertyRecord,
+    evaluate_record,
+)
 from physics.thermodynamics.ideal_gas import cp_from_gamma
 
-__all__ = ("ideal_gas", "from_record")
+__all__ = ("from_record", "ideal_gas")
 
 
 def ideal_gas(

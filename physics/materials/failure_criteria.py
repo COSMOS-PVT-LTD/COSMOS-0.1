@@ -11,7 +11,6 @@ from __future__ import annotations
 
 from core.dimension import PRESSURE
 from core.quantity import Quantity
-
 from physics.exceptions import InsufficientDataError
 from physics.materials.catalog import MaterialRecord
 from physics.materials.elastic_properties import yield_strength

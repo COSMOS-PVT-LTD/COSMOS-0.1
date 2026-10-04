@@ -24,8 +24,8 @@ from core.quantity import Quantity
 from core.unit import SI, Unit
 
 __all__ = (
-    "PhysicalConstant",
     "CODATA_PHYSICAL_CONSTANTS",
+    "PhysicalConstant",
 )
 
 
@@ -72,7 +72,7 @@ class PhysicalConstant:
         quantity_data = data["quantity"]
         metadata_data = data["metadata"]
         if not isinstance(quantity_data, dict) or not isinstance(metadata_data, dict):
-            raise ValueError("Invalid physical constant canonical dictionary.")
+            raise TypeError("Invalid physical constant canonical dictionary.")
 
         return cls(
             name=str(data["name"]),

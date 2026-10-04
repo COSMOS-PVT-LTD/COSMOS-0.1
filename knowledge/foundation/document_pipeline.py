@@ -7,9 +7,16 @@ from pathlib import Path
 
 from knowledge.extraction.correlation_extractor import extract_correlations
 from knowledge.extraction.equation import CandidateEquationExtraction
-from knowledge.extraction.w4 import ExtractionContext, extract_document, extract_equation_candidates
+from knowledge.extraction.w4 import (
+    ExtractionContext,
+    extract_document,
+    extract_equation_candidates,
+)
 from knowledge.extraction.w4.models import ExtractionResult
-from knowledge.foundation.equation_approval import EquationApprovalPipeline, NormalizedEquationCandidate
+from knowledge.foundation.equation_approval import (
+    EquationApprovalPipeline,
+    NormalizedEquationCandidate,
+)
 from knowledge.ingestion import IngestionArtifactRef, IngestionRequest, SourceFormat
 from knowledge.ingestion_adapters import MarkdownIngestionAdapter
 from knowledge.models.correlation import Correlation

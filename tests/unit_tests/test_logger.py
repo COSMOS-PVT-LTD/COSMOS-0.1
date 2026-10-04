@@ -5,13 +5,10 @@ Unit tests for core.logger.
 from __future__ import annotations
 
 # Standard Library
-
 import logging
-
 from pathlib import Path
 
 # COSMOS Core
-
 from core.logger import (
     CosmosLoggerConfig,
     SolverTimer,
@@ -65,12 +62,11 @@ def test_solver_timer_success(
     """
     logger = get_logger("timer_success")
 
-    with caplog.at_level(logging.INFO):
-        with SolverTimer(
-            logger,
-            "test_operation",
-        ):
-            pass
+    with caplog.at_level(logging.INFO), SolverTimer(
+        logger,
+        "test_operation",
+    ):
+        pass
 
     assert "completed" in caplog.text
 
@@ -84,12 +80,11 @@ def test_solver_timer_exception(
     logger = get_logger("timer_failure")
 
     try:
-        with caplog.at_level(logging.ERROR):
-            with SolverTimer(
-                logger,
-                "failure_operation",
-            ):
-                raise ValueError("boom")
+        with caplog.at_level(logging.ERROR), SolverTimer(
+            logger,
+            "failure_operation",
+        ):
+            raise ValueError("boom")
 
     except ValueError:
         pass

@@ -9,6 +9,7 @@ from knowledge.graph import (
     GraphNodeIdentity,
     ImmutableGraphRecord,
 )
+from knowledge.graph.entity import CanonicalEntityType
 from knowledge.ontology import (
     CanonicalizationStatus,
     OntologyAlias,
@@ -16,7 +17,6 @@ from knowledge.ontology import (
     OntologyTerm,
     canonicalize_extraction_result,
 )
-from knowledge.graph.entity import CanonicalEntityType
 from knowledge.validation import (
     ConflictClassification,
     DuplicateKind,
@@ -115,8 +115,8 @@ def test_schema_validation_flags_missing_relationship_endpoint() -> None:
 
     if relationship is None:
         from knowledge.extraction.claim import CandidateRelationshipExtraction
-        from knowledge.graph.provenance import SourceProvenanceRecord
         from knowledge.graph.contracts import ProvenanceReference
+        from knowledge.graph.provenance import SourceProvenanceRecord
 
         relationship = CandidateRelationshipExtraction(
             relationship_id="rel-missing",
@@ -246,14 +246,7 @@ def test_duplicate_detection_same_label_different_entity() -> None:
     """KG-043 must distinguish same label with different extraction identities."""
 
     extraction = _parse_and_extract(
-        "\n".join(
-            [
-                "# Section A",
-                "Component: Main Injector",
-                "# Section B",
-                "Component: Main Injector",
-            ],
-        ),
+        "# Section A\nComponent: Main Injector\n# Section B\nComponent: Main Injector",
     )
     findings = detect_duplicates(ValidationContext(extraction_result=extraction))
 
@@ -267,14 +260,7 @@ def test_duplicate_detection_same_value_different_provenance() -> None:
     """KG-043 must detect identical values with distinct provenance."""
 
     extraction = _parse_and_extract(
-        "\n".join(
-            [
-                "# Chamber A",
-                "Pressure is 5 MPa.",
-                "# Chamber B",
-                "Pressure is 5 MPa.",
-            ],
-        ),
+        "# Chamber A\nPressure is 5 MPa.\n# Chamber B\nPressure is 5 MPa.",
     )
     findings = detect_duplicates(ValidationContext(extraction_result=extraction))
 
@@ -322,13 +308,7 @@ def test_conflict_detection_flags_incompatible_quantities() -> None:
     """KG-044 must detect incompatible quantity values in the same section."""
 
     extraction = _parse_and_extract(
-        "\n".join(
-            [
-                "# Chamber",
-                "Pressure is 5 MPa.",
-                "Pressure is 20 MPa.",
-            ],
-        ),
+        "# Chamber\nPressure is 5 MPa.\nPressure is 20 MPa.",
     )
     findings = detect_conflicts(ValidationContext(extraction_result=extraction))
 

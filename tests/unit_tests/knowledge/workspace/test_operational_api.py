@@ -7,11 +7,13 @@ import urllib.request
 from http.server import ThreadingHTTPServer
 from threading import Thread
 
-import pytest
-
 from knowledge.references.rights import RightsStatus
 from knowledge.workspace.corpus import cooling_markdown_bytes
-from knowledge.workspace.operational import enriched_health, operational_search, validation_snapshot
+from knowledge.workspace.operational import (
+    enriched_health,
+    operational_search,
+    validation_snapshot,
+)
 from knowledge.workspace.server import WorkspaceRequestHandler
 from knowledge.workspace.session import KnowledgeWorkspace
 

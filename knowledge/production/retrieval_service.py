@@ -10,7 +10,10 @@ from knowledge.graph.repository import GraphStore
 from knowledge.indexing.w7.bundle import W7IndexBundle
 from knowledge.indexing.w7.vector import deterministic_reference_vector
 from knowledge.search import RetrievalMode, SearchQuery
-from knowledge.search.retrieval_diagnostics import RetrievalDiagnostics, build_retrieval_diagnostics
+from knowledge.search.retrieval_diagnostics import (
+    RetrievalDiagnostics,
+    build_retrieval_diagnostics,
+)
 from knowledge.search.w8.hybrid import HybridSearchEngine
 from knowledge.search.w8.semantic import SemanticVectorSearchEngine
 

@@ -13,8 +13,8 @@ from __future__ import annotations
 from collections.abc import Sequence
 from typing import Protocol
 
-from knowledge.graph.serialization import canonical_graph_record_digest
 from knowledge.graph.repository import GraphStore
+from knowledge.graph.serialization import canonical_graph_record_digest
 from knowledge.indexing.exceptions import IndexStaleError, IndexValidationError
 from knowledge.indexing.lexical import tokenize_text
 from knowledge.indexing.models import (

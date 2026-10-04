@@ -17,13 +17,16 @@ from physics.compressible_flow.isentropic import (
     stagnation_pressure_ratio,
     stagnation_temperature_ratio,
 )
+from physics.compressible_flow.normal_shock import (
+    NormalShockState,
+    evaluate_normal_shock,
+)
 from physics.compressible_flow.nozzle_1d import NozzleStation, station_from_area_ratio
-from physics.compressible_flow.normal_shock import NormalShockState, evaluate_normal_shock
 from physics.compressible_flow.thrust_relations import ideal_thrust_coefficient, thrust
 
 __all__ = (
-    "NozzleStation",
     "NormalShockState",
+    "NozzleStation",
     "area_ratio",
     "choked_mass_flow",
     "evaluate_normal_shock",

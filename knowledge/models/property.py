@@ -4,7 +4,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from knowledge.models.lifecycle import KnowledgeLifecycle, ProvenanceTrace, UncertaintyRecord
+from knowledge.models.lifecycle import (
+    KnowledgeLifecycle,
+    ProvenanceTrace,
+    UncertaintyRecord,
+)
 
 __all__ = ("PropertyDefinition", "PropertyValue")
 
@@ -51,6 +55,6 @@ class PropertyValue:
         if not self.value_id.strip() or not self.property_id.strip():
             raise ValueError("value_id and property_id are required.")
         if not isinstance(self.numeric_value, (int, float)):
-            raise ValueError("numeric_value must be numeric.")
+            raise TypeError("numeric_value must be numeric.")
         if self.lifecycle is KnowledgeLifecycle.APPROVED and self.validity_range is None:
             raise ValueError("APPROVED property values require a validity range.")

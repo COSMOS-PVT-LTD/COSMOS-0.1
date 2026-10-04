@@ -473,9 +473,7 @@ class Quantity:
 
     measured_timestamp: datetime | None = None
 
-    last_updated: datetime = datetime.now(
-        UTC,
-    )
+    last_updated: datetime = field(default_factory=lambda: datetime.now(UTC))
 
     # ==========================================================================
     # Knowledge Foundation Relationships
@@ -716,9 +714,7 @@ class Quantity:
     Creator of the quantity.
     """
 
-    created_timestamp: datetime = datetime.now(
-        UTC,
-    )
+    created_timestamp: datetime = field(default_factory=lambda: datetime.now(UTC))
     """
     Creation timestamp (UTC).
     """
@@ -2509,17 +2505,14 @@ class Quantity:
         # Dimensionless quantities
         # ------------------------------------------------------------------
 
-        if self.dimensionless:
-
-            if hasattr(
-                self.dimension,
-                "is_dimensionless",
-            ):
-                if not self.dimension.is_dimensionless:
-                    raise ValueError(
-                        "Dimensionless quantities require a "
-                        "dimensionless Dimension."
-                    )
+        if self.dimensionless and hasattr(
+            self.dimension,
+            "is_dimensionless",
+        ) and not self.dimension.is_dimensionless:
+            raise ValueError(
+                "Dimensionless quantities require a "
+                "dimensionless Dimension."
+            )
 
         # ------------------------------------------------------------------
         # Unit compatibility
@@ -2577,12 +2570,11 @@ class Quantity:
                 self.unit,
                 "symbol",
             )
-        ):
-            if self.unit.symbol.strip() == "":
-                raise ValueError(
-                    "Dimensionless quantities still require "
-                    "a valid unit representation."
-                )
+        ) and self.unit.symbol.strip() == "":
+            raise ValueError(
+                "Dimensionless quantities still require "
+                "a valid unit representation."
+            )
 
         # ------------------------------------------------------------------
         # Future dimensional analysis hook
@@ -5656,13 +5648,7 @@ class Quantity:
         ):
             return False
 
-        if (
-            self.maximum_value is not None
-            and value > self.maximum_value
-        ):
-            return False
-
-        return True
+        return not (self.maximum_value is not None and value > self.maximum_value)
 
     def is_nominal(
         self,
@@ -5923,7 +5909,7 @@ class Quantity:
 
     def same_unit(
         self,
-        other: "Quantity",
+        other: Quantity,
     ) -> bool:
         """
         Return True if both quantities use the same unit.
@@ -5933,7 +5919,7 @@ class Quantity:
 
     def same_dimension(
         self,
-        other: "Quantity",
+        other: Quantity,
     ) -> bool:
         """
         Return True if both quantities share the same dimension.
@@ -5943,7 +5929,7 @@ class Quantity:
 
     def is_dimensionally_compatible(
         self,
-        other: "Quantity",
+        other: Quantity,
     ) -> bool:
         """
         Return True if both quantities are dimensionally compatible.
@@ -5971,7 +5957,7 @@ class Quantity:
 
     def is_unit_convertible(
         self,
-        other: "Quantity",
+        other: Quantity,
     ) -> bool:
         """
         Return True if both quantities are unit-convertible.
@@ -6003,7 +5989,7 @@ class Quantity:
     def convert_to(
         self,
         target_unit: Unit,
-    ) -> "Quantity":
+    ) -> Quantity:
         """
         Convert this Quantity to another unit.
 
@@ -6872,21 +6858,21 @@ class Quantity:
     # Utility, Copy & Comparison Methods
     # ==================================================================
 
-    def copy(self) -> "Quantity":
+    def copy(self) -> Quantity:
         """
         Return a shallow copy of the Quantity.
         """
 
         return dataclass_replace(self)
 
-    def clone(self) -> "Quantity":
+    def clone(self) -> Quantity:
         """
         Alias for copy().
         """
 
         return self.copy()
 
-    def deep_copy(self) -> "Quantity":
+    def deep_copy(self) -> Quantity:
         """
         Return a deep copy.
         """
@@ -6896,7 +6882,7 @@ class Quantity:
     def replace(
         self,
         **changes: object,
-    ) -> "Quantity":
+    ) -> Quantity:
         """
         Return a new Quantity with selected fields replaced.
         """
@@ -6996,7 +6982,7 @@ class Quantity:
 
     def compare_identity(
         self,
-        other: "Quantity",
+        other: Quantity,
     ) -> dict[str, tuple[object, object]]:
         """
         Compare identity fields.
@@ -7029,7 +7015,7 @@ class Quantity:
 
     def compare_scientific(
         self,
-        other: "Quantity",
+        other: Quantity,
     ) -> dict[str, tuple[object, object]]:
         """
         Compare scientific properties.
@@ -7063,7 +7049,7 @@ class Quantity:
 
     def compare_engineering(
         self,
-        other: "Quantity",
+        other: Quantity,
     ) -> dict[str, tuple[object, object]]:
         """
         Compare engineering metadata.
@@ -7098,7 +7084,7 @@ class Quantity:
 
     def diff(
         self,
-        other: "Quantity",
+        other: Quantity,
     ) -> dict[
         str,
         dict[str, tuple[object, object]],
@@ -7192,7 +7178,7 @@ class Quantity:
 
     def compare(
         self,
-        other: "Quantity",
+        other: Quantity,
     ) -> str:
         """
         Human-readable comparison.
@@ -7445,7 +7431,7 @@ class Quantity:
 
         return self.to_dict()
     @classmethod
-    def from_dict(cls, data: Mapping[str, object]) -> "Quantity":
+    def from_dict(cls, data: Mapping[str, object]) -> Quantity:
         """Construct a Quantity from a dictionary."""
 
         if not isinstance(data, Mapping):

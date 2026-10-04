@@ -3,7 +3,11 @@
 from __future__ import annotations
 
 from knowledge.models.correlation import Correlation
-from knowledge.models.lifecycle import KnowledgeLifecycle, ProvenanceTrace, UncertaintyRecord
+from knowledge.models.lifecycle import (
+    KnowledgeLifecycle,
+    ProvenanceTrace,
+    UncertaintyRecord,
+)
 
 
 def test_correlation_carries_uncertainty_and_ranges() -> None:

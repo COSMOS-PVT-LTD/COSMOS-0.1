@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import os
-
 from knowledge.production.offline_guard import OfflineExecutionGuard
 
 

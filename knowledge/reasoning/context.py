@@ -19,8 +19,8 @@ from knowledge.search.contracts import NO_VERIFIED_RESULT, SearchQuery
 from knowledge.search.exceptions import ContextAssemblyError
 
 __all__ = (
-    "EngineeringContextPackage",
     "EngineeringContextAssembler",
+    "EngineeringContextPackage",
 )
 
 _MAX_CONTEXT_EVIDENCE_ITEMS = 1000
@@ -103,11 +103,10 @@ class EngineeringContextAssembler:
         if "result_count" not in metadata:
             metadata["result_count"] = len(evidence.items)
 
-        if not evidence.has_retrieval_results:
-            if assessment.unsupported_claim != NO_VERIFIED_RESULT:
-                raise ContextAssemblyError(
-                    "Evidence bundle must expose NO VERIFIED RESULT sentinel."
-                )
+        if (not evidence.has_retrieval_results) and (assessment.unsupported_claim != NO_VERIFIED_RESULT):
+            raise ContextAssemblyError(
+                "Evidence bundle must expose NO VERIFIED RESULT sentinel."
+            )
 
         return EngineeringContextPackage(
             task=task.strip(),

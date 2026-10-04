@@ -5,10 +5,8 @@ from __future__ import annotations
 import ast
 import inspect
 
-from knowledge.interface import ControlledRAGOrchestrator
-
 from knowledge.graph.serialization import canonical_graph_record_digest
-
+from knowledge.interface import ControlledRAGOrchestrator
 from tests.integration_tests.kg_block012.helpers.pipeline import run_full_pipeline
 
 

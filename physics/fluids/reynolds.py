@@ -12,7 +12,6 @@ from __future__ import annotations
 from core.dimension import DENSITY, LENGTH, VELOCITY
 from core.exceptions import InvalidInputError
 from core.quantity import Quantity
-
 from physics.model import ModelIdentity
 from physics.quantities import as_si
 from physics.si import DYNAMIC_VISCOSITY

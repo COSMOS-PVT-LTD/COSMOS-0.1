@@ -12,7 +12,7 @@ from __future__ import annotations
 from physics.fluids.records import LOX_NBP_DENSITY
 from physics.thermodynamics.ideal_gas import molar_mass_from_kg_per_kmol
 
-__all__ = ("FLUID_ID", "MOLAR_MASS", "GAS_GAMMA", "NBP_DENSITY")
+__all__ = ("FLUID_ID", "GAS_GAMMA", "MOLAR_MASS", "NBP_DENSITY")
 
 FLUID_ID = "lox"
 MOLAR_MASS = molar_mass_from_kg_per_kmol(31.9988)  # NIST / IUPAC O2

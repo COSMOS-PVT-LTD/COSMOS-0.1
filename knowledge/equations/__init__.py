@@ -15,7 +15,10 @@ from knowledge.equations.models import (
     SourceEquationCandidate,
     ValidatedEquationCandidate,
 )
-from knowledge.equations.reconstruction import EquationReconstruction, reconstruct_equation
+from knowledge.equations.reconstruction import (
+    EquationReconstruction,
+    reconstruct_equation,
+)
 from knowledge.equations.review import (
     EquationReviewPackage,
     build_review_package,
@@ -26,11 +29,11 @@ from knowledge.equations.validation import validate_equation_candidate
 
 __all__ = (
     "CONTRADICTION_DETECTED",
-    "EquationClassification",
-    "EquationReviewPackage",
-    "EquationReconstruction",
-    "EquationValidationState",
     "REPRESENTATION_CONFLICT",
+    "EquationClassification",
+    "EquationReconstruction",
+    "EquationReviewPackage",
+    "EquationValidationState",
     "SourceEquationCandidate",
     "Uncertainty",
     "ValidatedEquationCandidate",

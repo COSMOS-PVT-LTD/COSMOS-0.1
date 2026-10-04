@@ -15,13 +15,13 @@ from knowledge.parsers.models import DocumentSection
 __all__ = (
     "CitationOccurrence",
     "LocationAnchor",
+    "ParseProvenance",
     "ParsedEquation",
     "ParsedFigure",
     "ParsedParagraph",
     "ParsedTable",
     "ParsedTableCell",
     "ParsedTableRow",
-    "ParseProvenance",
     "ReferenceRecord",
     "StructuredParsedDocument",
 )
@@ -79,9 +79,8 @@ class LocationAnchor:
         if self.line_number is not None and self.line_number <= 0:
             raise ParserValidationError("line_number must be positive when set.")
 
-        if self.page_number is not None:
-            if self.page_number <= 0:
-                raise ParserValidationError("page_number must be positive when set.")
+        if self.page_number is not None and self.page_number <= 0:
+            raise ParserValidationError("page_number must be positive when set.")
 
         object.__setattr__(
             self,

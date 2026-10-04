@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 import json
 import re
+from dataclasses import dataclass, field
 
 from knowledge.foundation.document_pipeline import DocumentKnowledgeDraft
 from knowledge.foundation.knowledge_service import KnowledgeFoundationService
@@ -47,7 +47,7 @@ class UnifiedExtraction:
     dataset: DatasetCandidate | None = None
     pipeline_result: RealDocumentPipelineResult | None = None
     draft: DocumentKnowledgeDraft | None = None
-    checkpoint: JobCheckpoint = JobCheckpoint()
+    checkpoint: JobCheckpoint = field(default_factory=JobCheckpoint)
 
 
 def extract_upload(

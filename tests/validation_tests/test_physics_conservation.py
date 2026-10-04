@@ -18,8 +18,8 @@ from physics.thermodynamics.ideal_gas import (
     density,
     molar_mass_from_kg_per_kmol,
     specific_enthalpy,
-    specific_internal_energy,
     specific_gas_constant,
+    specific_internal_energy,
 )
 
 

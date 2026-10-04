@@ -31,6 +31,8 @@ from knowledge.indexing.semantic import (
 )
 
 __all__ = (
+    "InMemoryLexicalIndex",
+    "InMemorySemanticIndex",
     "IndexEntry",
     "IndexError",
     "IndexLifecycleState",
@@ -39,8 +41,6 @@ __all__ = (
     "IndexStaleError",
     "IndexStatistics",
     "IndexValidationError",
-    "InMemoryLexicalIndex",
-    "InMemorySemanticIndex",
     "KnowledgeIndexBuilder",
     "KnowledgeIndexBundle",
     "LexicalIndex",

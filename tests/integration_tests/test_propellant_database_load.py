@@ -19,7 +19,6 @@ from physics.thermochemistry.propellants import (
     registry_size,
 )
 
-
 DATABASE_PATH = (
     Path.cwd()
     / "physics"

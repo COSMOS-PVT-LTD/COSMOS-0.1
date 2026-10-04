@@ -17,19 +17,19 @@ from __future__ import annotations
 from core.exceptions import CosmosError, ValidationError
 
 __all__ = (
-    "PhysicsError",
-    "PhysicsValidationError",
-    "ModelValidityError",
-    "OutOfRangeError",
+    "CompressibleFlowError",
+    "FluidPropertyError",
+    "HeatTransferError",
     "InsufficientDataError",
     "InvalidCompositionError",
-    "ThermodynamicsError",
-    "FluidPropertyError",
-    "ThermochemistryError",
-    "CompressibleFlowError",
-    "HeatTransferError",
     "MaterialPropertyError",
+    "ModelValidityError",
+    "OutOfRangeError",
+    "PhysicsError",
+    "PhysicsValidationError",
     "SolidMechanicsError",
+    "ThermochemistryError",
+    "ThermodynamicsError",
 )
 
 

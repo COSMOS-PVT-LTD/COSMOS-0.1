@@ -24,7 +24,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from core.quantity import Quantity
-
 from physics.exceptions import InsufficientDataError
 from physics.model import ModelIdentity
 from physics.thermodynamics.equations_of_state import compressibility_factor

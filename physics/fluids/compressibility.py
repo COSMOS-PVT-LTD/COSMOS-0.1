@@ -10,7 +10,6 @@ Purpose: Fluid compressibility factor Z = p / (ρ R T).
 from __future__ import annotations
 
 from core.quantity import Quantity
-
 from physics.thermodynamics.equations_of_state import compressibility_factor as eos_z
 
 __all__ = ("factor",)

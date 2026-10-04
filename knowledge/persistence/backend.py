@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
-from pathlib import Path
-from typing import Protocol
 import json
 import sqlite3
 import threading
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Protocol
 
 __all__ = (
     "InMemoryPersistenceBackend",
@@ -64,7 +64,7 @@ class InMemoryPersistenceBackend:
     def import_bytes(self, data: bytes) -> None:
         payload = json.loads(data.decode("utf-8"))
         if not isinstance(payload, dict):
-            raise ValueError("Persistence export is not a mapping.")
+            raise TypeError("Persistence export is not a mapping.")
         self._data = {
             str(collection): {
                 str(record_id): dict(record)

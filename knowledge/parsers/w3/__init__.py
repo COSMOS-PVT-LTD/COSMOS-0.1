@@ -38,13 +38,13 @@ from knowledge.parsers.w3.pipeline import (
     W3DocumentParser,
     parse_document,
 )
+from knowledge.parsers.w3.references import extract_citations, extract_references
 from knowledge.parsers.w3.registry import (
     ParserOrchestrator,
     ParserRegistry,
     StructuredDocumentParser,
     build_default_parser_registry,
 )
-from knowledge.parsers.w3.references import extract_citations, extract_references
 from knowledge.parsers.w3.structure import parse_document_structure
 from knowledge.parsers.w3.tables import extract_tables
 

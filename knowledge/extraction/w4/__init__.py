@@ -24,7 +24,11 @@ from knowledge.extraction.w4.models import (
     ExtractionResult,
 )
 from knowledge.extraction.w4.pipeline import W4ExtractionPipeline, extract_document
-from knowledge.extraction.w4.provenance import EXTRACTOR_NAME, EXTRACTOR_VERSION, to_source_provenance
+from knowledge.extraction.w4.provenance import (
+    EXTRACTOR_NAME,
+    EXTRACTOR_VERSION,
+    to_source_provenance,
+)
 from knowledge.extraction.w4.quantities import extract_quantities
 from knowledge.extraction.w4.registry import (
     ExtractionOrchestrator,

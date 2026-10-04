@@ -14,7 +14,6 @@ Description:
 from __future__ import annotations
 
 from core.exceptions import InvalidInputError
-
 from physics.model import ModelIdentity
 
 __all__ = ("SAFETY_FACTOR", "ratio")

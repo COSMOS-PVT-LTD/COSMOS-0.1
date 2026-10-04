@@ -38,6 +38,8 @@ from knowledge.repository.repository import (
     DuplicateDocumentError,
     RepositoryValidationError,
 )
+
+
 def create_reference() -> Reference:
     """
     Create a valid Reference object for testing.

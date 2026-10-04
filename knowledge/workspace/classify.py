@@ -5,7 +5,10 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import PurePosixPath
 
-from knowledge.workspace.capabilities import FileCapabilityRegistry, default_capability_registry
+from knowledge.workspace.capabilities import (
+    FileCapabilityRegistry,
+    default_capability_registry,
+)
 from knowledge.workspace.models import WorkspaceFormat
 
 __all__ = ("Classification", "classify_upload")
@@ -132,10 +135,10 @@ def _from_magic(content: bytes) -> WorkspaceFormat:
     if len(content) >= 12 and content.startswith(b"RIFF") and content[8:12] == b"WEBP":
         return WorkspaceFormat.WEBP
     stripped = content.lstrip()
-    if stripped.startswith(b"{") or stripped.startswith(b"["):
+    if stripped.startswith((b"{", b"[")):
         return WorkspaceFormat.JSON
     lowered = stripped[:64].lower()
-    if lowered.startswith(b"<?xml") or lowered.startswith(b"<html") or lowered.startswith(b"<!doctype html"):
+    if lowered.startswith((b"<?xml", b"<html", b"<!doctype html")):
         if lowered.startswith(b"<?xml"):
             return WorkspaceFormat.XML
         return WorkspaceFormat.HTML

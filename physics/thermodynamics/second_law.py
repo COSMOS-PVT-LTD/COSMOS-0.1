@@ -14,7 +14,6 @@ from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.unit import Unit
 from core.validation import validate_positive
-
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity
 

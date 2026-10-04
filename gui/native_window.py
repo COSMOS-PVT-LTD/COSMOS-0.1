@@ -2,10 +2,14 @@
 
 from __future__ import annotations
 
-from pathlib import Path
 import sys
 import threading
 import time
+from pathlib import Path
+
+from core.logger import get_logger
+
+logger = get_logger(__name__)
 
 __all__ = ("NativeWindowError", "launch_native_window", "require_native_runtime")
 
@@ -86,7 +90,7 @@ def launch_native_window(
 
                 NSApp.activateIgnoringOtherApps_(True)
             except Exception:
-                pass
+                logger.exception("native_window: boundary operation failed")
 
     if hasattr(window, "events") and hasattr(window.events, "loaded"):
         window.events.loaded += on_loaded

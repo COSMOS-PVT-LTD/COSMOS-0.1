@@ -7,14 +7,17 @@ from systems.workflow.graph import WorkflowGraph
 
 __all__ = (
     "INPUT_FIELD_ROOTS",
-    "invalidate_from_stage",
     "invalidate_for_input_change",
+    "invalidate_from_stage",
 )
 
 
 # Map engineering input categories → root stage whose dependents go STALE.
 INPUT_FIELD_ROOTS: dict[str, str] = {
     "target_chamber_pressure": "requirements",
+    "target_thrust": "requirements",
+    "propellant_configuration": "propellants",
+    "cycle_configuration": "cycle",
     "chamber_pressure": "operating_point",
     "mixture_ratio": "propellants",
     "propellant": "propellants",
@@ -27,6 +30,17 @@ INPUT_FIELD_ROOTS: dict[str, str] = {
     "expansion_ratio": "requirements",
     "mach": "nozzle",
     "gamma": "operating_point",
+    "Tc": "operating_point",
+    "chamber_temperature": "operating_point",
+    "molecular_weight": "operating_point",
+    "throat_area_m2": "performance",
+    "wall_thickness": "structure",
+    "wall_thickness_m": "structure",
+    "external_pressure": "structure",
+    "material_temperature_k": "structure",
+    "thermal_inputs": "thermal",
+    "characteristic_length_m": "chamber",
+    "contraction_ratio": "chamber",
 }
 
 

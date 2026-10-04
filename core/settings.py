@@ -31,54 +31,43 @@ from __future__ import annotations
 # ============================================================================
 # Standard Library
 # ============================================================================
-
 import json
-
 from dataclasses import dataclass
-
-from datetime import datetime
-
+from datetime import UTC, datetime
 from enum import Enum
+from typing import Any, Final
 
-from pathlib import Path
-
-from typing import Final
-from typing import Any
+from core.config_v0_1_1 import CONFIG, CosmosConfig, Environment
 
 # ============================================================================
 # COSMOS Core
 # ============================================================================
-
 from core.exceptions import CosmosError
-
-from core.config_v0_1_1 import CosmosConfig
-from core.config_v0_1_1 import Environment
-from core.config_v0_1_1 import CONFIG
 
 # ============================================================================
 # Public Exports
 # ============================================================================
 
-__all__ = (
-    "LifecycleState",
+__all__: tuple[str, ...] = (
     "AuditMetadata",
+    "LifecycleState",
     "RuntimeSettings",
-    "SettingsError",
     "SettingsAlreadyInitializedError",
+    "SettingsError",
+    "SettingsInjectionError",
     "SettingsNotInitializedError",
     "SettingsShutdownError",
-    "SettingsInjectionError",
-    "initialize_settings",
-    "get_settings",
-    "shutdown_settings",
-    "is_initialized",
-    "get_configuration_hash",
     "get_app_version",
     "get_config_version",
+    "get_configuration_hash",
     "get_environment",
+    "get_settings",
+    "initialize_settings",
+    "is_initialized",
+    "settings",
+    "shutdown_settings",
     "to_dict",
     "to_json",
-    "settings",
 )
 
 # ============================================================================
@@ -506,7 +495,7 @@ class SettingsManager:
                 config.environment
             ),
             initialized_at=(
-                datetime.utcnow()
+                datetime.now(UTC).replace(tzinfo=None)
                 .isoformat()
             ),
         )
@@ -943,7 +932,7 @@ def create_mock_settings(
             CONFIG.environment
         ),
         initialized_at=(
-            datetime.utcnow()
+            datetime.now(UTC).replace(tzinfo=None)
             .isoformat()
         ),
     )
@@ -1411,27 +1400,27 @@ def verify_bootstrap() -> bool:
 # ============================================================================
 
 __all__ = (
-    "LifecycleState",
     "AuditMetadata",
+    "LifecycleState",
     "RuntimeSettings",
-    "SettingsError",
     "SettingsAlreadyInitializedError",
+    "SettingsError",
+    "SettingsInjectionError",
     "SettingsNotInitializedError",
     "SettingsShutdownError",
-    "SettingsInjectionError",
-    "initialize_settings",
-    "get_settings",
-    "shutdown_settings",
-    "is_initialized",
-    "get_configuration_hash",
     "get_app_version",
     "get_config_version",
+    "get_configuration_hash",
     "get_environment",
+    "get_runtime_summary",
+    "get_settings",
+    "initialize_settings",
+    "is_initialized",
+    "settings",
+    "shutdown_settings",
     "to_dict",
     "to_json",
-    "settings",
     "validate_runtime_settings",
-    "get_runtime_summary",
     "verify_bootstrap",
 )
 

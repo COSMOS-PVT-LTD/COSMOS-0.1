@@ -5,7 +5,11 @@ from __future__ import annotations
 import pytest
 
 from knowledge.ingestion.exceptions import IngestionAdapterError
-from knowledge.ingestion.models import IngestionArtifactRef, IngestionRequest, SourceFormat
+from knowledge.ingestion.models import (
+    IngestionArtifactRef,
+    IngestionRequest,
+    SourceFormat,
+)
 from knowledge.ingestion_adapters import (
     AdapterExecutionError,
     DocxIngestionAdapter,
@@ -93,7 +97,7 @@ def test_vault_verify_integrity_returns_false_on_mismatch() -> None:
         content_hash=digest,
         metadata=stored.metadata,
     )
-    vault._artifacts[stored.vault_key] = corrupted  # noqa: SLF001
+    vault._artifacts[stored.vault_key] = corrupted
 
     assert vault.verify_integrity("SRC-001", "ART-001") is False
 
@@ -232,7 +236,7 @@ def test_repository_rejects_path_prefix_collision(tmp_path) -> None:
 def test_frozen_ingestion_contract_import_smoke() -> None:
     """BLOCK-005 must remain compatible with frozen ingestion contracts."""
 
-    from knowledge.ingestion import (  # noqa: PLC0415
+    from knowledge.ingestion import (
         IngestionAdapter,
         IngestionRequest,
         IngestionResult,

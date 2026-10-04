@@ -8,6 +8,7 @@ from knowledge.interface.engineering_query import MaterialCard
 from knowledge.models.lifecycle import KnowledgeLifecycle, ProvenanceTrace
 from knowledge.models.property import PropertyDefinition, PropertyValue
 from knowledge.repositories.property_repository import PropertyRepository
+from knowledge.repository.knowledge_repository import EntityNotFoundError
 
 __all__ = ("BoundMaterialProperty", "bind_property_value", "material_card")
 
@@ -60,6 +61,6 @@ def bind_property_value(
 def _missing(repository: object, entity_id: str) -> bool:
     try:
         repository.get(entity_id)  # type: ignore[attr-defined]
-    except Exception:
+    except EntityNotFoundError:
         return True
     return False

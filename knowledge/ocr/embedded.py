@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 import re
+from dataclasses import dataclass
 
 __all__ = ("EmbeddedImageRef", "list_embedded_images")
 

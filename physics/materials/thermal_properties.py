@@ -10,7 +10,6 @@ Purpose: Temperature-windowed thermal property evaluation.
 from __future__ import annotations
 
 from core.quantity import Quantity
-
 from physics.fluids.fluid_properties import PropertyEvaluation, evaluate_record
 from physics.materials.catalog import MaterialRecord
 

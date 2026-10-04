@@ -2,19 +2,34 @@
 
 from __future__ import annotations
 
+import time
 from dataclasses import dataclass
 from enum import Enum
-import time
 
-from knowledge.equations.conflicts import detect_equation_conflicts, detect_representation_conflicts
-from knowledge.equations.detector import detect_source_equations, extract_explicit_constants
+from knowledge.equations.conflicts import (
+    detect_equation_conflicts,
+    detect_representation_conflicts,
+)
+from knowledge.equations.detector import (
+    detect_source_equations,
+    extract_explicit_constants,
+)
 from knowledge.equations.entities import EntityCandidate, extract_entity_candidates
-from knowledge.equations.models import SourceEquationCandidate, ValidatedEquationCandidate
-from knowledge.equations.reconstruction import EquationReconstruction, reconstruct_equation
+from knowledge.equations.models import (
+    SourceEquationCandidate,
+    ValidatedEquationCandidate,
+)
+from knowledge.equations.reconstruction import (
+    EquationReconstruction,
+    reconstruct_equation,
+)
 from knowledge.equations.review import EquationReviewPackage, build_review_package
 from knowledge.equations.validation import validate_equation_candidate
 from knowledge.extraction.constant_extractor import ConstantCandidate
-from knowledge.extraction.variable_extractor import VariableCandidate, extract_variable_candidates
+from knowledge.extraction.variable_extractor import (
+    VariableCandidate,
+    extract_variable_candidates,
+)
 from knowledge.mathocr.engine import run_math_ocr
 from knowledge.mathocr.models import MathOCRResult
 from knowledge.models.lifecycle import ProvenanceTrace
@@ -33,8 +48,16 @@ from knowledge.pdf.models import (
     PdfDiagnostics,
     PdfExtractionResult,
 )
-from knowledge.pdf.registry import DuplicateKind, RegisteredSource, SourceModifiedError, SourceRegistry
-from knowledge.pdf.structure import ExtractedDocumentStructure, extract_document_structure
+from knowledge.pdf.registry import (
+    DuplicateKind,
+    RegisteredSource,
+    SourceModifiedError,
+    SourceRegistry,
+)
+from knowledge.pdf.structure import (
+    ExtractedDocumentStructure,
+    extract_document_structure,
+)
 from knowledge.references.document_class import DocumentClass
 from knowledge.references.rights import RightsStatus, rights_allow_ingestion
 from knowledge.source.exceptions import IntegrityMismatchError
@@ -491,8 +514,9 @@ def _maybe_ocr(
         )
         jobs.append(job)
         if job.result is None:
-            from knowledge.ocr.models import OCRFailure
             from datetime import datetime, timezone
+
+            from knowledge.ocr.models import OCRFailure
 
             ocr = OCRResult(
                 document_id=extraction.document_id,

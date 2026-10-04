@@ -10,8 +10,11 @@ Purpose: Thermal conductivity from sourced records only.
 from __future__ import annotations
 
 from core.quantity import Quantity
-
-from physics.fluids.fluid_properties import PropertyEvaluation, PropertyRecord, evaluate_record
+from physics.fluids.fluid_properties import (
+    PropertyEvaluation,
+    PropertyRecord,
+    evaluate_record,
+)
 
 __all__ = ("from_record",)
 

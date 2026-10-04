@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from enum import Enum
-import re
 
 __all__ = ("ExprNode", "NodeKind", "parse_equation", "serialize_node")
 

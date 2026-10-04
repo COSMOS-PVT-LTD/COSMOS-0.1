@@ -10,7 +10,6 @@ Purpose: Internal energy definition and calorically perfect evaluation.
 from __future__ import annotations
 
 from core.quantity import Quantity
-
 from physics.model import ModelIdentity
 from physics.thermodynamics.ideal_gas import (
     specific_internal_energy as ideal_specific_internal_energy,

@@ -49,17 +49,15 @@ manipulation, or repository logic.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from enum import Enum
-from dataclasses import field
+from collections.abc import Iterator, Mapping
+from dataclasses import dataclass, field
 from datetime import datetime
-from types import MappingProxyType
-from typing import Mapping
-from collections.abc import Iterator
+from enum import Enum
 
 from knowledge.models.document import Document
 from knowledge.models.reference import Reference
 from knowledge.models.variable import EngineeringDomain
+
 # ============================================================
 # Enumerations
 # ============================================================
@@ -1451,7 +1449,7 @@ class Dimension:
     def from_dict(
         cls,
         data: dict[str, object],
-    ) -> "Dimension":
+    ) -> Dimension:
         """
         Reconstruct a Dimension from its serialized
         dictionary representation.
@@ -1859,7 +1857,7 @@ class Dimension:
 
     def copy(
         self,
-    ) -> "Dimension":
+    ) -> Dimension:
         """
         Create an identical immutable copy.
 
@@ -1891,7 +1889,7 @@ class Dimension:
     def deserialize(
         cls,
         payload: dict[str, object],
-    ) -> "Dimension":
+    ) -> Dimension:
         """
         Deserialize a Dimension.
 

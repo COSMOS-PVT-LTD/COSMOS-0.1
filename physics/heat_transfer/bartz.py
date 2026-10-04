@@ -39,7 +39,6 @@ from core.dimension import LENGTH, PRESSURE, TEMPERATURE, VELOCITY
 from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.validation import validate_positive
-
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity, require_gamma, require_mach
 from physics.si import (
@@ -101,8 +100,8 @@ BARTZ = ModelIdentity(
     ),
     limitations=(
         "Empirical; do not treat as first-principles CFD.",
-        "The 0.026 coefficient is from the dimensionless Nu relation, "
-        "not the English-unit Bartz dimensional package.",
+        ("The 0.026 coefficient is from the dimensionless Nu relation, "
+        "not the English-unit Bartz dimensional package."),
         "Film cooling and roughness are not included.",
     ),
 )

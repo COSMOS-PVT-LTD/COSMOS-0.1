@@ -6,7 +6,6 @@ import re
 
 from knowledge.extraction.entity import CandidateEntityExtraction, ExtractedEntityKind
 from knowledge.extraction.w4.identity import deterministic_extraction_id
-from knowledge.parsers.w3.models import ParseProvenance
 from knowledge.extraction.w4.models import ExtractionContext
 from knowledge.extraction.w4.provenance import (
     EXTRACTOR_NAME,
@@ -17,6 +16,7 @@ from knowledge.graph.contracts import ProvenanceReference
 from knowledge.graph.entity import CanonicalEntityType
 from knowledge.graph.lifecycle import GraphLifecycleState
 from knowledge.graph.provenance import ExtractionProvenance, SourceProvenanceRecord
+from knowledge.parsers.w3.models import ParseProvenance
 
 __all__ = (
     "extract_entities",

@@ -5,7 +5,10 @@ from __future__ import annotations
 from typing import Protocol, runtime_checkable
 
 from knowledge.mathocr.models import MathOCRResult
-from knowledge.mathocr.tesseract_math import TesseractMathOCRAdapter, tesseract_math_is_provisioned
+from knowledge.mathocr.tesseract_math import (
+    TesseractMathOCRAdapter,
+    tesseract_math_is_provisioned,
+)
 from knowledge.mathocr.unavailable import UnavailableMathOCRAdapter
 
 __all__ = ("MathOCRAdapter", "select_math_ocr_adapter")

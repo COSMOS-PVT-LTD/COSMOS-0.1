@@ -16,7 +16,6 @@ import pytest
 from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.unit import SI
-
 from physics.compressible_flow.area_mach import area_ratio, mach_from_area_ratio
 from physics.compressible_flow.choked_flow import choked_mass_flow, is_choked
 from physics.compressible_flow.expansion_fan import prandtl_meyer
@@ -27,16 +26,22 @@ from physics.compressible_flow.isentropic import (
     stagnation_pressure_ratio,
     stagnation_temperature_ratio,
 )
-from physics.compressible_flow.moc_nozzle import generate_contour, invariants, mach_angle
+from physics.compressible_flow.moc_nozzle import (
+    generate_contour,
+    invariants,
+    mach_angle,
+)
 from physics.compressible_flow.normal_shock import evaluate_normal_shock
 from physics.compressible_flow.nozzle_1d import station_from_area_ratio
-from physics.compressible_flow.oblique_shock import deflection_from_wave_angle, evaluate_oblique_shock
+from physics.compressible_flow.oblique_shock import (
+    deflection_from_wave_angle,
+    evaluate_oblique_shock,
+)
 from physics.compressible_flow.rayleigh import evaluate_rayleigh
 from physics.compressible_flow.thrust_relations import ideal_thrust_coefficient, thrust
 from physics.exceptions import InsufficientDataError
 from physics.quantities import kelvin, pascal, square_metre
 from physics.thermodynamics.ideal_gas import molar_mass_from_kg_per_kmol
-
 
 GAMMA = 1.4
 

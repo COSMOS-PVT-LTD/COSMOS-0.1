@@ -15,7 +15,7 @@ def test_gui_python_does_not_import_physics_package() -> None:
             stripped = line.strip()
             if stripped.startswith("#"):
                 continue
-            if stripped.startswith("import physics") or stripped.startswith("from physics"):
+            if stripped.startswith(("import physics", "from physics")):
                 offenders.append(f"{path.relative_to(REPO)}: {stripped}")
     assert offenders == []
 

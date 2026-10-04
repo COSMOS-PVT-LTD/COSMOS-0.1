@@ -6,9 +6,9 @@ source-faithful text/cells for candidate generation without rewriting those adap
 
 from __future__ import annotations
 
-from html.parser import HTMLParser
 import io
 import zipfile
+from html.parser import HTMLParser
 from xml.etree import ElementTree
 
 from knowledge.ingestion_adapters.exceptions import AdapterExecutionError

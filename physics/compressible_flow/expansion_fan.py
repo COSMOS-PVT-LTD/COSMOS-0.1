@@ -18,16 +18,15 @@ from __future__ import annotations
 import math
 
 from core.exceptions import InvalidInputError
-
 from physics.contracts.numerics_port import bracketed_root
 from physics.model import ModelIdentity
 from physics.quantities import require_gamma, require_mach
 
 __all__ = (
     "PRANDTL_MEYER",
-    "prandtl_meyer",
-    "mach_from_prandtl_meyer",
     "expanded_mach",
+    "mach_from_prandtl_meyer",
+    "prandtl_meyer",
 )
 
 PRANDTL_MEYER = ModelIdentity(
@@ -35,8 +34,8 @@ PRANDTL_MEYER = ModelIdentity(
     model_name="Prandtl-Meyer expansion",
     physical_domain="compressible_flow",
     equations=(
-        "nu(M) = sqrt((gamma+1)/(gamma-1)) * arctan(sqrt(((gamma-1)/(gamma+1))"
-        "(M^2-1))) - arctan(sqrt(M^2-1))",
+        ("nu(M) = sqrt((gamma+1)/(gamma-1)) * arctan(sqrt(((gamma-1)/(gamma+1))"
+        "(M^2-1))) - arctan(sqrt(M^2-1))"),
         "nu2 = nu1 + theta",
     ),
     inputs=("M [-]", "gamma [-]", "deflection [rad]"),

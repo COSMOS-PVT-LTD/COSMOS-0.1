@@ -6,7 +6,7 @@
   <title>COSMOS 0.1 — Workbenches</title>
   <link rel="stylesheet" href="/assets/cosmos.css" />
 </head>
-<body class="cosmos-app">
+<body class="cosmos-app hub-scroll-layout">
   <div class="app-frame page-shell">
     <header class="app-header">
       <button type="button" class="avatar" id="avatar" title="Double-click to edit profile" aria-label="Profile"></button>
@@ -18,28 +18,50 @@
       </div>
       <button type="button" class="user-badge" id="user-badge" title="View profile">Loading…</button>
     </header>
-    <div class="app-body">
+    <div class="app-body nav-expanded">
       <aside class="sidebar" aria-label="Primary navigation"></aside>
-      <main class="content-area">
-        <div id="cosmos-recent-host" class="cosmos-recent-host"></div>
-        <div class="quick-status" id="quick-status" aria-label="System status"></div>
-        <div class="carousel-shell">
-          <button type="button" class="page-arrow page-arrow-left" id="page-prev" aria-label="Previous page">‹</button>
-          <div class="carousel-viewport" id="carousel-viewport">
-            <div class="workbench-grid" id="workbench-track"></div>
+      <main class="content-area hub-scroll" id="hub-scroll">
+        <section class="hub-pms" id="hub-pms" aria-label="Project Management System">
+          <div class="hub-pms-head">
+            <div>
+              <p class="hub-pms-kicker">Every calculation starts from documentation</p>
+              <h2 class="hub-pms-title">Project Management System</h2>
+            </div>
+            <div class="hub-pms-actions">
+              <button type="button" class="cosmos-btn secondary" id="hub-pms-new-project">New Project</button>
+              <button type="button" class="cosmos-btn secondary" id="hub-pms-builds" disabled title="Build orchestration planned">Builds</button>
+              <button type="button" class="cosmos-btn secondary" id="hub-pms-workbench-jump">Workbench</button>
+            </div>
           </div>
-          <button type="button" class="page-arrow page-arrow-right" id="page-next" aria-label="Next page">›</button>
-        </div>
-        <div class="pager-row">
-          <span class="page-label" id="page-label">Page <strong>1</strong> of <strong>3</strong></span>
-          <div class="page-dots" id="page-dots" aria-label="Workbench pages"></div>
-        </div>
+          <div class="hub-pms-grid">
+            <div class="hub-pms-main">
+              <p class="hub-pms-lead" id="hub-pms-lead">Define project scope, system, and component before opening engineering workbenches.</p>
+              <dl class="hub-pms-context" id="hub-pms-context"></dl>
+            </div>
+            <aside class="hub-pms-side">
+              <div class="hub-pms-panel">
+                <h3>Project Status</h3>
+                <div id="hub-pms-status"></div>
+              </div>
+              <div class="hub-pms-panel">
+                <h3>Recent Files</h3>
+                <div id="hub-pms-recent-files"></div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <div class="quick-status" id="quick-status" aria-label="System status"></div>
+
+        <section class="hub-workbenches" id="hub-workbenches" aria-label="Engineering workbenches">
+          <header class="hub-workbenches-head">
+            <h2>Workbench</h2>
+            <p>Scroll vertically through module groups; scroll horizontally within each row.</p>
+          </header>
+          <div id="hub-workbench-lanes"></div>
+        </section>
       </main>
     </div>
-    <button type="button" class="maharshi-module" id="maharshi-module" title="Maharshi Bharadwaj — Knowledge pop-up">
-      <img src="/assets/maharshi_bharadwaj.png" alt="Maharshi Bharadwaj" />
-      <span>MAHARSHI BHARADWAJ</span>
-    </button>
     <div class="status-bar in-frame" id="status-bar" role="status">
       <span class="status-indicator ready" aria-hidden="true"></span>
       <span class="status-bar-text">COSMOS 0.1 desktop shell</span>

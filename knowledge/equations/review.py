@@ -5,7 +5,10 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from knowledge.equations.models import EquationValidationState, ValidatedEquationCandidate
+from knowledge.equations.models import (
+    EquationValidationState,
+    ValidatedEquationCandidate,
+)
 from knowledge.models.lifecycle import KnowledgeLifecycle
 
 if TYPE_CHECKING:
@@ -75,6 +78,8 @@ def review_validated_equation(
 ) -> NormalizedEquationCandidate:
     from knowledge.foundation.equation_approval import (
         EquationApprovalPipeline,
+    )
+    from knowledge.foundation.equation_approval import (
         EquationReviewDecision as ReviewDecision,
     )
 

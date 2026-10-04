@@ -17,7 +17,6 @@ from core.dimension import TEMPERATURE
 from core.quantity import Quantity
 from core.unit import SI
 from core.validation import validate_positive
-
 from physics.heat_transfer.thermal_resistance import series_resistance
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity

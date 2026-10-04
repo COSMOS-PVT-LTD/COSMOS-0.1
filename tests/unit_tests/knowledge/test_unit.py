@@ -8,20 +8,19 @@ Construction and validation tests.
 
 from __future__ import annotations
 
-from datetime import datetime
-from datetime import timezone
+from datetime import datetime, timezone
 
-import pytest # type: ignore
+import pytest  # type: ignore
 
-from knowledge.models.document import Document
-from knowledge.models.document import DocumentType
-from knowledge.models.reference import Reference
-from knowledge.models.reference import ReferenceType
-from knowledge.models.unit import QuantityType
-from knowledge.models.unit import Unit
-from knowledge.models.unit import UnitCategory
-from knowledge.models.unit import UnitStatus
-from knowledge.models.unit import UnitSystem
+from knowledge.models.document import Document, DocumentType
+from knowledge.models.reference import Reference, ReferenceType
+from knowledge.models.unit import (
+    QuantityType,
+    Unit,
+    UnitCategory,
+    UnitStatus,
+    UnitSystem,
+)
 
 
 def create_reference() -> Reference:

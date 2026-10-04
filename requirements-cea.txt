@@ -1,0 +1,4 @@
+# Optional thermochemistry engine for COSMOS_0.1
+# Modern NASA CEA Python bindings (re-implementation with APIs).
+cea>=3.3.4
+numpy>=1.26

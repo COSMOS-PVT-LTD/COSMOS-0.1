@@ -34,9 +34,7 @@ class LocalEmbeddingBackend:
             raise IndexValidationError("text must not be blank.")
 
         digest = hashlib.sha256(
-            f"{self.identity.model_id}:{self.identity.model_version}:{normalized}".encode(
-                "utf-8",
-            ),
+            f"{self.identity.model_id}:{self.identity.model_version}:{normalized}".encode(),
         ).digest()
         components: list[float] = []
 

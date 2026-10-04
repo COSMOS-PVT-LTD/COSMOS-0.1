@@ -2,26 +2,46 @@
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass, replace
 from pathlib import Path
-import json
 
+from core.logger import get_logger
 from knowledge.foundation.document_pipeline import DocumentKnowledgeDraft
-from knowledge.foundation.equation_approval import EquationReviewDecision, NormalizedEquationCandidate
+from knowledge.foundation.equation_approval import (
+    EquationReviewDecision,
+    NormalizedEquationCandidate,
+)
 from knowledge.foundation.knowledge_service import KnowledgeFoundationService
 from knowledge.foundation.real_document_pipeline import RealDocumentPipelineResult
 from knowledge.foundation.unified_search import UnifiedSearchResult
 from knowledge.models.lifecycle import KnowledgeLifecycle
 from knowledge.ocr.provisioning import ocr_is_provisioned
-from knowledge.persistence.backend import InMemoryPersistenceBackend, PersistenceBackend, SQLitePersistenceBackend
+from knowledge.persistence.backend import (
+    InMemoryPersistenceBackend,
+    PersistenceBackend,
+    SQLitePersistenceBackend,
+)
 from knowledge.references.rights import RightsStatus, rights_allow_ingestion
 from knowledge.source.integrity import sha256_bytes_digest
-from knowledge.workspace.access import WorkspaceAction, WorkspaceAuthorization, WorkspaceRole
+from knowledge.workspace.access import (
+    WorkspaceAction,
+    WorkspaceAuthorization,
+    WorkspaceRole,
+)
 from knowledge.workspace.backup import backup_workspace_root, restore_workspace_root
-from knowledge.workspace.capabilities import FileCapabilityRegistry, default_capability_registry
+from knowledge.workspace.capabilities import (
+    FileCapabilityRegistry,
+    default_capability_registry,
+)
 from knowledge.workspace.classify import classify_upload
 from knowledge.workspace.extract import extract_upload
-from knowledge.workspace.jobs import JobStore, configuration_hash, now_utc, processing_fingerprint
+from knowledge.workspace.jobs import (
+    JobStore,
+    configuration_hash,
+    now_utc,
+    processing_fingerprint,
+)
 from knowledge.workspace.models import (
     PIPELINE_VERSION,
     DuplicateKind,
@@ -36,9 +56,11 @@ from knowledge.workspace.models import (
     WorkspaceFormat,
 )
 from knowledge.workspace.observability import WorkspaceMetrics
+from knowledge.workspace.quality import pdf_extraction_is_under_recovered
 from knowledge.workspace.security import validate_upload
 from knowledge.workspace.vault import DurableArtifactVault, VaultError
-from knowledge.workspace.quality import pdf_extraction_is_under_recovered
+
+logger = get_logger(__name__)
 
 __all__ = (
     "DocumentEvidenceHit",
@@ -47,6 +69,12 @@ __all__ = (
     "ReviewItem",
     "ingest",
 )
+
+
+def _document_id_for_source(source_id: str) -> str | None:
+    if source_id.startswith("SRC-"):
+        return f"DOC-{source_id[4:]}"
+    return None
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
@@ -138,6 +166,7 @@ class KnowledgeWorkspace:
             self.persistence = InMemoryPersistenceBackend()
             self.persistence.migrate()
         self._service = service
+        self._seed_corpus_enabled = seed_corpus
         self._seed_corpus_loaded = False
         if service is not None and seed_corpus:
             self._ensure_seed_corpus()
@@ -157,7 +186,10 @@ class KnowledgeWorkspace:
         self._backfill_review_manifests()
 
     def _backfill_review_manifests(self) -> None:
-        from knowledge.workspace.review_store import load_review_manifest, save_review_manifest
+        from knowledge.workspace.review_store import (
+            load_review_manifest,
+            save_review_manifest,
+        )
 
         for job in self.list_jobs():
             if job.status is not JobStatus.REVIEW_REQUIRED:
@@ -179,8 +211,12 @@ class KnowledgeWorkspace:
             self._service = KnowledgeFoundationService()
         return self._service
 
+    @property
+    def seed_corpus_enabled(self) -> bool:
+        return self._seed_corpus_enabled
+
     def _ensure_seed_corpus(self) -> None:
-        if self._seed_corpus_loaded:
+        if not self._seed_corpus_enabled or self._seed_corpus_loaded:
             return
         if self._service is None:
             self._service = KnowledgeFoundationService.with_seed_corpus()
@@ -191,7 +227,7 @@ class KnowledgeWorkspace:
         self._seed_corpus_loaded = True
 
     @property
-    def conversations(self):  # noqa: ANN201
+    def conversations(self):
         from knowledge.brain.chat import KnowledgeConversationService
 
         if self._conversations is None:
@@ -606,6 +642,7 @@ class KnowledgeWorkspace:
                         title=source.title,
                     )
                 except Exception:
+                    logger.exception("session: boundary operation failed")
                     continue
 
         job = self.jobs.transition(job, JobStatus.AVAILABLE, checkpoint=job.checkpoint)
@@ -652,11 +689,15 @@ class KnowledgeWorkspace:
 
     def delete_source(self, source_id: str) -> None:
         self.authz.authorize(self.role, WorkspaceAction.DESTROY, actor_id=self.actor_id)
+        document_id = _document_id_for_source(source_id)
         self.vault.delete_source(source_id)
         self.jobs.delete_for_source(source_id)
         self.documents.remove(source_id)
         self._pipeline_results.pop(source_id, None)
         self._drafts.pop(source_id, None)
+        self.service.graph.remove_incident(source_id)
+        if document_id is not None:
+            self.service.graph.remove_incident(document_id)
         if hasattr(self.persistence, "delete"):
             self.persistence.delete("sources", source_id)
 

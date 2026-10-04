@@ -10,7 +10,6 @@ Purpose: Isentropic nozzle pressure from a sequence of area ratios.
 from __future__ import annotations
 
 from core.quantity import Quantity
-
 from physics.compressible_flow.nozzle_1d import NozzleStation, station_from_area_ratio
 
 __all__ = ("isentropic_pressure_profile",)

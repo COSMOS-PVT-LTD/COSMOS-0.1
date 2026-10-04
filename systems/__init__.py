@@ -13,8 +13,8 @@ from typing import Final
 from core.version import COSMOS_VERSION
 
 __all__ = (
-    "SYSTEMS_SCHEMA_VERSION",
     "SYSTEMS_PACKAGE_VERSION",
+    "SYSTEMS_SCHEMA_VERSION",
 )
 
 SYSTEMS_SCHEMA_VERSION: Final[str] = "0.1.0"

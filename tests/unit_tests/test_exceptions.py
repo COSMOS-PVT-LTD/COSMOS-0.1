@@ -22,7 +22,6 @@ import pytest
 # COSMOS Core
 from core import exceptions
 
-
 DOMAIN_EXCEPTIONS = (
     exceptions.ValidationError,
     exceptions.InvalidInputError,

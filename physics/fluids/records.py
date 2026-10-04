@@ -17,17 +17,16 @@ from __future__ import annotations
 from core.constants import STANDARD_ATMOSPHERE
 from core.dimension import DENSITY, PRESSURE
 from core.unit import SI
-
 from physics.fluids.fluid_properties import PropertyRecord
 from physics.si import (
+    DYNAMIC_VISCOSITY,
     SPECIFIC_HEAT,
+    SURFACE_TENSION,
     THERMAL_CONDUCTIVITY,
     UNIT_DYNAMIC_VISCOSITY,
     UNIT_SPECIFIC_HEAT,
     UNIT_SURFACE_TENSION,
     UNIT_THERMAL_CONDUCTIVITY,
-    DYNAMIC_VISCOSITY,
-    SURFACE_TENSION,
 )
 
 _ATM = STANDARD_ATMOSPHERE

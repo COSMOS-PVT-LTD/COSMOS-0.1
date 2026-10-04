@@ -6,16 +6,19 @@ from knowledge.extraction import (
     CandidateEntityExtraction,
     ExtractedEntityKind,
 )
-from knowledge.graph import GraphConstructionBatch, GraphConstructor, ProvenanceReference
+from knowledge.graph import (
+    GraphConstructionBatch,
+    GraphConstructor,
+    ProvenanceReference,
+)
 from knowledge.graph.entity import CanonicalEntityType
 from knowledge.graph.provenance import SourceProvenanceRecord
 from knowledge.graph.serialization import canonical_graph_record_digest
 from knowledge.indexing.w7 import W7IndexBuilder
-from knowledge.reasoning.w10 import EvidenceChainBuilder
 from knowledge.reasoning.evidence import EvidenceBundle, EvidenceItem, RankingMetadata
+from knowledge.reasoning.w10 import EvidenceChainBuilder
 from knowledge.search import RetrievalMode, SearchQuery
 from knowledge.search.w8 import HybridSearchEngine
-
 from tests.integration_tests.kg_block012.helpers.pipeline import (
     build_lox_registry,
     load_golden_document,

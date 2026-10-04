@@ -3,7 +3,12 @@
 from __future__ import annotations
 
 from knowledge.workspace.api_mapping import source_detail_mapping, source_list_mapping
-from knowledge.workspace.models import IngestionJob, JobCheckpoint, JobStatus, SourceRecord
+from knowledge.workspace.models import (
+    IngestionJob,
+    JobCheckpoint,
+    JobStatus,
+    SourceRecord,
+)
 
 
 def _source(**overrides: object) -> SourceRecord:

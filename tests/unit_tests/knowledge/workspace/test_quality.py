@@ -2,8 +2,16 @@
 
 from __future__ import annotations
 
-from knowledge.workspace.models import IngestionJob, JobCheckpoint, JobStatus, SourceRecord
-from knowledge.workspace.quality import pdf_extraction_is_under_recovered, source_extraction_summary
+from knowledge.workspace.models import (
+    IngestionJob,
+    JobCheckpoint,
+    JobStatus,
+    SourceRecord,
+)
+from knowledge.workspace.quality import (
+    pdf_extraction_is_under_recovered,
+    source_extraction_summary,
+)
 
 
 def _source(**overrides: object) -> SourceRecord:

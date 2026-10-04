@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from core.contracts import ValidationIssue, ValidationResult
 from core import exceptions
+from core.contracts import ValidationIssue, ValidationResult
 
 
 def test_validation_result_valid_and_invalid() -> None:

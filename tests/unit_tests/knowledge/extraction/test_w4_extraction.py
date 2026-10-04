@@ -12,7 +12,6 @@ from knowledge.extraction.w4 import (
     extract_document,
 )
 from knowledge.graph import GraphLifecycleState
-from knowledge.parsers.w3.exceptions import ParserEquationError
 from knowledge.ingestion import (
     IngestionArtifactRef,
     IngestionRequest,
@@ -21,6 +20,7 @@ from knowledge.ingestion import (
 )
 from knowledge.ingestion_adapters import MarkdownIngestionAdapter
 from knowledge.parsers.w3 import ParseContext, parse_document
+from knowledge.parsers.w3.exceptions import ParserEquationError
 from knowledge.source import InMemorySourceVault, VaultArtifact, VaultArtifactMetadata
 from knowledge.source.integrity import sha256_text_digest
 
@@ -70,13 +70,7 @@ def _parse_and_extract(content: str) -> ExtractionResult:
 def test_extract_entities_from_sections_and_labels() -> None:
     """KG-019 must extract entity candidates from headings and labels."""
 
-    content = "\n".join(
-        [
-            "# Combustion Chamber",
-            "Material: Inconel 718",
-            "Component: Main Injector",
-        ],
-    )
+    content = "# Combustion Chamber\nMaterial: Inconel 718\nComponent: Main Injector"
     result = _parse_and_extract(content)
 
     labels = {entity.extracted_label for entity in result.entities}
@@ -92,15 +86,7 @@ def test_extract_entities_from_sections_and_labels() -> None:
 def test_extract_quantities_with_units() -> None:
     """KG-020 must extract numeric quantities without silent unit guessing."""
 
-    content = "\n".join(
-        [
-            "# Data",
-            "Chamber pressure is 5 MPa.",
-            "| Name | Value |",
-            "| --- | --- |",
-            "| Thrust | 20 kN |",
-        ],
-    )
+    content = "# Data\nChamber pressure is 5 MPa.\n| Name | Value |\n| --- | --- |\n| Thrust | 20 kN |"
     result = _parse_and_extract(content)
 
     assert len(result.quantities) >= 2
@@ -147,12 +133,7 @@ def test_extract_claims_preserve_candidate_lifecycle() -> None:
 def test_extract_relationships_link_quantities_to_entities() -> None:
     """KG-023 must create deterministic relationship candidates."""
 
-    content = "\n".join(
-        [
-            "# Combustion Chamber",
-            "Operating pressure 5 MPa.",
-        ],
-    )
+    content = "# Combustion Chamber\nOperating pressure 5 MPa."
     result = _parse_and_extract(content)
 
     assert result.entities
@@ -239,15 +220,7 @@ def test_orchestrator_uses_default_registry() -> None:
 def test_ingestion_parse_extract_integration_path() -> None:
     """Integration path must run W2 → W3 → W4 without modifying frozen contracts."""
 
-    content = "\n".join(
-        [
-            "# Propulsion",
-            "Material: RP-1",
-            "The chamber pressure is 20 bar.",
-            "Thrust level is 50 kN.",
-            "Equation $F = ma$ applies.",
-        ],
-    )
+    content = "# Propulsion\nMaterial: RP-1\nThe chamber pressure is 20 bar.\nThrust level is 50 kN.\nEquation $F = ma$ applies."
     result = _parse_and_extract(content)
 
     assert result.entities

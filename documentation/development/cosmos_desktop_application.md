@@ -103,7 +103,7 @@ python main.py --browser
 | `--host` | `127.0.0.1` | Bind address |
 | `--port` | `8780` | HTTP port |
 | `--browser` | off | Use browser instead of pywebview |
-| `--no-open` | off | Do not auto-open UI |
+| `--headless` | off | HTTP server only; do not open a window or browser |
 
 ## Architecture notes
 

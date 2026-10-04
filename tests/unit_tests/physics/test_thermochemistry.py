@@ -12,11 +12,18 @@ from __future__ import annotations
 import pytest
 
 from core.constants import UNIVERSAL_GAS_CONSTANT
-
-from physics.exceptions import InsufficientDataError, InvalidCompositionError
+from physics.exceptions import (
+    InsufficientDataError,
+    InvalidCompositionError,
+    OutOfRangeError,
+)
 from physics.quantities import kelvin, pascal
 from physics.thermochemistry.cea_interface import CeaRequest, run_thermochemistry
-from physics.thermochemistry.mixtures import elemental_moles, from_mass_fractions, from_mole_fractions
+from physics.thermochemistry.mixtures import (
+    elemental_moles,
+    from_mass_fractions,
+    from_mole_fractions,
+)
 from physics.thermochemistry.nasa_polynomials import evaluate_nasa7
 from physics.thermochemistry.reactions import Reaction, check_elemental_balance
 from physics.thermochemistry.species import get_species, list_species
@@ -45,7 +52,7 @@ def test_nasa7_n2_cp_near_300k() -> None:
 
 def test_nasa7_out_of_range() -> None:
     n2 = get_species("N2")
-    with pytest.raises(Exception):
+    with pytest.raises(OutOfRangeError):
         evaluate_nasa7(n2.polynomial, kelvin(50.0))
 
 

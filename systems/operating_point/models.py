@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Any
 
 from core.quantity import Quantity
-
 from systems._serialize import optional_quantity_dict, quantity_from_dict
 
 __all__ = ("OperatingPoint",)
@@ -46,7 +46,7 @@ class OperatingPoint:
         }
 
     @classmethod
-    def from_canonical_dict(cls, data: dict[str, object]) -> OperatingPoint:
+    def from_canonical_dict(cls, data: dict[str, Any]) -> OperatingPoint:
         return cls(
             chamber_pressure=quantity_from_dict(data.get("chamber_pressure")),
             ambient_pressure=quantity_from_dict(data.get("ambient_pressure")),

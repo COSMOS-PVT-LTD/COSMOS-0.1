@@ -36,7 +36,6 @@ from core.dimension import TEMPERATURE
 from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.validation import validate_positive
-
 from physics.exceptions import OutOfRangeError
 from physics.model import ModelIdentity
 from physics.quantities import as_si, quantity

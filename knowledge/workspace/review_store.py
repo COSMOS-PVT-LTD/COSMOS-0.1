@@ -5,6 +5,10 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 
+from core.logger import get_logger
+
+logger = get_logger(__name__)
+
 __all__ = ("ReviewManifest", "load_review_manifest", "save_review_manifest")
 
 
@@ -34,6 +38,7 @@ def load_review_manifest(vault, source_id: str) -> ReviewManifest | None:
     try:
         raw = vault.retrieve_derivative(source_id, "review_meta.json")
     except Exception:
+        logger.exception("review_store: boundary operation failed")
         return None
     try:
         payload = json.loads(raw.decode("utf-8"))
@@ -53,4 +58,5 @@ def clear_review_manifest(vault, source_id: str) -> None:
     try:
         vault.delete_derivative(source_id, "review_meta.json")
     except Exception:
+        logger.exception("review_store: boundary operation failed")
         return

@@ -14,8 +14,8 @@ from knowledge.graph.contracts import (
     GraphRecord,
     GraphRelationship,
     ImmutableGraphRecord,
-    ProvenanceReference,
     PropertyValue,
+    ProvenanceReference,
     is_property_value,
     normalize_properties,
 )
@@ -26,8 +26,8 @@ from knowledge.graph.entity import (
     GraphEntityRecord,
 )
 from knowledge.graph.exceptions import (
-    GraphContractError,
     GraphConstructionError,
+    GraphContractError,
     GraphError,
     GraphQueryError,
     GraphStorageError,
@@ -41,15 +41,15 @@ from knowledge.graph.lifecycle import (
     is_terminal_lifecycle_state,
     transition_lifecycle_state,
 )
+from knowledge.graph.memory_store import InMemoryGraphStore
 from knowledge.graph.provenance import (
     ExtractionProvenance,
     ReviewStatus,
     SourceLineage,
     SourceProvenanceRecord,
 )
-from knowledge.graph.relationship import GraphEntityRelationshipRecord
-from knowledge.graph.memory_store import InMemoryGraphStore
 from knowledge.graph.query import GraphQueryService, TraversalResult
+from knowledge.graph.relationship import GraphEntityRelationshipRecord
 from knowledge.graph.repository import GraphStore
 from knowledge.graph.serialization import (
     canonical_graph_record_digest,
@@ -64,11 +64,6 @@ from knowledge.graph.snapshot import (
     create_graph_snapshot,
     snapshots_are_equivalent,
 )
-from knowledge.graph.validation import (
-    GraphRecordValidationIssue,
-    GraphRecordValidationReport,
-    GraphRecordValidator,
-)
 from knowledge.graph.source_identity import (
     ArtifactIdentity,
     SourceIdentity,
@@ -76,10 +71,15 @@ from knowledge.graph.source_identity import (
     SourceType,
     is_valid_sha256_hex,
 )
+from knowledge.graph.validation import (
+    GraphRecordValidationIssue,
+    GraphRecordValidationReport,
+    GraphRecordValidator,
+)
 
 __all__ = (
-    "ArtifactIdentity",
     "CANONICAL_MODEL_NAMES",
+    "ArtifactIdentity",
     "CanonicalEntityReference",
     "CanonicalEntityType",
     "ExtractionProvenance",
@@ -111,8 +111,8 @@ __all__ = (
     "GraphValidationError",
     "ImmutableGraphRecord",
     "InMemoryGraphStore",
-    "ProvenanceReference",
     "PropertyValue",
+    "ProvenanceReference",
     "ReviewStatus",
     "SourceIdentity",
     "SourceLineage",

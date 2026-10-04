@@ -4,8 +4,7 @@ from __future__ import annotations
 
 from collections.abc import Callable
 
-from knowledge.reasoning.evidence import EvidenceBundle
-from knowledge.reasoning.evidence import EvidenceItem
+from knowledge.reasoning.evidence import EvidenceBundle, EvidenceItem
 from knowledge.reasoning.exceptions import ReasoningValidationError
 from knowledge.reasoning.w10.classification import classify_evidence_item
 from knowledge.reasoning.w10.identity import (

@@ -2,7 +2,12 @@
 
 from __future__ import annotations
 
-from knowledge.mathocr import MathOCRFailure, UnavailableMathOCRAdapter, run_math_ocr, select_math_ocr_adapter
+from knowledge.mathocr import (
+    MathOCRFailure,
+    UnavailableMathOCRAdapter,
+    run_math_ocr,
+    select_math_ocr_adapter,
+)
 from knowledge.mathocr.tesseract_math import tesseract_math_is_provisioned
 
 

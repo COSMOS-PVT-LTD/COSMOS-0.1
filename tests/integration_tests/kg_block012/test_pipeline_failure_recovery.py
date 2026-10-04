@@ -7,9 +7,9 @@ import pytest
 from knowledge.graph import (
     GraphConstructionBatch,
     GraphConstructor,
+    GraphLifecycleState,
     GraphNode,
     GraphNodeIdentity,
-    GraphLifecycleState,
 )
 from knowledge.graph.serialization import canonical_graph_record_digest
 from knowledge.indexing.exceptions import IndexStaleError
@@ -22,7 +22,6 @@ from knowledge.reasoning.w10 import EvidenceChainBuilder, W10EngineeringContextB
 from knowledge.search import RetrievalMode, SearchQuery
 from knowledge.search.exceptions import SearchValidationError
 from knowledge.search.w8 import HybridSearchEngine, KeywordSearchEngine
-
 from tests.integration_tests.kg_block012.helpers.pipeline import (
     build_lox_registry,
     load_golden_document,

@@ -4,7 +4,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from knowledge.models.engineering_relation import EngineeringRelation, EngineeringRelationKind
+from knowledge.models.engineering_relation import (
+    EngineeringRelation,
+    EngineeringRelationKind,
+)
 from knowledge.models.lifecycle import (
     KnowledgeLifecycle,
     ProvenanceTrace,
