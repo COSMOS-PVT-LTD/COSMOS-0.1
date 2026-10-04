@@ -224,10 +224,18 @@
       ]
     },
     "NUM-016": {
-      "name": "Physics integration",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "Canonical Physics integration",
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "278 neighboring Physics, Core and regression cases passed at existing tolerances",
+        "Spy proves actual canonical bisection.solve called with Physics-owned residuals for Area-Mach, Prandtl-Meyer and oblique shock",
+        "Recovered values substituted into original relations; no import-error fallback or local algorithm remains",
+        "All-layer Mypy 307 files and Ruff passed"
+      ],
+      "limitations": [
+        "Fanno/Rayleigh inverse paths are absent in current source; forward relations remain unchanged and regression-tested",
+        "Historical waiver retained; candidate technical retirement is not default-branch merge or human approval"
+      ]
     },
     "NUM-017": {
       "name": "Full V&V/freeze",

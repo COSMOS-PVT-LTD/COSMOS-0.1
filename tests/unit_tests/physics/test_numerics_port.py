@@ -1,4 +1,4 @@
-"""Contract tests for PHYS-004 numerics port (waiver scope verification)."""
+"""Contract tests for PHYS-004 numerics port (canonical Numerics integration verification)."""
 
 from __future__ import annotations
 
@@ -24,28 +24,28 @@ def test_bracketed_root_uses_canonical_numerics_when_present() -> None:
     assert numerics_port.bracketed_root is find_root
 
 
-def test_fallback_invalid_bracket_raises() -> None:
+def test_canonical_invalid_bracket_raises() -> None:
     with pytest.raises(InvalidInputError, match="lower < upper"):
-        numerics_port._fallback_bisection(lambda x: x, 1.0, 0.5)
+        numerics_port.bracketed_root(lambda x: x, 1.0, 0.5)
 
 
-def test_fallback_no_sign_change_raises() -> None:
+def test_canonical_no_sign_change_raises() -> None:
     with pytest.raises(
-        SolverConvergenceError,
+        InvalidInputError,
         match="does not change sign",
     ):
-        numerics_port._fallback_bisection(lambda x: x * x + 1.0, 0.0, 1.0)
+        numerics_port.bracketed_root(lambda x: x * x + 1.0, 0.0, 1.0)
 
 
-def test_fallback_non_finite_residual_raises() -> None:
+def test_canonical_non_finite_residual_raises() -> None:
     with pytest.raises(SolverConvergenceError, match="non-finite"):
-        numerics_port._fallback_bisection(lambda x: float("nan"), 0.0, 1.0)
+        numerics_port.bracketed_root(lambda x: float("nan"), 0.0, 1.0)
 
 
-def test_fallback_is_deterministic() -> None:
+def test_canonical_is_deterministic() -> None:
     residual = lambda x: x * x - 2.0
-    first = numerics_port._fallback_bisection(residual, 0.0, 2.0)
-    second = numerics_port._fallback_bisection(residual, 0.0, 2.0)
+    first = numerics_port.bracketed_root(residual, 0.0, 2.0)
+    second = numerics_port.bracketed_root(residual, 0.0, 2.0)
     assert first == second
 
 
@@ -69,3 +69,34 @@ def test_oblique_shock_inverse_matches_evaluate() -> None:
     state = evaluate_oblique_shock(mach, theta, GAMMA)
     beta = wave_angle(mach, theta, GAMMA, branch="weak")
     assert beta == pytest.approx(state.wave_angle_rad, rel=1.0e-8)
+
+def test_actual_numerics_solver_invoked_with_physics_residuals(monkeypatch: pytest.MonkeyPatch) -> None:
+    from numerics.root_finding import bisection
+    from physics.compressible_flow.oblique_shock import deflection_from_wave_angle
+
+    actual = bisection.solve
+    calls: list[str] = []
+
+    def observed(residual, lower, upper, *, policy):
+        calls.append(residual.__module__)
+        return actual(residual, lower, upper, policy=policy)
+
+    monkeypatch.setattr(bisection, "solve", observed)
+    target_area = area_ratio(2.0, GAMMA)
+    recovered = mach_from_area_ratio(target_area, GAMMA, branch="supersonic")
+    assert abs(area_ratio(recovered, GAMMA) - target_area) < 1e-10
+    target_nu = prandtl_meyer(2.5, GAMMA)
+    recovered = mach_from_prandtl_meyer(target_nu, GAMMA)
+    assert abs(prandtl_meyer(recovered, GAMMA) - target_nu) < 1e-10
+    theta = math.radians(15)
+    beta = wave_angle(3.0, theta, GAMMA, branch="weak")
+    assert abs(deflection_from_wave_angle(3.0, beta, GAMMA) - theta) < 1e-10
+    assert len(calls) == 3
+    assert all(module.startswith("physics.compressible_flow.") for module in calls)
+
+
+def test_no_solver_fallback_or_optional_provider() -> None:
+    import inspect
+    source = inspect.getsource(numerics_port)
+    assert "_fallback_bisection" not in source
+    assert "except ImportError" not in source

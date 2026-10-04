@@ -1,5 +1,21 @@
 # PHYS-004-NUM-001 — Formal Waiver
 
+## NUM-016 retirement amendment — 2026-10-04
+
+The fallback has been removed in the Numerics foundation candidate branch.
+The port now requires the qualified canonical bisection implementation; missing
+Numerics fails import, and solver errors propagate without fallback.
+Actual invocation and substitution into the Area-Mach, Prandtl-Meyer and
+oblique-shock relations are tested in `test_numerics_port.py`.
+
+Technical retirement: IMPLEMENTED AND TESTED IN PR CANDIDATE.
+Default-branch retirement: PENDING OWNER-ACCEPTED PR MERGE.
+This amendment does not impersonate a human approval or revise the original
+2026-09-03 approval below. The historical waiver is retained for auditability
+and no longer describes the candidate source behavior.
+
+## Historical waiver (preserved)
+
 **Finding:** Temporary bisection fallback in `physics/contracts/numerics_port.py`  
 **Severity:** S2  
 **Status:** FORMALLY APPROVED WAIVER for COSMOS 0.1 foundation freeze (PATH A)  

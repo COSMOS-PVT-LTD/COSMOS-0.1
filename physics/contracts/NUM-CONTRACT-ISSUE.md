@@ -1,10 +1,10 @@
 # NUM-CONTRACT-ISSUE
 
-Status: OPEN
+Status: TECHNICALLY CLOSED IN NUM-016 CANDIDATE; OWNER PR MERGE PENDING
 
 Owner: Physics Foundation Agent (PHYS-001..007)
 Consumer: `physics/`
-Provider: Numerics (not present in repository at implementation time)
+Provider: qualified `numerics.root_finding.bisection.find_root`
 
 ## Required numerical methods
 
@@ -17,17 +17,20 @@ physical models, and require a scalar root finder:
 | Area–Mach inversion | `compressible_flow.area_mach` | `numerics.root_finding.bisection` or Brent |
 | Inverse Prandtl–Meyer | `compressible_flow.expansion_fan` | `numerics.root_finding.bisection` |
 | Oblique-shock wave angle | `compressible_flow.oblique_shock` | `numerics.root_finding.bisection` (β-θ-M) |
-| Inverse Fanno / Rayleigh Mach | `fanno.py`, `rayleigh.py` | `numerics.root_finding.bisection` |
+| Fanno / Rayleigh | Forward relations only in current source; no inverse path exists | Future inverse work remains outside this increment |
 | Property-table interpolation | fluid/material T-tables | `numerics.interpolation` (not yet used; tables are single-point or closed-form) |
 
-## Temporary port
+## Qualified mandatory port — NUM-016
 
-`physics.contracts.numerics_port.bracketed_root` will import
-`numerics.root_finding.bisection.find_root` when that module exists.
+`physics.contracts.numerics_port.bracketed_root` is the mandatory canonical
+`numerics.root_finding.bisection.find_root` implementation.
 
-Until then it uses a **minimal scalar bisection** solely to invert
-already-posed residuals. It is not a linear-algebra, ODE, PDE, or
-optimization stack.
+The temporary local bisection and import-failure fallback have been removed.
+Physical residual equations remain unchanged in Physics. A test spies on the
+actual Numerics solve and checks each recovered value in the original relation.
+Qualification and retirement evidence is recorded in
+`documentation/development/COSMOS_NUMERICS_FOUNDATION_VV_REPORT_001.md`.
+This technical closure does not imply a merged release or human acceptance.
 
 ## Physics will not
 
