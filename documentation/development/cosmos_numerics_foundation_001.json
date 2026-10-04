@@ -15,7 +15,11 @@
     "NUM-000": {
       "name": "Architecture intake",
       "status": "PASS",
-      "evidence": [],
+      "evidence": [
+        "Frozen Markdown/PDF tree reconciled; 139 Python slots represented",
+        "Numerics PDF pages 16-21 text-read and rendered/inspected",
+        "Core independence and upper-layer import AST regressions pass"
+      ],
       "limitations": []
     },
     "NUM-001": {
@@ -44,7 +48,7 @@
         "Brent-style safeguarded IQI/secant hybrid, not optimized canonical Brent transcription",
         "Unbracketed methods require documented local regularity; fixed point requires an explicit qualified contraction bound",
         "Bisection interval accuracy assumes residual continuity; residual history is reported separately",
-        "Existing Physics port auto-selects qualified Numerics; unused fallback retirement reserved for NUM-016"
+        "NUM-002 milestone selected canonical Numerics; the unused fallback was subsequently removed by NUM-016"
       ]
     },
     "NUM-003": {
@@ -239,15 +243,17 @@
     },
     "NUM-017": {
       "name": "Full V&V and freeze",
-      "status": "IN_PROGRESS",
+      "status": "PASS",
       "evidence": [
-        "First complete local regression: 2118 passed, 6 existing skips",
-        "14 continuum refinement studies and five representative timed benchmark cases implemented",
-        "Three quadrature overflow regressions reproduced and repaired; 203 focused qualification cases passed",
-        "Ruff, Mypy (307 files) and 7 GUI workflow cases passed"
+        "2143 passed, 6 pre-existing skips in 33.11s on macOS arm64 / Python 3.11.4",
+        "200 Numerics cases including all five test categories, 14 continuum refinement studies, five benchmark problems and three actual cross-package compositions",
+        "Ruff clean across all production scopes; Mypy 307 files passed; 7 GUI workflow cases passed; pip check and compileall passed",
+        "Hosted PR CI 37186453901 and push CI 37186451428 SUCCESS for qualified source 68f0cb72acf103ed4820c49ded5d4887bcaac925",
+        "Python 3.11 and 3.12 hosted: 2142 passed, 7 existing skips each; GUI 7 each; no Numerics skips"
       ],
       "limitations": [
-        "Final full regression, benchmark packet and hosted candidate CI pending"
+        "Development qualification only; owner acceptance/merge and any engineering certification are separate",
+        "Known six macOS / seven Linux baseline skips retained, not introduced by Numerics"
       ]
     }
   },
@@ -477,7 +483,619 @@
       "operational_api": false
     }
   ],
-  "verification": {},
-  "freeze_decision": "NOT_STARTED",
-  "human_acceptance": "PENDING_OWNER_PR_REVIEW"
+  "verification": {
+    "local": {
+      "sha": "68f0cb72acf103ed4820c49ded5d4887bcaac925",
+      "python": "3.11.4",
+      "numpy": "2.4.6",
+      "platform": "macOS-26.5.2-arm64-arm-64bit",
+      "pytest_passed": 2143,
+      "pytest_skipped": 6,
+      "pytest_seconds": 33.11,
+      "ruff": "PASS",
+      "mypy": "PASS",
+      "mypy_source_files": 307,
+      "gui_tests_passed": 7
+    },
+    "hosted": {
+      "sha": "68f0cb72acf103ed4820c49ded5d4887bcaac925",
+      "pr_ci_run": 37186453901,
+      "push_ci_run": 37186451428,
+      "conclusion": "SUCCESS",
+      "jobs": [
+        {
+          "name": "Test (Python 3.12)",
+          "conclusion": "success",
+          "url": "https://github.com/COSMOS-PVT-LTD/COSMOS-0.1/actions/runs/37186453901/job/111389283058"
+        },
+        {
+          "name": "Lint and type check",
+          "conclusion": "success",
+          "url": "https://github.com/COSMOS-PVT-LTD/COSMOS-0.1/actions/runs/37186453901/job/111389283252"
+        },
+        {
+          "name": "Test (Python 3.11)",
+          "conclusion": "success",
+          "url": "https://github.com/COSMOS-PVT-LTD/COSMOS-0.1/actions/runs/37186453901/job/111389283265"
+        }
+      ],
+      "python_311": {
+        "passed": 2142,
+        "skipped": 7,
+        "numpy": "2.4.6",
+        "gui_passed": 7
+      },
+      "python_312": {
+        "passed": 2142,
+        "skipped": 7,
+        "numpy": "2.5.3",
+        "gui_passed": 7
+      }
+    },
+    "benchmark_packet": {
+      "source_sha": "3045770984da1ebfb4908c54ad809473db593842",
+      "python": "3.11.4",
+      "numpy": "2.4.6",
+      "platform": "macOS-26.5.2-arm64-arm-64bit",
+      "studies": {
+        "trapezoid": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 0.0014316629302695283,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 0.0003579604661763103,
+            "ratio": 3.9995001279397577,
+            "order": 1.9998196979981762
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 0.00008949291301907358,
+            "ratio": 3.999875007979887,
+            "order": 1.9999549179537424
+          }
+        ],
+        "simpson": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 9.534657783305533e-7,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 5.964481153419854e-8,
+            "ratio": 15.98572874664655,
+            "order": 3.998712609115796
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 3.72863317998906e-9,
+            "ratio": 15.996427820870686,
+            "order": 3.9996778662189865
+          }
+        ],
+        "euler": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 0.12453936835904456,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 0.06498412331462422,
+            "ratio": 1.9164583902452654,
+            "order": 0.9384426749772072
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 0.033217990069073,
+            "ratio": 1.9562930562474488,
+            "order": 0.9681225048125908
+          }
+        ],
+        "rk4": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 0.0000020843238788259555,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 1.3580271085444906e-7,
+            "ratio": 15.348175789067252,
+            "order": 3.939995288824157
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 8.666191764206133e-9,
+            "ratio": 15.67040224234979,
+            "order": 3.9699703076011876
+          }
+        ],
+        "fd-central-first": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 0.0016575113027197386,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 0.0004160939266847352,
+            "ratio": 3.9835027536357113,
+            "order": 1.9940375721962393
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 0.0001041308621360093,
+            "ratio": 3.9958751723505275,
+            "order": 1.99851151530157
+          }
+        ],
+        "fd-central-second": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 0.0006525548727303043,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 0.0001694474423459269,
+            "ratio": 3.8510753759157588,
+            "order": 1.9452613608382612
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 0.000043108575180195174,
+            "ratio": 3.930713126973725,
+            "order": 1.9747910762029544
+          }
+        ],
+        "fd-fourth-first": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 0.000003263001707609625,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 2.0723084914742174e-7,
+            "ratio": 15.745733422577262,
+            "order": 3.976889053406852
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 1.3003592980176393e-8,
+            "ratio": 15.936429990029621,
+            "order": 3.9942565741199973
+          }
+        ],
+        "linear-interpolation": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 0.0010165575716837294,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 0.00025864336862246873,
+            "ratio": 3.9303446173698635,
+            "order": 1.974655815276069
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 0.00006520631054651727,
+            "ratio": 3.966538920154916,
+            "order": 1.987880704953189
+          }
+        ],
+        "clamped-cubic": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 2.1712014552921488e-7,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 1.3628847161939461e-8,
+            "ratio": 15.93092526090941,
+            "order": 3.993758155257207
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 8.538305618088771e-10,
+            "ratio": 15.96200437363844,
+            "order": 3.9965699192761326
+          }
+        ],
+        "poisson": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 0.008265416966228178,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 0.0020587067645332358,
+            "ratio": 4.014858798067908,
+            "order": 2.0053492492844582
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 0.0005142004781522047,
+            "ratio": 4.003704492713157,
+            "order": 2.001335494995546
+          }
+        ],
+        "heat": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 0.00043596315650018536,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 0.00010929517040081382,
+            "ratio": 3.988860211310299,
+            "order": 1.9959765653947066
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 0.000027342448891687354,
+            "ratio": 3.997270721206019,
+            "order": 1.9990152847711642
+          }
+        ],
+        "wave": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 0.001713420493827944,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 0.0004282529024857151,
+            "ratio": 4.000954772011375,
+            "order": 2.0003443201197304
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 0.00010705664611698751,
+            "ratio": 4.000245832638324,
+            "order": 2.000088662657556
+          }
+        ],
+        "fv-diffusion": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 0.008163655967699857,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 0.0020523604586316635,
+            "ratio": 3.977691118227193,
+            "order": 1.991931250152685
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 0.0005138040482048911,
+            "ratio": 3.9944419780305775,
+            "order": 1.9979939733013512
+          }
+        ],
+        "fem-interpolant": [
+          {
+            "resolution": 10,
+            "step": 0.1,
+            "error": 0.01216008244719513,
+            "ratio": null,
+            "order": null
+          },
+          {
+            "resolution": 20,
+            "step": 0.05,
+            "error": 0.003073163435559745,
+            "ratio": 3.9568616190372894,
+            "order": 1.984356611679179
+          },
+          {
+            "resolution": 40,
+            "step": 0.025,
+            "error": 0.0007703693741780704,
+            "ratio": 3.989207695124943,
+            "order": 1.9961022382223566
+          }
+        ]
+      },
+      "benchmarks": {
+        "root-sqrt2": {
+          "repetitions": 7,
+          "median_seconds": 0.000026999972760677338,
+          "minimum_seconds": 0.000026374938897788525,
+          "maximum_seconds": 0.000029916991479694843
+        },
+        "linear-16": {
+          "repetitions": 7,
+          "median_seconds": 0.0002596670528873801,
+          "minimum_seconds": 0.0002565000904724002,
+          "maximum_seconds": 0.0002697089221328497
+        },
+        "ode-exp-rk4-200": {
+          "repetitions": 7,
+          "median_seconds": 0.0029409159906208515,
+          "minimum_seconds": 0.002923874999396503,
+          "maximum_seconds": 0.00305649999063462
+        },
+        "fd-sin-1001": {
+          "repetitions": 7,
+          "median_seconds": 0.000013291952200233936,
+          "minimum_seconds": 0.00001208402682095766,
+          "maximum_seconds": 0.000017583020962774754
+        },
+        "fv-diffusion-32": {
+          "repetitions": 7,
+          "median_seconds": 0.0008827089332044125,
+          "minimum_seconds": 0.0008711670525372028,
+          "maximum_seconds": 0.0009442500304430723
+        }
+      },
+      "claims": "development numerical evidence, not physical/flight/certification qualification"
+    },
+    "numerics_cases": 200,
+    "pip_check": "PASS",
+    "compileall": "PASS"
+  },
+  "freeze_decision": "PASS WITH DOCUMENTED NON-BLOCKING LIMITATIONS",
+  "human_acceptance": "PENDING_OWNER_PR_REVIEW_AND_MERGE",
+  "files_created": [
+    ".github/ISSUE_TEMPLATE/bug_report.md",
+    ".github/ISSUE_TEMPLATE/feature_request.md",
+    ".github/ISSUE_TEMPLATE/scientific_defect.md",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/governance/main-protection.json",
+    ".github/governance/security-settings.json",
+    ".github/workflows/release.yml",
+    "documentation/development/COSMOS_NUMERICS_FOUNDATION_ARCHITECTURE_001.md",
+    "documentation/development/COSMOS_NUMERICS_FOUNDATION_FREEZE_001.md",
+    "documentation/development/COSMOS_NUMERICS_FOUNDATION_VV_001.md",
+    "documentation/development/COSMOS_REPOSITORY_GOVERNANCE_GATE_001.md",
+    "documentation/development/COSMOS_REPOSITORY_GOVERNANCE_POLICY.md",
+    "documentation/development/cosmos_numerics_foundation_001.json",
+    "numerics/__init__.py",
+    "numerics/automatic_differentiation/__init__.py",
+    "numerics/automatic_differentiation/forward_mode.py",
+    "numerics/automatic_differentiation/gradients.py",
+    "numerics/automatic_differentiation/hessians.py",
+    "numerics/automatic_differentiation/jacobians.py",
+    "numerics/automatic_differentiation/reverse_mode.py",
+    "numerics/finite_difference/__init__.py",
+    "numerics/finite_difference/boundary_conditions.py",
+    "numerics/finite_difference/explicit.py",
+    "numerics/finite_difference/first_order.py",
+    "numerics/finite_difference/higher_order.py",
+    "numerics/finite_difference/implicit.py",
+    "numerics/finite_difference/second_order.py",
+    "numerics/finite_difference/stability.py",
+    "numerics/finite_element/__init__.py",
+    "numerics/finite_element/assembly.py",
+    "numerics/finite_element/boundary_conditions.py",
+    "numerics/finite_element/elements.py",
+    "numerics/finite_element/fem_solver.py",
+    "numerics/finite_element/gauss_quadrature.py",
+    "numerics/finite_element/shape_functions.py",
+    "numerics/finite_element/stiffness_matrix.py",
+    "numerics/finite_volume/__init__.py",
+    "numerics/finite_volume/control_volume.py",
+    "numerics/finite_volume/convection.py",
+    "numerics/finite_volume/diffusion.py",
+    "numerics/finite_volume/discretization.py",
+    "numerics/finite_volume/fluxes.py",
+    "numerics/finite_volume/fv_solver.py",
+    "numerics/finite_volume/interpolation.py",
+    "numerics/finite_volume/source_terms.py",
+    "numerics/integration/__init__.py",
+    "numerics/integration/adaptive.py",
+    "numerics/integration/gaussian.py",
+    "numerics/integration/monte_carlo.py",
+    "numerics/integration/romberg.py",
+    "numerics/integration/simpson.py",
+    "numerics/integration/trapezoidal.py",
+    "numerics/interpolation/__init__.py",
+    "numerics/interpolation/barycentric.py",
+    "numerics/interpolation/cubic_spline.py",
+    "numerics/interpolation/hermite.py",
+    "numerics/interpolation/lagrange.py",
+    "numerics/interpolation/linear.py",
+    "numerics/interpolation/polynomial.py",
+    "numerics/interpolation/spline.py",
+    "numerics/linear_algebra/__init__.py",
+    "numerics/linear_algebra/decomposition.py",
+    "numerics/linear_algebra/dense_matrix.py",
+    "numerics/linear_algebra/eigenvalues.py",
+    "numerics/linear_algebra/eigenvectors.py",
+    "numerics/linear_algebra/matrix.py",
+    "numerics/linear_algebra/matrix_operations.py",
+    "numerics/linear_algebra/solvers.py",
+    "numerics/linear_algebra/sparse_matrix.py",
+    "numerics/linear_algebra/vector.py",
+    "numerics/mesh/__init__.py",
+    "numerics/mesh/connectivity.py",
+    "numerics/mesh/grid_generation.py",
+    "numerics/mesh/quality.py",
+    "numerics/mesh/refinement.py",
+    "numerics/mesh/structured_mesh.py",
+    "numerics/mesh/unstructured_mesh.py",
+    "numerics/nonlinear_solver/__init__.py",
+    "numerics/nonlinear_solver/convergence.py",
+    "numerics/nonlinear_solver/jacobian.py",
+    "numerics/nonlinear_solver/line_search.py",
+    "numerics/nonlinear_solver/nonlinear_system.py",
+    "numerics/nonlinear_solver/numerical_jacobian.py",
+    "numerics/nonlinear_solver/trust_region.py",
+    "numerics/ode/__init__.py",
+    "numerics/ode/adaptive_step.py",
+    "numerics/ode/euler.py",
+    "numerics/ode/heun.py",
+    "numerics/ode/implicit.py",
+    "numerics/ode/midpoint.py",
+    "numerics/ode/ode_solver.py",
+    "numerics/ode/rk2.py",
+    "numerics/ode/rk4.py",
+    "numerics/ode/rk45.py",
+    "numerics/optimization/__init__.py",
+    "numerics/optimization/bayesian.py",
+    "numerics/optimization/bfgs.py",
+    "numerics/optimization/conjugate_gradient.py",
+    "numerics/optimization/genetic_algorithm.py",
+    "numerics/optimization/gradient_descent.py",
+    "numerics/optimization/lbfgs.py",
+    "numerics/optimization/multi_objective.py",
+    "numerics/optimization/nelder_mead.py",
+    "numerics/optimization/particle_swarm.py",
+    "numerics/optimization/simulated_annealing.py",
+    "numerics/parallel/__init__.py",
+    "numerics/parallel/multiprocessing.py",
+    "numerics/parallel/shared_memory.py",
+    "numerics/parallel/task_scheduler.py",
+    "numerics/parallel/threading.py",
+    "numerics/parallel/workload.py",
+    "numerics/pde/__init__.py",
+    "numerics/pde/elliptic.py",
+    "numerics/pde/heat_equation.py",
+    "numerics/pde/hyperbolic.py",
+    "numerics/pde/laplace.py",
+    "numerics/pde/parabolic.py",
+    "numerics/pde/pde_solver.py",
+    "numerics/pde/poisson.py",
+    "numerics/pde/wave_equation.py",
+    "numerics/random/__init__.py",
+    "numerics/random/distributions.py",
+    "numerics/random/random_generators.py",
+    "numerics/random/sampling.py",
+    "numerics/random/seeds.py",
+    "numerics/root_finding/__init__.py",
+    "numerics/root_finding/bisection.py",
+    "numerics/root_finding/brent.py",
+    "numerics/root_finding/fixed_point.py",
+    "numerics/root_finding/newton_raphson.py",
+    "numerics/root_finding/regula_falsi.py",
+    "numerics/root_finding/secant.py",
+    "numerics/sensitivity/__init__.py",
+    "numerics/sensitivity/global.py",
+    "numerics/sensitivity/local.py",
+    "numerics/sensitivity/morris.py",
+    "numerics/sensitivity/parameter_scan.py",
+    "numerics/sensitivity/sobol.py",
+    "numerics/tests/benchmark/README.md",
+    "numerics/tests/integration/README.md",
+    "numerics/tests/regression/README.md",
+    "numerics/tests/unit/README.md",
+    "numerics/tests/validation/README.md",
+    "numerics/uncertainty/__init__.py",
+    "numerics/uncertainty/confidence_interval.py",
+    "numerics/uncertainty/latin_hypercube.py",
+    "numerics/uncertainty/monte_carlo.py",
+    "numerics/uncertainty/polynomial_chaos.py",
+    "numerics/uncertainty/statistics.py",
+    "numerics/uncertainty/uncertainty_propagation.py",
+    "numerics/utilities/__init__.py",
+    "numerics/utilities/convergence.py",
+    "numerics/utilities/norms.py",
+    "numerics/utilities/numerical_checks.py",
+    "numerics/utilities/residuals.py",
+    "numerics/utilities/scaling.py",
+    "numerics/utilities/tolerances.py",
+    "requirements-numerics.txt",
+    "scripts/apply_repository_governance.sh",
+    "tests/benchmark_tests/numerics/test_benchmark_contracts.py",
+    "tests/integration_tests/numerics/test_composed_foundations.py",
+    "tests/regression_tests/numerics/test_fail_closed_edges.py",
+    "tests/regression_tests/numerics/test_foundation_manifest.py",
+    "tests/regression_tests/test_repository_governance.py",
+    "tests/unit_tests/numerics/test_automatic_differentiation.py",
+    "tests/unit_tests/numerics/test_finite_difference.py",
+    "tests/unit_tests/numerics/test_finite_element.py",
+    "tests/unit_tests/numerics/test_finite_volume.py",
+    "tests/unit_tests/numerics/test_interpolation_integration.py",
+    "tests/unit_tests/numerics/test_linear_algebra.py",
+    "tests/unit_tests/numerics/test_mesh.py",
+    "tests/unit_tests/numerics/test_nonlinear.py",
+    "tests/unit_tests/numerics/test_ode.py",
+    "tests/unit_tests/numerics/test_optimization.py",
+    "tests/unit_tests/numerics/test_parallel.py",
+    "tests/unit_tests/numerics/test_pde.py",
+    "tests/unit_tests/numerics/test_random_uncertainty.py",
+    "tests/unit_tests/numerics/test_root_finding.py",
+    "tests/unit_tests/numerics/test_utilities.py",
+    "tests/validation_tests/numerics/test_refinement_studies.py",
+    "tools/benchmark_numerics_foundation.py"
+  ],
+  "files_modified": [
+    ".github/CODEOWNERS",
+    ".github/workflows/ci.yml",
+    "README.md",
+    "physics/contracts/NUM-CONTRACT-ISSUE.md",
+    "physics/contracts/PHYS-004-NUM-WAIVER.md",
+    "physics/contracts/numerics_port.py",
+    "requirements-desktop.txt",
+    "requirements-dev.txt",
+    "tests/regression_tests/test_remediation_quality_gate.py",
+    "tests/unit_tests/physics/test_numerics_port.py"
+  ],
+  "qualified_source_sha": "68f0cb72acf103ed4820c49ded5d4887bcaac925",
+  "pull_request": "https://github.com/COSMOS-PVT-LTD/COSMOS-0.1/pull/1"
 }

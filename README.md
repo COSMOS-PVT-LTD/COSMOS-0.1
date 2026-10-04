@@ -55,12 +55,18 @@ documents describe intent; they are not evidence that a capability is live.
 | Area | Status |
 |------|--------|
 | Core infrastructure (`core/`) | **IMPLEMENTED** (units, quantities, validation) |
+| Numerics foundation (`numerics/`) | **DEVELOPMENT-QUALIFIED CANDIDATE** (generic math; explicit advanced deferrals; not production CFD/FEA) |
 | Physics foundation (`physics/`) | **PARTIAL** (frozen compressible / heat-transfer / materials / propellant registry; CEA unbound) |
 | Systems propulsion workflow (`systems/`) | **PARTIAL** (Phases 3–6; injector / cooling / cycle / MOC **NOT_IMPLEMENTED**) |
 | Application API (`api/`) | **PARTIAL** (auth, physics adapters, propulsion design lifecycle) |
 | Desktop GUI (`gui/`) | **PARTIAL** (login, hub, Rocket Engine, Maharshi Bharadwaj) |
 | Knowledge workspace | **PARTIAL** (authenticated in the desktop app; standalone `:8765` is development-only) |
 | Remaining workbenches (turbopumps, CAD, CFD, PLM, …) | **PLANNED** |
+
+Numerics candidate scope, test evidence and limitations:
+[V&V report](documentation/development/COSMOS_NUMERICS_FOUNDATION_VV_001.md),
+[freeze candidate](documentation/development/COSMOS_NUMERICS_FOUNDATION_FREEZE_001.md).
+Owner acceptance and protected-main merge are separate from numerical qualification.
 
 ## Quick start (native desktop — default)
 
