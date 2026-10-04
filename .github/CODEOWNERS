@@ -1,9 +1,4 @@
-# COSMOS 0.1 — Code ownership
-#
-# Replace the placeholder team handle with the official COSMOS PVT LTD
-# GitHub team when established.
-#
-# Example:
-# * @COSMOS-PVT-LTD/engineering
-
-* @[COSMOS-GITHUB-TEAM]
+# COSMOS PVT LTD. All Rights Reserved.
+# Verified repository administrator; replace with an authorized engineering
+# team only after verifying that team's write permission.
+* @trishul4kumar-ui

@@ -1,0 +1,37 @@
+name: Development release gate
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing annotated development baseline tag; this workflow never creates a tag
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  checks: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify tag, protected-main ancestry and successful checks
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$RELEASE_TAG" =~ ^COSMOS[-_][A-Za-z0-9._-]+$ ]]
+          git check-ref-format "refs/tags/$RELEASE_TAG"
+          test "$(git cat-file -t "refs/tags/$RELEASE_TAG")" = tag
+          task_sha="$(git rev-parse "refs/tags/$RELEASE_TAG^{commit}")"
+          git merge-base --is-ancestor "$task_sha" origin/main
+          gh api "repos/$GITHUB_REPOSITORY/branches/main" --jq '.protected' | rg '^true$'
+          gh api "repos/$GITHUB_REPOSITORY/commits/$task_sha/check-runs" --jq '[.check_runs[] | select(.app.id == 15368 and .conclusion == "success") | .name] | contains(["Test (Python 3.11)", "Test (Python 3.12)", "Lint and type check"])' | rg '^true$'
+          echo 'Development release evidence verified. No release, deployment or certification created.'
