@@ -4,7 +4,7 @@ COSMOS Rocket Propulsion Platform
 Module: numerics.finite_volume.convection
 Author: COSMOS Development Team
 Version: 0.1.0
-Purpose: DEFERRED architecture slot; no operational API is exported.
+Purpose: Domain-neutral finite_volume.convection foundation.
 Copyright (c) 2026 COSMOS PVT LTD. All Rights Reserved.
 
 Description:
@@ -13,5 +13,11 @@ Description:
 
 from __future__ import annotations
 
-CAPABILITY_STATE = "DEFERRED"
-__all__: tuple[str, ...] = ()
+from numerics.finite_volume.interpolation import upwind
+from numerics.utilities.numerical_checks import finite
+
+
+def flux(left: float, right: float, velocity: float) -> float:
+    """Signed upwind convective flux, positive in increasing coordinate direction."""
+    v = finite(velocity)
+    return finite(v*upwind(left,right,v))

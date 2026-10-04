@@ -130,10 +130,17 @@
       ]
     },
     "NUM-009": {
-      "name": "Finite volume",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "Conservative finite volume",
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "6 tests passed: constant preservation at both velocity signs, nonuniform linear diffusion, analytic scalar fluxes",
+        "Manufactured sin solution second-order diffusion refinement and actual cell/global conservation",
+        "Internal-face cancellation is exact by shared-face construction; Ruff and Mypy passed"
+      ],
+      "limitations": [
+        "1D scalar steady convection-diffusion only; upwind convection is first-order and positive diffusivity required",
+        "No Navier-Stokes, turbulence, compressible application or production CFD"
+      ]
     },
     "NUM-010": {
       "name": "Finite element",
