@@ -20,8 +20,13 @@
     },
     "NUM-001": {
       "name": "Utilities/contracts",
-      "status": "NOT_STARTED",
-      "evidence": [],
+      "status": "PASS",
+      "evidence": [
+        "tests/unit_tests/numerics/test_utilities.py: 31 passed",
+        "Core independence neighboring tests: 5 passed",
+        "Three overflow regressions reproduced failing before repair",
+        "Ruff and Mypy numerics passed"
+      ],
       "limitations": []
     },
     "NUM-002": {
