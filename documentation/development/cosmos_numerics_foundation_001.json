@@ -209,10 +209,19 @@
       ]
     },
     "NUM-015": {
-      "name": "Parallel utilities",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "Explicit bounded parallel utilities",
+      "status": "PASS_WITH_LIMITATIONS",
+      "evidence": [
+        "6 tests passed on macOS: both ordered thread and spawn-process execution and seeded replay",
+        "Original worker exceptions propagate; active child sets unchanged after normal and failure shutdown",
+        "Real shared-memory attachment/mutation verified and segments unlinked on success and exception",
+        "Worker/job caps and unknown backend rejected; Ruff and Mypy passed"
+      ],
+      "limitations": [
+        "Caller callbacks must terminate; shutdown waits for running jobs and cannot safely kill arbitrary callbacks",
+        "Process callbacks must be importable/pickleable and launch from a main-guarded context; shared views are context-borrowed only",
+        "No numerical algorithm is silently parallelized"
+      ]
     },
     "NUM-016": {
       "name": "Physics integration",
