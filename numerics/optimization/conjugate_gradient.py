@@ -24,7 +24,20 @@ from numerics.optimization.gradient_descent import (
 from numerics.utilities.tolerances import DEFAULT_TOLERANCES, Tolerances
 
 
-def minimize(function: ObjectiveFunction, gradient: GradientFunction, initial: ArrayLike, *,
-             step_size: float = 1., tolerances: Tolerances = DEFAULT_TOLERANCES) -> OptimizationResult:
+def minimize(
+    function: ObjectiveFunction,
+    gradient: GradientFunction,
+    initial: ArrayLike,
+    *,
+    step_size: float = 1.0,
+    tolerances: Tolerances = DEFAULT_TOLERANCES,
+) -> OptimizationResult:
     """Nonlinear Polak-Ribiere+ CG with explicit non-descent restart and Armijo."""
-    return _minimize(function,gradient,initial,method="polak-ribiere-plus",step_size=step_size,tolerances=tolerances)
+    return _minimize(
+        function,
+        gradient,
+        initial,
+        method="polak-ribiere-plus",
+        step_size=step_size,
+        tolerances=tolerances,
+    )

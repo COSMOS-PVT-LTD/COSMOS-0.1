@@ -70,7 +70,10 @@ def test_oblique_shock_inverse_matches_evaluate() -> None:
     beta = wave_angle(mach, theta, GAMMA, branch="weak")
     assert beta == pytest.approx(state.wave_angle_rad, rel=1.0e-8)
 
-def test_actual_numerics_solver_invoked_with_physics_residuals(monkeypatch: pytest.MonkeyPatch) -> None:
+
+def test_actual_numerics_solver_invoked_with_physics_residuals(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     from numerics.root_finding import bisection
     from physics.compressible_flow.oblique_shock import deflection_from_wave_angle
 
@@ -97,6 +100,7 @@ def test_actual_numerics_solver_invoked_with_physics_residuals(monkeypatch: pyte
 
 def test_no_solver_fallback_or_optional_provider() -> None:
     import inspect
+
     source = inspect.getsource(numerics_port)
     assert "_fallback_bisection" not in source
     assert "except ImportError" not in source

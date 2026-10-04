@@ -20,11 +20,14 @@ from numerics.utilities.numerical_checks import FloatArray, finite_output
 
 
 def _bisect(axis: FloatArray) -> FloatArray:
-    refined=np.empty(2*len(axis)-1)
-    refined[::2]=axis
-    refined[1::2]=axis[:-1]/2+axis[1:]/2
+    refined = np.empty(2 * len(axis) - 1)
+    refined[::2] = axis
+    refined[1::2] = axis[:-1] / 2 + axis[1:] / 2
     return finite_output(refined)
+
 
 def refine(mesh: StructuredMesh) -> StructuredMesh:
     """Deterministic uniform bisection of each axis; no adaptive/CAD remeshing."""
-    return StructuredMesh.build(_bisect(mesh.x),None if mesh.y is None else _bisect(mesh.y))
+    return StructuredMesh.build(
+        _bisect(mesh.x), None if mesh.y is None else _bisect(mesh.y)
+    )

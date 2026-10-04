@@ -19,20 +19,33 @@ from dataclasses import dataclass
 import numpy as np
 
 from numerics.integration.trapezoidal import _interval
-from numerics.utilities.numerical_checks import ScalarFunction, count, evaluate
+from numerics.random.random_generators import generator
+from numerics.utilities.numerical_checks import (
+    ScalarFunction,
+    count,
+    evaluate,
+    scalar_output,
+)
 
 
 @dataclass(frozen=True, slots=True)
 class MonteCarloEstimate:
     """Fixed budget estimate: standard error is statistical, not a certified bound."""
+
     value: float
     standard_error: float
     samples: int
     seed: int
 
-def integrate(function: ScalarFunction, lower: float, upper: float, *, samples: int, seed: int) -> MonteCarloEstimate:
-    a, b = _interval(lower,upper)
-    n, s = count(samples,minimum=2), count(seed,"seed",minimum=0)
-    points = np.random.default_rng(s).uniform(a,b,n)
-    values = np.array([evaluate(function,float(x)) for x in points])
-    return MonteCarloEstimate(float((b-a)*values.mean()),float((b-a)*values.std(ddof=1)/math.sqrt(n)),n,s)
+
+def integrate(
+    function: ScalarFunction, lower: float, upper: float, *, samples: int, seed: int
+) -> MonteCarloEstimate:
+    a, b = _interval(lower, upper)
+    n, s = count(samples, minimum=2), count(seed, "seed", minimum=0)
+    points = generator(s).uniform(a, b, n)
+    values = np.array([evaluate(function, float(x)) for x in points])
+    with np.errstate(over="ignore", invalid="ignore"):
+        value = scalar_output(float((b - a) * values.mean()))
+        error = scalar_output(float((b - a) * values.std(ddof=1) / math.sqrt(n)))
+    return MonteCarloEstimate(value, error, n, s)

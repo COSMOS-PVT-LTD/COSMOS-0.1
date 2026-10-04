@@ -21,9 +21,10 @@ from numerics.utilities.numerical_checks import finite
 @dataclass(frozen=True, slots=True)
 class DirichletBoundary:
     """Explicit normalized endpoint values; no hidden extrapolated boundaries."""
+
     left: float
     right: float
 
     def __post_init__(self) -> None:
-        finite(self.left,"left boundary")
-        finite(self.right,"right boundary")
+        finite(self.left, "left boundary")
+        finite(self.right, "right boundary")

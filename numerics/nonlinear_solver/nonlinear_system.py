@@ -39,9 +39,15 @@ from numerics.utilities.numerical_checks import (
 from numerics.utilities.tolerances import DEFAULT_TOLERANCES, Tolerances
 
 
-def solve(function: ResidualFunction, initial: ArrayLike, *, jacobian: JacobianFunction | None = None,
-          numerical_step: float | None = None, trust_radius: float | None = None,
-          tolerances: Tolerances = DEFAULT_TOLERANCES) -> NumericalResult[FloatArray]:
+def solve(
+    function: ResidualFunction,
+    initial: ArrayLike,
+    *,
+    jacobian: JacobianFunction | None = None,
+    numerical_step: float | None = None,
+    trust_radius: float | None = None,
+    tolerances: Tolerances = DEFAULT_TOLERANCES,
+) -> NumericalResult[FloatArray]:
     """Newton plus mandatory residual backtracking; optional explicit norm cap."""
     if (jacobian is None) == (numerical_step is None):
         invalid("Provide exactly one analytic Jacobian or explicit numerical step.")
@@ -50,25 +56,32 @@ def solve(function: ResidualFunction, initial: ArrayLike, *, jacobian: JacobianF
     if trust_radius is not None:
         positive(trust_radius)
     x = vector(initial)
-    value = evaluate_residual(function,x)
+    value = evaluate_residual(function, x)
     history = [l2(value)]
-    for iteration in range(tolerances.max_iterations+1):
-        if residual_converged(value,tolerances):
+    for iteration in range(tolerances.max_iterations + 1):
+        if residual_converged(value, tolerances):
             x.setflags(write=False)
-            return NumericalResult(x,True,iteration,history[-1],TerminationReason.CONVERGED_ABSOLUTE,
-                                   "newton-system-backtracking",residual_history=tuple(history))
+            return NumericalResult(
+                x,
+                True,
+                iteration,
+                history[-1],
+                TerminationReason.CONVERGED_ABSOLUTE,
+                "newton-system-backtracking",
+                residual_history=tuple(history),
+            )
         if iteration == tolerances.max_iterations:
             break
         if jacobian is not None:
-            j = evaluate_jacobian(jacobian,x)
+            j = evaluate_jacobian(jacobian, x)
         else:
             assert numerical_step is not None
-            j = numerical_jacobian(function,x,step=numerical_step)
-        direction = solve_linear(j,-value,policy=tolerances).value
+            j = numerical_jacobian(function, x, step=numerical_step)
+        direction = solve_linear(j, -value, policy=tolerances).value
         if trust_radius is not None:
-            direction = bounded_step(direction,trust_radius)
-        candidate, value, _ = backtrack(function,x,direction)
-        if np.array_equal(candidate,x):
+            direction = bounded_step(direction, trust_radius)
+        candidate, value, _ = backtrack(function, x, direction)
+        if np.array_equal(candidate, x):
             failure("Nonlinear solve stagnated without satisfying residual tolerance.")
         x = candidate
         history.append(l2(value))

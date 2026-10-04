@@ -28,17 +28,25 @@ from numerics.utilities.numerical_checks import (
 
 def differentiate(values: ArrayLike, spacing: float) -> FloatArray:
     """Second-order central second derivative on interior nodes only."""
-    y,h = vector(values),positive(spacing)
-    if len(y)<3:
+    y, h = vector(values), positive(spacing)
+    if len(y) < 3:
         invalid("Second derivative requires >=3 nodes.")
     with np.errstate(over="ignore", invalid="ignore", divide="ignore"):
-        return finite_output((y[2:]-2*y[1:-1]+y[:-2])/(h*h))
+        return finite_output((y[2:] - 2 * y[1:-1] + y[:-2]) / (h * h))
+
 
 def operator(nodes: ArrayLike) -> FloatArray:
     """Interior Dirichlet Laplacian; boundary RHS contribution remains explicit."""
-    x = grid(nodes,uniform=True)
-    n,h = len(x)-2,float(x[1]-x[0])
-    if n<1:
+    x = grid(nodes, uniform=True)
+    n, h = len(x) - 2, float(x[1] - x[0])
+    if n < 1:
         invalid("Laplacian requires an interior node.")
     with np.errstate(over="ignore", invalid="ignore", divide="ignore"):
-        return finite_output((np.diag(np.full(n,-2.))+np.diag(np.ones(n-1),1)+np.diag(np.ones(n-1),-1))/(h*h))
+        return finite_output(
+            (
+                np.diag(np.full(n, -2.0))
+                + np.diag(np.ones(n - 1), 1)
+                + np.diag(np.ones(n - 1), -1)
+            )
+            / (h * h)
+        )

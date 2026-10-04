@@ -27,8 +27,13 @@ from numerics.utilities.numerical_checks import (
 from numerics.utilities.tolerances import ROOT_TOLERANCES, Tolerances
 
 
-def solve(mapping: ScalarFunction, x0: float, *, contraction_bound: float,
-          policy: Tolerances = ROOT_TOLERANCES) -> NumericalResult[float]:
+def solve(
+    mapping: ScalarFunction,
+    x0: float,
+    *,
+    contraction_bound: float,
+    policy: Tolerances = ROOT_TOLERANCES,
+) -> NumericalResult[float]:
     """Iterate a caller-qualified contraction g, |g'|<=q<1 on the invariant domain.
 
     A posteriori error is |g(x)-x|/(1-q). Observed violations of the
@@ -51,7 +56,9 @@ def solve(mapping: ScalarFunction, x0: float, *, contraction_bound: float,
             failure("DIVERGENCE: observed mapping violates contraction_bound.")
         error = abs(residual) / (1 - q)
         if abs(residual) <= policy.residual and error <= policy.threshold(candidate):
-            return _result(candidate, residual, iteration, "fixed-point", history, error)
+            return _result(
+                candidate, residual, iteration, "fixed-point", history, error
+            )
         if candidate == x:
             failure("STAGNATION: fixed-point iteration cannot progress.")
         x = candidate

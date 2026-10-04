@@ -21,10 +21,21 @@ from numerics.utilities.numerical_checks import FloatArray
 from numerics.utilities.tolerances import DEFAULT_TOLERANCES, Tolerances
 
 
-def step(function: RHSFunction, time: float, state: ArrayLike, step_size: float, *,
-         numerical_step: float, tolerances: Tolerances = DEFAULT_TOLERANCES) -> FloatArray:
+def step(
+    function: RHSFunction,
+    time: float,
+    state: ArrayLike,
+    step_size: float,
+    *,
+    numerical_step: float,
+    tolerances: Tolerances = DEFAULT_TOLERANCES,
+) -> FloatArray:
     """Real backward Euler via safeguarded Newton; explicit FD Jacobian perturbation."""
-    t,y,h = _input(time,state,step_size)
+    t, y, h = _input(time, state, step_size)
+
     def residual(candidate: FloatArray) -> FloatArray:
-        return candidate-y-h*_evaluate(function,t+h,candidate)
-    return solve(residual,y,numerical_step=numerical_step,tolerances=tolerances).value
+        return candidate - y - h * _evaluate(function, t + h, candidate)
+
+    return solve(
+        residual, y, numerical_step=numerical_step, tolerances=tolerances
+    ).value

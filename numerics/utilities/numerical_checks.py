@@ -35,6 +35,13 @@ def finite_output(value: FloatArray) -> FloatArray:
     return value
 
 
+def scalar_output(value: float) -> float:
+    """Validate a calculated scalar as a solver outcome, not caller input."""
+    if not math.isfinite(value):
+        failure("Calculated scalar is nonfinite; normalize inputs.")
+    return value
+
+
 def invalid(message: str) -> NoReturn:
     """Raise the existing Core invalid-input error with concise diagnostics."""
     LOGGER.debug("INVALID_INPUT: %s", message)
@@ -96,7 +103,9 @@ def vector(values: ArrayLike, name: str = "vector") -> FloatArray:
     return array(values, 1, name)
 
 
-def matrix(values: ArrayLike, name: str = "matrix", *, square: bool = False) -> FloatArray:
+def matrix(
+    values: ArrayLike, name: str = "matrix", *, square: bool = False
+) -> FloatArray:
     """Validate and copy a finite rank-two matrix; optionally require square."""
     result = array(values, 2, name)
     if square and result.shape[0] != result.shape[1]:

@@ -30,15 +30,17 @@ def _evaluate(model: ScalarModel, point: FloatArray) -> float:
 
 def gradient(model: ScalarModel, state: ArrayLike, *, step: float) -> FloatArray:
     """Local centered finite-difference scalar gradient; not automatic differentiation."""
-    x,h=vector(state),positive(step)
-    result=np.empty(len(x))
+    x, h = vector(state), positive(step)
+    result = np.empty(len(x))
     for j in range(len(x)):
-        plus,minus=x.copy(),x.copy()
-        plus[j]+=h
-        minus[j]-=h
-        if plus[j]==x[j] or minus[j]==x[j]:
+        plus, minus = x.copy(), x.copy()
+        plus[j] += h
+        minus[j] -= h
+        if plus[j] == x[j] or minus[j] == x[j]:
             from numerics.utilities.numerical_checks import failure
+
             failure("Sensitivity perturbation below floating-point spacing.")
-        result[j]=(_evaluate(model,plus)-_evaluate(model,minus))/(2*h)
+        result[j] = (_evaluate(model, plus) - _evaluate(model, minus)) / (2 * h)
     from numerics.utilities.numerical_checks import finite_output
+
     return finite_output(result)

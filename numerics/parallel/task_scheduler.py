@@ -20,11 +20,21 @@ from numerics.parallel.workload import InputType, OutputType
 from numerics.utilities.numerical_checks import invalid
 
 
-def map_ordered(function: Callable[[InputType],OutputType], items: Iterable[InputType], *,
-                backend: str, worker_count: int, max_jobs: int = 10000) -> tuple[OutputType,...]:
+def map_ordered(
+    function: Callable[[InputType], OutputType],
+    items: Iterable[InputType],
+    *,
+    backend: str,
+    worker_count: int,
+    max_jobs: int = 10000,
+) -> tuple[OutputType, ...]:
     """No implicit backend selection or fallback; ordered outputs in both backends."""
-    if backend=="thread":
-        return threading.map_ordered(function,items,worker_count=worker_count,max_jobs=max_jobs)
-    if backend=="process":
-        return multiprocessing.map_ordered(function,items,worker_count=worker_count,max_jobs=max_jobs)
+    if backend == "thread":
+        return threading.map_ordered(
+            function, items, worker_count=worker_count, max_jobs=max_jobs
+        )
+    if backend == "process":
+        return multiprocessing.map_ordered(
+            function, items, worker_count=worker_count, max_jobs=max_jobs
+        )
     invalid("Parallel backend must be explicitly thread or process.")

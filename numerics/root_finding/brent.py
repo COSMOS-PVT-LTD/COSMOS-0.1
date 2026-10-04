@@ -28,8 +28,13 @@ from numerics.utilities.numerical_checks import ScalarFunction, evaluate, failur
 from numerics.utilities.tolerances import ROOT_TOLERANCES, Tolerances
 
 
-def solve(residual: ScalarFunction, lower: float, upper: float, *,
-          policy: Tolerances = ROOT_TOLERANCES) -> NumericalResult[float]:
+def solve(
+    residual: ScalarFunction,
+    lower: float,
+    upper: float,
+    *,
+    policy: Tolerances = ROOT_TOLERANCES,
+) -> NumericalResult[float]:
     """Safeguarded Brent-style inverse-quadratic/secant/bracket hybrid.
 
     Not an optimized canonical Brent transcription: every even iteration is a
@@ -50,7 +55,9 @@ def solve(residual: ScalarFunction, lower: float, upper: float, *,
             fm = evaluate(residual, mid)
             history.append(abs(fm))
             if abs(fm) <= policy.residual:
-                return _result(mid, fm, iteration, "brent-style", history, error, (a, b))
+                return _result(
+                    mid, fm, iteration, "brent-style", history, error, (a, b)
+                )
         x = mid
         if iteration % 2:
             fscale = max(abs(fa), abs(fb), abs(fc))
@@ -58,14 +65,19 @@ def solve(residual: ScalarFunction, lower: float, upper: float, *,
             if len({f, g, h}) == 3:
                 denominators = ((f - g) * (f - h), (g - f) * (g - h), (h - f) * (h - g))
                 if all(denominators):
-                    proposed = (a * (g * h / denominators[0]) +
-                                b * (f * h / denominators[1]) +
-                                c * (f * g / denominators[2]))
+                    proposed = (
+                        a * (g * h / denominators[0])
+                        + b * (f * h / denominators[1])
+                        + c * (f * g / denominators[2])
+                    )
                 else:
                     proposed = mid
             else:
                 proposed = _secant_candidate(a, b, fa, fb)
-            if math.isfinite(proposed) and .9 * a + .1 * b < proposed < .1 * a + .9 * b:
+            if (
+                math.isfinite(proposed)
+                and 0.9 * a + 0.1 * b < proposed < 0.1 * a + 0.9 * b
+            ):
                 x = proposed
         if x == a or x == b:
             failure("STAGNATION: Brent-style bracket reached floating-point spacing.")

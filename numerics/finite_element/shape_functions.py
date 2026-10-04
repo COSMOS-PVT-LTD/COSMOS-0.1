@@ -20,11 +20,12 @@ from numerics.utilities.numerical_checks import FloatArray, finite, invalid
 
 def values(coordinate: float) -> FloatArray:
     """Two-node reference element on [-1,1], partition of unity."""
-    xi=finite(coordinate)
-    if not -1<=xi<=1:
+    xi = finite(coordinate)
+    if not -1 <= xi <= 1:
         invalid("Reference coordinate must lie in [-1,1].")
-    return np.array([(1-xi)/2,(1+xi)/2])
+    return np.array([(1 - xi) / 2, (1 + xi) / 2])
+
 
 def derivatives() -> FloatArray:
     """Reference-coordinate derivatives; physical derivative needs Jacobian."""
-    return np.array([-.5,.5])
+    return np.array([-0.5, 0.5])

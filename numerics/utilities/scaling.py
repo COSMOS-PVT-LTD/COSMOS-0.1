@@ -25,6 +25,7 @@ def scale(values: ArrayLike, scales: ArrayLike) -> FloatArray:
     same_shape(x, factors)
     if np.any(factors <= 0):
         from numerics.utilities.numerical_checks import invalid
+
         invalid("All scales must be strictly positive.")
     with np.errstate(over="ignore", invalid="ignore"):
         result = x / factors

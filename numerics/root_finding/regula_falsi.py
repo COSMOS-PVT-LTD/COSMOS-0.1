@@ -26,8 +26,13 @@ from numerics.utilities.numerical_checks import ScalarFunction, evaluate, failur
 from numerics.utilities.tolerances import ROOT_TOLERANCES, Tolerances
 
 
-def solve(residual: ScalarFunction, lower: float, upper: float, *,
-          policy: Tolerances = ROOT_TOLERANCES) -> NumericalResult[float]:
+def solve(
+    residual: ScalarFunction,
+    lower: float,
+    upper: float,
+    *,
+    policy: Tolerances = ROOT_TOLERANCES,
+) -> NumericalResult[float]:
     """Classical false position for continuous bracketed residuals; may stagnate.
 
     No Illinois weighting or hidden method switching. Success requires an
@@ -38,7 +43,9 @@ def solve(residual: ScalarFunction, lower: float, upper: float, *,
     history = [min(abs(fa), abs(fb))]
     previous: float | None = None
     if fa == 0 or fb == 0:
-        return _result(a if fa == 0 else b, 0.0, 0, "regula-falsi", history, 0.0, (a, b))
+        return _result(
+            a if fa == 0 else b, 0.0, 0, "regula-falsi", history, 0.0, (a, b)
+        )
     for iteration in range(1, policy.max_iterations + 1):
         mid = _midpoint(a, b)
         error = _half_width(a, b)
@@ -52,8 +59,14 @@ def solve(residual: ScalarFunction, lower: float, upper: float, *,
         if fx == 0:
             return _result(x, fx, iteration, "regula-falsi", history, 0.0, (a, b))
         if not a < x < b or x == previous:
-            failure("STAGNATION: false-position endpoint is fixed at floating-point resolution.")
-        if previous is not None and abs(x - previous) <= policy.threshold(x) and abs(fx) <= policy.residual:
+            failure(
+                "STAGNATION: false-position endpoint is fixed at floating-point resolution."
+            )
+        if (
+            previous is not None
+            and abs(x - previous) <= policy.threshold(x)
+            and abs(fx) <= policy.residual
+        ):
             return _result(x, fx, iteration, "regula-falsi", history, bracket=(a, b))
         previous = x
         if _same_sign(fa, fx):

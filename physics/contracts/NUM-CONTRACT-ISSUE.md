@@ -29,7 +29,7 @@ The temporary local bisection and import-failure fallback have been removed.
 Physical residual equations remain unchanged in Physics. A test spies on the
 actual Numerics solve and checks each recovered value in the original relation.
 Qualification and retirement evidence is recorded in
-`documentation/development/COSMOS_NUMERICS_FOUNDATION_VV_REPORT_001.md`.
+`documentation/development/COSMOS_NUMERICS_FOUNDATION_VV_001.md`.
 This technical closure does not imply a merged release or human acceptance.
 
 ## Physics will not

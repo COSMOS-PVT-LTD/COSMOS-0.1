@@ -29,13 +29,14 @@ class SampleStatistics:
     variance: float
     standard_error: float
 
+
 def summarize(values: ArrayLike) -> SampleStatistics:
     """Unbiased sample variance; requires >=2 finite real observations."""
-    data=vector(values)
-    if len(data)<2:
+    data = vector(values)
+    if len(data) < 2:
         invalid("Sample variance requires >=2 observations.")
-    with np.errstate(over="ignore",invalid="ignore"):
-        mean,variance=float(data.mean()),float(data.var(ddof=1))
+    with np.errstate(over="ignore", invalid="ignore"):
+        mean, variance = float(data.mean()), float(data.var(ddof=1))
     if not math.isfinite(mean) or not math.isfinite(variance):
         failure("Sample statistics are unrepresentable; rescale data.")
-    return SampleStatistics(len(data),mean,variance,math.sqrt(variance/len(data)))
+    return SampleStatistics(len(data), mean, variance, math.sqrt(variance / len(data)))

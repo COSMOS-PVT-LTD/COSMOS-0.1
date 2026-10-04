@@ -24,6 +24,7 @@ from numerics.utilities.numerical_checks import FloatArray, finite_output, grid
 @dataclass(frozen=True, slots=True)
 class ControlVolumes:
     """1D ordered structured cells; one shared face between neighbors."""
+
     faces: FloatArray
     centers: FloatArray
     widths: FloatArray
@@ -31,7 +32,7 @@ class ControlVolumes:
     @classmethod
     def build(cls, faces: ArrayLike) -> ControlVolumes:
         edges = grid(faces)
-        centers,widths = finite_output(edges[:-1]/2+edges[1:]/2),np.diff(edges)
-        for data in (edges,centers,widths):
+        centers, widths = finite_output(edges[:-1] / 2 + edges[1:] / 2), np.diff(edges)
+        for data in (edges, centers, widths):
             data.setflags(write=False)
-        return cls(edges,centers,widths)
+        return cls(edges, centers, widths)

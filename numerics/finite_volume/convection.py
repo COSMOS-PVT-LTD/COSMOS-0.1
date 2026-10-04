@@ -20,4 +20,4 @@ from numerics.utilities.numerical_checks import finite
 def flux(left: float, right: float, velocity: float) -> float:
     """Signed upwind convective flux, positive in increasing coordinate direction."""
     v = finite(velocity)
-    return finite(v*upwind(left,right,v))
+    return finite(v * upwind(left, right, v))

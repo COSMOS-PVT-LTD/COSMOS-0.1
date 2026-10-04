@@ -25,6 +25,7 @@ from numerics.utilities.numerical_checks import FloatArray, failure, matrix
 @dataclass(frozen=True, slots=True)
 class LUDecomposition:
     """Partial-pivot LU factors satisfying P A = L U."""
+
     permutation: FloatArray
     lower: FloatArray
     upper: FloatArray
@@ -33,6 +34,7 @@ class LUDecomposition:
 @dataclass(frozen=True, slots=True)
 class QRDecomposition:
     """Householder factors satisfying A = Q R, Q square orthogonal."""
+
     orthogonal: FloatArray
     upper: FloatArray
 

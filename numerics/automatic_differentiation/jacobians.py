@@ -18,25 +18,30 @@ from collections.abc import Callable, Sequence
 import numpy as np
 from numpy.typing import ArrayLike
 
+from core.exceptions import SolverConvergenceError
 from numerics.automatic_differentiation.forward_mode import Dual
 from numerics.automatic_differentiation.gradients import variables
 from numerics.utilities.numerical_checks import FloatArray, failure, finite
 
-ADVectorFunction = Callable[[tuple[Dual,...]],Sequence[Dual | float]]
+ADVectorFunction = Callable[[tuple[Dual, ...]], Sequence[Dual | float]]
+
 
 def jacobian(function: ADVectorFunction, point: ArrayLike) -> FloatArray:
     """Forward-mode Jacobian, arbitrary positive output dimension."""
-    inputs=variables(point)
-    outputs=function(inputs)
-    if len(outputs)==0:
+    inputs = variables(point)
+    try:
+        outputs = function(inputs)
+    except (ArithmeticError, TypeError, ValueError) as exc:
+        raise SolverConvergenceError("AD Jacobian callback failed.") from exc
+    if len(outputs) == 0:
         failure("AD vector output must be nonempty.")
-    rows=[]
+    rows = []
     for value in outputs:
-        if isinstance(value,Dual):
-            if len(value.tangent)!=len(inputs):
+        if isinstance(value, Dual):
+            if len(value.tangent) != len(inputs):
                 failure("AD Jacobian callback changed tangent dimension.")
             rows.append(value.tangent)
         else:
-            finite(value,"constant AD output")
+            finite(value, "constant AD output")
             rows.append(np.zeros(len(inputs)))
     return np.array(rows)

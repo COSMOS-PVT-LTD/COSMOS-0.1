@@ -19,7 +19,7 @@ from numerics.finite_element.elements import LinearElement
 from numerics.utilities.numerical_checks import FloatArray, finite_output, positive
 
 
-def stiffness(element: LinearElement, coefficient: float = 1.) -> FloatArray:
+def stiffness(element: LinearElement, coefficient: float = 1.0) -> FloatArray:
     """Exact integral of constant k B^T B for a normalized scalar equation."""
-    k=positive(coefficient)
-    return finite_output(k/element.length*np.array([[1.,-1.],[-1.,1.]]))
+    k = positive(coefficient)
+    return finite_output(k / element.length * np.array([[1.0, -1.0], [-1.0, 1.0]]))

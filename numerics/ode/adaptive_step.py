@@ -16,11 +16,13 @@ from __future__ import annotations
 from numerics.utilities.numerical_checks import finite, invalid, positive
 
 
-def next_step(step: float, error_ratio: float, *, minimum: float, maximum: float) -> float:
+def next_step(
+    step: float, error_ratio: float, *, minimum: float, maximum: float
+) -> float:
     """Safety-scaled local fourth-order error controller, bounded factor [0.2,5]."""
-    h,e = positive(step),finite(error_ratio)
-    lo,hi = positive(minimum),positive(maximum)
+    h, e = positive(step), finite(error_ratio)
+    lo, hi = positive(minimum), positive(maximum)
     if lo > hi or e < 0:
         invalid("Invalid adaptive bounds/error ratio.")
-    factor = 5.0 if e == 0 else min(5.,max(.2,.9*e**(-.2)))
-    return min(hi,max(lo,h*factor))
+    factor = 5.0 if e == 0 else min(5.0, max(0.2, 0.9 * e ** (-0.2)))
+    return min(hi, max(lo, h * factor))

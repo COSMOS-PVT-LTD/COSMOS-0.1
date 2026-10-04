@@ -27,20 +27,22 @@ from numerics.utilities.numerical_checks import (
 ResidualFunction = Callable[[FloatArray], FloatArray]
 JacobianFunction = Callable[[FloatArray], FloatArray]
 
+
 def evaluate_residual(function: ResidualFunction, state: FloatArray) -> FloatArray:
     """Domain/arithmetic/nonfinite callback failures are solver failures."""
     try:
-        value = vector(function(state.copy()),"residual")
+        value = vector(function(state.copy()), "residual")
     except (InvalidInputError, ArithmeticError, ValueError, TypeError) as exc:
         raise SolverConvergenceError("Invalid nonlinear residual evaluation.") from exc
-    same_shape(value,state)
+    same_shape(value, state)
     return value
+
 
 def evaluate_jacobian(function: JacobianFunction, state: FloatArray) -> FloatArray:
     try:
-        value = matrix(function(state.copy()),"Jacobian",square=True)
+        value = matrix(function(state.copy()), "Jacobian", square=True)
     except (InvalidInputError, ArithmeticError, ValueError, TypeError) as exc:
         raise SolverConvergenceError("Invalid Jacobian evaluation.") from exc
-    if value.shape != (len(state),len(state)):
+    if value.shape != (len(state), len(state)):
         failure("Jacobian dimension does not match state.")
     return value

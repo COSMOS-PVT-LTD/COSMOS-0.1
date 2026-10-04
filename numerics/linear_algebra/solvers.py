@@ -33,8 +33,13 @@ from numerics.utilities.numerical_checks import (
 from numerics.utilities.tolerances import DEFAULT_TOLERANCES, Tolerances
 
 
-def solve_linear(a: ArrayLike, b: ArrayLike, *, policy: Tolerances = DEFAULT_TOLERANCES,
-                 max_condition: float | None = None) -> NumericalResult[FloatArray]:
+def solve_linear(
+    a: ArrayLike,
+    b: ArrayLike,
+    *,
+    policy: Tolerances = DEFAULT_TOLERANCES,
+    max_condition: float | None = None,
+) -> NumericalResult[FloatArray]:
     """Solve A x=b by owned partial-pivot LU and verify the original residual.
 
     Condition number is a NumPy SVD diagnostic, not a forward-accuracy proof.
@@ -50,7 +55,9 @@ def solve_linear(a: ArrayLike, b: ArrayLike, *, policy: Tolerances = DEFAULT_TOL
         condition = float(np.linalg.cond(mat))
     except np.linalg.LinAlgError as exc:
         raise SolverConvergenceError("Condition estimate failed.") from exc
-    if not math.isfinite(condition) or (max_condition is not None and condition > max_condition):
+    if not math.isfinite(condition) or (
+        max_condition is not None and condition > max_condition
+    ):
         failure("SINGULAR_SYSTEM: condition number exceeds the accepted limit.")
     factors = lu(mat)
     pb = factors.permutation @ rhs
@@ -61,7 +68,7 @@ def solve_linear(a: ArrayLike, b: ArrayLike, *, policy: Tolerances = DEFAULT_TOL
         for i in range(n):
             y[i] = pb[i] - factors.lower[i, :i] @ y[:i]
         for i in range(n - 1, -1, -1):
-            x[i] = (y[i] - factors.upper[i, i + 1:] @ x[i + 1:]) / factors.upper[i, i]
+            x[i] = (y[i] - factors.upper[i, i + 1 :] @ x[i + 1 :]) / factors.upper[i, i]
         residual = rhs - mat @ x
     if not np.isfinite(x).all() or not np.isfinite(residual).all():
         failure("Linear solve produced a non-finite solution/residual.")
@@ -70,7 +77,18 @@ def solve_linear(a: ArrayLike, b: ArrayLike, *, policy: Tolerances = DEFAULT_TOL
     if norm > limit:
         failure(f"Linear residual {norm} exceeds tolerance {limit}.")
     x.setflags(write=False)
-    warning = "ill-conditioned; forward accuracy not guaranteed" if condition > 1 / math.sqrt(np.finfo(float).eps) else "none"
-    return NumericalResult(x, True, 1, norm, TerminationReason.CONVERGED_ABSOLUTE, "partial-pivot-lu",
-                           residual_history=(norm,), diagnostics=(
-                               ("condition_number", repr(condition)), ("warning", warning)))
+    warning = (
+        "ill-conditioned; forward accuracy not guaranteed"
+        if condition > 1 / math.sqrt(np.finfo(float).eps)
+        else "none"
+    )
+    return NumericalResult(
+        x,
+        True,
+        1,
+        norm,
+        TerminationReason.CONVERGED_ABSOLUTE,
+        "partial-pivot-lu",
+        residual_history=(norm,),
+        diagnostics=(("condition_number", repr(condition)), ("warning", warning)),
+    )

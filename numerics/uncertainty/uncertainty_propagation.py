@@ -23,7 +23,8 @@ from core.exceptions import InvalidInputError, SolverConvergenceError
 from numerics.uncertainty.statistics import SampleStatistics, summarize
 from numerics.utilities.numerical_checks import FloatArray, finite, matrix
 
-ScalarModel = Callable[[FloatArray],float]
+ScalarModel = Callable[[FloatArray], float]
+
 
 @dataclass(frozen=True, slots=True)
 class PropagationResult:
@@ -32,17 +33,20 @@ class PropagationResult:
     statistics: SampleStatistics
     seed: int | None
 
-def propagate(model: ScalarModel, inputs: ArrayLike, *, seed: int | None = None) -> PropagationResult:
+
+def propagate(
+    model: ScalarModel, inputs: ArrayLike, *, seed: int | None = None
+) -> PropagationResult:
     """Evaluate supplied normalized sample rows; no hidden stochastic sampling."""
-    data=matrix(inputs)
-    values=[]
+    data = matrix(inputs)
+    values = []
     for row in data:
         try:
-            values.append(finite(model(row.copy()),"model output"))
-        except (InvalidInputError,ArithmeticError,TypeError,ValueError) as exc:
+            values.append(finite(model(row.copy()), "model output"))
+        except (InvalidInputError, ArithmeticError, TypeError, ValueError) as exc:
             raise SolverConvergenceError("Invalid uncertainty model output.") from exc
-    output=np.array(values)
-    stats=summarize(output)
+    output = np.array(values)
+    stats = summarize(output)
     data.setflags(write=False)
     output.setflags(write=False)
-    return PropagationResult(data,output,stats,seed)
+    return PropagationResult(data, output, stats, seed)

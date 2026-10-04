@@ -20,13 +20,18 @@ from numerics.utilities.numerical_checks import count, finite, invalid
 
 
 def uniform_1d(lower: float, upper: float, cells: int) -> StructuredMesh:
-    a,b,n=finite(lower),finite(upper),count(cells)
-    if b<=a:
+    a, b, n = finite(lower), finite(upper), count(cells)
+    if b <= a:
         invalid("Grid extent must increase.")
-    return StructuredMesh.build(np.linspace(a,b,n+1))
+    return StructuredMesh.build(np.linspace(a, b, n + 1))
 
-def uniform_2d(x_bounds: tuple[float,float], y_bounds: tuple[float,float],
-               x_cells: int, y_cells: int) -> StructuredMesh:
-    x=uniform_1d(*x_bounds,x_cells).x
-    y=uniform_1d(*y_bounds,y_cells).x
-    return StructuredMesh.build(x,y)
+
+def uniform_2d(
+    x_bounds: tuple[float, float],
+    y_bounds: tuple[float, float],
+    x_cells: int,
+    y_cells: int,
+) -> StructuredMesh:
+    x = uniform_1d(*x_bounds, x_cells).x
+    y = uniform_1d(*y_bounds, y_cells).x
+    return StructuredMesh.build(x, y)

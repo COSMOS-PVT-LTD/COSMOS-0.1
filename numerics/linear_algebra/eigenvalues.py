@@ -27,12 +27,14 @@ from numerics.utilities.tolerances import DEFAULT_TOLERANCES, Tolerances
 @dataclass(frozen=True, slots=True)
 class EigenSystem:
     """Ascending real eigenvalues and corresponding column eigenvectors."""
+
     values: FloatArray
     vectors: FloatArray
 
 
-def symmetric_eigensystem(values: ArrayLike, *,
-                          policy: Tolerances = DEFAULT_TOLERANCES) -> NumericalResult[EigenSystem]:
+def symmetric_eigensystem(
+    values: ArrayLike, *, policy: Tolerances = DEFAULT_TOLERANCES
+) -> NumericalResult[EigenSystem]:
     """Owned maximum-offdiagonal Jacobi rotations for small symmetric matrices.
 
     Symmetry is checked within policy then rounding noise is symmetrized.
@@ -40,7 +42,9 @@ def symmetric_eigensystem(values: ArrayLike, *,
     This is not an industrial nonsymmetric or sparse eigen solver.
     """
     original = matrix(values, square=True)
-    if not np.allclose(original, original.T, atol=policy.absolute, rtol=policy.relative):
+    if not np.allclose(
+        original, original.T, atol=policy.absolute, rtol=policy.relative
+    ):
         invalid("Jacobi eigen solver requires a symmetric matrix.")
     scale = float(np.max(np.abs(original)))
     if scale == 0:
@@ -68,9 +72,15 @@ def symmetric_eigensystem(values: ArrayLike, *,
                 failure("Eigen residual exceeds tolerance.")
             eigenvalues.setflags(write=False)
             eigenvectors.setflags(write=False)
-            return NumericalResult(EigenSystem(eigenvalues, eigenvectors), True, iteration,
-                                   residual_norm, TerminationReason.CONVERGED_ABSOLUTE,
-                                   "jacobi-symmetric", residual_history=tuple(history))
+            return NumericalResult(
+                EigenSystem(eigenvalues, eigenvectors),
+                True,
+                iteration,
+                residual_norm,
+                TerminationReason.CONVERGED_ABSOLUTE,
+                "jacobi-symmetric",
+                residual_history=tuple(history),
+            )
         if iteration == policy.max_iterations:
             break
         p, q = np.unravel_index(int(np.argmax(np.abs(off))), a.shape)
@@ -78,8 +88,8 @@ def symmetric_eigensystem(values: ArrayLike, *,
         apq = float(a[p, q])
         denominator = delta + math.copysign(math.hypot(delta, apq), delta)
         t = apq / denominator
-        c = 1 / math.sqrt(1 + t*t)
-        s = t*c
+        c = 1 / math.sqrt(1 + t * t)
+        s = t * c
         rotation: FloatArray = np.eye(n)
         rotation[p, p] = rotation[q, q] = c
         rotation[p, q], rotation[q, p] = s, -s
@@ -89,6 +99,8 @@ def symmetric_eigensystem(values: ArrayLike, *,
     failure("MAX_ITERATIONS: symmetric Jacobi eigen solve exhausted.")
 
 
-def eigenvalues(values: ArrayLike, *, policy: Tolerances = DEFAULT_TOLERANCES) -> FloatArray:
+def eigenvalues(
+    values: ArrayLike, *, policy: Tolerances = DEFAULT_TOLERANCES
+) -> FloatArray:
     """Ascending checked symmetric eigenvalues; full diagnostics via eigensystem."""
     return symmetric_eigensystem(values, policy=policy).value.values

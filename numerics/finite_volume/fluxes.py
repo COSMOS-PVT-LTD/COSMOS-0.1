@@ -27,14 +27,23 @@ from numerics.utilities.numerical_checks import (
 )
 
 
-def face_fluxes(cells: ControlVolumes, values: ArrayLike, boundary: DirichletBoundary, *,
-                diffusivity: float, velocity: float = 0.) -> FloatArray:
-    u=vector(values)
-    same_shape(u,cells.centers)
-    a,b=face_coefficients(cells,boundary,diffusivity=diffusivity,velocity=velocity)
-    return finite_output(a@u+b)
+def face_fluxes(
+    cells: ControlVolumes,
+    values: ArrayLike,
+    boundary: DirichletBoundary,
+    *,
+    diffusivity: float,
+    velocity: float = 0.0,
+) -> FloatArray:
+    u = vector(values)
+    same_shape(u, cells.centers)
+    a, b = face_coefficients(
+        cells, boundary, diffusivity=diffusivity, velocity=velocity
+    )
+    return finite_output(a @ u + b)
+
 
 def cell_outward_fluxes(faces: ArrayLike) -> FloatArray:
     """Each cell has (-west,+east); shared internal values cancel exactly."""
-    f=vector(faces)
-    return np.column_stack((-f[:-1],f[1:]))
+    f = vector(faces)
+    return np.column_stack((-f[:-1], f[1:]))

@@ -27,19 +27,25 @@ from numerics.utilities.numerical_checks import (
 )
 
 
-def backtrack(function: ResidualFunction, state: FloatArray, direction: FloatArray, *,
-              max_trials: int = 40, sufficient_decrease: float = 1e-4) -> tuple[FloatArray, FloatArray, float]:
+def backtrack(
+    function: ResidualFunction,
+    state: FloatArray,
+    direction: FloatArray,
+    *,
+    max_trials: int = 40,
+    sufficient_decrease: float = 1e-4,
+) -> tuple[FloatArray, FloatArray, float]:
     """Residual-norm merit backtracking; reject nonfinite trial rather than switch solvers."""
-    same_shape(state,direction)
+    same_shape(state, direction)
     c = finite(sufficient_decrease)
     if not 0 < c < 0.5:
         invalid("Sufficient decrease must be between zero and one half.")
-    norm = l2(evaluate_residual(function,state))
+    norm = l2(evaluate_residual(function, state))
     alpha = 1.0
     for _ in range(count(max_trials)):
-        candidate = state+alpha*direction
-        value = evaluate_residual(function,candidate)
-        if l2(value) <= math.sqrt(1-2*c*alpha)*norm:
-            return candidate,value,alpha
+        candidate = state + alpha * direction
+        value = evaluate_residual(function, candidate)
+        if l2(value) <= math.sqrt(1 - 2 * c * alpha) * norm:
+            return candidate, value, alpha
         alpha *= 0.5
     failure("Residual line search failed sufficient decrease.")

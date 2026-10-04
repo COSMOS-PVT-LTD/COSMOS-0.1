@@ -40,9 +40,14 @@ def numerical_derivative(residual: ScalarFunction, x: float, *, step: float) -> 
     return value
 
 
-def solve(residual: ScalarFunction, x0: float, *, derivative: ScalarFunction | None = None,
-          numerical_step: float | None = None,
-          policy: Tolerances = ROOT_TOLERANCES) -> NumericalResult[float]:
+def solve(
+    residual: ScalarFunction,
+    x0: float,
+    *,
+    derivative: ScalarFunction | None = None,
+    numerical_step: float | None = None,
+    policy: Tolerances = ROOT_TOLERANCES,
+) -> NumericalResult[float]:
     """Newton iteration with an explicit analytic OR explicit finite-difference derivative.
 
     Requires a differentiable residual and suitable initial guess. This method
@@ -72,7 +77,9 @@ def solve(residual: ScalarFunction, x0: float, *, derivative: ScalarFunction | N
         history.append(abs(fc))
         if fc == 0:
             return _result(candidate, fc, iteration, "newton-raphson", history, 0.0)
-        if abs(fc) <= policy.residual and abs(candidate - x) <= policy.threshold(candidate):
+        if abs(fc) <= policy.residual and abs(candidate - x) <= policy.threshold(
+            candidate
+        ):
             return _result(candidate, fc, iteration, "newton-raphson", history)
         if candidate == x:
             failure("STAGNATION: Newton step cannot improve the residual.")

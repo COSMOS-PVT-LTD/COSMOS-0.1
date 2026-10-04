@@ -34,7 +34,9 @@ class Tolerances:
         for name in ("absolute", "relative", "residual"):
             value = getattr(self, name)
             if finite(value, f"{name} tolerance") < 0:
-                raise InvalidInputError(f"{name} tolerance must be finite and nonnegative.")
+                raise InvalidInputError(
+                    f"{name} tolerance must be finite and nonnegative."
+                )
         if self.absolute == 0 and self.relative == 0:
             raise InvalidInputError("At least one solution tolerance must be positive.")
         if self.residual == 0:
@@ -49,11 +51,15 @@ class Tolerances:
         scale = finite(scale, "Tolerance scale")
         result = self.absolute + self.relative * abs(scale)
         if not math.isfinite(result):
-            raise InvalidInputError("Tolerance threshold overflowed; normalize input/scales.")
+            raise InvalidInputError(
+                "Tolerance threshold overflowed; normalize input/scales."
+            )
         return result
 
 
 DEFAULT_TOLERANCES = Tolerances()
 
 # Existing Physics scalar port contract: xtol=1e-12, max_iter=80.
-ROOT_TOLERANCES = Tolerances(absolute=1.0e-12, relative=0.0, residual=1.0e-12, max_iterations=80)
+ROOT_TOLERANCES = Tolerances(
+    absolute=1.0e-12, relative=0.0, residual=1.0e-12, max_iterations=80
+)

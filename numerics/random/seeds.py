@@ -19,9 +19,13 @@ from numerics.utilities.numerical_checks import count
 
 
 def validate(seed: int) -> int:
-    return count(seed,"seed",minimum=0)
+    return count(seed, "seed", minimum=0)
 
-def child_seeds(seed: int, jobs: int) -> tuple[int,...]:
+
+def child_seeds(seed: int, jobs: int) -> tuple[int, ...]:
     """Independent SeedSequence child streams; stable input job ordering."""
-    sequence=np.random.SeedSequence(validate(seed))
-    return tuple(int(child.generate_state(1,dtype=np.uint64)[0]) for child in sequence.spawn(count(jobs)))
+    sequence = np.random.SeedSequence(validate(seed))
+    return tuple(
+        int(child.generate_state(1, dtype=np.uint64)[0])
+        for child in sequence.spawn(count(jobs))
+    )

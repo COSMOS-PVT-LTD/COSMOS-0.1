@@ -27,16 +27,20 @@ from numerics.utilities.numerical_checks import (
 
 def first_derivative(values: ArrayLike, spacing: float) -> FloatArray:
     """Fourth-order centered first derivative; only nodes [2:-2] are returned."""
-    y,h = vector(values),positive(spacing)
-    if len(y)<5:
+    y, h = vector(values), positive(spacing)
+    if len(y) < 5:
         invalid("Fourth-order stencil requires >=5 values.")
     with np.errstate(over="ignore", invalid="ignore", divide="ignore"):
-        return finite_output((y[:-4]-8*y[1:-3]+8*y[3:-1]-y[4:])/(12*h))
+        return finite_output((y[:-4] - 8 * y[1:-3] + 8 * y[3:-1] - y[4:]) / (12 * h))
+
 
 def second_derivative(values: ArrayLike, spacing: float) -> FloatArray:
     """Fourth-order centered second derivative; no unqualified endpoint stencil."""
-    y,h = vector(values),positive(spacing)
-    if len(y)<5:
+    y, h = vector(values), positive(spacing)
+    if len(y) < 5:
         invalid("Fourth-order stencil requires >=5 values.")
     with np.errstate(over="ignore", invalid="ignore", divide="ignore"):
-        return finite_output((-y[:-4]+16*y[1:-3]-30*y[2:-2]+16*y[3:-1]-y[4:])/(12*h*h))
+        return finite_output(
+            (-y[:-4] + 16 * y[1:-3] - 30 * y[2:-2] + 16 * y[3:-1] - y[4:])
+            / (12 * h * h)
+        )

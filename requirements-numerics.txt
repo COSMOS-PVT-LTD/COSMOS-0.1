@@ -1,0 +1,2 @@
+# Mandatory Numerics runtime. Existing approved NumPy dependency; no major solver stack.
+numpy>=1.26,<3.0

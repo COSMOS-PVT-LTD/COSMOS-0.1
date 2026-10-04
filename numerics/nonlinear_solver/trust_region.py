@@ -21,6 +21,6 @@ from numerics.utilities.numerical_checks import FloatArray, positive, vector
 
 def bounded_step(step: ArrayLike, radius: float) -> FloatArray:
     """Euclidean Newton-step cap interface; not a dogleg/model-ratio trust-region solver."""
-    p, r = vector(step), positive(radius,"trust radius")
+    p, r = vector(step), positive(radius, "trust radius")
     norm = l2(p)
-    return p if norm <= r else p*(r/norm)
+    return p if norm <= r else p * (r / norm)

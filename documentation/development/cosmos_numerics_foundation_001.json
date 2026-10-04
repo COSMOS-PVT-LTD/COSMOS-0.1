@@ -63,7 +63,7 @@
     },
     "NUM-004": {
       "name": "Interpolation and integration",
-      "status": "PASS_WITH_LIMITATIONS",
+      "status": "PASS",
       "evidence": [
         "17 tests passed: polynomial reproduction, clamped cubic reproduction, independent Legendre rule, four analytic integrals",
         "Trapezoid second and Simpson fourth observed refinement orders",
@@ -77,7 +77,7 @@
     },
     "NUM-005": {
       "name": "Nonlinear solver",
-      "status": "PASS_WITH_LIMITATIONS",
+      "status": "PASS",
       "evidence": [
         "5 tests passed: coupled analytic root, independent centered Jacobian, actual residual and monotone merit histories",
         "Singular Jacobian, nonfinite residual, unsolvable system and exhausted-budget paths reject success",
@@ -90,7 +90,7 @@
     },
     "NUM-006": {
       "name": "ODE integration",
-      "status": "PASS_WITH_LIMITATIONS",
+      "status": "PASS",
       "evidence": [
         "9 tests passed: Euler first, RK2 second and RK4 fourth observed orders; backward Euler first order",
         "Exponential growth/decay, oscillator invariant, embedded-error rejection and tighter tolerance behavior",
@@ -104,7 +104,7 @@
     },
     "NUM-007": {
       "name": "Finite difference",
-      "status": "PASS_WITH_LIMITATIONS",
+      "status": "PASS",
       "evidence": [
         "9 tests passed: sin derivative refinement first/second/fourth orders and x^4 polynomial stencils",
         "Uniform Laplacian and explicit/implicit discrete equations independently checked",
@@ -131,7 +131,7 @@
     },
     "NUM-009": {
       "name": "Conservative finite volume",
-      "status": "PASS_WITH_LIMITATIONS",
+      "status": "PASS",
       "evidence": [
         "6 tests passed: constant preservation at both velocity signs, nonuniform linear diffusion, analytic scalar fluxes",
         "Manufactured sin solution second-order diffusion refinement and actual cell/global conservation",
@@ -157,7 +157,7 @@
     },
     "NUM-011": {
       "name": "Mesh and connectivity",
-      "status": "PASS_WITH_LIMITATIONS",
+      "status": "PASS",
       "evidence": [
         "3 tests passed: 1D/2D node/cell indexing, shared-face counts, refinement and quality metrics",
         "Canonical serialization replay and actual unstructured triangle data validated",
@@ -225,7 +225,7 @@
     },
     "NUM-016": {
       "name": "Canonical Physics integration",
-      "status": "PASS_WITH_LIMITATIONS",
+      "status": "PASS",
       "evidence": [
         "278 neighboring Physics, Core and regression cases passed at existing tolerances",
         "Spy proves actual canonical bisection.solve called with Physics-owned residuals for Area-Mach, Prandtl-Meyer and oblique shock",
@@ -238,10 +238,17 @@
       ]
     },
     "NUM-017": {
-      "name": "Full V&V/freeze",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "name": "Full V&V and freeze",
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "First complete local regression: 2118 passed, 6 existing skips",
+        "14 continuum refinement studies and five representative timed benchmark cases implemented",
+        "Three quadrature overflow regressions reproduced and repaired; 203 focused qualification cases passed",
+        "Ruff, Mypy (307 files) and 7 GUI workflow cases passed"
+      ],
+      "limitations": [
+        "Final full regression, benchmark packet and hosted candidate CI pending"
+      ]
     }
   },
   "files": [
@@ -390,7 +397,86 @@
     "numerics/utilities/scaling.py",
     "numerics/utilities/tolerances.py"
   ],
-  "deferred_capabilities": [],
+  "deferred_capabilities": [
+    {
+      "capability": "uncertainty/polynomial_chaos",
+      "status": "DEFERRED",
+      "reason": "No mathematically complete polynomial chaos basis/propagation qualified",
+      "operational_api": false
+    },
+    {
+      "capability": "sensitivity/global",
+      "status": "DEFERRED",
+      "reason": "No generic global sensitivity API qualified",
+      "operational_api": false
+    },
+    {
+      "capability": "sensitivity/sobol",
+      "status": "DEFERRED",
+      "reason": "Variance decomposition estimators not qualified",
+      "operational_api": false
+    },
+    {
+      "capability": "sensitivity/morris",
+      "status": "DEFERRED",
+      "reason": "Elementary-effects experiment design not qualified",
+      "operational_api": false
+    },
+    {
+      "capability": "automatic_differentiation/reverse_mode",
+      "status": "DEFERRED",
+      "reason": "No tape/reverse sweep qualified",
+      "operational_api": false
+    },
+    {
+      "capability": "automatic_differentiation/hessians",
+      "status": "DEFERRED",
+      "reason": "Second-order propagation not qualified",
+      "operational_api": false
+    },
+    {
+      "capability": "optimization/lbfgs",
+      "status": "DEFERRED",
+      "reason": "Not implemented or qualified; three priority deterministic methods are real",
+      "operational_api": false
+    },
+    {
+      "capability": "optimization/nelder_mead",
+      "status": "DEFERRED",
+      "reason": "Not implemented or qualified; three priority deterministic methods are real",
+      "operational_api": false
+    },
+    {
+      "capability": "optimization/simulated_annealing",
+      "status": "DEFERRED",
+      "reason": "Not implemented or qualified; three priority deterministic methods are real",
+      "operational_api": false
+    },
+    {
+      "capability": "optimization/genetic_algorithm",
+      "status": "DEFERRED",
+      "reason": "Not implemented or qualified; three priority deterministic methods are real",
+      "operational_api": false
+    },
+    {
+      "capability": "optimization/particle_swarm",
+      "status": "DEFERRED",
+      "reason": "Not implemented or qualified; three priority deterministic methods are real",
+      "operational_api": false
+    },
+    {
+      "capability": "optimization/bayesian",
+      "status": "DEFERRED",
+      "reason": "Not implemented or qualified; three priority deterministic methods are real",
+      "operational_api": false
+    },
+    {
+      "capability": "optimization/multi_objective",
+      "status": "DEFERRED",
+      "reason": "Not implemented or qualified; three priority deterministic methods are real",
+      "operational_api": false
+    }
+  ],
   "verification": {},
   "freeze_decision": "NOT_STARTED",
   "human_acceptance": "PENDING_OWNER_PR_REVIEW"

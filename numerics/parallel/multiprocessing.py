@@ -20,14 +20,19 @@ from concurrent.futures import ProcessPoolExecutor
 from numerics.parallel.workload import InputType, OutputType, bounded_items, workers
 
 
-def map_ordered(function: Callable[[InputType],OutputType], items: Iterable[InputType], *,
-                worker_count: int, max_jobs: int = 10000) -> tuple[OutputType,...]:
+def map_ordered(
+    function: Callable[[InputType], OutputType],
+    items: Iterable[InputType],
+    *,
+    worker_count: int,
+    max_jobs: int = 10000,
+) -> tuple[OutputType, ...]:
     """Spawn-only bounded jobs; callback must be importable/pickleable, caller main guarded."""
-    n=workers(worker_count)
-    data=bounded_items(items,max_jobs)
-    pool=ProcessPoolExecutor(max_workers=n,mp_context=mp.get_context("spawn"))
+    n = workers(worker_count)
+    data = bounded_items(items, max_jobs)
+    pool = ProcessPoolExecutor(max_workers=n, mp_context=mp.get_context("spawn"))
     try:
-        futures=[pool.submit(function,item) for item in data]
+        futures = [pool.submit(function, item) for item in data]
         return tuple(future.result() for future in futures)
     finally:
-        pool.shutdown(wait=True,cancel_futures=True)
+        pool.shutdown(wait=True, cancel_futures=True)

@@ -19,11 +19,13 @@ from numerics.ode.euler import RHSFunction, _evaluate, _input, _output
 from numerics.utilities.numerical_checks import FloatArray
 
 
-def step(function: RHSFunction, time: float, state: ArrayLike, step_size: float) -> FloatArray:
+def step(
+    function: RHSFunction, time: float, state: ArrayLike, step_size: float
+) -> FloatArray:
     """Classical four-stage fourth-order Runge-Kutta."""
-    t,y,h = _input(time,state,step_size)
-    k1 = _evaluate(function,t,y)
-    k2 = _evaluate(function,t+h/2,y+h*k1/2)
-    k3 = _evaluate(function,t+h/2,y+h*k2/2)
-    k4 = _evaluate(function,t+h,y+h*k3)
-    return _output(y+h*(k1+2*k2+2*k3+k4)/6)
+    t, y, h = _input(time, state, step_size)
+    k1 = _evaluate(function, t, y)
+    k2 = _evaluate(function, t + h / 2, y + h * k1 / 2)
+    k3 = _evaluate(function, t + h / 2, y + h * k2 / 2)
+    k4 = _evaluate(function, t + h, y + h * k3)
+    return _output(y + h * (k1 + 2 * k2 + 2 * k3 + k4) / 6)

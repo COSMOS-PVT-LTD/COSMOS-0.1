@@ -57,8 +57,11 @@ class NumericalResult(Generic[T]):
     def __post_init__(self) -> None:
         if self.iterations < 0 or finite(self.residual_norm, "residual_norm") < 0:
             invalid("Iterations and residual norm must be nonnegative.")
-        success = {TerminationReason.CONVERGED_ABSOLUTE, TerminationReason.CONVERGED_RELATIVE,
-                   TerminationReason.EXACT_ROOT}
+        success = {
+            TerminationReason.CONVERGED_ABSOLUTE,
+            TerminationReason.CONVERGED_RELATIVE,
+            TerminationReason.EXACT_ROOT,
+        }
         if self.converged != (self.termination_reason in success):
             invalid("Convergence flag and termination reason disagree.")
         for error in (self.absolute_error_estimate, self.relative_error_estimate):
@@ -66,13 +69,16 @@ class NumericalResult(Generic[T]):
                 invalid("Error estimates must be nonnegative.")
         get_logger("numerics").debug(
             "%s iterations=%d residual=%g reason=%s",
-            self.method, self.iterations, self.residual_norm, self.termination_reason.value,
+            self.method,
+            self.iterations,
+            self.residual_norm,
+            self.termination_reason.value,
         )
 
 
 def stagnated(history: tuple[float, ...], tolerances: Tolerances) -> bool:
     """Detect repeated residual norms without inventing convergence."""
-    tail = history[-tolerances.stagnation_window:]
+    tail = history[-tolerances.stagnation_window :]
     return len(tail) == tolerances.stagnation_window and max(tail) == min(tail)
 
 
@@ -82,7 +88,11 @@ def observed_order(coarse: float, fine: float, ratio: float = 2.0) -> float:
 
     from numerics.utilities.numerical_checks import positive
 
-    a, b, r = positive(coarse, "coarse error"), positive(fine, "fine error"), positive(ratio, "ratio")
+    a, b, r = (
+        positive(coarse, "coarse error"),
+        positive(fine, "fine error"),
+        positive(ratio, "ratio"),
+    )
     if r <= 1:
         invalid("Refinement ratio must exceed one.")
     return math.log(a / b) / math.log(r)

@@ -23,8 +23,12 @@ from numerics.utilities.numerical_checks import FloatArray, grid
 from numerics.utilities.tolerances import DEFAULT_TOLERANCES, Tolerances
 
 
-def solve(nodes: ArrayLike, boundary: DirichletBoundary, *,
-          tolerances: Tolerances = DEFAULT_TOLERANCES) -> NumericalResult[FloatArray]:
+def solve(
+    nodes: ArrayLike,
+    boundary: DirichletBoundary,
+    *,
+    tolerances: Tolerances = DEFAULT_TOLERANCES,
+) -> NumericalResult[FloatArray]:
     """1D Laplace is the zero-source Poisson specialization."""
-    x = grid(nodes,uniform=True)
-    return _poisson(x,np.zeros_like(x),boundary,tolerances=tolerances)
+    x = grid(nodes, uniform=True)
+    return _poisson(x, np.zeros_like(x), boundary, tolerances=tolerances)

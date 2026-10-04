@@ -26,6 +26,6 @@ from numerics.utilities.numerical_checks import (
 
 def assemble(cells: ControlVolumes, source: ArrayLike) -> FloatArray:
     """Cell-centered source density times exact cell volume (unit cross-section)."""
-    s=vector(source)
-    same_shape(s,cells.widths)
-    return finite_output(s*cells.widths)
+    s = vector(source)
+    same_shape(s, cells.widths)
+    return finite_output(s * cells.widths)

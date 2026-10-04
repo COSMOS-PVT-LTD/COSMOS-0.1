@@ -25,11 +25,14 @@ from numerics.utilities.numerical_checks import (
 
 
 def uniform(lower: float, upper: float, samples: int, *, seed: int) -> FloatArray:
-    a,b,n=finite(lower),finite(upper),count(samples)
-    if b<=a:
+    a, b, n = finite(lower), finite(upper), count(samples)
+    if b <= a:
         invalid("Uniform endpoints must increase.")
-    return finite_output(generator(seed).uniform(a,b,n))
+    return finite_output(generator(seed).uniform(a, b, n))
 
-def normal(mean: float, standard_deviation: float, samples: int, *, seed: int) -> FloatArray:
-    mu,sigma,n=finite(mean),positive(standard_deviation),count(samples)
-    return finite_output(generator(seed).normal(mu,sigma,n))
+
+def normal(
+    mean: float, standard_deviation: float, samples: int, *, seed: int
+) -> FloatArray:
+    mu, sigma, n = finite(mean), positive(standard_deviation), count(samples)
+    return finite_output(generator(seed).normal(mu, sigma, n))

@@ -25,13 +25,14 @@ from numerics.uncertainty.uncertainty_propagation import (
 from numerics.utilities.numerical_checks import count, invalid, same_shape, vector
 
 
-def sample_and_propagate(model: ScalarModel, lower: ArrayLike, upper: ArrayLike, *, samples: int,
-                         seed: int) -> PropagationResult:
+def sample_and_propagate(
+    model: ScalarModel, lower: ArrayLike, upper: ArrayLike, *, samples: int, seed: int
+) -> PropagationResult:
     """Independent uniform marginal Monte Carlo; not a correlated-input model."""
-    a,b=vector(lower),vector(upper)
-    same_shape(a,b)
-    if (b<=a).any():
+    a, b = vector(lower), vector(upper)
+    same_shape(a, b)
+    if (b <= a).any():
         invalid("Every sampling bound must increase.")
-    n,s=count(samples,minimum=2),validate(seed)
-    data=generator(s).uniform(a,b,(n,len(a)))
-    return propagate(model,data,seed=s)
+    n, s = count(samples, minimum=2), validate(seed)
+    data = generator(s).uniform(a, b, (n, len(a)))
+    return propagate(model, data, seed=s)

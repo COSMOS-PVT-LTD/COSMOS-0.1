@@ -40,8 +40,13 @@ def _secant_candidate(a: float, b: float, fa: float, fb: float) -> float:
     return result
 
 
-def solve(residual: ScalarFunction, x0: float, x1: float, *,
-          policy: Tolerances = ROOT_TOLERANCES) -> NumericalResult[float]:
+def solve(
+    residual: ScalarFunction,
+    x0: float,
+    x1: float,
+    *,
+    policy: Tolerances = ROOT_TOLERANCES,
+) -> NumericalResult[float]:
     """Unbracketed secant; distinct starts and locally regular residual required."""
     a, b = finite(x0, "x0"), finite(x1, "x1")
     if a == b:

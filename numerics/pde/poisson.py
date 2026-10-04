@@ -24,19 +24,31 @@ from numerics.utilities.numerical_checks import FloatArray, grid, same_shape, ve
 from numerics.utilities.tolerances import DEFAULT_TOLERANCES, Tolerances
 
 
-def solve(nodes: ArrayLike, source: ArrayLike, boundary: DirichletBoundary, *,
-          tolerances: Tolerances = DEFAULT_TOLERANCES) -> NumericalResult[FloatArray]:
+def solve(
+    nodes: ArrayLike,
+    source: ArrayLike,
+    boundary: DirichletBoundary,
+    *,
+    tolerances: Tolerances = DEFAULT_TOLERANCES,
+) -> NumericalResult[FloatArray]:
     """1D u''=source, uniform nodes, explicit endpoint Dirichlet values."""
-    x,f = grid(nodes,uniform=True),vector(source)
-    same_shape(x,f)
+    x, f = grid(nodes, uniform=True), vector(source)
+    same_shape(x, f)
     a = operator(x)
     rhs = f[1:-1].copy()
-    h = float(x[1]-x[0])
-    rhs[0] -= boundary.left/(h*h)
-    rhs[-1] -= boundary.right/(h*h)
-    solved = solve_linear(a,rhs,policy=tolerances)
-    u = np.concatenate(([boundary.left],solved.value,[boundary.right]))
+    h = float(x[1] - x[0])
+    rhs[0] -= boundary.left / (h * h)
+    rhs[-1] -= boundary.right / (h * h)
+    solved = solve_linear(a, rhs, policy=tolerances)
+    u = np.concatenate(([boundary.left], solved.value, [boundary.right]))
     u.setflags(write=False)
-    return NumericalResult(u,True,1,solved.residual_norm,TerminationReason.CONVERGED_ABSOLUTE,
-                           "1d-poisson-dirichlet",residual_history=solved.residual_history,
-                           diagnostics=(("scope","normalized 1D representative equation, not CFD"),))
+    return NumericalResult(
+        u,
+        True,
+        1,
+        solved.residual_norm,
+        TerminationReason.CONVERGED_ABSOLUTE,
+        "1d-poisson-dirichlet",
+        residual_history=solved.residual_history,
+        diagnostics=(("scope", "normalized 1D representative equation, not CFD"),),
+    )

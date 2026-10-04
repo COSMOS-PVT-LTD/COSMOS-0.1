@@ -24,4 +24,4 @@ from numerics.uncertainty.uncertainty_propagation import (
 
 def scan(model: ScalarModel, parameter_rows: ArrayLike) -> PropagationResult:
     """Deterministic explicit row scan, preserving caller order."""
-    return propagate(model,parameter_rows)
+    return propagate(model, parameter_rows)

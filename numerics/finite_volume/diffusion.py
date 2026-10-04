@@ -18,5 +18,5 @@ from numerics.utilities.numerical_checks import finite, positive
 
 def flux(left: float, right: float, distance: float, diffusivity: float) -> float:
     """Signed diffusive flux -k du/dx; positive k and center/boundary distance."""
-    l,r,d,k = finite(left),finite(right),positive(distance),positive(diffusivity)
-    return finite(-k*(r-l)/d)
+    l, r, d, k = finite(left), finite(right), positive(distance), positive(diffusivity)
+    return finite(-k * (r - l) / d)

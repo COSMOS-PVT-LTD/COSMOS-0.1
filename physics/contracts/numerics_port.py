@@ -33,8 +33,7 @@ class ScalarRootFinder(Protocol):
         *,
         xtol: float = 1.0e-12,
         max_iter: int = 80,
-    ) -> float:
-        ...
+    ) -> float: ...
 
 
 bracketed_root: ScalarRootFinder = find_root

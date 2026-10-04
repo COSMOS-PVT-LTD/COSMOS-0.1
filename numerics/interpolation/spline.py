@@ -18,8 +18,19 @@ from numpy.typing import ArrayLike
 from numerics.interpolation.cubic_spline import CubicSpline
 
 
-def build(nodes: ArrayLike, values: ArrayLike, *, boundary: str = "natural",
-          endpoint_slopes: tuple[float, float] | None = None, extrapolate: bool = False) -> CubicSpline:
+def build(
+    nodes: ArrayLike,
+    values: ArrayLike,
+    *,
+    boundary: str = "natural",
+    endpoint_slopes: tuple[float, float] | None = None,
+    extrapolate: bool = False,
+) -> CubicSpline:
     """Spline family foundation is explicitly natural/clamped piecewise cubic."""
-    return CubicSpline.build(nodes, values, boundary=boundary, endpoint_slopes=endpoint_slopes,
-                             extrapolate=extrapolate)
+    return CubicSpline.build(
+        nodes,
+        values,
+        boundary=boundary,
+        endpoint_slopes=endpoint_slopes,
+        extrapolate=extrapolate,
+    )

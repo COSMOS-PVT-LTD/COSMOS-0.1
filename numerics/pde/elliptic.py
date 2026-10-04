@@ -22,7 +22,12 @@ from numerics.utilities.numerical_checks import FloatArray
 from numerics.utilities.tolerances import DEFAULT_TOLERANCES, Tolerances
 
 
-def solve(nodes: ArrayLike, source: ArrayLike, boundary: DirichletBoundary, *,
-          tolerances: Tolerances = DEFAULT_TOLERANCES) -> NumericalResult[FloatArray]:
+def solve(
+    nodes: ArrayLike,
+    source: ArrayLike,
+    boundary: DirichletBoundary,
+    *,
+    tolerances: Tolerances = DEFAULT_TOLERANCES,
+) -> NumericalResult[FloatArray]:
     """Elliptic family foundation is explicitly 1D scalar Poisson."""
-    return _poisson(nodes,source,boundary,tolerances=tolerances)
+    return _poisson(nodes, source, boundary, tolerances=tolerances)

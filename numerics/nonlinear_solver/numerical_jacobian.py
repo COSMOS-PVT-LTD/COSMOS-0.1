@@ -20,17 +20,21 @@ from numerics.nonlinear_solver.jacobian import ResidualFunction, evaluate_residu
 from numerics.utilities.numerical_checks import FloatArray, failure, positive, vector
 
 
-def jacobian(function: ResidualFunction, state: ArrayLike, *, step: float) -> FloatArray:
+def jacobian(
+    function: ResidualFunction, state: ArrayLike, *, step: float
+) -> FloatArray:
     """Centered finite differences with explicit absolute perturbation; this is not AD."""
-    x, h = vector(state), positive(step,"Jacobian perturbation")
-    result = np.empty((len(x),len(x)))
+    x, h = vector(state), positive(step, "Jacobian perturbation")
+    result = np.empty((len(x), len(x)))
     for j in range(len(x)):
         plus, minus = x.copy(), x.copy()
         plus[j] += h
         minus[j] -= h
         if plus[j] == x[j] or minus[j] == x[j]:
             failure("Jacobian perturbation is below floating-point spacing.")
-        result[:,j] = (evaluate_residual(function,plus)-evaluate_residual(function,minus))/(2*h)
+        result[:, j] = (
+            evaluate_residual(function, plus) - evaluate_residual(function, minus)
+        ) / (2 * h)
     if not np.isfinite(result).all():
         failure("Numerical Jacobian is nonfinite.")
     return result

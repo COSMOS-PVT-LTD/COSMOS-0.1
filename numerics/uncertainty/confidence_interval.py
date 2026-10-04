@@ -30,20 +30,29 @@ class ConfidenceInterval:
     confidence: float
     method: str
 
-def mean_interval(values: ArrayLike, *, confidence: float = .95,
-                  known_normal_sigma: float | None = None) -> ConfidenceInterval:
+
+def mean_interval(
+    values: ArrayLike,
+    *,
+    confidence: float = 0.95,
+    known_normal_sigma: float | None = None,
+) -> ConfidenceInterval:
     """IID mean interval: exact normal with known sigma, else large-sample normal approximation."""
-    c=finite(confidence)
-    if not 0<c<1:
+    c = finite(confidence)
+    if not 0 < c < 1:
         invalid("Confidence must be strictly between zero and one.")
-    stats=summarize(values)
+    stats = summarize(values)
     if known_normal_sigma is None:
-        if stats.samples<30:
-            invalid("Estimated-sigma normal approximation requires >=30 IID samples; small-sample t is deferred.")
-        error=stats.standard_error
-        method="large-sample-normal-approximation-IID"
+        if stats.samples < 30:
+            invalid(
+                "Estimated-sigma normal approximation requires >=30 IID samples; small-sample t is deferred."
+            )
+        error = stats.standard_error
+        method = "large-sample-normal-approximation-IID"
     else:
-        error=positive(known_normal_sigma)/math.sqrt(stats.samples)
-        method="known-sigma-normal-IID"
-    radius=NormalDist().inv_cdf((1+c)/2)*error
-    return ConfidenceInterval(finite(stats.mean-radius),finite(stats.mean+radius),c,method)
+        error = positive(known_normal_sigma) / math.sqrt(stats.samples)
+        method = "known-sigma-normal-IID"
+    radius = NormalDist().inv_cdf((1 + c) / 2) * error
+    return ConfidenceInterval(
+        finite(stats.mean - radius), finite(stats.mean + radius), c, method
+    )

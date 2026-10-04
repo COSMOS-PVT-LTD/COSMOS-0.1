@@ -20,6 +20,8 @@ from numerics.utilities.numerical_checks import FloatArray
 from numerics.utilities.tolerances import DEFAULT_TOLERANCES, Tolerances
 
 
-def eigenvectors(values: ArrayLike, *, policy: Tolerances = DEFAULT_TOLERANCES) -> FloatArray:
+def eigenvectors(
+    values: ArrayLike, *, policy: Tolerances = DEFAULT_TOLERANCES
+) -> FloatArray:
     """Checked symmetric eigenvectors in ascending eigenvalue column order."""
     return symmetric_eigensystem(values, policy=policy).value.vectors

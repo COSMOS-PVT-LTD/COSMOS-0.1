@@ -18,6 +18,8 @@ from numpy.typing import ArrayLike
 from numerics.interpolation.barycentric import interpolate as _barycentric
 
 
-def interpolate(nodes: ArrayLike, values: ArrayLike, query: float, *, extrapolate: bool = False) -> float:
+def interpolate(
+    nodes: ArrayLike, values: ArrayLike, query: float, *, extrapolate: bool = False
+) -> float:
     """Lagrange polynomial in its mathematically equivalent barycentric representation."""
     return _barycentric(nodes, values, query, extrapolate=extrapolate)

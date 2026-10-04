@@ -19,13 +19,15 @@ from numerics.interpolation.linear import _data, _query
 from numerics.utilities.numerical_checks import finite
 
 
-def interpolate(nodes: ArrayLike, values: ArrayLike, query: float, *, extrapolate: bool = False) -> float:
+def interpolate(
+    nodes: ArrayLike, values: ArrayLike, query: float, *, extrapolate: bool = False
+) -> float:
     """Newton divided differences; increasing unique nodes, no silent extrapolation."""
     x, c = _data(nodes, values)
     q, _ = _query(x, query, extrapolate)
     for order in range(1, len(x)):
-        c[order:] = (c[order:] - c[order-1:-1]) / (x[order:] - x[:-order])
+        c[order:] = (c[order:] - c[order - 1 : -1]) / (x[order:] - x[:-order])
     result = float(c[-1])
-    for i in range(len(x)-2, -1, -1):
-        result = result*(q-x[i]) + c[i]
+    for i in range(len(x) - 2, -1, -1):
+        result = result * (q - x[i]) + c[i]
     return finite(result, "polynomial value")

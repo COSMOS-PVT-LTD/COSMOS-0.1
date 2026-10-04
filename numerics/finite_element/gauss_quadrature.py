@@ -18,8 +18,8 @@ from numerics.integration.gaussian import legendre_rule
 from numerics.utilities.numerical_checks import FloatArray, finite_output
 
 
-def points(element: LinearElement, *, order: int = 2) -> tuple[FloatArray,FloatArray]:
+def points(element: LinearElement, *, order: int = 2) -> tuple[FloatArray, FloatArray]:
     """Physical-coordinate points and integration weights, including Jacobian."""
-    xi,w=legendre_rule(order)
-    x=xi*element.length/2+element.left/2+element.right/2
-    return finite_output(x),finite_output(w*element.length/2)
+    xi, w = legendre_rule(order)
+    x = xi * element.length / 2 + element.left / 2 + element.right / 2
+    return finite_output(x), finite_output(w * element.length / 2)
