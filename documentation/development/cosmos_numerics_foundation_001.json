@@ -49,9 +49,17 @@
     },
     "NUM-003": {
       "name": "Linear algebra",
-      "status": "NOT_STARTED",
-      "evidence": [],
-      "limitations": []
+      "status": "PASS",
+      "evidence": [
+        "20 analytic, independent NumPy-reference, condition, singularity and reconstruction tests passed",
+        "92 cumulative Numerics tests passed",
+        "Ruff passed; all-layer Mypy 307 files passed"
+      ],
+      "limitations": [
+        "Small dense normalized problems; Jacobi supports symmetric matrices only",
+        "COO storage and matvec are real; industrial sparse factorization is not claimed",
+        "Condition estimate is diagnostic, not a guarantee of forward accuracy"
+      ]
     },
     "NUM-004": {
       "name": "Interpolation/integration",

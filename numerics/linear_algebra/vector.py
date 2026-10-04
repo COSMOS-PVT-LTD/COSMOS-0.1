@@ -4,7 +4,7 @@ COSMOS Rocket Propulsion Platform
 Module: numerics.linear_algebra.vector
 Author: COSMOS Development Team
 Version: 0.1.0
-Purpose: DEFERRED architecture slot; no operational API is exported.
+Purpose: Domain-neutral vector foundation.
 Copyright (c) 2026 COSMOS PVT LTD. All Rights Reserved.
 
 Description:
@@ -13,5 +13,25 @@ Description:
 
 from __future__ import annotations
 
-CAPABILITY_STATE = "DEFERRED"
-__all__: tuple[str, ...] = ()
+from dataclasses import dataclass
+
+from numpy.typing import ArrayLike
+
+from numerics.utilities.numerical_checks import FloatArray, vector
+
+
+@dataclass(frozen=True, slots=True)
+class Vector:
+    """Finite rank-one data; owned immutable copy."""
+
+    data: FloatArray
+
+    def __post_init__(self) -> None:
+        checked = vector(self.data)
+        checked.setflags(write=False)
+        object.__setattr__(self, "data", checked)
+
+    @classmethod
+    def from_array(cls, values: ArrayLike) -> Vector:
+        """Validate and copy a nonempty real finite vector."""
+        return cls(vector(values))

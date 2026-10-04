@@ -4,7 +4,7 @@ COSMOS Rocket Propulsion Platform
 Module: numerics.linear_algebra.eigenvectors
 Author: COSMOS Development Team
 Version: 0.1.0
-Purpose: DEFERRED architecture slot; no operational API is exported.
+Purpose: Domain-neutral eigenvectors foundation.
 Copyright (c) 2026 COSMOS PVT LTD. All Rights Reserved.
 
 Description:
@@ -13,5 +13,13 @@ Description:
 
 from __future__ import annotations
 
-CAPABILITY_STATE = "DEFERRED"
-__all__: tuple[str, ...] = ()
+from numpy.typing import ArrayLike
+
+from numerics.linear_algebra.eigenvalues import symmetric_eigensystem
+from numerics.utilities.numerical_checks import FloatArray
+from numerics.utilities.tolerances import DEFAULT_TOLERANCES, Tolerances
+
+
+def eigenvectors(values: ArrayLike, *, policy: Tolerances = DEFAULT_TOLERANCES) -> FloatArray:
+    """Checked symmetric eigenvectors in ascending eigenvalue column order."""
+    return symmetric_eigensystem(values, policy=policy).value.vectors
