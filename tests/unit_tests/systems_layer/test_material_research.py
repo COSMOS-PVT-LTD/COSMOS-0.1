@@ -12,6 +12,10 @@ from core.unit import SI
 from physics.exceptions import OutOfRangeError
 from physics.materials.catalog import MATERIALS
 from physics.si import UNIT_HTC
+
+# Collect the CLI with its research dependencies before Core isolation tests
+# unload Physics modules and create a second exception class identity.
+from scripts import prepare_material_research as cli
 from systems.materials.research import (
     SCOPE,
     MaterialCondition,
@@ -161,8 +165,6 @@ def test_reviewed_supplier_statistics_remain_separate_and_unmatched():
 
 
 def test_cli_staging_physics_checks_and_new_folder_preservation(tmp_path, monkeypatch, capsys):
-    from scripts import prepare_material_research as cli
-
     a = payload(); a["evidence_id"] = "SYNTHETIC-A"; a["condition"]["alloy_id"] = "GRCop-42"
     b = deepcopy(a); b["evidence_id"] = "SYNTHETIC-B"; b["conductivities"] = [200., 200., 200.]
     original = json.dumps([a, b]).encode()
@@ -191,8 +193,6 @@ def test_cli_staging_physics_checks_and_new_folder_preservation(tmp_path, monkey
 
 
 def test_cli_rejects_unreviewed_transcription_before_creating_output(tmp_path, monkeypatch):
-    from scripts import prepare_material_research as cli
-
     source = tmp_path / "source.pdf"; source.write_bytes(RAW)
     tables = tmp_path / "tables.json"; tables.write_text("[]")
     output = tmp_path / "must-not-be-created"

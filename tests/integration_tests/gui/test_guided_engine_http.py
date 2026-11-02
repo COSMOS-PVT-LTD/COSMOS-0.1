@@ -47,7 +47,7 @@ def server(tmp_path):
     app.close()
 
 
-def test_actual_http_assets_auth_and_guided_workflow(server):
+def accept_guided_input_over_http(server):
     base, opener, request = server
     from tests.unit_tests.systems_layer.test_guided_engine import engine_brief
 
@@ -86,9 +86,23 @@ def test_actual_http_assets_auth_and_guided_workflow(server):
         },
     )
     source_path = path + "/" + source["authority"]["object_id"]
+    assert len(request(path)["inputs"]) == 1
+    return path, source_path, source["authority"]["head"]
+
+
+def test_actual_http_assets_auth_and_guided_acceptance(server):
+    accept_guided_input_over_http(server)
+
+
+def test_actual_http_assets_auth_and_guided_workflow(server):
+    pytest.importorskip(
+        "cea", reason="Pinned NASA CEA runtime required for real guided HTTP worker"
+    )
+    path, source_path, source_head = accept_guided_input_over_http(server)
+    request = server[2]
     job = request(
         source_path + "/jobs",
-        {"expected": source["authority"]["head"], "operation_id": "calculate"},
+        {"expected": source_head, "operation_id": "calculate"},
     )
     deadline = time.monotonic() + 15
     while (

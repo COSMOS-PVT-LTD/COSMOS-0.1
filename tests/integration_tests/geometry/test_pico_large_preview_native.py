@@ -1,11 +1,12 @@
 """Explicit actual-engine workload, with the same supervised process limits."""
-from hashlib import sha256
 import json
 import os
+from hashlib import sha256
 from pathlib import Path
 
 import pytest
-from systems.contracts.geometry import DesignSnapshot,GeometryFeatureGraph
+
+from systems.contracts.geometry import DesignSnapshot, GeometryFeatureGraph
 from systems.geometry.component_model import from_contracts
 from systems.geometry.pico_component_builds import PicoLimits
 from systems.geometry.pico_preview import reduce_preview

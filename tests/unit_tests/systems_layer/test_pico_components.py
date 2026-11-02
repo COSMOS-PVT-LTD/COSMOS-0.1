@@ -1,12 +1,16 @@
 """Distinct implicit component intent and strict numerical admission."""
-from dataclasses import replace
 import json
+from dataclasses import replace
 
 import numpy as np
 import pytest
 
-from plugins.geometry.pico_components import VERSION,field_graph,validate,fields
-from systems.contracts.geometry import GeometryBuildRequest,Representation,OutputFormat
+from plugins.geometry.pico_components import VERSION, field_graph, fields, validate
+from systems.contracts.geometry import (
+    GeometryBuildRequest,
+    OutputFormat,
+    Representation,
+)
 from systems.geometry.pico_component_builds import PicoLimits
 from tests.fixtures.component_geometry import plan
 
@@ -66,6 +70,7 @@ def test_display_flap_cleanup_is_combinatorial_not_original_mesh_conditioning():
 
 def test_pico_byte_inspection_keeps_its_explicit_separate_artifact_limit(monkeypatch):
     from types import SimpleNamespace
+
     from plugins.geometry import pico_components as module
     calls=[]
     monkeypatch.setattr(module,"checked_file",lambda *a,**k:calls.append((a,k)) or "verified")

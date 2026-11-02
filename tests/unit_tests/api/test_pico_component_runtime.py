@@ -1,11 +1,11 @@
 """Component admission is separate, current-byte bound and fails closed."""
-from hashlib import sha256
 import json
+from hashlib import sha256
 
 import pytest
 
 from api import pico_component_runtime as runtime
-from plugins.geometry.pico_components import POLICY,VERSION
+from plugins.geometry.pico_components import POLICY, VERSION
 
 
 def qualified(tmp_path,monkeypatch):
@@ -57,6 +57,7 @@ def test_admission_rejects_stale_or_weakened_qualification(tmp_path,monkeypatch,
 
 def test_preview_lod_keeps_full_part_source_ranges_and_immutable_original():
     import numpy as np
+
     from api.pico_components import preview
     from systems.geometry.qa import STL_RECORD
     records=np.zeros(210_000,dtype=STL_RECORD)

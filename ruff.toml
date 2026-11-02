@@ -1,0 +1,18 @@
+# These legacy modules are source-byte inputs to retained OCCT/PicoGK runtime
+# admission receipts. Preserve their admitted bytes until a separately qualified
+# runtime replaces them. Limit exceptions to their existing import-order,
+# unused-name, shared metadata, immediately consumed loop closure and structured
+# worker-boundary diagnostics; other checks remain active.
+# See docs/implementation/evidence/CI_REPAIR_2026-11-02/REPORT.md.
+[lint.per-file-ignores]
+"api/occt_component_runtime.py" = ["I001"]
+"api/pico_component_runtime.py" = ["I001"]
+"api/pico_components.py" = ["I001", "F401", "RUF012"]
+"plugins/geometry/pico_components.py" = ["I001"]
+"plugins/geometry/workers/pico_preview_worker.py" = ["I001", "F841"]
+"systems/geometry/pico_component_builds.py" = ["I001", "F401"]
+"systems/geometry/pico_mesh_qa.py" = ["I001"]
+"systems/geometry/pico_preview.py" = ["I001"]
+"api/cad_tools.py" = ["I001"]
+"systems/geometry/manufacturing_drawing.py" = ["I001", "B023"]
+"plugins/geometry/workers/cad_inspection_worker.py" = ["I001", "BLE001"]

@@ -2,8 +2,8 @@ from copy import deepcopy
 
 import pytest
 
-from systems.geometry.driving_constraints import SCHEMA,resolve
 from systems.geometry.component_model import compile_model
+from systems.geometry.driving_constraints import SCHEMA, resolve
 from tests.fixtures.component_geometry import model
 
 

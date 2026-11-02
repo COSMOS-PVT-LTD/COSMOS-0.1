@@ -59,6 +59,7 @@ jobs:
           python -m pytest -q tests/unit_tests/plugins/test_nasa_cea_engine.py tests/unit_tests/api/test_cea_workflow.py tests/integration_tests/gui/test_cea_http.py
           python -m pytest -q tests/unit_tests/systems_layer/test_engine_operating.py tests/integration_tests/gui/test_engine_operating_http.py tests/unit_tests/physics/test_heated_nozzle.py tests/unit_tests/numerics/test_bounded_system.py
           python -m pytest -q tests/unit_tests/systems_layer/test_operating_sensitivity_native.py tests/integration_tests/gui/test_operating_validation_http.py tests/unit_tests/systems_layer/test_engineering_extensions.py tests/integration_tests/gui/test_engineering_extensions_http.py
+          python -m pytest -q tests/unit_tests/systems_layer/test_guided_engine.py tests/unit_tests/api/test_guided_engine.py tests/integration_tests/gui/test_guided_engine_http.py
           python scripts/smoke_nasa_cea_methalox.py
   test:
     name: Test (Python ${{ matrix.python-version }})

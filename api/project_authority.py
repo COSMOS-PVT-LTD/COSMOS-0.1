@@ -7,7 +7,7 @@ import threading
 from collections.abc import Callable
 from dataclasses import asdict
 from hashlib import sha256
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from api.authentication import AuthService, UserAccount
 from api.cycle_assessment import evaluate as cycle_evaluate
@@ -88,6 +88,9 @@ from systems.projects.propulsion_validation import PropulsionValidation
 from systems.projects.sensitivity import ManagedSensitivity
 from systems.projects.study_authority import ManagedStudies
 
+if TYPE_CHECKING:
+    from api.guided_engine import GuidedAPI
+
 
 def principal(user: UserAccount) -> Principal:
     return Principal(user.user_id, user.role.value, user.active)
@@ -147,7 +150,7 @@ class ProjectAPI:
                  pico_component_workspace: Callable[[], Any] | None = None) -> None:
         self.repository = repository
         self.auth = auth
-        self.guided = None
+        self.guided: GuidedAPI | None = None
         self.guided_jobs = jobs
         self.guided_lock = threading.Lock()
         self.portability = portability

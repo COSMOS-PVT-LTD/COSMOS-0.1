@@ -6,14 +6,18 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from plugins.geometry.pico_components import PicoComponentAdapter,field_graph
+from plugins.geometry.pico_components import field_graph
 from systems.contracts.geometry import BuildState
-from systems.geometry.pico_component_builds import PicoWorkspace,PicoLimits,PicoReference
-from systems.geometry.pico_preview import reduce_preview
+from systems.geometry.pico_component_builds import (
+    PicoLimits,
+    PicoReference,
+    PicoWorkspace,
+)
 from systems.geometry.pico_mesh_qa import read_mesh
+from systems.geometry.pico_preview import reduce_preview
 from tests.fixtures.component_geometry import plan
 from tests.integration_tests.geometry.test_pico_components_native import command
-from tests.unit_tests.systems_layer.test_pico_components import qa,request_for
+from tests.unit_tests.systems_layer.test_pico_components import qa, request_for
 
 
 def workspace(tmp_path):

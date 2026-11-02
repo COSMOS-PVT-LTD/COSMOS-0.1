@@ -72,7 +72,20 @@ def wait_for(setup, path):
     pytest.fail("Bounded isolated guided run did not finish")
 
 
+def test_acceptance_exact_replay_preserves_saved_authority(setup):
+    a = accept(setup)
+    assert accept(setup) == a
+    assert (
+        command(setup, [a["authority"]["object_id"]])["authority"]["commit_id"]
+        == a["authority"]["commit_id"]
+    )
+    assert len(command(setup, [])["inputs"]) == 1
+
+
 def test_acceptance_run_exact_replay_and_expert_handoff(setup):
+    pytest.importorskip(
+        "cea", reason="Pinned NASA CEA runtime required for real guided worker"
+    )
     _app, api, user, project = setup
     a = accept(setup)
     assert accept(setup) == a

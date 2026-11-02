@@ -1,20 +1,24 @@
 """Real PicoGK component construction, field/mesh round trip and independent QA."""
 import json
 import os
-from pathlib import Path
 import subprocess
+from pathlib import Path
 
 import numpy as np
 import pytest
 
-from infrastructure.geometry import WorkerCommand,WorkerSupervisor
-from plugins.geometry.pico_components import PicoComponentAdapter,fields,field_graph
-from systems.geometry.pico_component_builds import PicoBuildService,PicoLimits,PicoReference
-from systems.geometry.component_reference import PartReference
+from infrastructure.geometry import WorkerCommand, WorkerSupervisor
+from plugins.geometry.pico_components import PicoComponentAdapter, field_graph, fields
 from systems.contracts.geometry import BuildState
-from tests.fixtures.component_geometry import plan,model
 from systems.geometry.component_model import compile_model
-from tests.unit_tests.systems_layer.test_pico_components import request_for,qa
+from systems.geometry.component_reference import PartReference
+from systems.geometry.pico_component_builds import (
+    PicoBuildService,
+    PicoLimits,
+    PicoReference,
+)
+from tests.fixtures.component_geometry import model, plan
+from tests.unit_tests.systems_layer.test_pico_components import qa, request_for
 
 
 def command():
@@ -36,7 +40,7 @@ def test_cross_language_field_recipe_matches_independent_python(kind):
     for part,data in zip(p.parts,fields(p),strict=True):
         ref=PartReference(p,part);bounds=ref.bounds_m
         samples=rng.uniform(bounds[:3]-.001,bounds[3:]+.001,size=(256,3))
-        proc=subprocess.run([*c.argv,"--sample"],input=json.dumps({"part":data,"points":samples.tolist()}).encode(),capture_output=True,timeout=15,env={**os.environ,**dict(c.environment)})
+        proc=subprocess.run([*c.argv,"--sample"],input=json.dumps({"part":data,"points":samples.tolist()}).encode(),capture_output=True,timeout=15,check=False,env={**os.environ,**dict(c.environment)})
         assert proc.returncode==0,proc.stdout.decode()+proc.stderr.decode()
         assert np.allclose(json.loads(proc.stdout),ref.sdf(samples),atol=1e-12,rtol=1e-10)
 

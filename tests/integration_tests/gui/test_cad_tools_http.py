@@ -1,24 +1,28 @@
 """Actual authorized CAD-tool routes; native cases require an explicit campaign."""
-import json
 import os
 from copy import deepcopy
-from pathlib import Path
 from uuid import uuid4
 
 import pytest
 
-from tests.integration_tests.gui.test_component_projects_http import capture,compose
-from tests.integration_tests.gui.test_project_authority_http import running,request,new_project
+from systems.geometry.driving_constraints import SCHEMA
+from tests.fixtures.component_geometry import qa_spec
+from tests.integration_tests.gui.test_component_projects_http import capture, compose
 from tests.integration_tests.gui.test_engine_nozzle_projects_http import wait
 from tests.integration_tests.gui.test_pressure_fed_projects_http import binary
-from tests.fixtures.component_geometry import qa_spec
-from systems.geometry.driving_constraints import SCHEMA
-from tests.unit_tests.systems_layer.test_pressure_fed_assessment import isolated_catalog  # noqa:F401
+from tests.integration_tests.gui.test_project_authority_http import (
+    new_project,
+    request,
+    running,
+)
+from tests.unit_tests.systems_layer.test_pressure_fed_assessment import (
+    isolated_catalog,  # noqa:F401
+)
 
 
 def test_driving_constraint_preview_save_history_and_no_implicit_write(tmp_path):
     with running(tmp_path/"state") as (app,base,client):
-        project,baseline,root,command,saved=capture(app,base,client,"pipe.circular")
+        _project,_baseline,root,command,saved=capture(app,base,client,"pipe.circular")
         spec=deepcopy(command["specification"]);feature=spec["features"][0]["id"]
         spec["constraints"]={"schema":SCHEMA,"rules":[{"id":"axial-length","type":"fixed","target":{"feature":feature,"parameter":"length"},"value":{"value":.065,"unit":"m"}}]}
         before=saved["authority"]["commit_id"]
@@ -59,7 +63,7 @@ def test_real_native_clearance_drawing_and_project_boundary(tmp_path):
     if not cfg:pytest.skip("Explicit separately qualified native CAD tools campaign required")
     with running(tmp_path/"state") as (app,base,client):
         compose(app);app.project_api.cad_tools.path=cfg
-        project,_,root,command,saved=capture(app,base,client,"injector.coaxial")
+        _project,_,root,_command,saved=capture(app,base,client,"injector.coaxial")
         start=request(client,base,root+"/component-geometry-builds",{"model_commit_id":saved["authority"]["commit_id"],"expected_model":saved["authority"]["head"],"qa_specification":qa_spec(),"output_formats":["step","stl"],"operation_id":str(uuid4())})
         path=root+"/component-geometry-builds/"+start["object_id"]+"/jobs/"+start["job_id"]
         job=wait(client,base,path);assert job["state"]=="COMPLETED",job

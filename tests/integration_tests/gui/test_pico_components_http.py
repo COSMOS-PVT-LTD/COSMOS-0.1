@@ -1,19 +1,22 @@
 """Authorized saved intent -> genuine PicoGK -> retained originals and shared preview."""
-import json
 from uuid import uuid4
-
-import pytest
 
 from api.pico_components import PicoComponentsAPI
 from api.project_authority import principal
 from systems.geometry.pico_component_builds import PicoWorkspace
 from tests.integration_tests.geometry.test_pico_components_native import command
 from tests.integration_tests.gui.test_component_projects_http import capture
-from tests.integration_tests.gui.test_project_authority_http import running,request,new_project
-from tests.integration_tests.gui.test_pressure_fed_projects_http import binary
 from tests.integration_tests.gui.test_engine_nozzle_projects_http import wait
+from tests.integration_tests.gui.test_pressure_fed_projects_http import binary
+from tests.integration_tests.gui.test_project_authority_http import (
+    new_project,
+    request,
+    running,
+)
 from tests.unit_tests.systems_layer.test_pico_components import qa
-from tests.unit_tests.systems_layer.test_pressure_fed_assessment import isolated_catalog  # noqa:F401
+from tests.unit_tests.systems_layer.test_pressure_fed_assessment import (
+    isolated_catalog,  # noqa:F401
+)
 
 
 def compose(app):
@@ -23,7 +26,7 @@ def compose(app):
 
 
 def test_picogk_capability_disabled_without_explicit_qualification(tmp_path):
-    with running(tmp_path/"state") as (app,base,client):
+    with running(tmp_path/"state") as (_app,base,client):
         project=new_project(base,client)
         value=request(client,base,"/api/projects/"+project["project_id"]+"/picogk-component-builds/capabilities")
         assert value["runtime_configured"] is False and value["analytic_step_available"] is False
@@ -35,7 +38,7 @@ def test_picogk_capability_disabled_without_explicit_qualification(tmp_path):
 
 def test_real_pico_component_source_export_preview_and_scope(tmp_path):
     with running(tmp_path/"state") as (app,base,client):
-        compose(app);project,_,root,_,saved=capture(app,base,client,"pipe.circular");uri=root+"/picogk-component-builds"
+        compose(app);_project,_,root,_,saved=capture(app,base,client,"pipe.circular");uri=root+"/picogk-component-builds"
         body={"model_commit_id":saved["authority"]["commit_id"],"expected_model":saved["authority"]["head"],"qa_specification":qa(),"output_formats":["stl"],"operation_id":str(uuid4())}
         start=request(client,base,uri,body);path=uri+"/"+start["object_id"]+"/jobs/"+start["job_id"]
         job=wait(client,base,path);assert job["state"]=="COMPLETED",job

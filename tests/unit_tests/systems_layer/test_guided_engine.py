@@ -28,6 +28,9 @@ def plan(b=None, overrides=None):
 
 
 def calculation(b=None, overrides=None):
+    pytest.importorskip(
+        "cea", reason="Pinned NASA CEA runtime required for real guided calculations"
+    )
     p = plan(b, overrides)
     e = p["effective"]
     adapter = bind_nasa_cea_engine(
@@ -172,7 +175,7 @@ def test_property_domain_gap_blocks_only_cold_hydraulics_not_ideal_performance()
     )
 
 
-def test_conflicting_throat_lock_and_tampered_review_refused():
+def test_conflicting_throat_lock_refused():
     with pytest.raises(InvalidInputError, match="conflict"):
         calculation(
             overrides={
@@ -180,6 +183,9 @@ def test_conflicting_throat_lock_and_tampered_review_refused():
                 "throat_area": {"value": 0.1, "unit": "m2"},
             }
         )
+
+
+def test_tampered_review_refused_without_thermochemistry():
     p = deepcopy(plan())
     p["effective"]["injector_cd"]["value"] = 0.9
     with pytest.raises(InvalidInputError, match="hash"):

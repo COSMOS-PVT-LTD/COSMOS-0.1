@@ -10,7 +10,7 @@ from api import occt_component_runtime as runtime
 
 
 def profile(tmp_path,monkeypatch):
-    monkeypatch.setattr(runtime,"methods",lambda:{})
+    monkeypatch.setattr(runtime,"methods",dict)
     executable=tmp_path/"python";executable.write_bytes(b"inert test-only interpreter identity");executable.chmod(0o700)
     reports={}
     for label,tests in (("native-components",48),("component-http",7),("driving-constraints",14)):
