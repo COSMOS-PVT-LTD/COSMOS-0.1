@@ -1,0 +1,24 @@
+{
+  "python": {
+    "passed": 2581,
+    "skipped": 65
+  },
+  "actual_native": {
+    "passed": 58,
+    "skipped": 0
+  },
+  "javascript_passed": 98,
+  "browser_passed": 12,
+  "axe_violations": {
+    "dark": 0,
+    "high-contrast": 0
+  },
+  "physics_parity_cases": 5,
+  "ruff": "PASS",
+  "mypy_files": 332,
+  "strict_display_contracts": "PASS",
+  "reaudited_records": 30,
+  "viewport_measurement_scope": "Local Chrome CPU draw/load timings, not GPU/FPS or large-model certification",
+  "physical_validation": false,
+  "github_ci_run": false
+}

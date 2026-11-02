@@ -1,0 +1,22 @@
+{
+  "typescript": {
+    "exit_code": 0,
+    "observed_by": "coordinating reviewer exec_command result",
+    "executable": "/opt/homebrew/bin/node",
+    "compiler": "/private/tmp/cosmos-p03.pfPm6s/node_modules/typescript/bin/tsc",
+    "flags": ["--strict", "--noEmit", "--target", "ES2022", "--lib", "ES2022,DOM", "--module", "Node16", "--moduleResolution", "Node16"],
+    "consumers": [
+      "tests/ui/design-system/type_contracts.ts",
+      "tests/ui/app-shell/type_contracts.ts",
+      "tests/ui/rocket-workbench/contract-consumer.ts",
+      "tests/ui/ngg/type_contracts.ts",
+      "tests/ui/simulation/type_contracts.ts",
+      "tests/ui/comparison/type_contracts.ts",
+      "tests/ui/knowledge_reports/type_contracts.ts"
+    ],
+    "log": "typescript.log"
+  },
+  "test_execution_started_local_date": "2026-10-11",
+  "review_completed_local_date": "2026-10-12",
+  "timezone": "Asia/Kolkata"
+}

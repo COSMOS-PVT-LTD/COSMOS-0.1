@@ -1,0 +1,12 @@
+{
+  "scope": "Synthetic legacy characterization only, not R05 acceptance",
+  "root": "/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/cosmos-r05-characterization.f87x910p",
+  "writer_A_revision": 1,
+  "writer_B_revision": 1,
+  "final_revision": 1,
+  "writer_A_edit_lost": true,
+  "final_name": "writer-B",
+  "json_files": 1,
+  "legacy_history_reconstruction_claimed": false,
+  "user_storage_used": false
+}

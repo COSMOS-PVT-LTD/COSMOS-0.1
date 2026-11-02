@@ -1,0 +1,39 @@
+{
+  "phase": "P08_NGG_WORKBENCH",
+  "gate": "G6_NGG_UI",
+  "status": "SOFTWARE_PASS",
+  "software_pass": true,
+  "prerequisite_g5_software": true,
+  "default_enabled": false,
+  "fixture_scope_only": true,
+  "formal_ux_cad_owner_acceptance": false,
+  "engineering_publication": false,
+  "native_distribution_approved": false,
+  "physical_validation": false,
+  "next": "P09_SIMULATION",
+  "p09_executed": false,
+  "tests": {
+    "python": {
+      "passed": 2581,
+      "skipped": 65
+    },
+    "actual_native": {
+      "passed": 58,
+      "skipped": 0
+    },
+    "javascript_passed": 98,
+    "browser_passed": 12,
+    "axe_violations": {
+      "dark": 0,
+      "high-contrast": 0
+    },
+    "physics_parity_cases": 5,
+    "ruff": "PASS",
+    "mypy_files": 332,
+    "strict_display_contracts": "PASS",
+    "reaudited_records": 30,
+    "viewport_measurement_scope": "Local Chrome CPU draw/load timings, not GPU/FPS or large-model certification",
+    "physical_validation": false,
+    "github_ci_run": false
+  }
+}

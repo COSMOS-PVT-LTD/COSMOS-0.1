@@ -1,0 +1,29 @@
+{
+  "scope": "Local validation-preparation QA only, not release or physical evidence",
+  "full_python_exit": 0,
+  "cea_cache_restore_compare_exit": 0,
+  "cea_cache_backup": "/private/tmp/cosmos-r06-validation-cea.GZGwJ0",
+  "current_and_backup_cache_sha256": "6ea2f6250df4143d6ca452a552a3dfbae7e5f6a87d2613cd566f0b0dc0fa2508",
+  "qa_listener": "127.0.0.1:8871",
+  "created_preview_pid": 59326,
+  "restart_preview_pid": 60019,
+  "preview_process_identity_and_cwd_verified_before_SIGINT": true,
+  "both_task_preview_processes_exited_zero": true,
+  "final_port_8871_listener_count": 0,
+  "task_created_tab_7_closed": true,
+  "qa_root_and_downloads_retained": true,
+  "owner_root_and_existing_port_8787_untouched": true,
+  "git_diff_check": "PASS",
+  "new_evidence_collector_and_UI_checker_ruff": "PASS",
+  "strict_typescript_consumers": [
+    "tests/ui/rocket-workbench/contract-consumer.ts",
+    "tests/ui/design-system/type_contracts.ts",
+    "tests/ui/ngg/type_contracts.ts",
+    "tests/ui/simulation/type_contracts.ts",
+    "tests/ui/knowledge_reports/type_contracts.ts",
+    "tests/ui/comparison/type_contracts.ts",
+    "tests/ui/app-shell/type_contracts.ts"
+  ],
+  "physical_validation": "NOT_PERFORMED",
+  "whole_R06": "PARTIAL"
+}

@@ -1,0 +1,9 @@
+# R05.3 continuation — 2026-10-18 Asia/Kolkata
+
+Resume the interrupted restoration, not a new phase. Accepted ADR-R05-001 and the 2026-10-17 report govern. Preserve all existing work/user data and frozen scientific contracts. No automatic schema migration, historical G5 reseal, credential/trust change, owner-root activation, commit/push or release.
+
+Entry: previous pip installation completed successfully in `/private/tmp/cosmos-r05_3-native.IcKKdc/cad-tools` using the exact original hashed OCP7.8.1.1.post1/gmsh4.15.0/VTK9.3.1 wheel subset. Packages alone are not native qualification. gmsh's wheel data library was not retained by pip's target layout; restore that exact binary from the hash-checked wheel, not another system version. Original Pico/.NET temporary source/binaries are absent.
+
+Plan: qualify restored OCCT/STEP reader; restore exact pinned .NET/Pico source/runtime as needed, preserving original patch and native policy. Then implement incremental durable source-stage events, bounded orphan reporting and remaining native crash/cancel/restart/selection checks. Use new isolated roots and new evidence, not old P finalizers. Re-run relevant full/static/type/preservation checks before any scoped gate claim.
+
+Final continuation status: native retention/incremental-stage/recovery core verified. Final full Python3167 passed/82 skipped; 64 distinct actual native cases passed plus six repeated final-coordinator cases; JavaScript390 passed; Ruff/Mypy369/strict TypeScript PASS. See `IMPLEMENTATION_REPORT.md` and `STATUS.json`. Native Cocoa/workload/integrated-history acceptance remains open; no whole R05.3/R05/production/physical readiness claim. Task-created browser tab and loopback8863 server closed; synthetic root and isolated runtime retained. No owner migration, commit/push, release or reached-limit pause.

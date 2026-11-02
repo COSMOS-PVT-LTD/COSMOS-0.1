@@ -1,0 +1,59 @@
+{
+  "gate_id": "G7_SIMULATION",
+  "phase": "P09_SIMULATION",
+  "decision": "SOFTWARE_PASS",
+  "software_pass": true,
+  "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "date": "2026-10-10",
+  "environment": "Local macOS arm64, CPython 3.11.4, actual Chrome, qualified OCCT/Gmsh",
+  "scope": "steady-spherical-conduction-software-benchmark-only",
+  "default_enabled": false,
+  "requirement_ids": [
+    "GOV-001",
+    "GOV-003",
+    "GOV-004",
+    "GOV-007",
+    "GOV-008",
+    "GOV-009",
+    "GOV-010",
+    "T-011",
+    "T-012",
+    "T-013",
+    "T-015"
+  ],
+  "GOV-005_production_handoff": "BLOCKED_UNTIL_INDEPENDENT_ENGINEERING_ACCEPTANCE",
+  "reviewer": "Codex automated software assessment; not independent engineering or UX owner signoff",
+  "formal_human_acceptance": false,
+  "engineering_publication": false,
+  "production_handoff": false,
+  "experimental_validation": false,
+  "tests": {
+    "python": {
+      "passed": 2637,
+      "skipped": 72
+    },
+    "actual_native_handoff": {
+      "passed": 7,
+      "skipped": 0
+    },
+    "javascript_passed": 114,
+    "browser_passed": 10,
+    "axe_violations": {
+      "dark": 0,
+      "high-contrast": 0
+    },
+    "physics_parity_cases": 5,
+    "analytic_refinement_cases": 4,
+    "ruff": "PASS",
+    "mypy_files": 338,
+    "strict_display_contracts": "PASS",
+    "remote_ci_executed": false
+  },
+  "next": "P10_COMPARISON_VV",
+  "p10_executed": false,
+  "remaining_boundaries": [
+    "General 3D meshing/CFD/FEA/field maps and durable engineering storage not implemented",
+    "Independent engineering signoff and production handoff unavailable",
+    "Native distribution/packaging, security, other-platform and remote CI release gates pending"
+  ]
+}

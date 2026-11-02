@@ -1,0 +1,22 @@
+{
+  "python": {
+    "passed": 2637,
+    "skipped": 72
+  },
+  "actual_native_handoff": {
+    "passed": 7,
+    "skipped": 0
+  },
+  "javascript_passed": 114,
+  "browser_passed": 10,
+  "axe_violations": {
+    "dark": 0,
+    "high-contrast": 0
+  },
+  "physics_parity_cases": 5,
+  "analytic_refinement_cases": 4,
+  "ruff": "PASS",
+  "mypy_files": 338,
+  "strict_display_contracts": "PASS",
+  "remote_ci_executed": false
+}

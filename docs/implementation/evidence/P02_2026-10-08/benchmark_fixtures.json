@@ -1,0 +1,17 @@
+{
+  "schema": "cosmos.picogk.feasibility.v1",
+  "unit": "m",
+  "frame": "right-handed-xyz",
+  "radiusM": 0.01,
+  "separationM": 0.01,
+  "voxelSizesM": [0.001, 0.0005, 0.00025],
+  "operations": ["sphere", "union", "difference", "intersection", "self_union", "self_difference", "disjoint_intersection"],
+  "purpose": "Analytic software feasibility fixtures only; not rocket-engine geometry or manufacturing acceptance",
+  "timeoutSeconds": 45,
+  "maximumResidentBytes": 1073741824,
+  "volumeRelativeErrorCeiling": "2*(voxelM/radiusM)^2 + 0.0005",
+  "centroidAbsoluteErrorCeilingM": "2*voxelM",
+  "surfaceForwardErrorCeilingM": "1.5*voxelM",
+  "sampling": "All mesh vertices and triangle centroids for forward analytic SDF residual; 400 Fibonacci points per analytic sphere, Boolean-filtered, for reverse nearest-vertex distance upper bound. Not a certified Hausdorff estimate.",
+  "releaseClaim": "UNVERIFIED exploratory mesh; no CAD-ready state"
+}

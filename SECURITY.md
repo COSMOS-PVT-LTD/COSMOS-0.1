@@ -15,8 +15,15 @@ contributors and authorized users.
 If you discover a security vulnerability affecting COSMOS, report it through
 responsible disclosure.
 
-**Security contact:** `[SECURITY CONTACT]` *(placeholder — replace with the
-official COSMOS PVT LTD security contact when established)*
+**Security contact: not configured.** Do not assume that a website or a purchased
+domain provides a monitored private reporting channel. External production
+release remains blocked until COSMOS establishes and tests that channel.
+
+The proposed role address is `security@cosmospvtltd.com`. It is **not confirmed
+active**. Set up the mailbox with the company's email provider, enable MFA,
+assign a responsible owner and backup, test inbound/outbound delivery, and
+publish a private security-reporting page before advertising it. Do not send
+vulnerability details to an unverified address or public issue.
 
 When reporting, include:
 
@@ -42,6 +49,14 @@ authorized channels.
   authorization.
 
 ## Secret and Credential Management
+
+The default local development profile has a known bootstrap account and is not
+a production configuration. P12's opt-in `COSMOS_RELEASE_PROFILE=local-preview`
+requires a separate private data root, generates a unique first-login record
+with mode 0600, and refuses silent reuse of legacy accounts. It is limited to
+IPv4 loopback and bounded same-origin HTTP requests. Downloaded research reports
+and preview review intents do not authorize production or hardware use. See
+`documentation/development/COSMOS_P12_RELEASE_PREVIEW.md` for launch and rollback.
 
 Never commit to this repository:
 

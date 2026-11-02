@@ -1,0 +1,21 @@
+{
+  "baseline_sha256": "cfd2538f300b81965389a44e452243660d87647fbbe27faf732fb609adf9bf86",
+  "changes": [
+    {
+      "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/systems/geometry/authority.py",
+      "before": "db9d817df91b19d3bfd677554b9ed8ff55a0a41fe5a332b9e81ad19da13c733f",
+      "after": "15b6aec446fd55691b4af3bcf7ac096a8d496e87abee8b7cdd2fd741ee21850b"
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/systems/geometry/qa.py",
+      "before": "50c6024e1ab6b27a52b6388c3a7850dc365cb18ce65d2de5727b7c7edadc1783",
+      "after": "59f795779cfb02c75c97a07b7dfc3608dfe7cbc2f76c87968dbb80af411c93b7"
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/systems/geometry/service.py",
+      "before": "a8a341762ae7932e7a71684bd77032f9ef17717bd4e7c4b17563f14253ba7b48",
+      "after": "d92cc9b6fcb745afd16c471240e035a03b2ade9b43610acee9277db3e3f4a039"
+    }
+  ],
+  "scope": "New software campaign, not a reseal of the historical receipt"
+}

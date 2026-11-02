@@ -1,0 +1,44 @@
+{
+  "python": {
+    "total": 2619,
+    "passed": 2560,
+    "failed": 0,
+    "skipped": 59,
+    "failures": []
+  },
+  "focused": {
+    "total": 84,
+    "passed": 84,
+    "failed": 0,
+    "skipped": 0,
+    "failures": []
+  },
+  "native": {
+    "total": 54,
+    "passed": 50,
+    "failed": 4,
+    "skipped": 0,
+    "failures": [
+      "test_occt_step_independent_tool_reimport[union]",
+      "test_occt_step_independent_tool_reimport[difference]",
+      "test_occt_step_independent_tool_reimport[intersection]",
+      "test_occt_step_and_stl_representation_aware_export"
+    ]
+  },
+  "native_guards_replay": {
+    "total": 24,
+    "passed": 24,
+    "failed": 0,
+    "skipped": 0,
+    "failures": []
+  },
+  "javascript_passed": 94,
+  "ruff": "PASS",
+  "mypy_source_files": 336,
+  "python_compile": "PASS",
+  "physics_http_exact_cases": 5,
+  "candidate_reaudit_records": 30,
+  "golden_dotnet_vectors": 14,
+  "native_optional_skips_in_python_suite": 54,
+  "existing_skips": 5
+}

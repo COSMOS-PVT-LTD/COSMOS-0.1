@@ -46,10 +46,12 @@ def test_propellant_configuration_round_trip() -> None:
     assert restored.oxidizer_temperature.to_si() == 90.0
 
 
-def test_cycle_all_not_implemented_in_phase_2() -> None:
+def test_selected_cycle_capability_does_not_claim_successful_balance() -> None:
     for cycle in CycleType:
         cfg = CycleConfiguration.for_type(cycle)
-        assert cfg.implementation_status is CycleImplementationStatus.NOT_IMPLEMENTED
+        expected = CycleImplementationStatus.PARTIAL if cycle in {CycleType.PRESSURE_FED, CycleType.GAS_GENERATOR} else CycleImplementationStatus.NOT_IMPLEMENTED
+        assert cfg.implementation_status is expected
+        assert cfg.parameters == {}
 
 
 def test_operating_point_uses_quantities() -> None:

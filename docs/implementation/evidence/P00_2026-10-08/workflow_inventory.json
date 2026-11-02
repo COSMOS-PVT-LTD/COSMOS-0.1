@@ -1,0 +1,405 @@
+{
+  "ok": true,
+  "workflow_id": "propulsion.default",
+  "nodes": [
+    {
+      "stage_index": "00",
+      "stage_id": "design_project",
+      "name": "Design Project",
+      "dependencies": [],
+      "dependency_edges": [],
+      "implementation_status": "PARTIAL",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "One PropulsionDesign identity. New/Clone create; Run updates the same design.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "01",
+      "stage_id": "requirements",
+      "name": "Requirements",
+      "dependencies": [
+        "design_project"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "design_project",
+          "requirement": "INFORMATIONAL",
+          "reason": "Design identity already exists."
+        }
+      ],
+      "implementation_status": "IMPLEMENTED",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "Authoritative targets (Pc, thrust, O/F, expansion). Changing them marks dependents STALE.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "02",
+      "stage_id": "propellants",
+      "name": "Propellant Definition",
+      "dependencies": [
+        "requirements"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "requirements",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        }
+      ],
+      "implementation_status": "IMPLEMENTED",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "Physics registry identity only. Concatenated labels such as LOX/RP-1 are display, not IDs.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "03",
+      "stage_id": "cycle",
+      "name": "Engine Cycle",
+      "dependencies": [
+        "requirements"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "requirements",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        }
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "NOT_IMPLEMENTED \u2014 no validated cycle power-balance model exists in COSMOS 0.1 Physics.",
+      "calculate_supported": false
+    },
+    {
+      "stage_index": "04",
+      "stage_id": "operating_point",
+      "name": "Operating Point",
+      "dependencies": [
+        "propellants",
+        "cycle"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "propellants",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        },
+        {
+          "stage_id": "cycle",
+          "requirement": "DEFERRED",
+          "reason": "Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point construction defers the cycle analysis and is not a complete engine design."
+        }
+      ],
+      "implementation_status": "IMPLEMENTED",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [
+        {
+          "upstream": "cycle",
+          "reason": "Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point construction defers the cycle analysis and is not a complete engine design."
+        }
+      ],
+      "engineering_note": "Built from requirements and propellants. Gamma/Tc may be explicit analysis assumptions.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "05",
+      "stage_id": "thermochemistry",
+      "name": "Thermochemistry",
+      "dependencies": [
+        "operating_point",
+        "propellants"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "operating_point",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        },
+        {
+          "stage_id": "propellants",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        }
+      ],
+      "implementation_status": "PARTIAL",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "PARTIAL \u2014 optional NASA CEA 3.3.4 equilibrium with explicit inlet temperatures, or explicitly ASSUMED Tc/\u03b3/MW. No physical validation.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "06",
+      "stage_id": "performance",
+      "name": "Mass Flow / Performance",
+      "dependencies": [
+        "thermochemistry",
+        "operating_point"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "thermochemistry",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        },
+        {
+          "stage_id": "operating_point",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        }
+      ],
+      "implementation_status": "PARTIAL",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "PARTIAL \u2014 CEA ideal equilibrium nozzle in CEA mode, otherwise constant-gamma isentropic nozzle. No loss/separation model.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "07",
+      "stage_id": "injector",
+      "name": "Injector",
+      "dependencies": [
+        "performance"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "performance",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        }
+      ],
+      "implementation_status": "PARTIAL",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "PARTIAL \u2014 liquid-orifice hydraulics with explicit Cd/properties; no atomization or combustion stability prediction.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "08",
+      "stage_id": "chamber",
+      "name": "Combustion Chamber",
+      "dependencies": [
+        "performance",
+        "injector"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "performance",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        },
+        {
+          "stage_id": "injector",
+          "requirement": "INFORMATIONAL",
+          "reason": "Preliminary L* geometry does not consume injector hydraulic sizing or model atomization."
+        }
+      ],
+      "implementation_status": "PARTIAL",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "PARTIAL \u2014 preliminary L* geometry from throat area. Injector volume is neglected.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "09",
+      "stage_id": "thermal",
+      "name": "Thermal Analysis",
+      "dependencies": [
+        "chamber"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "chamber",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        }
+      ],
+      "implementation_status": "PARTIAL",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "PARTIAL \u2014 Bartz gas-side HTC at the throat. Gas properties are analysis inputs.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "10",
+      "stage_id": "cooling",
+      "name": "Cooling System",
+      "dependencies": [
+        "thermal",
+        "nozzle"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "thermal",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        },
+        {
+          "stage_id": "nozzle",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        }
+      ],
+      "implementation_status": "PARTIAL",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "PARTIAL \u2014 single-phase divergent-nozzle channels; optional gaseous-slot film estimate. No boiling or liquid-film evaporation.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "11",
+      "stage_id": "nozzle",
+      "name": "Nozzle",
+      "dependencies": [
+        "chamber",
+        "performance"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "chamber",
+          "requirement": "INFORMATIONAL",
+          "reason": "Ideal 1D stations use performance geometry, not chamber sizing."
+        },
+        {
+          "stage_id": "performance",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        }
+      ],
+      "implementation_status": "PARTIAL",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "PARTIAL \u2014 tangent bell contour and quasi-1D stations. Not optimized Rao/MOC, CFD or a separation model.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "12",
+      "stage_id": "structure",
+      "name": "Structural Analysis",
+      "dependencies": [
+        "chamber",
+        "materials"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "chamber",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        },
+        {
+          "stage_id": "materials",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        }
+      ],
+      "implementation_status": "PARTIAL",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "PARTIAL \u2014 thin-wall hoop/longitudinal stress vs handbook yield. Not a certified allowable.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "13",
+      "stage_id": "materials",
+      "name": "Material Selection",
+      "dependencies": [
+        "chamber"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "chamber",
+          "requirement": "INFORMATIONAL",
+          "reason": "Material identity lookup is independent of chamber geometry."
+        }
+      ],
+      "implementation_status": "PARTIAL",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "PARTIAL \u2014 Physics handbook catalog lookup. Not MMPDS/ASME certified allowables.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "14",
+      "stage_id": "performance_summary",
+      "name": "Engine Performance Summary",
+      "dependencies": [
+        "nozzle",
+        "structure",
+        "thermal",
+        "performance"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "nozzle",
+          "requirement": "OPTIONAL",
+          "reason": "Aggregate only available CURRENT subsystem outputs."
+        },
+        {
+          "stage_id": "structure",
+          "requirement": "OPTIONAL",
+          "reason": "Aggregate only available CURRENT subsystem outputs."
+        },
+        {
+          "stage_id": "thermal",
+          "requirement": "OPTIONAL",
+          "reason": "Aggregate only available CURRENT subsystem outputs."
+        },
+        {
+          "stage_id": "performance",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        }
+      ],
+      "implementation_status": "IMPLEMENTED",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "Aggregation of CURRENT stage results. Does not invent missing physics.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "15",
+      "stage_id": "consistency",
+      "name": "System Consistency Check",
+      "dependencies": [
+        "performance_summary"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "performance_summary",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        }
+      ],
+      "implementation_status": "IMPLEMENTED",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "Checks required CURRENT results and documented NOT_IMPLEMENTED bypasses.",
+      "calculate_supported": true
+    },
+    {
+      "stage_index": "16",
+      "stage_id": "design_review",
+      "name": "Design Review",
+      "dependencies": [
+        "consistency"
+      ],
+      "dependency_edges": [
+        {
+          "stage_id": "consistency",
+          "requirement": "REQUIRED",
+          "reason": "Consumed by the downstream calculation."
+        }
+      ],
+      "implementation_status": "IMPLEMENTED",
+      "status": "NOT_CALCULATED",
+      "dependency_policy": [],
+      "engineering_note": "CURRENT means input freshness, not validation. Missing subsystem inputs and deferred cycle balance keep INCOMPLETE.",
+      "calculate_supported": true
+    }
+  ],
+  "authority": "systems.workflow.graph",
+  "stage_count": 17
+}

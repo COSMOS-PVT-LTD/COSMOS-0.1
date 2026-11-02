@@ -1,0 +1,19 @@
+{
+  "scope": "Actual native software QA Save/restart only; not genuine human/physical validation",
+  "project_id": "0e22e007-d868-45e1-830d-9ee86346bfae",
+  "report_object_id": "784516df-9538-5e23-b033-b7277f6a2b25",
+  "saved_version": 2,
+  "commit_id": "c3b6fcee-8487-4b48-a318-bd9a8e60b02b",
+  "wrapper_sha256": "74cf2faf96b4ac8298c7b6fec29d9b29850dc3699f6a9471999f572b416f1cee",
+  "wrapper_matches_before_restart_and_observed_native_view": true,
+  "native_saved_package_bytes": 57151,
+  "native_saved_package_sha256": "21d8dc83bb8644d77bf509a8b3755bbb9fc943bf79f0a774e1292238367aeeb1",
+  "exact_retained_package_bytes_match": true,
+  "zip_members_hash_checked": true,
+  "original_report_id": "2810eebc20014a2bf467842d4122370a63f7b16451f5864a5a5cca08fdadac32",
+  "criteria_order": 1,
+  "reference_first_exposure_order": 3,
+  "review_intent_retained_not_a_signature": true,
+  "production_handoff": false,
+  "physical_validation": false
+}

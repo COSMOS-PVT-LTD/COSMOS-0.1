@@ -1,0 +1,100 @@
+Browser tab: 2, Title: "COSMOS — Visualization and Graphs", URL: "http://127.0.0.1:8844/app/workbench/visualization".
+1 AXWebArea COSMOS — Visualization and Graphs, URL: 127.0.0.1:8844/app/workbench/visualization
+	2 container
+		3 text Read-only source projections · preliminary engine models / software benchmark · no physical or production acceptance
+		4 container Select exact source
+			5 container
+				6 text Engineering design
+				7 pop up button (collapsed, settable) Engineering design, Value: Synthetic scientific visualization QA — not hardware evidence · r7, ID: viz-design, Secondary Actions: Expand
+					8 menu
+						9 Select an engineering design
+						10 (selected) Synthetic scientific visualization QA — not hardware evidence · r7
+			11 button Reload current source, ID: viz-reload
+			12 checkbox Restore workspace (Escape), Value: 1, ID: viz-focus
+			13 button (collapsed) Open a simulation run, Secondary Actions: Expand
+				14 text Open a simulation run
+		15 text Current source loaded. Zoom with the chart controls; exports include source metadata.
+		16 container Scientific plot workspace
+			17 container
+				18 text Plot
+				19 pop up button (collapsed, settable) Plot, Value: Nozzle contour radius, ID: viz-plot, Secondary Actions: Expand
+					20 menu
+						21 (selected) Nozzle contour radius
+						22 Mach number
+						23 Static pressure
+						24 Static temperature
+						25 Wall and coolant temperature
+						26 Wall heat flux
+						27 Coolant outlet pressure
+						28 Film effectiveness
+			29 container
+				30 text X scale
+				31 pop up button (collapsed, settable) X scale, Value: Linear, ID: viz-x, Secondary Actions: Expand
+					32 menu
+						33 (selected) Linear
+						34 Logarithmic
+			35 container
+				36 text Y scale
+				37 pop up button (collapsed, settable) Y scale, Value: Linear, ID: viz-y, Secondary Actions: Expand
+					38 menu
+						39 (selected) Linear
+						40 Logarithmic
+			41 button Reset zoom, ID: viz-reset
+			42 heading Nozzle contour radius, Value: 2, ID: viz-title
+				43 text Nozzle contour radius
+			44 container ID: viz-chart, Description: Nozzle contour radius. Axial position [m], linear axis; Nozzle contour radius [m], linear axis. Radius: 81/81 displayed source points. Uncertainty not quantified. Propulsion design 78a446fe-3382-4be7-a682-a0c513895418, revision 7, result fa72d6f4-cf9d-4dcf-9844-9d974225366f, status CURRENT. Exact source table/export is separate; reduction is display only.
+			45 text Source samples: 81. No clipping. Uncertainty: not quantified. Radius: 81/81 points displayed (none).
+			46 button Export SVG + provenance, ID: viz-svg
+			47 button Export exact CSV + provenance, ID: viz-csv
+			48 button Export source JSON, ID: viz-json
+			49 button (collapsed) Exact source data — un-decimated, Secondary Actions: Expand
+				50 text Exact source data — un-decimated
+		51 container Source and model provenance
+			52 heading Source lineage, Value: 2
+				53 text Source lineage
+			54 definition list viz-lineage
+				55 container DOMAIN
+					56 text DOMAIN
+				57 text propulsion
+				58 container DESIGN ID
+					59 text DESIGN ID
+				60 text 78a446fe-3382-4be7-a682-a0c513895418
+				61 container REVISION
+					62 text REVISION
+				63 text 7
+				64 container RESULT ID
+					65 text RESULT ID
+				66 text fa72d6f4-cf9d-4dcf-9844-9d974225366f
+				67 container CONTENT SHA256
+					68 text CONTENT SHA256
+				69 text c20a5aac2e014fe503a0b1d8dfa1511305531c27ea79accb35bbffb45f65c5a6
+				70 container STATUS
+					71 text STATUS
+				72 text CURRENT
+				73 container MODEL ID
+					74 text MODEL ID
+				75 text PHYS-NOZ.tangent_bell_geometry
+				76 container FRESHNESS
+					77 text FRESHNESS
+				78 text current
+				79 container VERIFICATION
+					80 text VERIFICATION
+				81 text {"status":"SOFTWARE_VERIFIED","reference":"endpoint, area, analytic tangent and discretization tests"}
+				82 container VALIDATION
+					83 text VALIDATION
+				84 text {"status":"NOT_CLAIMED","reference":null}
+				85 container VALIDITY
+					86 text VALIDITY
+				87 text {"status":"UNKNOWN","checks":[],"violations":[],"valid_range":"epsilon > 1; 0 < exit angle < start angle < 90 deg; monotonic x and radius"}
+			88 heading Interpretation, Value: 3
+				89 text Interpretation
+			90 text Uncertainty is not quantified. Do not infer error bars or confidence from line thickness.
+			91 container viz-notes
+				92 text Source rows are unchanged; plotting order is increasing axial position.
+				93 text Preliminary model output, not experimental measurements or hardware acceptance.
+			94 button (collapsed) Model assumptions and limitations, Secondary Actions: Expand
+				95 text Model assumptions and limitations
+			96 button (collapsed) Unavailable results, Secondary Actions: Expand
+				97 text Unavailable results
+
+The focused UI element is 12 checkbox Restore workspace (Escape), Value: 1, ID: viz-focus

@@ -1,0 +1,28 @@
+{
+  "scope": "Actual UI-generated software QA sensitivity exports, not hardware evidence",
+  "project_id": "79e5db7f-b59b-465e-85ab-ee887f88dd33",
+  "commit_id": "cc88f4be-29df-48e0-9e0a-607b09bb7cc6",
+  "baseline_commit_id": "5c417159-74ea-483b-a0ed-9c88e98e0ea1",
+  "retained_canonical_sha256": "0ca239bab6f153aec9df24ef43bf588aa244468774fd831500e76436d41c7fec",
+  "requested_points": 3,
+  "csv_exact_points_and_original_canonical_bytes": true,
+  "svg_xml_and_provenance_original_bytes": true,
+  "files": {
+    ".csv": {
+      "bytes": 238642,
+      "sha256": "74fe0871bc5f819366d265dd4b2f2449d3dc7854605f9199a32a049a142f3bda"
+    },
+    ".svg": {
+      "bytes": 14368,
+      "sha256": "1f6710202a8a3d8813f54e7b31e6f7341bc285812ff87e13473932b7e79d7796"
+    },
+    ".source.json": {
+      "bytes": 209795,
+      "sha256": "9a4a4a28a301ac46ede8efd10962a58ca101eb9c90961e606b6dfc907d3d6761"
+    },
+    ".provenance.json": {
+      "bytes": 210366,
+      "sha256": "ca54ba8ee8e4edce435d421f884d921f12526c33b5185fd3f03ff77e62c7d3c1"
+    }
+  }
+}

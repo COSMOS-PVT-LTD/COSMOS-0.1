@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "scope": "Actual UI CSV versus independent current API source; not JSON/SVG download qualification",
+  "plot_id": "nozzle-contour",
+  "exact_series_points": 81,
+  "source_sha256": "e3a2da132d88bc76bfd50bbc7e4ce3ae0eefba302e16a0683a74c21e29c2c505",
+  "exact_canonical_text_preserved": true,
+  "csv_values_all_matched": true,
+  "validation_not_upgraded": {
+    "status": "NOT_CLAIMED",
+    "reference": null
+  },
+  "files": {
+    "docs/implementation/evidence/R02_2026-10-13/current-api-source.json": "396550b7d9e1a55fe1ad60fb8fdee475d2e7c094f99986d012ba06f01f35dd43",
+    "docs/implementation/evidence/R02_2026-10-13/nozzle-contour-current.csv": "df04dadf330dae6bca8aa302144882507eb5db88ef367e1b1eb8be8dfad0353e"
+  }
+}

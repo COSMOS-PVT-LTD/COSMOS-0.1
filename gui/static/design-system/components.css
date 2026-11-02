@@ -1,0 +1,49 @@
+.cosmos-ds { color: var(--ds-text-primary); background: var(--ds-surface-canvas); font: var(--ds-text-body)/1.5 var(--ds-font-ui); color-scheme: dark; }
+.cosmos-ds *, .cosmos-ds *::before, .cosmos-ds *::after { box-sizing: border-box; }
+.cosmos-ds [hidden] { display: none !important; }
+.cosmos-ds h1 { font-size: var(--ds-text-display); }
+.cosmos-ds h2 { font-size: var(--ds-text-heading); margin: 0 0 var(--ds-space-2); }
+.cosmos-ds h3 { font-size: var(--ds-text-body); }
+.cosmos-ds header { padding: var(--ds-space-4); border-bottom: 1px solid var(--ds-border-subtle); }
+.cosmos-ds main { padding: var(--ds-space-4); }
+.cosmos-ds .ds-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,24rem),1fr)); gap: var(--ds-space-4); }
+.cosmos-ds .ds-panel { background: var(--ds-surface-panel); border: 1px solid var(--ds-border-subtle); border-radius: var(--ds-radius-control); padding: var(--ds-space-4); min-width: 0; overflow-wrap: anywhere; }
+.cosmos-ds p { margin: var(--ds-space-2) 0; }
+.cosmos-ds .ds-help { color: var(--ds-text-secondary); }
+.cosmos-ds button, .cosmos-ds input, .cosmos-ds select { font: inherit; color: var(--ds-text-primary); background: var(--ds-surface-elevated); border: 1px solid var(--ds-border-subtle); border-radius: var(--ds-radius-control); min-height: var(--ds-control-height); padding: var(--ds-space-2); max-width: 100%; }
+.cosmos-ds button { cursor: pointer; margin: var(--ds-space-1); }
+.cosmos-ds button:hover { border-color: var(--ds-focus-ring); }
+.cosmos-ds button:disabled, .cosmos-ds input:disabled, .cosmos-ds select:disabled { cursor: not-allowed; border-style: dashed; color: var(--ds-text-secondary); }
+.cosmos-ds :focus-visible { outline: 3px solid var(--ds-focus-ring); outline-offset: 3px; }
+.cosmos-ds a { color: var(--ds-status-info); text-decoration: underline; }
+.cosmos-ds .ds-unit { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: var(--ds-space-2); padding-block: var(--ds-space-2); align-self: start; }
+.cosmos-ds output { display: block; margin-block: var(--ds-space-2); }
+.cosmos-ds .ds-unit label, .cosmos-ds .ds-unit .ds-help { grid-column: 1 / -1; }
+.cosmos-ds .ds-unit input, .cosmos-ds td { font-family: var(--ds-font-numeric); font-variant-numeric: tabular-nums; }
+.cosmos-ds [data-state="invalid"], .cosmos-ds [data-state="error"] { border-color: var(--ds-status-error); }
+.cosmos-ds [data-state="invalid"] .ds-help { color: var(--ds-status-error); }
+.cosmos-ds [data-state="stale"], .cosmos-ds [data-state="warning"] { border-style: dashed; border-color: var(--ds-status-warning); }
+.cosmos-ds [data-state="success"] { border-color: var(--ds-status-success); }
+.cosmos-ds [role="tablist"] { display: flex; flex-wrap: wrap; gap: var(--ds-space-1); margin-bottom: var(--ds-space-4); }
+.cosmos-ds [role="tab"][aria-selected="true"] { border-width: 3px; border-color: var(--ds-focus-ring); }
+.cosmos-ds [role="tree"] { display: grid; max-height: 24rem; overflow-y: auto; }
+.cosmos-ds [role="treeitem"][aria-selected="true"] { border-color: var(--ds-focus-ring); }
+.cosmos-ds .ds-table-scroll { overflow: auto; max-height: 24rem; }
+.cosmos-ds table { border-collapse: collapse; width: 100%; }
+.cosmos-ds td, .cosmos-ds th { border-bottom: 1px solid var(--ds-border-subtle); padding: var(--ds-space-2); text-align: left; }
+.cosmos-ds svg { width: 100%; height: auto; }
+.cosmos-ds svg text { fill: var(--ds-text-primary); font: 14px var(--ds-font-ui); }
+.cosmos-ds .ds-curve { fill: none; stroke: var(--ds-science-field-low); stroke-width: 2; }
+.cosmos-ds .ds-low { color: var(--ds-science-field-low); margin-right: var(--ds-space-4); }
+.cosmos-ds .ds-high { color: var(--ds-science-field-high); }
+.cosmos-ds dialog { color: var(--ds-text-primary); background: var(--ds-surface-panel); border: 2px solid var(--ds-border-subtle); width: min(36rem,90vw); max-height: 85vh; overflow-y: auto; }
+.cosmos-ds dialog::backdrop { background: var(--ds-surface-canvas); opacity: .9; }
+.cosmos-ds dialog label, .cosmos-ds dialog input[type="search"] { display: block; margin-block: var(--ds-space-2); }
+.cosmos-ds .ds-dock { display: flex; align-items: stretch; margin-top: var(--ds-space-3); }
+.cosmos-ds .ds-dock > div:first-child, .cosmos-ds .ds-dock aside { min-width: 0; padding: var(--ds-space-2); }
+.cosmos-ds [role="separator"] { width: 1rem; background: var(--ds-surface-elevated); border-inline: 1px solid var(--ds-border-subtle); cursor: col-resize; touch-action: none; flex-shrink: 0; }
+.cosmos-ds [role="separator"]:hover { background: var(--ds-border-subtle); }
+.cosmos-ds progress { width: 100%; accent-color: var(--ds-status-info); }
+.cosmos-ds input[type="checkbox"] { min-height: auto; accent-color: var(--ds-focus-ring); }
+@media (prefers-reduced-motion: reduce) { .cosmos-ds *, .cosmos-ds *::before, .cosmos-ds *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+@media (forced-colors: active) { .cosmos-ds :focus-visible { outline-color: Highlight; } }

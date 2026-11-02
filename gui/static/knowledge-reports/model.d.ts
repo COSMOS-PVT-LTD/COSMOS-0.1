@@ -1,0 +1,6 @@
+export interface Claim {readonly schema_version:'p11-claim-v1';readonly claim_id:string;readonly source:null|{readonly original_available:boolean;readonly sha256:string;readonly version:number};readonly source_navigation_status:'recorded-approved-source-and-review'|'evidence-unavailable-or-review-pending';readonly independent_acceptance:false;readonly production_handoff:false;readonly experimental_validation:'not-performed';}
+export interface ClaimReceipt {readonly evidence_sha256:string;readonly canonical_json:string;readonly claim:Claim;}
+export interface Report {readonly schema_version:'p11-engineering-report-v1';readonly input_revision:string;readonly dataset_sha256:string;readonly comparison_canonical_json:string;readonly dataset_canonical_json:string;readonly status:{readonly independent_acceptance:false;readonly production_handoff:false;readonly engineering_review:'pending';readonly experimental_validation:'not-performed'|'evidence-pending-independent-review'|'calibration-only-not-validation'};}
+export interface ReportReceipt {readonly report_id:string;readonly canonical_json:string;readonly report:Report;readonly freshness:string;}
+export function claim(value:unknown):ClaimReceipt;
+export function report(value:unknown):ReportReceipt;

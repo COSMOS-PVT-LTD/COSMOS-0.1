@@ -5,9 +5,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from systems.contracts.results import CalculationResult, ResultStatus
+from systems.cycle.models import CycleConfiguration
 from systems.projects.models import PropulsionDesign
+from systems.stages._helpers import make_result
 from systems.stages.chamber import run_chamber_stage
 from systems.stages.consistency import run_consistency_stage
 from systems.stages.design_review import run_design_review_stage
@@ -33,6 +36,7 @@ __all__ = (
     "run_phase3_chain",
     "run_phase4_chain",
     "run_phase6_chain",
+    "run_subsystems_chain",
     "update_phase3_graph_status",
     "update_phase4_graph_status",
     "update_phase6_graph_status",
@@ -51,7 +55,7 @@ def _phase_status(
     )
     failed = any(result.status in {ResultStatus.FAILED, ResultStatus.OUT_OF_RANGE, ResultStatus.STALE} for result in stages.values())
     unimplemented = any(
-        result.status is ResultStatus.NOT_IMPLEMENTED for result in stages.values()
+        result.status in {ResultStatus.NOT_IMPLEMENTED, ResultStatus.NOT_CALCULATED} for result in stages.values()
     )
     if failed or not required_ok:
         return False, "FAILED"
@@ -79,6 +83,16 @@ class Phase3Result:
 
 def update_phase3_graph_status(design: PropulsionDesign) -> None:
     graph = design.workflow.graph
+    # A new explicit analysis consumes this existing input identity. Cloning or
+    # editing invalidates downstream calculations, not existence of the design.
+    # This creates no numerical result and cannot imply workflow completeness.
+    graph.get("design_project").status = ResultStatus.CURRENT
+    # Refresh capability metadata on an explicit new run, not historical bytes.
+    # Availability is not a computed balance: the cycle result remains unrun.
+    cycle = CycleConfiguration.for_type(design.cycle_configuration.cycle_type)
+    graph.get("cycle").implementation_status = StageImplementationStatus(cycle.implementation_status.value)
+    design.cycle_configuration.implementation_status = cycle.implementation_status
+    design.cycle_configuration.reason = cycle.reason
     graph.get("requirements").implementation_status = StageImplementationStatus.IMPLEMENTED
     graph.get("propellants").implementation_status = StageImplementationStatus.IMPLEMENTED
     graph.get("operating_point").implementation_status = StageImplementationStatus.IMPLEMENTED
@@ -88,10 +102,10 @@ def update_phase3_graph_status(design: PropulsionDesign) -> None:
 
 def update_phase4_graph_status(design: PropulsionDesign) -> None:
     graph = design.workflow.graph
-    graph.get("injector").implementation_status = StageImplementationStatus.NOT_IMPLEMENTED
+    graph.get("injector").implementation_status = StageImplementationStatus.PARTIAL
     graph.get("chamber").implementation_status = StageImplementationStatus.PARTIAL
     graph.get("thermal").implementation_status = StageImplementationStatus.PARTIAL
-    graph.get("cooling").implementation_status = StageImplementationStatus.NOT_IMPLEMENTED
+    graph.get("cooling").implementation_status = StageImplementationStatus.PARTIAL
     graph.get("materials").implementation_status = StageImplementationStatus.PARTIAL
     graph.get("structure").implementation_status = StageImplementationStatus.PARTIAL
     graph.get("nozzle").implementation_status = StageImplementationStatus.PARTIAL
@@ -123,6 +137,7 @@ def run_phase3_chain(
         assume_chamber_temperature_k=chamber_temperature_k,
         assume_gamma=gamma,
         assume_molar_mass_kg_per_mol=molecular_weight_kg_per_mol,
+        expansion_ratio=expansion_ratio,
     )
     stages["performance"] = run_performance_stage(  # type: ignore[assignment]
         design,
@@ -158,6 +173,7 @@ def run_phase4_chain(
     external_pressure: Quantity | None = None,
     external_pressure_source: str | None = None,
     material_temperature_k: float | None = None,
+    pressure_model: str | None = None,
     viscosity_pa_s: float | None = None,
     conductivity_w_m_k: float | None = None,
     cp_j_kg_k: float | None = None,
@@ -168,8 +184,7 @@ def run_phase4_chain(
 
     update_phase4_graph_status(design)
     stages: dict[str, CalculationResult] = {}
-    inj = run_injector_stage(design)
-    design.store_stage_result("injector", inj)
+    inj = run_injector_stage(design) if design.subsystem_inputs.get("injector") else _not_configured(design, "injector")
     stages["injector"] = inj  # type: ignore[assignment]
     stages["chamber"] = run_chamber_stage(  # type: ignore[assignment]
         design,
@@ -181,9 +196,6 @@ def run_phase4_chain(
         cp_j_kg_k=cp_j_kg_k, wall_temperature_k=wall_temperature_k,
         throat_curvature_radius_m=throat_curvature_radius_m,
     )
-    cool = run_cooling_stage(design)
-    design.store_stage_result("cooling", cool)
-    stages["cooling"] = cool  # type: ignore[assignment]
     stages["materials"] = run_materials_stage(design, material_id=material_id)  # type: ignore[assignment]
     stages["structure"] = run_structure_stage(  # type: ignore[assignment]
         design,
@@ -191,13 +203,36 @@ def run_phase4_chain(
         external_pressure=external_pressure,
         external_pressure_source=external_pressure_source,
         material_temperature_k=material_temperature_k,
+        pressure_model=pressure_model,
     )
     stages["nozzle"] = run_nozzle_stage(design)  # type: ignore[assignment]
+    stages["cooling"] = run_cooling_stage(design) if design.subsystem_inputs.get("cooling") else _not_configured(design, "cooling")
     ok, phase_status = _phase_status(
         stages,
         required=("chamber", "thermal", "materials", "structure"),
     )
     return Phase3Result(design=design, stages=stages, ok=ok, phase_status=phase_status)
+
+
+def _not_configured(design: PropulsionDesign, stage: str) -> CalculationResult:
+    result = make_result(calculation_type=f"{stage}.not_configured", stage_id=stage,
+                         status=ResultStatus.NOT_CALCULATED, design_revision=design.revision,
+                         warnings=(f"{stage}: preliminary model available, but explicit subsystem inputs have not been configured.",))
+    design.store_stage_result(stage, result)
+    return result
+
+
+def run_subsystems_chain(design: PropulsionDesign, *, stages: tuple[str, ...] = ("injector", "nozzle", "cooling")) -> Phase3Result:
+    """Run selected subsystems in data dependency order, never a cycle balance."""
+    if not stages or len(stages) != len(set(stages)) or set(stages) - {"injector", "nozzle", "cooling"}:
+        raise InvalidInputError("Select unique injector, nozzle and/or cooling stages.")
+    update_phase4_graph_status(design)
+    results: dict[str, CalculationResult] = {}
+    for stage, runner in (("injector", run_injector_stage), ("nozzle", run_nozzle_stage), ("cooling", run_cooling_stage)):
+        if stage in stages:
+            results[stage] = runner(design, require_contour=True) if stage == "nozzle" else runner(design)
+    ok, phase_status = _phase_status(results, required=stages)
+    return Phase3Result(design=design, stages=results, ok=ok, phase_status=phase_status)
 
 
 def update_phase6_graph_status(design: PropulsionDesign) -> None:

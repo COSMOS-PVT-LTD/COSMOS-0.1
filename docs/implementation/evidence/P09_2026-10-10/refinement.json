@@ -1,0 +1,51 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "cells": 8,
+      "iterations": 145,
+      "termination": "residual_tolerance",
+      "normalized_residual": 8.659696892500586e-11,
+      "max_error_k": 0.006510416646506201,
+      "declared_limit_k": 0.026041666666666668,
+      "signed_imbalance_w": -4.0459191552599805e-10,
+      "elapsed_s": 0.001237708143889904
+    },
+    {
+      "cells": 16,
+      "iterations": 578,
+      "termination": "residual_tolerance",
+      "normalized_residual": 9.991648229027412e-11,
+      "max_error_k": 0.0016276041549190268,
+      "declared_limit_k": 0.006510416666666667,
+      "signed_imbalance_w": -4.713598400485353e-10,
+      "elapsed_s": 0.006170459091663361
+    },
+    {
+      "cells": 32,
+      "iterations": 2318,
+      "termination": "residual_tolerance",
+      "normalized_residual": 9.987280250655661e-11,
+      "max_error_k": 0.0004069010357738989,
+      "declared_limit_k": 0.0016276041666666667,
+      "signed_imbalance_w": -4.732445546551389e-10,
+      "elapsed_s": 0.04200866702012718
+    },
+    {
+      "cells": 64,
+      "iterations": 9285,
+      "termination": "residual_tolerance",
+      "normalized_residual": 9.978596977730744e-11,
+      "max_error_k": 0.00010172525747975669,
+      "declared_limit_k": 0.0004069010416666667,
+      "signed_imbalance_w": -4.738405223747577e-10,
+      "elapsed_s": 0.28368662507273257
+    }
+  ],
+  "error_ratios": [
+    4.000000016484409,
+    4.000000029057265,
+    4.000000057555737
+  ],
+  "experimental_validation": false
+}

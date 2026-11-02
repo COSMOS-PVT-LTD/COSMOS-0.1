@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "report_sha256": "1febf012d5d273897c1c731db2a4391b619f8ae0d67a62a096bf9669f38c1f65",
+  "study_id": "5dd82c0e2b5f318db933f0bb601f19e662d2743e51d88107a84cae6b0c9df488",
+  "run_id": "sim-db3a5aa504b741b18ef3388c2da77ce9",
+  "geometry_snapshot_id": "d018540bf996db588c55760c009341815dde53efe8c5bcf5520344019fd3dc96",
+  "artifact_export_sha256": "d3e9d894ac9ec2b89255a36f712ebb9c8db5a628a7daf0afcb8ca53870e0e131",
+  "artifact_source_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+  "package_sha256": "6b332497e18216274cbf568b358991b44f581bc5bdc26b82031f4d80738aef4b",
+  "manifest_files_checked": 3,
+  "exact_native_bytes_retained": true,
+  "renderer_source_checked": true,
+  "source_claim_contract": "Synthetic explicit source/review fixture, not an independent approved engineering source or experiment",
+  "comparison_and_dataset_checksums_match": true,
+  "independent_acceptance": false
+}

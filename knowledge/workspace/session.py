@@ -3,7 +3,11 @@
 from __future__ import annotations
 
 import json
+import threading
+from contextlib import contextmanager
+from contextvars import ContextVar
 from dataclasses import dataclass, replace
+from functools import wraps
 from pathlib import Path
 
 from core.logger import get_logger
@@ -61,6 +65,15 @@ from knowledge.workspace.security import validate_upload
 from knowledge.workspace.vault import DurableArtifactVault, VaultError
 
 logger = get_logger(__name__)
+
+
+def _serialized_operation(method):
+    """Serialize this process's workspace mutations with backup/restore."""
+    @wraps(method)
+    def wrapped(self, *args, **kwargs):
+        with self._operation_lock:
+            return method(self, *args, **kwargs)
+    return wrapped
 
 __all__ = (
     "DocumentEvidenceHit",
@@ -153,6 +166,10 @@ class KnowledgeWorkspace:
         actor_id: str = "workspace-user",
         pipeline_version: str = PIPELINE_VERSION,
     ) -> None:
+        self._operation_lock = threading.RLock()
+        self._principal: ContextVar[tuple[WorkspaceRole, str] | None] = ContextVar(
+            f"cosmos-workspace-principal-{id(self)}", default=None,
+        )
         self.root = Path(root) if root is not None else None
         if self.root is not None:
             self.root.mkdir(parents=True, exist_ok=True)
@@ -184,6 +201,34 @@ class KnowledgeWorkspace:
         self._conversations: object | None = None
         self.documents.rebuild(self.vault.list_sources())
         self._backfill_review_manifests()
+
+    @property
+    def role(self) -> WorkspaceRole:
+        principal = self._principal.get()
+        return principal[0] if principal is not None else self._role
+
+    @role.setter
+    def role(self, value: WorkspaceRole) -> None:
+        self._role = value
+
+    @property
+    def actor_id(self) -> str:
+        principal = self._principal.get()
+        return principal[1] if principal is not None else self._actor_id
+
+    @actor_id.setter
+    def actor_id(self, value: str) -> None:
+        self._actor_id = value
+
+    @contextmanager
+    def as_principal(self, role: WorkspaceRole, actor_id: str):
+        """Bind an authenticated caller to this request, never shared session state."""
+        with self._operation_lock:
+            token = self._principal.set((WorkspaceRole(role), str(actor_id)))
+            try:
+                yield self
+            finally:
+                self._principal.reset(token)
 
     def _backfill_review_manifests(self) -> None:
         from knowledge.workspace.review_store import (
@@ -234,6 +279,7 @@ class KnowledgeWorkspace:
             self._conversations = KnowledgeConversationService(self)
         return self._conversations
 
+    @_serialized_operation
     def ingest(
         self,
         file: bytes,
@@ -541,6 +587,7 @@ class KnowledgeWorkspace:
             reprocess=True,
         )
 
+    @_serialized_operation
     def reprocess(self, source_id: str, *, pipeline_version: str | None = None) -> IntakeResult:
         source = self.vault.get(source_id)
         content = self.vault.retrieve_original(source_id)
@@ -619,6 +666,7 @@ class KnowledgeWorkspace:
             )
         return tuple(items)
 
+    @_serialized_operation
     def approve_source(self, source_id: str) -> IngestionJob:
         """Accept a whole document into governed knowledge without per-equation clicks."""
 
@@ -658,6 +706,7 @@ class KnowledgeWorkspace:
         self.metrics.reviews += 1
         return job
 
+    @_serialized_operation
     def review_equation(
         self,
         source_id: str,
@@ -687,6 +736,7 @@ class KnowledgeWorkspace:
         self.metrics.index_rebuilds += 1
         return count
 
+    @_serialized_operation
     def delete_source(self, source_id: str) -> None:
         self.authz.authorize(self.role, WorkspaceAction.DESTROY, actor_id=self.actor_id)
         document_id = _document_id_for_source(source_id)
@@ -706,7 +756,9 @@ class KnowledgeWorkspace:
 
         return build_knowledge_graph(self)
 
+    @_serialized_operation
     def backup(self, destination: Path | str | None = None) -> Path:
+        self.authz.authorize(self.role, WorkspaceAction.ADMINISTER, actor_id=self.actor_id)
         if self.root is None:
             raise RuntimeError("In-memory workspace cannot write a filesystem backup.")
         if destination is None:
@@ -718,17 +770,37 @@ class KnowledgeWorkspace:
         self.metrics.backups += 1
         return archive.archive_path
 
+    @_serialized_operation
     def restore(self, archive_path: Path | str) -> None:
+        self.authz.authorize(self.role, WorkspaceAction.ADMINISTER, actor_id=self.actor_id)
         if self.root is None:
             raise RuntimeError("In-memory workspace cannot restore a filesystem backup.")
         closer = getattr(self.persistence, "close", None)
         if callable(closer):
             closer()
-        restore_workspace_root(Path(archive_path), self.root)
+        try:
+            restore_workspace_root(Path(archive_path), self.root)
+        finally:
+            # Invalid archives must not leave the original SQLite backend closed.
+            if self.root.is_dir():
+                self.persistence = SQLitePersistenceBackend(self.root / "workspace.sqlite")
+                self.persistence.migrate()
         self.vault = DurableArtifactVault(self.root / "knowledge_vault")
         self.jobs = JobStore(self.root / "jobs")
-        self.persistence = SQLitePersistenceBackend(self.root / "workspace.sqlite")
-        self.persistence.migrate()
+        self._conversations = None
+        # Never retain post-snapshot candidates, datasets or graph entities.
+        # Foundation candidates follow the existing cold-restart semantics;
+        # restored manifests do not silently reapprove or rerun extraction.
+        self._pipeline_results.clear()
+        self._drafts.clear()
+        self._service = None
+        self._seed_corpus_loaded = False
+        source_ids = {record.source_id for record in self.vault.list_sources()}
+        self.datasets = {
+            str(item["dataset_id"]): item
+            for item in self.persistence.list("datasets")
+            if isinstance(item.get("dataset_id"), str) and item.get("source_id") in source_ids
+        }
         self.rebuild_indexes()
         self.metrics.restores += 1
 

@@ -466,14 +466,15 @@
   margin: 0;
   padding: 8px 10px;
   display: grid;
-  grid-template-columns: minmax(0, 38%) 1fr;
+  grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
   gap: 4px 8px;
 }
 
 .cosmos-prop-section dt {
-  color: var(--cosmos-muted);
+  color: #9fb3c8;
   font-size: 10px;
   font-family: var(--font-mono);
+  overflow-wrap: anywhere;
 }
 
 .cosmos-prop-section dd {

@@ -1,0 +1,13 @@
+{
+  "gate": "G3",
+  "preP05Status": "PASS",
+  "sealedEntries": 54,
+  "retainedHistoricalEvidence": "PASS",
+  "supersededProductionHashes": [
+    "gui/app_shell.py",
+    "gui/server.py",
+    "gui/static/app-shell/shell.js",
+    "gui/static/propulsion-suite.js"
+  ],
+  "note": "P04 scope/source hashes are historical; ignored retained logs verified against the predecessor seal"
+}

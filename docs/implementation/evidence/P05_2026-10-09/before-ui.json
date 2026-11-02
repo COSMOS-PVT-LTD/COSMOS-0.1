@@ -1,0 +1,176 @@
+[
+  {
+    "stage": "requirements",
+    "fields": [
+      {
+        "id": "ed-name",
+        "value": "P04 Fixture A"
+      },
+      {
+        "id": "ed-pc",
+        "value": "5"
+      },
+      {
+        "id": "ed-thrust",
+        "value": "10"
+      },
+      {
+        "id": "ed-of",
+        "value": "3.2"
+      },
+      {
+        "id": "ed-eps",
+        "value": ""
+      }
+    ],
+    "title": "01 Requirements"
+  },
+  {
+    "stage": "thermochemistry",
+    "fields": [
+      {
+        "id": "wf-thermo-mode",
+        "value": "nasa_cea"
+      },
+      {
+        "id": "wf-fuel-temp",
+        "value": ""
+      },
+      {
+        "id": "wf-ox-temp",
+        "value": ""
+      },
+      {
+        "id": "wf-at",
+        "value": ""
+      },
+      {
+        "id": "wf-eps",
+        "value": ""
+      }
+    ],
+    "title": "05 Thermochemistry"
+  },
+  {
+    "stage": "cooling",
+    "fields": [
+      {
+        "id": "sub-cooling-coolant_mass_flow_kg_s",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-inlet_temperature_k",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-inlet_pressure_pa",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-density_kg_m3",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-viscosity_pa_s",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-conductivity_w_m_k",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-cp_j_kg_k",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-channel_width_m",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-channel_depth_m",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-rib_width_m",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-channel_count",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-wall_thickness_m",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-wall_conductivity_w_m_k",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-min_temperature_k",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-max_temperature_k",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-max_wall_temperature_k",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-max_vapour_pressure_pa",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-direction",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-property_source",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-film_mode",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-film_slot_x_m",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-film_slot_height_m",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-film_blowing_ratio",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-film_temperature_k",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-film_cp_j_kg_k",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-film_delta0_m",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-film_delta_growth_rate",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-film_valid_length_m",
+        "value": ""
+      },
+      {
+        "id": "sub-cooling-film_source",
+        "value": ""
+      }
+    ],
+    "title": "10 Cooling System"
+  }
+]

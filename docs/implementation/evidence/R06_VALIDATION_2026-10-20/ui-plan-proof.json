@@ -1,0 +1,37 @@
+{
+  "scope": "Actual GUI synthetic plan-preparation test, not hardware criteria or evidence",
+  "qa_root": "/private/tmp/cosmos-r06_3_4-qa.validation.mSMXgA",
+  "project_id": "cd2dc2af-fe6a-4ce4-ac26-252adb55f365",
+  "commit_id": "92311beb-126e-4871-8cfb-42d42b892894",
+  "content_sha256": "7cc4527eab8e3f9eb7909e845ae6903051f7f5f04505fa49e3295b790c7381e9",
+  "current_source_methods": true,
+  "original_and_restart_download_bytes_exact": true,
+  "baseline_unchanged": true,
+  "blank_template_rows": 11,
+  "all_measured_values_and_uncertainties_empty": true,
+  "metadata_all_empty": true,
+  "prediction_uncertainty": "UNKNOWN",
+  "measurement_records": 0,
+  "assessment_records": 0,
+  "readiness": "AWAITING_MEASUREMENTS",
+  "physical_validation": "NOT_PERFORMED",
+  "independent_acceptance": false,
+  "files": {
+    "record": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-unreviewed-evidence-propulsion-validation-record.json",
+      "sha256": "7cc4527eab8e3f9eb7909e845ae6903051f7f5f04505fa49e3295b790c7381e9"
+    },
+    "restart_record": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-unreviewed-evidence-propulsion-validation-record (1).json",
+      "sha256": "7cc4527eab8e3f9eb7909e845ae6903051f7f5f04505fa49e3295b790c7381e9"
+    },
+    "csv": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-unreviewed-evidence-measurement-template.csv",
+      "sha256": "62f13a80a5e617f5a5627c4ffb8c78b4de413a4113d952f045cab74cbb5f43c2"
+    },
+    "metadata": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-unreviewed-evidence-metadata-template.json",
+      "sha256": "aeebfd3286f228cf9584b79f5065ea4783b992fc39ff895a3299302c8298be39"
+    }
+  }
+}

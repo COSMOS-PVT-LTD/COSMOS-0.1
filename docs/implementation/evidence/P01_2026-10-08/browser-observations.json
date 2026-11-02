@@ -1,0 +1,172 @@
+[
+  {
+    "scenario": "preflight recovery focus",
+    "observed": {
+      "focus": "ambientPa",
+      "invalid": "true"
+    }
+  },
+  {
+    "scenario": "density mode invariants",
+    "unchanged": true,
+    "values": {
+      "ambientPa": "0",
+      "expansionRatio": "10",
+      "fuelTemperatureK": "111.67",
+      "mixtureRatio": "2.7239",
+      "oxidizerTemperatureK": "90.17",
+      "pressurePa": "500000",
+      "throatAreaM2": "0.001",
+      "thrustN": "1000"
+    }
+  },
+  {
+    "scenario": "new revision and upstream old input inspection",
+    "observed": {
+      "context": "Active demo-r2 · inspect demo-r1",
+      "history": "PROPOSED / PARTIAL · P04/P11 · P01 PROTOTYPE\n\nReports, History & Governance\n\nInspect exact inputs and retained evidence; never overwrite history.\n\nCurrent software has design export/change logs. Complete immutable run/artifact history shown here is a proposed contract, not current persistence.\n\nSynthetic snapshots; inspection is read-only\nSnapshot\tChamber pressure [Pa]\tPublication\tInspect\ndemo-r1\t500000 Pa\tRead-only fixture\tInspect demo-r1\ndemo-r2\t600000 Pa\tRead-only fixture\tInspect demo-r2\nRetained result fixtures\n\ndemo-result-1 · input demo-r1 · STALE · validation NOT CLAIMED\n\nPublish engineering report (unavailable)",
+      "inspector": "Authoritative context (proposed)\nProject ID → design ID → snapshot ID. These IDs are synthetic.\nInspected input\ndemo-r1 · read-only example\nChamber pressure\n500000 Pa\nAmbient pressure\n0 Pa\nMethod\nNASA CEA 3.3.4 · not executed\nPhysical validation\nNOT CLAIMED\nGeometry / solver backend\nUnavailable · planned\n\nInspection never replaces the active draft. Real immutable revision storage is a P06 dependency.\n\nSource, assumptions & capability limits\nExample SI snapshot"
+    }
+  },
+  {
+    "scenario": "immediate draft invalidation",
+    "observed": {
+      "draft": "DRAFT · unsaved example",
+      "result": "STALE · demo-r1"
+    }
+  },
+  {
+    "scenario": "QA rejection",
+    "observed": {
+      "editor": "PLANNED · P06–P08 · P01 PROTOTYPE\n\nNative Geometry\n\nImmutable input → representation → build → QA → export/reimport.\n\nNo kernel is connected. There is no real geometry, viewer or export. Use the scripted controls only to review failure and cancellation behavior.\n\nSource example: demo-r2. Backend: unavailable. Representation and source/export tolerances must be explicit in the production contract.\n\nBuild real geometry (unavailable)\nExport CAD (unavailable)\nScripted job walkthrough\n\nState: Rejected. No published real artifact.\n\nStart scripted job\nAdvance to running\nShow QA warning\nReject QA fixture\nRequest cancellation\nAcknowledge cancellation\nRepresentation disclosure\n\nAnalytic B-rep · implicit field · tessellated surface · faceted B-rep. A mesh is not automatically editable parametric STEP.",
+      "exportDisabled": true
+    }
+  },
+  {
+    "scenario": "cancellation requested before acknowledgement",
+    "observed": "PLANNED · P06–P08 · P01 PROTOTYPE\n\nNative Geometry\n\nImmutable input → representation → build → QA → export/reimport.\n\nNo kernel is connected. There is no real geometry, viewer or export. Use the scripted controls only to review failure and cancellation behavior.\n\nSource example: demo-r2. Backend: unavailable. Representation and source/export tolerances must be explicit in the production contract.\n\nBuild real geometry (unavailable)\nExport CAD (unavailable)\nScripted job walkthrough\n\nState: CancelRequested. No published real artifact.\n\nStart scripted job\nAdvance to running\nShow QA warning\nReject QA fixture\nRequest cancellation\nAcknowledge cancellation\nRepresentation disclosure\n\nAnalytic B-rep · implicit field · tessellated surface · faceted B-rep. A mesh is not automatically editable parametric STEP."
+  },
+  {
+    "scenario": "missing source",
+    "observed": "INSUFFICIENT_EVIDENCE — no approved source is loaded in this example. Recovery: import and qualify a source in the production Knowledge workspace."
+  },
+  {
+    "scenario": "command dialog reverse-tab containment",
+    "observed": {
+      "focus": "",
+      "inDialog": false
+    }
+  },
+  {
+    "scenario": "command escape restoration",
+    "observed": {
+      "focus": "command-open",
+      "open": false
+    }
+  },
+  {
+    "scenario": "reset default focus",
+    "observed": "reset-cancel"
+  },
+  {
+    "scenario": "reset cancelled preserves revision",
+    "observed": {
+      "focus": "reset",
+      "revision": "Active demo-r2 · inspect demo-r2"
+    }
+  },
+  {
+    "scenario": "collapsed panel layout",
+    "observed": {
+      "activityHidden": true,
+      "inspectorHidden": true
+    }
+  },
+  {
+    "scenario": "layout preferences survive reload",
+    "observed": {
+      "activityHidden": true,
+      "context": "No project open",
+      "inspectorHidden": true
+    }
+  },
+  {
+    "scenario": "hotkey command open",
+    "observed": {
+      "focus": "command-search",
+      "open": true
+    }
+  },
+  {
+    "scenario": "minimum desktop context and overflow",
+    "observed": {
+      "activePage": "Rocket EngineACTIVE / PARTIAL",
+      "clientWidth": 1085,
+      "contextBottom": 134,
+      "contextTop": 36,
+      "height": 700,
+      "inputs": [
+        {
+          "id": "pressurePa",
+          "label": "Chamber pressure [Pa]",
+          "value": "500000"
+        },
+        {
+          "id": "thrustN",
+          "label": "Target thrust [N]",
+          "value": "1000"
+        },
+        {
+          "id": "mixtureRatio",
+          "label": "O/F mass ratio [1]",
+          "value": "2.7239"
+        },
+        {
+          "id": "expansionRatio",
+          "label": "Expansion ratio Ae/At [1]",
+          "value": "10"
+        },
+        {
+          "id": "ambientPa",
+          "label": "Ambient pressure [Pa]",
+          "value": ""
+        },
+        {
+          "id": "throatAreaM2",
+          "label": "Throat area [m²]",
+          "value": "0.001"
+        },
+        {
+          "id": "fuelTemperatureK",
+          "label": "Fuel inlet temperature [K]",
+          "value": "111.67"
+        },
+        {
+          "id": "oxidizerTemperatureK",
+          "label": "Oxidizer inlet temperature [K]",
+          "value": "90.17"
+        }
+      ],
+      "scrollWidth": 1085,
+      "width": 1100
+    }
+  },
+  {
+    "scenario": "command reverse-tab after explicit wrap fix",
+    "observed": {
+      "focus": "command-close",
+      "inDialog": true
+    }
+  },
+  {
+    "scenario": "command forward-tab wrap after fix",
+    "observed": {
+      "focus": "command-search",
+      "inDialog": true
+    }
+  },
+  {
+    "scenario": "rerendered action focus retained after fix",
+    "observed": "fixture-current"
+  }
+]

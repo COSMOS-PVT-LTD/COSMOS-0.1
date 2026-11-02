@@ -1,0 +1,22 @@
+{
+  "synthetic_only": true,
+  "native_kernel_invoked": false,
+  "timing_gate_claimed": false,
+  "workload": "snapshot+graph decode, full fingerprints and transitive impact; tracemalloc enabled",
+  "feature_count": 512,
+  "parameter_count": 256,
+  "frame_count": 64,
+  "iterations": 5,
+  "snapshot_json_bytes": 91002,
+  "graph_json_bytes": 165964,
+  "median_ms": 11178.873791010119,
+  "max_ms": 11556.837667012587,
+  "samples_ms": [
+    11556.837667012587,
+    11141.246500075795,
+    11178.873791010119,
+    11196.648124954663,
+    11014.882333925925
+  ],
+  "peak_tracemalloc_bytes": 2344298
+}

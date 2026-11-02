@@ -89,7 +89,7 @@ def test_propulsion_design_lifecycle_http(tmp_path: Path) -> None:
         )
         assert all(isinstance(stage, str) for stage in chamber_node["dependencies"])
         assert any(
-            edge["stage_id"] == "injector" and edge["requirement"] == "DEFERRED"
+            edge["stage_id"] == "injector" and edge["requirement"] == "INFORMATIONAL"
             for edge in chamber_node["dependency_edges"]
         )
 
@@ -110,6 +110,16 @@ def test_propulsion_design_lifecycle_http(tmp_path: Path) -> None:
             method="POST",
         )
         design_id = created["design"]["design_id"]
+
+        editor_save = _json(opener, f"{base}/api/propulsion/designs/{design_id}/save", {
+            "base_revision": 0,
+            "requirements": {"ambient_pressure": {"magnitude": 0, "unit_symbol": "Pa"}},
+            "editor_drafts": {"wf-tc": "3000", "wf-pout": "0"},
+        }, method="POST")
+        assert editor_save["design"]["requirements"]["ambient_pressure"]["magnitude"] == 0
+        reloaded_edits = _json(opener, f"{base}/api/propulsion/designs/{design_id}")["design"]
+        assert reloaded_edits["editor_drafts"] == {"wf-tc": "3000", "wf-pout": "0"}
+        assert reloaded_edits["workflow"]["results"] == {}
 
         for missing_or_unknown in ("", "unknown-oxidizer"):
             with pytest.raises(urllib.error.HTTPError) as captured:
@@ -258,8 +268,8 @@ def test_propulsion_design_lifecycle_http(tmp_path: Path) -> None:
             method="POST",
         )
         # Phase 3 is stale after Pc change; phase 4 chamber may fail without CURRENT performance.
-        assert phase4["stages"]["injector"]["status"] == "NOT_IMPLEMENTED"
-        assert phase4["stages"]["cooling"]["status"] == "NOT_IMPLEMENTED"
+        assert phase4["stages"]["injector"]["status"] == "NOT_CALCULATED"
+        assert phase4["stages"]["cooling"]["status"] == "NOT_CALCULATED"
         assert phase4["ok"] is False or phase4["phase_status"] in {"PARTIAL", "FAILED"}
     finally:
         server.shutdown()

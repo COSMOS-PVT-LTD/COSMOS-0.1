@@ -75,8 +75,8 @@
     get(url) {
       return request("GET", url, undefined, this.timeoutMs);
     },
-    post(url, body) {
-      return request("POST", url, body === undefined ? {} : body, this.timeoutMs);
+    post(url, body, timeoutMs) {
+      return request("POST", url, body === undefined ? {} : body, timeoutMs === undefined ? this.timeoutMs : timeoutMs);
     },
     listDesigns() {
       return this.get("/api/propulsion/designs");
@@ -87,8 +87,8 @@
     getDesign(id) {
       return this.get(`/api/propulsion/designs/${id}`);
     },
-    saveDesign(id) {
-      return this.post(`/api/propulsion/designs/${id}/save`, {});
+    saveDesign(id, edits = {}) {
+      return this.post(`/api/propulsion/designs/${id}/save`, edits);
     },
     cloneDesign(id, name) {
       return this.post(`/api/propulsion/designs/${id}/clone`, name ? { name } : {});
@@ -110,6 +110,12 @@
     },
     runPhase6(id) {
       return this.post(`/api/propulsion/designs/${id}/run/phase6`, {});
+    },
+    runDesignWorkflow(id, payload) {
+      return this.post(`/api/propulsion/designs/${id}/run/analysis`, payload);
+    },
+    runSubsystems(id, payload) {
+      return this.post(`/api/propulsion/designs/${id}/run/subsystems`, payload);
     },
     getWorkflow(id) {
       return this.get(`/api/propulsion/designs/${id}/workflow`);
@@ -136,4 +142,5 @@
   };
 
   global.CosmosAPI = CosmosAPI;
+  global.CosmosManagedProjects?.attach(CosmosAPI);
 })(window);

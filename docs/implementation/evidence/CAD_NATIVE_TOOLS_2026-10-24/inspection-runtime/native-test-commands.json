@@ -1,0 +1,12 @@
+{
+  "occt": {
+    "argv": [
+      "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-cad-inspection/bin/python"
+    ],
+    "environment": {
+      "PYTHONPATH": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  }
+}

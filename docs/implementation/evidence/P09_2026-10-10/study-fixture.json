@@ -1,0 +1,1291 @@
+{
+  "geometry": {
+    "context": {
+      "policy": "software-fixtures-only",
+      "project_id": "p07-software-fixtures",
+      "settings": {
+        "operation": "sphere",
+        "backend": "occt",
+        "voxel_m": 0.0005
+      },
+      "snapshot": {
+        "content_sha256": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+        "contract_type": "DesignSnapshot",
+        "created_at": "2026-10-10T18:21:24.128382+00:00",
+        "frame_id": "world",
+        "frames": [
+          {
+            "content_sha256": "213deb594196916b0978102722aa76df072e4ec9baeaad3b258554b2acecbd45",
+            "contract_type": "CoordinateFrame",
+            "frame_id": "world",
+            "handedness": "right",
+            "origin_m": [
+              0,
+              0,
+              0
+            ],
+            "parent_frame_id": null,
+            "rotation": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "schema_version": "1.0.0",
+            "units": "m"
+          }
+        ],
+        "parameters_si": [
+          {
+            "content_sha256": "7500a35284bd4aaf87886454425793e14ddf8c3c7d89408a08bef25d70ccbb9e",
+            "contract_type": "SIParameter",
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "kind": "absolute",
+            "name": "body.radius",
+            "schema_version": "1.0.0",
+            "source_ref_id": "p07-analytic-fixture",
+            "unit_symbol": "m",
+            "value_si": 0.01
+          },
+          {
+            "content_sha256": "8efb904826881e90fad5cf1a932449f56e61eefdb33f52a898df4532f1f55a2d",
+            "contract_type": "SIParameter",
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "kind": "absolute",
+            "name": "body.x",
+            "schema_version": "1.0.0",
+            "source_ref_id": "p07-analytic-fixture",
+            "unit_symbol": "m",
+            "value_si": 0
+          },
+          {
+            "content_sha256": "13d05673c07882e40ba2828ca4b99f219a1d49496f0bb0558e9710e0524cb114",
+            "contract_type": "SIParameter",
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "kind": "absolute",
+            "name": "body.y",
+            "schema_version": "1.0.0",
+            "source_ref_id": "p07-analytic-fixture",
+            "unit_symbol": "m",
+            "value_si": 0
+          },
+          {
+            "content_sha256": "9a7700b80bafbbf3068ac6f27156454b9b502b72c1fb24dbd314cedc574e9676",
+            "contract_type": "SIParameter",
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "kind": "absolute",
+            "name": "body.z",
+            "schema_version": "1.0.0",
+            "source_ref_id": "p07-analytic-fixture",
+            "unit_symbol": "m",
+            "value_si": 0
+          }
+        ],
+        "project_id": "p07-software-fixtures",
+        "revision_id": "p08-143359a7d0b646e386cf6c879ac53cb9",
+        "schema_version": "1.0.0",
+        "source_refs": [
+          {
+            "content_sha256": "2f9628573080fcd691f06fe9d85aa05874f68ace0220a78c55cddd0ae4ff3d3e",
+            "contract_type": "SourceReference",
+            "ref_id": "p07-analytic-fixture",
+            "schema_version": "1.0.0",
+            "source_sha256": "8acac97a809cbc7cc623ec52101fc93de9547f27b8a054442ac3631c3be56552",
+            "source_uri": "systems/geometry/software_fixtures.py"
+          }
+        ]
+      },
+      "graph": {
+        "content_sha256": "fbf181c71d02b0e51114c3ff016c44795a8c185c7cb6e7e866fb5cc285e291f9",
+        "contract_type": "GeometryFeatureGraph",
+        "features": [
+          {
+            "content_sha256": "9c5a97d33d6b111410f908715a6753108ba670216d564d5b857c4f17e0ec9b70",
+            "contract_type": "GeometryFeature",
+            "dependency_ids": [],
+            "feature_id": "body",
+            "frame_id": "world",
+            "operation": "primitive.sphere",
+            "parameter_refs": [
+              "body.radius",
+              "body.x",
+              "body.y",
+              "body.z"
+            ],
+            "representation": "analytic_brep",
+            "schema_version": "1.0.0"
+          }
+        ],
+        "graph_id": "fixture-sphere",
+        "output_feature_ids": [
+          "body"
+        ],
+        "schema_version": "1.0.0",
+        "snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1"
+      },
+      "request": {
+        "approximation_profile": "none",
+        "backend_id": "occt",
+        "backend_version": "occt-7.8.1.ocp-7.8.1.1.g5v2",
+        "content_sha256": "ceaba280531421e1b2db1d5b8c116ff3ccc44d2929042d2073bd245ed28c670c",
+        "contract_type": "GeometryBuildRequest",
+        "correlation_id": "p08-d54e82d2be0d44d4a28da4f8e6ed450e",
+        "export_tolerance_m": 0.000001,
+        "feature_graph_id": "fixture-sphere",
+        "feature_graph_sha256": "fbf181c71d02b0e51114c3ff016c44795a8c185c7cb6e7e866fb5cc285e291f9",
+        "frame_id": "world",
+        "output_formats": [
+          "step"
+        ],
+        "representation": "analytic_brep",
+        "request_id": "request-f98f57ec08cd4446a8df726b1f8e720b",
+        "schema_version": "1.0.0",
+        "snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+        "source_tolerance_m": 1e-8,
+        "voxel_resolution_m": null
+      },
+      "revision_count": 1,
+      "job_ids": [],
+      "published": false,
+      "physical_validation": false
+    },
+    "status": {
+      "job_id": "job-79795aacc4a942f896c2f6fb03b8b795",
+      "snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+      "current": true,
+      "state": "accepted",
+      "progress_fraction": null,
+      "published": false,
+      "engineering_export_eligible": false,
+      "byte_integrity": true,
+      "fixture_exchange_eligible": true,
+      "record": {
+        "artifacts": [
+          {
+            "approximation_profile": "none",
+            "artifact_id": "artifact-0",
+            "backend_id": "occt",
+            "backend_version": "occt-7.8.1.ocp-7.8.1.1.g5v2",
+            "content_sha256": "13eb4411bf0d59b57da3dd818cf59fe1c1deda873952dfcfaceb250a14a2be84",
+            "contract_type": "GeometryArtifact",
+            "export_tolerance_m": 0.000001,
+            "feature_graph_sha256": "fbf181c71d02b0e51114c3ff016c44795a8c185c7cb6e7e866fb5cc285e291f9",
+            "frame_id": "world",
+            "generated_at": "2026-10-10T18:21:30.882151+00:00",
+            "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+            "job_id": "job-79795aacc4a942f896c2f6fb03b8b795",
+            "output_format": "step",
+            "representation": "analytic_brep",
+            "schema_version": "1.0.0",
+            "sha256": "d2394f4c38754f0f10046b38d6e20e1d5b157d74685050f28b5c98a10502b712",
+            "size_bytes": 2128,
+            "snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+            "source_artifact_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+            "source_tolerance_m": 1e-8,
+            "storage_uri": "job-79795aacc4a942f896c2f6fb03b8b795/export.step",
+            "topology_report_id": "report-job-79795aacc4a942f896c2f6fb03b8b795-0",
+            "units": "m",
+            "voxel_resolution_m": null
+          }
+        ],
+        "content_sha256": "6c3794c7508b06bc232821962b2dc76fb74ba3bbd18ec1c5dd0ad12d4135820d",
+        "contract_type": "GeometryBuildRecord",
+        "events": [
+          {
+            "artifact_ids": [],
+            "code": null,
+            "content_sha256": "c99dc0066ed0e485547c7cdd46e786a2ebaf3ad53a7169b045acfa668f41a571",
+            "contract_type": "GeometryBuildEvent",
+            "correlation_id": "p08-d54e82d2be0d44d4a28da4f8e6ed450e",
+            "evidence_refs": [],
+            "job_id": "job-79795aacc4a942f896c2f6fb03b8b795",
+            "message": "Geometry phase completed",
+            "progress_fraction": null,
+            "schema_version": "1.0.0",
+            "seq": 0,
+            "stage": "draft",
+            "state": "draft",
+            "timestamp": "2026-10-10T18:21:24.474438+00:00"
+          },
+          {
+            "artifact_ids": [],
+            "code": null,
+            "content_sha256": "08bf49efeb9557a3effa8d2d62814787fd8e7d1a36a5429637af9d8ea2fddc42",
+            "contract_type": "GeometryBuildEvent",
+            "correlation_id": "p08-d54e82d2be0d44d4a28da4f8e6ed450e",
+            "evidence_refs": [],
+            "job_id": "job-79795aacc4a942f896c2f6fb03b8b795",
+            "message": "Geometry phase completed",
+            "progress_fraction": null,
+            "schema_version": "1.0.0",
+            "seq": 1,
+            "stage": "validating",
+            "state": "validating",
+            "timestamp": "2026-10-10T18:21:24.474761+00:00"
+          },
+          {
+            "artifact_ids": [],
+            "code": null,
+            "content_sha256": "7d00df7ccfc6efa31927941ed3e7683e340924c0dcbf2fadd39719d0e7e8ab81",
+            "contract_type": "GeometryBuildEvent",
+            "correlation_id": "p08-d54e82d2be0d44d4a28da4f8e6ed450e",
+            "evidence_refs": [],
+            "job_id": "job-79795aacc4a942f896c2f6fb03b8b795",
+            "message": "Geometry phase completed",
+            "progress_fraction": null,
+            "schema_version": "1.0.0",
+            "seq": 2,
+            "stage": "queued",
+            "state": "queued",
+            "timestamp": "2026-10-10T18:21:24.474785+00:00"
+          },
+          {
+            "artifact_ids": [],
+            "code": null,
+            "content_sha256": "d72036bb5ebdd11dcd64c76165bb7e1495e5a2b937b364d289916187b2b74800",
+            "contract_type": "GeometryBuildEvent",
+            "correlation_id": "p08-d54e82d2be0d44d4a28da4f8e6ed450e",
+            "evidence_refs": [],
+            "job_id": "job-79795aacc4a942f896c2f6fb03b8b795",
+            "message": "Geometry phase completed",
+            "progress_fraction": null,
+            "schema_version": "1.0.0",
+            "seq": 3,
+            "stage": "kernel",
+            "state": "running",
+            "timestamp": "2026-10-10T18:21:24.474804+00:00"
+          },
+          {
+            "artifact_ids": [],
+            "code": null,
+            "content_sha256": "a059fe05ed7fcf902c253ca464a6b88fa0fdc21e14492aa9b0efe7dc758e3245",
+            "contract_type": "GeometryBuildEvent",
+            "correlation_id": "p08-d54e82d2be0d44d4a28da4f8e6ed450e",
+            "evidence_refs": [],
+            "job_id": "job-79795aacc4a942f896c2f6fb03b8b795",
+            "message": "Geometry phase completed",
+            "progress_fraction": null,
+            "schema_version": "1.0.0",
+            "seq": 4,
+            "stage": "independent_qa",
+            "state": "qa",
+            "timestamp": "2026-10-10T18:21:25.697759+00:00"
+          },
+          {
+            "artifact_ids": [],
+            "code": null,
+            "content_sha256": "8d114a8fb539552c9ee18a840585be50bb820c0d390cb4706596724a8a3dcb0f",
+            "contract_type": "GeometryBuildEvent",
+            "correlation_id": "p08-d54e82d2be0d44d4a28da4f8e6ed450e",
+            "evidence_refs": [],
+            "job_id": "job-79795aacc4a942f896c2f6fb03b8b795",
+            "message": "Software fixture QA accepted; not published or physically validated",
+            "progress_fraction": null,
+            "schema_version": "1.0.0",
+            "seq": 5,
+            "stage": "software_fixture_acceptance",
+            "state": "accepted",
+            "timestamp": "2026-10-10T18:21:30.882411+00:00"
+          }
+        ],
+        "feature_graph": {
+          "content_sha256": "fbf181c71d02b0e51114c3ff016c44795a8c185c7cb6e7e866fb5cc285e291f9",
+          "contract_type": "GeometryFeatureGraph",
+          "features": [
+            {
+              "content_sha256": "9c5a97d33d6b111410f908715a6753108ba670216d564d5b857c4f17e0ec9b70",
+              "contract_type": "GeometryFeature",
+              "dependency_ids": [],
+              "feature_id": "body",
+              "frame_id": "world",
+              "operation": "primitive.sphere",
+              "parameter_refs": [
+                "body.radius",
+                "body.x",
+                "body.y",
+                "body.z"
+              ],
+              "representation": "analytic_brep",
+              "schema_version": "1.0.0"
+            }
+          ],
+          "graph_id": "fixture-sphere",
+          "output_feature_ids": [
+            "body"
+          ],
+          "schema_version": "1.0.0",
+          "snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1"
+        },
+        "job_id": "job-79795aacc4a942f896c2f6fb03b8b795",
+        "named_selections": [],
+        "reports": [
+          {
+            "acceptance_policy_id": "p07.software-fixtures.v1",
+            "artifact_id": "artifact-0",
+            "checks": [
+              {
+                "check_id": "topology",
+                "content_sha256": "1410b9ddf7ae485c847fe8c9e83980d6e6d4941c70dcb481de4c5bcb07c89e9c",
+                "contract_type": "GeometryCheck",
+                "evidence_refs": [
+                  "evidence-job-79795aacc4a942f896c2f6fb03b8b795"
+                ],
+                "limit": null,
+                "observed": null,
+                "passed": true,
+                "schema_version": "1.0.0",
+                "unit": "1"
+              },
+              {
+                "check_id": "dimensions",
+                "content_sha256": "2396eb37bbf45d7cf570c0def4066432ec57662dacf6803b09d5cfc9f8e6f90e",
+                "contract_type": "GeometryCheck",
+                "evidence_refs": [
+                  "evidence-job-79795aacc4a942f896c2f6fb03b8b795"
+                ],
+                "limit": null,
+                "observed": null,
+                "passed": true,
+                "schema_version": "1.0.0",
+                "unit": "1"
+              },
+              {
+                "check_id": "export_round_trip",
+                "content_sha256": "af1a0cd51a12eb00e3cb0a94345fa7cefa093de26b8d6cd3d649f1d6f9e65298",
+                "contract_type": "GeometryCheck",
+                "evidence_refs": [
+                  "evidence-job-79795aacc4a942f896c2f6fb03b8b795"
+                ],
+                "limit": null,
+                "observed": null,
+                "passed": true,
+                "schema_version": "1.0.0",
+                "unit": "1"
+              }
+            ],
+            "content_sha256": "5ac1533e61c6c7f2ac526ca98c35acebdba4f963ef4b7b38aec9f299b4280ffc",
+            "contract_type": "GeometryValidationReport",
+            "disposition": "accepted",
+            "report_id": "report-job-79795aacc4a942f896c2f6fb03b8b795-0",
+            "reviewer_id": "p07-independent-software-audit",
+            "schema_version": "1.0.0"
+          }
+        ],
+        "request": {
+          "approximation_profile": "none",
+          "backend_id": "occt",
+          "backend_version": "occt-7.8.1.ocp-7.8.1.1.g5v2",
+          "content_sha256": "ceaba280531421e1b2db1d5b8c116ff3ccc44d2929042d2073bd245ed28c670c",
+          "contract_type": "GeometryBuildRequest",
+          "correlation_id": "p08-d54e82d2be0d44d4a28da4f8e6ed450e",
+          "export_tolerance_m": 0.000001,
+          "feature_graph_id": "fixture-sphere",
+          "feature_graph_sha256": "fbf181c71d02b0e51114c3ff016c44795a8c185c7cb6e7e866fb5cc285e291f9",
+          "frame_id": "world",
+          "output_formats": [
+            "step"
+          ],
+          "representation": "analytic_brep",
+          "request_id": "request-f98f57ec08cd4446a8df726b1f8e720b",
+          "schema_version": "1.0.0",
+          "snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+          "source_tolerance_m": 1e-8,
+          "voxel_resolution_m": null
+        },
+        "schema_version": "1.0.0",
+        "snapshot": {
+          "content_sha256": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+          "contract_type": "DesignSnapshot",
+          "created_at": "2026-10-10T18:21:24.128382+00:00",
+          "frame_id": "world",
+          "frames": [
+            {
+              "content_sha256": "213deb594196916b0978102722aa76df072e4ec9baeaad3b258554b2acecbd45",
+              "contract_type": "CoordinateFrame",
+              "frame_id": "world",
+              "handedness": "right",
+              "origin_m": [
+                0,
+                0,
+                0
+              ],
+              "parent_frame_id": null,
+              "rotation": [
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "schema_version": "1.0.0",
+              "units": "m"
+            }
+          ],
+          "parameters_si": [
+            {
+              "content_sha256": "7500a35284bd4aaf87886454425793e14ddf8c3c7d89408a08bef25d70ccbb9e",
+              "contract_type": "SIParameter",
+              "dimension": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "kind": "absolute",
+              "name": "body.radius",
+              "schema_version": "1.0.0",
+              "source_ref_id": "p07-analytic-fixture",
+              "unit_symbol": "m",
+              "value_si": 0.01
+            },
+            {
+              "content_sha256": "8efb904826881e90fad5cf1a932449f56e61eefdb33f52a898df4532f1f55a2d",
+              "contract_type": "SIParameter",
+              "dimension": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "kind": "absolute",
+              "name": "body.x",
+              "schema_version": "1.0.0",
+              "source_ref_id": "p07-analytic-fixture",
+              "unit_symbol": "m",
+              "value_si": 0
+            },
+            {
+              "content_sha256": "13d05673c07882e40ba2828ca4b99f219a1d49496f0bb0558e9710e0524cb114",
+              "contract_type": "SIParameter",
+              "dimension": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "kind": "absolute",
+              "name": "body.y",
+              "schema_version": "1.0.0",
+              "source_ref_id": "p07-analytic-fixture",
+              "unit_symbol": "m",
+              "value_si": 0
+            },
+            {
+              "content_sha256": "9a7700b80bafbbf3068ac6f27156454b9b502b72c1fb24dbd314cedc574e9676",
+              "contract_type": "SIParameter",
+              "dimension": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "kind": "absolute",
+              "name": "body.z",
+              "schema_version": "1.0.0",
+              "source_ref_id": "p07-analytic-fixture",
+              "unit_symbol": "m",
+              "value_si": 0
+            }
+          ],
+          "project_id": "p07-software-fixtures",
+          "revision_id": "p08-143359a7d0b646e386cf6c879ac53cb9",
+          "schema_version": "1.0.0",
+          "source_refs": [
+            {
+              "content_sha256": "2f9628573080fcd691f06fe9d85aa05874f68ace0220a78c55cddd0ae4ff3d3e",
+              "contract_type": "SourceReference",
+              "ref_id": "p07-analytic-fixture",
+              "schema_version": "1.0.0",
+              "source_sha256": "8acac97a809cbc7cc623ec52101fc93de9547f27b8a054442ac3631c3be56552",
+              "source_uri": "systems/geometry/software_fixtures.py"
+            }
+          ]
+        }
+      },
+      "qa": {
+        "conditioning_profile": "raw",
+        "operation": "sphere",
+        "physical_validation_claimed": false,
+        "policy": "p07.software-fixtures.v1",
+        "process": {
+          "code": "OK",
+          "elapsed_s": 1.2219253331422806,
+          "exit_code": 0,
+          "observed_rss_bytes": 291635200,
+          "pid": 60857
+        },
+        "publishing_performed": false,
+        "qa-step": {
+          "analytic_carrier_types": [
+            "SPHERICAL_SURFACE"
+          ],
+          "body_count": 1,
+          "bounds_error_m": 3.048865526052158e-7,
+          "bounds_m": [
+            -0.009999756307053949,
+            -0.009999695113447395,
+            -0.01,
+            0.009999751916296505,
+            0.009999695113447395,
+            0.01
+          ],
+          "bounds_method": "trimmed OCC STL bounds; absolute deflection 0.5um; sampled not certified",
+          "centroid_error_m": 3.2899303136248156e-19,
+          "centroid_m": [
+            -2.503497815850568e-19,
+            -1.109114081863709e-20,
+            2.1316282072803001e-19
+          ],
+          "dimensions_pass": true,
+          "distance_limit_m": 0.000001,
+          "face_classification": [],
+          "face_count": 1,
+          "face_types": [
+            "Sphere"
+          ],
+          "file_units": "m",
+          "forward_max_m": 1.734723475976807e-18,
+          "forward_p95_m": 1.734723475976807e-18,
+          "forward_sample_count": 197,
+          "import_unit": "mm",
+          "independence_scope": "Different tool, API, process and import path; shared OCCT implementation plus independent analytic formulas",
+          "mesh_nonmanifold_edges": 0,
+          "mesh_orientation_errors": 0,
+          "parametric_boundary_edges": 2,
+          "pass": true,
+          "physical_validation_claimed": false,
+          "raw_face_types": [
+            "Sphere"
+          ],
+          "reader": "gmsh-4.15.0",
+          "reader_kernel_independence": false,
+          "reader_observed_rss_bytes": 683622400,
+          "relative_volume_error": 2.022142207758278e-16,
+          "relative_volume_limit": 1e-7,
+          "reverse_max_m": 8.043581855694558e-18,
+          "reverse_p95_m": 2.7276709969964418e-18,
+          "reverse_sample_count": 266,
+          "sampling_scope": "Gmsh surface mesh nodes to analytic SDF; fixed analytic surface samples to Gmsh closest face projections; not certified Hausdorff",
+          "topology_pass": true,
+          "volume_m3": 0.000004188790204786392
+        },
+        "worker_observations": {
+          "centroid_m": [
+            6.260469918281802e-20,
+            -2.2255727123801538e-20,
+            -2.98427949019242e-19
+          ],
+          "input_unit": "m",
+          "kernel_unit": "mm",
+          "occt_shape_closed_flag": false,
+          "solid_count": 1,
+          "volume_m3": 0.000004188790204786392
+        }
+      }
+    }
+  },
+  "context": {
+    "scope": "software-benchmark-only",
+    "project_id": "p07-software-fixtures",
+    "study_id": "8643b2d595b0d888e3b7aabd43c00cdd0334d2f34b58e2f9584aff92864c1d1d",
+    "study": {
+      "content_sha256": "8643b2d595b0d888e3b7aabd43c00cdd0334d2f34b58e2f9584aff92864c1d1d",
+      "contract_type": "StudySnapshot",
+      "handoff": {
+        "artifact": {
+          "approximation_profile": "none",
+          "artifact_id": "artifact-0",
+          "backend_id": "occt",
+          "backend_version": "occt-7.8.1.ocp-7.8.1.1.g5v2",
+          "content_sha256": "13eb4411bf0d59b57da3dd818cf59fe1c1deda873952dfcfaceb250a14a2be84",
+          "contract_type": "GeometryArtifact",
+          "export_tolerance_m": 0.000001,
+          "feature_graph_sha256": "fbf181c71d02b0e51114c3ff016c44795a8c185c7cb6e7e866fb5cc285e291f9",
+          "frame_id": "world",
+          "generated_at": "2026-10-10T18:21:30.882151+00:00",
+          "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+          "job_id": "job-79795aacc4a942f896c2f6fb03b8b795",
+          "output_format": "step",
+          "representation": "analytic_brep",
+          "schema_version": "1.0.0",
+          "sha256": "d2394f4c38754f0f10046b38d6e20e1d5b157d74685050f28b5c98a10502b712",
+          "size_bytes": 2128,
+          "snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+          "source_artifact_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+          "source_tolerance_m": 1e-8,
+          "storage_uri": "job-79795aacc4a942f896c2f6fb03b8b795/export.step",
+          "topology_report_id": "report-job-79795aacc4a942f896c2f6fb03b8b795-0",
+          "units": "m",
+          "voxel_resolution_m": null
+        },
+        "content_sha256": "bcfaf51cbeaf75b8213461e4abdfc9a2530729e1f8f21d79c51ec290e7fb0681",
+        "contract_type": "FixtureHandoff",
+        "frame_id": "world",
+        "geometry_snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+        "integrity_sha256": "47c379575e81464949a6c93528ab62fee863fdf1d5c0ae97650851b73a1f3b12",
+        "radius_m": 0.01,
+        "schema_version": "1.0.0",
+        "scope": "software-sphere-radial-benchmark-only",
+        "selection": {
+          "content_sha256": "14f7585c0f63d528a691a4a972a5412dda1ac2d13e8d6ebffc8160b0808116ce",
+          "contract_type": "NamedSelection",
+          "entity_refs": [
+            "radial-outer-shell"
+          ],
+          "feature_ref": "body",
+          "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+          "mapping_status": "exact",
+          "remap_confidence": 1,
+          "schema_version": "1.0.0",
+          "semantic_id": "outer-surface"
+        }
+      },
+      "model": "steady-spherical-conduction-v1",
+      "model_sha256": "28d9d63738f8c64a778bbd522cf64508351ea28ada67a1970f89ce16b00aa102",
+      "schema_version": "1.0.0",
+      "settings": {
+        "cells": 16,
+        "conductivity_w_m_k": 10,
+        "content_sha256": "229796745d573b2e2b9131adff4eba1b5b13688002f917708a3c4eea07aa787b",
+        "contract_type": "StudySettings",
+        "generation_w_m3": 1000000,
+        "max_iterations": 10000,
+        "relative_residual": 1e-8,
+        "schema_version": "1.0.0",
+        "surface_k": 300
+      },
+      "solver_sha256": "17723ed167b1eff992ed4ebe4283aba3406409dc8e5759a614cdfbdc8639082e"
+    },
+    "mesh": {
+      "kind": "1d-spherical-finite-volume",
+      "units": "m",
+      "frame_id": "world",
+      "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+      "geometry_snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+      "geometry_sha256": "d2394f4c38754f0f10046b38d6e20e1d5b157d74685050f28b5c98a10502b712",
+      "source_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+      "integrity_sha256": "47c379575e81464949a6c93528ab62fee863fdf1d5c0ae97650851b73a1f3b12",
+      "handoff_sha256": "bcfaf51cbeaf75b8213461e4abdfc9a2530729e1f8f21d79c51ec290e7fb0681",
+      "faces_m": [
+        0,
+        0.000625,
+        0.00125,
+        0.001875,
+        0.0025,
+        0.003125,
+        0.00375,
+        0.004375,
+        0.005,
+        0.005625,
+        0.00625,
+        0.006875,
+        0.0075,
+        0.008125,
+        0.00875,
+        0.009375,
+        0.01
+      ],
+      "cells": 16,
+      "material_region": "solid-sphere",
+      "cell_volumes_m3": [
+        1.0226538585904276e-9,
+        7.158577010132992e-9,
+        1.9430423313218115e-8,
+        3.7838192767845835e-8,
+        6.23818853740161e-8,
+        9.306150113172882e-8,
+        1.298770400409844e-7,
+        1.7282850210178222e-7,
+        2.219158873141226e-7,
+        2.7713919567800614e-7,
+        3.384984271934312e-7,
+        4.0599358186039946e-7,
+        4.796246596789109e-7,
+        5.593916606489644e-7,
+        6.452945847705584e-7,
+        7.373334320436993e-7
+      ],
+      "named_selection": {
+        "content_sha256": "14f7585c0f63d528a691a4a972a5412dda1ac2d13e8d6ebffc8160b0808116ce",
+        "contract_type": "NamedSelection",
+        "entity_refs": [
+          "radial-outer-shell"
+        ],
+        "feature_ref": "body",
+        "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+        "mapping_status": "exact",
+        "remap_confidence": 1,
+        "schema_version": "1.0.0",
+        "semantic_id": "outer-surface"
+      },
+      "outer_boundary_face": 16,
+      "center_condition": "regular-zero-flux",
+      "production_handoff": false,
+      "mesh_sha256": "81747b94e595c7b5e7be22f9384489685ecbe4c3cb42f5f9272523bfddb5f868"
+    },
+    "default_settings": {
+      "cells": 16,
+      "conductivity_w_m_k": 10,
+      "content_sha256": "229796745d573b2e2b9131adff4eba1b5b13688002f917708a3c4eea07aa787b",
+      "contract_type": "StudySettings",
+      "generation_w_m3": 1000000,
+      "max_iterations": 10000,
+      "relative_residual": 1e-8,
+      "schema_version": "1.0.0",
+      "surface_k": 300
+    },
+    "run_ids": [
+      "sim-9d60eedfb1e244cf88736f337d9da329"
+    ],
+    "production_handoff": false,
+    "experimental_validation": "not-performed",
+    "engineering_review": "pending"
+  },
+  "run": {
+    "run_id": "sim-9d60eedfb1e244cf88736f337d9da329",
+    "study_id": "8643b2d595b0d888e3b7aabd43c00cdd0334d2f34b58e2f9584aff92864c1d1d",
+    "state": "completed",
+    "freshness": "current",
+    "events": [
+      {
+        "seq": 0,
+        "iteration": 0,
+        "normalized_residual": 1,
+        "power_imbalance_w": -4.188790204786391,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 1,
+        "iteration": 20,
+        "normalized_residual": 0.23615282150296998,
+        "power_imbalance_w": -1.0974631431439716,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 2,
+        "iteration": 40,
+        "normalized_residual": 0.10500785723662971,
+        "power_imbalance_w": -0.49471841503018466,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 3,
+        "iteration": 60,
+        "normalized_residual": 0.048345718944944174,
+        "power_imbalance_w": -0.2280451865934192,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 4,
+        "iteration": 80,
+        "normalized_residual": 0.022330544733698516,
+        "power_imbalance_w": -0.10534448826638076,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 5,
+        "iteration": 100,
+        "normalized_residual": 0.010317489160349903,
+        "power_imbalance_w": -0.04867335048322463,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 6,
+        "iteration": 120,
+        "normalized_residual": 0.004767178670259908,
+        "power_imbalance_w": -0.022489463750443583,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 7,
+        "iteration": 140,
+        "normalized_residual": 0.0022026730966563136,
+        "power_imbalance_w": -0.010391249221648025,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 8,
+        "iteration": 160,
+        "normalized_residual": 0.0010177445390910761,
+        "power_imbalance_w": -0.004801274081512652,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 9,
+        "iteration": 180,
+        "normalized_residual": 0.00047024861501640536,
+        "power_imbalance_w": -0.002218427515402688,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 10,
+        "iteration": 200,
+        "normalized_residual": 0.0002172782579165218,
+        "power_imbalance_w": -0.001025023892703203,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 11,
+        "iteration": 220,
+        "normalized_residual": 0.00010039336611914544,
+        "power_imbalance_w": -0.0004736120398245447,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 12,
+        "iteration": 240,
+        "normalized_residual": 0.00004638673034862766,
+        "power_imbalance_w": -0.0002188323275840176,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 13,
+        "iteration": 260,
+        "normalized_residual": 0.000021432977455102187,
+        "power_imbalance_w": -0.0001011114236328936,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 14,
+        "iteration": 280,
+        "normalized_residual": 0.000009903102010044214,
+        "power_imbalance_w": -0.00004671850865012317,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 15,
+        "iteration": 300,
+        "normalized_residual": 0.000004575725870237781,
+        "power_imbalance_w": -0.000021586275536833455,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 16,
+        "iteration": 320,
+        "normalized_residual": 0.000002114213023053564,
+        "power_imbalance_w": -0.000009973933351226094,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 17,
+        "iteration": 340,
+        "normalized_residual": 9.768716128840678e-7,
+        "power_imbalance_w": -0.00000460845347394212,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 18,
+        "iteration": 360,
+        "normalized_residual": 4.5136329092064573e-7,
+        "power_imbalance_w": -0.000002129334806255656,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 19,
+        "iteration": 380,
+        "normalized_residual": 2.0855229907229667e-7,
+        "power_imbalance_w": -9.8385862656869e-7,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 20,
+        "iteration": 400,
+        "normalized_residual": 9.636153960365657e-8,
+        "power_imbalance_w": -4.5459163899863597e-7,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 21,
+        "iteration": 420,
+        "normalized_residual": 4.4523826112632307e-8,
+        "power_imbalance_w": -2.100439564500789e-7,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 22,
+        "iteration": 440,
+        "normalized_residual": 2.057222370717953e-8,
+        "power_imbalance_w": -9.705075942889607e-8,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      },
+      {
+        "seq": 23,
+        "iteration": 459,
+        "normalized_residual": 9.879513275559526e-9,
+        "power_imbalance_w": -4.660722474625345e-8,
+        "correlation_id": "sim-9d60eedfb1e244cf88736f337d9da329"
+      }
+    ],
+    "geometry_integrity_current": true,
+    "diagnostic": null,
+    "dataset_sha256": "e80113b56e61ed9ac061aefe5c11f1bee46a8829e05b4800db09120ef29f2380",
+    "production_handoff": false,
+    "result": {
+      "cfl_time_step": "not-applicable-steady-elliptic",
+      "conservation_checks": {
+        "generated_power_w": 4.188790204786391,
+        "limit": 8e-8,
+        "outward_power_w": 4.188790158179167,
+        "passed": true,
+        "relative_imbalance": 1.1126655303241714e-8,
+        "signed_imbalance_w": -4.660722474625345e-8
+      },
+      "diagnostics": [],
+      "elapsed_s": 0.00821258407086134,
+      "engineering_review": "pending",
+      "execution_status": "completed",
+      "experimental_validation": "not-performed",
+      "field": {
+        "clipping": "none",
+        "color_map": "Blue-Gold",
+        "interpretation": "1D radial profile; not a 3D field",
+        "max": 301.6666666167068,
+        "min": 300.10416666550765,
+        "quantity": "Temperature",
+        "unit": "K"
+      },
+      "iterations": [
+        0,
+        20,
+        40,
+        60,
+        80,
+        100,
+        120,
+        140,
+        160,
+        180,
+        200,
+        220,
+        240,
+        260,
+        280,
+        300,
+        320,
+        340,
+        360,
+        380,
+        400,
+        420,
+        440,
+        459
+      ],
+      "max_reference_error_k": 0.001627603007648304,
+      "mesh": {
+        "cell_volumes_m3": [
+          1.0226538585904276e-9,
+          7.158577010132992e-9,
+          1.9430423313218115e-8,
+          3.7838192767845835e-8,
+          6.23818853740161e-8,
+          9.306150113172882e-8,
+          1.298770400409844e-7,
+          1.7282850210178222e-7,
+          2.219158873141226e-7,
+          2.7713919567800614e-7,
+          3.384984271934312e-7,
+          4.0599358186039946e-7,
+          4.796246596789109e-7,
+          5.593916606489644e-7,
+          6.452945847705584e-7,
+          7.373334320436993e-7
+        ],
+        "cells": 16,
+        "center_condition": "regular-zero-flux",
+        "faces_m": [
+          0,
+          0.000625,
+          0.00125,
+          0.001875,
+          0.0025,
+          0.003125,
+          0.00375,
+          0.004375,
+          0.005,
+          0.005625,
+          0.00625,
+          0.006875,
+          0.0075,
+          0.008125,
+          0.00875,
+          0.009375,
+          0.01
+        ],
+        "frame_id": "world",
+        "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+        "geometry_sha256": "d2394f4c38754f0f10046b38d6e20e1d5b157d74685050f28b5c98a10502b712",
+        "geometry_snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+        "handoff_sha256": "bcfaf51cbeaf75b8213461e4abdfc9a2530729e1f8f21d79c51ec290e7fb0681",
+        "integrity_sha256": "47c379575e81464949a6c93528ab62fee863fdf1d5c0ae97650851b73a1f3b12",
+        "kind": "1d-spherical-finite-volume",
+        "material_region": "solid-sphere",
+        "mesh_sha256": "81747b94e595c7b5e7be22f9384489685ecbe4c3cb42f5f9272523bfddb5f868",
+        "named_selection": {
+          "content_sha256": "14f7585c0f63d528a691a4a972a5412dda1ac2d13e8d6ebffc8160b0808116ce",
+          "contract_type": "NamedSelection",
+          "entity_refs": [
+            "radial-outer-shell"
+          ],
+          "feature_ref": "body",
+          "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+          "mapping_status": "exact",
+          "remap_confidence": 1,
+          "schema_version": "1.0.0",
+          "semantic_id": "outer-surface"
+        },
+        "outer_boundary_face": 16,
+        "production_handoff": false,
+        "source_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+        "units": "m"
+      },
+      "normalized_residuals": [
+        1,
+        0.23615282150296998,
+        0.10500785723662971,
+        0.048345718944944174,
+        0.022330544733698516,
+        0.010317489160349903,
+        0.004767178670259908,
+        0.0022026730966563136,
+        0.0010177445390910761,
+        0.00047024861501640536,
+        0.0002172782579165218,
+        0.00010039336611914544,
+        0.00004638673034862766,
+        0.000021432977455102187,
+        0.000009903102010044214,
+        0.000004575725870237781,
+        0.000002114213023053564,
+        9.768716128840678e-7,
+        4.5136329092064573e-7,
+        2.0855229907229667e-7,
+        9.636153960365657e-8,
+        4.4523826112632307e-8,
+        2.057222370717953e-8,
+        9.879513275559526e-9
+      ],
+      "numerical_convergence": "converged",
+      "physical_admissibility": "passed-positive-finite-temperature",
+      "power_imbalance_w": [
+        -4.188790204786391,
+        -1.0974631431439716,
+        -0.49471841503018466,
+        -0.2280451865934192,
+        -0.10534448826638076,
+        -0.04867335048322463,
+        -0.022489463750443583,
+        -0.010391249221648025,
+        -0.004801274081512652,
+        -0.002218427515402688,
+        -0.001025023892703203,
+        -0.0004736120398245447,
+        -0.0002188323275840176,
+        -0.0001011114236328936,
+        -0.00004671850865012317,
+        -0.000021586275536833455,
+        -0.000009973933351226094,
+        -0.00000460845347394212,
+        -0.000002129334806255656,
+        -9.8385862656869e-7,
+        -4.5459163899863597e-7,
+        -2.100439564500789e-7,
+        -9.705075942889607e-8,
+        -4.660722474625345e-8
+      ],
+      "production_handoff": false,
+      "radii_m": [
+        0.0003125,
+        0.0009375,
+        0.0015625,
+        0.0021875,
+        0.0028125,
+        0.0034375,
+        0.0040625,
+        0.004687500000000001,
+        0.0053124999999999995,
+        0.0059375,
+        0.006562500000000001,
+        0.0071874999999999994,
+        0.0078125,
+        0.0084375,
+        0.009062500000000001,
+        0.0096875
+      ],
+      "reference_error_limit_k": 0.006510416666666667,
+      "reference_k": [
+        301.6650390625,
+        301.6520182291667,
+        301.6259765625,
+        301.5869140625,
+        301.5348307291667,
+        301.4697265625,
+        301.3916015625,
+        301.3004557291667,
+        301.1962890625,
+        301.0791015625,
+        300.9488932291667,
+        300.8056640625,
+        300.6494140625,
+        300.4801432291667,
+        300.2978515625,
+        300.1025390625
+      ],
+      "residual_definition": "L2(b-A(T-Ts))/L2(b); b=qV",
+      "residual_scale": "linear",
+      "run_id": "sim-9d60eedfb1e244cf88736f337d9da329",
+      "schema_version": "p09-dataset-v1",
+      "solution_verification": "analytic-benchmark-passed",
+      "source_refs": [
+        {
+          "path": "physics/heat_transfer/spherical_conduction.py",
+          "sha256": "28d9d63738f8c64a778bbd522cf64508351ea28ada67a1970f89ce16b00aa102"
+        },
+        {
+          "path": "numerics/finite_volume/radial_diffusion.py",
+          "sha256": "17723ed167b1eff992ed4ebe4283aba3406409dc8e5759a614cdfbdc8639082e"
+        }
+      ],
+      "study": {
+        "content_sha256": "8643b2d595b0d888e3b7aabd43c00cdd0334d2f34b58e2f9584aff92864c1d1d",
+        "contract_type": "StudySnapshot",
+        "handoff": {
+          "artifact": {
+            "approximation_profile": "none",
+            "artifact_id": "artifact-0",
+            "backend_id": "occt",
+            "backend_version": "occt-7.8.1.ocp-7.8.1.1.g5v2",
+            "content_sha256": "13eb4411bf0d59b57da3dd818cf59fe1c1deda873952dfcfaceb250a14a2be84",
+            "contract_type": "GeometryArtifact",
+            "export_tolerance_m": 0.000001,
+            "feature_graph_sha256": "fbf181c71d02b0e51114c3ff016c44795a8c185c7cb6e7e866fb5cc285e291f9",
+            "frame_id": "world",
+            "generated_at": "2026-10-10T18:21:30.882151+00:00",
+            "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+            "job_id": "job-79795aacc4a942f896c2f6fb03b8b795",
+            "output_format": "step",
+            "representation": "analytic_brep",
+            "schema_version": "1.0.0",
+            "sha256": "d2394f4c38754f0f10046b38d6e20e1d5b157d74685050f28b5c98a10502b712",
+            "size_bytes": 2128,
+            "snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+            "source_artifact_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+            "source_tolerance_m": 1e-8,
+            "storage_uri": "job-79795aacc4a942f896c2f6fb03b8b795/export.step",
+            "topology_report_id": "report-job-79795aacc4a942f896c2f6fb03b8b795-0",
+            "units": "m",
+            "voxel_resolution_m": null
+          },
+          "content_sha256": "bcfaf51cbeaf75b8213461e4abdfc9a2530729e1f8f21d79c51ec290e7fb0681",
+          "contract_type": "FixtureHandoff",
+          "frame_id": "world",
+          "geometry_snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+          "integrity_sha256": "47c379575e81464949a6c93528ab62fee863fdf1d5c0ae97650851b73a1f3b12",
+          "radius_m": 0.01,
+          "schema_version": "1.0.0",
+          "scope": "software-sphere-radial-benchmark-only",
+          "selection": {
+            "content_sha256": "14f7585c0f63d528a691a4a972a5412dda1ac2d13e8d6ebffc8160b0808116ce",
+            "contract_type": "NamedSelection",
+            "entity_refs": [
+              "radial-outer-shell"
+            ],
+            "feature_ref": "body",
+            "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+            "mapping_status": "exact",
+            "remap_confidence": 1,
+            "schema_version": "1.0.0",
+            "semantic_id": "outer-surface"
+          }
+        },
+        "model": "steady-spherical-conduction-v1",
+        "model_sha256": "28d9d63738f8c64a778bbd522cf64508351ea28ada67a1970f89ce16b00aa102",
+        "schema_version": "1.0.0",
+        "settings": {
+          "cells": 16,
+          "conductivity_w_m_k": 10,
+          "content_sha256": "229796745d573b2e2b9131adff4eba1b5b13688002f917708a3c4eea07aa787b",
+          "contract_type": "StudySettings",
+          "generation_w_m3": 1000000,
+          "max_iterations": 10000,
+          "relative_residual": 1e-8,
+          "schema_version": "1.0.0",
+          "surface_k": 300
+        },
+        "solver_sha256": "17723ed167b1eff992ed4ebe4283aba3406409dc8e5759a614cdfbdc8639082e"
+      },
+      "study_id": "8643b2d595b0d888e3b7aabd43c00cdd0334d2f34b58e2f9584aff92864c1d1d",
+      "temperature_k": [
+        301.6666666167068,
+        301.6536457852653,
+        301.62760412087397,
+        301.5885416235811,
+        301.53645829334437,
+        301.4713541300988,
+        301.3932291337694,
+        301.3020833042765,
+        301.1979166415391,
+        301.08072914547773,
+        300.95052081601625,
+        300.80729165308406,
+        300.65104165661756,
+        300.48177082656156,
+        300.2994791628702,
+        300.10416666550765
+      ],
+      "termination_reason": "residual_tolerance"
+    }
+  }
+}

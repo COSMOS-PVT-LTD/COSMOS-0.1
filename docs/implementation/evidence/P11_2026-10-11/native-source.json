@@ -1,0 +1,450 @@
+{
+  "job_id": "job-12023a2dafa54ecf9e04443834ff6af2",
+  "snapshot_id": "d018540bf996db588c55760c009341815dde53efe8c5bcf5520344019fd3dc96",
+  "current": true,
+  "state": "accepted",
+  "progress_fraction": null,
+  "published": false,
+  "engineering_export_eligible": false,
+  "byte_integrity": true,
+  "fixture_exchange_eligible": true,
+  "record": {
+    "artifacts": [
+      {
+        "approximation_profile": "none",
+        "artifact_id": "artifact-0",
+        "backend_id": "occt",
+        "backend_version": "occt-7.8.1.ocp-7.8.1.1.g5v2",
+        "content_sha256": "392bd3d9af2fcd7ab21d42f44a2134d50ff9584fc75e565f4a67dd3a9859f28e",
+        "contract_type": "GeometryArtifact",
+        "export_tolerance_m": 1e-06,
+        "feature_graph_sha256": "8221ecb4ffc98831fe24fc54c8bbed7074546e4730cc2bd989d1cbaf03b58230",
+        "frame_id": "world",
+        "generated_at": "2026-10-11T04:20:00.529803+00:00",
+        "geometry_revision_id": "geometry-job-12023a2dafa54ecf9e04443834ff6af2",
+        "job_id": "job-12023a2dafa54ecf9e04443834ff6af2",
+        "output_format": "step",
+        "representation": "analytic_brep",
+        "schema_version": "1.0.0",
+        "sha256": "d3e9d894ac9ec2b89255a36f712ebb9c8db5a628a7daf0afcb8ca53870e0e131",
+        "size_bytes": 2128,
+        "snapshot_id": "d018540bf996db588c55760c009341815dde53efe8c5bcf5520344019fd3dc96",
+        "source_artifact_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+        "source_tolerance_m": 1e-08,
+        "storage_uri": "job-12023a2dafa54ecf9e04443834ff6af2/export.step",
+        "topology_report_id": "report-job-12023a2dafa54ecf9e04443834ff6af2-0",
+        "units": "m",
+        "voxel_resolution_m": null
+      }
+    ],
+    "content_sha256": "9a2da8421a0e21d7ca98f7ac26d7676abbef49c55f2556de8ad180f19cd45f3f",
+    "contract_type": "GeometryBuildRecord",
+    "events": [
+      {
+        "artifact_ids": [],
+        "code": null,
+        "content_sha256": "fec6186c1ee40bff6de93ecd05be55509a60a1b9bd31a260506c69d94d626f40",
+        "contract_type": "GeometryBuildEvent",
+        "correlation_id": "p08-9d801693505f4fa0a8cc0ce0144d571a",
+        "evidence_refs": [],
+        "job_id": "job-12023a2dafa54ecf9e04443834ff6af2",
+        "message": "Geometry phase completed",
+        "progress_fraction": null,
+        "schema_version": "1.0.0",
+        "seq": 0,
+        "stage": "draft",
+        "state": "draft",
+        "timestamp": "2026-10-11T04:19:53.972802+00:00"
+      },
+      {
+        "artifact_ids": [],
+        "code": null,
+        "content_sha256": "8ffce22c0d8985a614182918e65c0930cbd4cf8179a0b33f8e943453846cbccd",
+        "contract_type": "GeometryBuildEvent",
+        "correlation_id": "p08-9d801693505f4fa0a8cc0ce0144d571a",
+        "evidence_refs": [],
+        "job_id": "job-12023a2dafa54ecf9e04443834ff6af2",
+        "message": "Geometry phase completed",
+        "progress_fraction": null,
+        "schema_version": "1.0.0",
+        "seq": 1,
+        "stage": "validating",
+        "state": "validating",
+        "timestamp": "2026-10-11T04:19:53.973120+00:00"
+      },
+      {
+        "artifact_ids": [],
+        "code": null,
+        "content_sha256": "b5b954adf2b880c0fecbca0d7fca44cedfd51bb7b86b08b0d42ec9de3d0cbdcd",
+        "contract_type": "GeometryBuildEvent",
+        "correlation_id": "p08-9d801693505f4fa0a8cc0ce0144d571a",
+        "evidence_refs": [],
+        "job_id": "job-12023a2dafa54ecf9e04443834ff6af2",
+        "message": "Geometry phase completed",
+        "progress_fraction": null,
+        "schema_version": "1.0.0",
+        "seq": 2,
+        "stage": "queued",
+        "state": "queued",
+        "timestamp": "2026-10-11T04:19:53.973153+00:00"
+      },
+      {
+        "artifact_ids": [],
+        "code": null,
+        "content_sha256": "3be8bae675c586c8e9bcfacdd33379c07a91e2d94a1820cdf679deaef7bbefa8",
+        "contract_type": "GeometryBuildEvent",
+        "correlation_id": "p08-9d801693505f4fa0a8cc0ce0144d571a",
+        "evidence_refs": [],
+        "job_id": "job-12023a2dafa54ecf9e04443834ff6af2",
+        "message": "Geometry phase completed",
+        "progress_fraction": null,
+        "schema_version": "1.0.0",
+        "seq": 3,
+        "stage": "kernel",
+        "state": "running",
+        "timestamp": "2026-10-11T04:19:53.973178+00:00"
+      },
+      {
+        "artifact_ids": [],
+        "code": null,
+        "content_sha256": "ad5529b33cd5fa1e3cdca9245500c9e5204e9fa29d92abc4351b68eceb3450f7",
+        "contract_type": "GeometryBuildEvent",
+        "correlation_id": "p08-9d801693505f4fa0a8cc0ce0144d571a",
+        "evidence_refs": [],
+        "job_id": "job-12023a2dafa54ecf9e04443834ff6af2",
+        "message": "Geometry phase completed",
+        "progress_fraction": null,
+        "schema_version": "1.0.0",
+        "seq": 4,
+        "stage": "independent_qa",
+        "state": "qa",
+        "timestamp": "2026-10-11T04:19:55.396292+00:00"
+      },
+      {
+        "artifact_ids": [],
+        "code": null,
+        "content_sha256": "cf8211164763a19f570b7cd81e883a1e1b684366ac2dfeaba250151035e161e0",
+        "contract_type": "GeometryBuildEvent",
+        "correlation_id": "p08-9d801693505f4fa0a8cc0ce0144d571a",
+        "evidence_refs": [],
+        "job_id": "job-12023a2dafa54ecf9e04443834ff6af2",
+        "message": "Software fixture QA accepted; not published or physically validated",
+        "progress_fraction": null,
+        "schema_version": "1.0.0",
+        "seq": 5,
+        "stage": "software_fixture_acceptance",
+        "state": "accepted",
+        "timestamp": "2026-10-11T04:20:00.530051+00:00"
+      }
+    ],
+    "feature_graph": {
+      "content_sha256": "8221ecb4ffc98831fe24fc54c8bbed7074546e4730cc2bd989d1cbaf03b58230",
+      "contract_type": "GeometryFeatureGraph",
+      "features": [
+        {
+          "content_sha256": "9c5a97d33d6b111410f908715a6753108ba670216d564d5b857c4f17e0ec9b70",
+          "contract_type": "GeometryFeature",
+          "dependency_ids": [],
+          "feature_id": "body",
+          "frame_id": "world",
+          "operation": "primitive.sphere",
+          "parameter_refs": [
+            "body.radius",
+            "body.x",
+            "body.y",
+            "body.z"
+          ],
+          "representation": "analytic_brep",
+          "schema_version": "1.0.0"
+        }
+      ],
+      "graph_id": "fixture-sphere",
+      "output_feature_ids": [
+        "body"
+      ],
+      "schema_version": "1.0.0",
+      "snapshot_id": "d018540bf996db588c55760c009341815dde53efe8c5bcf5520344019fd3dc96"
+    },
+    "job_id": "job-12023a2dafa54ecf9e04443834ff6af2",
+    "named_selections": [],
+    "reports": [
+      {
+        "acceptance_policy_id": "p07.software-fixtures.v1",
+        "artifact_id": "artifact-0",
+        "checks": [
+          {
+            "check_id": "topology",
+            "content_sha256": "25f30d5e89fc8525650761707fef32aa00acb1cd8f427f5fd7632343b4da81d3",
+            "contract_type": "GeometryCheck",
+            "evidence_refs": [
+              "evidence-job-12023a2dafa54ecf9e04443834ff6af2"
+            ],
+            "limit": null,
+            "observed": null,
+            "passed": true,
+            "schema_version": "1.0.0",
+            "unit": "1"
+          },
+          {
+            "check_id": "dimensions",
+            "content_sha256": "5fdbc6da3355171a2292f053008a5251794a6aa69a5dc0fb824165f646a2bde8",
+            "contract_type": "GeometryCheck",
+            "evidence_refs": [
+              "evidence-job-12023a2dafa54ecf9e04443834ff6af2"
+            ],
+            "limit": null,
+            "observed": null,
+            "passed": true,
+            "schema_version": "1.0.0",
+            "unit": "1"
+          },
+          {
+            "check_id": "export_round_trip",
+            "content_sha256": "551c7c7150eb4b4f89d5c1a197fc0c47ee59dd9e0cba166387e82836b1c2fbfa",
+            "contract_type": "GeometryCheck",
+            "evidence_refs": [
+              "evidence-job-12023a2dafa54ecf9e04443834ff6af2"
+            ],
+            "limit": null,
+            "observed": null,
+            "passed": true,
+            "schema_version": "1.0.0",
+            "unit": "1"
+          }
+        ],
+        "content_sha256": "28d2f166fce1aee3479f99791369bc094178dbb3bb7790af8d045dc513d82fcd",
+        "contract_type": "GeometryValidationReport",
+        "disposition": "accepted",
+        "report_id": "report-job-12023a2dafa54ecf9e04443834ff6af2-0",
+        "reviewer_id": "p07-independent-software-audit",
+        "schema_version": "1.0.0"
+      }
+    ],
+    "request": {
+      "approximation_profile": "none",
+      "backend_id": "occt",
+      "backend_version": "occt-7.8.1.ocp-7.8.1.1.g5v2",
+      "content_sha256": "8d2bb4f2bc55f99ea72b4d7dee6a44f46f70f9578cb238e93965632011d72b6d",
+      "contract_type": "GeometryBuildRequest",
+      "correlation_id": "p08-9d801693505f4fa0a8cc0ce0144d571a",
+      "export_tolerance_m": 1e-06,
+      "feature_graph_id": "fixture-sphere",
+      "feature_graph_sha256": "8221ecb4ffc98831fe24fc54c8bbed7074546e4730cc2bd989d1cbaf03b58230",
+      "frame_id": "world",
+      "output_formats": [
+        "step"
+      ],
+      "representation": "analytic_brep",
+      "request_id": "request-66f3de9b35e34171b80076848efbc42d",
+      "schema_version": "1.0.0",
+      "snapshot_id": "d018540bf996db588c55760c009341815dde53efe8c5bcf5520344019fd3dc96",
+      "source_tolerance_m": 1e-08,
+      "voxel_resolution_m": null
+    },
+    "schema_version": "1.0.0",
+    "snapshot": {
+      "content_sha256": "d018540bf996db588c55760c009341815dde53efe8c5bcf5520344019fd3dc96",
+      "contract_type": "DesignSnapshot",
+      "created_at": "2026-10-11T04:19:53.508288+00:00",
+      "frame_id": "world",
+      "frames": [
+        {
+          "content_sha256": "213deb594196916b0978102722aa76df072e4ec9baeaad3b258554b2acecbd45",
+          "contract_type": "CoordinateFrame",
+          "frame_id": "world",
+          "handedness": "right",
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "parent_frame_id": null,
+          "rotation": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "schema_version": "1.0.0",
+          "units": "m"
+        }
+      ],
+      "parameters_si": [
+        {
+          "content_sha256": "7500a35284bd4aaf87886454425793e14ddf8c3c7d89408a08bef25d70ccbb9e",
+          "contract_type": "SIParameter",
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kind": "absolute",
+          "name": "body.radius",
+          "schema_version": "1.0.0",
+          "source_ref_id": "p07-analytic-fixture",
+          "unit_symbol": "m",
+          "value_si": 0.01
+        },
+        {
+          "content_sha256": "8efb904826881e90fad5cf1a932449f56e61eefdb33f52a898df4532f1f55a2d",
+          "contract_type": "SIParameter",
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kind": "absolute",
+          "name": "body.x",
+          "schema_version": "1.0.0",
+          "source_ref_id": "p07-analytic-fixture",
+          "unit_symbol": "m",
+          "value_si": 0.0
+        },
+        {
+          "content_sha256": "13d05673c07882e40ba2828ca4b99f219a1d49496f0bb0558e9710e0524cb114",
+          "contract_type": "SIParameter",
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kind": "absolute",
+          "name": "body.y",
+          "schema_version": "1.0.0",
+          "source_ref_id": "p07-analytic-fixture",
+          "unit_symbol": "m",
+          "value_si": 0.0
+        },
+        {
+          "content_sha256": "9a7700b80bafbbf3068ac6f27156454b9b502b72c1fb24dbd314cedc574e9676",
+          "contract_type": "SIParameter",
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kind": "absolute",
+          "name": "body.z",
+          "schema_version": "1.0.0",
+          "source_ref_id": "p07-analytic-fixture",
+          "unit_symbol": "m",
+          "value_si": 0.0
+        }
+      ],
+      "project_id": "p07-software-fixtures",
+      "revision_id": "p08-58e2a274421946a696a7b28496c93117",
+      "schema_version": "1.0.0",
+      "source_refs": [
+        {
+          "content_sha256": "2f9628573080fcd691f06fe9d85aa05874f68ace0220a78c55cddd0ae4ff3d3e",
+          "contract_type": "SourceReference",
+          "ref_id": "p07-analytic-fixture",
+          "schema_version": "1.0.0",
+          "source_sha256": "8acac97a809cbc7cc623ec52101fc93de9547f27b8a054442ac3631c3be56552",
+          "source_uri": "systems/geometry/software_fixtures.py"
+        }
+      ]
+    }
+  },
+  "qa": {
+    "conditioning_profile": "raw",
+    "operation": "sphere",
+    "physical_validation_claimed": false,
+    "policy": "p07.software-fixtures.v1",
+    "process": {
+      "code": "OK",
+      "elapsed_s": 1.4216596661135554,
+      "exit_code": 0,
+      "observed_rss_bytes": 285933568,
+      "pid": 80168
+    },
+    "publishing_performed": false,
+    "qa-step": {
+      "analytic_carrier_types": [
+        "SPHERICAL_SURFACE"
+      ],
+      "body_count": 1,
+      "bounds_error_m": 3.048865526052158e-07,
+      "bounds_m": [
+        -0.009999756307053949,
+        -0.009999695113447395,
+        -0.01,
+        0.009999751916296505,
+        0.009999695113447395,
+        0.01
+      ],
+      "bounds_method": "trimmed OCC STL bounds; absolute deflection 0.5um; sampled not certified",
+      "centroid_error_m": 3.2899303136248156e-19,
+      "centroid_m": [
+        -2.503497815850568e-19,
+        -1.109114081863709e-20,
+        2.1316282072803001e-19
+      ],
+      "dimensions_pass": true,
+      "distance_limit_m": 1e-06,
+      "face_classification": [],
+      "face_count": 1,
+      "face_types": [
+        "Sphere"
+      ],
+      "file_units": "m",
+      "forward_max_m": 1.734723475976807e-18,
+      "forward_p95_m": 1.734723475976807e-18,
+      "forward_sample_count": 197,
+      "import_unit": "mm",
+      "independence_scope": "Different tool, API, process and import path; shared OCCT implementation plus independent analytic formulas",
+      "mesh_nonmanifold_edges": 0,
+      "mesh_orientation_errors": 0,
+      "parametric_boundary_edges": 2,
+      "pass": true,
+      "physical_validation_claimed": false,
+      "raw_face_types": [
+        "Sphere"
+      ],
+      "reader": "gmsh-4.15.0",
+      "reader_kernel_independence": false,
+      "reader_observed_rss_bytes": 675364864,
+      "relative_volume_error": 2.022142207758278e-16,
+      "relative_volume_limit": 1e-07,
+      "reverse_max_m": 8.043581855694558e-18,
+      "reverse_p95_m": 2.7276709969964418e-18,
+      "reverse_sample_count": 266,
+      "sampling_scope": "Gmsh surface mesh nodes to analytic SDF; fixed analytic surface samples to Gmsh closest face projections; not certified Hausdorff",
+      "topology_pass": true,
+      "volume_m3": 4.188790204786392e-06
+    },
+    "worker_observations": {
+      "centroid_m": [
+        6.260469918281802e-20,
+        -2.2255727123801538e-20,
+        -2.98427949019242e-19
+      ],
+      "input_unit": "m",
+      "kernel_unit": "mm",
+      "occt_shape_closed_flag": false,
+      "solid_count": 1,
+      "volume_m3": 4.188790204786392e-06
+    }
+  }
+}

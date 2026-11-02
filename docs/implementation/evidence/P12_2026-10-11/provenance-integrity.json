@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "report_sha256": "ca2ca5a38390bdf92640b284d5c0430bb7f3119f4e45e85ba46b31e7e274d9ef",
+  "package_sha256": "8dbc2f52c44c003d4b74e5cf7b54acfad4087e9b8fa4bc4a2fd63b83cd77cbf8",
+  "dataset_sha256": "5f4d970f379577e269e303ede096ebebba0ad622a2b7189c9c18b73b5c403e03",
+  "native_source_export_sha_verified": true,
+  "source_renderer_sha_verified": true,
+  "offline_package_reproduction": true,
+  "manifest_files": 3,
+  "invented_sources": false,
+  "physical_validation": false,
+  "independent_acceptance": false,
+  "scope": "Actual qualified OCCT sphere fixture and steady spherical conduction, not rocket/hot-fire qualification"
+}

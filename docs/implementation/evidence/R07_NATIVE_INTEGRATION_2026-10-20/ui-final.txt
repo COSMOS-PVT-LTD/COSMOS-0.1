@@ -1,0 +1,60 @@
+R07 native engine nozzle candidates
+
+Captured command admitted. Native/QA stages and exact bytes remain server-owned.
+
+Saved divergent radial-wall nozzle → bounded native profile/revolve → independent software QA → retained STEP/STL candidates. No accepted manufacturing export or physical readiness. No unsupported fixture-policy substitution.
+
+Radial-offset, piecewise-linear divergent wall only. Open throat/exit bore; no chamber, injector or cooling channels. Generated STEP/STL are UNREVIEWED CANDIDATES, not manufacturing acceptance. Display clipping/picking is not metrology.
+
+Exact saved intent and explicit software QA ceilings
+exact saved nozzle intent
+Choose an exact intent
+865f666d-78f6-5d79-ab05-7207cc4a820a · 0a0124fe-b06e-402c-ac7a-e881209de4a7
+relative volume ceiling [1]
+centroid distance ceiling [m]
+sampled surface / bounds distance ceiling [m]
+intended purpose and tolerance source
+Build native nozzle candidate
+Retry uncertain nozzle command with original operation ID
+Abandon uncertain nozzle command
+Discard nozzle build draft
+Retained nozzle sources and attempts
+Inspect nozzle build a6bee675-e7af-56b0-951d-a9822af9ccd5Inspect nozzle build d9cb4b9a-1be7-59e4-8b6f-b613a3733cab
+Native nozzle attempt · COMPLETED
+
+Job 451fd6e3-4acd-458b-9b34-6b1bf1670e35 · source 53fdbbb0-b4df-469f-a692-6f92d805c029
+
+CURRENT GENERATED CANDIDATE — declared software QA passed; engineering review NOT_PERFORMED
+
+Generated engine candidate; declared software QA is not human engineering acceptance, manufacturing or physical validation
+
+Download exact nozzle attempt record
+
+Download captured nozzle build inputs
+
+0 · draft · draft
+1 · validating · validating
+2 · queued · queued
+3 · running · kernel
+4 · qa · independent_qa
+5 · accepted · software_candidate_qa
+Format	Topology	Volume relative error / ceiling [1]	Centroid error / ceiling [m]	Forward / reverse surface error [m]
+step	PASS	3.728800035441219e-14 / 0.005	4.097954196953875e-15 / 0.00002	6.030961133861703e-15 / 5.998890491034004e-15
+stl	PASS	0.00009184951738053628 / 0.005	2.7387393008960875e-7 / 0.00002	0.000005544629727937344 / 0.000008273199122258912
+
+Sampled distances are not certified Hausdorff bounds or a proof of no self-intersection. Gmsh and OCP share OCCT; the formula reference is kernel-independent.
+
+Original attempt diagnostics
+
+Download UNREVIEWED nozzle candidate source.brep
+
+Download UNREVIEWED nozzle candidate export.step
+
+Download UNREVIEWED nozzle candidate export.stl
+
+Show exact retained nozzle 3D preview
+
+Drag to rotate; arrows / +/- / F supported. Picking and clipping are display-only.
+
+Nozzle display frontNozzle display sideNozzle display topFit nozzle displayClear nozzle display clipping
+Refresh nozzle intents and history

@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "actualHTTPcases": 5,
+  "comparison": "exact",
+  "numericalTolerance": 0,
+  "baseline": "P05_2026-10-09/physics_before.json",
+  "baselineSHA256": "daa1fc9b616c49c6d75f53feab3cf604896b0fda76268090fd251be055fce93a",
+  "physicalValidationClaimed": false
+}

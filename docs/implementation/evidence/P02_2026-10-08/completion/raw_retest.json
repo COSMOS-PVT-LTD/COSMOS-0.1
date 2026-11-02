@@ -1,0 +1,2389 @@
+{
+  "schema": "cosmos.picogk.feasibility.v1",
+  "nativeSource": "source-built-raw-retest",
+  "cases": [
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "d7709a4f-a358-4093-838b-dc960e2392e7",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "sphere",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.001,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "d7709a4f-a358-4093-838b-dc960e2392e7",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "d7709a4f-a358-4093-838b-dc960e2392e7",
+            "operation": "sphere",
+            "voxelM": 0.001,
+            "elapsedMs": 124.3147,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 4.16379541015625e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/d7709a4f-a358-4093-838b-dc960e2392e7/sphere-0.stl",
+                "sha256": "e6769f35e83ea078e3898260465bdc022ef530173398c0e19bf265b31fed33c5",
+                "artifactUnit": "m",
+                "peakKernelBytes": 7646624,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.45 real         0.13 user         0.06 sys\n           120193024  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                7813  page reclaims\n                2000  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                  64  voluntary context switches\n                4797  involuntary context switches\n          1177736504  instructions retired\n           579623715  cycles elapsed\n            98633792  peak memory footprint\n",
+        "wallMs": 464.35766597278416,
+        "maximumResidentBytes": 120193024
+      },
+      "independentQa": {
+        "pass": true,
+        "triangleCount": 3660,
+        "vertexCount": 1832,
+        "components": 1,
+        "eulerCharacteristic": 2,
+        "nonmanifoldEdges": 0,
+        "inconsistentEdges": 0,
+        "degenerateFaces": 0,
+        "duplicateFaces": 0,
+        "nonfiniteNormals": 0,
+        "signedVolumeM3": 4.140543544397935e-06,
+        "analyticVolumeM3": 4.188790204786391e-06,
+        "relativeVolumeError": 0.011518041732748114,
+        "centroidM": [
+          -8.381221272981389e-19,
+          -7.604748724879296e-19,
+          3.493476154442584e-19
+        ],
+        "centroidErrorM": 1.1844046978836584e-18,
+        "boundsM": [
+          [
+            -0.009949772618710995,
+            -0.009949772618710995,
+            -0.009949772618710995
+          ],
+          [
+            0.009949772618710995,
+            0.009949772618710995,
+            0.009949772618710995
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 5.1312791065761046e-05,
+          "max": 5.639444444226899e-05,
+          "samples": 5492
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.0005535614855697702,
+          "max": 0.0007032533757894378,
+          "samples": 400
+        },
+        "sha256": "e6769f35e83ea078e3898260465bdc022ef530173398c0e19bf265b31fed33c5",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "a0ea242e-ff46-45ab-b03c-57bab701c999",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "union",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.001,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "a0ea242e-ff46-45ab-b03c-57bab701c999",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "a0ea242e-ff46-45ab-b03c-57bab701c999",
+            "operation": "union",
+            "voxelM": 0.001,
+            "elapsedMs": 37.581,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 7.0332651367187505e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/a0ea242e-ff46-45ab-b03c-57bab701c999/union-0.stl",
+                "sha256": "b26ae21bf3bd7a69d925b3cfd092c1bb49b771d6e645f3dad595f5675cd9762d",
+                "artifactUnit": "m",
+                "peakKernelBytes": 7683072,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.12 real         0.16 user         0.04 sys\n           129482752  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                9482  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   6  voluntary context switches\n                4859  involuntary context switches\n          1245406544  instructions retired\n           581885071  cycles elapsed\n            98437120  peak memory footprint\n",
+        "wallMs": 131.35683396831155,
+        "maximumResidentBytes": 129482752
+      },
+      "independentQa": {
+        "pass": true,
+        "triangleCount": 5420,
+        "vertexCount": 2712,
+        "components": 1,
+        "eulerCharacteristic": 2,
+        "nonmanifoldEdges": 0,
+        "inconsistentEdges": 0,
+        "degenerateFaces": 0,
+        "duplicateFaces": 0,
+        "nonfiniteNormals": 0,
+        "signedVolumeM3": 7.002586177461457e-06,
+        "analyticVolumeM3": 7.068583470577035e-06,
+        "relativeVolumeError": 0.00933670704891471,
+        "centroidM": [
+          0.004999999885778448,
+          -9.382325583715199e-20,
+          -1.893634003518158e-18
+        ],
+        "centroidErrorM": 1.1422155235529809e-10,
+        "boundsM": [
+          [
+            -0.009949772618710995,
+            -0.009949772618710995,
+            -0.009949772618710995
+          ],
+          [
+            0.01994977332651615,
+            0.009949772618710995,
+            0.009949772618710995
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 5.2053615317994295e-05,
+          "max": 0.00013287861534237722,
+          "samples": 8132
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.0005549234081167115,
+          "max": 0.0007032533811055113,
+          "samples": 602
+        },
+        "sha256": "b26ae21bf3bd7a69d925b3cfd092c1bb49b771d6e645f3dad595f5675cd9762d",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "dc4a466f-6d2c-4d80-be5b-56dbb61ef8b8",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "difference",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.001,
+        "cycles": 1
+      },
+      "pass": false,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "dc4a466f-6d2c-4d80-be5b-56dbb61ef8b8",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "dc4a466f-6d2c-4d80-be5b-56dbb61ef8b8",
+            "operation": "difference",
+            "voxelM": 0.001,
+            "elapsedMs": 39.0758,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 2.8584685058593753e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/dc4a466f-6d2c-4d80-be5b-56dbb61ef8b8/difference-0.stl",
+                "sha256": "7991bb072032f81725157e58bb8b3949634ca50e396acc46e021a390f18b4ab9",
+                "artifactUnit": "m",
+                "peakKernelBytes": 7646624,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.12 real         0.13 user         0.05 sys\n           142475264  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               10275  page reclaims\n                   5  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   7  voluntary context switches\n                4274  involuntary context switches\n          1126860807  instructions retired\n           542516956  cycles elapsed\n           111429760  peak memory footprint\n",
+        "wallMs": 125.28166698757559,
+        "maximumResidentBytes": 142475264
+      },
+      "independentQa": {
+        "pass": false,
+        "triangleCount": 3564,
+        "vertexCount": 1773,
+        "components": 1,
+        "eulerCharacteristic": 15,
+        "nonmanifoldEdges": 21,
+        "inconsistentEdges": 9,
+        "degenerateFaces": 22,
+        "duplicateFaces": 1,
+        "nonfiniteNormals": 6,
+        "signedVolumeM3": 2.8329263434544962e-06,
+        "analyticVolumeM3": 2.879793265790644e-06,
+        "relativeVolumeError": 0.016274405143204024,
+        "centroidM": [
+          -0.002303181687635645,
+          -4.0072317047876116e-19,
+          4.117012364631769e-19
+        ],
+        "centroidErrorM": 3.0454414908372054e-05,
+        "boundsM": [
+          [
+            -0.009949772618710995,
+            -0.009949772618710995,
+            -0.009949772618710995
+          ],
+          [
+            0.004316036589443684,
+            0.009949772618710995,
+            0.009949772618710995
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 8.592616303087532e-05,
+          "max": 0.00043021430405746144,
+          "samples": 5337
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.0005887485679392235,
+          "max": 0.0009043070335630946,
+          "samples": 402
+        },
+        "sha256": "7991bb072032f81725157e58bb8b3949634ca50e396acc46e021a390f18b4ab9",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "e2ecf9eb-7749-4b01-9d5d-61f94229a3e2",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "intersection",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.001,
+        "cycles": 1
+      },
+      "pass": false,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "e2ecf9eb-7749-4b01-9d5d-61f94229a3e2",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "e2ecf9eb-7749-4b01-9d5d-61f94229a3e2",
+            "operation": "intersection",
+            "voxelM": 0.001,
+            "elapsedMs": 28.6425,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 1.3014272460937501e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/e2ecf9eb-7749-4b01-9d5d-61f94229a3e2/intersection-0.stl",
+                "sha256": "2074eca4dbfc3c9872509e407983f5c261e31951a542e86c8819d95cfca025e1",
+                "artifactUnit": "m",
+                "peakKernelBytes": 7588736,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.11 real         0.11 user         0.04 sys\n           120569856  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                8895  page reclaims\n                  30  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   9  voluntary context switches\n                2969  involuntary context switches\n           944634566  instructions retired\n           434185583  cycles elapsed\n            89475136  peak memory footprint\n",
+        "wallMs": 124.039874994196,
+        "maximumResidentBytes": 120569856
+      },
+      "independentQa": {
+        "pass": false,
+        "triangleCount": 1900,
+        "vertexCount": 952,
+        "components": 1,
+        "eulerCharacteristic": 2,
+        "nonmanifoldEdges": 0,
+        "inconsistentEdges": 0,
+        "degenerateFaces": 0,
+        "duplicateFaces": 0,
+        "nonfiniteNormals": 0,
+        "signedVolumeM3": 1.2817948519642682e-06,
+        "analyticVolumeM3": 1.3089969389957474e-06,
+        "relativeVolumeError": 0.02078086374468404,
+        "centroidM": [
+          0.0050000000222080315,
+          -1.5423217840284015e-18,
+          8.327109169011963e-19
+        ],
+        "centroidErrorM": 2.2208031420778497e-11,
+        "boundsM": [
+          [
+            5.022680124966428e-05,
+            -0.008313881233334541,
+            -0.008313881233334541
+          ],
+          [
+            0.009949772618710995,
+            0.008313881233334541,
+            0.008313881233334541
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 5.323804428089725e-05,
+          "max": 0.0002278636457166694,
+          "samples": 2852
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.0005446196661880038,
+          "max": 0.0007032533757894378,
+          "samples": 198
+        },
+        "sha256": "2074eca4dbfc3c9872509e407983f5c261e31951a542e86c8819d95cfca025e1",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "83ee63fc-58c8-4218-b403-3ca7d554a078",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "self_union",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.001,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "83ee63fc-58c8-4218-b403-3ca7d554a078",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "83ee63fc-58c8-4218-b403-3ca7d554a078",
+            "operation": "self_union",
+            "voxelM": 0.001,
+            "elapsedMs": 68.4905,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 4.16379541015625e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/83ee63fc-58c8-4218-b403-3ca7d554a078/self_union-0.stl",
+                "sha256": "e6769f35e83ea078e3898260465bdc022ef530173398c0e19bf265b31fed33c5",
+                "artifactUnit": "m",
+                "peakKernelBytes": 7646624,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.26 real         0.18 user         0.05 sys\n           120635392  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                9757  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   6  voluntary context switches\n                4748  involuntary context switches\n          1101658798  instructions retired\n           609491009  cycles elapsed\n           101877760  peak memory footprint\n",
+        "wallMs": 271.17149997502565,
+        "maximumResidentBytes": 120635392
+      },
+      "independentQa": {
+        "pass": true,
+        "triangleCount": 3660,
+        "vertexCount": 1832,
+        "components": 1,
+        "eulerCharacteristic": 2,
+        "nonmanifoldEdges": 0,
+        "inconsistentEdges": 0,
+        "degenerateFaces": 0,
+        "duplicateFaces": 0,
+        "nonfiniteNormals": 0,
+        "signedVolumeM3": 4.140543544397935e-06,
+        "analyticVolumeM3": 4.188790204786391e-06,
+        "relativeVolumeError": 0.011518041732748114,
+        "centroidM": [
+          -8.381221272981389e-19,
+          -7.604748724879296e-19,
+          3.493476154442584e-19
+        ],
+        "centroidErrorM": 1.1844046978836584e-18,
+        "boundsM": [
+          [
+            -0.009949772618710995,
+            -0.009949772618710995,
+            -0.009949772618710995
+          ],
+          [
+            0.009949772618710995,
+            0.009949772618710995,
+            0.009949772618710995
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 5.1312791065761046e-05,
+          "max": 5.639444444226899e-05,
+          "samples": 5492
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.0005535614855697702,
+          "max": 0.0007032533757894378,
+          "samples": 400
+        },
+        "sha256": "e6769f35e83ea078e3898260465bdc022ef530173398c0e19bf265b31fed33c5",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "93f53cd6-52ed-431a-8b87-e2f4b5df5121",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "self_difference",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.001,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "93f53cd6-52ed-431a-8b87-e2f4b5df5121",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "93f53cd6-52ed-431a-8b87-e2f4b5df5121",
+            "operation": "self_difference",
+            "voxelM": 0.001,
+            "elapsedMs": 10.7327,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": true,
+                "nativeVolumeM3": 0,
+                "path": null,
+                "sha256": null,
+                "artifactUnit": "m",
+                "peakKernelBytes": 7646624,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.19 real         0.11 user         0.03 sys\n            74416128  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6071  page reclaims\n                  10  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                  10  voluntary context switches\n                2821  involuntary context switches\n           711694535  instructions retired\n           391554119  cycles elapsed\n            44288000  peak memory footprint\n",
+        "wallMs": 206.40766702126712,
+        "maximumResidentBytes": 74416128
+      },
+      "independentQa": null
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "91d94792-3dda-40ac-8fe8-042b61f91483",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "disjoint_intersection",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.001,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "91d94792-3dda-40ac-8fe8-042b61f91483",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "91d94792-3dda-40ac-8fe8-042b61f91483",
+            "operation": "disjoint_intersection",
+            "voxelM": 0.001,
+            "elapsedMs": 16.0187,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": true,
+                "nativeVolumeM3": 0,
+                "path": null,
+                "sha256": null,
+                "artifactUnit": "m",
+                "peakKernelBytes": 3885312,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.14 real         0.09 user         0.03 sys\n            71696384  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                5884  page reclaims\n                  25  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   9  voluntary context switches\n                2418  involuntary context switches\n           691602814  instructions retired\n           352586685  cycles elapsed\n            41568320  peak memory footprint\n",
+        "wallMs": 152.16220798902214,
+        "maximumResidentBytes": 71696384
+      },
+      "independentQa": null
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "af28e6c7-fb2f-4871-9234-ab768f737d52",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "sphere",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.0005,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "af28e6c7-fb2f-4871-9234-ab768f737d52",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "af28e6c7-fb2f-4871-9234-ab768f737d52",
+            "operation": "sphere",
+            "voxelM": 0.0005,
+            "elapsedMs": 95.9217,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 4.18242138671875e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/af28e6c7-fb2f-4871-9234-ab768f737d52/sphere-0.stl",
+                "sha256": "66dc7328eec353d6ceed7c82da57596738a720ca96b27e8b2f3016f61d2aa28d",
+                "artifactUnit": "m",
+                "peakKernelBytes": 8352000,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.21 real         0.25 user         0.05 sys\n           138280960  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               10009  page reclaims\n                  12  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                  16  voluntary context switches\n                4716  involuntary context switches\n          1801722763  instructions retired\n           836384642  cycles elapsed\n           107087936  peak memory footprint\n",
+        "wallMs": 223.25516701675951,
+        "maximumResidentBytes": 138280960
+      },
+      "independentQa": {
+        "pass": true,
+        "triangleCount": 14940,
+        "vertexCount": 7472,
+        "components": 1,
+        "eulerCharacteristic": 2,
+        "nonmanifoldEdges": 0,
+        "inconsistentEdges": 0,
+        "degenerateFaces": 0,
+        "duplicateFaces": 0,
+        "nonfiniteNormals": 0,
+        "signedVolumeM3": 4.1767831479586206e-06,
+        "analyticVolumeM3": 4.188790204786391e-06,
+        "relativeVolumeError": 0.002866473669187525,
+        "centroidM": [
+          5.354206864930313e-18,
+          5.334882892939213e-18,
+          3.5540636392639463e-19
+        ],
+        "centroidErrorM": 7.566691504043344e-18,
+        "boundsM": [
+          [
+            -0.009987486526370049,
+            -0.009987486526370049,
+            -0.009987486526370049
+          ],
+          [
+            0.009987486526370049,
+            0.009987486526370049,
+            0.009987486526370049
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 1.2700055019477727e-05,
+          "max": 1.4324203198107233e-05,
+          "samples": 22412
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.0002714762019342116,
+          "max": 0.0003534376044708731,
+          "samples": 400
+        },
+        "sha256": "66dc7328eec353d6ceed7c82da57596738a720ca96b27e8b2f3016f61d2aa28d",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "672dca89-1169-495c-a409-ee8e382eb613",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "union",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.0005,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "672dca89-1169-495c-a409-ee8e382eb613",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "672dca89-1169-495c-a409-ee8e382eb613",
+            "operation": "union",
+            "voxelM": 0.0005,
+            "elapsedMs": 218.1397,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 7.059448730468751e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/672dca89-1169-495c-a409-ee8e382eb613/union-0.stl",
+                "sha256": "e070f01a8d133d69b1b054c4f0d4a307152fb93378293c1c736b5ff5d3852bd0",
+                "artifactUnit": "m",
+                "peakKernelBytes": 8521376,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.34 real         0.35 user         0.06 sys\n           129269760  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               10630  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                  16  voluntary context switches\n                6235  involuntary context switches\n          2303748259  instructions retired\n          1093894232  cycles elapsed\n           104007808  peak memory footprint\n",
+        "wallMs": 348.06325007230043,
+        "maximumResidentBytes": 129269760
+      },
+      "independentQa": {
+        "pass": true,
+        "triangleCount": 22204,
+        "vertexCount": 11104,
+        "components": 1,
+        "eulerCharacteristic": 2,
+        "nonmanifoldEdges": 0,
+        "inconsistentEdges": 0,
+        "degenerateFaces": 0,
+        "duplicateFaces": 0,
+        "nonfiniteNormals": 0,
+        "signedVolumeM3": 7.051921272499434e-06,
+        "analyticVolumeM3": 7.068583470577035e-06,
+        "relativeVolumeError": 0.0023572188327347044,
+        "centroidM": [
+          0.004999999958775377,
+          1.920001190726652e-18,
+          -9.865760632804716e-19
+        ],
+        "centroidErrorM": 4.1224622673863345e-11,
+        "boundsM": [
+          [
+            -0.009987486526370049,
+            -0.009987486526370049,
+            -0.009987486526370049
+          ],
+          [
+            0.01998748816549778,
+            0.009987486526370049,
+            0.009987486526370049
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 1.2857988262756151e-05,
+          "max": 8.715990520989994e-05,
+          "samples": 33308
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.00027165155172631,
+          "max": 0.0003534376044708731,
+          "samples": 602
+        },
+        "sha256": "e070f01a8d133d69b1b054c4f0d4a307152fb93378293c1c736b5ff5d3852bd0",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "7a942841-b510-4b28-8d5b-1ebd89967c7c",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "difference",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.0005,
+        "cycles": 1
+      },
+      "pass": false,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "7a942841-b510-4b28-8d5b-1ebd89967c7c",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "7a942841-b510-4b28-8d5b-1ebd89967c7c",
+            "operation": "difference",
+            "voxelM": 0.0005,
+            "elapsedMs": 75.1114,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 2.8768732910156254e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/7a942841-b510-4b28-8d5b-1ebd89967c7c/difference-0.stl",
+                "sha256": "6c8793f65e702daf96465994f097b549fceb7c84a9dbc95ff996a28c7c209045",
+                "artifactUnit": "m",
+                "peakKernelBytes": 8317696,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.16 real         0.25 user         0.04 sys\n           144523264  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               10410  page reclaims\n                   2  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   6  voluntary context switches\n                2440  involuntary context switches\n          1812184690  instructions retired\n           815031946  cycles elapsed\n           113281152  peak memory footprint\n",
+        "wallMs": 175.33429199829698,
+        "maximumResidentBytes": 144523264
+      },
+      "independentQa": {
+        "pass": false,
+        "triangleCount": 14700,
+        "vertexCount": 7341,
+        "components": 1,
+        "eulerCharacteristic": 15,
+        "nonmanifoldEdges": 21,
+        "inconsistentEdges": 9,
+        "degenerateFaces": 22,
+        "duplicateFaces": 1,
+        "nonfiniteNormals": 6,
+        "signedVolumeM3": 2.8683535731673284e-06,
+        "analyticVolumeM3": 2.879793265790644e-06,
+        "relativeVolumeError": 0.003972400643896462,
+        "centroidM": [
+          -0.0022802433581191124,
+          2.93821689036257e-18,
+          -2.3017964552689407e-19
+        ],
+        "centroidErrorM": 7.516085391839379e-06,
+        "boundsM": [
+          [
+            -0.009987486526370049,
+            -0.009987486526370049,
+            -0.009987486526370049
+          ],
+          [
+            0.0047053503803908825,
+            0.009987486526370049,
+            0.009987486526370049
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 1.3445389724418486e-05,
+          "max": 0.00018335636622778852,
+          "samples": 22041
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.0002726498358039922,
+          "max": 0.00036621828969985365,
+          "samples": 402
+        },
+        "sha256": "6c8793f65e702daf96465994f097b549fceb7c84a9dbc95ff996a28c7c209045",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "d07ef5c0-79f5-4c0b-894d-2d43f4379963",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "intersection",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.0005,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "d07ef5c0-79f5-4c0b-894d-2d43f4379963",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "d07ef5c0-79f5-4c0b-894d-2d43f4379963",
+            "operation": "intersection",
+            "voxelM": 0.0005,
+            "elapsedMs": 64.8734,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 1.3062938232421875e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/d07ef5c0-79f5-4c0b-894d-2d43f4379963/intersection-0.stl",
+                "sha256": "4834337bc34099121ab5654e3e7ffc9637ae321d0d33a17922fcff9c85032ee5",
+                "artifactUnit": "m",
+                "peakKernelBytes": 8214784,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.23 real         0.21 user         0.06 sys\n           137330688  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               10115  page reclaims\n                  10  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   9  voluntary context switches\n                5007  involuntary context switches\n          1336836875  instructions retired\n           712876075  cycles elapsed\n           107857920  peak memory footprint\n",
+        "wallMs": 235.51387491170317,
+        "maximumResidentBytes": 137330688
+      },
+      "independentQa": {
+        "pass": true,
+        "triangleCount": 7676,
+        "vertexCount": 3840,
+        "components": 1,
+        "eulerCharacteristic": 2,
+        "nonmanifoldEdges": 0,
+        "inconsistentEdges": 0,
+        "degenerateFaces": 0,
+        "duplicateFaces": 0,
+        "nonfiniteNormals": 0,
+        "signedVolumeM3": 1.3020691365650714e-06,
+        "analyticVolumeM3": 1.3089969389957474e-06,
+        "relativeVolumeError": 0.005292451207709405,
+        "centroidM": [
+          0.005000000000873142,
+          -4.353964324748056e-18,
+          3.5223802483315074e-18
+        ],
+        "centroidErrorM": 8.731418366283189e-13,
+        "boundsM": [
+          [
+            1.2512986359070055e-05,
+            -0.008576137945055962,
+            -0.008576137945055962
+          ],
+          [
+            0.009987486526370049,
+            0.008576137945055962,
+            0.008576137945055962
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 1.2867763228421609e-05,
+          "max": 0.00011238227101483152,
+          "samples": 11516
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.00026745581794166546,
+          "max": 0.0003534376345989854,
+          "samples": 198
+        },
+        "sha256": "4834337bc34099121ab5654e3e7ffc9637ae321d0d33a17922fcff9c85032ee5",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "a3667317-257d-4c07-ae67-093a5ccea64e",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "self_union",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.0005,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "a3667317-257d-4c07-ae67-093a5ccea64e",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "a3667317-257d-4c07-ae67-093a5ccea64e",
+            "operation": "self_union",
+            "voxelM": 0.0005,
+            "elapsedMs": 65.8547,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 4.18242138671875e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/a3667317-257d-4c07-ae67-093a5ccea64e/self_union-0.stl",
+                "sha256": "66dc7328eec353d6ceed7c82da57596738a720ca96b27e8b2f3016f61d2aa28d",
+                "artifactUnit": "m",
+                "peakKernelBytes": 8352000,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.15 real         0.26 user         0.05 sys\n           140034048  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               10142  page reclaims\n                   9  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                  19  voluntary context switches\n                6259  involuntary context switches\n          1876243025  instructions retired\n           873675135  cycles elapsed\n           108824704  peak memory footprint\n",
+        "wallMs": 156.83783299755305,
+        "maximumResidentBytes": 140034048
+      },
+      "independentQa": {
+        "pass": true,
+        "triangleCount": 14940,
+        "vertexCount": 7472,
+        "components": 1,
+        "eulerCharacteristic": 2,
+        "nonmanifoldEdges": 0,
+        "inconsistentEdges": 0,
+        "degenerateFaces": 0,
+        "duplicateFaces": 0,
+        "nonfiniteNormals": 0,
+        "signedVolumeM3": 4.1767831479586206e-06,
+        "analyticVolumeM3": 4.188790204786391e-06,
+        "relativeVolumeError": 0.002866473669187525,
+        "centroidM": [
+          5.354206864930313e-18,
+          5.334882892939213e-18,
+          3.5540636392639463e-19
+        ],
+        "centroidErrorM": 7.566691504043344e-18,
+        "boundsM": [
+          [
+            -0.009987486526370049,
+            -0.009987486526370049,
+            -0.009987486526370049
+          ],
+          [
+            0.009987486526370049,
+            0.009987486526370049,
+            0.009987486526370049
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 1.2700055019477727e-05,
+          "max": 1.4324203198107233e-05,
+          "samples": 22412
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.0002714762019342116,
+          "max": 0.0003534376044708731,
+          "samples": 400
+        },
+        "sha256": "66dc7328eec353d6ceed7c82da57596738a720ca96b27e8b2f3016f61d2aa28d",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "d026f8bc-019b-48fe-9423-2a419c39be13",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "self_difference",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.0005,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "d026f8bc-019b-48fe-9423-2a419c39be13",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "d026f8bc-019b-48fe-9423-2a419c39be13",
+            "operation": "self_difference",
+            "voxelM": 0.0005,
+            "elapsedMs": 7.6188,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": true,
+                "nativeVolumeM3": 0,
+                "path": null,
+                "sha256": null,
+                "artifactUnit": "m",
+                "peakKernelBytes": 8352000,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.09 real         0.08 user         0.02 sys\n            75448320  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6150  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   6  voluntary context switches\n                 973  involuntary context switches\n           701416874  instructions retired\n           309810073  cycles elapsed\n            45336640  peak memory footprint\n",
+        "wallMs": 103.66829193662852,
+        "maximumResidentBytes": 75448320
+      },
+      "independentQa": null
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "0834ca87-1764-495c-a934-630ca8147d3b",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "disjoint_intersection",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.0005,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "0834ca87-1764-495c-a934-630ca8147d3b",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "0834ca87-1764-495c-a934-630ca8147d3b",
+            "operation": "disjoint_intersection",
+            "voxelM": 0.0005,
+            "elapsedMs": 6.8016,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": true,
+                "nativeVolumeM3": 0,
+                "path": null,
+                "sha256": null,
+                "artifactUnit": "m",
+                "peakKernelBytes": 4363424,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.08 real         0.07 user         0.02 sys\n            72876032  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                5986  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   6  voluntary context switches\n                1451  involuntary context switches\n           682399056  instructions retired\n           285484913  cycles elapsed\n            42715072  peak memory footprint\n",
+        "wallMs": 92.63312502298504,
+        "maximumResidentBytes": 72876032
+      },
+      "independentQa": null
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "fd1787ab-109b-4b3b-8ad7-72ad36b92aae",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "sphere",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.00025,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "fd1787ab-109b-4b3b-8ad7-72ad36b92aae",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "fd1787ab-109b-4b3b-8ad7-72ad36b92aae",
+            "operation": "sphere",
+            "voxelM": 0.00025,
+            "elapsedMs": 148.5052,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 4.1876357421875e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/fd1787ab-109b-4b3b-8ad7-72ad36b92aae/sphere-0.stl",
+                "sha256": "3f4e538b7fbc982be41fccf09d02fa79a3fcc46227244019e4f543edb1c02d30",
+                "artifactUnit": "m",
+                "peakKernelBytes": 11452224,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.22 real         0.60 user         0.07 sys\n           149782528  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               11016  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                 108  voluntary context switches\n                7314  involuntary context switches\n          4533889654  instructions retired\n          1855453936  cycles elapsed\n           118622336  peak memory footprint\n",
+        "wallMs": 230.42612499557436,
+        "maximumResidentBytes": 149782528
+      },
+      "independentQa": {
+        "pass": true,
+        "triangleCount": 60156,
+        "vertexCount": 30080,
+        "components": 1,
+        "eulerCharacteristic": 2,
+        "nonmanifoldEdges": 0,
+        "inconsistentEdges": 0,
+        "degenerateFaces": 0,
+        "duplicateFaces": 0,
+        "nonfiniteNormals": 0,
+        "signedVolumeM3": 4.1857921877284495e-06,
+        "analyticVolumeM3": 4.188790204786391e-06,
+        "relativeVolumeError": 0.000715723851367897,
+        "centroidM": [
+          -5.16572419067823e-18,
+          5.6248346313253515e-18,
+          -1.6196114664684422e-18
+        ],
+        "centroidErrorM": 7.806831133451736e-18,
+        "boundsM": [
+          [
+            -0.009996874257922173,
+            -0.009996874257922173,
+            -0.009996874257922173
+          ],
+          [
+            0.009996874257922173,
+            0.009996874257922173,
+            0.009996874257922173
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 3.193515944160518e-06,
+          "max": 3.682649920670744e-06,
+          "samples": 90236
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.0001333516580752456,
+          "max": 0.00017249768455020228,
+          "samples": 400
+        },
+        "sha256": "3f4e538b7fbc982be41fccf09d02fa79a3fcc46227244019e4f543edb1c02d30",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "d3d3f83e-5f2f-4b0e-b77a-58255b2c8ef9",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "union",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.00025,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "d3d3f83e-5f2f-4b0e-b77a-58255b2c8ef9",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "d3d3f83e-5f2f-4b0e-b77a-58255b2c8ef9",
+            "operation": "union",
+            "voxelM": 0.00025,
+            "elapsedMs": 275.9349,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 7.0670800781250005e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/d3d3f83e-5f2f-4b0e-b77a-58255b2c8ef9/union-0.stl",
+                "sha256": "1de2fd81613fd940971b20af31f527e3fb22577fb91b2560d0bf286cad91d81d",
+                "artifactUnit": "m",
+                "peakKernelBytes": 12125440,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.39 real         0.93 user         0.11 sys\n           159055872  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               11641  page reclaims\n                   2  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                 137  voluntary context switches\n                9090  involuntary context switches\n          6295707459  instructions retired\n          2697452301  cycles elapsed\n           127994176  peak memory footprint\n",
+        "wallMs": 404.9639579607174,
+        "maximumResidentBytes": 159055872
+      },
+      "independentQa": {
+        "pass": true,
+        "triangleCount": 89596,
+        "vertexCount": 44800,
+        "components": 1,
+        "eulerCharacteristic": 2,
+        "nonmanifoldEdges": 0,
+        "inconsistentEdges": 0,
+        "degenerateFaces": 0,
+        "duplicateFaces": 0,
+        "nonfiniteNormals": 0,
+        "signedVolumeM3": 7.0643699520855325e-06,
+        "analyticVolumeM3": 7.068583470577035e-06,
+        "relativeVolumeError": 0.0005960909295393485,
+        "centroidM": [
+          0.00500000000890233,
+          -2.3217989063003454e-18,
+          2.4564002945261935e-18
+        ],
+        "centroidErrorM": 8.902330261851363e-12,
+        "boundsM": [
+          [
+            -0.009996874257922173,
+            -0.009996874257922173,
+            -0.009996874257922173
+          ],
+          [
+            0.019996874034404755,
+            0.009996874257922173,
+            0.009996874257922173
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 3.225367172557045e-06,
+          "max": 4.575100919290871e-05,
+          "samples": 134396
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.00013962564018525192,
+          "max": 0.00017249768455020228,
+          "samples": 602
+        },
+        "sha256": "1de2fd81613fd940971b20af31f527e3fb22577fb91b2560d0bf286cad91d81d",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "3925a326-c05e-4942-a310-1803cab0bcf2",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "difference",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.00025,
+        "cycles": 1
+      },
+      "pass": false,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "3925a326-c05e-4942-a310-1803cab0bcf2",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "3925a326-c05e-4942-a310-1803cab0bcf2",
+            "operation": "difference",
+            "voxelM": 0.00025,
+            "elapsedMs": 173.0762,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 2.879489013671875e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/3925a326-c05e-4942-a310-1803cab0bcf2/difference-0.stl",
+                "sha256": "0345ddd4639d29696c37ad3ea98b2635f4a5169a63488feb68963522b7584fea",
+                "artifactUnit": "m",
+                "peakKernelBytes": 11460800,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.25 real         0.63 user         0.08 sys\n           130433024  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               11049  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                 132  voluntary context switches\n                6498  involuntary context switches\n          4527453191  instructions retired\n          1889908851  cycles elapsed\n           115345536  peak memory footprint\n",
+        "wallMs": 259.5707500586286,
+        "maximumResidentBytes": 130433024
+      },
+      "independentQa": {
+        "pass": false,
+        "triangleCount": 59644,
+        "vertexCount": 29813,
+        "components": 1,
+        "eulerCharacteristic": 15,
+        "nonmanifoldEdges": 21,
+        "inconsistentEdges": 9,
+        "degenerateFaces": 22,
+        "duplicateFaces": 1,
+        "nonfiniteNormals": 6,
+        "signedVolumeM3": 2.8769116181775876e-06,
+        "analyticVolumeM3": 2.879793265790644e-06,
+        "relativeVolumeError": 0.0010006439168004182,
+        "centroidM": [
+          -0.002274731301155015,
+          -1.4741328366632016e-18,
+          1.8114959883685063e-18
+        ],
+        "centroidErrorM": 2.004028427741826e-06,
+        "boundsM": [
+          [
+            -0.009996874257922173,
+            -0.009996874257922173,
+            -0.009996874257922173
+          ],
+          [
+            0.0048547727055847645,
+            0.009996874257922173,
+            0.009996874257922173
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 3.299334224490108e-06,
+          "max": 0.0001005762434479595,
+          "samples": 89457
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.00013968103597645603,
+          "max": 0.00019765331326445986,
+          "samples": 402
+        },
+        "sha256": "0345ddd4639d29696c37ad3ea98b2635f4a5169a63488feb68963522b7584fea",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "2f1be241-88ab-4196-801e-27f8706e1ad0",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "intersection",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.00025,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "2f1be241-88ab-4196-801e-27f8706e1ad0",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "2f1be241-88ab-4196-801e-27f8706e1ad0",
+            "operation": "intersection",
+            "voxelM": 0.00025,
+            "elapsedMs": 93.3237,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 1.3086307373046876e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/2f1be241-88ab-4196-801e-27f8706e1ad0/intersection-0.stl",
+                "sha256": "f1005c29bbf41ed0e7e7bc5f015e89ce7e4a8e910c47defede62943ecfe8d6ec",
+                "artifactUnit": "m",
+                "peakKernelBytes": 10779008,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.18 real         0.38 user         0.05 sys\n           133201920  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                9992  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                  53  voluntary context switches\n                4703  involuntary context switches\n          2720807352  instructions retired\n          1176738460  cycles elapsed\n           101943424  peak memory footprint\n",
+        "wallMs": 185.48770807683468,
+        "maximumResidentBytes": 133201920
+      },
+      "independentQa": {
+        "pass": true,
+        "triangleCount": 30716,
+        "vertexCount": 15360,
+        "components": 1,
+        "eulerCharacteristic": 2,
+        "nonmanifoldEdges": 0,
+        "inconsistentEdges": 0,
+        "degenerateFaces": 0,
+        "duplicateFaces": 0,
+        "nonfiniteNormals": 0,
+        "signedVolumeM3": 1.3071645983978426e-06,
+        "analyticVolumeM3": 1.3089969389957474e-06,
+        "relativeVolumeError": 0.0013998051052056455,
+        "centroidM": [
+          0.005000000001563895,
+          7.781449737285765e-18,
+          -4.500768074995439e-18
+        ],
+        "centroidErrorM": 1.5638948469823505e-12,
+        "boundsM": [
+          [
+            3.1257334285328398e-06,
+            -0.008583694696426392,
+            -0.008583694696426392
+          ],
+          [
+            0.009996874257922173,
+            0.008583694696426392,
+            0.008583694696426392
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 3.187123519024851e-06,
+          "max": 5.492836600847102e-05,
+          "samples": 46076
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.00012916027546007786,
+          "max": 0.00015172560705596603,
+          "samples": 198
+        },
+        "sha256": "f1005c29bbf41ed0e7e7bc5f015e89ce7e4a8e910c47defede62943ecfe8d6ec",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "da3eee08-4f11-4b75-8d46-6554a7313407",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "self_union",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.00025,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "da3eee08-4f11-4b75-8d46-6554a7313407",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "da3eee08-4f11-4b75-8d46-6554a7313407",
+            "operation": "self_union",
+            "voxelM": 0.00025,
+            "elapsedMs": 142.968,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": false,
+                "nativeVolumeM3": 4.1876357421875e-06,
+                "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/da3eee08-4f11-4b75-8d46-6554a7313407/self_union-0.stl",
+                "sha256": "3f4e538b7fbc982be41fccf09d02fa79a3fcc46227244019e4f543edb1c02d30",
+                "artifactUnit": "m",
+                "peakKernelBytes": 11452224,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.22 real         0.60 user         0.05 sys\n           146915328  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               10866  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                 133  voluntary context switches\n                2379  involuntary context switches\n          4477411494  instructions retired\n          1803508238  cycles elapsed\n           115722368  peak memory footprint\n",
+        "wallMs": 225.60733405407518,
+        "maximumResidentBytes": 146915328
+      },
+      "independentQa": {
+        "pass": true,
+        "triangleCount": 60156,
+        "vertexCount": 30080,
+        "components": 1,
+        "eulerCharacteristic": 2,
+        "nonmanifoldEdges": 0,
+        "inconsistentEdges": 0,
+        "degenerateFaces": 0,
+        "duplicateFaces": 0,
+        "nonfiniteNormals": 0,
+        "signedVolumeM3": 4.1857921877284495e-06,
+        "analyticVolumeM3": 4.188790204786391e-06,
+        "relativeVolumeError": 0.000715723851367897,
+        "centroidM": [
+          -5.16572419067823e-18,
+          5.6248346313253515e-18,
+          -1.6196114664684422e-18
+        ],
+        "centroidErrorM": 7.806831133451736e-18,
+        "boundsM": [
+          [
+            -0.009996874257922173,
+            -0.009996874257922173,
+            -0.009996874257922173
+          ],
+          [
+            0.009996874257922173,
+            0.009996874257922173,
+            0.009996874257922173
+          ]
+        ],
+        "forwardAnalyticSdfM": {
+          "p95": 3.193515944160518e-06,
+          "max": 3.682649920670744e-06,
+          "samples": 90236
+        },
+        "reverseNearestVertexUpperBoundM": {
+          "p95": 0.0001333516580752456,
+          "max": 0.00017249768455020228,
+          "samples": 400
+        },
+        "sha256": "3f4e538b7fbc982be41fccf09d02fa79a3fcc46227244019e4f543edb1c02d30",
+        "acceptanceScope": "P02 software fixture only; unverified exploratory mesh"
+      }
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "7fd7f86f-0351-4533-9595-12e9176233ce",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "self_difference",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.00025,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "7fd7f86f-0351-4533-9595-12e9176233ce",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "7fd7f86f-0351-4533-9595-12e9176233ce",
+            "operation": "self_difference",
+            "voxelM": 0.00025,
+            "elapsedMs": 17.9426,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": true,
+                "nativeVolumeM3": 0,
+                "path": null,
+                "sha256": null,
+                "artifactUnit": "m",
+                "peakKernelBytes": 11452224,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.11 real         0.09 user         0.02 sys\n            79577088  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6478  page reclaims\n                  33  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                  13  voluntary context switches\n                2214  involuntary context switches\n           757618095  instructions retired\n           341368171  cycles elapsed\n            49465408  peak memory footprint\n",
+        "wallMs": 122.68100003711879,
+        "maximumResidentBytes": 79577088
+      },
+      "independentQa": null
+    },
+    {
+      "request": {
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "8157f247-e2be-4e5d-9b72-c59151efabc0",
+        "unit": "m",
+        "frame": "right-handed-xyz",
+        "operation": "disjoint_intersection",
+        "radiusM": 0.01,
+        "separationM": 0.01,
+        "voxelM": 0.00025,
+        "cycles": 1
+      },
+      "pass": true,
+      "run": {
+        "exitCode": 0,
+        "events": [
+          {
+            "type": "started",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "8157f247-e2be-4e5d-9b72-c59151efabc0",
+            "nativeName": "PicoGK Core Library",
+            "nativeVersion": "26.2.0",
+            "nativeBuild": "2026-06-05 21:31:47 picogk",
+            "inputUnit": "m",
+            "kernelUnit": "mm"
+          },
+          {
+            "type": "completed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "8157f247-e2be-4e5d-9b72-c59151efabc0",
+            "operation": "disjoint_intersection",
+            "voxelM": 0.00025,
+            "elapsedMs": 14.7597,
+            "peakWorkingSetBytes": 0,
+            "cycles": [
+              {
+                "cycle": 0,
+                "empty": true,
+                "nativeVolumeM3": 0,
+                "path": null,
+                "sha256": null,
+                "artifactUnit": "m",
+                "peakKernelBytes": 6554736,
+                "nativeBytesBefore": 0,
+                "nativeBytesAfter": 0,
+                "nativeAllocationsAfter": 0
+              }
+            ]
+          }
+        ],
+        "stderr": "Disposing Library\nDone Disposing Library\n        0.16 real         0.10 user         0.02 sys\n            77611008  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6282  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   7  voluntary context switches\n                2398  involuntary context switches\n           716471557  instructions retired\n           354402685  cycles elapsed\n            47466496  peak memory footprint\n",
+        "wallMs": 169.73433399107307,
+        "maximumResidentBytes": 77611008
+      },
+      "independentQa": null
+    }
+  ],
+  "lifecycle": {
+    "exitCode": 0,
+    "events": [
+      {
+        "type": "started",
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "b3073705-b70d-4f44-bf7d-73b9dbcede97",
+        "nativeName": "PicoGK Core Library",
+        "nativeVersion": "26.2.0",
+        "nativeBuild": "2026-06-05 21:31:47 picogk",
+        "inputUnit": "m",
+        "kernelUnit": "mm"
+      },
+      {
+        "type": "completed",
+        "schema": "cosmos.picogk.feasibility.v1",
+        "correlationId": "b3073705-b70d-4f44-bf7d-73b9dbcede97",
+        "operation": "sphere",
+        "voxelM": 0.001,
+        "elapsedMs": 115.2359,
+        "peakWorkingSetBytes": 0,
+        "cycles": [
+          {
+            "cycle": 0,
+            "empty": false,
+            "nativeVolumeM3": 4.16379541015625e-06,
+            "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/lifecycle/sphere-0.stl",
+            "sha256": "e6769f35e83ea078e3898260465bdc022ef530173398c0e19bf265b31fed33c5",
+            "artifactUnit": "m",
+            "peakKernelBytes": 7646624,
+            "nativeBytesBefore": 0,
+            "nativeBytesAfter": 0,
+            "nativeAllocationsAfter": 0
+          },
+          {
+            "cycle": 1,
+            "empty": false,
+            "nativeVolumeM3": 4.16379541015625e-06,
+            "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/lifecycle/sphere-1.stl",
+            "sha256": "e6769f35e83ea078e3898260465bdc022ef530173398c0e19bf265b31fed33c5",
+            "artifactUnit": "m",
+            "peakKernelBytes": 7646624,
+            "nativeBytesBefore": 0,
+            "nativeBytesAfter": 0,
+            "nativeAllocationsAfter": 0
+          },
+          {
+            "cycle": 2,
+            "empty": false,
+            "nativeVolumeM3": 4.16379541015625e-06,
+            "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/lifecycle/sphere-2.stl",
+            "sha256": "e6769f35e83ea078e3898260465bdc022ef530173398c0e19bf265b31fed33c5",
+            "artifactUnit": "m",
+            "peakKernelBytes": 7646624,
+            "nativeBytesBefore": 0,
+            "nativeBytesAfter": 0,
+            "nativeAllocationsAfter": 0
+          },
+          {
+            "cycle": 3,
+            "empty": false,
+            "nativeVolumeM3": 4.16379541015625e-06,
+            "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/lifecycle/sphere-3.stl",
+            "sha256": "e6769f35e83ea078e3898260465bdc022ef530173398c0e19bf265b31fed33c5",
+            "artifactUnit": "m",
+            "peakKernelBytes": 7646624,
+            "nativeBytesBefore": 0,
+            "nativeBytesAfter": 0,
+            "nativeAllocationsAfter": 0
+          },
+          {
+            "cycle": 4,
+            "empty": false,
+            "nativeVolumeM3": 4.16379541015625e-06,
+            "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/lifecycle/sphere-4.stl",
+            "sha256": "e6769f35e83ea078e3898260465bdc022ef530173398c0e19bf265b31fed33c5",
+            "artifactUnit": "m",
+            "peakKernelBytes": 7646624,
+            "nativeBytesBefore": 0,
+            "nativeBytesAfter": 0,
+            "nativeAllocationsAfter": 0
+          }
+        ]
+      }
+    ],
+    "stderr": "Disposing Library\nDone Disposing Library\nDisposing Library\nDone Disposing Library\nDisposing Library\nDone Disposing Library\nDisposing Library\nDone Disposing Library\nDisposing Library\nDone Disposing Library\n        0.19 real         0.37 user         0.08 sys\n           151273472  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               10800  page reclaims\n                   2  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                  18  voluntary context switches\n               12135  involuntary context switches\n          2597041444  instructions retired\n          1247953245  cycles elapsed\n           120113344  peak memory footprint\n",
+    "wallMs": 198.0452499119565,
+    "maximumResidentBytes": 151273472,
+    "pass": true
+  },
+  "negativeCases": [
+    {
+      "name": "invalid-schema-unknown",
+      "expectedCode": "SCHEMA",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "2ae17433-bc27-4ac5-9c61-0bb6337b6662",
+            "error": {
+              "code": "SCHEMA",
+              "message": "Unsupported schema."
+            }
+          }
+        ],
+        "stderr": "        0.11 real         0.07 user         0.01 sys\n            51216384  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4575  page reclaims\n                   4  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                 742  involuntary context switches\n           472740698  instructions retired\n           235889815  cycles elapsed\n            30410496  peak memory footprint\n",
+        "wallMs": 114.33808295987546,
+        "maximumResidentBytes": 51216384
+      }
+    },
+    {
+      "name": "invalid-unit-mm",
+      "expectedCode": "UNIT",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "9d39c7b3-e08e-4af0-a835-a2d88e56da0b",
+            "error": {
+              "code": "UNIT",
+              "message": "Inputs must use SI metres."
+            }
+          }
+        ],
+        "stderr": "        0.08 real         0.05 user         0.01 sys\n            51183616  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4576  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                 375  involuntary context switches\n           472208915  instructions retired\n           206266307  cycles elapsed\n            30361280  peak memory footprint\n",
+        "wallMs": 94.27749994210899,
+        "maximumResidentBytes": 51183616
+      }
+    },
+    {
+      "name": "invalid-frame-left-handed-xyz",
+      "expectedCode": "FRAME",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "23a015a5-b657-4ace-adc7-bfc5e4d83804",
+            "error": {
+              "code": "FRAME",
+              "message": "Unsupported coordinate frame."
+            }
+          }
+        ],
+        "stderr": "        0.05 real         0.04 user         0.01 sys\n            51134464  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4573  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                  86  involuntary context switches\n           471142932  instructions retired\n           175721762  cycles elapsed\n            30328576  peak memory footprint\n",
+        "wallMs": 62.406125012785196,
+        "maximumResidentBytes": 51134464
+      }
+    },
+    {
+      "name": "invalid-operation-shell-command",
+      "expectedCode": "OPERATION",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "6b1bbc6b-b759-4c3d-9e94-151f7d11ebb5",
+            "error": {
+              "code": "OPERATION",
+              "message": "Unsupported Boolean operation."
+            }
+          }
+        ],
+        "stderr": "        0.06 real         0.05 user         0.01 sys\n            51167232  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4575  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                 199  involuntary context switches\n           473851947  instructions retired\n           193390275  cycles elapsed\n            30344896  peak memory footprint\n",
+        "wallMs": 72.60783296078444,
+        "maximumResidentBytes": 51167232
+      }
+    },
+    {
+      "name": "invalid-radiusM--1",
+      "expectedCode": "DIMENSION",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "3bd9371c-3b16-4c20-a558-863432b9dd7d",
+            "error": {
+              "code": "DIMENSION",
+              "message": "Outside bounded probe dimensions."
+            }
+          }
+        ],
+        "stderr": "        0.11 real         0.07 user         0.01 sys\n            51167232  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4575  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                 574  involuntary context switches\n           476435870  instructions retired\n           242867175  cycles elapsed\n            30361344  peak memory footprint\n",
+        "wallMs": 115.4020840767771,
+        "maximumResidentBytes": 51167232
+      }
+    },
+    {
+      "name": "invalid-radiusM-1",
+      "expectedCode": "DIMENSION",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "675ddcbb-63f3-41f2-99e9-50c572c622d6",
+            "error": {
+              "code": "DIMENSION",
+              "message": "Outside bounded probe dimensions."
+            }
+          }
+        ],
+        "stderr": "        0.09 real         0.05 user         0.01 sys\n            51167232  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4577  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                 413  involuntary context switches\n           472088202  instructions retired\n           213840317  cycles elapsed\n            30377792  peak memory footprint\n",
+        "wallMs": 105.88812502101064,
+        "maximumResidentBytes": 51167232
+      }
+    },
+    {
+      "name": "invalid-voxelM-0",
+      "expectedCode": "RESOLUTION",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "4c897ce9-8b2a-4806-94c5-253daa9e4436",
+            "error": {
+              "code": "RESOLUTION",
+              "message": "Outside bounded probe resolution."
+            }
+          }
+        ],
+        "stderr": "        0.07 real         0.05 user         0.01 sys\n            51052544  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4567  page reclaims\n                   2  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                 171  involuntary context switches\n           468092871  instructions retired\n           190515561  cycles elapsed\n            30246656  peak memory footprint\n",
+        "wallMs": 74.85429104417562,
+        "maximumResidentBytes": 51052544
+      }
+    },
+    {
+      "name": "invalid-voxelM-1e-09",
+      "expectedCode": "RESOLUTION",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "9bac5bb5-a59d-465a-9d9b-31006e229c7c",
+            "error": {
+              "code": "RESOLUTION",
+              "message": "Outside bounded probe resolution."
+            }
+          }
+        ],
+        "stderr": "        0.06 real         0.05 user         0.01 sys\n            51183616  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4576  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                 113  involuntary context switches\n           467326214  instructions retired\n           187124929  cycles elapsed\n            30361280  peak memory footprint\n",
+        "wallMs": 68.77637503203005,
+        "maximumResidentBytes": 51183616
+      }
+    },
+    {
+      "name": "invalid-cycles-100",
+      "expectedCode": "CYCLES",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "df529c1e-9fec-4fd8-8aa0-916e9589e293",
+            "error": {
+              "code": "CYCLES",
+              "message": "Expected 1 to 10 lifecycle cycles."
+            }
+          }
+        ],
+        "stderr": "        0.13 real         0.07 user         0.01 sys\n            51200000  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4577  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                 738  involuntary context switches\n           474464259  instructions retired\n           253762089  cycles elapsed\n            30410560  peak memory footprint\n",
+        "wallMs": 142.8723749704659,
+        "maximumResidentBytes": 51200000
+      }
+    },
+    {
+      "name": "invalid-correlationId-not-a-uuid",
+      "expectedCode": "CORRELATION",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "not-a-uuid",
+            "error": {
+              "code": "CORRELATION",
+              "message": "Expected a UUID."
+            }
+          }
+        ],
+        "stderr": "        0.06 real         0.04 user         0.01 sys\n            51167232  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4575  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                 154  involuntary context switches\n           467561773  instructions retired\n           185737350  cycles elapsed\n            30328448  peak memory footprint\n",
+        "wallMs": 69.36249998398125,
+        "maximumResidentBytes": 51167232
+      }
+    },
+    {
+      "name": "oversized",
+      "expectedCode": "REQUEST_TOO_LARGE",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": null,
+            "error": {
+              "code": "REQUEST_TOO_LARGE",
+              "message": "Request exceeds 8192 characters."
+            }
+          }
+        ],
+        "stderr": "        0.05 real         0.03 user         0.01 sys\n            50610176  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4541  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                  69  involuntary context switches\n           396200504  instructions retired\n           152948028  cycles elapsed\n            29869888  peak memory footprint\n",
+        "wallMs": 56.82391708251089,
+        "maximumResidentBytes": 50610176
+      }
+    },
+    {
+      "name": "malformed",
+      "expectedCode": "INVALID_JSON",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": null,
+            "error": {
+              "code": "INVALID_JSON",
+              "message": "Expected depth to be zero at the end of the JSON payload. There is an open JSON object or array that should be closed. LineNumber: 0 | BytePositionInLine: 1."
+            }
+          }
+        ],
+        "stderr": "        0.06 real         0.04 user         0.01 sys\n            52609024  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4664  page reclaims\n                   4  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                  96  involuntary context switches\n           426044801  instructions retired\n           162968772  cycles elapsed\n            30590784  peak memory footprint\n",
+        "wallMs": 64.2564999870956,
+        "maximumResidentBytes": 52609024
+      }
+    },
+    {
+      "name": "nan",
+      "expectedCode": "INVALID_JSON",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": null,
+            "error": {
+              "code": "INVALID_JSON",
+              "message": "'N' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 176."
+            }
+          }
+        ],
+        "stderr": "        0.05 real         0.04 user         0.01 sys\n            52609024  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4667  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                  93  involuntary context switches\n           426399264  instructions retired\n           168172100  cycles elapsed\n            30640064  peak memory footprint\n",
+        "wallMs": 61.83991697616875,
+        "maximumResidentBytes": 52609024
+      }
+    },
+    {
+      "name": "missing",
+      "expectedCode": "FIELDS",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": null,
+            "error": {
+              "code": "FIELDS",
+              "message": "Expected exactly the required fields."
+            }
+          }
+        ],
+        "stderr": "        0.05 real         0.04 user         0.01 sys\n            50708480  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4547  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                  83  involuntary context switches\n           406248245  instructions retired\n           157579080  cycles elapsed\n            29935296  peak memory footprint\n",
+        "wallMs": 56.860667071305215,
+        "maximumResidentBytes": 50708480
+      }
+    },
+    {
+      "name": "extra",
+      "expectedCode": "FIELDS",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": null,
+            "error": {
+              "code": "FIELDS",
+              "message": "Expected exactly the required fields."
+            }
+          }
+        ],
+        "stderr": "        0.06 real         0.05 user         0.01 sys\n            50642944  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4543  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                 179  involuntary context switches\n           410126985  instructions retired\n           181761949  cycles elapsed\n            29869760  peak memory footprint\n",
+        "wallMs": 73.34629201795906,
+        "maximumResidentBytes": 50642944
+      }
+    },
+    {
+      "name": "duplicate",
+      "expectedCode": "FIELDS",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": null,
+            "error": {
+              "code": "FIELDS",
+              "message": "Expected exactly the required fields."
+            }
+          }
+        ],
+        "stderr": "        0.05 real         0.04 user         0.01 sys\n            50774016  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4551  page reclaims\n                   1  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                  74  involuntary context switches\n           411235943  instructions retired\n           165127607  cycles elapsed\n            30050176  peak memory footprint\n",
+        "wallMs": 60.189833980984986,
+        "maximumResidentBytes": 50774016
+      }
+    },
+    {
+      "name": "missing-native",
+      "expectedCode": "NATIVE_LOAD",
+      "pass": true,
+      "run": {
+        "exitCode": 2,
+        "events": [
+          {
+            "type": "failed",
+            "schema": "cosmos.picogk.feasibility.v1",
+            "correlationId": "ddfea16a-df53-4644-89cf-74213f22ae06",
+            "error": {
+              "code": "NATIVE_LOAD",
+              "message": "Unable to load shared library 'picogk.26.2' or one of its dependencies. In order to help diagnose loading problems, consider setting the DYLD_PRINT_LIBRARIES environment variable: \ndlopen(/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/picogk.26.2.dylib, 0x0001): tried: '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/picogk.26.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/picogk.26.2.dylib' (no such file), '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/picogk.26.2.dylib' (no such file)\ndlopen(/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/picogk.26.2.dylib, 0x0001): tried: '/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/picogk.26.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/picogk.26.2.dylib' (no such file), '/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/picogk.26.2.dylib' (no such file)\ndlopen(/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/picogk.26.2.dylib, 0x0001): tried: '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/picogk.26.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/picogk.26.2.dylib' (no such file), '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/picogk.26.2.dylib' (no such file)\ndlopen(picogk.26.2.dylib, 0x0001): tried: 'picogk.26.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OSpicogk.26.2.dylib' (no such file), '/usr/lib/picogk.26.2.dylib' (no such file, not in dyld cache), 'picogk.26.2.dylib' (no such file)\ndlopen(/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/libpicogk.26.2.dylib, 0x0001): tried: '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/libpicogk.26.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/libpicogk.26.2.dylib' (no such file), '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/libpicogk.26.2.dylib' (no such file)\ndlopen(/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/libpicogk.26.2.dylib, 0x0001): tried: '/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/libpicogk.26.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/libpicogk.26.2.dylib' (no such file), '/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/libpicogk.26.2.dylib' (no such file)\ndlopen(/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/libpicogk.26.2.dylib, 0x0001): tried: '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/libpicogk.26.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/libpicogk.26.2.dylib' (no such file), '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/libpicogk.26.2.dylib' (no such file)\ndlopen(libpicogk.26.2.dylib, 0x0001): tried: 'libpicogk.26.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OSlibpicogk.26.2.dylib' (no such file), '/usr/lib/libpicogk.26.2.dylib' (no such file, not in dyld cache), 'libpicogk.26.2.dylib' (no such file)\ndlopen(/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/picogk.26.2, 0x0001): tried: '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/picogk.26.2' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/picogk.26.2' (no such file), '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/picogk.26.2' (no such file)\ndlopen(/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/picogk.26.2, 0x0001): tried: '/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/picogk.26.2' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/picogk.26.2' (no such file), '/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/picogk.26.2' (no such file)\ndlopen(/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/picogk.26.2, 0x0001): tried: '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/picogk.26.2' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/picogk.26.2' (no such file), '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/picogk.26.2' (no such file)\ndlopen(picogk.26.2, 0x0001): tried: 'picogk.26.2' (no such file), '/System/Volumes/Preboot/Cryptexes/OSpicogk.26.2' (no such file), '/usr/lib/picogk.26.2' (no such file, not in dyld cache), 'picogk.26.2' (no such file)\ndlopen(/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/libpicogk.26.2, 0x0001): tried: '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/libpicogk.26.2' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/libpicogk.26.2' (no such file), '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/runtimes/osx/native/libpicogk.26.2' (no such file)\ndlopen(/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/libpicogk.26.2, 0x0001): tried: '/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/libpicogk.26.2' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/libpicogk.26.2' (no such file), '/private/tmp/cosmos-p02.rOuMVo/dotnet9/shared/Microsoft.NETCore.App/9.0.20/libpicogk.26.2' (no such file)\ndlopen(/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/libpicogk.26.2, 0x0001): tried: '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/libpicogk.26.2' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/libpicogk.26.2' (no such file), '/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/missing-native-bin/libpicogk.26.2' (no such file)\ndlopen(libpicogk.26.2, 0x0001): tried: 'libpicogk.26.2' (no such file), '/System/Volumes/Preboot/Cryptexes/OSlibpicogk.26.2' (no such file), '/usr/lib/libpicogk.26.2' (no such file, not in dyld cache), 'libpicogk.26.2' (no such file)\n"
+            }
+          }
+        ],
+        "stderr": "        0.14 real         0.08 user         0.02 sys\n            53559296  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                4770  page reclaims\n                   6  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   5  voluntary context switches\n                1012  involuntary context switches\n           513389083  instructions retired\n           276033441  cycles elapsed\n            31295296  peak memory footprint\n",
+        "wallMs": 148.1530419550836,
+        "maximumResidentBytes": 53559296
+      }
+    }
+  ],
+  "cancellation": {
+    "exitCode": -15,
+    "pass": true,
+    "scope": "Termination before request ingestion; not mid-compute cancellation or atomic publish proof",
+    "retry": {
+      "exitCode": 0,
+      "events": [
+        {
+          "type": "started",
+          "schema": "cosmos.picogk.feasibility.v1",
+          "correlationId": "6c4e718a-ae5e-49d2-b50e-a90068c5843c",
+          "nativeName": "PicoGK Core Library",
+          "nativeVersion": "26.2.0",
+          "nativeBuild": "2026-06-05 21:31:47 picogk",
+          "inputUnit": "m",
+          "kernelUnit": "mm"
+        },
+        {
+          "type": "completed",
+          "schema": "cosmos.picogk.feasibility.v1",
+          "correlationId": "6c4e718a-ae5e-49d2-b50e-a90068c5843c",
+          "operation": "sphere",
+          "voxelM": 0.001,
+          "elapsedMs": 36.7296,
+          "peakWorkingSetBytes": 0,
+          "cycles": [
+            {
+              "cycle": 0,
+              "empty": false,
+              "nativeVolumeM3": 4.16379541015625e-06,
+              "path": "/private/tmp/cosmos-p03.pfPm6s/p02-raw-retest/retry-after-cancel/sphere-0.stl",
+              "sha256": "e6769f35e83ea078e3898260465bdc022ef530173398c0e19bf265b31fed33c5",
+              "artifactUnit": "m",
+              "peakKernelBytes": 7646624,
+              "nativeBytesBefore": 0,
+              "nativeBytesAfter": 0,
+              "nativeAllocationsAfter": 0
+            }
+          ]
+        }
+      ],
+      "stderr": "Disposing Library\nDone Disposing Library\n        0.13 real         0.13 user         0.04 sys\n           134823936  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               10229  page reclaims\n                  33  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                  16  voluntary context switches\n                4122  involuntary context switches\n          1092568587  instructions retired\n           532087848  cycles elapsed\n           110626816  peak memory footprint\n",
+      "wallMs": 140.7686669845134,
+      "maximumResidentBytes": 134823936
+    }
+  },
+  "convergence": {
+    "sphere": {
+      "errorsCoarseToFine": [
+        0.011518041732748114,
+        0.002866473669187525,
+        0.000715723851367897
+      ],
+      "pass": true
+    },
+    "union": {
+      "errorsCoarseToFine": [
+        0.00933670704891471,
+        0.0023572188327347044,
+        0.0005960909295393485
+      ],
+      "pass": true
+    },
+    "difference": {
+      "errorsCoarseToFine": [
+        0.016274405143204024,
+        0.003972400643896462,
+        0.0010006439168004182
+      ],
+      "pass": true
+    },
+    "intersection": {
+      "errorsCoarseToFine": [
+        0.02078086374468404,
+        0.005292451207709405,
+        0.0013998051052056455
+      ],
+      "pass": true
+    }
+  },
+  "allPass": false
+}

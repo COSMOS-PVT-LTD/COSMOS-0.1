@@ -1,0 +1,92 @@
+{
+  "evidence_sha256": "44197c2adb47669c99d5db91fcdc39893c1beaaabb465fe42255afbe721025f3",
+  "claim": {
+    "applicability": "Recorded linked assumptions only; simulation-use applicability is not established",
+    "assumptions": [
+      {
+        "affected_entity_ids": [
+          "EQ-p11-synthetic"
+        ],
+        "applicability": "Synthetic constant isotropic conductivity; no engine-use approval",
+        "approved_by": null,
+        "assumption_id": "ASM-p11-synthetic",
+        "category": "model",
+        "confidence": 0.5,
+        "created_by": "synthetic test author",
+        "justification": "Fixture only",
+        "lifecycle": "CANDIDATE",
+        "provenance": {
+          "chapter": null,
+          "document_id": "DOC-p11-synthetic",
+          "extraction_method": "manual",
+          "page": 1,
+          "reviewer": null,
+          "section": null,
+          "source_reference_id": "REF-p11-synthetic",
+          "version": "1.0.0"
+        },
+        "statement": "Synthetic constant conductivity assumption",
+        "version": "1.0.0"
+      }
+    ],
+    "citation": {
+      "authors": [
+        "Synthetic test author"
+      ],
+      "status": "APPROVED",
+      "title": "P11 synthetic contract citation"
+    },
+    "claim_id": "EQ-p11-synthetic",
+    "equation": {
+      "category": "HEAT_TRANSFER",
+      "document_id": "DOC-p11-synthetic",
+      "expression": "Q = k * A * dT / L",
+      "page": 1,
+      "recorded_status": "APPROVED",
+      "reference_id": "REF-p11-synthetic",
+      "section": "synthetic contract",
+      "version": "1.0.0"
+    },
+    "evidence_url": "/api/knowledge-reports/claims/EQ-p11-synthetic",
+    "experimental_validation": "not-performed",
+    "independent_acceptance": false,
+    "production_handoff": false,
+    "review_events": [
+      {
+        "action": "APPROVE",
+        "actor_id": "kf-system-approver",
+        "entity_hash": "23679dd7cf8ca1e294bf919edc653749123f6f95a68b8c14def8aae16e38f46e",
+        "entity_id": "EQ-p11-synthetic",
+        "timestamp": "2026-10-11T04:19:19.302644+00:00"
+      }
+    ],
+    "schema_version": "p11-claim-v1",
+    "source": {
+      "evidence_url": "/api/knowledge-reports/sources/SRC-p11-synthetic",
+      "excerpt": "P11 synthetic source contract. Q = k * A * dT / L. Assumption: constant conductivity. Not a measured experiment or accepted engineering model.",
+      "excerpt_scope": "First 2048 recovered characters; derivative excerpt is not an exact original-page transcription",
+      "filename": "p11-synthetic.txt",
+      "independent_acceptance": false,
+      "integrity": "verified-original-bytes",
+      "license": "repository license",
+      "metadata_url": "/api/sources/SRC-p11-synthetic",
+      "original_available": true,
+      "parent_source_id": null,
+      "project_id": "GLOBAL",
+      "recorded_approved": true,
+      "recorded_status": "APPROVED",
+      "rights_status": "INTERNAL",
+      "sha256": "e63403f6a71c399bac3109463609c299d50d219cd20b826e6f7816e548897a0a",
+      "size_bytes": 142,
+      "source_id": "SRC-p11-synthetic",
+      "source_origin": "synthetic-contract-fixture",
+      "title": "P11 synthetic conduction source",
+      "version": 1
+    },
+    "source_binding": "Exact existing document identity to vault source; not title or semantic similarity",
+    "source_navigation_status": "recorded-approved-source-and-review",
+    "title": "Synthetic conduction claim",
+    "units": "Inspect source and recorded assumptions; equation unit metadata is not inferred"
+  },
+  "canonical_json": "{\"applicability\":\"Recorded linked assumptions only; simulation-use applicability is not established\",\"assumptions\":[{\"affected_entity_ids\":[\"EQ-p11-synthetic\"],\"applicability\":\"Synthetic constant isotropic conductivity; no engine-use approval\",\"approved_by\":null,\"assumption_id\":\"ASM-p11-synthetic\",\"category\":\"model\",\"confidence\":0.5,\"created_by\":\"synthetic test author\",\"justification\":\"Fixture only\",\"lifecycle\":\"CANDIDATE\",\"provenance\":{\"chapter\":null,\"document_id\":\"DOC-p11-synthetic\",\"extraction_method\":\"manual\",\"page\":1,\"reviewer\":null,\"section\":null,\"source_reference_id\":\"REF-p11-synthetic\",\"version\":\"1.0.0\"},\"statement\":\"Synthetic constant conductivity assumption\",\"version\":\"1.0.0\"}],\"citation\":{\"authors\":[\"Synthetic test author\"],\"status\":\"APPROVED\",\"title\":\"P11 synthetic contract citation\"},\"claim_id\":\"EQ-p11-synthetic\",\"equation\":{\"category\":\"HEAT_TRANSFER\",\"document_id\":\"DOC-p11-synthetic\",\"expression\":\"Q = k * A * dT / L\",\"page\":1,\"recorded_status\":\"APPROVED\",\"reference_id\":\"REF-p11-synthetic\",\"section\":\"synthetic contract\",\"version\":\"1.0.0\"},\"evidence_url\":\"/api/knowledge-reports/claims/EQ-p11-synthetic\",\"experimental_validation\":\"not-performed\",\"independent_acceptance\":false,\"production_handoff\":false,\"review_events\":[{\"action\":\"APPROVE\",\"actor_id\":\"kf-system-approver\",\"entity_hash\":\"23679dd7cf8ca1e294bf919edc653749123f6f95a68b8c14def8aae16e38f46e\",\"entity_id\":\"EQ-p11-synthetic\",\"timestamp\":\"2026-10-11T04:19:19.302644+00:00\"}],\"schema_version\":\"p11-claim-v1\",\"source\":{\"evidence_url\":\"/api/knowledge-reports/sources/SRC-p11-synthetic\",\"excerpt\":\"P11 synthetic source contract. Q = k * A * dT / L. Assumption: constant conductivity. Not a measured experiment or accepted engineering model.\",\"excerpt_scope\":\"First 2048 recovered characters; derivative excerpt is not an exact original-page transcription\",\"filename\":\"p11-synthetic.txt\",\"independent_acceptance\":false,\"integrity\":\"verified-original-bytes\",\"license\":\"repository license\",\"metadata_url\":\"/api/sources/SRC-p11-synthetic\",\"original_available\":true,\"parent_source_id\":null,\"project_id\":\"GLOBAL\",\"recorded_approved\":true,\"recorded_status\":\"APPROVED\",\"rights_status\":\"INTERNAL\",\"sha256\":\"e63403f6a71c399bac3109463609c299d50d219cd20b826e6f7816e548897a0a\",\"size_bytes\":142,\"source_id\":\"SRC-p11-synthetic\",\"source_origin\":\"synthetic-contract-fixture\",\"title\":\"P11 synthetic conduction source\",\"version\":1},\"source_binding\":\"Exact existing document identity to vault source; not title or semantic similarity\",\"source_navigation_status\":\"recorded-approved-source-and-review\",\"title\":\"Synthetic conduction claim\",\"units\":\"Inspect source and recorded assumptions; equation unit metadata is not inferred\"}"
+}

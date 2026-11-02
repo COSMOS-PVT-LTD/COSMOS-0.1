@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any
@@ -184,7 +185,8 @@ class CalculationResult:
             self.status = ResultStatus.STALE
 
     def to_canonical_dict(self) -> dict[str, object]:
-        return {
+        """Return detached JSON DTOs; nested edits cannot mutate live results."""
+        return deepcopy({
             "assumptions": list(self.assumptions),
             "calculation_type": self.calculation_type,
             "design_revision": self.design_revision,
@@ -203,10 +205,11 @@ class CalculationResult:
             "validity": self.validity.to_canonical_dict(),
             "verification": self.verification.to_canonical_dict(),
             "warnings": list(self.warnings),
-        }
+        })
 
     @classmethod
     def from_canonical_dict(cls, data: dict[str, Any]) -> CalculationResult:
+        data = deepcopy(data)
         return cls(
             result_id=str(data.get("result_id") or uuid4()),
             calculation_type=str(data["calculation_type"]),

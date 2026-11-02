@@ -344,12 +344,11 @@
     $("cosmos-project-name").value = ctx.name || "";
     $("cosmos-project-system").value = ctx.system || "";
     $("cosmos-project-component").value = ctx.component || "";
-    $("cosmos-project-modal")?.classList.add("open");
-    $("cosmos-project-name")?.focus();
+    COSMOS.openDialog($("cosmos-project-modal"), $("cosmos-project-name"));
   };
 
   COSMOS.closeProjectModal = function closeProjectModal() {
-    $("cosmos-project-modal")?.classList.remove("open");
+    COSMOS.closeDialog($("cosmos-project-modal"));
   };
 
   COSMOS.saveProjectModal = function saveProjectModal() {
@@ -418,6 +417,7 @@
     if (!panel) return;
     const open = force !== undefined ? force : !panel.classList.contains("open");
     panel.classList.toggle("open", open);
+    panel.setAttribute("aria-hidden", open ? "false" : "true");
     if (open) COSMOS.markNotificationsRead();
   };
 
@@ -425,11 +425,13 @@
     const modal = $("cosmos-shortcuts-modal");
     if (!modal) return;
     const open = force !== undefined ? force : !modal.classList.contains("open");
-    modal.classList.toggle("open", open);
+    if (open) COSMOS.openDialog(modal, $("cosmos-shortcuts-close"));
+    else COSMOS.closeDialog(modal);
   };
 
   COSMOS.closeAllOverlays = function closeAllOverlays() {
     COSMOS.closeCommandPalette();
+    COSMOS.closeProfileModal();
     COSMOS.closeProjectModal();
     COSMOS.hideProperties();
     COSMOS.toggleJobManager(false);
@@ -527,15 +529,14 @@
     const input = $("cosmos-command-input");
     if (!modal || !input) return;
     commandOpen = true;
-    modal.classList.add("open");
     input.value = "";
     COSMOS.filterCommands("");
-    input.focus();
+    COSMOS.openDialog(modal, input, () => { commandOpen = false; });
   };
 
   COSMOS.closeCommandPalette = function closeCommandPalette() {
     commandOpen = false;
-    $("cosmos-command-palette")?.classList.remove("open");
+    COSMOS.closeDialog($("cosmos-command-palette"));
   };
 
   COSMOS.filterCommands = function filterCommands(query) {
@@ -729,16 +730,16 @@
 
       <div class="cosmos-overlay" id="cosmos-command-palette" aria-hidden="true">
         <div class="cosmos-command-card" role="dialog" aria-modal="true" aria-label="Command search">
-          <input type="search" id="cosmos-command-input" placeholder="Search commands, workbenches, files…" autocomplete="off" />
+          <input type="search" id="cosmos-command-input" aria-label="Search commands" placeholder="Search commands, workbenches, files…" autocomplete="off" />
           <div class="cosmos-command-results" id="cosmos-command-results"></div>
           <div class="cosmos-command-foot">↑↓ navigate · Enter run · Esc close</div>
         </div>
       </div>
 
       <div class="cosmos-overlay profile-modal" id="cosmos-project-modal" aria-hidden="true">
-        <div class="profile-panel cosmos-project-panel">
+        <div class="profile-panel cosmos-project-panel" role="dialog" aria-modal="true" aria-labelledby="cosmos-project-title">
           <div class="profile-panel-header">
-            <h2>Project Context</h2>
+            <h2 id="cosmos-project-title">Project Context</h2>
             <button type="button" class="profile-close" id="cosmos-project-close" aria-label="Close">✕</button>
           </div>
           <p class="profile-hint">Persistent engineering context shown across COSMOS workspaces.</p>
@@ -754,7 +755,7 @@
           <h3 id="cosmos-properties-title">Properties</h3>
           <button type="button" class="profile-close" id="cosmos-properties-close" aria-label="Close">✕</button>
         </div>
-        <dl class="cosmos-properties-body" id="cosmos-properties-body"></dl>
+        <div class="cosmos-properties-body" id="cosmos-properties-body"></div>
       </aside>
 
       <aside class="cosmos-side-panel wide" id="cosmos-job-manager" aria-hidden="true">
@@ -781,9 +782,9 @@
       </aside>
 
       <div class="cosmos-overlay profile-modal" id="cosmos-shortcuts-modal" aria-hidden="true">
-        <div class="profile-panel cosmos-shortcuts-panel">
+        <div class="profile-panel cosmos-shortcuts-panel" role="dialog" aria-modal="true" aria-labelledby="cosmos-shortcuts-title">
           <div class="profile-panel-header">
-            <h2>Keyboard Shortcuts</h2>
+            <h2 id="cosmos-shortcuts-title">Keyboard Shortcuts</h2>
             <button type="button" class="profile-close" id="cosmos-shortcuts-close" aria-label="Close">✕</button>
           </div>
           <dl class="cosmos-shortcuts-list">

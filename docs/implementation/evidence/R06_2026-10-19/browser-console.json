@@ -1,0 +1,8 @@
+[
+  {
+    "level": "warn",
+    "message": "{\"phase\":\"P04\",\"code\":\"MANAGED_DRAFTS\",\"message\":\"Save or explicitly discard managed project drafts before navigation\"}",
+    "timestamp": "2026-10-19T09:41:05.474Z",
+    "url": "http://127.0.0.1:8866/assets/app-shell/shell.js"
+  }
+]

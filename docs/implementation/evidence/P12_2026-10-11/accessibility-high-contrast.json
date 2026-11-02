@@ -1,0 +1,22 @@
+[
+  {
+    "view": "native-geometry",
+    "violations": []
+  },
+  {
+    "view": "simulation",
+    "violations": []
+  },
+  {
+    "view": "comparison",
+    "violations": []
+  },
+  {
+    "view": "knowledge",
+    "violations": []
+  },
+  {
+    "view": "reports",
+    "violations": []
+  }
+]

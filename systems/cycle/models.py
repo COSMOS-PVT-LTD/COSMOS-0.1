@@ -1,4 +1,4 @@
-"""Engine cycle configuration — extensible; Phase 2 has no cycle equations."""
+"""Cycle intent and current model scope; not a solved operating-point record."""
 
 from __future__ import annotations
 
@@ -24,10 +24,10 @@ class CycleImplementationStatus(str, Enum):
     IMPLEMENTED = "IMPLEMENTED"
 
 
-# Phase 2: no cycle physics in frozen foundation → all NOT_IMPLEMENTED.
+# Selected R06 steady solvers exist; configuration is not successful execution.
 _CYCLE_STATUS: dict[CycleType, CycleImplementationStatus] = {
-    CycleType.PRESSURE_FED: CycleImplementationStatus.NOT_IMPLEMENTED,
-    CycleType.GAS_GENERATOR: CycleImplementationStatus.NOT_IMPLEMENTED,
+    CycleType.PRESSURE_FED: CycleImplementationStatus.PARTIAL,
+    CycleType.GAS_GENERATOR: CycleImplementationStatus.PARTIAL,
     CycleType.STAGED_COMBUSTION: CycleImplementationStatus.NOT_IMPLEMENTED,
     CycleType.EXPANDER: CycleImplementationStatus.NOT_IMPLEMENTED,
     CycleType.ELECTRIC_PUMP: CycleImplementationStatus.NOT_IMPLEMENTED,
@@ -47,7 +47,9 @@ class CycleConfiguration:
     @classmethod
     def for_type(cls, cycle_type: CycleType) -> CycleConfiguration:
         status = _CYCLE_STATUS.get(cycle_type, CycleImplementationStatus.NOT_IMPLEMENTED)
-        return cls(cycle_type=cycle_type, implementation_status=status)
+        reason = ("Selected steady PF/GG assessment and CEA HP operating solvers are available with explicit sourced inputs. Cycle selection does not run a feed/power balance; physical validation NOT_PERFORMED."
+                  if status is CycleImplementationStatus.PARTIAL else "This selected cycle has no supported model. No implicit substitution of another cycle.")
+        return cls(cycle_type=cycle_type, implementation_status=status, reason=reason)
 
     def to_canonical_dict(self) -> dict[str, object]:
         return {

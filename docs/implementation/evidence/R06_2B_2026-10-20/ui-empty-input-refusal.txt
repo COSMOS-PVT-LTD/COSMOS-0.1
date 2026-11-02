@@ -1,0 +1,232 @@
+Browser tab: 5, Title: "COSMOS — Projects & Mission", URL: "http://127.0.0.1:8867/app/projects?project=80cdb6c3-9adb-4465-877f-21ef8b98840d".
+1 AXWebArea COSMOS — Projects & Mission, URL: 127.0.0.1:8867/app/projects?project=80cdb6c3-9adb-4465-877f-21ef8b98840d
+	2 container
+		3 container cosmos-p04-shell
+			4 container
+				5 container Breadcrumbs
+					6 link Description: Projects & Mission, Value: 127.0.0.1:8867/app/projects
+					7 text  / COSMOS — Projects & Mission
+				8 text COSMOS · active r— · inspecting current r— · Design: none · Managed project Pressure-fed QA — synthetic feed assumptions · 80cdb6c3-9adb-4465-877f-21ef8b98840d
+				9 text Persisted design
+				10 pop up button (collapsed, settable) Description: Persisted design, Value: Choose an existing design, Secondary Actions: Expand
+					11 menu
+						12 (selected) Choose an existing design
+						13 Pressure-fed software verification only · r7
+				14 text Inspected revision
+				15 pop up button (disabled, collapsed, settable) Description: Inspected revision, Value: No current persisted revision, Secondary Actions: Expand
+					16 menu
+						17 (disabled) No current persisted revision
+				18 button (collapsed) Navigation, Secondary Actions: Expand
+				19 button (collapsed) Inspector, Secondary Actions: Expand
+				20 button (collapsed) Diagnostics, Secondary Actions: Expand
+				21 checkbox Focus workspace, Value: 0
+				22 button Open commands
+				23 button (collapsed) Workspace controls, Secondary Actions: Expand
+					24 text Workspace controls
+			25 container Active workbench
+				26 button (collapsed) Authoritative project sources and retained activity, Secondary Actions: Expand
+					27 text Authoritative project sources and retained activity
+				28 container project-overview
+					29 heading Projects & Mission, Value: 1
+						30 text Projects & Mission
+					31 text Server-owned projects and immutable saved snapshots. CURRENT means selected freshness, not engineering or physical validation.
+					32 container Create managed project
+						33 container
+							34 text Project title
+							35 text field (settable) Project title
+						36 container
+							37 text Mission / intended-use notes
+							38 text field (settable) Mission / intended-use notes
+						39 button Create project
+					40 container Managed project list
+						41 heading Managed projects, Value: 2
+							42 text Managed projects
+						43 button Pressure-fed QA — synthetic feed assumptions · ACTIVE
+						44 button First project page
+					45 container Selected managed project
+						46 heading Pressure-fed QA — synthetic feed assumptions, Value: 2
+							47 text Pressure-fed QA — synthetic feed assumptions
+						48 text ACTIVE · project v1 · owner USR-f8713cc3bc8eddb8
+						49 text Software QA only; not engine/hardware evidence
+						50 container
+							51 text Cloned project title
+							52 text field (settable) Cloned project title, Value: Pressure-fed QA — synthetic feed assumptions (inputs clone)
+						53 button Clone editable inputs and retain complete origin archive
+						54 container
+							55 text Project title
+							56 text field (settable) Project title, Value: Pressure-fed QA — synthetic feed assumptions
+						57 container
+							58 text Mission notes
+							59 text field (settable) Mission notes, Value: Software QA only; not engine/hardware evidence
+						60 button Save project metadata
+						61 button Archive project
+						62 button (disabled) Restore project
+						63 text Recoverable delete retains snapshots; no permanent purge.
+						64 container
+							65 text Exact project ID to confirm recoverable delete
+							66 text field (settable) Exact project ID to confirm recoverable delete
+						67 button Recoverably delete project
+						68 container
+							69 text New propulsion design name
+							70 text field (settable) New propulsion design name
+						71 button Create propulsion design
+						72 heading Propulsion designs — first 20; no domain jobs are inferred, Value: 3
+							73 text Propulsion designs — first 20; no domain jobs are inferred
+						74 link Description: Download exact project archive (owner only; no credentials), Value: 127.0.0.1:8867/api/projects/80cdb6c3-9adb-4465-877f-21ef8b98840d/package?version=1&hash=4103222e9379da4130e53da7d6bd6f74a4e2bf16529c92f0cb881e52a807738b
+						75 link Description: Pressure-fed software verification only · input r7 · saved v1, Value: 127.0.0.1:8867/app/workbench/rocket-engine?project=80cdb6c3-9adb-4465-877f-21ef8b98840d&design=b404731e-db3b-5f4b-a42e-d0bd1a97f761
+						76 container Managed geometry and durable attempts
+							77 heading Managed geometry · software fixtures only, Value: 3
+								78 text Managed geometry · software fixtures only
+							79 text Exact snapshots, graphs, requests, attempts and retained bytes. Storage completion is not engineering publication or physical validation.
+							80 text No geometry editor opened.
+							81 container
+								82 text Fixture operation
+								83 pop up button (collapsed, settable) Description: Fixture operation, Value: sphere, Secondary Actions: Expand
+									84 menu
+										85 (selected) sphere
+										86 union
+										87 difference
+										88 intersection
+										89 self_union
+							90 container
+								91 text Fixture backend
+								92 pop up button (collapsed, settable) Description: Fixture backend, Value: occt, Secondary Actions: Expand
+									93 menu
+										94 (selected) occt
+										95 picogk
+							96 container
+								97 text Declared voxel size in metres
+								98 pop up button (collapsed, settable) Description: Declared voxel size in metres, Value: 0.0005, Secondary Actions: Expand
+									99 menu
+										100 (selected) 0.0005
+										101 0.001
+										102 0.00025
+							103 button Create managed fixture inputs
+							104 button Save geometry input edits
+							105 button (disabled) Build exact saved fixture inputs
+							106 button Discard geometry drafts and reload opened inputs
+							107 button Refresh retained attempts
+							108 text Native build runtime is not configured in this application. Saved sources/history remain available; no solver success is invented.
+							109 heading Managed fixture inputs, Value: 4
+								110 text Managed fixture inputs
+							111 text Exact authorized geometry source API
+							112 container Managed geometry exact source preview
+								113 text Choose an exact source or attempt.
+						114 container Managed studies and solver runs
+							115 heading Managed study/run · spherical software benchmark only, Value: 3
+								116 text Managed study/run · spherical software benchmark only
+							117 text Retains exact study, mesh, model/solver hashes, monitor events and datasets. Execution COMPLETED does not mean numerical convergence, experimental validation or production handoff.
+							118 text No study opened.
+							119 container
+								120 text Exact owned geometry attempt ID for a new study
+								121 text field (settable) Exact owned geometry attempt ID for a new study
+							122 container
+								123 text Conductivity [W/(m·K)]
+								124 text field (settable) Conductivity [W/(m·K)], Value: 10
+							125 container
+								126 text Volumetric generation [W/m³]
+								127 text field (settable) Volumetric generation [W/m³], Value: 1000000
+							128 container
+								129 text Surface temperature [K]
+								130 text field (settable) Surface temperature [K], Value: 300
+							131 container
+								132 text Radial cell count [8,16,32,64]
+								133 text field (settable) Radial cell count [8,16,32,64], Value: 16
+							134 container
+								135 text Relative equation residual tolerance
+								136 text field (settable) Relative equation residual tolerance, Value: 1e-8
+							137 container
+								138 text Maximum solver iterations
+								139 text field (settable) Maximum solver iterations, Value: 10000
+							140 button Create new radial benchmark study with displayed settings
+							141 button Save displayed study settings
+							142 button Run exact saved radial benchmark
+							143 button Discard study drafts and reload
+							144 button Refresh retained solver attempts
+							145 heading Retained studies, Value: 4
+								146 text Retained studies
+							147 text Exact authorized study source API
+							148 container Managed study exact source preview
+								149 text Open a retained study or create one from an exact selected OCCT sphere build.
+						150 button (collapsed) Project requirements and exact selected components, Secondary Actions: Expand
+							151 text Project requirements and exact selected components
+						152 button (collapsed) Managed comparisons and research reports, Secondary Actions: Expand
+							153 text Managed comparisons and research reports
+						154 button (collapsed) Rocket sensitivity — explicit saved preliminary baseline, Secondary Actions: Expand
+							155 text Rocket sensitivity — explicit saved preliminary baseline
+						156 container managed-pressure-fed
+							157 button (expanded) Pressure-fed assessment — saved preliminary baseline, Secondary Actions: Collapse
+								158 text Pressure-fed assessment — saved preliminary baseline
+							159 text Choose an exact saved propulsion baseline first.
+							160 text Assumed-state, specified-flow, steady incompressible core-only pressure budget. No full cycle closure, CEA/diversion coupling or pressurant sizing. Tank free surface (zero liquid surface velocity) to injector inlet manifold. Injector static delta-p defines sink pressure; other loss entries are irreversible upstream losses at the declared core flow/temperature.
+							161 text This is a downstream assessment, not the upstream cycle stage. Selecting a cycle or closing this budget does not qualify a complete engine. Scientific applicability, actual subsystem coupling and physical validation remain unassessed.
+							162 container Explicit assessment inputs — no property or loss defaults
+								163 text Explicit assessment inputs — no property or loss defaults
+								164 container
+									165 text Exact saved pressure-fed propulsion baseline
+									166 pop up button (collapsed, settable) Description: Exact saved pressure-fed propulsion baseline, Value: Choose an exact saved design, Secondary Actions: Expand
+										167 menu
+											168 (selected) Choose an exact saved design
+											169 Pressure-fed software verification only · input r7 · saved v1 · df87340f-28a0-476b-8e8e-6f38db0560cb
+								170 container
+									171 text Flow regime
+									172 pop up button (collapsed, settable) Description: Flow regime, Value: Choose explicitly, Secondary Actions: Expand
+										173 menu
+											174 (selected) Choose explicitly
+											175 Steady single-phase incompressible liquid
+								176 container
+									177 text Pressurant scope
+									178 pop up button (collapsed, settable) Description: Pressurant scope, Value: Choose explicitly, Secondary Actions: Expand
+										179 menu
+											180 (selected) Choose explicitly
+											181 Imposed regulated tank pressure — boundary only
+								182 container
+									183 text Stream accounting
+									184 pop up button (collapsed, settable) Description: Stream accounting, Value: Choose explicitly, Secondary Actions: Expand
+										185 menu
+											186 (selected) Choose explicitly
+											187 Core only — no external diversion
+								188 container
+									189 text Gravitational acceleration [m/s2]
+									190 text field (settable) Gravitational acceleration
+								191 container
+									192 text Absolute pressure comparison tolerance [Pa]
+									193 text field (settable) Absolute pressure comparison tolerance
+								194 container
+									195 text Absolute mass-flow comparison tolerance [kg/s]
+									196 text field (settable) Absolute mass-flow comparison tolerance
+								197 container
+									198 text External oxidizer outflow — explicit zero required [kg/s]
+									199 text field (settable) External oxidizer outflow — explicit zero required
+								200 container
+									201 text External fuel outflow — explicit zero required [kg/s]
+									202 text field (settable) External fuel outflow — explicit zero required
+								203 button (collapsed) Oxidizer feed inputs, Secondary Actions: Expand
+									204 text Oxidizer feed inputs
+								205 button (collapsed) Fuel feed inputs, Secondary Actions: Expand
+									206 text Fuel feed inputs
+								207 button Run and retain pressure-fed assessment
+								208 button Abandon uncertain command — keep entered inputs
+								209 button Discard pressure-fed draft
+							210 heading Retained pressure-fed assessments, Value: 4
+								211 text Retained pressure-fed assessments
+							212 button Inspect assessment 1db42afc-1cbb-59ee-af84-eb79841c2b5c
+							213 button Inspect assessment 1ed8b305-6f76-5cb9-8e43-e47bcc9b22a9
+							214 heading Captured input receipts — including interrupted/in-progress calls, Value: 4
+								215 text Captured input receipts — including interrupted/in-progress calls
+							216 button Inspect input capture 1db42afc-1cbb-59ee-af84-eb79841c2b5c
+							217 button Inspect input capture 1ed8b305-6f76-5cb9-8e43-e47bcc9b22a9
+							218 button Refresh retained pressure-fed history
+		219 button Maharshi Bharadwaj Maharshi, ID: maharshi-module, Help: Maharshi Bharadwaj — click for pop-up, double-click for Knowledge workbench. Drag to move; Shift+wheel or corner handle to resize.
+			220 image Maharshi Bharadwaj
+			221 text Maharshi
+		222 container cosmos-engineering-root
+			223 container cosmos-recent-panel
+				224 heading RECENT WORKBENCHES, Value: 4
+					225 text RECENT WORKBENCHES
+				226 text None yet
+				227 heading RECENT FILES, Value: 4
+					228 text RECENT FILES
+				229 text None yet
+
+The focused UI element is 207 button Run and retain pressure-fed assessment

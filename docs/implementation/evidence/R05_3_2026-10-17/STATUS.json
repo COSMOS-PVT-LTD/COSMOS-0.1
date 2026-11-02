@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-17",
+  "phase": "R05",
+  "slice": "R05.3",
+  "status": "PARTIAL_IMPLEMENTATION_SOFTWARE_CHECKS_PASS_NATIVE_ACCEPTANCE_OPEN",
+  "base_head": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "architecture": "ADR-R05-001 ACCEPTED",
+  "verification": {
+    "new_focused": {"passed": 21, "failed": 0, "seconds": 7.84},
+    "full_python": {"passed": 3147, "skipped": 74, "failed": 0, "seconds": 152.43},
+    "javascript": {"passed": 388, "failed": 0},
+    "ruff": "PASS",
+    "mypy": {"status": "PASS", "source_files": 368},
+    "strict_typescript": "PASS",
+    "source_hash_check": "PASS",
+    "whitespace_check": "PASS",
+    "cea_cache_restored_cmp_checked": true,
+    "real_supervised_worker_crash_retained": true,
+    "sigkill_before_metadata_and_after_commit": "PASS_PROCESS_INTERRUPTION_ONLY",
+    "synthetic_attachment_tests_are_native_evidence": false,
+    "browser_source_history_actual_server_restart": "PASS_BOUNDED_FIXTURE",
+    "browser_console_errors": 0,
+    "new_native_cocoa_check": false,
+    "accepted_native_build_restart_hash_journey": "NOT_VERIFIED_RUNTIME_UNAVAILABLE",
+    "remote_ci": false,
+    "physical_validation": false
+  },
+  "preservation": {"original_files": 4942, "unchanged": 4890, "declared_edits": 52, "unexpected": 0, "missing": 0, "historical_evidence_resealed": false},
+  "storage": {"fresh_schema": 3, "physical_namespace": "engineering_state/v1", "schemas_1_2_recognized_without_rewrite": true, "automatic_upgrade": false, "automatic_retry": false, "automatic_eviction": false},
+  "native_blocker": {
+    "old_config": "docs/implementation/reviews/2026-10-11_COMPLETE_REVIEW/runtime-config.json",
+    "missing_runtime_files": 88,
+    "changed_source_entries": 1,
+    "guard_bypassed": false,
+    "new_runtime_installed": false,
+    "next": "Restore pinned runtimes in an isolated location and produce fresh actual fixture qualification; do not reseal historical G5."
+  },
+  "remaining_in_r05_3": ["accepted native fixture retention/restart journey", "incrementally durable native stage transcript", "expanded crash/cancel/revocation/quota matrix", "explicit orphan/quarantine reporting", "native managed UI and workload qualification"],
+  "acceptance": {"whole_r05_3": false, "ready_for_r05_4": false, "whole_r05": false, "whole_prj_ids_completed": []},
+  "change_control": {"owner_data_migrated": false, "owner_root_or_8787_touched": false, "credentials_or_trust_changed": false, "science_changed": false, "committed_or_pushed": false, "released": false, "memory_updated": false, "actual_usage_limit_reached": false},
+  "qa": {"root": "/private/tmp/cosmos-r05_2-preview.reHcqD", "port": 8861, "server_and_agent_tab_closed": true, "root_retained": true, "screenshot": "browser-source-history.jpg"}
+}

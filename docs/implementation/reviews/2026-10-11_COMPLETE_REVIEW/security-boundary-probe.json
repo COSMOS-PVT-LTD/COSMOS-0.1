@@ -1,0 +1,57 @@
+{
+  "scope": "Owned synthetic fixture only; isolated temporary root and ephemeral loopback port",
+  "release_profile": "local-preview",
+  "authenticated_role": "VIEWER",
+  "user_data_touched": false,
+  "production_source_changed": false,
+  "credential_values_recorded": false,
+  "login": {
+    "http_status": 200,
+    "role": "VIEWER"
+  },
+  "viewer_propulsion_create": {
+    "http_status": 200,
+    "saved_design_created": true,
+    "expected_read_only_status": 403
+  },
+  "viewer_propulsion_save": {
+    "http_status": 200,
+    "saved_name_changed": true,
+    "expected_read_only_status": 403
+  },
+  "viewer_knowledge_approve_without_header": {
+    "http_status": 403,
+    "expected_status": 403,
+    "has_preview_no_store": false,
+    "has_preview_nosniff": false
+  },
+  "viewer_knowledge_approve_with_admin_header": {
+    "http_status": 200,
+    "approved": true,
+    "persisted_integrity_status": "APPROVED",
+    "expected_status": 403
+  },
+  "viewer_knowledge_backup_without_header": {
+    "http_status": 200,
+    "archive_created_inside_owned_fixture": true,
+    "expected_admin_only_status": 403
+  },
+  "preview_multipart_photo": {
+    "http_status": 400,
+    "error_code": "INVALID_CONTENT_TYPE",
+    "rejected_before_route_parser": true
+  },
+  "preview_multipart_ingest": {
+    "http_status": 400,
+    "error_code": "INVALID_CONTENT_TYPE",
+    "rejected_before_route_parser": true
+  },
+  "knowledge_proxy_duplicate_json": {
+    "http_status": 201,
+    "duplicate_keys_accepted": true,
+    "expected_preview_strict_json_rejection": true,
+    "has_preview_no_store": false
+  },
+  "completed": true,
+  "owned_server_stopped": true
+}

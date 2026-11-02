@@ -1,0 +1,12 @@
+Browser tab: 2, Title: "COSMOS — Visualization and Graphs", URL: "http://127.0.0.1:8844/app/workbench/visualization".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 15
++		98 text Plot unavailable: Log axes require strictly positive source values; zero/negative values are never dropped.. Choose a linear axis for zero or signed values.
+~				31 pop up button (collapsed, settable) X scale, Value: Logarithmic, ID: viz-x, Secondary Actions: Expand
+~						33 Linear
+~						34 (selected) Logarithmic
+~			44 container ID: viz-chart, Description: LOG_DOMAIN: Log axes require strictly positive source values; zero/negative values are never dropped.
+~			46 button (disabled) Export SVG + provenance, ID: viz-svg
+~			47 button (disabled) Export exact CSV + provenance, ID: viz-csv
+~			48 button (disabled) Export source JSON, ID: viz-json
+The focused UI element is 12 checkbox Restore workspace (Escape), Value: 1, ID: viz-focus

@@ -1,0 +1,617 @@
+Browser tab: 5, Title: "COSMOS 0.1 — Rocket Engine Propulsion Suite", URL: "http://127.0.0.1:8845/app/workbench/rocket-engine".
+0 AXWebArea COSMOS 0.1 — Rocket Engine Propulsion Suite, URL: 127.0.0.1:8845/app/workbench/rocket-engine
+	1 container
+		2 container cosmos-p04-shell
+			3 container
+				4 container Breadcrumbs
+					5 link Description: Projects & Mission, Value: 127.0.0.1:8845/app/projects
+					6 text  / Rocket Engine
+				867 text COSMOS · Project context: Default Project (UI only) · Design: Synthetic R03 renamed fixture A — not hardware evidence · active r8 · inspecting current r8
+				8 text Persisted design
+				9 pop up button (collapsed, settable) Description: Persisted design, Value: Synthetic R03 renamed fixture A — not hardware evidence · r8, Secondary Actions: Expand
+					10 menu
+						868 Choose an existing design
+						869 (selected) Synthetic R03 renamed fixture A — not hardware evidence · r8
+						870 Synthetic presentation fixture B — not hardware evidence · r7
+				14 button Project context
+				15 text Inspected revision
+				16 pop up button (collapsed, settable) Description: Inspected revision, Value: r8 · current persisted revision, Secondary Actions: Expand
+					17 menu
+						871 (disabled) r8 · current persisted revision
+						872 (disabled) r8 · name event (not snapshot)
+						873 (disabled) r7 · cooling_inputs event (not snapshot)
+						874 (disabled) r6 · nozzle_inputs event (not snapshot)
+						875 (disabled) r5 · propellant_selection event (not snapshot)
+						876 (disabled) r4 · expansion_ratio event (not snapshot)
+						877 (disabled) r3 · mixture_ratio event (not snapshot)
+						878 (disabled) r2 · ambient_pressure event (not snapshot)
+						879 (disabled) r1 · target_chamber_pressure event (not snapshot)
+				19 text Mode
+				20 pop up button (collapsed, settable) Description: Mode, Value: Standard, Secondary Actions: Expand
+					21 menu
+						22 Guided
+						23 (selected) Standard
+						24 Expert
+				25 text Shell units
+				26 pop up button (collapsed, settable) Description: Shell units, Value: Source units, Secondary Actions: Expand
+					27 menu
+						28 (selected) Source units
+						29 SI display
+				30 text Theme
+				31 pop up button (collapsed, settable) Description: Theme, Value: Dark, Secondary Actions: Expand
+					32 menu
+						33 (selected) Dark
+						34 High contrast
+				35 text Font scale
+				36 pop up button (collapsed, settable) Description: Font scale, Value: 100%, Secondary Actions: Expand
+					37 menu
+						38 (selected) 100%
+						39 125%
+						40 150%
+						41 200%
+				42 button (expanded) Navigation, Secondary Actions: Collapse
+				43 button (expanded) Inspector, Secondary Actions: Collapse
+				44 button (expanded) Diagnostics, Secondary Actions: Collapse
+				45 button Restore default panels
+				46 button Use legacy layout
+				47 button Notifications
+				48 button Profile
+				49 link Description: Help, Value: 127.0.0.1:8845/app/help
+				50 button Open commands
+			51 container Description: Project and workbench navigation, ID: p04-left
+				52 container Rocket workflow
+					53 heading Rocket workflow, Value: 2
+						54 text Rocket workflow
+					55 container Description: Propulsion modules, ID: suite-nav
+						880 container
+							881 heading DEFINE, Value: 3
+								882 text DEFINE
+							883 button 00 Design Project PARTIAL CURRENT
+								884 text 00
+								885 text Design Project
+								886 text PARTIAL
+								887 text CURRENT
+							888 button 01 Requirements IMPLEMENTED CURRENT
+								889 text 01
+								890 text Requirements
+								891 text IMPLEMENTED
+								892 text CURRENT
+							893 button 02 Propellant Definition IMPLEMENTED CURRENT
+								894 text 02
+								895 text Propellant Definition
+								896 text IMPLEMENTED
+								897 text CURRENT
+							898 button 03 Engine Cycle NOT IMPLEMENTED NOT_CALCULATED
+								899 text 03
+								900 text Engine Cycle
+								901 text NOT IMPLEMENTED
+								902 text NOT_CALCULATED
+						903 container
+							904 heading ANALYZE, Value: 3
+								905 text ANALYZE
+							906 button 04 Operating Point IMPLEMENTED CURRENT
+								907 text 04
+								908 text Operating Point
+								909 text IMPLEMENTED
+								910 text CURRENT
+							911 button 05 Thermochemistry PARTIAL CURRENT
+								912 text 05
+								913 text Thermochemistry
+								914 text PARTIAL
+								915 text CURRENT
+							916 button 06 Mass Flow / Performance PARTIAL CURRENT
+								917 text 06
+								918 text Mass Flow / Performance
+								919 text PARTIAL
+								920 text CURRENT
+							921 button 08 Combustion Chamber PARTIAL CURRENT
+								922 text 08
+								923 text Combustion Chamber
+								924 text PARTIAL
+								925 text CURRENT
+						926 container
+							927 heading SUBSYSTEMS, Value: 3
+								928 text SUBSYSTEMS
+							929 button 07 Injector PARTIAL NOT_CALCULATED
+								930 text 07
+								931 text Injector
+								932 text PARTIAL
+								933 text NOT_CALCULATED
+							934 button 09 Thermal Analysis PARTIAL CURRENT
+								935 text 09
+								936 text Thermal Analysis
+								937 text PARTIAL
+								938 text CURRENT
+							939 button 10 Cooling System PARTIAL CURRENT
+								940 text 10
+								941 text Cooling System
+								942 text PARTIAL
+								943 text CURRENT
+							944 button 11 Nozzle PARTIAL CURRENT
+								945 text 11
+								946 text Nozzle
+								947 text PARTIAL
+								948 text CURRENT
+							949 button 12 Structural Analysis PARTIAL CURRENT
+								950 text 12
+								951 text Structural Analysis
+								952 text PARTIAL
+								953 text CURRENT
+							954 button 13 Material Selection PARTIAL CURRENT
+								955 text 13
+								956 text Material Selection
+								957 text PARTIAL
+								958 text CURRENT
+						959 container
+							960 heading REVIEW, Value: 3
+								961 text REVIEW
+							962 button 14 Engine Performance Summary IMPLEMENTED NOT_CALCULATED
+								963 text 14
+								964 text Engine Performance Summary
+								965 text IMPLEMENTED
+								966 text NOT_CALCULATED
+							967 button 15 System Consistency Check IMPLEMENTED NOT_CALCULATED
+								968 text 15
+								969 text System Consistency Check
+								970 text IMPLEMENTED
+								971 text NOT_CALCULATED
+							972 button 16 Design Review IMPLEMENTED NOT_CALCULATED
+								973 text 16
+								974 text Design Review
+								975 text IMPLEMENTED
+								976 text NOT_CALCULATED
+						977 container
+							978 heading PHYSICS TOOLS, Value: 3
+								979 text PHYSICS TOOLS
+							980 button GASDYNAMICS Nozzle Flow LIVE
+								981 text GASDYNAMICS
+								982 text Nozzle Flow
+								983 text LIVE
+							984 button THERMAL Heat Transfer & Cooling PARTIAL
+								985 text THERMAL
+								986 text Heat Transfer & Cooling
+								987 text PARTIAL
+							988 button STRUCTURES Chamber Structures PARTIAL
+								989 text STRUCTURES
+								990 text Chamber Structures
+								991 text PARTIAL
+				168 container Modern workbenches
+					169 link Description: Projects & Mission, Value: 127.0.0.1:8845/app/projects
+					170 link Description: Rocket Engine, Value: 127.0.0.1:8845/app/workbench/rocket-engine
+					171 button (disabled) Native Geometry · not enabled, Help: This capability is not enabled in the current application catalog
+					172 link Description: Simulation, Value: 127.0.0.1:8845/app/workbench/simulation
+					173 link Description: Comparison & V&V, Value: 127.0.0.1:8845/app/workbench/comparison
+					174 link Description: Maharshi Knowledge, Value: 127.0.0.1:8845/app/workbench/knowledge
+					175 link Description: Reports & History, Value: 127.0.0.1:8845/app/workbench/reports
+					176 link Description: Visualization and Graphs, Value: 127.0.0.1:8845/app/workbench/visualization
+					177 button (collapsed) All existing workbenches, Secondary Actions: Expand
+						178 text All existing workbenches
+				179 text Navigation maturity follows the existing registry.
+				992 container Project tree
+					993 heading Project tree, Value: 2, ID: ds-24
+						994 text Project tree
+					995 outline Project objects
+						996 row (selected) Synthetic R03 renamed fixture A — not hardware evidence · r8
+							997 text Synthetic R03 renamed fixture A — not hardware evidence · r8
+						998 row (selectable) Synthetic presentation fixture B — not hardware evidence · r7
+							999 text Synthetic presentation fixture B — not hardware evidence · r7
+			188 splitter Description: Resize navigation, Value: 224
+			189 container
+				190 heading Rocket Engine Propulsion Design Suite, Value: 1
+					191 text Rocket Engine Propulsion Design Suite
+				192 container Active design
+					1000 text Synthetic R03 renamed fixture A — not hardware evidence
+					1001 text REV 8
+					1002 text draft
+					1003 text Pc 50.00 bar
+					1004 text O/F 2.3
+					1005 text Target thrust —
+					1006 text Propellants LOX / RP1
+					200 button New, ID: design-new
+					201 button Save, ID: design-save
+					202 button Clone, ID: design-clone
+					203 button Recalculate, ID: design-recalculate
+					204 button Reload, ID: design-reload
+					205 button Review, ID: design-review
+				206 container
+					207 heading 00 Design Project, Value: 2, ID: suite-module-title
+						1007 text 00 Design Project
+					1008 text PARTIAL · result CURRENT
+				1009 text Persisted inputs · PARTIAL · editor units unchanged
+				211 button (disabled) Undo last draft edit
+				212 link Description: Workbench help, Value: 127.0.0.1:8845/app/help
+				213 button Use legacy rocket view
+				214 container suite-forms
+					1010 heading End-to-end propulsion workflow, Value: 3
+						1011 text End-to-end propulsion workflow
+					1012 container
+						1013 text Thermochemistry source
+						1014 pop up button (collapsed, settable) Thermochemistry source, Value: Explicit assumed chamber state, ID: wf-thermo-mode, Secondary Actions: Expand
+							1015 menu
+								1016 NASA CEA 3.3.4 · equilibrium
+								1017 (selected) Explicit assumed chamber state
+					1018 container
+						1019 text Fuel inlet temperature [K] · CEA
+						1020 stepper (disabled, settable) Fuel inlet temperature [K] · CEA, ID: wf-fuel-temp
+					1021 container
+						1022 text Oxidizer inlet temperature [K] · CEA
+						1023 stepper (disabled, settable) Oxidizer inlet temperature [K] · CEA, ID: wf-ox-temp
+					1024 container
+						1025 text Design name
+						1026 text field (settable) Design name, Value: Synthetic R03 renamed fixture A — not hardware evidence, ID: wf-name
+					1027 container
+						1028 text Pc [bar]
+						1029 stepper (settable, integer) Pc [bar], Value: 50, ID: wf-pc
+					1030 container
+						1031 text Target thrust [kN]
+						1032 stepper (settable) Target thrust [kN], ID: wf-thrust
+					1033 container
+						1034 text Ambient pressure [Pa] (required)
+						1035 stepper (settable, integer) Ambient pressure [Pa] (required), Value: 0, ID: wf-pa
+					1036 container
+						1037 text O/F
+						1038 stepper (settable, float) O/F, Value: 2.299999952316284, Details: 2.3, ID: wf-of
+					1039 container
+						1040 text ε (Ae/At)
+						1041 stepper (settable, integer) ε (Ae/At), Value: 8, ID: wf-eps
+					1042 container
+						1043 text Tc assumed [K]
+						1044 stepper (settable, integer) Tc assumed [K], Value: 3000, ID: wf-tc
+					1045 container
+						1046 text γ assumed
+						1047 stepper (settable, float) γ assumed, Value: 1.2000000476837158, Details: 1.2, ID: wf-gamma
+					1048 container
+						1049 text MW assumed [kg/mol]
+						1050 stepper (settable, float) MW assumed [kg/mol], Value: 0.02199999988079071, Details: 0.022, ID: wf-mw
+					1051 container
+						1052 text At [m²]
+						1053 stepper (settable, float) At [m²], Value: 0.0010000000474974513, Details: 0.001, ID: wf-at
+					1054 container
+						1055 text L* [m]
+						1056 stepper (settable, integer) L* [m], Value: 1, ID: wf-lstar
+					1057 container
+						1058 text Contraction ratio
+						1059 stepper (settable, float) Contraction ratio, Value: 2.5, ID: wf-cr
+					1060 container
+						1061 text Wall t [m]
+						1062 stepper (settable, float) Wall t [m], Value: 0.0010000000474974513, Details: 0.001, ID: wf-twall
+					1063 container
+						1064 text Outside wall pressure [Pa] (required; 0 for vacuum)
+						1065 stepper (settable, integer) Outside wall pressure [Pa] (required; 0 for vacuum), Value: 0, ID: wf-pout
+					1066 container
+						1067 text Material temperature [K]
+						1068 stepper (settable, integer) Material temperature [K], Value: 300, ID: wf-tmaterial
+					1069 container
+						1070 text Gas viscosity [Pa·s]
+						1071 stepper (settable, float) Gas viscosity [Pa·s], Value: 7.999999797903001e-05, Details: 0.00008, ID: wf-mu
+					1072 container
+						1073 text Gas conductivity [W/(m·K)]
+						1074 stepper (settable, float) Gas conductivity [W/(m·K)], Value: 0.30000001192092896, Details: 0.3, ID: wf-k
+					1075 container
+						1076 text Gas Cp [J/(kg·K)]
+						1077 stepper (settable, integer) Gas Cp [J/(kg·K)], Value: 2500, ID: wf-cp
+					1078 container
+						1079 text Wall temperature [K]
+						1080 stepper (settable, integer) Wall temperature [K], Value: 800, ID: wf-tw
+					1081 container
+						1082 text Throat curvature radius [m] (optional)
+						1083 stepper (settable, float) Throat curvature radius [m] (optional), Value: 0.006815354339778423, Details: 0.006815354123703586, ID: wf-curvature
+					1084 container
+						1085 text Oxidizer ID
+						1086 pop up button (collapsed, settable) Oxidizer ID, Value: LOX, ID: wf-ox, Secondary Actions: Expand
+							1087 menu
+								1088 Select oxidizer…
+								1089 (selected) LOX
+					1090 container
+						1091 text Fuel ID
+						1092 pop up button (collapsed, settable) Fuel ID, Value: RP1, ID: wf-fuel, Secondary Actions: Expand
+							1093 menu
+								1094 Select fuel…
+								1095 LH2
+								1096 LCH4
+								1097 (selected) RP1
+					1098 container
+						1099 text Material
+						1100 pop up button (collapsed, settable) Material, Value: stainless_304 (AISI 304, near 300 K), ID: wf-material, Secondary Actions: Expand
+							1101 menu
+								1102 Select material…
+								1103 ofhc_copper (annealed, near 300 K)
+								1104 (selected) stainless_304 (AISI 304, near 300 K)
+								1105 aluminum_6061_t6 (6061-T6, near 300 K)
+								1106 inconel_718 (typical aged, near 300 K)
+								1107 ti6al4v (Ti-6Al-4V typical, near 300 K)
+					1108 text CEA calculates chamber composition, Tc, gamma, MW, c* and ideal nozzle performance using explicit reactant inlet temperatures (no defaults). Assumed mode is separate. Configure 07 Injector, 11 Nozzle and 10 Cooling for preliminary models; their constant-gamma contour stations and constant-property cooling remain approximations. Cycle power balance is deferred. CURRENT means freshness; validation is NOT_CLAIMED.
+					1109 container wf-board
+						1110 text Engineering readiness: PRELIMINARY · Workflow complete: false · Validation: NOT_CLAIMED. CURRENT means input freshness.
+						1111 table
+							1112 row
+								1113 cell
+									1114 text Stage
+								1115 cell
+									1116 text Impl
+								1117 cell
+									1118 text Status
+								1119 cell
+									1120 text Current?
+							1121 row
+								1122 cell
+									1123 text Design Project
+								1124 cell
+									1125 text PARTIAL
+								1126 cell
+									1127 text CURRENT
+								1128 cell
+									1129 text no
+							1130 row
+								1131 cell
+									1132 text Requirements
+								1133 cell
+									1134 text IMPLEMENTED
+								1135 cell
+									1136 text CURRENT
+								1137 cell
+									1138 text yes
+							1139 row
+								1140 cell
+									1141 text Propellant Definition
+								1142 cell
+									1143 text IMPLEMENTED
+								1144 cell
+									1145 text CURRENT
+								1146 cell
+									1147 text yes
+							1148 row
+								1149 cell
+									1150 text Engine Cycle
+								1151 cell
+									1152 text NOT_IMPLEMENTED
+								1153 cell
+									1154 text NOT_CALCULATED
+								1155 cell
+									1156 text no
+							1157 row
+								1158 cell
+									1159 text Operating Point
+								1160 cell
+									1161 text IMPLEMENTED
+								1162 cell
+									1163 text CURRENT
+								1164 cell
+									1165 text yes
+							1166 row
+								1167 cell
+									1168 text Thermochemistry
+								1169 cell
+									1170 text PARTIAL
+								1171 cell
+									1172 text CURRENT
+								1173 cell
+									1174 text yes
+							1175 row
+								1176 cell
+									1177 text Mass Flow / Performance
+								1178 cell
+									1179 text PARTIAL
+								1180 cell
+									1181 text CURRENT
+								1182 cell
+									1183 text yes
+							1184 row
+								1185 cell
+									1186 text Injector
+								1187 cell
+									1188 text PARTIAL
+								1189 cell
+									1190 text NOT_CALCULATED
+								1191 cell
+									1192 text no
+							1193 row
+								1194 cell
+									1195 text Combustion Chamber
+								1196 cell
+									1197 text PARTIAL
+								1198 cell
+									1199 text CURRENT
+								1200 cell
+									1201 text yes
+							1202 row
+								1203 cell
+									1204 text Thermal Analysis
+								1205 cell
+									1206 text PARTIAL
+								1207 cell
+									1208 text CURRENT
+								1209 cell
+									1210 text yes
+							1211 row
+								1212 cell
+									1213 text Cooling System
+								1214 cell
+									1215 text PARTIAL
+								1216 cell
+									1217 text CURRENT
+								1218 cell
+									1219 text yes
+							1220 row
+								1221 cell
+									1222 text Nozzle
+								1223 cell
+									1224 text PARTIAL
+								1225 cell
+									1226 text CURRENT
+								1227 cell
+									1228 text yes
+							1229 row
+								1230 cell
+									1231 text Structural Analysis
+								1232 cell
+									1233 text PARTIAL
+								1234 cell
+									1235 text CURRENT
+								1236 cell
+									1237 text yes
+							1238 row
+								1239 cell
+									1240 text Material Selection
+								1241 cell
+									1242 text PARTIAL
+								1243 cell
+									1244 text CURRENT
+								1245 cell
+									1246 text yes
+							1247 row
+								1248 cell
+									1249 text Engine Performance Summary
+								1250 cell
+									1251 text IMPLEMENTED
+								1252 cell
+									1253 text NOT_CALCULATED
+								1254 cell
+									1255 text no
+							1256 row
+								1257 cell
+									1258 text System Consistency Check
+								1259 cell
+									1260 text IMPLEMENTED
+								1261 cell
+									1262 text NOT_CALCULATED
+								1263 cell
+									1264 text no
+							1265 row
+								1266 cell
+									1267 text Design Review
+								1268 cell
+									1269 text IMPLEMENTED
+								1270 cell
+									1271 text NOT_CALCULATED
+								1272 cell
+									1273 text no
+					1274 button Run (same design)
+					1275 button Export design package, ID: wf-export
+				317 heading Result, Value: 3
+					318 text Result
+				1276 text SAVED
+Design saved · revision 8. Requirements/selections are applied; other editor inputs are saved drafts until you run the relevant calculation. No solver was run.
+			320 splitter Description: Resize inspector, Value: 280
+			321 container Description: Context inspector, ID: p04-right
+				322 container Description: Active workbench scientific inspection, ID: p05-result-inspector
+					1277 heading Scientific inspection, Value: 2
+						1278 text Scientific inspection
+					1279 text Active editor: design_project · r8. Separate from shell revision/event inspection.
+					1280 definition list
+						1281 container Execution
+							1282 text Execution
+						1283 text API response received
+						1284 container Freshness
+							1285 text Freshness
+						1286 text NOT_REPORTED (SAVED)
+						1287 container Numerical
+							1288 text Numerical
+						1289 text NOT_REPORTED
+						1290 container Verification
+							1291 text Verification
+						1292 text NOT_REPORTED
+						1293 container Validation
+							1294 text Validation
+						1295 text NOT_CLAIMED
+					1296 text Model: Not reported
+					1297 button (collapsed) Input contract & scientific service trace, Secondary Actions: Expand
+						1298 text Input contract & scientific service trace
+					1299 link Description: Inspect persisted design DTO, Value: 127.0.0.1:8845/api/propulsion/designs/26b0a98b-5691-47b2-bc30-db6fc74ebbbe
+					1300 link Description: Inspect dependency & freshness DTO, Value: 127.0.0.1:8845/api/propulsion/designs/26b0a98b-5691-47b2-bc30-db6fc74ebbbe/workflow
+					1301 text Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.
+				1302 heading Persisted design inspection, Value: 2
+					1303 text Persisted design inspection
+				1304 text Design ID: 26b0a98b-5691-47b2-bc30-db6fc74ebbbe
+				1305 text Revision 8; no scientific values are changed here
+				1306 container Stored inputs
+					1307 heading Stored inputs, Value: 2, ID: ds-22
+						1308 text Stored inputs
+					1309 container Stored inputs table scroll area
+						1310 table
+							1311 row
+								1312 cell
+									1313 text Parameter
+								1314 cell
+									1315 text Value
+								1316 cell
+									1317 text Unit
+								1318 cell
+									1319 text Provenance
+							1320 row
+								1321 cell
+									1322 text Chamber pressure Pc
+								1323 cell
+									1324 text 5000000
+								1325 cell
+									1326 text Pa
+								1327 cell
+									1328 text Existing DesignStore; display only
+							1329 row
+								1330 cell
+									1331 text Target thrust
+								1332 cell
+									1333 text Missing
+								1334 cell
+									1335 text —
+								1336 cell
+									1337 text Existing DesignStore; display only
+							1338 row
+								1339 cell
+									1340 text Mixture ratio O/F
+								1341 cell
+									1342 text 2.3
+								1343 cell
+									1344 text 1
+								1345 cell
+									1346 text Existing requirements
+					1347 button (disabled) Previous parameter rows
+					1348 button (disabled) Next parameter rows
+					1349 text Rows 1–3 of 3; bounded 20-row window
+				1350 container Engineering status
+					1351 heading Engineering status, Value: 2, ID: ds-23
+						1352 text Engineering status
+					1353 text execution: idle
+					1354 text numerical: not-run
+					1355 text freshness: current
+					1356 text verification: unverified
+					1357 text validation: not-validated
+				1358 text Shell state only. Inspect the original workbench for stage-level numerical results and assumptions.
+				1359 link Description: Inspect original design DTO, Value: 127.0.0.1:8845/api/propulsion/designs/26b0a98b-5691-47b2-bc30-db6fc74ebbbe
+			337 splitter Description: Resize diagnostics, Value: 176
+			338 container Description: Diagnostics and knowledge job queue, ID: p04-bottom
+				339 container Rocket action activity
+					340 heading Rocket action activity, Value: 2
+						341 text Rocket action activity
+					1360 text Workbench idle; no solver queue is inferred.
+					343 content list
+						1361 container
+							1362 AXListMarker 1. 
+							1363 text Action returned; inspect result status, errors and evidence (not an acceptance).
+						1364 container
+							1365 AXListMarker 2. 
+							1366 text Started existing workbench action on design_project
+						857 container
+							858 AXListMarker 3. 
+							859 text Action returned; inspect result status, errors and evidence (not an acceptance).
+						374 container
+							375 AXListMarker 4. 
+							376 text Started existing workbench action on design_project
+						344 container
+							345 AXListMarker 5. 
+							346 text Opened design_project; retained draft context
+				347 container
+					348 text No shell read error
+					349 button Refresh knowledge queue
+				1367 heading Knowledge ingestion queue, Value: 2
+					1368 text Knowledge ingestion queue
+				1369 text This is not a physics/native solver queue; cancellation API is unavailable.
+				1370 container No knowledge jobs
+					1371 heading No knowledge jobs, Value: 2, ID: ds-25
+						1372 text No knowledge jobs
+					1373 text No synthetic job or solver success is invented.
+		357 button Maharshi Bharadwaj Maharshi, ID: maharshi-module, Help: Maharshi Bharadwaj — click for pop-up, double-click for Knowledge workbench. Drag to move; Shift+wheel or corner handle to resize.
+			358 image Maharshi Bharadwaj
+			359 text Maharshi
+
+The focused UI element is 201 button Save, ID: design-save

@@ -353,7 +353,7 @@ const Maharshi = (() => {
       }));
   }
 
-  const MAX_UPLOAD_BYTES = 100 * 1024 * 1024;
+  let MAX_UPLOAD_BYTES = 100 * 1024 * 1024;
 
   function formatBytes(value) {
     if (!value) return "0 B";
@@ -374,7 +374,7 @@ const Maharshi = (() => {
     if (file.size > MAX_UPLOAD_BYTES) {
       selectedFile = null;
       if (uploadBtn) uploadBtn.disabled = true;
-      setUploadStatus(`File too large (${sizeLabel}). Maximum upload size is 100 MB.`, "error");
+      setUploadStatus(`File too large (${sizeLabel}). Maximum upload size is ${formatBytes(MAX_UPLOAD_BYTES)}.`, "error");
       return;
     }
     selectedFile = file;
@@ -1338,9 +1338,42 @@ const Maharshi = (() => {
     bindEvidenceModal();
     bindInspectorActions();
     const canvas = $("mh-graph-canvas");
-    if (canvas) graphEngine = new ForceGraph(canvas);
+    if (canvas) {
+      try {
+        const {KnowledgeGraph3D} = await import("/assets/visualization/knowledge-graph.js");
+        graphEngine = new KnowledgeGraph3D(canvas, {
+          onSelect: node => {
+            $("mh-node-detail")?.classList.add("open");
+            if ($("mh-detail-title")) $("mh-detail-title").textContent = node.label || node.id;
+            if ($("mh-detail-body")) $("mh-detail-body").textContent = node.summary || "No source summary available.";
+            document.dispatchEvent(new CustomEvent("cosmos:properties", {detail: {
+              title: node.label || node.id, ai: true,
+              sections: [{name: "Identity", entries: {Label: node.label, Type: node.kind,
+                Validation: node.validation_state || "Unverified", Source: node.source_id || node.id}},
+                {name: "Evidence", entries: {Summary: node.summary || "—", Keywords: (node.keywords || []).join(", ")},
+                actions: [{id: "trace", label: "Trace"}, {id: "find-evidence", label: "Find Evidence", ai: true},
+                          {id: "explain", label: "Explain", ai: true}, {id: "explain-equation", label: "Explain Equation", ai: true}]}],
+            }}));
+          },
+          onStatus: state => {
+            if ($("mh-graph-node-count")) $("mh-graph-node-count").textContent = `${state.nodeCount} nodes`;
+            if ($("mh-graph-edge-count")) $("mh-graph-edge-count").textContent = `${state.edgeCount} links · ${state.renderer === "three-webgl2" ? "3D layout" : "accessible list"}`;
+          },
+        });
+        window.addEventListener("pagehide", () => graphEngine?.dispose?.(), {once: true});
+      } catch {
+        // Preserve the functioning legacy view if the new module cannot load.
+        graphEngine = new ForceGraph(canvas);
+      }
+    }
     try {
       const session = await fetch("/api/auth/session").then((response) => response.json());
+      const uploadLimit = session?.transport_limits?.document_bytes;
+      if (Number.isInteger(uploadLimit) && uploadLimit > 0) {
+        MAX_UPLOAD_BYTES = uploadLimit;
+        const hint = $("mh-upload-limit");
+        if (hint) hint.textContent = `or choose a file · PDF, Markdown, CSV, Office, images · up to ${formatBytes(uploadLimit)}`;
+      }
       const role = session?.user?.role || "";
       const isAdmin = role === "ADMIN" || window.COSMOS?.canKnowledgeAdmin?.(session?.user);
       canDelete = isAdmin;

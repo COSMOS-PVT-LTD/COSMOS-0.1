@@ -1,0 +1,57 @@
+{
+  "added_outside_review": [],
+  "added_scan_basis": "Same Git tracked/nonignored-untracked inventory command as review baseline; not a scan of entire ignored virtual environments, OS or unrelated user directories",
+  "baseline_head": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "current_head": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "generated_at_utc": "2026-10-12T04:27:25.381835+00:00",
+  "head_unchanged": true,
+  "known_cache_fixture": {
+    "before_bytes": 247,
+    "before_copy": "cea-cache-before.json",
+    "before_sha256": "6ea2f6250df4143d6ca452a552a3dfbae7e5f6a87d2613cd566f0b0dc0fa2508",
+    "changed_top_level_fields": [],
+    "current_bytes": 247,
+    "current_sha256": "6ea2f6250df4143d6ca452a552a3dfbae7e5f6a87d2613cd566f0b0dc0fa2508",
+    "exact_bytes_match": true,
+    "known_test_generated_fixture": true,
+    "path": "cache/cea/test_key.json",
+    "restored_by_this_finalizer": false
+  },
+  "nonmutation": {
+    "cache_restored": false,
+    "only_outputs": [
+      "verification-summary.json",
+      "preservation.json"
+    ],
+    "prior_seal_rewritten": false,
+    "production_changed": false
+  },
+  "prior_P12_seal": {
+    "baseline_recorded_sha256": "9eced3b5b7a0f6479848288634a2c47cef6de3069197513979517e269a3ed0c8",
+    "changed": [],
+    "checked_files": 5047,
+    "declared_files": 5047,
+    "entry_count_matches": true,
+    "excluded_review_files": [],
+    "expected_entry_count": 5047,
+    "matched_files": 5047,
+    "missing": [],
+    "path": "docs/implementation/evidence/P12_2026-10-11/artifact_hashes.json",
+    "seal_bytes_unchanged": true,
+    "sha256": "9eced3b5b7a0f6479848288634a2c47cef6de3069197513979517e269a3ed0c8",
+    "status": "PASS"
+  },
+  "review_directory_excluded": "docs/implementation/reviews/2026-10-11_COMPLETE_REVIEW/",
+  "review_original_files": {
+    "baseline": "baseline.json",
+    "baseline_sha256": "a9d96ca60108dd0e3def0f9e65e3f3678f9249e0b55553f7c1c8c7f4e423570f",
+    "changed": [],
+    "checked_files": 4942,
+    "declared_files": 4942,
+    "excluded_review_files": [],
+    "matched_files": 4942,
+    "missing": [],
+    "status": "PASS"
+  },
+  "status": "PASS"
+}

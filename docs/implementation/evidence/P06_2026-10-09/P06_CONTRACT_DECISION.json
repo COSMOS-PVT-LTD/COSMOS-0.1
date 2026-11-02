@@ -1,0 +1,141 @@
+{
+  "gate_id": "P06_CONTRACTS_PRE_G5",
+  "phase": "P06_NGG_CONTRACTS",
+  "status": "PASS",
+  "requirement_ids": [
+    "NGG-001",
+    "NGG-002",
+    "NGG-003",
+    "NGG-004",
+    "NGG-006",
+    "P06 required schemas/serialization/dependency tests",
+    "specs/04 contract/state metadata"
+  ],
+  "requirement_scope": "Contracts only. NGG-005 actual QA and NGG-007 actual reimport remain deferred to P07/G5.",
+  "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "dirty_checkout": true,
+  "environment": {
+    "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "architecture": "arm64",
+    "macos": "26.5.2",
+    "pytest": "8.4.2",
+    "ruff": "0.16.10",
+    "mypy": "1.20.2",
+    "node": "v26.7.0",
+    "schema_tooling": [
+      {
+        "name": "jsonschema",
+        "version": "4.25.1",
+        "wheel_sha256": "3fba0169e345c7175110351d456342c364814cfcf3b964ba4587f22915230a63"
+      },
+      {
+        "name": "attrs",
+        "version": "26.1.0",
+        "wheel_sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+      },
+      {
+        "name": "jsonschema-specifications",
+        "version": "2025.9.1",
+        "wheel_sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+      },
+      {
+        "name": "referencing",
+        "version": "0.37.0",
+        "wheel_sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+      },
+      {
+        "name": "rpds-py",
+        "version": "2026.9.1",
+        "wheel_sha256": "3231c4c0e521dafa5be0c9f114ee2c2ad46650836f2d72caa86801950c3e7044"
+      },
+      {
+        "name": "typing_extensions",
+        "version": "4.16.0",
+        "wheel_sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+      }
+    ]
+  },
+  "commands": {
+    "focused": "PYTHONPATH=<temporary schema-tools> .venv-remediation/bin/python -m pytest -q tests/unit_tests/systems_layer/test_geometry_*.py tests/contracts/geometry --junitxml=<output>/focused-final.xml",
+    "python": "PYTHONPATH=<temporary schema-tools> .venv-remediation/bin/python -m pytest -q --junitxml=<output>/pytest-final.xml",
+    "javascript": "node --test tests/js/*.test.cjs",
+    "ruff": ".venv-remediation/bin/python -m ruff check core knowledge physics numerics systems api gui infrastructure plugins tests tools",
+    "mypy": ".venv-remediation/bin/python -m mypy core physics numerics systems api",
+    "physics": ".venv-remediation/bin/python docs/implementation/evidence/P06_2026-10-09/verify_physics.py",
+    "benchmark": "PYTHONPATH=. .venv-remediation/bin/python docs/implementation/evidence/P06_2026-10-09/benchmark_contracts.py",
+    "scope": ".venv-remediation/bin/python docs/implementation/evidence/P06_2026-10-09/check_scope.py",
+    "schema_lock": ".venv-remediation/bin/python -m pip install --dry-run --ignore-installed --target <temporary pin-check> --require-hashes --only-binary=:all: -r docs/implementation/evidence/P06_2026-10-09/requirements-schema-tests.txt --report <output>/schema-lock-verification.json"
+  },
+  "tests": {
+    "focused": {
+      "passed": 204,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 0.879
+    },
+    "python": {
+      "passed": 2476,
+      "skipped": 5,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 42.304
+    },
+    "javascript_passed": 94,
+    "ruff": "PASS",
+    "mypy_sources": 325,
+    "independent_schema_validation": "PASS_EXECUTED_NOT_SKIPPED",
+    "wire_definitions": 13,
+    "golden_vectors": 14,
+    "scientific_http_cases": 5,
+    "scientific_comparison": "exact",
+    "scientific_tolerance": 0
+  },
+  "test_artifacts": [
+    "logs/focused-final.xml",
+    "logs/pytest-final.xml",
+    "logs/js-final.log",
+    "physics_parity.json",
+    "source_integrity.json",
+    "predecessor_integrity.json",
+    "contract_costs.json",
+    "artifact_hashes.json"
+  ],
+  "reviewer": "Codex local software/contract review; not independent CAD, physics or release approval",
+  "decision": "PASS_DORMANT_TYPED_CONTRACT_SLICE_P07_READY",
+  "date": "2026-10-09T04:20:52.492110+00:00",
+  "blockers": [],
+  "existing_files_changed": [],
+  "baseline_file_count": 1808,
+  "added_contract_test_files": [
+    "systems/contracts/geometry/README.md",
+    "systems/contracts/geometry/__init__.py",
+    "systems/contracts/geometry/_wire.py",
+    "systems/contracts/geometry/artifacts.py",
+    "systems/contracts/geometry/build.py",
+    "systems/contracts/geometry/graph.py",
+    "systems/contracts/geometry/schema.py",
+    "systems/contracts/geometry/schemas/geometry-v1.schema.json",
+    "systems/contracts/geometry/snapshot.py",
+    "tests/contracts/geometry/golden-v1.json",
+    "tests/contracts/geometry/test_golden_vectors.py",
+    "tests/contracts/geometry/test_json_schema.py",
+    "tests/fixtures/geometry_contracts.py",
+    "tests/unit_tests/systems_layer/test_geometry_artifacts.py",
+    "tests/unit_tests/systems_layer/test_geometry_build.py",
+    "tests/unit_tests/systems_layer/test_geometry_graph.py",
+    "tests/unit_tests/systems_layer/test_geometry_snapshot.py",
+    "tests/unit_tests/systems_layer/test_geometry_wire.py"
+  ],
+  "native_geometry_activated": false,
+  "new_runtime_dependency": false,
+  "new_storage_authority": false,
+  "physical_validation_claimed": false,
+  "publishing_performed": false,
+  "G5_passed": false,
+  "gui_browser_rerun": "NOT_RUN_P06; unchanged GUI/P05 52-case historical evidence sealed and retained",
+  "release_ci_rerun": "NOT_RUN; no commit/push requested",
+  "next": "P07_NGG_KERNELS; not started"
+}

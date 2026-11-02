@@ -1,0 +1,58 @@
+{
+  "kind": "agent_operated_software_verification_not_human_usability_study",
+  "date": "2026-10-16",
+  "root": "/private/tmp/cosmos-r05_2-preview.INLgEb",
+  "origin": "http://127.0.0.1:8860",
+  "synthetic_only": true,
+  "release_profile": false,
+  "project_id": "a5d67ede-3ea5-415e-b816-5cd6881e6c5e",
+  "design_id": "49975788-8cb0-5719-9679-603754e15e37",
+  "browser": {
+    "project_create": "PASS",
+    "design_create": "PASS",
+    "editor_save": "PASS",
+    "historical_inspect": "PASS",
+    "historical_activate_creates_new_input_revision": "PASS",
+    "same_root_server_restart_reopen": "PASS",
+    "explicit_assumed_phase3_outputs": "PASS",
+    "missing_phase4_input_remains_failed": "PASS",
+    "exact_scoped_inspector_links": "PASS",
+    "screenshot": "browser-history.jpg"
+  },
+  "native": {
+    "backend": "Cocoa pywebview",
+    "window_title": "COSMOS R05.2 isolated QA",
+    "same_project_after_server_restart": "PASS",
+    "final_project_navigation_and_history_on_reloaded_assets": "PASS",
+    "historical_v8_read_only_while_v9_selected": "PASS",
+    "screenshot": "native-history.jpg"
+  },
+  "selected": {
+    "input_revision": 16,
+    "saved_version": 9,
+    "commit_id": "90d8f2e6-8191-4918-914b-1d9cee4f7dee",
+    "content_hash": "96d47f789630c44eaef0e97ba7f2136a8f10898b7483f6ec96c7e11eb8baf4a1"
+  },
+  "inspected_history": {
+    "input_revision": 16,
+    "saved_version": 8,
+    "commit_id": "5c2ed70b-61e5-4ef8-9c7c-32c8a98b75b5",
+    "content_hash": "b5b4993c22b81e60385b00d0bec36c0aedf0be5e9450da53a6276d70b0c66fa9",
+    "read_only": true,
+    "current_selection_changed_by_inspection": false
+  },
+  "limitations": [
+    "No genuine human usability observations were supplied",
+    "No full VoiceOver, largest-real-workload, installer or device-power-loss qualification",
+    "UI screenshots precede only the final API error-classification import repair; final HTTP and architecture regression was rerun",
+    "No experimental or physical validation; assumed-state inputs are synthetic fixtures"
+  ],
+  "cleanup": {
+    "agent_created_browser_tab_closed": true,
+    "agent_created_native_window_closed": true,
+    "agent_created_server_stopped_and_session_exit_checked": true,
+    "temporary_fixture_root_retained": true,
+    "owner_port_8787_or_application_root_touched": false,
+    "unrelated_python_apps_interacted_with": false
+  }
+}

@@ -16,11 +16,14 @@ from core.quantity import Quantity
 from core.unit import SI, Unit
 from physics.exceptions import OutOfRangeError, PhysicsError
 from systems.calculations.isentropic import evaluate_isentropic_stagnation
+from systems.configuration.analysis import configure_analysis_inputs
+from systems.configuration.subsystems import configure_subsystems
+from systems.configuration.thermochemistry import configure_thermochemistry
 from systems.contracts.results import CalculationResult, is_current_displayable
 from systems.cycle.models import CycleConfiguration, CycleType
 from systems.export.design_package import build_design_export_package
 from systems.persistence.design_store import DesignStore
-from systems.projects.models import PropulsionDesign
+from systems.projects.models import DERIVED_SLOT_BY_STAGE, PropulsionDesign
 from systems.workflow.graph import (
     BYPASSABLE_WHEN_UNIMPLEMENTED,
     STAGE_ENGINEERING_NOTES,
@@ -32,6 +35,7 @@ from systems.workflow.orchestrator import (
     run_phase3_chain,
     run_phase4_chain,
     run_phase6_chain,
+    run_subsystems_chain,
 )
 from systems.workflow.readiness import dependency_assessment, readiness_payload
 
@@ -45,10 +49,12 @@ __all__ = (
     "list_designs",
     "load_design",
     "map_systems_error",
+    "run_design_workflow",
     "run_isentropic",
     "run_phase3",
     "run_phase4",
     "run_phase6",
+    "run_subsystems",
     "save_design",
     "set_operating_gamma",
     "update_cycle",
@@ -132,10 +138,58 @@ def create_design(
     return design
 
 
-def save_design(design: PropulsionDesign, store: DesignStore) -> Path:
+def save_design(
+    design: PropulsionDesign, store: DesignStore, *, edits: dict[str, Any] | None = None
+) -> Path:
+    """Save editor edits without running any solver; drafts remain non-authoritative."""
+    apply_design_edits(design, edits=edits)
     return store.save(design)
 
 
+def apply_design_edits(design: PropulsionDesign, *, edits: dict[str, Any] | None = None) -> None:
+    """Reuse the existing editor mutation contract without choosing an IO store."""
+    if edits:
+        if edits.get("base_revision", design.revision) != design.revision:
+            raise InvalidInputError("Design changed since it was opened. Reload before saving.")
+        drafts = edits.get("editor_drafts", design.editor_drafts)
+        if not isinstance(drafts, dict) or len(drafts) > 150 or any(
+            not isinstance(key, str) or len(key) > 80
+            or not isinstance(value, str) or len(value) > 2000
+            for key, value in drafts.items()
+        ):
+            raise InvalidInputError("Editor drafts must be a bounded map of text fields.")
+        name = edits.get("name", design.name)
+        if not isinstance(name, str) or not name.strip() or len(name) > 200:
+            raise InvalidInputError("Design name must contain 1–200 characters.")
+        # Work on a copy: an invalid edit must not partially mutate the caller.
+        candidate = PropulsionDesign.from_canonical_dict(design.to_canonical_dict())
+        if "requirements" in edits:
+            if not isinstance(edits["requirements"], dict):
+                raise InvalidInputError("Requirements edits must be an object.")
+            update_requirements(candidate, edits["requirements"])
+        if "propellants" in edits:
+            selection = edits["propellants"]
+            if (not isinstance(selection, dict)
+                    or not {"oxidizer_id", "fuel_id"} <= selection.keys()
+                    or selection.keys() - {"oxidizer_id", "fuel_id", "mixture_ratio"}):
+                raise InvalidInputError("Propellant edits must be an object.")
+            update_propellants(candidate, **selection)
+        if "cycle_type" in edits:
+            update_cycle(candidate, edits["cycle_type"])
+        if "subsystem_inputs" in edits:
+            configure_subsystems(candidate, edits["subsystem_inputs"])
+        if "thermochemistry_configuration" in edits:
+            configure_thermochemistry(candidate, edits["thermochemistry_configuration"])
+        if candidate.name != name.strip():
+            candidate.bump_revision("name", candidate.name, name.strip())
+            candidate.name = name.strip()
+        candidate.editor_drafts = dict(drafts)
+        candidate.updated_at = _utc_now_iso()
+        # Keep the existing API contract: callers receive the saved aggregate.
+        for key in ("name", "revision", "updated_at", "requirements", "propellant_configuration",
+                    "cycle_configuration", "workflow", "change_log", "editor_drafts", "subsystem_inputs", "thermochemistry_configuration",
+                    *set(DERIVED_SLOT_BY_STAGE.values())):
+            setattr(design, key, getattr(candidate, key))
 def load_design(design_id: str, store: DesignStore) -> PropulsionDesign:
     return store.load(design_id)
 
@@ -256,7 +310,7 @@ def update_cycle(
     *,
     store: DesignStore | None = None,
 ) -> PropulsionDesign:
-    """Record cycle class. All cycle types remain NOT_IMPLEMENTED in this foundation."""
+    """Record cycle intent; selected steady models are separate exact-source solves."""
 
     try:
         enum_type = CycleType(str(cycle_type))
@@ -308,10 +362,31 @@ def run_phase3(
     molecular_weight_kg_per_mol: float | None = None,
     throat_area_m2: float | None = None,
     expansion_ratio: float | None = None,
+    thermochemistry_configuration: dict[str, Any] | None = None,
     store: DesignStore | None = None,
 ) -> dict[str, object]:
     """Run Requirements→…→Performance chain; return serializable summary."""
 
+    selected_mode = (thermochemistry_configuration if thermochemistry_configuration is not None
+                     else design.thermochemistry_configuration)
+    if isinstance(selected_mode, dict) and selected_mode.get("mode") == "nasa_cea" and any(
+        value is not None for value in (gamma, chamber_temperature_k, molecular_weight_kg_per_mol)
+    ):
+        raise InvalidInputError("CEA mode does not accept assumed Tc/gamma/MW. Select assumed mode explicitly.")
+    if thermochemistry_configuration is not None:
+        configure_thermochemistry(design, thermochemistry_configuration)
+    thermo_cfg = design.thermochemistry_configuration
+    if thermo_cfg:
+        configure_thermochemistry(design, thermo_cfg)
+    engine = None
+    if thermo_cfg.get("mode") == "nasa_cea":
+        from plugins.nasa_cea import bind_nasa_cea_engine
+
+        engine = bind_nasa_cea_engine(
+            fuel_temperature_k=thermo_cfg.get("fuel_temperature_k"),
+            oxidizer_temperature_k=thermo_cfg.get("oxidizer_temperature_k"),
+            require_explicit_temperatures=True,
+        )
     outcome = run_phase3_chain(
         design,
         chamber_temperature_k=chamber_temperature_k,
@@ -319,6 +394,7 @@ def run_phase3(
         molecular_weight_kg_per_mol=molecular_weight_kg_per_mol,
         throat_area_m2=throat_area_m2,
         expansion_ratio=expansion_ratio,
+        thermochemistry_engine=engine,
     )
     if store is not None:
         store.save(design)
@@ -340,8 +416,20 @@ def run_phase4(
     cp_j_kg_k: float | None = None,
     wall_temperature_k: float | None = None,
     throat_curvature_radius_m: float | None = None,
+    gas_property_mode: str | None = None,
+    pressure_model: str | None = None,
     store: DesignStore | None = None,
 ) -> dict[str, object]:
+    configure_analysis_inputs(design, {
+        "characteristic_length_m": characteristic_length_m, "contraction_ratio": contraction_ratio,
+        "wall_thickness_m": wall_thickness_m, "material_id": material_id,
+        "external_pressure_pa": external_pressure_pa.to_si() if isinstance(external_pressure_pa, Quantity) else external_pressure_pa,
+        "external_pressure_source": external_pressure_source, "material_temperature_k": material_temperature_k,
+        "viscosity_pa_s": viscosity_pa_s, "conductivity_w_m_k": conductivity_w_m_k,
+        "cp_j_kg_k": cp_j_kg_k, "wall_temperature_k": wall_temperature_k,
+        "throat_curvature_radius_m": throat_curvature_radius_m, "gas_property_mode": gas_property_mode,
+        "pressure_model": pressure_model,
+    })
     outcome = run_phase4_chain(
         design,
         characteristic_length_m=characteristic_length_m,
@@ -352,12 +440,64 @@ def run_phase4(
             else None if external_pressure_pa is None else _quantity_si(external_pressure_pa, "Pa")),
         external_pressure_source=external_pressure_source,
         material_temperature_k=material_temperature_k,
+        pressure_model=pressure_model,
         viscosity_pa_s=viscosity_pa_s,
         conductivity_w_m_k=conductivity_w_m_k,
         cp_j_kg_k=cp_j_kg_k,
         wall_temperature_k=wall_temperature_k,
         throat_curvature_radius_m=throat_curvature_radius_m,
     )
+    if store is not None:
+        store.save(design)
+    return _phase_payload(outcome)
+
+
+def run_design_workflow(
+    design: PropulsionDesign, *, phase3_inputs: dict[str, Any] | None = None,
+    phase4_inputs: dict[str, Any] | None = None, store: DesignStore | None = None,
+) -> dict[str, object]:
+    """One retained command; execute configured stages, never fill missing physics."""
+    import inspect
+
+    from systems.workflow.analysis import run_configured_analysis
+
+    p3 = {} if phase3_inputs is None else phase3_inputs
+    p4 = {} if phase4_inputs is None else phase4_inputs
+    for name, value, runner in (("phase3_inputs", p3, run_phase3), ("phase4_inputs", p4, run_phase4)):
+        allowed = set(inspect.signature(runner).parameters) - {"design", "store"}
+        if not isinstance(value, dict) or value.keys() - allowed:
+            raise InvalidInputError(name+" contains unknown or malformed solver fields.")
+    configure_analysis_inputs(design, p4)
+    first = run_phase3(design, **p3)
+    results, requests = run_configured_analysis(design)
+    if design.workflow.current_result("cycle") is None:
+        requests.append({"stage_id": "cycle", "fields": ["sourced feed/pressure/power specification"],
+            "blocked_by": [], "action": "Open Engine Cycle and run an exact-baseline selected-cycle / solved operating assessment. Selecting a cycle class does not solve a balance."})
+    first_stages = first["stages"]
+    if not isinstance(first_stages, dict):
+        raise TypeError("Phase3 must return its exact stage-result mapping.")
+    stages = {**first_stages, **{key: result.to_canonical_dict() for key, result in results.items()}}
+    failed = any(row["status"] in {"FAILED", "OUT_OF_RANGE"} for row in stages.values())
+    payload = {"ok": not failed, "execution_ok": not failed,
+        "phase_status": "FAILED" if failed else "INPUT_REQUIRED" if requests else "COMPLETE",
+        "ok_semantics": "Execution of ready stages only; INPUT_REQUIRED and model limits are not complete engine acceptance.",
+        "design_id": design.design_id, "revision": design.revision, "stages": stages,
+        "input_requests": requests, **readiness_payload(design.workflow), "workflow": get_workflow_payload(design)}
+    if store is not None:
+        store.save(design)
+    return payload
+
+
+def run_subsystems(
+    design: PropulsionDesign, *, inputs: dict[str, Any] | None = None,
+    stages: tuple[str, ...] = ("injector", "nozzle", "cooling"), store: DesignStore | None = None,
+) -> dict[str, object]:
+    # Validate selection before any input mutation or persisted revision change.
+    if not stages or len(stages) != len(set(stages)) or set(stages) - {"injector", "nozzle", "cooling"}:
+        raise InvalidInputError("Select unique injector, nozzle and/or cooling stages.")
+    if inputs is not None:
+        configure_subsystems(design, inputs)
+    outcome = run_subsystems_chain(design, stages=stages)
     if store is not None:
         store.save(design)
     return _phase_payload(outcome)
@@ -399,10 +539,16 @@ def get_stage_result_payload(
         raise KeyError(stage_id)
     current = design.workflow.current_result(stage_id)
     if current is not None:
+        comparison = {}
+        if stage_id == "performance":
+            from systems.visualization.targets import thrust_comparison
+
+            comparison = {"target_comparison": thrust_comparison(design)}
         return {
             "ok": True,
             "displayable_as_current": True,
             "result": current.to_canonical_dict(),
+            **comparison,
         }
     if allow_stale:
         return {
@@ -433,6 +579,9 @@ def get_workflow_payload(design: PropulsionDesign) -> dict[str, object]:
         result = design.workflow.results.get(stage_id)
         display_status = node.status.value
         current = design.workflow.current_result(stage_id)
+        capability = node.implementation_status.value
+        if stage_id == "cycle":
+            capability = CycleConfiguration.for_type(design.cycle_configuration.cycle_type).implementation_status.value
         bypass = [
             {"upstream": upstream, "reason": reason}
             for (downstream, upstream), reason in BYPASSABLE_WHEN_UNIMPLEMENTED.items()
@@ -445,15 +594,20 @@ def get_workflow_payload(design: PropulsionDesign) -> dict[str, object]:
                 "name": node.name,
                 "dependencies": [edge.stage_id for edge in node.dependencies],
                 "dependency_edges": dependency_assessment(design.workflow, stage_id),
-                "implementation_status": node.implementation_status.value,
+                "implementation_status": capability,
+                "saved_implementation_status": node.implementation_status.value,
                 "status": display_status,
                 "has_current_result": current is not None,
                 "result_id": None if result is None else result.result_id,
                 "result_is_current": (
-                    False if result is None else is_current_displayable(result.status)
+                    node.status.value == "CURRENT" if stage_id == "design_project" and result is None
+                    else False if result is None else is_current_displayable(result.status)
                 ),
                 "dependency_policy": bypass,
                 "engineering_note": STAGE_ENGINEERING_NOTES.get(stage_id, ""),
+                "input_request": None if result is None else result.inputs.get("input_request"),
+                "diagnostics": [] if result is None else [*result.errors, *({"message": w} for w in result.warnings)],
+                "available_selected_models": ["PRESSURE_FED", "GAS_GENERATOR"] if stage_id == "cycle" else [],
             }
         )
     return {"design_id": design.design_id, "revision": design.revision, "nodes": nodes, **readiness_payload(design.workflow)}

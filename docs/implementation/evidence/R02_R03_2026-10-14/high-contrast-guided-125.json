@@ -1,0 +1,21 @@
+{
+  "bodyWidth": 1100,
+  "chartLabel": "Nozzle contour radius. Axial position [m], linear axis; Nozzle contour radius [m], linear axis. Radius: 81/81 displayed source points. Uncertainty not quantified. Propulsion design c4a56dc8-945b-4b62-b8ac-fa84007db212, revision 7, result 7a2e0239-6945-490c-ab0e-56652ccb2c8e, status CURRENT. Exact source table/export is separate; reduction is display only.",
+  "chromeFont": "20px",
+  "colors": {
+    "--ds-focus-ring": "#8ce5ff",
+    "--ds-surface-panel": "#080808",
+    "--ds-text-primary": "#ffffff",
+    "--ds-text-secondary": "#dedede"
+  },
+  "fontScale": "",
+  "mode": "Guided",
+  "plotFont": "20px",
+  "plotTheme": "high-contrast",
+  "source": "domainpropulsiondesign idc4a56dc8-945b-4b62-b8ac-fa84007db212revision7result id7a2e0239-6945-490c-ab0e-56652ccb2c8econtent sha2563d92f6e2a8afd72f1fd02ec05eae102b07ff9d07e785aa14f7dab78790ffae01statusCURRENTmodel idPHYS-NOZ.tangent_bell_geometryfreshnesscurrentverification{\"status\":\"SOFTWARE_VERIFIED\",\"reference\":\"endpoint, area, analytic tangent and discretization tests\"}validation{\"status\":\"NOT_CLAIMED\",\"reference\":null}validity{\"status\":\"UNKNOWN\",\"checks\":[],\"violations\":[],\"valid_range\":\"epsilon > 1; 0 < exit angle < start angle < 90 deg; monotonic x and radius\"}",
+  "theme": "high-contrast",
+  "viewport": {
+    "height": 700,
+    "width": 1100
+  }
+}

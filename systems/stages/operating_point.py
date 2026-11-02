@@ -2,9 +2,14 @@
 
 from __future__ import annotations
 
+from dataclasses import fields, replace
+
+from core.dimension import TEMPERATURE
 from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.unit import SI
+from core.validation import validate_positive
+from physics.quantities import as_si, require_gamma
 from systems.contracts.results import (
     CalculationResult,
     ResultStatus,
@@ -12,10 +17,34 @@ from systems.contracts.results import (
     ValidityState,
     VerificationInfo,
 )
+from systems.operating_point.models import OperatingPoint
 from systems.projects.models import PropulsionDesign
 from systems.stages._helpers import failed_result, make_result, stage_guard
 
 __all__ = ("run_operating_point_stage",)
+
+
+def _validated_chamber_assumptions(
+    temperature_k: float | None,
+    gamma: float | None,
+    molar_mass_kg_per_mol: float | None,
+) -> tuple[float | None, float | None, float | None]:
+    """Validate all supplied/effective assumptions before accepting any of them."""
+    for name, value in (("chamber_temperature_k", temperature_k), ("gamma", gamma),
+                        ("molar_mass_kg_per_mol", molar_mass_kg_per_mol)):
+        if value is not None and (isinstance(value, bool) or not isinstance(value, (int, float))):
+            raise InvalidInputError(f"{name} must be a real number.")
+    return (
+        None if temperature_k is None else validate_positive(temperature_k, "chamber_temperature_k"),
+        None if gamma is None else require_gamma(gamma),
+        None if molar_mass_kg_per_mol is None else validate_positive(molar_mass_kg_per_mol, "molar_mass_kg_per_mol"),
+    )
+
+
+def _commit_operating_point(target: OperatingPoint, candidate: OperatingPoint) -> None:
+    """Commit a checked candidate without changing the public aggregate identity."""
+    for item in fields(target):
+        setattr(target, item.name, getattr(candidate, item.name))
 
 
 @stage_guard("operating_point")
@@ -33,11 +62,20 @@ def run_operating_point_stage(
     """
 
     stage_id = "operating_point"
-    op = design.operating_point
+    accepted = design.operating_point
+    op = replace(accepted)
     req = design.requirements
     assumptions: list[str] = []
 
     try:
+        # Validate the whole effective assumed state first. A later bad gamma/MW
+        # must not leave an earlier valid temperature applied to the live design.
+        _validated_chamber_assumptions(
+            chamber_temperature if chamber_temperature is not None else
+            None if op.chamber_temperature is None else as_si(op.chamber_temperature, TEMPERATURE, "chamber_temperature"),
+            gamma if gamma is not None else op.gamma,
+            molecular_weight_kg_per_mol if molecular_weight_kg_per_mol is not None else op.molecular_weight,
+        )
         if req.target_chamber_pressure is not None:
             op.chamber_pressure = req.target_chamber_pressure
         op.ambient_pressure = req.ambient_pressure
@@ -94,6 +132,7 @@ def run_operating_point_stage(
             source="COSMOS Systems operating-point stage",
             design_revision=design.revision,
         )
+        _commit_operating_point(accepted, op)
         design.store_stage_result(stage_id, result)
         design.workflow.invalidate_from(stage_id)
         design.workflow.graph.get(stage_id).status = ResultStatus.CURRENT

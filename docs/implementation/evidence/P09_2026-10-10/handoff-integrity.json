@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "geometry_snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+  "source_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+  "export_sha256": "d2394f4c38754f0f10046b38d6e20e1d5b157d74685050f28b5c98a10502b712",
+  "study_sha256": "8643b2d595b0d888e3b7aabd43c00cdd0334d2f34b58e2f9584aff92864c1d1d",
+  "mesh_sha256": "81747b94e595c7b5e7be22f9384489685ecbe4c3cb42f5f9272523bfddb5f868",
+  "selection": "outer-surface -> radial-outer-shell",
+  "mapping_scope": "fixed analytic spherical symmetry; not generic native face remapping",
+  "independent_STEP_QA_pass": true,
+  "production_handoff": false
+}

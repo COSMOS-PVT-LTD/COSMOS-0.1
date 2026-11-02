@@ -1,0 +1,441 @@
+{
+  "schema_version": 1,
+  "gate_id": "G0",
+  "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+  "source_scope": "HEAD plus fingerprinted existing dirty working tree, evidence excluded",
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+  },
+  "date": "2026-10-08",
+  "reviewer": "Codex automated audit; human acceptance not claimed",
+  "decision": "PASS for bounded as-built audit only",
+  "blockers": [],
+  "release_blockers": [
+    "Security/packaging/support-target qualification",
+    "Immutable publication and transactional lineage",
+    "Unimplemented geometry/simulation/V&V capabilities"
+  ],
+  "claims": [
+    {
+      "claim_id": "E01",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "GOV-001",
+        "GOV-006"
+      ],
+      "claim": "SHA plus dirty-source identity and architecture inventory are verified",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "git rev-parse HEAD",
+        "git ls-remote origin HEAD refs/heads/main",
+        "collect_baseline.py"
+      ],
+      "test_artifacts": [
+        "repository_baseline.json",
+        "source_hashes.json",
+        "source_inventory.csv",
+        "import_edges.json",
+        "P00_AUDIT_REPORT.md"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "PASS",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "E02",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "GOV-001",
+        "GOV-004"
+      ],
+      "claim": "Configured Python and JS regression baseline passes with explicit skips",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "python -m pytest -q --junitxml=<evidence>/pytest.xml",
+        "node --test tests/js/*.test.cjs"
+      ],
+      "test_artifacts": [
+        "pytest.xml",
+        "pytest.log",
+        "javascript-tests.log",
+        "P00_BASELINE_TESTS.md"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "PASS_WITH_KNOWN_SKIPS",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "E03",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "GOV-001"
+      ],
+      "claim": "Configured lint/type and static dependency checks pass",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "ruff check core knowledge physics numerics systems api gui infrastructure plugins tests tools",
+        "mypy core physics numerics systems api"
+      ],
+      "test_artifacts": [
+        "ruff.log",
+        "mypy.log",
+        "diagnostic_probes.json"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "PASS_SCOPED",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "E04",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "GOV-004"
+      ],
+      "claim": "Native CEA agrees with three rounded legacy Fortran reference cases; no physical validation claimed",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "python scripts/verify_cea_reference.py --source-dir <recorded local Fortran source>"
+      ],
+      "test_artifacts": [
+        "cea_reference.json",
+        "cea_reference.log",
+        "06-native-cea-success.dom.txt",
+        "screenshots/06-native-cea-result.png"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "PASS_SCOPED",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "E05",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "GOV-004"
+      ],
+      "claim": "14 numerics refinement studies and 5 warm microbenchmarks provide fixture-scoped evidence",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "python tools/benchmark_numerics_foundation.py [FAILED import path]",
+        "PYTHONPATH=. python -m tools.benchmark_numerics_foundation [PASS]"
+      ],
+      "test_artifacts": [
+        "numerics_benchmarks.json",
+        "numerics_benchmarks.log",
+        "numerics_benchmarks_module.log"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "PASS_RECOVERED_INVOCATION",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "E06",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "GOV-003",
+        "UX-005"
+      ],
+      "claim": "Two stale preloaded API/store writers lose the first saved change; full published snapshots absent",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "python <evidence>/inspect_baseline.py"
+      ],
+      "test_artifacts": [
+        "diagnostic_probes.json",
+        "inspect_baseline.py",
+        "P00_AUDIT_REPORT.md"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "GAP_CONFIRMED",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "E07",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "GOV-003"
+      ],
+      "claim": "Current result envelope inputs are mutable; immutable publication boundary is required",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "python <evidence>/inspect_baseline.py"
+      ],
+      "test_artifacts": [
+        "diagnostic_probes.json",
+        "P00_AUDIT_REPORT.md"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "GAP_CONFIRMED",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "E08",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "GOV-009"
+      ],
+      "claim": "2 active and 10 planned workbenches; NGG and operational Simulation/V&V absent",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "Registry/catalog inspection",
+        "Browser navigation to planned Simulation"
+      ],
+      "test_artifacts": [
+        "workbench_inventory.json",
+        "workflow_inventory.json",
+        "AS_BUILT_CAPABILITY_MATRIX.csv",
+        "screenshots/08-simulation-planned.png"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "AS_BUILT_VERIFIED",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "E09",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "UX-001",
+        "UX-002",
+        "UX-003",
+        "UX-004",
+        "UX-006",
+        "UX-007"
+      ],
+      "claim": "12 fresh journey screenshots plus DOM/keyboard/minimum-viewport spot checks; UX gaps documented",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "Browser fixture journey at 1280x720 and 1100x700",
+        "Ctrl+K, Shift+Tab, Tab, Escape"
+      ],
+      "test_artifacts": [
+        "P00_UI_UX_AUDIT.md",
+        "keyboard-observations.json",
+        "minimum-viewport-observations.json",
+        "screenshots/01-login.png",
+        "screenshots/02-workbench-hub.png",
+        "screenshots/03-rocket-empty.png",
+        "screenshots/04-requirements-saved.png",
+        "screenshots/05-run-preflight-failure.png",
+        "screenshots/06-native-cea-result.png",
+        "screenshots/07-temperature-rejection.png",
+        "screenshots/08-simulation-planned.png",
+        "screenshots/09-knowledge-empty.png",
+        "screenshots/10-knowledge-no-evidence.png",
+        "screenshots/11-command-keyboard.png",
+        "screenshots/12-minimum-desktop.png"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "AUDIT_COMPLETE_NOT_ACCESSIBILITY_CERTIFIED",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "E10",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "GOV-009"
+      ],
+      "claim": "No-source Knowledge query correctly reports insufficient evidence",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "Browser empty-workspace search and chat"
+      ],
+      "test_artifacts": [
+        "09-knowledge.dom.txt",
+        "10-knowledge-search.dom.txt",
+        "screenshots/10-knowledge-no-evidence.png"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "PASS_SCOPED",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "E11",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "GOV-002",
+        "GOV-007",
+        "GOV-010"
+      ],
+      "claim": "Security/request-bound/job-isolation gaps remain; no penetration test claimed",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "Targeted authentication/server/credential-vault source review"
+      ],
+      "test_artifacts": [
+        "P00_AUDIT_REPORT.md",
+        "source_inventory.csv"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "RELEASE_GAPS_SOURCE_REVIEW",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "E12",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "GOV-002"
+      ],
+      "claim": "Existing macOS app is unsigned; supported-target release qualification absent",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "plutil -lint dist/COSMOS 0.1.app/Contents/Info.plist [PASS]",
+        "codesign --verify --deep --strict dist/COSMOS 0.1.app [FAIL unsigned]"
+      ],
+      "test_artifacts": [
+        "macos-signature.log",
+        "P00_BASELINE_TESTS.md"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "RELEASE_BLOCKED",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "E13",
+      "gate_id": "G0",
+      "requirement_ids": [
+        "GOV-005",
+        "GOV-006",
+        "GOV-008",
+        "NGG-001",
+        "NGG-002",
+        "NGG-003",
+        "NGG-004",
+        "NGG-005",
+        "NGG-006",
+        "NGG-007"
+      ],
+      "claim": "Future phases and approval/rollback/representation/QA gates are planned, not implemented",
+      "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+      "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+      "environment": {
+        "platform": "macOS-26.5.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+        "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python"
+      },
+      "commands": [
+        "Complete specification package review and as-built gap mapping"
+      ],
+      "test_artifacts": [
+        "P00_IMPLEMENTATION_PLAN.md",
+        "P00_AUDIT_REPORT.md"
+      ],
+      "reviewer": "Codex automated audit",
+      "decision": "PLAN_ONLY",
+      "date": "2026-10-08",
+      "blockers": [],
+      "confidence": "HIGH for stated limited scope"
+    }
+  ]
+}

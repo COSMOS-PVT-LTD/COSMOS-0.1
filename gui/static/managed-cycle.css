@@ -1,0 +1,21 @@
+#managed-cycle label{display:flex;flex-direction:column;gap:var(--ds-space-1,.35rem);margin-block:.65rem;overflow-wrap:anywhere}
+#managed-cycle .cycle-fields,#managed-cycle .cycle-residuals{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:var(--ds-space-3,1rem)}
+#managed-cycle input,#managed-cycle select{width:100%;min-width:0;box-sizing:border-box}
+#managed-cycle dl{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:.5rem}
+#managed-cycle dd,#managed-cycle dt,#managed-cycle p{margin:0;overflow-wrap:anywhere}
+#managed-cycle p{margin-block:.65rem}
+#managed-cycle pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:28rem;overflow:auto}
+#managed-cycle .cycle-chart{width:100%;height:32rem;min-width:0}
+#managed-cycle dialog{max-width:min(90vw,48rem);color:var(--ds-text-primary);background:var(--ds-surface-panel)}
+#managed-propulsion-validation label{display:flex;flex-direction:column;gap:.35rem;margin-block:.65rem;overflow-wrap:anywhere}
+#managed-propulsion-validation input,#managed-propulsion-validation select,#managed-propulsion-validation textarea{width:100%;min-width:0;box-sizing:border-box}
+#managed-propulsion-validation pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:24rem;overflow:auto}
+#managed-propulsion-validation p{overflow-wrap:anywhere}
+#managed-engine-operating label{display:flex;flex-direction:column;gap:var(--ds-space-1,.35rem);margin-block:.65rem;overflow-wrap:anywhere}
+#managed-engine-operating input,#managed-engine-operating select,#managed-engine-operating textarea{width:100%;min-width:0;box-sizing:border-box}
+#managed-engine-operating pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:28rem;overflow:auto}
+#managed-engine-operating p{overflow-wrap:anywhere}
+#managed-engine-operating .cycle-chart{width:100%;height:32rem;min-width:0}
+#managed-engine-operating table{width:100%;border-collapse:collapse}
+#managed-engine-operating th,#managed-engine-operating td{text-align:left;padding:.45rem;overflow-wrap:anywhere;border-bottom:1px solid var(--ds-border-subtle)}
+#managed-engine-operating dialog{max-width:min(90vw,48rem);color:var(--ds-text-primary);background:var(--ds-surface-panel)}

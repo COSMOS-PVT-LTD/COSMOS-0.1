@@ -1,0 +1,13 @@
+# R06 finish / R07 start: bounded software increment
+
+Baseline HEAD: `293223ebef190eaa647e67dc581eb186b2b5d987`; inherited dirty work is preserved. Source preservation baseline: preceding `R06_CLOSURE_2026-10-20/source-final.json`.
+
+1. Qualify the existing bounded/nonadiabatic/operating solver tests before edits.
+2. Add explicit OAT + centered h/h2 sensitivity over the **existing** PF/GG operating recipe. Recompute the native CEA HP/thermal/network model on independent baseline copies; do not differentiate frozen outputs. Capture exact recipe, units, sampled values, per-case results/failures and source fingerprints before/after execution. Bound cases and elapsed admission. Retain invalid domains without interpolation, clipping, zero filling or one-sided fallback. This is local sensitivity, not uncertainty propagation or global optimization.
+3. Reuse R05 managed input captures/CAS/idempotency/history/restart and authenticated routes, with source-bound CSV/plots and explicit Projects controls. Preserve the earlier assumed-state sensitivity tool. Extend existing predeclared validation preparation to exact current usable solved candidates, their actual predicted pressure/flow/thermal outputs and input context; keep unknown uncertainty, missing genuine measurements and independent-review gates explicit.
+4. Begin R07 with a divergent-nozzle **intent** template from the exact CURRENT authoritative contour. Reuse P06 SI snapshot/frame/feature-DAG DTOs. Explicit radial wall thickness and separate source/export tolerances; no invented chamber/injector/channel dimensions. Persist exact contour/configuration/source identity, inspectable profile and graph. Do not bypass the fixture-only native worker allowlist or claim an accepted CAD solid/export.
+5. Run new negative/analytic/native/HTTP tests, existing regressions, JS/static checks and isolated UI-to-storage qualification. Record source preservation and exact results before any completion claims.
+
+No frozen physics equation, solver policy or upstream workflow stage is changed. No user data migration, commit/push, release, hardware use or physical sign-off is authorized by this increment.
+
+R06 closure must be reported per selected software profile. Unselected cycle architectures and undeclared pressurant blowdown, injected-film feedback, two-phase conditioning, full chamber cooling and hardware-map/physical qualification remain explicit limitations, not passed checkboxes. Genuine measurements and independent engineering acceptance remain pending. R07 completion still requires backend operations, qualified engineering geometry, reimport/QA and simulation handoff in later increments.

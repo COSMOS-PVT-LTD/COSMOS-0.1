@@ -1,0 +1,290 @@
+--- P11-before/api/authentication.py
++++ P12-current/api/authentication.py
+@@ -67,14 +67,14 @@
+ class AuthService:
+     """Company-local credential store. Not a cloud identity provider."""
+ 
+-    def __init__(self, root: Path | str, *, secret: str | None = None) -> None:
++    def __init__(self, root: Path | str, *, secret: str | None = None, bootstrap_password: str | None = None) -> None:
+         self.root = Path(root)
+         self.root.mkdir(parents=True, exist_ok=True)
+         self.db_path = self.root / "users.sqlite"
+         self._secret = secret or self._load_or_create_secret()
+         self._lock = threading.Lock()
+         self._migrate()
+-        self._ensure_bootstrap_admin()
++        self._ensure_bootstrap_admin(bootstrap_password)
+ 
+     def _load_or_create_secret(self) -> str:
+         path = self.root / "session.secret"
+@@ -132,12 +132,12 @@
+             connection.execute("ALTER TABLE users ADD COLUMN profile_photo TEXT NOT NULL DEFAULT ''")
+         connection.commit()
+ 
+-    def _ensure_bootstrap_admin(self) -> None:
++    def _ensure_bootstrap_admin(self, bootstrap_password: str | None = None) -> None:
+         if self._get_user_by_login("cosmos-admin") is not None:
+             return
+         self.register_user(
+             login_id="cosmos-admin",
+-            password="COSMOS-Dev-2026!",
++            password=bootstrap_password if bootstrap_password is not None else "COSMOS-Dev-2026!",
+             display_name="COSMOS Administrator",
+             designation="System Administrator",
+             employee_id="COSMOS-001",
+--- P11-before/gui/server.py
++++ P12-current/gui/server.py
+@@ -128,8 +128,17 @@
+         if self.shell_flag.diagnostic:
+             logger.warning("%s: COSMOS_NEW_SHELL is invalid; legacy shell remains active", self.shell_flag.diagnostic)
+         self.root = Path(root)
++        from infrastructure.release.security import (
++            preview_enabled,
++            private_auth_files,
++            private_bootstrap,
++        )
++        self.release_preview = preview_enabled(os.environ.get("COSMOS_RELEASE_PROFILE"))
++        bootstrap_password = private_bootstrap(self.root) if self.release_preview else None
+         self.root.mkdir(parents=True, exist_ok=True)
+-        self.auth = AuthService(self.root / "auth")
++        self.auth = AuthService(self.root / "auth", bootstrap_password=bootstrap_password)
++        if self.release_preview:
++            private_auth_files(self.auth.root)
+         self.profiles = ProfileService(self.auth)
+         secret_path = self.auth.root / "session.secret"
+         master_secret = secret_path.read_text(encoding="utf-8").strip() if secret_path.is_file() else "cosmos-bootstrap"
+@@ -223,6 +232,9 @@
+ def _read_json(handler: BaseHTTPRequestHandler) -> dict[str, object]:
+     length = int(handler.headers.get("Content-Length", "0"))
+     raw = handler.rfile.read(length) if length else b"{}"
++    if getattr(getattr(handler, "application", None), "release_preview", False):
++        from infrastructure.release.security import strict_json
++        return strict_json(raw)
+     payload = json.loads(raw.decode("utf-8") or "{}")
+     if not isinstance(payload, dict):
+         raise TypeError("JSON body must be an object.")
+@@ -311,6 +323,9 @@
+             return
+         data = path.read_bytes()
+         mime = content_type or mimetypes.guess_type(str(path))[0] or "application/octet-stream"
++        if self.application.release_preview and "text/html" in mime:
++            data = data.replace(b"Local development administrator:", b"Private local-preview administrator:")
++            data = data.replace(b"COSMOS-Dev-2026!", b"[unique password in first-login.json]")
+         if "text/html" in mime and urlparse(self.path).path.startswith("/app/"):
+             data = inject_shell(data, enabled=use_shell(self.application.shell_flag, self.path))
+         self.send_response(200)
+@@ -352,7 +367,36 @@
+             return None
+         return session
+ 
++    def _release_guard(self, method: str) -> bool:
++        if not self.application.release_preview:
++            return True
++        from infrastructure.release.security import ReleaseProfileError, guard
++        try:
++            guard(self, method)
++            return True
++        except ReleaseProfileError as error:
++            self.close_connection = True
++            self._json(400, {"error": {"code": error.code, "message": str(error),
++                                     "action": "Use the isolated local preview, exact loopback origin and bounded JSON request."}})
++            return False
++
++    def setup(self) -> None:
++        if self.application.release_preview:
++            self.request.settimeout(10)
++        super().setup()
++
++    def end_headers(self) -> None:
++        if self.application.release_preview:
++            self.send_header("X-Content-Type-Options", "nosniff")
++            self.send_header("Cache-Control", "no-store")
++            self.send_header("Referrer-Policy", "no-referrer")
++            self.send_header("Cross-Origin-Resource-Policy", "same-origin")
++            self.send_header("X-Frame-Options", "DENY")
++        super().end_headers()
++
+     def do_GET(self) -> None:
++        if not self._release_guard("GET"):
++            return
+         parsed = urlparse(self.path)
+         path = parsed.path
+         session = _session_from_handler(self, self.application)
+@@ -375,6 +419,8 @@
+         self._json(404, {"error": "not_found"})
+ 
+     def do_POST(self) -> None:
++        if not self._release_guard("POST"):
++            return
+         parsed = urlparse(self.path)
+         path = parsed.path
+         session = _session_from_handler(self, self.application)
+@@ -383,6 +429,8 @@
+         self._json(404, {"error": "not_found"})
+ 
+     def do_DELETE(self) -> None:
++        if not self._release_guard("DELETE"):
++            return
+         parsed = urlparse(self.path)
+         path = parsed.path
+         session = _session_from_handler(self, self.application)
+@@ -1292,6 +1340,7 @@
+ 
+ 
+ def serve_application(root: Path | str, *, host: str = "127.0.0.1", port: int = 8780) -> None:
++    from infrastructure.release.security import PreviewHTTPServer, ReleaseProfileError
+     application = CosmosApplication(root)
+ 
+     class BoundHandler(CosmosApplicationHandler):
+@@ -1299,17 +1348,20 @@
+ 
+     BoundHandler.application = application
+     try:
+-        server = ThreadingHTTPServer((host, port), BoundHandler)
+-    except OSError as exc:
++        server_class = PreviewHTTPServer if application.release_preview else ThreadingHTTPServer
++        server = server_class((host, port), BoundHandler)
++    except (OSError, ReleaseProfileError) as exc:
+         raise SystemExit(
+             f"Could not bind http://{host}:{port}: {exc}\n"
+             "Try another port, e.g. --port 8781.",
+         ) from exc
+ 
++    identity = (f"  Private first-login record: {application.root / 'first-login.json'}\n"
++                "  Local research preview only; not a production/hardware release.\n") if application.release_preview else "  Default admin: cosmos-admin / COSMOS-Dev-2026!\n"
+     print(
+         f"COSMOS 0.1 desktop shell listening on http://{host}:{port}\n"
+         f"  data root={Path(root).resolve()}\n"
+-        "  Default admin: cosmos-admin / COSMOS-Dev-2026!\n"
++        f"{identity}"
+         "  Press Ctrl+C to stop.",
+         flush=True,
+     )
+--- P11-before/gui/static/app.js
++++ P12-current/gui/static/app.js
+@@ -1241,3 +1241,7 @@
+ };
+ 
+ window.COSMOS = COSMOS;
++if (typeof window.CosmosInstallRBAC === "function") {
++  window.CosmosInstallRBAC(COSMOS);
++  delete window.CosmosInstallRBAC;
++}
+--- P11-before/gui/static/rbac.js
++++ P12-current/gui/static/rbac.js
+@@ -2,7 +2,8 @@
+  * COSMOS 0.1 — centralized role-based access policy (frontend).
+  * Backend enforcement remains authoritative in api/authorization.py and knowledge/workspace/access.py.
+  */
+-(function rbacModule() {
++(function rbacModule(global) {
++ function install(COSMOS) {
+   const ROLE = (user) => String(user?.role || "").toUpperCase();
+ 
+   COSMOS.permissions = {
+@@ -29,4 +30,8 @@
+   COSMOS.canAdmin = (user) => COSMOS.permissions.canAdmin(user || COSMOS.currentUser);
+   COSMOS.canAudit = (user) => COSMOS.permissions.canAudit(user || COSMOS.currentUser);
+   COSMOS.canKnowledgeAdmin = (user) => COSMOS.permissions.canKnowledgeAdmin(user || COSMOS.currentUser);
+-})();
++ }
++ // Legacy and modern templates load these two scripts in both orders.
++ if (global.COSMOS) install(global.COSMOS);
++ else global.CosmosInstallRBAC = install;
++})(window);
+--- P11-before/.github/workflows/ci.yml
++++ P12-current/.github/workflows/ci.yml
+@@ -17,6 +17,27 @@
+   contents: read
+ 
+ jobs:
++  macos-preview:
++    name: macOS arm64 release preview (Python 3.11)
++    runs-on: macos-15
++    steps:
++      - uses: actions/checkout@v4
++      - uses: actions/setup-python@v5
++        with:
++          python-version: "3.11"
++      - name: Install pinned preview environment
++        run: python -m pip install -r requirements-release-macos.txt
++      - name: Confirm architecture and run profile/package boundaries
++        run: |
++          test "$(uname -m)" = arm64
++          python -m pytest -q tests/unit_tests/infrastructure/test_release_hardening.py tests/integration_tests/gui/test_release_preview_http.py
++          python -m pip check
++          python scripts/build_release_preview.py --output "$RUNNER_TEMP/cosmos-preview"
++      - name: Check preview dependencies for known advisories
++        run: |
++          python -m venv "$RUNNER_TEMP/audit-tools"
++          "$RUNNER_TEMP/audit-tools/bin/python" -m pip install pip-audit==2.10.1
++          "$RUNNER_TEMP/audit-tools/bin/python" -m pip_audit --path "$(python -c 'import sysconfig; print(sysconfig.get_paths()["purelib"])')" --strict
+   cea:
+     name: NASA CEA live integration (Python 3.11)
+     runs-on: ubuntu-latest
+@@ -104,4 +125,4 @@
+         run: python -m ruff check core knowledge physics numerics systems simulation validation api gui infrastructure plugins tests tools
+ 
+       - name: Mypy (Core, Physics, Numerics, Systems, API)
+-        run: python -m mypy core physics numerics systems api simulation validation knowledge/workspace/evidence_navigation.py
++        run: python -m mypy core physics numerics systems api simulation validation knowledge/workspace/evidence_navigation.py infrastructure/release
+--- P11-before/.gitignore
++++ P12-current/.gitignore
+@@ -67,6 +67,7 @@
+ # Virtual environments
+ .venv/
+ .venv-remediation/
++.venv-release-p12/
+ venv/
+ ENV/
+ env/
+--- P11-before/SECURITY.md
++++ P12-current/SECURITY.md
+@@ -15,8 +15,15 @@
+ If you discover a security vulnerability affecting COSMOS, report it through
+ responsible disclosure.
+ 
+-**Security contact:** `[SECURITY CONTACT]` *(placeholder — replace with the
+-official COSMOS PVT LTD security contact when established)*
++**Security contact: not configured.** Do not assume that a website or a purchased
++domain provides a monitored private reporting channel. External production
++release remains blocked until COSMOS establishes and tests that channel.
++
++The proposed role address is `security@cosmospvtltd.com`. It is **not confirmed
++active**. Set up the mailbox with the company's email provider, enable MFA,
++assign a responsible owner and backup, test inbound/outbound delivery, and
++publish a private security-reporting page before advertising it. Do not send
++vulnerability details to an unverified address or public issue.
+ 
+ When reporting, include:
+ 
+@@ -42,6 +49,14 @@
+   authorization.
+ 
+ ## Secret and Credential Management
++
++The default local development profile has a known bootstrap account and is not
++a production configuration. P12's opt-in `COSMOS_RELEASE_PROFILE=local-preview`
++requires a separate private data root, generates a unique first-login record
++with mode 0600, and refuses silent reuse of legacy accounts. It is limited to
++IPv4 loopback and bounded same-origin HTTP requests. Downloaded research reports
++and preview review intents do not authorize production or hardware use. See
++`documentation/development/COSMOS_P12_RELEASE_PREVIEW.md` for launch and rollback.
+ 
+ Never commit to this repository:
+ 
+--- P11-before/scripts/build_macos_app.sh
++++ P12-current/scripts/build_macos_app.sh
+@@ -11,6 +11,12 @@
+   PY="${PYTHON:-python3}"
+ fi
+ ICON_SRC="$ROOT/gui/assets/cosmos_logo.png"
++
++# Explicit P12 preview mode preserves the existing development bundle.
++if [[ "${1:-}" == "--release-preview" ]]; then
++  shift
++  exec "$PY" "$ROOT/scripts/build_release_preview.py" "$@"
++fi
+ 
+ mkdir -p "$APP_DIR/Contents/MacOS" "$APP_DIR/Contents/Resources"
+ 

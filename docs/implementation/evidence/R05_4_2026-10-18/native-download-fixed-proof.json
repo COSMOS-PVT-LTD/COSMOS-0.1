@@ -1,0 +1,9 @@
+{
+  "bytes": 7648,
+  "sha256": "1f76ffd702b491d88a053b1cf143e191ed6f4f75475685af759a9a133624ed42",
+  "expected_sha256": "1f76ffd702b491d88a053b1cf143e191ed6f4f75475685af759a9a133624ed42",
+  "matches": true,
+  "path": "/private/tmp/cosmos-r05_4-preview.8ceOjs/R054-QA-authenticated-dataset.json",
+  "mechanism": "Explicit download attribute / authenticated WKDownload; endpoint unchanged",
+  "physical_validation": false
+}

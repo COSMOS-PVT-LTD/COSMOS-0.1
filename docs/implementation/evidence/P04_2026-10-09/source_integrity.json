@@ -1,0 +1,31 @@
+{
+  "pass": true,
+  "preexistingFiles": 1716,
+  "allowedProductionChanges": [
+    "gui/server.py",
+    "gui/static/app.js",
+    "gui/static/propulsion-suite.js"
+  ],
+  "unexpected": [],
+  "addedFiles": [
+    "gui/app_shell.py",
+    "gui/static/app-shell/README.md",
+    "gui/static/app-shell/adapter.d.ts",
+    "gui/static/app-shell/adapter.js",
+    "gui/static/app-shell/contracts.d.ts",
+    "gui/static/app-shell/dashboard.html",
+    "gui/static/app-shell/model.d.ts",
+    "gui/static/app-shell/model.js",
+    "gui/static/app-shell/shell.js",
+    "gui/static/app-shell/styles.css",
+    "tests/integration_tests/gui/test_app_shell_http.py",
+    "tests/js/app_shell.test.cjs",
+    "tests/ui/app-shell/playwright.config.cjs",
+    "tests/ui/app-shell/serve_components.py",
+    "tests/ui/app-shell/serve_fixture.py",
+    "tests/ui/app-shell/shell.spec.cjs",
+    "tests/ui/app-shell/type_contracts.ts",
+    "tests/unit_tests/gui/test_app_shell.py"
+  ],
+  "scientificSourceChanged": false
+}

@@ -1,0 +1,22 @@
+Browser tab: 5, Title: "COSMOS 0.1 — Rocket Engine Propulsion Suite", URL: "http://127.0.0.1:8845/app/workbench/rocket-engine?stage=performance".
+0 AXWebArea COSMOS 0.1 — Rocket Engine Propulsion Suite, URL: 127.0.0.1:8845/app/workbench/rocket-engine?stage=performance
+	1 container Command palette
+		2 heading Command palette, Value: 2, ID: ds-2
+			3 text Command palette
+		4 text Find a command
+		5 search text field (settable) Find a command, ID: ds-3
+		6 container
+			7 button Go to Projects & Mission
+			8 button Go to Rocket Engine
+			9 button (disabled) Native Geometry — not enabled
+			10 button Go to Simulation
+			11 button Go to Comparison & V&V
+			12 button Go to Maharshi Knowledge
+			13 button Go to Reports & History
+			14 button Go to Visualization and Graphs
+			15 button Restore default dock panels
+			16 button Refresh read-only project overview
+			17 button Use legacy layout without discarding drafts
+		18 button Close
+
+The focused UI element is 5 search text field (settable) Find a command, ID: ds-3

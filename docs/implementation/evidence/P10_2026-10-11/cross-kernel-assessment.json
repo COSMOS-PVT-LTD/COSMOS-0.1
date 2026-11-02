@@ -1,0 +1,133 @@
+{
+  "report_id": "bd714feb845f7c82f2fa110fceb44faa08d64a428ee71d8e6d579c5d222e8955",
+  "report": {
+    "centroid_discrepancy_m": 7.746659073380887e-18,
+    "centroid_limit_m": 0.001001,
+    "comparison_passed": true,
+    "criteria_basis": "Sum of predeclared P07 fixture-specific independent QA bounds, via triangle inequality to the common analytic reference; not an arbitrary-design tolerance",
+    "cross_kernel": true,
+    "engineering_review": "pending",
+    "execution": "completed",
+    "experimental_validation": "not-performed",
+    "independent_acceptance": false,
+    "kind": "geometry",
+    "left": {
+      "backend": "occt",
+      "evidence_sha256": "701c2c5475a358033d39bec6c73b8fd61ab86957b83ab747fe45a4babc69c2c3",
+      "frame_id": "world",
+      "geometry_id": "6cdff64bd149d8b3f31e255b7e71aaa7c4f6e41827a88f47ce112a3b6176fb4c",
+      "kind": "geometry",
+      "operation": "sphere",
+      "provenance": "accepted server-side native fixture",
+      "qa": {
+        "analytic_carrier_types": [
+          "SPHERICAL_SURFACE"
+        ],
+        "body_count": 1,
+        "bounds_error_m": 3.048865526052158e-7,
+        "bounds_m": [
+          -0.009999756307053949,
+          -0.009999695113447395,
+          -0.01,
+          0.009999751916296505,
+          0.009999695113447395,
+          0.01
+        ],
+        "bounds_method": "trimmed OCC STL bounds; absolute deflection 0.5um; sampled not certified",
+        "centroid_error_m": 3.2899303136248156e-19,
+        "centroid_m": [
+          -2.503497815850568e-19,
+          -1.109114081863709e-20,
+          2.1316282072803001e-19
+        ],
+        "dimensions_pass": true,
+        "distance_limit_m": 0.000001,
+        "face_classification": [],
+        "face_count": 1,
+        "face_types": [
+          "Sphere"
+        ],
+        "file_units": "m",
+        "forward_max_m": 1.734723475976807e-18,
+        "forward_p95_m": 1.734723475976807e-18,
+        "forward_sample_count": 197,
+        "import_unit": "mm",
+        "independence_scope": "Different tool, API, process and import path; shared OCCT implementation plus independent analytic formulas",
+        "mesh_nonmanifold_edges": 0,
+        "mesh_orientation_errors": 0,
+        "parametric_boundary_edges": 2,
+        "pass": true,
+        "physical_validation_claimed": false,
+        "raw_face_types": [
+          "Sphere"
+        ],
+        "reader": "gmsh-4.15.0",
+        "reader_kernel_independence": false,
+        "reader_observed_rss_bytes": 694370304,
+        "relative_volume_error": 2.022142207758278e-16,
+        "relative_volume_limit": 1e-7,
+        "reverse_max_m": 8.043581855694558e-18,
+        "reverse_p95_m": 2.7276709969964418e-18,
+        "reverse_sample_count": 266,
+        "sampling_scope": "Gmsh surface mesh nodes to analytic SDF; fixed analytic surface samples to Gmsh closest face projections; not certified Hausdorff",
+        "topology_pass": true,
+        "volume_m3": 0.000004188790204786392
+      },
+      "snapshot_id": "97e456b594aeb9404d1020d471065d9a37f071c426f26ed5641cff2d05bc758d",
+      "source_artifact_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+      "source_sha256": "18c74c0489ede4bfedc451f6920e42cca72f175bb13a96de9469279f3cee78b2",
+      "units": "m"
+    },
+    "production_handoff": false,
+    "relative_volume_discrepancy": 0.002866473669187727,
+    "relative_volume_limit": 0.005500100000000002,
+    "right": {
+      "backend": "picogk",
+      "evidence_sha256": "b49ff3bdc2392fa52d4338eebfed9dacd6ed8beaded093c1c20788051eed05e2",
+      "frame_id": "world",
+      "geometry_id": "8952b853ade9719cdcc6ddee4e89cbdee59b5b4a2ad213e9a9c3871320a2d734",
+      "kind": "geometry",
+      "operation": "sphere",
+      "provenance": "accepted server-side native fixture",
+      "qa": {
+        "bidirectional_sampling_scope": "vertices+face centroids to analytic SDF; fixed analytic sphere samples to planar triangles; not certified Hausdorff",
+        "centroid_error_m": 7.566691504043344e-18,
+        "centroid_limit_m": 0.001,
+        "centroid_m": [
+          5.354206864930313e-18,
+          5.334882892939213e-18,
+          3.5540636392639463e-19
+        ],
+        "components": 1,
+        "degenerate_faces": 0,
+        "dimensions_pass": true,
+        "forward_limit_m": 0.00075,
+        "forward_max_m": 0.000014324203198107233,
+        "forward_p95_m": 0.000012700055019477727,
+        "forward_sample_count": 22412,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "pass": true,
+        "physical_validation_claimed": false,
+        "relative_volume_error": 0.002866473669187525,
+        "relative_volume_limit": 0.005500000000000001,
+        "reverse_limit_m": 0.001,
+        "reverse_max_m": 0.000013789988998220143,
+        "reverse_p95_m": 0.000012960870917221471,
+        "reverse_sample_count": 266,
+        "topology_pass": true,
+        "triangle_count": 14940,
+        "units": "m",
+        "volume_m3": 0.0000041767831479586206
+      },
+      "snapshot_id": "f74571692f85b851177a9774f336a0093bb8096873369d437b3dfe79239fc948",
+      "source_artifact_sha256": "fa36d71d6fafda880ca9f0f16c368b8095fffc4fba0021dfd67348a75cb022e2",
+      "source_sha256": "20f7c9844acf1374a6c6781f71ee6738df7ba6672611df6fcff90a35affc5f28",
+      "units": "m"
+    },
+    "schema_version": "p10-assessment-v1",
+    "surface_distance_scope": "Per-operand bidirectional sampled distances to the common analytic reference retained in QA. Not direct pairwise or certified Hausdorff distance.",
+    "uncertainty_scope": "Deterministic fixture-specific geometry approximation bounds; not a statistical uncertainty estimate"
+  },
+  "canonical_json": "{\"centroid_discrepancy_m\":7.746659073380887e-18,\"centroid_limit_m\":0.001001,\"comparison_passed\":true,\"criteria_basis\":\"Sum of predeclared P07 fixture-specific independent QA bounds, via triangle inequality to the common analytic reference; not an arbitrary-design tolerance\",\"cross_kernel\":true,\"engineering_review\":\"pending\",\"execution\":\"completed\",\"experimental_validation\":\"not-performed\",\"independent_acceptance\":false,\"kind\":\"geometry\",\"left\":{\"backend\":\"occt\",\"evidence_sha256\":\"701c2c5475a358033d39bec6c73b8fd61ab86957b83ab747fe45a4babc69c2c3\",\"frame_id\":\"world\",\"geometry_id\":\"6cdff64bd149d8b3f31e255b7e71aaa7c4f6e41827a88f47ce112a3b6176fb4c\",\"kind\":\"geometry\",\"operation\":\"sphere\",\"provenance\":\"accepted server-side native fixture\",\"qa\":{\"analytic_carrier_types\":[\"SPHERICAL_SURFACE\"],\"body_count\":1,\"bounds_error_m\":3.048865526052158e-07,\"bounds_m\":[-0.009999756307053949,-0.009999695113447395,-0.01,0.009999751916296505,0.009999695113447395,0.01],\"bounds_method\":\"trimmed OCC STL bounds; absolute deflection 0.5um; sampled not certified\",\"centroid_error_m\":3.2899303136248156e-19,\"centroid_m\":[-2.503497815850568e-19,-1.109114081863709e-20,2.1316282072803001e-19],\"dimensions_pass\":true,\"distance_limit_m\":1e-06,\"face_classification\":[],\"face_count\":1,\"face_types\":[\"Sphere\"],\"file_units\":\"m\",\"forward_max_m\":1.734723475976807e-18,\"forward_p95_m\":1.734723475976807e-18,\"forward_sample_count\":197,\"import_unit\":\"mm\",\"independence_scope\":\"Different tool, API, process and import path; shared OCCT implementation plus independent analytic formulas\",\"mesh_nonmanifold_edges\":0,\"mesh_orientation_errors\":0,\"parametric_boundary_edges\":2,\"pass\":true,\"physical_validation_claimed\":false,\"raw_face_types\":[\"Sphere\"],\"reader\":\"gmsh-4.15.0\",\"reader_kernel_independence\":false,\"reader_observed_rss_bytes\":694370304,\"relative_volume_error\":2.022142207758278e-16,\"relative_volume_limit\":1e-07,\"reverse_max_m\":8.043581855694558e-18,\"reverse_p95_m\":2.7276709969964418e-18,\"reverse_sample_count\":266,\"sampling_scope\":\"Gmsh surface mesh nodes to analytic SDF; fixed analytic surface samples to Gmsh closest face projections; not certified Hausdorff\",\"topology_pass\":true,\"volume_m3\":4.188790204786392e-06},\"snapshot_id\":\"97e456b594aeb9404d1020d471065d9a37f071c426f26ed5641cff2d05bc758d\",\"source_artifact_sha256\":\"ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3\",\"source_sha256\":\"18c74c0489ede4bfedc451f6920e42cca72f175bb13a96de9469279f3cee78b2\",\"units\":\"m\"},\"production_handoff\":false,\"relative_volume_discrepancy\":0.002866473669187727,\"relative_volume_limit\":0.005500100000000002,\"right\":{\"backend\":\"picogk\",\"evidence_sha256\":\"b49ff3bdc2392fa52d4338eebfed9dacd6ed8beaded093c1c20788051eed05e2\",\"frame_id\":\"world\",\"geometry_id\":\"8952b853ade9719cdcc6ddee4e89cbdee59b5b4a2ad213e9a9c3871320a2d734\",\"kind\":\"geometry\",\"operation\":\"sphere\",\"provenance\":\"accepted server-side native fixture\",\"qa\":{\"bidirectional_sampling_scope\":\"vertices+face centroids to analytic SDF; fixed analytic sphere samples to planar triangles; not certified Hausdorff\",\"centroid_error_m\":7.566691504043344e-18,\"centroid_limit_m\":0.001,\"centroid_m\":[5.354206864930313e-18,5.334882892939213e-18,3.5540636392639463e-19],\"components\":1,\"degenerate_faces\":0,\"dimensions_pass\":true,\"forward_limit_m\":0.00075,\"forward_max_m\":1.4324203198107233e-05,\"forward_p95_m\":1.2700055019477727e-05,\"forward_sample_count\":22412,\"nonmanifold_edges\":0,\"orientation_errors\":0,\"pass\":true,\"physical_validation_claimed\":false,\"relative_volume_error\":0.002866473669187525,\"relative_volume_limit\":0.005500000000000001,\"reverse_limit_m\":0.001,\"reverse_max_m\":1.3789988998220143e-05,\"reverse_p95_m\":1.2960870917221471e-05,\"reverse_sample_count\":266,\"topology_pass\":true,\"triangle_count\":14940,\"units\":\"m\",\"volume_m3\":4.1767831479586206e-06},\"snapshot_id\":\"f74571692f85b851177a9774f336a0093bb8096873369d437b3dfe79239fc948\",\"source_artifact_sha256\":\"fa36d71d6fafda880ca9f0f16c368b8095fffc4fba0021dfd67348a75cb022e2\",\"source_sha256\":\"20f7c9844acf1374a6c6781f71ee6738df7ba6672611df6fcff90a35affc5f28\",\"units\":\"m\"},\"schema_version\":\"p10-assessment-v1\",\"surface_distance_scope\":\"Per-operand bidirectional sampled distances to the common analytic reference retained in QA. Not direct pairwise or certified Hausdorff distance.\",\"uncertainty_scope\":\"Deterministic fixture-specific geometry approximation bounds; not a statistical uncertainty estimate\"}"
+}

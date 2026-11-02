@@ -1,0 +1,20 @@
+{
+  "pass": true,
+  "baseline_files": 3181,
+  "only_changed": [
+    ".github/workflows/ci.yml",
+    ".gitignore",
+    "SECURITY.md",
+    "api/authentication.py",
+    "docs/implementation/evidence/P12_2026-10-11/PLAN.md",
+    "gui/server.py",
+    "gui/static/app.js",
+    "gui/static/rbac.js",
+    "scripts/build_macos_app.sh"
+  ],
+  "existing_product_governance_files_changed": 8,
+  "unchanged_original_app_files": 4,
+  "synthetic_cache_exactly_restored": true,
+  "unrelated_work_preserved": true,
+  "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987"
+}

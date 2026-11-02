@@ -1,0 +1,14 @@
+{
+  "gate": "G5_GEOMETRY_SOFTWARE_FIXTURES",
+  "software_g5_pass": true,
+  "native_tests_passed": 56,
+  "independently_reaudited_records": 30,
+  "positive_occt_fixtures_passed": 8,
+  "qa_tolerances_relaxed": false,
+  "historical_p07_modified": false,
+  "p08_may_begin": true,
+  "engineering_publication_approved": false,
+  "production_native_distribution_approved": false,
+  "human_owner_acceptance_recorded": false,
+  "physical_validation_claimed": false
+}

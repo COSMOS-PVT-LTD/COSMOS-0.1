@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any
@@ -51,17 +52,18 @@ class DesignChangeEvent:
     source: str = "systems"
 
     def to_canonical_dict(self) -> dict[str, object]:
-        return {
+        return deepcopy({
             "field": self.field,
             "new_value": self.new_value,
             "old_value": self.old_value,
             "revision": self.revision,
             "source": self.source,
             "timestamp": self.timestamp,
-        }
+        })
 
     @classmethod
     def from_canonical_dict(cls, data: dict[str, Any]) -> DesignChangeEvent:
+        data = deepcopy(data)
         return cls(
             field=str(data["field"]),
             old_value=data.get("old_value"),
@@ -117,6 +119,11 @@ class PropulsionDesign:
     material_selection: dict[str, Any] | None = None
     workflow: WorkflowState = field(default_factory=WorkflowState)
     change_log: list[DesignChangeEvent] = field(default_factory=list)
+    # Editor text only, never authoritative inputs to an engineering calculation.
+    editor_drafts: dict[str, str] = field(default_factory=dict)
+    subsystem_inputs: dict[str, dict[str, Any]] = field(default_factory=dict)
+    # Empty on legacy designs; never silently promote old assumed results to CEA.
+    thermochemistry_configuration: dict[str, Any] = field(default_factory=dict)
     schema_version: str = SYSTEMS_SCHEMA_VERSION
 
     def bump_revision(self, field: str, old_value: object, new_value: object) -> int:
@@ -191,7 +198,8 @@ class PropulsionDesign:
         self.updated_at = _utc_now_iso()
 
     def to_canonical_dict(self) -> dict[str, object]:
-        return {
+        """Return a detached projection, including nested slots/history/configuration."""
+        return deepcopy({
             "chamber_design": self.chamber_design,
             "change_log": [event.to_canonical_dict() for event in self.change_log],
             "cooling_design": self.cooling_design,
@@ -200,6 +208,9 @@ class PropulsionDesign:
             "description": self.description,
             "design_id": self.design_id,
             "engineer": self.engineer,
+            "editor_drafts": dict(self.editor_drafts),
+            "subsystem_inputs": {key: dict(value) for key, value in self.subsystem_inputs.items()},
+            "thermochemistry_configuration": dict(self.thermochemistry_configuration),
             "injector_design": self.injector_design,
             "material_selection": self.material_selection,
             "name": self.name,
@@ -215,13 +226,14 @@ class PropulsionDesign:
             "thermal_design": self.thermal_design,
             "updated_at": self.updated_at,
             "workflow": self.workflow.to_canonical_dict(),
-        }
+        })
 
     def to_canonical_json(self) -> str:
         return canonical_json_dumps(self.to_canonical_dict())
 
     @classmethod
     def from_canonical_dict(cls, data: dict[str, Any]) -> PropulsionDesign:
+        data = deepcopy(data)
         return cls(
             design_id=str(data["design_id"]),
             name=str(data["name"]),
@@ -232,6 +244,9 @@ class PropulsionDesign:
             software_version=str(data.get("software_version") or COSMOS_VERSION),
             status=DesignStatus.from_canonical_dict(dict(data.get("status") or {})),
             engineer=None if data.get("engineer") is None else str(data["engineer"]),
+            editor_drafts=dict(data.get("editor_drafts") or {}),
+            subsystem_inputs={key: dict(value) for key, value in (data.get("subsystem_inputs") or {}).items()},
+            thermochemistry_configuration=dict(data.get("thermochemistry_configuration") or {}),
             requirements=DesignRequirements.from_canonical_dict(
                 dict(data.get("requirements") or {})
             ),

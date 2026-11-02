@@ -10,7 +10,12 @@ from systems.contracts.results import (
     ResultStatus,
     is_current_displayable,
 )
-from systems.workflow.graph import WorkflowGraph, build_default_propulsion_graph
+from systems.workflow.graph import (
+    DependencyRequirement,
+    StageImplementationStatus,
+    WorkflowGraph,
+    build_default_propulsion_graph,
+)
 from systems.workflow.invalidation import (
     invalidate_for_input_change,
     invalidate_from_stage,
@@ -58,7 +63,9 @@ class WorkflowState:
         self.store_result(stage_id, result)
         return result
 
-    def invalidate_from(self, stage_id: str, *, include_root: bool = False) -> tuple[str, ...]:
+    def invalidate_from(
+        self, stage_id: str, *, include_root: bool = False
+    ) -> tuple[str, ...]:
         return invalidate_from_stage(
             self.graph, self.results, stage_id, include_root=include_root
         )
@@ -69,7 +76,9 @@ class WorkflowState:
     def to_canonical_dict(self) -> dict[str, object]:
         return {
             "graph": self.graph.to_canonical_dict(),
-            "result_history": [item.to_canonical_dict() for item in self.result_history],
+            "result_history": [
+                item.to_canonical_dict() for item in self.result_history
+            ],
             "results": {
                 key: value.to_canonical_dict()
                 for key, value in sorted(self.results.items())
@@ -81,6 +90,49 @@ class WorkflowState:
         graph = WorkflowGraph.from_canonical_dict(dict(data.get("graph") or {}))
         if not graph.nodes:
             graph = build_default_propulsion_graph()
+        # Upgrade old placeholder edges, retaining saved results and statuses.
+        # The old cooling -> nozzle edge is replaced by contour -> cooling.
+        defaults = build_default_propulsion_graph()
+        # Only migrate the recognized frozen default, not user/custom edges.
+        nozzle = graph.nodes.get("nozzle")
+        cooling = graph.nodes.get("cooling")
+        if (
+            nozzle is not None
+            and cooling is not None
+            and len(nozzle.dependencies) == 3
+            and {(edge.stage_id, edge.requirement) for edge in nozzle.dependencies}
+            == {
+                ("chamber", DependencyRequirement.INFORMATIONAL),
+                ("cooling", DependencyRequirement.DEFERRED),
+                ("performance", DependencyRequirement.REQUIRED),
+            }
+            and len(cooling.dependencies) == 1
+            and {(edge.stage_id, edge.requirement) for edge in cooling.dependencies}
+            == {("thermal", DependencyRequirement.REQUIRED)}
+            and cooling.implementation_status
+            is StageImplementationStatus.NOT_IMPLEMENTED
+        ):
+            nozzle.dependencies = defaults.nodes["nozzle"].dependencies
+            cooling.dependencies = defaults.nodes["cooling"].dependencies
+            cooling.implementation_status = StageImplementationStatus.PARTIAL
+        chamber = graph.nodes.get("chamber")
+        if (
+            chamber is not None
+            and len(chamber.dependencies) == 2
+            and {(edge.stage_id, edge.requirement) for edge in chamber.dependencies}
+            == {
+                ("performance", DependencyRequirement.REQUIRED),
+                ("injector", DependencyRequirement.DEFERRED),
+            }
+        ):
+            chamber.dependencies = defaults.nodes["chamber"].dependencies
+        injector = graph.nodes.get("injector")
+        if (
+            injector is not None
+            and injector.implementation_status
+            is StageImplementationStatus.NOT_IMPLEMENTED
+        ):
+            injector.implementation_status = StageImplementationStatus.PARTIAL
         results_raw = dict(data.get("results") or {})
         results = {
             str(key): CalculationResult.from_canonical_dict(dict(value))

@@ -15,6 +15,7 @@ __all__ = (
     "redirect_for_profile",
     "role_can_administer",
     "role_can_audit",
+    "role_can_modify_design",
 )
 
 
@@ -70,6 +71,11 @@ def role_can_administer(role: UserRole) -> bool:
 
 def role_can_audit(role: UserRole) -> bool:
     return role is UserRole.ADMIN
+
+
+def role_can_modify_design(role: UserRole) -> bool:
+    """Engineering writes share the modern workbench's explicit role policy."""
+    return role in {UserRole.ENGINEER, UserRole.ADMIN}
 
 
 def assert_login_profile(role: UserRole, profile: str) -> str:

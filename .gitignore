@@ -67,6 +67,8 @@ cython_debug/
 # Virtual environments
 .venv/
 .venv-remediation/
+.venv-release-p12/
+.venv-cad-inspection/
 venv/
 ENV/
 env/
@@ -132,8 +134,39 @@ qa/cosmos_architecture_render/
 
 # Optional local tooling caches
 .cache/
+.runtime-picogk/
 *.prof
 
 # Local benchmark / qualification run artifacts
 documentation/development/concurrency-tmp/
 documentation/development/scale-tmp/
+
+# Local .NET build caches and preview application state
+bin/
+obj/
+/cosmos_r07_preview_data/
+
+# Regenerable native geometry and review archives; keep reports/manifests in Git.
+docs/implementation/**/*.stl
+docs/implementation/**/*.step
+docs/implementation/**/*.brep
+docs/implementation/**/*.vdb
+docs/implementation/**/*.zip
+# Small deterministic reimport fixture required by the validation regression.
+!docs/implementation/evidence/P09_2026-10-10/handoff-exact-sphere.step
+
+# Local copies of third-party reference media are not application source assets.
+docs/implementation/evidence/ENGINE_REFERENCE_REVIEW_2026-10-28/*.png
+docs/implementation/evidence/ENGINE_REFERENCE_REVIEW_2026-10-28/*.jpg
+
+# Local machine/library inventories and identity-bearing session exports
+docs/implementation/evidence/ENGINE_REFERENCE_REVIEW_2026-10-28/MATERIALS_INVENTORY.json
+docs/implementation/evidence/ENGINE_REFERENCE_REVIEW_2026-10-28/PRIORITY_PAGE_MAP.json
+docs/implementation/evidence/ENGINE_REFERENCE_REVIEW_2026-10-28/STATUS.json
+docs/implementation/evidence/DESKTOP_STANDALONE_2026-10-28/workspaces.json
+docs/implementation/reviews/2026-10-11_COMPLETE_REVIEW/session.json
+docs/implementation/evidence/P12_2026-10-11/github-repository.json
+docs/implementation/evidence/P12_2026-10-11/inventory*/installed-file-integrity.json
+docs/implementation/evidence/R05_3_2026-10-17/runtime-inventory.json
+docs/implementation/evidence/ENGINE_BASELINE_SWITCH_2026-10-28/preview.json
+docs/implementation/evidence/ENGINE_BASELINE_SWITCH_2026-10-28/preview-v2.json

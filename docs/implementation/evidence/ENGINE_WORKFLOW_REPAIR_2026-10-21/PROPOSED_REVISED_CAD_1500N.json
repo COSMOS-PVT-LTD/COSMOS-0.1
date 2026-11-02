@@ -1,0 +1,13 @@
+{
+  "scope": "ISOLATED_REVISED_CAD_STUDY_NOT_OWNER_INPUTS_OR_HARDWARE_ACCEPTANCE",
+  "source": "User-approved isolated separable-head concept. Explicit provisional flange/plenum dimensions come from the retained layout study. Four-bend fuel return routing and pipe dimensions are geometric hypotheses, not solved hydraulics, seal selection, strength, manufacturing or hot-fire acceptance. All actual channels remain cut; separate coolant-domain export is explicitly disabled for this metal-assembly study. The superseded separate collar is replaced by enlarged head/plate/collector mounting geometry only in this candidate.",
+  "suppressed_mount_feature": "chamber-collar",
+  "export_coolant_domains": false,
+  "pipe_wall_m": 0.0012,
+  "bend_radius_m": 0.012,
+  "stub_length_m": 0.025,
+  "return_outer_center_radius_m": 0.110,
+  "fuel_supply_length_m": 0.080,
+  "oxidizer_supply_length_m": 0.080,
+  "grooves": []
+}

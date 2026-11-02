@@ -1,0 +1,50 @@
+Managed geometry · software fixtures only
+
+Exact snapshots, graphs, requests, attempts and retained bytes. Storage completion is not engineering publication or physical validation.
+
+Input r1 · saved v2 · commit e87987a4-ca23-48fb-8890-8f54b67ccf1e · source namespace p07-software-fixtures
+
+Fixture operation
+sphere
+union
+difference
+intersection
+self_union
+Fixture backend
+occt
+picogk
+Declared voxel size in metres
+0.0005
+0.001
+0.00025
+Discard geometry drafts and reload opened inputs
+Refresh retained attempts
+
+Build still requires successful runtime hash checks; errors are retained or explicitly refused.
+
+Managed fixture inputs
+Open fixture 5a5ab50f-aa67-5e2c-a6f5-97173bf51a91 · saved v2
+Saved geometry sources · read-only inspection
+Inspect saved v2 · input r1Inspect saved v1 · input r0
+Retained attempts · no automatic retry
+
+COMPLETED · attempt ae0dc163-e31a-411a-90ae-967d97a0f5bf · selected attempt / input current · byte integrity checked only on explicit inspection/download
+
+Inspect exact attempt and byte integrityExact attempt source APIInspect or refresh retained native stages
+
+Native stages · exact retained events, no inferred progress percentage
+
+0 · draft · draft1 · validating · validating2 · queued · queued3 · running · kernel4 · qa · independent_qa5 · accepted · software_fixture_acceptance
+
+Download exact export.step · artifact · 24541 bytes
+Download exact source.brep · source · 13075 bytes
+
+COMPLETED · attempt 92bf36ba-c811-4359-a75f-275cfaf5732e · not selected or historical input · byte integrity checked only on explicit inspection/download
+
+Inspect exact attempt and byte integrityExact attempt source APIInspect or refresh retained native stages
+
+Download exact export-conditioned.stl · artifact · 733984 bytes
+Download exact source.vdb · source · 217597 bytes
+Exact authorized geometry source API
+Exact retained native stage · 2e69b11e2b0681fd95709369faefa13187c61dff7b7071e51f18ab3358b681ef
+{"artifact_ids":[],"code":null,"content_sha256":"1995b9074b02907d1cb643c4f4000a0dcfba402d1f3e4134754f878d2069a2a5","contract_type":"GeometryBuildEvent","correlation_id":"p08-c4f8f925d67e44cfa0ecb447a5217519","evidence_refs":[],"job_id":"job-12a87b7625234ee3b3c8d177e064227b","message":"Software fixture QA accepted; not published or physically validated","progress_fraction":null,"schema_version":"1.0.0","seq":5,"stage":"software_fixture_acceptance","state":"accepted","timestamp":"2026-10-18T04:09:10.807973+00:00"}

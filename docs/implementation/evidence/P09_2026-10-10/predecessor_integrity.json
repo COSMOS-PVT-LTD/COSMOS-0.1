@@ -1,0 +1,10 @@
+{
+  "files": 2921,
+  "pass": true,
+  "mismatches": [],
+  "original_sources_archived": [
+    ".github/workflows/ci.yml",
+    "gui/server.py"
+  ],
+  "G5_G6_historical_receipts_unchanged": true
+}

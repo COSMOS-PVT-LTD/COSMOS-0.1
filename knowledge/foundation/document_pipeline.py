@@ -19,6 +19,7 @@ from knowledge.foundation.equation_approval import (
 )
 from knowledge.ingestion import IngestionArtifactRef, IngestionRequest, SourceFormat
 from knowledge.ingestion_adapters import MarkdownIngestionAdapter
+from knowledge.ingestion_adapters.normalize import normalize_markdown_text
 from knowledge.models.correlation import Correlation
 from knowledge.parsers.w3 import ParseContext, parse_document
 from knowledge.parsers.w3.models import StructuredParsedDocument
@@ -71,14 +72,15 @@ def ingest_markdown_to_candidates(
             adapter_version=adapter.adapter_version,
         ),
     )
+    normalized_content = normalize_markdown_text(content)
     parsed = parse_document(
-        ParseContext(ingestion_result=ingestion, normalized_content=content),
+        ParseContext(ingestion_result=ingestion, normalized_content=normalized_content),
     ).parsed_document
     extraction = extract_document(
-        ExtractionContext(parsed_document=parsed, normalized_content=content),
+        ExtractionContext(parsed_document=parsed, normalized_content=normalized_content),
     )
     equation_candidates = extract_equation_candidates(
-        ExtractionContext(parsed_document=parsed, normalized_content=content),
+        ExtractionContext(parsed_document=parsed, normalized_content=normalized_content),
     )
     pipeline = EquationApprovalPipeline()
     normalized = tuple(pipeline.normalize(candidate) for candidate in equation_candidates)

@@ -1,0 +1,75 @@
+{
+  "import_id": "vv-cad-a05acd07e30a499d9f5e9e30dfacb308",
+  "state": "completed",
+  "result": {
+    "geometry_id": "2008e4e4f8cf9dde631f2b854814a1c4fed504cf5373edc2a1cb208e3acface1",
+    "kind": "geometry",
+    "backend": "external-step-gmsh-shared-occt",
+    "operation": "sphere",
+    "source_sha256": "d2394f4c38754f0f10046b38d6e20e1d5b157d74685050f28b5c98a10502b712",
+    "source_artifact_sha256": null,
+    "snapshot_id": "vv-cad-a05acd07e30a499d9f5e9e30dfacb308",
+    "frame_id": "world",
+    "units": "m",
+    "qa": {
+      "pass": true,
+      "topology_pass": true,
+      "dimensions_pass": true,
+      "reader": "gmsh-4.15.0",
+      "reader_kernel_independence": false,
+      "independence_scope": "Different tool, API, process and import path; shared OCCT implementation plus independent analytic formulas",
+      "body_count": 1,
+      "face_count": 1,
+      "face_types": [
+        "Sphere"
+      ],
+      "raw_face_types": [
+        "Sphere"
+      ],
+      "analytic_carrier_types": [
+        "SPHERICAL_SURFACE"
+      ],
+      "face_classification": [],
+      "import_unit": "mm",
+      "bounds_method": "trimmed OCC STL bounds; absolute deflection 0.5um; sampled not certified",
+      "mesh_nonmanifold_edges": 0,
+      "mesh_orientation_errors": 0,
+      "parametric_boundary_edges": 2,
+      "file_units": "m",
+      "volume_m3": 0.000004188790204786392,
+      "relative_volume_error": 2.022142207758278e-16,
+      "relative_volume_limit": 1e-7,
+      "centroid_m": [
+        -2.503497815850568e-19,
+        -1.109114081863709e-20,
+        2.1316282072803001e-19
+      ],
+      "centroid_error_m": 3.2899303136248156e-19,
+      "bounds_m": [
+        -0.009999756307053949,
+        -0.009999695113447395,
+        -0.01,
+        0.009999751916296505,
+        0.009999695113447395,
+        0.01
+      ],
+      "bounds_error_m": 3.048865526052158e-7,
+      "forward_sample_count": 197,
+      "forward_max_m": 1.734723475976807e-18,
+      "forward_p95_m": 1.734723475976807e-18,
+      "reverse_sample_count": 266,
+      "reverse_max_m": 8.043581855694558e-18,
+      "reverse_p95_m": 2.7276709969964418e-18,
+      "distance_limit_m": 0.000001,
+      "sampling_scope": "Gmsh surface mesh nodes to analytic SDF; fixed analytic surface samples to Gmsh closest face projections; not certified Hausdorff",
+      "physical_validation_claimed": false,
+      "reader_observed_rss_bytes": 687849472
+    },
+    "provenance": {
+      "source": "Retained P09 exact sphere export",
+      "author": "COSMOS synthetic software fixture",
+      "license": "Repository license"
+    },
+    "evidence_sha256": "c4df4571f42bdcf64b30e3656da3c907b96f4da589c9c4ca5b59de074f92d076"
+  }
+}

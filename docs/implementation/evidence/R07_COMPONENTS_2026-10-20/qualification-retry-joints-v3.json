@@ -1,0 +1,15 @@
+{
+  "scope": "Same-source fixture rerun; original failed observation retained, no assertion or algorithm relaxation",
+  "first_report_retained_as": "fixture-regression-joints-v3-attempt-1-failed.xml",
+  "first_report_sha256": "c1c64242e416d8d54063b3dc06158e762c7a4695de4ddfd872226b9c7ff88486",
+  "first_result": {"passed": 30, "failed": 1},
+  "failure": "Native cancellation returned CANCELLED and a process ID but no started message before the fixed0.3s cancellation while campaigns were parallel; it did not prove the required post-start cancellation witness",
+  "retry_configuration": "runtime-prepared-joints-v3-retry.json",
+  "retry_configuration_difference": "Only evidence_directory differs from runtime-prepared-joints-v3.json; all164 identities, worker commands, environments and algorithms verified equal",
+  "retry_report": "fixture-regression-joints-v3.xml",
+  "retry_artifacts": "fixture-campaign-joints-v3-retry/",
+  "retry_result": {"passed": 31, "failed": 0, "errors": 0, "skipped": 0},
+  "test_changed": false,
+  "production_changed_for_retry": false,
+  "qualification_limit": "Local same-source rerun passed; scheduling-sensitive test remains a release-hardening concern. No physical or production acceptance."
+}

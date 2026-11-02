@@ -1,0 +1,12 @@
+const {chromium}=require('playwright');
+const path=require('node:path');
+(async()=>{const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
+await page.route('**/*',r=>new URL(r.request().url()).hostname==='127.0.0.1'?r.continue():r.abort());
+const base='http://127.0.0.1:8811';
+await page.request.post(base+'/api/auth/login',{data:{login_id:'cosmos-admin',password:'COSMOS-Dev-2026!',login_profile:'ADMIN'}});
+await page.goto(base+'/app/projects');await page.locator('#cosmos-p04-shell').waitFor();
+await page.getByRole('button',{name:'Native Geometry · planned'}).waitFor();
+await page.screenshot({path:path.join(__dirname,'before-projects.png')});
+const response=await page.request.get(base+'/app/workbench/native-geometry');if(response.status()!==404)throw Error('Unexpected baseline native route');
+await browser.close();console.log('Pre-P08 screenshot captured; native route 404 confirmed');})().catch(e=>{console.error(e);process.exit(1);});

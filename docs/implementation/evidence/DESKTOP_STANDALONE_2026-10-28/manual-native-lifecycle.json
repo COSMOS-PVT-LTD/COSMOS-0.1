@@ -1,0 +1,20 @@
+{
+  "schema": "cosmos.desktop-native-lifecycle-observation.v1",
+  "app_bundle_id": "com.cosmos.engineering.desktop",
+  "sealed_app_cold_launch": true,
+  "existing_engine_root_reached_native_login": true,
+  "command_q_confirmation_observed": true,
+  "close_cosmos_confirmed": true,
+  "running_app_inventory_absent_after_quit": true,
+  "entrypoint_process_absent_after_quit": true,
+  "previous_loopback_port": 58670,
+  "previous_listener_released": true,
+  "desktop_shortcut_reopen_observed": true,
+  "final_visible_page": "COSMOS 0.1 desktop workspace chooser",
+  "screenshot": "desktop-ready.png",
+  "main_metadata_sha256_before_and_after": "9ab89201846dfdc581e3fd4ffd5cf98258952b20c5818d9d22bead3ef713aeac",
+  "engine_metadata_sha256_before_and_after": "894e98ae4d5e6f1e06681b112036e418f630a320937248f4648955d0d2230602",
+  "full_engine_generation": "NOT_PERFORMED",
+  "r08": "ON_HOLD",
+  "physical_validation": "NOT_PERFORMED"
+}

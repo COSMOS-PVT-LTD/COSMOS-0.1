@@ -1,0 +1,68 @@
+{
+  "phase": "R06",
+  "status": "PARTIAL",
+  "slice": "R06.1a_assumed_state_sensitivity",
+  "slice_status": "PASS_LOCAL_DECLARED_SCOPE",
+  "approved_cycle_scope": [
+    "steady single-phase pressure-fed first",
+    "gas-generator next"
+  ],
+  "cycle_models_implemented": false,
+  "requirements": {
+    "RKT-01": "PARTIAL_FIRST_ASSUMED_STATE_SLICE",
+    "RKT-02": "PLANNED",
+    "RKT-03": "APPROVED_PLANNED",
+    "RKT-04": "APPROVED_PLANNED",
+    "RKT-05": "OUTSIDE_SELECTED_SCOPE_UNSUPPORTED",
+    "RKT-06": "OUTSIDE_SELECTED_SCOPE_UNSUPPORTED",
+    "RKT-07": "OUTSIDE_SELECTED_SCOPE_UNSUPPORTED",
+    "RKT-08": "PLANNED"
+  },
+  "baseline_passed": 38,
+  "focused_natural_order_passed": 47,
+  "python": {
+    "passed": 3276,
+    "skipped": 93,
+    "skip_reasons": {
+      "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback": 75,
+      "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG": 2,
+      "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence": 7,
+      "Explicit qualified native runtime required; run separately for G8": 4,
+      "Hashability depends on nested immutable models.": 1,
+      "Reference/Document hashability not implemented yet.": 1,
+      "Document hashability will be implemented after the Knowledge Foundation models are completed.": 1,
+      "Hashability will be enabled after all Knowledge Foundation models become fully immutable.": 1,
+      "Document contains mappingproxy and is not yet hashable.": 1
+    }
+  },
+  "javascript_passed": 402,
+  "mypy_source_files": 383,
+  "ruff": "PASS",
+  "strict_typescript_consumers": 7,
+  "entry_sources": 898,
+  "entry_unchanged": 889,
+  "declared_edits": [
+    "api/context_projects.py",
+    "api/project_authority.py",
+    "gui/server.py",
+    "gui/static/projects.js",
+    "gui/static/rocket-workbench/view.js",
+    "gui/static/visualization/chart.js",
+    "gui/static/visualization/exports.js",
+    "gui/static/visualization/view.js",
+    "tests/js/scientific_chart.test.cjs"
+  ],
+  "existing_scientific_sources_unchanged": true,
+  "original_audit_preservation": {
+    "unchanged": 4888,
+    "declared_changes": 54,
+    "unexpected": 0,
+    "missing": 0
+  },
+  "actual_browser_export_restart": "PASS",
+  "native_window_qualification": "NOT_RUN",
+  "live_owner_data_changed": false,
+  "commit_push_release": false,
+  "physical_validation": "NOT_PERFORMED",
+  "next": "R06.2 pressure-fed model/reference contracts; remaining sensitivity scope tracked separately"
+}

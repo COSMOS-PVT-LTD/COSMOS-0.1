@@ -1,0 +1,55 @@
+/* Saved component intent -> separately qualified PicoGK field/mesh generation. */
+(function(host,factory){const api=factory(host);if(typeof module==='object'&&module.exports)module.exports=api;else host.CosmosPicoComponents=api;})(globalThis,function(host){
+  'use strict';
+  const units=Object.freeze({voxel_resolution:'m',relative_volume:'1',centroid:'m',forward_residual:'m',reverse_distance:'m'});
+  const terminal=state=>['COMPLETED','FAILED','CANCELLED','INTERRUPTED'].includes(state);
+  function specification(values){const result={source:values.source};if(typeof values.source!=='string'||!values.source.trim())throw new Error('Enter explicit PicoGK QA criteria and applicability source.');for(const[key,unit]of Object.entries(units)){const raw=values[key];if(typeof raw!=='string'||!/^\s*\+?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?\s*$/.test(raw)||!Number.isFinite(Number(raw))||Number(raw)<=0)throw new Error('Enter explicit positive '+key+' ['+unit+'].');result[key]={value:Number(raw),unit};}return result;}
+  const clone=v=>JSON.parse(JSON.stringify(v));
+  async function render(parent,{base,readonly,source,onConsumed=()=>{},before=null}){
+    const node=(tag,text,attrs={})=>{const e=host.document.createElement(tag);if(text!==undefined)e.textContent=String(text);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));return e;};
+    const box=node('details',undefined,{class:'ds-panel pico-components'});box.append(node('summary','PicoGK component generation · native fields / mesh'));parent.insertBefore(box,before);
+    box.append(node('p','PicoGK directly renders the saved component profiles, bores, channels, manifolds and placements into implicit fields. Native VDB and independently checked STL remain distinct from analytic BREP/STEP. Precision BREP clearance and drawing tools remain on OCCT candidates.'));
+    const uri=base+'/picogk-component-builds',get=async path=>{const v=await host.CosmosAPI.get(path);if(v?.ok===false||v?.error)throw new Error(v.error?.message||'PicoGK request failed');return v;};
+    const status=node('p','Reading separately qualified PicoGK capability…',{role:'status','aria-live':'polite'}),form=node('fieldset'),history=node('section'),result=node('section'),fields={};box.append(status,form,history,result);form.dataset.componentDraft='picogk-qa';form.append(node('legend','PicoGK research settings · no engineering defaults'));
+    let busy=false,disposed=false,timer=null,generation=0,viewport=null,pending=null,cursor='';
+    const valueField=(key,label)=>{const wrap=node('label',label),input=node('input',undefined,{'aria-label':label,type:'text'});input.disabled=readonly;wrap.append(input);form.append(wrap);fields[key]=input;};
+    for(const[key,unit]of Object.entries(units))valueField(key,'PicoGK '+key+' ['+unit+']');valueField('source','PicoGK QA criteria / source');
+    const stop=()=>{generation++;if(timer!==null)host.clearTimeout(timer);timer=null;viewport?.dispose();viewport=null;};
+    const observer=new host.MutationObserver(()=>{if(!box.isConnected){disposed=true;stop();observer.disconnect();}});observer.observe(parent,{childList:true,subtree:true});
+    function button(title,work,area=box,write=false){const b=node('button',title,{type:'button'});b.disabled=write&&readonly;area.append(b);b.addEventListener('click',async()=>{if(busy)return;busy=true;b.disabled=true;try{await work();}catch(e){status.textContent=e.message;}finally{busy=false;b.disabled=write&&readonly;}});return b;}
+    function link(title,path,area=result){area.append(node('a',title,{href:path,download:'',target:'_self'}),node('br'));}
+    async function write(path,body){const identity=JSON.stringify({path,body});if(pending&&pending.identity!==identity)throw new Error('Resolve or explicitly abandon the uncertain PicoGK command first.');pending=pending||{path,body:clone(body),identity,operation:host.crypto.randomUUID()};const value=await host.CosmosAPI.post(path,{...body,operation_id:pending.operation},20000);if(value?.ok===false||value?.error)throw new Error(value.error?.message||'PicoGK command failed');pending=null;return value;}
+    const pathFor=job=>uri+'/'+encodeURIComponent(job.object_id)+'/jobs/'+encodeURIComponent(job.job_id);
+    async function show(job){
+      if(disposed)return;stop();const token=generation,path=pathFor(job);result.replaceChildren(node('h3','PicoGK component attempt · '+job.state),node('p','Job '+job.job_id+' · source '+job.source_commit_id),node('strong',job.current_generated_candidate?'CURRENT at inspection · implicit candidate · declared software QA passed · NOT engineering acceptance':'Retained/running/historical candidate · no current engineering acceptance'));
+      link('Download exact PicoGK attempt record',path+'/record.json');link('Download captured PicoGK source / resolution / QA',uri+'/'+job.object_id+'/inputs.json');
+      const stages=await get(path+'/stages');if(disposed||token!==generation)return;const list=node('ol');for(const s of stages.stages)list.append(node('li',s.sequence+' · '+s.state+' · '+s.stage));result.append(list);
+      if(job.state==='COMPLETED'){
+        link('Download native PicoGK component fields VDB',path+'/blobs/source.vdb');link('Download full PicoGK component STL',path+'/blobs/export.stl');
+        const context=await get(path+'/mesh-context');if(disposed||token!==generation)return;
+        result.append(node('p',context.preview_decimated?'DISPLAY-ONLY LOD: topology-preserving per-part reduction with independent mesh checks. Full-resolution VDB/STL originals are retained unchanged. Measurements on the preview are approximate references.':'Full retained mesh preview · implicit discretization · no analytic CAD-face metrology.'));
+        const table=node('table'),head=node('tr');for(const title of ['Part','Mesh volume [m³]','Sampled CSG residual max [m]','Sampled reverse max [m]'])head.append(node('th',title,{scope:'col'}));table.append(head);for(const p of context.measurements){const row=node('tr');for(const v of[p.part_id,p.volume_m3,p.forward_max_m,p.reverse_max_m])row.append(node('td',v));table.append(row);}result.append(table);
+        button('Show PicoGK component 3D model',async()=>{
+          const response=await host.fetch(path+'/preview',{credentials:'same-origin',cache:'no-store'});if(!response.ok)throw new Error('PicoGK preview unavailable; retained originals remain available.');const buffer=await response.arrayBuffer();
+          const digest=Array.from(new Uint8Array(await host.crypto.subtle.digest('SHA-256',buffer)),x=>x.toString(16).padStart(2,'0')).join('');if(digest!==context.preview_sha256)throw new Error('PicoGK display buffer does not match this exact retained job.');
+          const mesh=host.CosmosNGGModel.mesh(buffer);if(disposed||token!==generation)return;viewport?.dispose();result.querySelector('.pico-component-viewport')?.remove();
+          const scene=node('section',undefined,{class:'component-viewport pico-component-viewport'}),canvas=node('canvas',undefined,{tabindex:0,'aria-label':'PicoGK implicit component model viewport'});scene.append(canvas,node('p',context.preview_decimated?'Topology-checked reduced display mesh; full original mesh is unchanged.':'Implicit mesh reference display; not analytic CAD metrology.'));result.append(scene);
+          const view=new host.CosmosNGGViewport(canvas,()=>{},e=>{status.textContent=e.message;});viewport=view;
+          host.CosmosNGGViewTools.mountTools(view,scene,{title:'PicoGK components · implicit mesh',source:job.job_id,cadCapabilities:{enabled:false,diagnostic:'This is PicoGK implicit/mesh geometry. Exact BREP clearance/drawings require an independently generated OCCT source.'}});
+          if(!await view.load(mesh,context.parts))throw new Error('PicoGK display unavailable; inspect exact artifacts and QA.');
+        },result);
+      }else if(!terminal(job.state)){
+        if(!readonly)button('Cancel exact PicoGK component attempt',async()=>{const current=await get(path);await write(path+'/cancel',{expected:current.head});await show(await get(path));},result,true);
+        timer=host.setTimeout(async()=>{timer=null;if(disposed||token!==generation)return;try{await show(await get(path));}catch(e){status.textContent=e.message;}},1500);
+      }else if(!readonly)button('Retry exact PicoGK source',async()=>{const captured=await get(uri+'/'+job.object_id);await show(await write(uri+'/'+job.object_id+'/jobs',{expected:captured.authority.head,retry_of:job.job_id}));},result,true);
+      const details=node('details');details.append(node('summary','Exact PicoGK QA and diagnostics'),node('pre',job.source_canonical_json));result.append(details);
+    }
+    async function refresh(){const data=await get(uri+'?limit=20'+(cursor?'&after='+encodeURIComponent(cursor):''));history.replaceChildren(node('h3','Retained PicoGK component sources'));for(const item of data.sources){const group=node('details');group.append(node('summary','PicoGK captured source '+item.object_id));history.append(group);button('Load PicoGK attempt history',async()=>{const records=await get(uri+'/'+item.object_id+'/jobs');group.querySelector('section')?.remove();const content=node('section');group.append(content);for(const job of records.attempts)button('Inspect PicoGK '+job.job_id+' · '+job.state,()=>show(job),content);},group);}if(data.sources.length===20)button('Next PicoGK source page',async()=>{cursor=data.sources.at(-1).object_id;await refresh();},history);if(cursor)button('First PicoGK source page',async()=>{cursor='';await refresh();},history);}
+    const build=button('Generate saved components with PicoGK',async()=>{const model=source();if(!model?.usable_current_model)throw new Error('Open/save a CURRENT component model first.');const settings=specification(Object.fromEntries(Object.entries(fields).map(([k,v])=>[k,v.value])));const job=await write(uri,{model_commit_id:model.authority.commit_id,expected_model:model.authority.head,qa_specification:settings,output_formats:['stl']});onConsumed();await show(job);await refresh();},form,true);
+    button('Retry retained uncertain PicoGK command',async()=>{if(!pending)throw new Error('No uncertain PicoGK command.');const p=pending;const value=await write(p.path,p.body);if(value.job_id)await show(value);await refresh();});
+    button('Abandon local PicoGK retry identity',async()=>{pending=null;status.textContent='Local retry identity abandoned; saved source and attempt history retained.';});button('Refresh PicoGK component history',refresh);
+    try{const cap=await get(uri+'/capabilities');form.disabled=readonly||!cap.runtime_configured;build.disabled=form.disabled;box.open=cap.runtime_configured;status.textContent=cap.runtime_configured?'Separately qualified PicoGK component generator available. Enter explicit resolution and QA criteria.':'PicoGK component generation unavailable: '+cap.unavailable_reason;await refresh();}catch(e){form.disabled=true;status.textContent=e.message;}
+    return ()=>pending!==null||busy;
+  }
+  return Object.freeze({units,specification,render});
+});

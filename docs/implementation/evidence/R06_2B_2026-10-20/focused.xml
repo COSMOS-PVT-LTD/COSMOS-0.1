@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="19" time="7.704" timestamp="2026-10-20T08:59:17.952955+05:30" hostname="vaibhavs-MacBook-Air.local"><testcase classname="tests.unit_tests.infrastructure.test_managed_pressure_fed" name="test_exact_bytes_replay_restart_and_independent_source_unchanged" time="0.156" /><testcase classname="tests.unit_tests.infrastructure.test_managed_pressure_fed" name="test_terminal_failure_has_inputs_but_no_calculated_answer_and_replay_does_not_rerun" time="0.113" /><testcase classname="tests.unit_tests.infrastructure.test_managed_pressure_fed" name="test_input_first_interruption_resume_consumes_original_even_after_baseline_edit" time="0.176" /><testcase classname="tests.unit_tests.infrastructure.test_managed_pressure_fed" name="test_late_baseline_edit_is_retained_as_historical_not_promoted" time="0.114" /><testcase classname="tests.unit_tests.infrastructure.test_managed_pressure_fed" name="test_method_drift_is_not_published_as_a_calculated_answer[before]" time="0.047" /><testcase classname="tests.unit_tests.infrastructure.test_managed_pressure_fed" name="test_method_drift_is_not_published_as_a_calculated_answer[during]" time="0.076" /><testcase classname="tests.unit_tests.infrastructure.test_managed_pressure_fed" name="test_method_drift_is_not_published_as_a_calculated_answer[resume]" time="0.062" /><testcase classname="tests.unit_tests.infrastructure.test_managed_pressure_fed" name="test_unauthorized_write_cannot_capture_or_evaluate[actor0]" time="0.043" /><testcase classname="tests.unit_tests.infrastructure.test_managed_pressure_fed" name="test_unauthorized_write_cannot_capture_or_evaluate[actor1]" time="0.040" /><testcase classname="tests.unit_tests.infrastructure.test_managed_pressure_fed" name="test_unauthorized_write_cannot_capture_or_evaluate[actor2]" time="0.038" /><testcase classname="tests.unit_tests.infrastructure.test_managed_pressure_fed" name="test_invalid_spec_does_not_leave_accepted_inputs_or_outputs" time="0.046" /><testcase classname="tests.unit_tests.infrastructure.test_managed_pressure_fed" name="test_forged_or_changed_evaluation_context_is_failed_not_published" time="0.095" /><testcase classname="tests.integration_tests.gui.test_pressure_fed_projects_http" name="test_saved_source_replay_exports_context_stale_history_and_restart" time="0.937"><failure message="assert None == '3d881b3f00a801d5aec9a3da0c82fabf84baa57340a3ba5bf4252015ced6d7b9'&#10; +  where '3d881b3f00a801d5aec9a3da0c82fabf84baa57340a3ba5bf4252015ced6d7b9' = &lt;built-in method hexdigest of _hashlib.HASH object at 0x106149d10&gt;()&#10; +    where &lt;built-in method hexdigest of _hashlib.HASH object at 0x106149d10&gt; = &lt;sha256 _hashlib.HASH object @ 0x106149d10&gt;.hexdigest&#10; +      where &lt;sha256 _hashlib.HASH object @ 0x106149d10&gt; = sha256(b'{&quot;actor_id&quot;:&quot;USR-6c1b3ffed9e3fdb8&quot;,&quot;baseline_canonical_json&quot;:&quot;{\\&quot;chamber_design\\&quot;:null,\\&quot;change_log\\&quot;:[{\\&quot;field...Exact downstream assessment inputs; no workflow stage promotion&quot;,&quot;status&quot;:&quot;COMPLETED&quot;,&quot;workflow_cycle_complete&quot;:false}')">tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-557/test_saved_source_replay_expor0')
+
+    def test_saved_source_replay_exports_context_stale_history_and_restart(tmp_path):
+        root = tmp_path / "managed"
+        with running(root) as (_app, base, client):
+            project = new_project(base, client)
+            source = prepared(base, client, project)
+            prefix = "/api/projects/" + project["project_id"] + "/pressure-fed"
+            body = assessment_command(source)
+            saved = request(client, base, prefix, body)
+            assert (
+                saved["record"]["status"] == "COMPLETED"
+                and saved["usable_current_assessment"]
+            )
+            assert saved["record"]["evaluation"]["result"]["outputs"][
+                "assessment_balances_closed_within_declared_tolerances"
+            ]
+            assert saved["record"]["evaluation"]["result"]["stage_id"] is None
+            assert not saved["record"]["workflow_cycle_complete"]
+            assert (
+                request(client, base, route(project, source))["source_canonical_json"]
+                == source["source_canonical_json"]
+            )
+            assert request(client, base, prefix, body) == saved
+            path = prefix + "/" + saved["authority"]["object_id"]
+            assert (
+                request(client, base, path + "?commit=" + saved["authority"]["commit_id"])
+                == saved
+            )
+&gt;           raw = binary(client, base, path + "/record.json")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration_tests/gui/test_pressure_fed_projects_http.py:102: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;urllib.request.OpenerDirector object at 0x106158810&gt;
+base = 'http://127.0.0.1:53725'
+path = '/api/projects/e8315e95-0cf5-4b0c-b8a9-ec268aea1329/pressure-fed/74f78da6-fdd2-5c28-8eca-8e3cc0a1b74f/record.json'
+
+    def binary(client, base, path):
+        with client.open(base + path, timeout=15) as response:
+            raw = response.read()
+            assert response.headers["Content-Disposition"].startswith("attachment;")
+&gt;           assert response.headers["X-Content-SHA256"] == sha256(raw).hexdigest()
+E           assert None == '3d881b3f00a801d5aec9a3da0c82fabf84baa57340a3ba5bf4252015ced6d7b9'
+E            +  where '3d881b3f00a801d5aec9a3da0c82fabf84baa57340a3ba5bf4252015ced6d7b9' = &lt;built-in method hexdigest of _hashlib.HASH object at 0x106149d10&gt;()
+E            +    where &lt;built-in method hexdigest of _hashlib.HASH object at 0x106149d10&gt; = &lt;sha256 _hashlib.HASH object @ 0x106149d10&gt;.hexdigest
+E            +      where &lt;sha256 _hashlib.HASH object @ 0x106149d10&gt; = sha256(b'{"actor_id":"USR-6c1b3ffed9e3fdb8","baseline_canonical_json":"{\\"chamber_design\\":null,\\"change_log\\":[{\\"field...Exact downstream assessment inputs; no workflow stage promotion","status":"COMPLETED","workflow_cycle_complete":false}')
+
+tests/integration_tests/gui/test_pressure_fed_projects_http.py:71: AssertionError</failure></testcase><testcase classname="tests.integration_tests.gui.test_pressure_fed_projects_http" name="test_foreign_project_readers_and_posted_authority_are_denied" time="0.924" /><testcase classname="tests.integration_tests.gui.test_pressure_fed_projects_http" name="test_exact_assessment_queries_do_not_ignore_context[?unknown=1]" time="0.868" /><testcase classname="tests.integration_tests.gui.test_pressure_fed_projects_http" name="test_exact_assessment_queries_do_not_ignore_context[?commit=x&amp;commit=y]" time="0.849" /><testcase classname="tests.integration_tests.gui.test_pressure_fed_projects_http" name="test_exact_assessment_queries_do_not_ignore_context[?commit=not-a-commit]" time="0.840" /><testcase classname="tests.integration_tests.gui.test_pressure_fed_projects_http" name="test_exact_assessment_queries_do_not_ignore_context[?limit=20]" time="0.840" /><testcase classname="tests.integration_tests.gui.test_pressure_fed_projects_http" name="test_scientific_failure_is_retained_but_never_exported_as_numeric_answer" time="0.863"><failure message="assert None == '9885da71007e1b98d3a5533019c6a34efb4ab2d7060faa82e889b08fc48949ab'&#10; +  where '9885da71007e1b98d3a5533019c6a34efb4ab2d7060faa82e889b08fc48949ab' = &lt;built-in method hexdigest of _hashlib.HASH object at 0x1061e2f70&gt;()&#10; +    where &lt;built-in method hexdigest of _hashlib.HASH object at 0x1061e2f70&gt; = &lt;sha256 _hashlib.HASH object @ 0x1061e2f70&gt;.hexdigest&#10; +      where &lt;sha256 _hashlib.HASH object @ 0x1061e2f70&gt; = sha256(b'{&quot;actor_id&quot;:&quot;USR-6dc7ade327603cad&quot;,&quot;baseline_canonical_json&quot;:&quot;{\\&quot;chamber_design\\&quot;:null,\\&quot;change_log\\&quot;:[{\\&quot;field...&quot;:&quot;Exact downstream assessment inputs; no workflow stage promotion&quot;,&quot;status&quot;:&quot;FAILED&quot;,&quot;workflow_cycle_complete&quot;:false}')">tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-557/test_scientific_failure_is_ret0')
+
+    def test_scientific_failure_is_retained_but_never_exported_as_numeric_answer(tmp_path):
+        with running(tmp_path / "managed") as (_app, base, client):
+            project = new_project(base, client)
+            source = prepared(base, client, project)
+            source = request(
+                client,
+                base,
+                route(project, source) + "/cycle",
+                command(source, cycle_type="GAS_GENERATOR"),
+            )
+            prefix = "/api/projects/" + project["project_id"] + "/pressure-fed"
+            saved = request(client, base, prefix, assessment_command(source))
+            assert (
+                saved["record"]["status"] == "FAILED"
+                and saved["record"]["evaluation"] is None
+            )
+            path = prefix + "/" + saved["authority"]["object_id"]
+            request(client, base, path + "/residuals.csv", expected=400)
+            assert (
+&gt;               json.loads(binary(client, base, path + "/record.json"))["failure"]["code"]
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                == "OutOfRangeError"
+            )
+
+tests/integration_tests/gui/test_pressure_fed_projects_http.py:260: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;urllib.request.OpenerDirector object at 0x1062e5410&gt;
+base = 'http://127.0.0.1:53790'
+path = '/api/projects/97e27209-206f-49d9-b82d-0b3dafa6f3ea/pressure-fed/ec47564d-da8a-5974-958c-801fa2848a03/record.json'
+
+    def binary(client, base, path):
+        with client.open(base + path, timeout=15) as response:
+            raw = response.read()
+            assert response.headers["Content-Disposition"].startswith("attachment;")
+&gt;           assert response.headers["X-Content-SHA256"] == sha256(raw).hexdigest()
+E           assert None == '9885da71007e1b98d3a5533019c6a34efb4ab2d7060faa82e889b08fc48949ab'
+E            +  where '9885da71007e1b98d3a5533019c6a34efb4ab2d7060faa82e889b08fc48949ab' = &lt;built-in method hexdigest of _hashlib.HASH object at 0x1061e2f70&gt;()
+E            +    where &lt;built-in method hexdigest of _hashlib.HASH object at 0x1061e2f70&gt; = &lt;sha256 _hashlib.HASH object @ 0x1061e2f70&gt;.hexdigest
+E            +      where &lt;sha256 _hashlib.HASH object @ 0x1061e2f70&gt; = sha256(b'{"actor_id":"USR-6dc7ade327603cad","baseline_canonical_json":"{\\"chamber_design\\":null,\\"change_log\\":[{\\"field...":"Exact downstream assessment inputs; no workflow stage promotion","status":"FAILED","workflow_cycle_complete":false}')
+
+tests/integration_tests/gui/test_pressure_fed_projects_http.py:71: AssertionError</failure></testcase></testsuite></testsuites>

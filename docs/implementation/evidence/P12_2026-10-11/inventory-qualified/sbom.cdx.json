@@ -1,0 +1,4546 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "COSMOS 0.1 local release preview",
+      "version": "0.1.0"
+    },
+    "properties": [
+      {
+        "name": "cosmos:scope",
+        "value": "Local installed Python, qualified external native, pinned managed/source and browser tooling inventory; not a distribution approval"
+      },
+      {
+        "name": "cosmos:platform",
+        "value": "macOS-26.5.2-arm64-arm-64bit"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "file",
+      "bom-ref": "native-00ae093080ba45f37bced19fbbef098adb2e8f946f1c9783113242f879dc0697",
+      "name": "libTKRWMesh.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7e80a2226ccdc3d4e3e6d4823aa82ea73ac20156e2147878caf94fdb2c48be66"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKRWMesh.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-04dea56e78a44dd115d550974a5d1b89def78a6786b49ff97b5ce39308fb112b",
+      "name": "libTKGeomBase.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9632526b3ef606cfa40ec61b2dff33597bf35f61ec9a58eea0ad7c2ed3591ef6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKGeomBase.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-0f2d8fa398caff111bba3f7e20e79df9201c2bf00eea56cd7c87252a6b354371",
+      "name": "libTKernel.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b2abcd3471341c487b18996f9531932ae30401e88331439aa226fb2d9264ae72"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKernel.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-0fc5410cbb47179f7643570dcc48f13e8d33f0c4860ece47350f50563cc4a3ad",
+      "name": "libTKG3d.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bfd78ea44aa7995fa1fca7d268c93b0852c1eeed308d0a28675fe6186842f339"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKG3d.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-1150509436e9df1f74dbcc84de9a159114b2fc8197ed3a60370476369cf592ad",
+      "name": "libIex.32.3.3.2.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c22ab0c9a6f2eb8278f4974b49efc8b2085e0e80bd76bec6ba0aaa582799edb1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libIex.32.3.3.2.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-16336b944a2a314bbc520c5f352647d51e92771ad4060f858e8edb34cedd9468",
+      "name": "libTKDE.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c67085fbe48af6aa8cd4abce99ecc31eaa337ca8ac9697e1ac7bf70b47886ce2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKDE.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-170b932b027437d8b5249f4d6a84d3bda617660589853a800859869386204285",
+      "name": "libTKDEIGES.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a0ca0a14dfa3fb10dbaaa4a2f550a288f347c4d773bd9d5b9ccf7c3d67232609"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKDEIGES.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-1af591f1c5525cebd0692c4f9daeff5aeac61b81ac4de05e623cd58b1b58a8b5",
+      "name": "libjpeg.8.3.2.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4e5c207c7b34fd0c10a47773d63e587f538ff8565e11ce6d3b6c2deb1d6c66ce"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libjpeg.8.3.2.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-1ec4618b56ee287f244e84e185f34488242608937b0150a00229e2b823c23b50",
+      "name": "libTKBin.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "cb63ad1c73b315e0b5f2788d24311fb3e53d809529ffc80205ff9be3cca3dd9b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKBin.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-2aa212fdd78846632d3899507001a21814030271b0dbbf7b7cf74c399b508e88",
+      "name": "libTKExpress.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8bc12c3cf6d82905c83190c3915095d6ff420882cab7898ae32450e71a3e0cb6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKExpress.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-2b7b75f173ee92dcb8cef2262bb61d1b0582c994c60e8c5808d7645dc1df0525",
+      "name": "libTKBool.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "cb05e59d0e872d214e519b5a048b01f5f08825934554122c515b5ddb67a4f602"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKBool.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-3266bbf451a3fd50c3a2918a4864aaec41aa184c1d6b3780eb35a85a911fa794",
+      "name": "libTKDEVRML.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "af311566cc581be71d30cab496e93da3f0ea7639d5ad44937e00b98b8666891f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKDEVRML.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-3f72c3b65fe9a7a9480c50acfd9583984b1e0ec931154384b5938367d7f3904e",
+      "name": "libTKCAF.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ac3c93990eb7cae5374bb39c8f0eebe9ce3c069ac842b587dba64ec8e45a85f9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKCAF.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-4256dc59d037819068065075fb60e71a480a6b9dc9ea2d4a347449908bc1c0d1",
+      "name": "WireProbe.dll",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "64ead4255c19d3f21208e22a68ff9b9c645361121f36ed8b066183b7df4f439f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/wire-probe/WireProbe.dll"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-43e23298146b10ff2606dae157f2dd0cecc3ed2daead0c8edd2b2fad36845ad7",
+      "name": "libTKHLR.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5e9a75ba3a34576b64f18b33a39663f9fbae927f09aba41438baede5b77b80d9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKHLR.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-452bf1fb32541926abc6593de0b60ca6b632634c3a27d7a40d492ca6fa91d7be",
+      "name": "libTKStd.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d9ea118877b82a412abb37f032c25bc9a2932316e111db6103c9750c41b6976a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKStd.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-4a212758ee08bfe5f5a9dcc9fed1190615cd6a8dfbcf1fe605177d67f664417b",
+      "name": "libsharpyuv.0.1.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5f47df6a8840837c57943cd16da00d0957a1b5a2df9dcd1ad8fb365a79bf9dbc"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libsharpyuv.0.1.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-4b52beb68136d35e7c613d577ece86b4fb5d594da70ac75618244da97a712b92",
+      "name": "libwebpmux.3.1.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6b0209613c10cb89485d20b6b737a3ec1319ccead098e9285d569ee71d0e3e2c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libwebpmux.3.1.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-4decc3ea7b65f1433b194f1c428208b193f1905c1a07a749075ad13d2171d124",
+      "name": "libTKOffset.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2e341fdb99c914dc31ec9a2837533e9532626c6e2dc71c0959fef743794ca0b2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKOffset.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-5660c4a8811fdbbc9c5adef2aa7a986393fe6bc479e7ab5ecdd5bdd3d664fe94",
+      "name": "liblcms2.2.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1685fa2c4c4312b3c5895560f588b8e2d5a1291f668bd85709113104646c93d3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/liblcms2.2.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-56ca0754440f4ad48e2a9ba21c8f361aabc0a8b10a3296e249c61ced53f6d77c",
+      "name": "libTKService.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c39b470e3fa8a20f7378467cc7719be0ae07fc673b6e8fc4b021b79b6f74524c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKService.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-57c69f8874ed8e1ac8fca7493774e3668f4d1804168bfab211319f6ba0eadb2a",
+      "name": "libjxrglue.1.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ff29d12ff8485e9944e68cf90be70d16904de5526a7c63aca64b90106e0cba8a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libjxrglue.1.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-59f3dbfdcfa519dc5682b95e34dfae83ed2e210d91f914b20d41317c815d70e3",
+      "name": "libOpenEXRCore.32.3.3.2.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "637531cd8f973883a1f6ff9e6e0d383e6cdac162d736db3b204c809d44ea3534"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libOpenEXRCore.32.3.3.2.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-5a5ae2b57e60ce01f6ef5fe9ab74ea957e8e1a890db7d9d5ed387383d4871d37",
+      "name": "libTKCDF.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "122ae13fcfc62b7683d9bdb1ab5b62c4085fce965ff59a015b32cbfb8d8ff50f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKCDF.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-5a9d0b356f7e5cf78ef6bb19d15ebd7e4aef5fc029c046ee834f7acfbfc52a91",
+      "name": "libLerc.4.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a0966d209591db6ce50379023ca0d54071148fda27eebdda79bf38d21852cc75"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libLerc.4.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-5b340dc28ffffeae281be616e86baec5ebe27f443c41721381002e6c4e64321f",
+      "name": "libTKV3d.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0febe1c60c15c1749009eec7c34e2f90a9e15604ef3c4b87c33fa8d045b27a3a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKV3d.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-5b5b84285013ea5c2fb4cee6ad3d5b8ea7d5bad95cec69b5b6c7461070a6b752",
+      "name": "libpng16.16.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8873a2e6ee3adf64ea57e0a3956e211439b52e457c78dce12add38bbea3b1c69"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libpng16.16.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-5f7c21296ef9c5cc7b11e0762b1954269f39f3c16f6301827d925b749949ded5",
+      "name": "libTKXmlL.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "083aff1a52c80cd11fccd3734e5a369278b7783996c261ea24e1c69842124ade"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKXmlL.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-62d3790c135df1ccc58fd3a386be47499509f7218079926c9caf37a025158cb1",
+      "name": "libTKXmlTObj.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "509df281e910f9ef0af1aaae367251aafda49f8c1666f498af07fbba1d6aa2e3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKXmlTObj.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-63d381173d6c5ce70ed711e501ff3c2143592a0d76ae7b1fcdbabddaa70c79da",
+      "name": "libz.1.3.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "db1b84ac74c678ebc434f6482868ba74dbe1a025554c1397c20c6b97d73fd0a9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libz.1.3.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-64344d6dc982d014599771e24b0ec868928fea0254d45172927ee18d313e0d47",
+      "name": "libwebp.7.1.10.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1d3c221037493362ba78ab8e6c4bd815d3437f8112bf3fca84c3dd21fa2b1431"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libwebp.7.1.10.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-676545fa04b0b7cca0cbef8e88ceeca57928dec0773729264c1ce28c900b16c2",
+      "name": "libTKFeat.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4ea17b488d7baa1beff05f3d5c08d85d8f2f58ae935d9eed08810ab0de9e136d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKFeat.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-681f4da446c4ddf375ee4009e5bd83caef3bd484a2f7ec3bde3d5cb417196b98",
+      "name": "libTKG2d.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e64dceb2ea3bc1956bc8b1812bd3b3f2f9fcee70327d0bb5ebafa4f55a9557aa"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKG2d.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-68f1072b4b4723d90cd42e033a9b5da3a1f1a534b68f473d1d445dc247c05a4a",
+      "name": "libfreeimage.3.18.0.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9cc96d1a508e2781803e6f27f4d612af13d1e746853768e5c14a96f430235c5c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libfreeimage.3.18.0.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-6bc2e690f2570bef4d91fb71ceb1c1b4b77b4e99d830a8ef023e5a3d445d76cd",
+      "name": "libraw.23.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f1e1e9271ba7e37f3165fe9aaeac2378a4dbfb29f0a4678cb1e86cec741e3b64"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libraw.23.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-6c4e5684c8f5c2020786ab43cc3017eac369a863e6f5ca84fc92ce9e1b38a728",
+      "name": "SkiaSharp.dll",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "00703ecd3654f52bc7afa5d1721b56d07ed27f4f8cddfc19f897a61966682582"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/pico-worker/SkiaSharp.dll"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-6de90199f048330df501df33762f87d6c6a79f69dc97c0045b63009401348221",
+      "name": "libtiff.6.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "24cf338e013bb677a46c667be10c36612c40710c936e9f104f08e24f3ecbc97e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libtiff.6.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-6e0460d2b620c1aa6186dac4d396f52bf6f3abe9fc0affde64a1182b11767604",
+      "name": "libTKBinTObj.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bfddf9b0d7d658c13b87ab7869ac73ee7234e51f761665f37ab0c97440e05133"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKBinTObj.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-6ef94043df5362e08932f55e748a6b50f608a4623483e27aacc9250991e6326b",
+      "name": "libTKXSBase.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ec2110555a4468b89470365bba0d26a93d658ba5dba6f072824282e998aca1c2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKXSBase.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-709abd15d0e851e7951e8a03a66d5b971a50d7f6210c30a2711adf59fe019153",
+      "name": "libTKDECascade.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "090fa38e93597edde11eb7236a0dd45b1359dbb675b404d2d142476960da2526"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKDECascade.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-70adeaff35b6c08cd53c3d7eab08e68765d5f55f5392d7a56b4b6b907da7bef6",
+      "name": "libTKXCAF.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d2462a7cfb95f7780ecc635b01fc0ffd53f26b6d60584167c43cdcad17019e2f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKXCAF.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-746076a2ac0a43d15b79e2a4b7d8be0439f4cf00b1424f5a24021f1920ac1301",
+      "name": "PicoWorker.dll",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7d43fb7a3f3053413f9c0724a4482caf7adcc8ebaa51aaf88248f6d7090d4a51"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/pico-worker/PicoWorker.dll"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-750219decb3a19a0832c73afc16616a420103c05b9f5761abefa65771699a357",
+      "name": "libTKXMesh.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7ffdf84017cde73b56b91ae2984042fa925d807e600a8f1e99703c3f2a84d0d0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKXMesh.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-750f3ba40593c1f4adfc30c1104bd74a75d5d2f3765a3fc6151bc269720a0248",
+      "name": "libfreetype.6.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e992493ed93264fd33621c5c56d31cb07e96d26bd6181bd0e644e23574157b7c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libfreetype.6.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-76a9e8ae69b074a7e39e163dfa2007c58d39bc4751fc1ee06ad8b2f162094631",
+      "name": "PicoGK.dll",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2d0ad925d54fe44a30234da637eb7fa9685f31f4a15307ef7f783ec93702b99f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/pico-worker/PicoGK.dll"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-7ae058a16fc11aec50e9c79d260d830d465bd17e3cdcfbcf5aa19496345d61d2",
+      "name": "libTKMesh.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e3a6b448ca06be4d4b56a44d68da1116a54592418f6d5c4f726000f90926e653"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKMesh.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-819eaf0f6b0f7c95d9b942253e983561fa8d22d64af8449f91c804b752e627f4",
+      "name": "picogk.26.2.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f70a1add5afc60ac0d96a411bd15f12a0d07d4f901261254ec1253c44eb345ed"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/pico-worker/picogk.26.2.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-831af58f6ccb6446b0f362d057f5942f72a0fc4294062e99fb5bd4032a2b0309",
+      "name": "libTKBRep.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d05770c1dff0810f2eff19fda37649414b8bfb39c28e10144003d11bbb5ad6c7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKBRep.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-8a6fd617e12b90ad3132cab6160652082d6bc42665ca812ef0f17a955fd0f004",
+      "name": "libTKBinL.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "29feba551f461895420a1ee05e354515c1b845ba3a0fd1ad23fedeb5c65ba8f4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKBinL.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-8d88033710f0481d9ad2552c35b727be2ec799bf8df00911fa3504513349b6b9",
+      "name": "libOpenEXR.32.3.3.2.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "58c995a1d0bd8dafedea909c11595825f18ed172dfaba1be95ea2324d6321003"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libOpenEXR.32.3.3.2.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-90689de20c3aceb529ca3277fe818532196b8c11f9b97d487892f868af4114bb",
+      "name": "libTKXmlXCAF.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4f9ca32ccdda58c137eaec12be6776fb35e7124c6aab46ce6943ebb41b1c1d35"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKXmlXCAF.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-95eb6869a0c4d49b42ac30a3cc8791f07ca272a12269292f56e2fe87464c1710",
+      "name": "libTKDEOBJ.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f08d67cf3b408dc5c2c5baae6550ec4dbd5234667e83da18191cfecec422677e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKDEOBJ.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-9d52d042cabc1e403fadf7a06691b151df54a5e99b1f098a4fac0331a14e551c",
+      "name": "libgmsh.4.15.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3c964f25a233f527e14b95e0bf80a4d9c22703ecddfbe1a2f6907b8fed37edfe"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/libgmsh.4.15.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-9dc3f73b8e0788e940ffe791f408a7f7a203b7daca66f3edd1076d720aa8936a",
+      "name": "libTKIVtk.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d777221beb6a327ac1b1948d3f324cbc558a7fc5b2d77ed9e887680cd6a845be"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKIVtk.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-a4d66b9e9e9e48015febb9b75403436d0cc693da388901fcd2b524ac707c41fa",
+      "name": "libTKFillet.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0bb1c3e8dab0c9df851de6a7d8355993a9a210f6cdd8babf725b3e3632aee925"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKFillet.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-a602035ad017765ffdcb7ddcf4f35a71de1ca74d20d0a399f1461ef04ad6929b",
+      "name": "libTKXml.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d5ca5b95e6ad6a8292789241d4a6a42f19f110ad601e63ef69e2be98e58dd05f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKXml.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-a8243f386a6d4d339f109234f2e35aa9c3a278d8457ddbb8317433b176bed546",
+      "name": "libTKDESTL.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "89833981abcdb2f4e127e05742668cb153e2038e01cc9d0a0140afe0bc556706"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKDESTL.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-b1bd1d10ddad8d781785eb3d74733daa61a5583635539e3520e6b4a980af29b0",
+      "name": "libc++.1.0.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b1e41d5d3f525492c150a1e762455f6c0e98a00582c961a8219be274bce6317c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libc++.1.0.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-b2a8bcca5dc1c2fa6625133c92af9de16fceac65b42545f1f3ffed77d080dd59",
+      "name": "libTKDESTEP.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "625c763830c7e8698569ac3d7afa0f7dd859e11c30fb51be552651cd15dc6d48"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKDESTEP.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-b2ef139d196bfb917cacc154183dabf797f1be263dbdff393c2185f9c42f2275",
+      "name": "libdeflate.0.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5ffbad4b21e4652ee3e10d4023d526264240c2efdf249bc74aeea317f51bff4d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libdeflate.0.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-b3571541b8db1c5e4aa8cad1f67154adcde339c3cbb4bd4d40d63ae8cc762c3d",
+      "name": "libTKPrim.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "190e24853ed0f1b332447eea0654747cba3060724ae1c741b062e9913f30027b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKPrim.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-b3f9bb8d82ef5b2f070a7924cdd1adb5aa56405ebce448743f6f99405fe2ab18",
+      "name": "libtbb.12.16.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "cf2943b5a30b2257a84fd6fae63e760b10385bdd19c63e3cedbca0d3f08e50f7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/pico-worker/libtbb.12.16.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-b639d9a3e44267c9c70cb8108436ba71dff59cca427e5b2101e8b0d533def378",
+      "name": "libTKTopAlgo.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f305d9d9b4a38c1925227d2c19cfb60b8ddf9f1689f2537bc670fbbb98d13d2f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKTopAlgo.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-bf430f5d1a6a4817caf59d775e87f6aea36bb2f04427c3fd3a5a818325985f03",
+      "name": "libTKTObj.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8a81f1069730bd4be6069554e5261f77378328968260ccbc8fffe1860bb444ad"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKTObj.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-bfd719c0878ff331d3e4782c7024d567998270918df1ffa5d4b7620e1d504863",
+      "name": "libTKOpenGl.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6eb3d7d43dc745649eb54baed9de00e22945f5152dbac1d1fb3936abfeb75b96"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKOpenGl.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-c3fd621162fda81af27d7774e948020995ffbeeb00c9dd9cbc137ee77dc84e36",
+      "name": "libTKDEGLTF.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "34993af769beb296b5c6a597650c44ed6c4579a2c2e15c059703742dff99ac32"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKDEGLTF.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-cae7812b87009c8f94818cb0da11a8c43c6afc6f8a1ba3258f49ed209542cc60",
+      "name": "libTKVCAF.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "24118f7abf376115e8273f925dc33ffe019a462d389f56e0d1f445105e0e936c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKVCAF.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-ce9e6d2e592e8d6e64bd597948e49cb6357e6bd08f03d9af1c728329b52a20cc",
+      "name": "liblzma.5.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8ff5aaad7d0618511bb6ea4e8d2e565dc0d00311826249b7083c7592c1e366a3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/liblzma.5.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-d11ab11f93c3026ea800fc63fdbb1a89dcc58ffcbea9fadd8c62a66a70620e79",
+      "name": "libIlmThread.32.3.3.2.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "36ba46041cd72b182f442b863c54f874fba74ed15cd54b2562209e3b1bb18fec"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libIlmThread.32.3.3.2.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-d1622446bc594f600bf7ad8208521b90fd8dff9bef33d03e5be80dfe8e9956ff",
+      "name": "libjpegxr.1.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1a67fae79753546a5305692673ef55cd694cb58039b9e90fec1cc4cade7d6261"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libjpegxr.1.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-d2ce43b4859ccc99d4d7118c8b4dfcfe87712a5efabe6b6feca229ea6c730d15",
+      "name": "libTKBinXCAF.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a3d72f445360e6e4435a0a732f11cc82cc5b5a747013966d1224513c456fb855"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKBinXCAF.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-d3e3e974f43ad023555e31ec317f41e96557895a92e09a547f414ee4045072df",
+      "name": "libzstd.1.5.6.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7f4a2e93bafbfb178cd60ab2e841918c93c9a087c979aa8f8cc8b88745c29531"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libzstd.1.5.6.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-d7b1b604bc1e7ae11fd6fa8ca7e8849d353b18d0802eddf2fac521eb34a88db0",
+      "name": "libImath.29.11.0.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b636af422eff5203bc8a6dc38bb6d458d284a3a8941ce087f91962c15eaa2a4e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libImath.29.11.0.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-dc5f9e449572cbc77ebbded852d184b885f11010fbadb1af5f89549af4cebba2",
+      "name": "libTKBO.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f83dfd8a5fc768cd535175e0bbb79c5128bd0b5b3fb2382b45a71b50c0dae00f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKBO.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-e3f340777fc6678e5c74b6253431aebf68a2feb4f2e75b77fb1ff3d465def59f",
+      "name": "libTKMeshVS.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1bcdd27792d186c2414029e9af2f8e92075b3a3e845e766f96f8b7c924868384"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKMeshVS.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-e9791d71c5ac56049ef0c403fee8fad67143e19231fea5c7aac9e698eb5484a5",
+      "name": "libTKDEPLY.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1cfa69fa08a331de76e79b5ea7cb667459c6051af42e0248b78748c7c3e5826f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKDEPLY.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-ea3f7a0263d55aa576d997821a2a323b6dcb157753df252dd1fe85b44e8ef94a",
+      "name": "libTKLCAF.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4a59d791f78cc8ba7ae1002872d6f9d78ef20478cc0f75a335eea86590531a33"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKLCAF.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-f04cfc4f72f698c04f531aef0456cee7778075c7fd168ede972aa614538d74e2",
+      "name": "dotnet",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "778a11b4ade1d8628d9789dbc689ae2dbc274aced94862f3c394f5ea8f459be8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p02.rOuMVo/dotnet9/dotnet"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-f34d3fd17ca50a48ed364c9cd18f0fbdd8c2bc076498791ccf98c7aff76f869f",
+      "name": "libTKStdL.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bd47ffece74cb8598c6b054b4f7aae6f823452164a4c307d1d9cd86f9888f613"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKStdL.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-f3bf833e8f055b0c1526648bf569cd4623bb37b97238116e23b229477e3bcddb",
+      "name": "libopenjp2.2.5.3.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "61a3407bd1d1e9a69b006b66632be15649ad32b5f6df5fa07ab548f43dcebc57"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libopenjp2.2.5.3.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-fa72705a2551ca255bac63c999fd74549f69c8d4381e5cb37e2d2ff121636f8a",
+      "name": "libTKGeomAlgo.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1391dff50e0d470e2e17396b9a0856224fa89d6b535f1cf81968840226af9d27"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKGeomAlgo.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-fa7606af1977bc92649bd87a9533da7e8eb8bdbf7f3b9c5c71c68357495c0ce9",
+      "name": "libTKMath.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "482165bf62cb8eaab00c7316f1f348cab47a36750d6bd7da6f3b8942158936d7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKMath.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "native-fcc5d4760334a5e8b569e0bb5166f003318ae9610a70c056210e99725b45c5a9",
+      "name": "libTKShHealing.7.8.1.dylib",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9dfa1d68f908ea639828a8180b579e053172cc1e99d5a07a13ccfb4cd2108fa6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "External qualified local runtime; not bundled or approved for redistribution"
+        },
+        {
+          "name": "cosmos:source-path",
+          "value": "/private/tmp/cosmos-p07.yVDtYl/cad-tools/OCP/.dylibs/libTKShHealing.7.8.1.dylib"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-../../private/private/tmp/cosmos-p03.pfPm6s/node_modules/@playwright/test",
+      "name": "../../private/private/tmp/cosmos-p03.pfPm6s/node_modules/@playwright/test",
+      "version": "1.64.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-oTN9FNYuN6bqQMwiho6jJKLCG2/QOYCixGXuCjRmzOq23eODeukuY2XiAVoVpAECbuezMt1MHQjAiQxK8F+Y+g=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-../../private/private/tmp/cosmos-p03.pfPm6s/node_modules/axe-core",
+      "name": "../../private/private/tmp/cosmos-p03.pfPm6s/node_modules/axe-core",
+      "version": "4.14.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-9WTZxEjsZ7b13TH8JPmbV2z8CHbl80/2hm3XPEG4JgNdQLK81IBRXmSxHfMAOkSqQeRxT/0dwNDz2GOm3zzpcQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-../../private/private/tmp/cosmos-p03.pfPm6s/node_modules/playwright",
+      "name": "../../private/private/tmp/cosmos-p03.pfPm6s/node_modules/playwright",
+      "version": "1.64.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-kVzTnYFYEyQ9RGzBjNCd2+yEqWmVbxl3AHPynv3qQ6JTjv4a+kwRcnqQwIpuP3NnrnIrE/Q6wWAIAvMfIE2/Yg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-../../private/private/tmp/cosmos-p03.pfPm6s/node_modules/playwright-core",
+      "name": "../../private/private/tmp/cosmos-p03.pfPm6s/node_modules/playwright-core",
+      "version": "1.64.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-T9r+MZkTECl2+oUcZ26YgZzTrYidTsIhYYkJix+6iDOymOb1FB2RLLSOxRGnZGv5DStt+aduIVbt+E8WygXYpg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-../../private/tmp/cosmos-p03.pfPm6s/node_modules/@playwright/test",
+      "name": "../../private/tmp/cosmos-p03.pfPm6s/node_modules/@playwright/test",
+      "version": "1.64.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-oTN9FNYuN6bqQMwiho6jJKLCG2/QOYCixGXuCjRmzOq23eODeukuY2XiAVoVpAECbuezMt1MHQjAiQxK8F+Y+g=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-../../private/tmp/cosmos-p03.pfPm6s/node_modules/axe-core",
+      "name": "../../private/tmp/cosmos-p03.pfPm6s/node_modules/axe-core",
+      "version": "4.14.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-9WTZxEjsZ7b13TH8JPmbV2z8CHbl80/2hm3XPEG4JgNdQLK81IBRXmSxHfMAOkSqQeRxT/0dwNDz2GOm3zzpcQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-../../private/tmp/cosmos-p03.pfPm6s/node_modules/playwright",
+      "name": "../../private/tmp/cosmos-p03.pfPm6s/node_modules/playwright",
+      "version": "1.64.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-kVzTnYFYEyQ9RGzBjNCd2+yEqWmVbxl3AHPynv3qQ6JTjv4a+kwRcnqQwIpuP3NnrnIrE/Q6wWAIAvMfIE2/Yg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-../../private/tmp/cosmos-p03.pfPm6s/node_modules/playwright-core",
+      "name": "../../private/tmp/cosmos-p03.pfPm6s/node_modules/playwright-core",
+      "version": "1.64.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-T9r+MZkTECl2+oUcZ26YgZzTrYidTsIhYYkJix+6iDOymOb1FB2RLLSOxRGnZGv5DStt+aduIVbt+E8WygXYpg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-../../private/tmp/cosmos-p03.pfPm6s/node_modules/typescript",
+      "name": "../../private/tmp/cosmos-p03.pfPm6s/node_modules/typescript",
+      "version": "6.0.3",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-node_modules/@playwright/test",
+      "name": "@playwright/test",
+      "version": "1.64.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-oTN9FNYuN6bqQMwiho6jJKLCG2/QOYCixGXuCjRmzOq23eODeukuY2XiAVoVpAECbuezMt1MHQjAiQxK8F+Y+g=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-node_modules/axe-core",
+      "name": "axe-core",
+      "version": "4.14.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-9WTZxEjsZ7b13TH8JPmbV2z8CHbl80/2hm3XPEG4JgNdQLK81IBRXmSxHfMAOkSqQeRxT/0dwNDz2GOm3zzpcQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-node_modules/playwright",
+      "name": "playwright",
+      "version": "1.64.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-kVzTnYFYEyQ9RGzBjNCd2+yEqWmVbxl3AHPynv3qQ6JTjv4a+kwRcnqQwIpuP3NnrnIrE/Q6wWAIAvMfIE2/Yg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-node_modules/playwright-core",
+      "name": "playwright-core",
+      "version": "1.64.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-T9r+MZkTECl2+oUcZ26YgZzTrYidTsIhYYkJix+6iDOymOb1FB2RLLSOxRGnZGv5DStt+aduIVbt+E8WygXYpg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-node_modules/pngjs",
+      "name": "pngjs",
+      "version": "7.0.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "npm-node_modules/typescript",
+      "name": "typescript",
+      "version": "6.0.3",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned browser-test tooling; not application runtime"
+        },
+        {
+          "name": "cosmos:npm-integrity",
+          "value": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "nuget-Microsoft.Build.Tasks.Git",
+      "name": "Microsoft.Build.Tasks.Git",
+      "version": "8.0.0",
+      "purl": "pkg:nuget/Microsoft.Build.Tasks.Git@8.0.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Observed predecessor managed/build closure, not redistributed"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "nuget-Microsoft.SourceLink.Common",
+      "name": "Microsoft.SourceLink.Common",
+      "version": "8.0.0",
+      "purl": "pkg:nuget/Microsoft.SourceLink.Common@8.0.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Observed predecessor managed/build closure, not redistributed"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "nuget-Microsoft.SourceLink.GitHub",
+      "name": "Microsoft.SourceLink.GitHub",
+      "version": "8.0.0",
+      "purl": "pkg:nuget/Microsoft.SourceLink.GitHub@8.0.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Observed predecessor managed/build closure, not redistributed"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "nuget-SkiaSharp",
+      "name": "SkiaSharp",
+      "version": "3.119.0",
+      "purl": "pkg:nuget/SkiaSharp@3.119.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Observed predecessor managed/build closure, not redistributed"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "nuget-SkiaSharp.NativeAssets.Win32",
+      "name": "SkiaSharp.NativeAssets.Win32",
+      "version": "3.119.0",
+      "purl": "pkg:nuget/SkiaSharp.NativeAssets.Win32@3.119.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Observed predecessor managed/build closure, not redistributed"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "nuget-SkiaSharp.NativeAssets.macOS",
+      "name": "SkiaSharp.NativeAssets.macOS",
+      "version": "3.119.0",
+      "purl": "pkg:nuget/SkiaSharp.NativeAssets.macOS@3.119.0",
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Observed predecessor managed/build closure, not redistributed"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-attrs-26.1.0",
+      "name": "attrs",
+      "version": "26.1.0",
+      "purl": "pkg:pypi/attrs@26.1.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "6fda4418934289ce671fee6f02cc5db6fb679333347771c79b35bb6e448b34fa"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-bottle-0.13.4",
+      "name": "bottle",
+      "version": "0.13.4",
+      "purl": "pkg:pypi/bottle@0.13.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "9539e1524d46e8278038f6d8f91d3e15f605418c0f02986b062dcfb88087378e"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-cea-3.3.4",
+      "name": "cea",
+      "version": "3.3.4",
+      "purl": "pkg:pypi/cea@3.3.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "bb568ec3a24e9a005fecf65fffe46f2c906db02e91c9ebe9ea856852c3ab2dc6"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-iniconfig-2.3.0",
+      "name": "iniconfig",
+      "version": "2.3.0",
+      "purl": "pkg:pypi/iniconfig@2.3.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "61e4644e2ca0a2392080f21d81d5ce6a783bc8afc6e0ea68d9e00dcfdf65ffb6"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-jsonschema-4.25.1",
+      "name": "jsonschema",
+      "version": "4.25.1",
+      "purl": "pkg:pypi/jsonschema@4.25.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "0a3dc6443127dbddb2c9288d64f8f2deba57b5c22876f9cde2a8d4305f166f8c"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-jsonschema-specifications-2025.9.1",
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "purl": "pkg:pypi/jsonschema-specifications@2025.9.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "69053872b95fea850dcc4d6e11420a27d16848d82a67b3d9a3dbad3ab74f7246"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-librt-0.16.0",
+      "name": "librt",
+      "version": "0.16.0",
+      "purl": "pkg:pypi/librt@0.16.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "7152887f4c184cf0e03d006939de953d11516cd7bd9d527c830a9967b3d78009"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-mypy-1.20.2",
+      "name": "mypy",
+      "version": "1.20.2",
+      "purl": "pkg:pypi/mypy@1.20.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "f9c4ea4a88b1464c4661724fe4a183283684c3e4cb88415338fea32302789e73"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-mypy-extensions-1.1.0",
+      "name": "mypy_extensions",
+      "version": "1.1.0",
+      "purl": "pkg:pypi/mypy-extensions@1.1.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "784e76d9a1604d82a4bda7b5b564527086ff73861f07d710e858ae4bcc97299e"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-numpy-2.4.6",
+      "name": "numpy",
+      "version": "2.4.6",
+      "purl": "pkg:pypi/numpy@2.4.6",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "47716e7ee8dc82ba5f9d6abbed53535282a4e3b830866528b4b3acdf38bcbd55"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-packaging-26.3",
+      "name": "packaging",
+      "version": "26.3",
+      "purl": "pkg:pypi/packaging@26.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR BSD-2-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "c0b153c85b9280b0166305e44aac03ce2351efba6d4627bd2b3d8150a1c7aac1"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pathspec-1.1.1",
+      "name": "pathspec",
+      "version": "1.1.1",
+      "purl": "pkg:pypi/pathspec@1.1.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "09803519db4106694c1167f31116892e6ba4a28dde80c765b0cd2bfa76785ce8"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pillow-12.3.0",
+      "name": "pillow",
+      "version": "12.3.0",
+      "purl": "pkg:pypi/pillow@12.3.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT-CMU"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "bd2ec1d6de01ef74e000651fdd93b2a706da12d8583882a369d6c170fae6bde1"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pip-26.2",
+      "name": "pip",
+      "version": "26.2",
+      "purl": "pkg:pypi/pip@26.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "4626f32065b9aba34cce267033cfbfe3f17b801c00a69c57407084f476fd408b"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pluggy-1.6.0",
+      "name": "pluggy",
+      "version": "1.6.0",
+      "purl": "pkg:pypi/pluggy@1.6.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "2dcbf9829c3811bc1dc56a2817ef98b62fff184c739982ffcedd5bf354ffe973"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-proxy-tools-0.1.0",
+      "name": "proxy_tools",
+      "version": "0.1.0",
+      "purl": "pkg:pypi/proxy-tools@0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "e40d7acc0984fc32e32d3ceb90d9eff17909bc6c1d2831a0682b6268dff4574b"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pygments-2.21.0",
+      "name": "Pygments",
+      "version": "2.21.0",
+      "purl": "pkg:pypi/pygments@2.21.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-2-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "9c6e729d19450517e822e7c32034af263b34f4b73bf27c3afa17b78a94bdf3c9"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pyobjc-core-12.2.2",
+      "name": "pyobjc-core",
+      "version": "12.2.2",
+      "purl": "pkg:pypi/pyobjc-core@12.2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "166541d7d333a823feafe6660d1ab171f9447b8d154c078160ad7adcc4141c1b"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pyobjc-framework-cocoa-12.2.2",
+      "name": "pyobjc-framework-Cocoa",
+      "version": "12.2.2",
+      "purl": "pkg:pypi/pyobjc-framework-cocoa@12.2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "ee7dba0a19d7f466650a6c0b525606df65206254b424fe7b4e73ca5caef16cdb"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pyobjc-framework-quartz-12.2.2",
+      "name": "pyobjc-framework-Quartz",
+      "version": "12.2.2",
+      "purl": "pkg:pypi/pyobjc-framework-quartz@12.2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "c14c05e9d45a8d679a0f92651b5d431977f9acd970cf2880b4cc33ea661d9637"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pyobjc-framework-security-12.2.2",
+      "name": "pyobjc-framework-Security",
+      "version": "12.2.2",
+      "purl": "pkg:pypi/pyobjc-framework-security@12.2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "6e4185a7d0a1e812ed06b0e12b7d0c64cb2f0bafaad4c2c501ab497c725cb79e"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pyobjc-framework-webkit-12.2.2",
+      "name": "pyobjc-framework-WebKit",
+      "version": "12.2.2",
+      "purl": "pkg:pypi/pyobjc-framework-webkit@12.2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "654f2b735ff91545d02b1a04d3b1defc1eed259155d558c61148f446abe78987"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pypdf-6.20.0",
+      "name": "pypdf",
+      "version": "6.20.0",
+      "purl": "pkg:pypi/pypdf@6.20.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "6f0ed0d01f8cfe7e4125ca401e53ccf308068ac0521d9c6c92c6ed42b5fd0679"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pypdfium2-4.30.0",
+      "name": "pypdfium2",
+      "version": "4.30.0",
+      "purl": "pkg:pypi/pypdfium2@4.30.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "(Apache-2.0 OR BSD-3-Clause) AND LicenseRef-PdfiumThirdParty"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "fc007d49b86536cc3ce9a6f4eee0de1e9458db62c3594822edb98cbcec1e3139"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pytest-9.0.3",
+      "name": "pytest",
+      "version": "9.0.3",
+      "purl": "pkg:pypi/pytest@9.0.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "4058d466d32f1a224053375cbe2d3176030bdeb95076015ca1f12ebaedbfbdba"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-pywebview-5.4",
+      "name": "pywebview",
+      "version": "5.4",
+      "purl": "pkg:pypi/pywebview@5.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: BSD License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "76902a25d1d9d298986531e52016b9494d7c175bfe9dcd26641a5a44da504d2f"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-referencing-0.37.0",
+      "name": "referencing",
+      "version": "0.37.0",
+      "purl": "pkg:pypi/referencing@0.37.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "586e0c9d55cf2d935ecbd46d75174b5f1868efd323fcdec8b41e9f0ddd8627c6"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-rpds-py-2026.9.1",
+      "name": "rpds-py",
+      "version": "2026.9.1",
+      "purl": "pkg:pypi/rpds-py@2026.9.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "acbc0fba05a21605f2c2b9c2deeaa6d5bee2f087863c0aadf8d4f304e1cbbf32"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-ruff-0.16.10",
+      "name": "ruff",
+      "version": "0.16.10",
+      "purl": "pkg:pypi/ruff@0.16.10",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "1fc454b80086cb3f5d8220c70c7272b68e50adb229cf5caf942fcb9140210eba"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-setuptools-83.0.0",
+      "name": "setuptools",
+      "version": "83.0.0",
+      "purl": "pkg:pypi/setuptools@83.0.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "4d77b2d31a1e3bb8bdd3c2c4aa7b3ce2efa250acfac31cc12701c8a2ff985882"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-0-typing-extensions-4.16.0",
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "purl": "pkg:pypi/typing-extensions@4.16.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "PSF-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "2887d8c8e4d74a1b40f3aa527c3f1269ee96d4efc7e971806fe67c5bdce74b8a"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-aiohappyeyeballs-2.7.1",
+      "name": "aiohappyeyeballs",
+      "version": "2.7.1",
+      "purl": "pkg:pypi/aiohappyeyeballs@2.7.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Python Software Foundation License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "c354c2e7c9c1f2f211c88ddff92c651d0d0c583732a421f62296c902223e9e15"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-aiohttp-3.14.4",
+      "name": "aiohttp",
+      "version": "3.14.4",
+      "purl": "pkg:pypi/aiohttp@3.14.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 AND MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "46649678f360bc58f8eab41752a731fe0bf9ce13c6109e90e25b47968bb1e7ec"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-aiosignal-1.4.0",
+      "name": "aiosignal",
+      "version": "1.4.0",
+      "purl": "pkg:pypi/aiosignal@1.4.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Apache Software License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "2221086e984f977282d3e81224e835f7c14ec1a1b8fcd3eceb46f892bcb2ddf8"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-attrs-26.1.0",
+      "name": "attrs",
+      "version": "26.1.0",
+      "purl": "pkg:pypi/attrs@26.1.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "1e40eea355bc06ccbab717edde44158a54a01dc31c6211a9e95a845cd70c459d"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-cadquery-2.6.1",
+      "name": "cadquery",
+      "version": "2.6.1",
+      "purl": "pkg:pypi/cadquery@2.6.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Apache Software License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "d029d41111e40f706e98ca2fbf206fcb07ce4576734d495ade910edcbcb242d8"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-cadquery-ocp-7.8.1.1.post1",
+      "name": "cadquery-ocp",
+      "version": "7.8.1.1.post1",
+      "purl": "pkg:pypi/cadquery-ocp@7.8.1.1.post1",
+      "licenses": [
+        {
+          "license": {
+            "name": "UNKNOWN"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "417a5e7711b5e7554bc1b4f50e5dcc944a5d15774ba78e1e1cca7dbdc5d7866d"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-casadi-3.8.1",
+      "name": "casadi",
+      "version": "3.8.1",
+      "purl": "pkg:pypi/casadi@3.8.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "27d2c5dea0a02fe7b88f6ac4b6d195f27f35562aeefd4ac153a297d20fd5bf6c"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-contourpy-1.3.3",
+      "name": "contourpy",
+      "version": "1.3.3",
+      "purl": "pkg:pypi/contourpy@1.3.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: BSD License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "b99d12463c6c54d061a8aec342ad6eef05c84c6f0ada9a22f1c99b60e42d67fe"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-cycler-0.12.1",
+      "name": "cycler",
+      "version": "0.12.1",
+      "purl": "pkg:pypi/cycler@0.12.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: BSD License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "effa00fb915db0660867da52301f4f3fb29d696deeaed67fe54f14ae27e8620a"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-ezdxf-1.4.4",
+      "name": "ezdxf",
+      "version": "1.4.4",
+      "purl": "pkg:pypi/ezdxf@1.4.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "40028d56321e9ebe3e50c4c29c09aaca0a7334c65dc4e3af43d5440d14403ec0"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-fonttools-4.66.1",
+      "name": "fonttools",
+      "version": "4.66.1",
+      "purl": "pkg:pypi/fonttools@4.66.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "83de246d5facb0fa5a1e03758725e8c112e49f19e259235b31ae47b2d190c7ea"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-frozenlist-1.8.0",
+      "name": "frozenlist",
+      "version": "1.8.0",
+      "purl": "pkg:pypi/frozenlist@1.8.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "0e74f07c63c5fd1ac6603fb27d41d2cc680380cac2d2b899439ee375002651ec"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-gmsh-4.15.0",
+      "name": "gmsh",
+      "version": "4.15.0",
+      "purl": "pkg:pypi/gmsh@4.15.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "fb913e927ae93b2c82991909f3853eca165f6ef4433b124033ae005c375a4836"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-idna-3.20",
+      "name": "idna",
+      "version": "3.20",
+      "purl": "pkg:pypi/idna@3.20",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "c493f5274dafd70bde6d2ec7f881846dac96e0cdb1fe08914a335bb89c8cb096"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-kiwisolver-1.5.1",
+      "name": "kiwisolver",
+      "version": "1.5.1",
+      "purl": "pkg:pypi/kiwisolver@1.5.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: BSD License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "549eb9ae49453a762b1d4905d9e695b152aa06dfacb0148388bdcb4d98da7e9e"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-matplotlib-3.11.2",
+      "name": "matplotlib",
+      "version": "3.11.2",
+      "purl": "pkg:pypi/matplotlib@3.11.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Python Software Foundation License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "0e337ee20ca6d1cf7d17fa415fa694a930c1505fe18b0372d5cb899f553cfebc"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-more-itertools-11.1.0",
+      "name": "more-itertools",
+      "version": "11.1.0",
+      "purl": "pkg:pypi/more-itertools@11.1.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "2a92e6b8ee137cb7b8b4889473c0a36355c7eddb513ce76c7d7f62426f30fb92"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-msgpack-1.2.3",
+      "name": "msgpack",
+      "version": "1.2.3",
+      "purl": "pkg:pypi/msgpack@1.2.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "7bbde02fa7f33252f2ce108db6043f1a620aa5fa83abcfca7064037885e79b74"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-multidict-6.9.1",
+      "name": "multidict",
+      "version": "6.9.1",
+      "purl": "pkg:pypi/multidict@6.9.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache License 2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "4ebb5b59538ed3bc873f97d86e40053b57d2996db45ea9ca4c0d30a142103cd1"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-multimethod-1.12",
+      "name": "multimethod",
+      "version": "1.12",
+      "purl": "pkg:pypi/multimethod@1.12",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Apache Software License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "844f4b32e3547e5bbfd41476bdf022edb14d2745268c2ec8d1648be35f233a30"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-nlopt-2.11.0",
+      "name": "nlopt",
+      "version": "2.11.0",
+      "purl": "pkg:pypi/nlopt@2.11.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "4f9b603783919b0d65e6ef4db69a83d4fd688930a377ef017215b612b7e13316"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-numpy-2.4.6",
+      "name": "numpy",
+      "version": "2.4.6",
+      "purl": "pkg:pypi/numpy@2.4.6",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "2f368b8fcd4cfc0e2a4ff509114f8a32c68244e38c6d7b0affd61101c66e7d0d"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-packaging-26.3",
+      "name": "packaging",
+      "version": "26.3",
+      "purl": "pkg:pypi/packaging@26.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR BSD-2-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "15391b067c59822232bca160340b7cf688895c42a845cc7354cfe305cc36b7a5"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-path-17.1.1",
+      "name": "path",
+      "version": "17.1.1",
+      "purl": "pkg:pypi/path@17.1.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "1467e2f980eadacb11764a71ba11a662cecdd32f17482d29ebccbda11e884805"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-pillow-12.3.0",
+      "name": "pillow",
+      "version": "12.3.0",
+      "purl": "pkg:pypi/pillow@12.3.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT-CMU"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "eeb709d1362c23cf556eb78c3e14d7c0c6fd1eb9b25bfe4d5bdfa7fff4075938"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-propcache-0.5.4",
+      "name": "propcache",
+      "version": "0.5.4",
+      "purl": "pkg:pypi/propcache@0.5.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "502780ccbf1a2be0fe6b2ab01feef48f5e9af0474b9e15c2b36ea27599061177"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-pyparsing-3.3.3",
+      "name": "pyparsing",
+      "version": "3.3.3",
+      "purl": "pkg:pypi/pyparsing@3.3.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "e179cfbb3fd30ee61ee8209a9a01d80228531b82ff053f0e1cd65e5faa3416c2"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-python-dateutil-2.9.0.post0",
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "purl": "pkg:pypi/python-dateutil@2.9.0.post0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: BSD License; License :: OSI Approved :: Apache Software License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "de57b2e3854aa5e3046485134ff508079f3cdc7ccd65116fe2ba74b0f9756ae9"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-pyyaml-6.0.3",
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "purl": "pkg:pypi/pyyaml@6.0.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "f7d2602a3cb5cf12211685ac14cd8f856f64de25b5653dd0cf435a07e000a8ed"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-six-1.17.0",
+      "name": "six",
+      "version": "1.17.0",
+      "purl": "pkg:pypi/six@1.17.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "532b1dfe2a950ee1bc5b8af5cefc8e4fc41fa5534e48304f3fc64a46b10950b0"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-trame-4.0.0",
+      "name": "trame",
+      "version": "4.0.0",
+      "purl": "pkg:pypi/trame@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Apache Software License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "e5fa51e3dc241d57aa5bf71dba6d03d88f782cfc2e064406072c4400165602d1"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-trame-client-4.1.4",
+      "name": "trame-client",
+      "version": "4.1.4",
+      "purl": "pkg:pypi/trame-client@4.1.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "576610f4b3c6052c9d292101e659fce42fadd36efd9c248daefcbedc406d498b"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-trame-common-1.2.9",
+      "name": "trame-common",
+      "version": "1.2.9",
+      "purl": "pkg:pypi/trame-common@1.2.9",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Apache Software License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "f2e145022d02b6c262d949ae148f8a8590bc5832506e193473cdab125c418737"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-trame-server-4.0.0",
+      "name": "trame-server",
+      "version": "4.0.0",
+      "purl": "pkg:pypi/trame-server@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Apache Software License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "0054428479434c91e732a5ef6574443012a44edf30f7e0c422c87b3ce14ecd31"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-trame-vtk-2.11.17",
+      "name": "trame-vtk",
+      "version": "2.11.17",
+      "purl": "pkg:pypi/trame-vtk@2.11.17",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: BSD License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "b1b40c98995a97b532203f8956838eebdc4eb6ddccbb58251720846fa934594b"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-typing-extensions-4.16.0",
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "purl": "pkg:pypi/typing-extensions@4.16.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "PSF-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "44cde320db8d6679d289d7f0ca2bee7ad21939cdbc57c8b3251d04968882b68e"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-typish-1.9.3",
+      "name": "typish",
+      "version": "1.9.3",
+      "purl": "pkg:pypi/typish@1.9.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "bb91ce4289674f3eba2e088e14a8f139846c27fbec5ac1606911aaaf7e55bceb"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-vtk-9.3.1",
+      "name": "vtk",
+      "version": "9.3.1",
+      "purl": "pkg:pypi/vtk@9.3.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: BSD License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "c8a47fd71e7b9859f86c7bb30b85898c6d7bb627d8a7199e60e11fa838547f0d"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-wslink-2.6.0",
+      "name": "wslink",
+      "version": "2.6.0",
+      "purl": "pkg:pypi/wslink@2.6.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: BSD License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "dd809104b0d473a567d4dbc22a1e1d8b60c2c49364da14fb107e687343832ff3"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-1-yarl-1.25.1",
+      "name": "yarl",
+      "version": "1.25.1",
+      "purl": "pkg:pypi/yarl@1.25.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "8d5996fa39ee34100b0bc35cac2509254eb72f1294c9fedf1231fd886c91f21b"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-bottle-0.13.4",
+      "name": "bottle",
+      "version": "0.13.4",
+      "purl": "pkg:pypi/bottle@0.13.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "65b98d868c0252a4d8f605d9684cadc7cadfebed1fb47bf9f92c1adb960c60b3"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-cea-3.3.4",
+      "name": "cea",
+      "version": "3.3.4",
+      "purl": "pkg:pypi/cea@3.3.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "bb568ec3a24e9a005fecf65fffe46f2c906db02e91c9ebe9ea856852c3ab2dc6"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-iniconfig-2.3.0",
+      "name": "iniconfig",
+      "version": "2.3.0",
+      "purl": "pkg:pypi/iniconfig@2.3.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "840d98208f705d18022d1afb19e421be6222d59f953629c70c20d9ff2f49b8b3"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-librt-0.16.0",
+      "name": "librt",
+      "version": "0.16.0",
+      "purl": "pkg:pypi/librt@0.16.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "5fd8ccd75eaf1ce547c7f150a318a5f2ae7658b3196bdb7d40350a4095e9e738"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-mypy-1.20.2",
+      "name": "mypy",
+      "version": "1.20.2",
+      "purl": "pkg:pypi/mypy@1.20.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "cf1495dbc8bd82ee5e84b6e350b4ade928b9f6b42b9f0a13b6e18810cb7b3beb"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-mypy-extensions-1.1.0",
+      "name": "mypy_extensions",
+      "version": "1.1.0",
+      "purl": "pkg:pypi/mypy-extensions@1.1.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "d1253197da5494ca5db4c2cca9cae7d764711df42016729afad9397298cdffc9"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-numpy-2.4.6",
+      "name": "numpy",
+      "version": "2.4.6",
+      "purl": "pkg:pypi/numpy@2.4.6",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "19239b6561d7da31937599e86dfd251eeb477b7bfaeadc7dfda318d95579e316"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-packaging-26.3",
+      "name": "packaging",
+      "version": "26.3",
+      "purl": "pkg:pypi/packaging@26.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR BSD-2-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "15391b067c59822232bca160340b7cf688895c42a845cc7354cfe305cc36b7a5"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pathspec-1.1.1",
+      "name": "pathspec",
+      "version": "1.1.1",
+      "purl": "pkg:pypi/pathspec@1.1.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "014a1c6c892e721932e649574f32a507f5696b7b4d6568e8427346fe4b5318d6"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pillow-11.3.0",
+      "name": "pillow",
+      "version": "11.3.0",
+      "purl": "pkg:pypi/pillow@11.3.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT-CMU"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "bd9d17a1c1ea106b4d9f6d53b985d7dbd0398246df89b6215932966886ece365"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pip-23.1.2",
+      "name": "pip",
+      "version": "23.1.2",
+      "purl": "pkg:pypi/pip@23.1.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "64b2c72e3d61c2fe77bf32ed03997837be274861a514f39305df668b0400389a"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pluggy-1.6.0",
+      "name": "pluggy",
+      "version": "1.6.0",
+      "purl": "pkg:pypi/pluggy@1.6.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "c365bbba61b8616e17345bad4c5d84783aa926c8c54d988ad5b3751c17be0bdb"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-proxy-tools-0.1.0",
+      "name": "proxy_tools",
+      "version": "0.1.0",
+      "purl": "pkg:pypi/proxy-tools@0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "3e2f167058efc7d486529dc6951784ed96908c7aeaa9b7bf85f84a09dd2bf95c"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pygments-2.21.0",
+      "name": "Pygments",
+      "version": "2.21.0",
+      "purl": "pkg:pypi/pygments@2.21.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-2-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "0e2e282ed9a4c4fc33ba79a108a574f33de396e9bfb98dc0bcfe9819801e1c88"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pyobjc-core-12.2.2",
+      "name": "pyobjc-core",
+      "version": "12.2.2",
+      "purl": "pkg:pypi/pyobjc-core@12.2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "88f60486251cdbc2ddf1810ab166b79813f644141a7630683be0c1dbbcf3dc94"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pyobjc-framework-cocoa-12.2.2",
+      "name": "pyobjc-framework-Cocoa",
+      "version": "12.2.2",
+      "purl": "pkg:pypi/pyobjc-framework-cocoa@12.2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "eba0326d8629e647d854187515f8e64ab31ec4467afb13e30f443d49986c36c5"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pyobjc-framework-quartz-12.2.2",
+      "name": "pyobjc-framework-Quartz",
+      "version": "12.2.2",
+      "purl": "pkg:pypi/pyobjc-framework-quartz@12.2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "bc148ea03a4f717ed1683da8a40293435374382f6cfa02901f0300607bdcd3ca"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pyobjc-framework-security-12.2.2",
+      "name": "pyobjc-framework-Security",
+      "version": "12.2.2",
+      "purl": "pkg:pypi/pyobjc-framework-security@12.2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "c47d77780ca8e9119d19368f29f3363e2b4332ba7794ccc136ffeaaa086da30b"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pyobjc-framework-webkit-12.2.2",
+      "name": "pyobjc-framework-WebKit",
+      "version": "12.2.2",
+      "purl": "pkg:pypi/pyobjc-framework-webkit@12.2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "ac67936ff1c940865e090a7fb06a9536921185983aa4d43c0eba5b5414f2420e"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pypdf-5.9.0",
+      "name": "pypdf",
+      "version": "5.9.0",
+      "purl": "pkg:pypi/pypdf@5.9.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "ce34c92f19ec7980888570148025c45d63249fca5604c8d0689be8b0558c5eef"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pypdfium2-4.30.0",
+      "name": "pypdfium2",
+      "version": "4.30.0",
+      "purl": "pkg:pypi/pypdfium2@4.30.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "(Apache-2.0 OR BSD-3-Clause) AND LicenseRef-PdfiumThirdParty"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "70187a9ac2099bfc0915f3d6feec69b345654e6b9bc8cbc41460d0b3afd47e9b"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pytest-8.4.2",
+      "name": "pytest",
+      "version": "8.4.2",
+      "purl": "pkg:pypi/pytest@8.4.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "ba3f0ce8e8a7b8972fdb3696b53cb2ac8cebd568586bd33c593a44762652e1a0"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-pywebview-5.4",
+      "name": "pywebview",
+      "version": "5.4",
+      "purl": "pkg:pypi/pywebview@5.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: BSD License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "76902a25d1d9d298986531e52016b9494d7c175bfe9dcd26641a5a44da504d2f"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-ruff-0.16.10",
+      "name": "ruff",
+      "version": "0.16.10",
+      "purl": "pkg:pypi/ruff@0.16.10",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "1fc454b80086cb3f5d8220c70c7272b68e50adb229cf5caf942fcb9140210eba"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-setuptools-65.5.0",
+      "name": "setuptools",
+      "version": "65.5.0",
+      "purl": "pkg:pypi/setuptools@65.5.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: MIT License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "c4b92cea8f79a71fa819d0423b9cb4a6a819813a0911e3d6802799fd367179bb"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "python-2-typing-extensions-4.16.0",
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "purl": "pkg:pypi/typing-extensions@4.16.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "PSF-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:license-basis",
+          "value": "Installed metadata plus retained files; not legal clearance"
+        },
+        {
+          "name": "cosmos:installed-tree-sha256",
+          "value": "44cde320db8d6679d289d7f0ca2bee7ad21939cdbc57c8b3251d04968882b68e"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "source-Dear ImGui",
+      "name": "Dear ImGui",
+      "version": "960921f03a2bf628a802b4611af9fc3c3c9430fe",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned predecessor source evidence, not binary source-closure approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "source-GLFW",
+      "name": "GLFW",
+      "version": "b00e6a8a88ad1b60c0a045e696301deb92c9a13e",
+      "licenses": [
+        {
+          "license": {
+            "name": "Zlib"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned predecessor source evidence, not binary source-closure approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "source-LEAP71_ShapeKernel",
+      "name": "LEAP71_ShapeKernel",
+      "version": "313d67601064cf2428e038005afe9ff320b3c56b",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned predecessor source evidence, not binary source-closure approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "source-OpenVDB",
+      "name": "OpenVDB",
+      "version": "7c03e1f084873cd1b3422c7ff7aec6ee681b3b38",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned predecessor source evidence, not binary source-closure approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "source-PicoGK",
+      "name": "PicoGK",
+      "version": "7b30d22f7b550175962e478f626384cd7ab15411",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned predecessor source evidence, not binary source-closure approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "source-PicoGKRuntime",
+      "name": "PicoGKRuntime",
+      "version": "0f26321c18ed878a7820ef769c38fd5d49d39242",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned predecessor source evidence, not binary source-closure approval"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "source-oneTBB",
+      "name": "oneTBB",
+      "version": "06ce6212da6710f4bb2d20a1904b018aa44069bf",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "cosmos:scope",
+          "value": "Pinned predecessor source evidence, not binary source-closure approval"
+        }
+      ]
+    }
+  ]
+}

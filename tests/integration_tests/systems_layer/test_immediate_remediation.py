@@ -66,7 +66,7 @@ def test_execution_success_is_not_complete_design() -> None:
     assert p4["engineering_readiness"] == "PRELIMINARY"
     assert p4["validation_level"] == "NOT_CLAIMED"
     assert p4["stages"]["nozzle"]["status"] == "CURRENT"
-    assert any("DEFERRED" in warning for warning in p4["stages"]["nozzle"]["warnings"])
+    assert any("NOT_CALCULATED" in warning for warning in p4["stages"]["nozzle"]["warnings"])
     p6 = run_phase6(design)
     assert p6["execution_ok"] is True
     assert p6["workflow_complete"] is False

@@ -91,6 +91,7 @@ def invariants(mach: float, flow_angle_rad: float, gamma: float) -> Characterist
 
     m = require_mach(mach, minimum=1.0)
     g = require_gamma(gamma)
+    flow_angle_rad = validate_flow_angle(flow_angle_rad)
     nu = prandtl_meyer(m, g)
     mu = mach_angle(m)
     return CharacteristicInvariants(

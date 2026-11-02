@@ -1,0 +1,12 @@
+P04 G3 passed before P05 production edits: 54 sealed artifact hashes, 2265 Python
+tests, 84 JS tests, 26 browser tests and no unexpected source changes.
+
+source_before.json records the pre-P05 production and non-ignored repository
+state. The P04 manifest also protects its ignored test logs. At P05 finalization,
+all historical P04 evidence must still match its original seal. Four production
+source hashes are intentionally superseded by P05 and are reported separately.
+
+The old P04 scope verifier rejects new P05 files by design. Its scope report was
+briefly regenerated during a repeat check, then restored to its exact sealed
+bytes. It is not used to certify the enlarged P05 scope, and no earlier gate,
+manifest, screenshot or test log is rewritten to claim compatibility.

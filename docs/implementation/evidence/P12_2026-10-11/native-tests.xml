@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="26" skipped="0" tests="51" time="79.989" timestamp="2026-10-11T11:21:25.642053+05:30" hostname="vaibhavs-MacBook-Air.local"><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[SourceReference-0]" time="0.857" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[SIParameter-1]" time="0.084" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[CoordinateFrame-2]" time="0.079" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[DesignSnapshot-3]" time="0.072" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryFeature-4]" time="0.086" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryFeatureGraph-5]" time="0.083" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryBuildRequest-6]" time="0.081" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryArtifact-7]" time="0.081" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[NamedSelection-8]" time="0.079" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryCheck-9]" time="0.074" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryValidationReport-10]" time="0.082" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryBuildEvent-11]" time="0.081" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryBuildRecord-12]" time="0.082" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_retained_golden_wire_and_numeric_bits[SIParameter-13]" time="0.080" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_wire_negative_conformance[checksum]" time="0.054" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_wire_negative_conformance[version]" time="0.054" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_wire_negative_conformance[duplicate]" time="0.055" /><testcase classname="tests.integration_tests.geometry.test_dotnet_wire" name="test_actual_dotnet_wire_negative_conformance[nonfinite]" time="0.056" /><testcase classname="tests.integration_tests.geometry.test_g5_closure" name="test_genuine_wrong_radius_is_rejected_not_hidden_by_sampling_or_encoding[formats0]" time="8.451" /><testcase classname="tests.integration_tests.geometry.test_g5_closure" name="test_genuine_wrong_radius_is_rejected_not_hidden_by_sampling_or_encoding[formats1]" time="19.168" /><testcase classname="tests.integration_tests.geometry.test_native_boundary" name="test_actual_pico_native_input_refusal[units-INVALID_UNIT]" time="0.230" /><testcase classname="tests.integration_tests.geometry.test_native_boundary" name="test_actual_pico_native_input_refusal[stale-STALE_REQUEST]" time="0.108" /><testcase classname="tests.integration_tests.geometry.test_native_boundary" name="test_actual_pico_native_input_refusal[version-SCHEMA_VERSION]" time="0.103" /><testcase classname="tests.integration_tests.geometry.test_native_boundary" name="test_actual_pico_native_input_refusal[hash-HASH_MISMATCH]" time="0.086" /><testcase classname="tests.integration_tests.geometry.test_native_boundary" name="test_missing_native_binary_never_falls_back" time="0.259" /><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.001-sphere]" time="0.400"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-sphere-0.001'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c0')
+operation = 'sphere', voxel = 0.001
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-sphere-0.001')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-sphere-0.001'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.001-union]" time="0.571"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-union-0.001'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c1')
+operation = 'union', voxel = 0.001
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-union-0.001')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-union-0.001'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.001-difference]" time="0.331"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-difference-0.001'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c2')
+operation = 'difference', voxel = 0.001
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-difference-0.001')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-difference-0.001'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.001-intersection]" time="0.181"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-intersection-0.001'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c3')
+operation = 'intersection', voxel = 0.001
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-intersection-0.001')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-intersection-0.001'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.001-self_union]" time="0.344"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-self_union-0.001'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c4')
+operation = 'self_union', voxel = 0.001
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-self_union-0.001')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-self_union-0.001'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.0005-sphere]" time="0.904"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-sphere-0.0005'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c5')
+operation = 'sphere', voxel = 0.0005
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-sphere-0.0005')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-sphere-0.0005'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.0005-union]" time="1.966"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-union-0.0005'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c6')
+operation = 'union', voxel = 0.0005
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-union-0.0005')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-union-0.0005'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.0005-difference]" time="0.961"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-difference-0.0005'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c7')
+operation = 'difference', voxel = 0.0005
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-difference-0.0005')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-difference-0.0005'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.0005-intersection]" time="0.345"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-intersection-0.0005'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c8')
+operation = 'intersection', voxel = 0.0005
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-intersection-0.0005')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-intersection-0.0005'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.0005-self_union]" time="0.900"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-self_union-0.0005'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c9')
+operation = 'self_union', voxel = 0.0005
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-self_union-0.0005')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-self_union-0.0005'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.00025-sphere]" time="3.067"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-sphere-0.00025'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c10')
+operation = 'sphere', voxel = 0.00025
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-sphere-0.00025')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-sphere-0.00025'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.00025-union]" time="7.408"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-union-0.00025'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c11')
+operation = 'union', voxel = 0.00025
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-union-0.00025')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-union-0.00025'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.00025-difference]" time="3.468"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-difference-0.00025'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c12')
+operation = 'difference', voxel = 0.00025
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-difference-0.00025')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-difference-0.00025'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.00025-intersection]" time="0.936"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-intersection-0.00025'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c13')
+operation = 'intersection', voxel = 0.00025
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-intersection-0.00025')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-intersection-0.00025'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_three_resolution_conditioned_qa[0.00025-self_union]" time="3.298"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-self_union-0.00025'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_three_resolution_c14')
+operation = 'self_union', voxel = 0.00025
+
+    @pytest.mark.parametrize("operation", SPHERICAL)
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_three_resolution_conditioned_qa(native_config, tmp_path, operation, voxel):
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case(operation, voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference(operation), conditioning_profile="exact_zero_faces_v1")
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-{operation}-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-self_union-0.00025')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-self_union-0.00025'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_raw_subtraction_remains_refused[0.001]" time="0.197"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-raw-difference-0.001'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_raw_subtraction_re0')
+voxel = 0.001
+
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_raw_subtraction_remains_refused(native_config, tmp_path, voxel):
+        with WorkerSupervisor() as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case("difference", voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference("difference"))
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-raw-difference-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-raw-difference-0.001')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-raw-difference-0.001'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_raw_subtraction_remains_refused[0.0005]" time="0.276"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-raw-difference-0.0005'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_raw_subtraction_re1')
+voxel = 0.0005
+
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_raw_subtraction_remains_refused(native_config, tmp_path, voxel):
+        with WorkerSupervisor() as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case("difference", voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference("difference"))
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-raw-difference-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-raw-difference-0.0005')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-raw-difference-0.0005'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_picogk_raw_subtraction_remains_refused[0.00025]" time="0.657"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-raw-difference-0.00025'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_picogk_raw_subtraction_re2')
+voxel = 0.00025
+
+    @pytest.mark.parametrize("voxel", RESOLUTIONS)
+    def test_picogk_raw_subtraction_remains_refused(native_config, tmp_path, voxel):
+        with WorkerSupervisor() as supervisor:
+            service = GeometryBuildService(PicoGKAdapter(command(native_config, "picogk"), supervisor, enabled=True), tmp_path)
+            s, g, r = case("difference", voxel=voxel)
+            _, future = service.submit(r, s, g, FixtureReference("difference"))
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, f"pico-raw-difference-{voxel}", candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-raw-difference-0.00025')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/pico-raw-difference-0.00025'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_native_empty_geometry_rejected_without_files[self_difference-picogk]" time="0.129"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/picogk-empty-self_difference'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_native_empty_geometry_rej0')
+backend = 'picogk', operation = 'self_difference'
+
+    @pytest.mark.parametrize("backend", ["picogk", "occt"])
+    @pytest.mark.parametrize("operation", ["self_difference", "disjoint_intersection"])
+    def test_native_empty_geometry_rejected_without_files(native_config, tmp_path, backend, operation):
+        with WorkerSupervisor() as supervisor:
+            adapter = (PicoGKAdapter if backend == "picogk" else OCCTAdapter)(command(native_config, backend), supervisor, enabled=True)
+            service = GeometryBuildService(adapter, tmp_path)
+            s, g, r = case(operation, backend=backend)
+            _, future = service.submit(r, s, g, FixtureReference("sphere"))
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, backend + "-empty-" + operation, candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/picogk-empty-self_difference')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/picogk-empty-self_difference'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_native_empty_geometry_rejected_without_files[self_difference-occt]" time="1.917"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-empty-self_difference'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_native_empty_geometry_rej1')
+backend = 'occt', operation = 'self_difference'
+
+    @pytest.mark.parametrize("backend", ["picogk", "occt"])
+    @pytest.mark.parametrize("operation", ["self_difference", "disjoint_intersection"])
+    def test_native_empty_geometry_rejected_without_files(native_config, tmp_path, backend, operation):
+        with WorkerSupervisor() as supervisor:
+            adapter = (PicoGKAdapter if backend == "picogk" else OCCTAdapter)(command(native_config, backend), supervisor, enabled=True)
+            service = GeometryBuildService(adapter, tmp_path)
+            s, g, r = case(operation, backend=backend)
+            _, future = service.submit(r, s, g, FixtureReference("sphere"))
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, backend + "-empty-" + operation, candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-empty-self_difference')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-empty-self_difference'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_native_empty_geometry_rejected_without_files[disjoint_intersection-picogk]" time="0.109"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/picogk-empty-disjoint_intersection'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_native_empty_geometry_rej2')
+backend = 'picogk', operation = 'disjoint_intersection'
+
+    @pytest.mark.parametrize("backend", ["picogk", "occt"])
+    @pytest.mark.parametrize("operation", ["self_difference", "disjoint_intersection"])
+    def test_native_empty_geometry_rejected_without_files(native_config, tmp_path, backend, operation):
+        with WorkerSupervisor() as supervisor:
+            adapter = (PicoGKAdapter if backend == "picogk" else OCCTAdapter)(command(native_config, backend), supervisor, enabled=True)
+            service = GeometryBuildService(adapter, tmp_path)
+            s, g, r = case(operation, backend=backend)
+            _, future = service.submit(r, s, g, FixtureReference("sphere"))
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, backend + "-empty-" + operation, candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/picogk-empty-disjoint_intersection')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/picogk-empty-disjoint_intersection'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_native_empty_geometry_rejected_without_files[disjoint_intersection-occt]" time="0.745"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-empty-disjoint_intersection'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_native_empty_geometry_rej3')
+backend = 'occt', operation = 'disjoint_intersection'
+
+    @pytest.mark.parametrize("backend", ["picogk", "occt"])
+    @pytest.mark.parametrize("operation", ["self_difference", "disjoint_intersection"])
+    def test_native_empty_geometry_rejected_without_files(native_config, tmp_path, backend, operation):
+        with WorkerSupervisor() as supervisor:
+            adapter = (PicoGKAdapter if backend == "picogk" else OCCTAdapter)(command(native_config, backend), supervisor, enabled=True)
+            service = GeometryBuildService(adapter, tmp_path)
+            s, g, r = case(operation, backend=backend)
+            _, future = service.submit(r, s, g, FixtureReference("sphere"))
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, backend + "-empty-" + operation, candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-empty-disjoint_intersection')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-empty-disjoint_intersection'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_occt_step_independent_tool_reimport[sphere]" time="5.574"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-step-sphere'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_occt_step_independent_too0')
+operation = 'sphere'
+
+    @pytest.mark.parametrize("operation", SPHERICAL + ("box", "cylinder"))
+    def test_occt_step_independent_tool_reimport(native_config, tmp_path, operation):
+        with WorkerSupervisor() as supervisor:
+            service = GeometryBuildService(OCCTAdapter(command(native_config, "occt"), supervisor, enabled=True), tmp_path,
+                                           step_reader=command(native_config, "step_reader"))
+            s, g, r = case(operation, backend="occt")
+            _, future = service.submit(r, s, g, FixtureReference(operation))
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, "occt-step-" + operation, candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-step-sphere')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-step-sphere'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_occt_step_independent_tool_reimport[union]" time="4.954"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-step-union'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_occt_step_independent_too1')
+operation = 'union'
+
+    @pytest.mark.parametrize("operation", SPHERICAL + ("box", "cylinder"))
+    def test_occt_step_independent_tool_reimport(native_config, tmp_path, operation):
+        with WorkerSupervisor() as supervisor:
+            service = GeometryBuildService(OCCTAdapter(command(native_config, "occt"), supervisor, enabled=True), tmp_path,
+                                           step_reader=command(native_config, "step_reader"))
+            s, g, r = case(operation, backend="occt")
+            _, future = service.submit(r, s, g, FixtureReference(operation))
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, "occt-step-" + operation, candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-step-union')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-step-union'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_occt_step_independent_tool_reimport[difference]" time="4.042"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-step-difference'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_occt_step_independent_too2')
+operation = 'difference'
+
+    @pytest.mark.parametrize("operation", SPHERICAL + ("box", "cylinder"))
+    def test_occt_step_independent_tool_reimport(native_config, tmp_path, operation):
+        with WorkerSupervisor() as supervisor:
+            service = GeometryBuildService(OCCTAdapter(command(native_config, "occt"), supervisor, enabled=True), tmp_path,
+                                           step_reader=command(native_config, "step_reader"))
+            s, g, r = case(operation, backend="occt")
+            _, future = service.submit(r, s, g, FixtureReference(operation))
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, "occt-step-" + operation, candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-step-difference')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-step-difference'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_native_fixtures" name="test_occt_step_independent_tool_reimport[intersection]" time="2.519"><failure message="FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-step-intersection'">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10...': '1', 'PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-p07.yVDtYl/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-260/test_occt_step_independent_too3')
+operation = 'intersection'
+
+    @pytest.mark.parametrize("operation", SPHERICAL + ("box", "cylinder"))
+    def test_occt_step_independent_tool_reimport(native_config, tmp_path, operation):
+        with WorkerSupervisor() as supervisor:
+            service = GeometryBuildService(OCCTAdapter(command(native_config, "occt"), supervisor, enabled=True), tmp_path,
+                                           step_reader=command(native_config, "step_reader"))
+            s, g, r = case(operation, backend="occt")
+            _, future = service.submit(r, s, g, FixtureReference(operation))
+            candidate = future.result(timeout=60)
+&gt;           retain(native_config, "occt-step-" + operation, candidate)
+
+tests/integration_tests/geometry/test_native_fixtures.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_native_fixtures.py:25: in retain
+    directory.mkdir(parents=True, exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-step-intersection')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/G5_CLOSURE_2026-10-09/run3/fixtures/occt-step-intersection'
+
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1116: FileExistsError</failure></testcase><testcase time="0.001" /></testsuite></testsuites>

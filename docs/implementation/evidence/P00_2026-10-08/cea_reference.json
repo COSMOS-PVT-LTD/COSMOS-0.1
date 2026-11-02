@@ -1,0 +1,75 @@
+{
+  "kind": "SOFTWARE_REGRESSION_NOT_PHYSICAL_VALIDATION",
+  "cea_version": "3.3.4",
+  "legacy_source_sha256": {
+    "cea2.f": "94b6405a065db29e20b084aecd85a118fc4afdfd759e8c00f295b0add12ee4c0",
+    "cea.inc": "2a08793c1b58d3f597ab8091135e03117fafda006947c7aec216a2de842a9832",
+    "thermo.inp": "b1bc0707ec76c569b53aaa9fd0914538f37e261884105c2ba601c9e2e6ec5e27",
+    "trans.inp": "379c514a7f7638371d8d9254a1d653cd078084a9371061aa0b45c5a5c3334d41"
+  },
+  "comparisons": [
+    {
+      "fuel": "CH4(L)",
+      "legacy": {
+        "Tc_K": 3093.34,
+        "MW_kg_mol": 0.018985,
+        "cstar_m_s": 1832.2,
+        "exit_T_K": 1754.86,
+        "exit_P_Pa": 6683.0,
+        "chamber_k_frozen_W_m_K": 0.384
+      },
+      "modern": {
+        "Tc_K": 3093.338429072098,
+        "MW_kg_mol": 0.018985146143173624,
+        "cstar_m_s": 1832.209565177435,
+        "exit_T_K": 1754.864927999526,
+        "exit_P_Pa": 6682.876472014078,
+        "chamber_k_frozen_W_m_K": 0.38399909341723415
+      },
+      "relative_tolerance": 0.003,
+      "pass": true
+    },
+    {
+      "fuel": "H2(L)",
+      "legacy": {
+        "Tc_K": 3383.84,
+        "MW_kg_mol": 0.012716,
+        "cstar_m_s": 2332.3,
+        "exit_T_K": 1468.16,
+        "exit_P_Pa": 20491.0,
+        "chamber_k_frozen_W_m_K": 0.57903
+      },
+      "modern": {
+        "Tc_K": 3383.844614137881,
+        "MW_kg_mol": 0.012715651770687321,
+        "cstar_m_s": 2332.3358043347243,
+        "exit_T_K": 1468.1561921206016,
+        "exit_P_Pa": 20491.26578374039,
+        "chamber_k_frozen_W_m_K": 0.5790310207383443
+      },
+      "relative_tolerance": 0.003,
+      "pass": true
+    },
+    {
+      "fuel": "RP-1",
+      "legacy": {
+        "Tc_K": 3534.66,
+        "MW_kg_mol": 0.022239000000000002,
+        "cstar_m_s": 1802.3,
+        "exit_T_K": 2077.26,
+        "exit_P_Pa": 89603.0,
+        "chamber_k_frozen_W_m_K": 0.35841
+      },
+      "modern": {
+        "Tc_K": 3534.6590481681283,
+        "MW_kg_mol": 0.022238508083925603,
+        "cstar_m_s": 1802.2787846718743,
+        "exit_T_K": 2077.2604724344624,
+        "exit_P_Pa": 89603.32082010002,
+        "chamber_k_frozen_W_m_K": 0.35840721499866635
+      },
+      "relative_tolerance": 0.003,
+      "pass": true
+    }
+  ]
+}

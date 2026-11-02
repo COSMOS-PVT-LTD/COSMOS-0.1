@@ -1,0 +1,234 @@
+- banner:
+  - button "Edit profile photo"
+  - generic: COSMOS
+  - button "Project Default Project":
+    - generic: Project
+    - generic: Default Project
+  - generic: Workspace
+  - generic: Workbench
+  - generic: Solver
+  - generic: IDLE
+  - generic: AI
+  - generic: Maharshi
+  - generic: COSMOS Administrator
+  - generic: Administration Infrastructure · ADMIN
+  - button "Command search":
+    - generic: ⌘K
+    - text: Command
+  - button "Job manager": Jobs
+  - button "Notifications":
+    - text: Alerts
+    - generic: "1"
+  - button "Properties panel": Properties
+  - button "Default Project"
+  - button "COSMOS Administrator"
+- complementary "Primary navigation":
+  - generic: Workspaces
+  - button "Command":
+    - generic: Command
+  - button "Rocket Engine":
+    - generic: Rocket Engine
+  - button "Knowledge":
+    - generic: Knowledge
+  - button "Workbench" [expanded]:
+    - generic: Workbench
+    - generic: ▾
+  - button "Python" [expanded]:
+    - generic: Python
+    - generic: ▾
+  - button "Launch desktop"
+  - button "Knowledge dev server"
+  - button "Scripting add-ons" [disabled]
+  - generic: Secondary
+  - button "Project":
+    - generic: Project
+  - button "Jobs":
+    - generic: Jobs
+  - generic: System
+  - button "Audit Trail":
+    - generic: Audit Trail
+  - button "Administration":
+    - generic: Administration
+  - button "Help":
+    - generic: Help
+  - button "Log out":
+    - generic: Log out
+- main:
+  - heading "Rocket Engine Propulsion Design Suite" [level=1]
+  - paragraph: One design, one workflow, one Physics source of truth. Live modules call COSMOS through the application API — equations are not duplicated in the browser.
+  - generic: LIVE
+  - generic: PARTIAL
+  - generic: PLANNED
+  - region "Active design":
+    - strong: LOX/RP-1 10 kN engine
+    - generic: REV 0
+    - generic: draft
+    - status
+    - generic: Pc —
+    - generic: O/F —
+    - generic: Thrust —
+    - generic: Propellants — / —
+    - combobox "Open saved design":
+      - option "Open a saved design…"
+      - option "LOX/RP-1 10 kN engine · rev 0 · draft" [selected]
+    - button "New"
+    - button "Save"
+    - button "Clone"
+    - button "Recalculate"
+    - button "Reload"
+    - button "Review"
+  - navigation "Propulsion modules":
+    - paragraph: Workflow 00–16
+    - button "00 Design Project PARTIAL CURRENT":
+      - generic: "00"
+      - generic: Design Project
+      - generic: PARTIAL
+      - generic: CURRENT
+    - button "01 Requirements IMPLEMENTED NOT_CALCULATED" [active]:
+      - generic: "01"
+      - generic: Requirements
+      - generic: IMPLEMENTED
+      - generic: NOT_CALCULATED
+    - button "02 Propellant Definition IMPLEMENTED NOT_CALCULATED":
+      - generic: "02"
+      - generic: Propellant Definition
+      - generic: IMPLEMENTED
+      - generic: NOT_CALCULATED
+    - button "03 Engine Cycle NOT IMPLEMENTED NOT_CALCULATED":
+      - generic: "03"
+      - generic: Engine Cycle
+      - generic: NOT IMPLEMENTED
+      - generic: NOT_CALCULATED
+    - button "04 Operating Point IMPLEMENTED NOT_CALCULATED":
+      - generic: "04"
+      - generic: Operating Point
+      - generic: IMPLEMENTED
+      - generic: NOT_CALCULATED
+    - button "05 Thermochemistry PARTIAL NOT_CALCULATED":
+      - generic: "05"
+      - generic: Thermochemistry
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "06 Mass Flow / Performance PARTIAL NOT_CALCULATED":
+      - generic: "06"
+      - generic: Mass Flow / Performance
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "07 Injector PARTIAL NOT_CALCULATED":
+      - generic: "07"
+      - generic: Injector
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "08 Combustion Chamber PARTIAL NOT_CALCULATED":
+      - generic: "08"
+      - generic: Combustion Chamber
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "09 Thermal Analysis PARTIAL NOT_CALCULATED":
+      - generic: "09"
+      - generic: Thermal Analysis
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "10 Cooling System PARTIAL NOT_CALCULATED":
+      - generic: "10"
+      - generic: Cooling System
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "11 Nozzle PARTIAL NOT_CALCULATED":
+      - generic: "11"
+      - generic: Nozzle
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "12 Structural Analysis PARTIAL NOT_CALCULATED":
+      - generic: "12"
+      - generic: Structural Analysis
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "13 Material Selection PARTIAL NOT_CALCULATED":
+      - generic: "13"
+      - generic: Material Selection
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "14 Engine Performance Summary IMPLEMENTED NOT_CALCULATED":
+      - generic: "14"
+      - generic: Engine Performance Summary
+      - generic: IMPLEMENTED
+      - generic: NOT_CALCULATED
+    - button "15 System Consistency Check IMPLEMENTED NOT_CALCULATED":
+      - generic: "15"
+      - generic: System Consistency Check
+      - generic: IMPLEMENTED
+      - generic: NOT_CALCULATED
+    - button "16 Design Review IMPLEMENTED NOT_CALCULATED":
+      - generic: "16"
+      - generic: Design Review
+      - generic: IMPLEMENTED
+      - generic: NOT_CALCULATED
+    - paragraph: Physics tools
+    - button "Gasdynamics Nozzle Flow LIVE":
+      - generic: Gasdynamics
+      - generic: Nozzle Flow
+      - generic: LIVE
+    - button "Thermal Heat Transfer & Cooling PARTIAL":
+      - generic: Thermal
+      - generic: Heat Transfer & Cooling
+      - generic: PARTIAL
+    - button "Structures Chamber Structures PARTIAL":
+      - generic: Structures
+      - generic: Chamber Structures
+      - generic: PARTIAL
+  - heading "01 Requirements" [level=2]
+  - paragraph: IMPLEMENTED · result NOT_CALCULATED
+  - paragraph: Authoritative targets (Pc, thrust, O/F, expansion). Changing them marks dependents STALE.
+  - heading "Engine definition (requirements)" [level=3]
+  - text: Name
+  - textbox "Name": LOX/RP-1 10 kN engine
+  - text: Pc [bar]
+  - spinbutton "Pc [bar]"
+  - text: Thrust [kN]
+  - spinbutton "Thrust [kN]"
+  - text: O/F
+  - spinbutton "O/F"
+  - text: Expansion ratio
+  - spinbutton "Expansion ratio"
+  - paragraph: PARTIAL — saves requirements onto the active design. This is not a cycle or CEA solve.
+  - button "Save requirements"
+  - heading "Result" [level=3]
+  - status: No calculation yet.
+- region "Engineering console":
+  - button "Jobs 0":
+    - text: Jobs
+    - generic: "0"
+  - button "Solver IDLE":
+    - text: Solver
+    - generic: IDLE
+  - button "Convergence —":
+    - text: Convergence
+    - generic: —
+  - button "Log"
+  - button "Events"
+- button "Maharshi Bharadwaj Maharshi":
+  - img "Maharshi Bharadwaj"
+  - generic: Maharshi
+- complementary:
+  - heading [level=3]: Properties
+  - button: ✕
+- complementary:
+  - heading [level=3]: Job Manager
+  - button: ✕
+  - paragraph: 0 active · 0 failed · 0 total
+  - table:
+    - rowgroup:
+      - row:
+        - columnheader: Source
+        - columnheader: Status
+        - columnheader: Type
+        - columnheader: Created
+        - columnheader: Error
+  - button: Refresh Jobs
+- complementary:
+  - heading [level=3]: Notifications
+  - button: ✕
+  - strong: COSMOS engineering environment ready
+  - generic: Default Project
+  - time: 2026-10-08T10:22:39.196Z

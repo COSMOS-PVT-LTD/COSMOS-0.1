@@ -1,0 +1,125 @@
+{
+  "gate_id": "P11_SOFTWARE",
+  "phase": "P11_KNOWLEDGE_REPORTS",
+  "decision": "SOFTWARE_PASS",
+  "software_pass": true,
+  "date": "2026-10-11",
+  "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "working_tree_evidence": "Preserved dirty-tree baseline, two-file before overlay and artifact_hashes.json; not a published Git revision",
+  "environment": {
+    "os": "Darwin",
+    "architecture": "arm64",
+    "python": "3.11.4",
+    "node": "26.7.0",
+    "browser": "Local actual Google Chrome",
+    "runtime": "Qualified local P08 OCCT manifest; predecessor proof preserved"
+  },
+  "scope": "Existing-source knowledge navigation and actual steady spherical research report preview, not arbitrary engine qualification",
+  "requirement_ids": [
+    "GOV-001",
+    "GOV-003",
+    "GOV-004",
+    "GOV-005",
+    "GOV-007",
+    "GOV-008",
+    "GOV-009",
+    "UX-001",
+    "UX-002",
+    "UX-003",
+    "UX-004",
+    "UX-005",
+    "UX-006",
+    "UX-007",
+    "T-011",
+    "T-012",
+    "T-015",
+    "T-017"
+  ],
+  "commands": [
+    ".venv-remediation/bin/python -m pytest -q --junitxml=docs/implementation/evidence/P11_2026-10-11/python-final2.xml",
+    ".venv-remediation/bin/python -m pytest tests/unit_tests/knowledge/test_evidence_navigation.py tests/unit_tests/validation/test_reporting.py tests/integration_tests/gui/test_knowledge_reports_http.py -q",
+    "/opt/homebrew/bin/node --test tests/js/*.test.cjs",
+    "NODE_PATH=/private/tmp/cosmos-p03.pfPm6s/node_modules /opt/homebrew/bin/node /private/tmp/cosmos-p03.pfPm6s/node_modules/@playwright/test/cli.js test --config=tests/ui/knowledge_reports/playwright.config.cjs",
+    ".venv-remediation/bin/python -m ruff check core knowledge physics numerics systems simulation validation api gui infrastructure plugins tests tools",
+    ".venv-remediation/bin/python -m mypy core physics numerics systems api simulation validation knowledge/workspace/evidence_navigation.py",
+    "/opt/homebrew/bin/node /private/tmp/cosmos-p03.pfPm6s/node_modules/typescript/bin/tsc --noEmit --strict --target ES2020 --module Node16 --moduleResolution Node16 tests/ui/knowledge_reports/type_contracts.ts",
+    "PYTHONPATH=. .venv-remediation/bin/python docs/implementation/evidence/P11_2026-10-11/collect_evidence.py",
+    "NODE_PATH=/private/tmp/cosmos-p03.pfPm6s/node_modules /opt/homebrew/bin/node docs/implementation/evidence/P11_2026-10-11/final_view_checks.cjs",
+    "PYTHONPATH=. .venv-remediation/bin/python docs/implementation/evidence/P11_2026-10-11/finalize_evidence.py"
+  ],
+  "tests": {
+    "python": {
+      "passed": 2736,
+      "skipped": 76
+    },
+    "p11_focused_included_in_python": {
+      "passed": 51,
+      "skipped": 0
+    },
+    "javascript_passed": 132,
+    "browser_passed": 11,
+    "actual_native_flow": "OCCT sphere to P09 finite-volume run to P10 analytic comparison to report",
+    "final_css_readonly_layout_checks": 3,
+    "axe_violations": {
+      "dark": 0,
+      "high-contrast": 0
+    },
+    "physics_parity_cases": 5,
+    "ruff": "PASS",
+    "mypy_files": 347,
+    "strict_display_contracts": "PASS",
+    "report_integrity": {
+      "pass": true,
+      "exact_canonical_report": true,
+      "native_source_export_bytes": true,
+      "dataset_receipt_qa_source_renderer_checks": true,
+      "manifest_files": 3,
+      "offline_rerender_byte_identical": true,
+      "source_fixture": "explicit synthetic contract evidence",
+      "physical_validation": false,
+      "signed_acceptance": false
+    },
+    "remote_ci_executed": false,
+    "experimental_validation": false
+  },
+  "test_artifacts": [
+    "python-final2.xml",
+    "focused-final2.xml",
+    "javascript-final2.log",
+    "browser-tests.json",
+    "accessibility-final-dark.json",
+    "accessibility-final-high-contrast.json",
+    "final-view-checks.json",
+    "source-to-claim.json",
+    "report.json",
+    "review-package.zip",
+    "provenance-integrity.json",
+    "source_integrity.json",
+    "predecessor_integrity.json",
+    "physics_parity.json",
+    "signoff-report.json"
+  ],
+  "reviewer": "Codex automated scoped software assessment; not qualified independent engineering acceptance",
+  "formal_human_acceptance": false,
+  "experimental_validation": false,
+  "production_handoff": false,
+  "default_enabled": false,
+  "engineering_publication": false,
+  "remote_ci_executed": false,
+  "blockers": {
+    "scoped_software_phase": [],
+    "physical_and_production": [
+      "No authentic measured experiment or qualified independent acceptance recorded",
+      "Durable signed engineering publication and full uncertainty evidence are outside this preview",
+      "P12/G9 remote CI, packaging, SBOM/license, security and operational release evidence pending"
+    ]
+  },
+  "limits": [
+    "Synthetic knowledge records test source/review contracts, not approved science",
+    "Native execution is the bounded OCCT sphere/P09/P10 fixture, not engine physical validation",
+    "Reports are ephemeral actor-owned previews; retain downloaded immutable packages before restart"
+  ],
+  "next": "P12_RELEASE_HARDENING",
+  "p12_readiness": "Research-tool release hardening only",
+  "p12_executed": false
+}

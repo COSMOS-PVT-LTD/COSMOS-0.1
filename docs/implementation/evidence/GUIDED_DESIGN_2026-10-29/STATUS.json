@@ -1,0 +1,130 @@
+{
+  "schema": "cosmos.guided-development-delivery.v1",
+  "status": "GUIDED_PRELIMINARY_DEVELOPMENT_SLICE_VERIFIED",
+  "app": "/Users/vaibhavkumarn/Applications/COSMOS Guided Development.app",
+  "desktop_shortcut": "/Users/vaibhavkumarn/Desktop/COSMOS Guided Development.app",
+  "existing_app_replaced": false,
+  "user_data_migrated": false,
+  "user_data_bundled": false,
+  "external_python_required": false,
+  "source_tests": [
+    {
+      "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/output/guided-development-ready-2026-10-29.xml",
+      "sha256": "a5aec179a7ce8ca60282f57f5cdcf311998d200532914180af7c4cc0dc2c6ebb",
+      "tests": 34,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/output/guided-compatibility-2026-10-29.xml",
+      "sha256": "eccfbb8429a31a9553b4b4c23051ff07abfebd59a15225a0e1d12d1296e491a2",
+      "tests": 84,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/output/guided-cad-integration-2026-10-29.xml",
+      "sha256": "6ef03ed52b558619c85fa5dd62f124c086f73acabe9dd60c0649fd5a26c55517",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "source_python_passed": 119,
+  "bundled_tests": [
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Guided Development.app/Contents/Resources/app/desktop-qualification/native-components.xml",
+      "sha256": "26a8275cb78d4a30d838f78395bdb56d79d5bd294d64a5bd4f5950b7976113bb",
+      "tests": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Guided Development.app/Contents/Resources/app/desktop-qualification/component-http.xml",
+      "sha256": "7fc399394be843d6a3a55b131a770fd96f4ffe093b977edc26aa1ea568835dc6",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Guided Development.app/Contents/Resources/app/desktop-qualification/driving-constraints.xml",
+      "sha256": "204da8dc226016eb9ee30a2df914a739c23045890f07d9d0c1690a51b48b74f5",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Guided Development.app/Contents/Resources/app/desktop-qualification/pico-unit.xml",
+      "sha256": "89ddc9df25f5a2461a073e743d15c428fcfaf1f3860c2bfa760aa234e3c5597f",
+      "tests": 25,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Guided Development.app/Contents/Resources/app/desktop-qualification/pico-native.xml",
+      "sha256": "55f54973bbddd84888d0991ae2dcf62be1c86be39250f4333be70345c1803044",
+      "tests": 37,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Guided Development.app/Contents/Resources/app/desktop-qualification/pico-http.xml",
+      "sha256": "b0912ddfee6bf8458926c59116ed381c66936ab168ac9013eef6d291e4a55561",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Guided Development.app/Contents/Resources/app/desktop-qualification/pico-preview.xml",
+      "sha256": "83ab3adbf923b825aa76aa3291811070e7ad8dd518f8dcc2b576bd29d86b8a7b",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/output/guided-bundled-source-ready-2026-10-29.xml",
+      "sha256": "52cf04ff2415b324e1f9bb1c07e154cc4f2f82be9be5b625ceb169770fb1ea27",
+      "tests": 34,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "bundled_python_passed": 173,
+  "test_counts_note": "Source and bundled environments overlap intentionally and are reported separately, not added as unique coverage.",
+  "native_menu_routes": 8,
+  "native_guided_workflow": "PASS",
+  "webgl2": true,
+  "phase_status": {
+    "GD-00": "INITIAL_ROCKET_INPUT_INVENTORY_IMPLEMENTED",
+    "GD-01": "BOUNDED_PROFILE_RESOLVER_IMPLEMENTED",
+    "GD-02": "IDEAL_METHALOX_TARGET_SIZING_IMPLEMENTED",
+    "GD-03": "PARTIAL_COLD_INJECTOR_AND_PRESSURE_SCREENING",
+    "GD-04": "INITIAL_GUIDED_UI_IMPLEMENTED",
+    "GD-05": "RETAINED_PROJECT_CAD_ACCESS_IMPLEMENTED",
+    "GD-06": "AUTOMATED_SLICE_VERIFIED_HUMAN_OBSERVATIONS_PENDING"
+  },
+  "remaining": [
+    "Broader sourced inlet/property packages and propellant/cycle coverage",
+    "Matched cooling/material/operating-closure assistance and constrained candidate optimization",
+    "Complete Expert-to-Guided advanced-override reconciliation",
+    "Genuine human usability observations and acceptance"
+  ],
+  "full_engine_generation": "ON_HOLD",
+  "r08": "ON_HOLD",
+  "physical_validation": "NOT_PERFORMED",
+  "developer_id_signed": false,
+  "notarized": false,
+  "public_distribution_approved": false,
+  "local_ad_hoc_signature_verified": true
+}

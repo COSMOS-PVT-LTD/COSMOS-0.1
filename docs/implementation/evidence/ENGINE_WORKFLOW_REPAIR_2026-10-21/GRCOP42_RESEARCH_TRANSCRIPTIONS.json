@@ -1,0 +1,66 @@
+[
+  {
+    "schema_version": 1,
+    "scope": "ISOLATED_MATERIAL_RESEARCH_NOT_ENGINE_INPUTS_OR_ALLOWABLES",
+    "evidence_id": "LINDE-CU42-2024-REPORTED-MEAN-K",
+    "condition": {
+      "alloy_id": "GRCop-42",
+      "process": null,
+      "machine": null,
+      "powder": "Linde TRUFORM CU42; particle-size grade not specified for table",
+      "heat_treatment": null,
+      "orientation": "Vertical test samples, per footnote 1"
+    },
+    "source": {
+      "url": "https://assets.linde.com/-/media/global/advanced-material-technologies/advanced-material-technologies/literature/40-5016_truform_cu42_amt_web.pdf",
+      "sha256": "f542b2a0b829a0d6e10c9b1d47bef78d464df92659181d84530990e5e255c229",
+      "locator": "PDF page 2, Typical Mechanical Properties, Thermal Conductivity rows, AFTER HIP, Mean column; footnotes 1-2; P40-5016 06-2024"
+    },
+    "temperature_unit": "degC",
+    "temperatures": [25.0, 260.0, 537.8],
+    "conductivity_unit": "W/(m*K)",
+    "conductivities": [323.0, 317.0, 303.0],
+    "statistic": "Supplier-reported mean; not a qualified allowable",
+    "uncertainty_statement": "No numerical measurement uncertainty, sample count or statistical qualification supplied for these conductivity rows",
+    "sample_count": null,
+    "unresolved": [
+      "The sheet lists multiple powder applications; the process and machine for this property table are not explicitly resolved",
+      "AFTER HIP is reported, but the HIP schedule is not given in this sheet",
+      "Particle-size grade, build parameters and specimen/part traceability are not established",
+      "No conductivity data below 298.15 K or above 810.95 K in this table",
+      "This table is not joined to NASA tensile data or to either Velo3D powder-specific curve"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "scope": "ISOLATED_MATERIAL_RESEARCH_NOT_ENGINE_INPUTS_OR_ALLOWABLES",
+    "evidence_id": "LINDE-CU42-2024-REPORTED-MEAN-MINUS-3SIGMA-K",
+    "condition": {
+      "alloy_id": "GRCop-42",
+      "process": null,
+      "machine": null,
+      "powder": "Linde TRUFORM CU42; particle-size grade not specified for table",
+      "heat_treatment": null,
+      "orientation": "Vertical test samples, per footnote 1"
+    },
+    "source": {
+      "url": "https://assets.linde.com/-/media/global/advanced-material-technologies/advanced-material-technologies/literature/40-5016_truform_cu42_amt_web.pdf",
+      "sha256": "f542b2a0b829a0d6e10c9b1d47bef78d464df92659181d84530990e5e255c229",
+      "locator": "PDF page 2, Typical Mechanical Properties, Thermal Conductivity rows, AFTER HIP, Mean -3sigma column; footnotes 1-2; P40-5016 06-2024"
+    },
+    "temperature_unit": "degC",
+    "temperatures": [25.0, 260.0, 537.8],
+    "conductivity_unit": "W/(m*K)",
+    "conductivities": [303.0, 309.0, 299.0],
+    "statistic": "Supplier-reported mean minus 3sigma; not a COSMOS-derived uncertainty bound or qualified allowable",
+    "uncertainty_statement": "Supplier column label retained literally; no sample count, uncertainty budget or statistical design-basis qualification provided",
+    "sample_count": null,
+    "unresolved": [
+      "The sheet lists multiple powder applications; the process and machine for this property table are not explicitly resolved",
+      "AFTER HIP is reported, but the HIP schedule is not given in this sheet",
+      "Particle-size grade, build parameters and specimen/part traceability are not established",
+      "No conductivity data below 298.15 K or above 810.95 K in this table",
+      "This reported statistic is not a qualified lower-bound design allowable and must not be pooled with the mean curve"
+    ]
+  }
+]

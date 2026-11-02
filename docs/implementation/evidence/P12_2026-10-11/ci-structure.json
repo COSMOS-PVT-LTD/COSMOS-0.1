@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "jobs": [
+    "macos-preview",
+    "cea",
+    "test",
+    "lint"
+  ],
+  "macos_preview_platform": "macos-15 arm64 public-repository runner",
+  "contents_permission": "read",
+  "scope": "YAML and expected local CI structure; no remote candidate workflow execution"
+}

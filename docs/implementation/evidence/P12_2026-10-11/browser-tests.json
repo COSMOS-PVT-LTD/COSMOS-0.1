@@ -1,0 +1,498 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.7.0/bin/node",
+      "/private/tmp/cosmos-p03.pfPm6s/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "tests/ui/release_hardening/playwright.config.cjs"
+    ],
+    "configFile": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/playwright.config.cjs",
+    "rootDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/cosmos-p12-journey.kYWLGB/browser-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening",
+        "testIgnore": [],
+        "testMatch": [
+          "release.spec.cjs"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/tmp/cosmos-p12-journey.kYWLGB/browser-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening",
+        "snapshotDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening",
+        "testIgnore": [],
+        "testMatch": "release.spec.cjs",
+        "timeout": 90000,
+        "use": {
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "reducedMotion": "reduce",
+          "deviceScaleFactor": 1,
+          "launchOptions": {
+            "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/P12_2026-10-11/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "release.spec.cjs",
+      "file": "release.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "private packaged login and all existing modern routes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2561,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:20:27.065Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-7ba38fb2cdc230244e8e",
+          "file": "release.spec.cjs",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "actual native geometry simulation comparison and reproducible report download",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 18285,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:20:34.685Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-c3166ac1656fd78e6278",
+          "file": "release.spec.cjs",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "measured project-load baseline and bounded concurrent transport stress",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 641,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:20:52.987Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-4bdb7a9630ce4a3d2514",
+          "file": "release.spec.cjs",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "cross-workbench keyboard accessibility dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2484,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:20:53.645Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-bd123f30f953cc238611",
+          "file": "release.spec.cjs",
+          "line": 22,
+          "column": 45
+        },
+        {
+          "title": "cross-workbench keyboard accessibility high-contrast",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3272,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:20:56.143Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-d27040d4da05dc6e7313",
+          "file": "release.spec.cjs",
+          "line": 22,
+          "column": 45
+        },
+        {
+          "title": "responsive report viewport interaction and visible provenance",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4074,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Inspect report at 1440px",
+                      "duration": 1375
+                    },
+                    {
+                      "title": "Inspect report at 1024px",
+                      "duration": 1396
+                    },
+                    {
+                      "title": "Inspect report at 390px",
+                      "duration": 648
+                    }
+                  ],
+                  "startTime": "2026-10-11T06:20:59.445Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-6134836b22a1e8f25af6",
+          "file": "release.spec.cjs",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "same-root restart rollback preserves persistent project and blocks modern endpoints",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8276,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:21:03.549Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-18988a946c630842e2c3",
+          "file": "release.spec.cjs",
+          "line": 24,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-11T06:20:26.483Z",
+    "duration": 45667.75199999999,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

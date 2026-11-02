@@ -67,14 +67,14 @@ def _hash_password(password: str, salt: bytes) -> str:
 class AuthService:
     """Company-local credential store. Not a cloud identity provider."""
 
-    def __init__(self, root: Path | str, *, secret: str | None = None) -> None:
+    def __init__(self, root: Path | str, *, secret: str | None = None, bootstrap_password: str | None = None) -> None:
         self.root = Path(root)
         self.root.mkdir(parents=True, exist_ok=True)
         self.db_path = self.root / "users.sqlite"
         self._secret = secret or self._load_or_create_secret()
         self._lock = threading.Lock()
         self._migrate()
-        self._ensure_bootstrap_admin()
+        self._ensure_bootstrap_admin(bootstrap_password)
 
     def _load_or_create_secret(self) -> str:
         path = self.root / "session.secret"
@@ -132,12 +132,12 @@ class AuthService:
             connection.execute("ALTER TABLE users ADD COLUMN profile_photo TEXT NOT NULL DEFAULT ''")
         connection.commit()
 
-    def _ensure_bootstrap_admin(self) -> None:
+    def _ensure_bootstrap_admin(self, bootstrap_password: str | None = None) -> None:
         if self._get_user_by_login("cosmos-admin") is not None:
             return
         self.register_user(
             login_id="cosmos-admin",
-            password="COSMOS-Dev-2026!",
+            password=bootstrap_password if bootstrap_password is not None else "COSMOS-Dev-2026!",
             display_name="COSMOS Administrator",
             designation="System Administrator",
             employee_id="COSMOS-001",

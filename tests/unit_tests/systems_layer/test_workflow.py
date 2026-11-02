@@ -17,7 +17,8 @@ def test_stage_registry_has_seventeen_nodes() -> None:
     assert len(set(PROPULSION_STAGE_SEQUENCE)) == 17
     assert "design_project" in graph.nodes
     assert "design_review" in graph.nodes
-    assert graph.get("cycle").implementation_status.value == "NOT_IMPLEMENTED"
+    assert graph.get("cycle").implementation_status.value == "PARTIAL"
+    assert graph.get("cycle").status is ResultStatus.NOT_CALCULATED
 
 
 def test_dependencies_follow_architecture() -> None:

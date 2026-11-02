@@ -1,0 +1,137 @@
+<svg width="320" height="470" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 320 470">
+<rect width="320" height="470" x="0" y="0" fill="none"></rect>
+<path d="M116.1499 356.5L284 356.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M116.1499 330.5L284 330.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M116.1499 303.5L284 303.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M116.1499 277.5L284 277.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M116.1499 250.5L284 250.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M116.1499 224.5L284 224.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M116.1499 197.5L284 197.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M116.1499 170.5L284 170.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M116.1499 144.5L284 144.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M116.5 144L116.5 356.74" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M158.5 144L158.5 356.74" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M200.5 144L200.5 356.74" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M242.5 144L242.5 356.74" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M284.5 144L284.5 356.74" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" xml:space="preserve" y="-6.449409484863281" transform="translate(116.1499 129)" fill="#e6eff8">Calculated thrust [N] · linear</text>
+<path d="M116.5 356.74L116.5 144" fill="none" stroke="#a5b7c8" stroke-linecap="round" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" xml:space="preserve" y="6.449409484863281" transform="translate(200.075 392.74)" fill="#e6eff8">Throat area [m2] · linear</text>
+<path d="M116.1499 356.5L284 356.5" fill="none" stroke="#a5b7c8" stroke-linecap="round" class="zr0-cls-0"></path>
+<path d="M116.1499 356.5L111.1499 356.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M116.1499 330.5L111.1499 330.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M116.1499 303.5L111.1499 303.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M116.1499 277.5L111.1499 277.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M116.1499 250.5L111.1499 250.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M116.1499 224.5L111.1499 224.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M116.1499 197.5L111.1499 197.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M116.1499 170.5L111.1499 170.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M116.1499 144.5L111.1499 144.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M158.5 356.74L158.5 361.74" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M242.5 356.74L242.5 361.74" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(108.1499 356.74)" fill="#e6eff8">6500</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(108.1499 330.1475)" fill="#e6eff8">7000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(108.1499 303.555)" fill="#e6eff8">7500</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(108.1499 276.9625)" fill="#e6eff8">8000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(108.1499 250.37)" fill="#e6eff8">8500</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(108.1499 223.7775)" fill="#e6eff8">9000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(108.1499 197.185)" fill="#e6eff8">9500</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(108.1499 170.5925)" fill="#e6eff8">10000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(108.1499 144)" fill="#e6eff8">10500</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" y="6.449409484863281" transform="translate(158.1124 364.74)" fill="#e6eff8">9.000e-4</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" y="6.449409484863281" transform="translate(242.0375 364.74)" fill="#e6eff8">0.0011</text>
+<g clip-path="url(#zr0-c0)">
+<path d="M116.1499 331.784L200.075 239.1194L284 146.4548" fill="none" stroke="#83c8ff" stroke-width="2" stroke-linejoin="bevel" class="zr0-cls-2"></path>
+</g>
+<path d="M1 0A1 1 0 1 1 1 -0.0001" transform="matrix(3,0,0,3,116.1499,331.784)" fill="#83c8ff" class="zr0-cls-3"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.0001" transform="matrix(3,0,0,3,200.075,239.1194)" fill="#83c8ff" class="zr0-cls-3"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.0001" transform="matrix(3,0,0,3,284,146.4548)" fill="#83c8ff" class="zr0-cls-3"></path>
+<path d="M0 0l167.8501 0l0 20l-167.8501 0Z" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="rgb(0,0,0)" fill-opacity="0" class="zr0-cls-0"></path>
+<g clip-path="url(#zr0-c1)">
+<polygon points="167.9 0 0 0 0 3.8 83.9 10 167.9 16.3" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="#c0c9e6" fill-opacity="0.2" class="zr0-cls-0"></polygon>
+</g>
+<g clip-path="url(#zr0-c2)">
+<polygon points="167.9 0 0 0 0 3.8 83.9 10 167.9 16.3" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="#c0c9e6" fill-opacity="0.3" class="zr0-cls-0"></polygon>
+</g>
+<g clip-path="url(#zr0-c3)">
+<polygon points="167.9 0 0 0 0 3.8 83.9 10 167.9 16.3" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="#c0c9e6" fill-opacity="0.2" class="zr0-cls-0"></polygon>
+</g>
+<g clip-path="url(#zr0-c1)">
+<polyline points="0 3.8 83.9 10 167.9 16.3" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="none" stroke="#a1aed9" stroke-width="0.5" class="zr0-cls-0"></polyline>
+</g>
+<g clip-path="url(#zr0-c2)">
+<polyline points="0 3.8 83.9 10 167.9 16.3" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="none" stroke="#8292cc" stroke-width="0.5" class="zr0-cls-0"></polyline>
+</g>
+<g clip-path="url(#zr0-c3)">
+<polyline points="0 3.8 83.9 10 167.9 16.3" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="none" stroke="#a1aed9" stroke-width="0.5" class="zr0-cls-0"></polyline>
+</g>
+<path d="M-5 -6.0506l163.6431 0l0 25l-163.6431 0Z" transform="translate(17 86.0506)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#b7b9be" stroke-width="0" class="zr0-cls-0"></path>
+<path d="M0 7L25 7" transform="translate(18 85.5)" fill="#000" stroke="#83c8ff" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10" class="zr0-cls-0"></path>
+<path d="M18.1 7A5.6 5.6 0 1 1 18.1 6.9994" transform="translate(18 85.5)" fill="#83c8ff" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" xml:space="preserve" x="30" y="7" transform="translate(18 85.5)" fill="#e6eff8">Computed response</text>
+<path d="M-1 0.5506l153.6431 0l0 12.8988l-153.6431 0Z" transform="translate(18 85.5)" fill="none" class="zr0-cls-4"></path>
+<path d="M0 0l167.8501 0l0 20l-167.8501 0Z" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="none" class="zr0-cls-4"></path>
+<path d="M0 0l167.8501 0l0 20l-167.8501 0Z" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="rgb(135,175,255)" fill-opacity="0.2" class="zr0-cls-0"></path>
+<path d="M0.5 0.5l167 0l0 19l-167 0Z" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#647f98" class="zr0-cls-0"></path>
+<path d="M0 19.5L167.8501 19.5L167.8501 24.5A2 2 0 0 1 165.8501 26.5L2 26.5A2 2 0 0 1 0 24.5L0 19.5Z" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="#8292cc" fill-opacity="0.5" class="zr0-cls-0"></path>
+<path d="M-2.2408 -1.6796C-1.8674 -1.6796 -1.6817 -1.4939 -1.6817 -1.1204L-1.6817 1.1204C-1.6817 1.4939 -1.8674 1.6796 -2.2408 1.6796C-2.6143 1.6796 -2.8 1.4939 -2.8 1.1204L-2.8 -1.1204C-2.8 -1.4939 -2.6143 -1.6796 -2.2408 -1.6796ZM0 -1.6796C0.3735 -1.6796 0.5592 -1.4939 0.5592 -1.1204L0.5592 1.1204C0.5592 1.4939 0.3735 1.6796 0 1.6796C-0.3735 1.6796 -0.5592 1.4939 -0.5592 1.1204L-0.5592 -1.1204C-0.5592 -1.4939 -0.3735 -1.6796 0 -1.6796ZM2.2408 -1.6796C2.6143 -1.6796 2.8 -1.4939 2.8 -1.1204L2.8 1.1204C2.8 1.4939 2.6143 1.6796 2.2408 1.6796C1.8674 1.6796 1.6817 1.4939 1.6817 1.1204L1.6817 -1.1204C1.6796 -1.4939 1.8674 -1.6796 2.2408 -1.6796Z" transform="matrix(1,0,0,-1,202.875,435.5)" fill="#fff" class="zr0-cls-0"></path>
+<path d="M0 1.628L0 2M0 0L0 0.375M-0.1 0.375L0.1 0.375A0.1 0.1 0 0 1 0.2 0.475L0.2 1.525A0.1 0.1 0 0 1 0.1 1.625L-0.1 1.625A0.1 0.1 0 0 1 -0.2 1.525L-0.2 0.475A0.1 0.1 0 0 1 -0.1 0.375Z" transform="matrix(10,0,0,-10,119.9499,458.5)" fill="#fff" stroke="#c0c9e6" stroke-width="0.1" class="zr0-cls-5"></path>
+<path d="M0 1.628L0 2M0 0L0 0.375M-0.1 0.375L0.1 0.375A0.1 0.1 0 0 1 0.2 0.475L0.2 1.525A0.1 0.1 0 0 1 0.1 1.625L-0.1 1.625A0.1 0.1 0 0 1 -0.2 1.525L-0.2 0.475A0.1 0.1 0 0 1 -0.1 0.375Z" transform="matrix(10,0,0,-10,285.8,458.5)" fill="#fff" stroke="#c0c9e6" stroke-width="0.1" class="zr0-cls-5"></path>
+<path d="M-25 -25l106.8207 0l0 50l-106.8207 0Z" transform="translate(226.1793 31)" fill="none" stroke="#b7b9be" stroke-width="0" class="zr0-cls-0"></path>
+<path d="M0 0l296 0l0 68l-296 0Z" transform="translate(12 8)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr0-cls-0"></path>
+<path d="M-7.5 -4.0086L-0.5431 -4.0086M-4.0086 -0.5431L-4.0086 -7.5M0.8017 -4.0086L7.5 -4.0086L7.5 7.5L-4.0086 7.5L-4.0086 0.8017" transform="translate(226.1793 31)" fill="none" stroke="#e6eff8" class="zr0-cls-6"></path>
+<path d="M-2.7513 -7.5L-5.9524 -4.2989L-2.6984 -1.045M-5.8466 -4.2989L5.9524 -4.2989L5.9524 7.5L-5.8466 7.5L-5.8466 0.6217" transform="translate(254.6317 31)" fill="none" stroke="#e6eff8" class="zr0-cls-6"></path>
+<path d="M-6.9994 0.9083M4.5416 -2.9654L7.1597 -2.9654L7.1597 -5.6904M7.0261 -2.6448C5.9041 -5.6102 2.8051 -7.8543 -0.8549 -7.4536C-4.6485 -7.0261 -7.5872 -3.6867 -7.4536 0.1603M-4.5416 2.9654L-7.1864 2.9654L-7.1864 5.6904M-7.0261 2.6448C-5.9041 5.6102 -2.8051 7.8543 0.8549 7.4536C4.6485 7.0261 7.5872 3.6867 7.4536 -0.1603" transform="translate(283.042 31)" fill="none" stroke="#e6eff8" class="zr0-cls-6"></path>
+<path d="M0 0l208 0l0 20l-208 0Z" transform="translate(12 8)" fill="none" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:16px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;font-weight:bold;" xml:space="preserve" y="10" transform="translate(12 8)" fill="#e6eff8">Calculated thrust</text>
+<path d="M0 26l296 0l0 42l-296 0Z" transform="translate(12 8)" fill="none" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" xml:space="preserve" y="33" transform="translate(12 8)" fill="#a5b7c8">Uncertainty: not quantified · source COMPLETED</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" xml:space="preserve" y="47" transform="translate(12 8)" fill="#a5b7c8">Preliminary sensitivity study · no physical </text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" y="61" transform="translate(12 8)" fill="#a5b7c8">validation</text>
+<defs >
+<clipPath id="zr0-c0">
+<path d="M115 143l171 0l0 214.74l-171 0Z" fill="#000" class="zr0-cls-1"></path>
+</clipPath>
+<clipPath id="zr0-c1">
+<path d="M0 0l0 0l0 20l0 0Z" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="#000" class="zr0-cls-1"></path>
+</clipPath>
+<clipPath id="zr0-c2">
+<path d="M0 0l167.8501 0l0 20l-167.8501 0Z" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="#000" class="zr0-cls-1"></path>
+</clipPath>
+<clipPath id="zr0-c3">
+<path d="M167.8501 0l0 0l0 20l0 0Z" transform="matrix(1,0,0,-1,118.9499,458.5)" fill="#000" class="zr0-cls-1"></path>
+</clipPath>
+</defs>
+<style ><![CDATA[
+.zr0-cls-0:hover {
+pointer-events:none;
+}
+.zr0-cls-1:hover {
+cursor:pointer;
+fill:rgba(0,0,0,1);
+}
+.zr0-cls-2:hover {
+cursor:pointer;
+}
+.zr0-cls-3:hover {
+cursor:pointer;
+fill:rgba(144,220,255,1);
+}
+.zr0-cls-4:hover {
+cursor:pointer;
+fill:rgba(0,0,0,0);
+}
+.zr0-cls-5:hover {
+cursor:pointer;
+fill:rgba(255,255,255,1);
+stroke:#8292cc;
+}
+.zr0-cls-6:hover {
+cursor:pointer;
+stroke:#404c76;
+}
+
+]]>
+
+</style>
+</svg>

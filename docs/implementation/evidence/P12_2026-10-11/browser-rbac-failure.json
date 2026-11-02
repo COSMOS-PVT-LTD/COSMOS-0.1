@@ -1,0 +1,524 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.7.0/bin/node",
+      "/private/tmp/cosmos-p03.pfPm6s/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "tests/ui/release_hardening/playwright.config.cjs"
+    ],
+    "configFile": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/playwright.config.cjs",
+    "rootDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/cosmos-p12-journey.POkBvW/browser-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening",
+        "testIgnore": [],
+        "testMatch": [
+          "release.spec.cjs"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/tmp/cosmos-p12-journey.POkBvW/browser-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening",
+        "snapshotDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening",
+        "testIgnore": [],
+        "testMatch": "release.spec.cjs",
+        "timeout": 90000,
+        "use": {
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "reducedMotion": "reduce",
+          "deviceScaleFactor": 1,
+          "launchOptions": {
+            "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/P12_2026-10-11/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "release.spec.cjs",
+      "file": "release.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "private packaged login and all existing modern routes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2136,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:18:15.162Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-7ba38fb2cdc230244e8e",
+          "file": "release.spec.cjs",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "actual native geometry simulation comparison and reproducible report download",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14855,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:18:20.599Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-c3166ac1656fd78e6278",
+          "file": "release.spec.cjs",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "measured project-load baseline and bounded concurrent transport stress",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1526,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:18:35.468Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-4bdb7a9630ce4a3d2514",
+          "file": "release.spec.cjs",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "cross-workbench keyboard accessibility dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2298,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:18:37.012Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-bd123f30f953cc238611",
+          "file": "release.spec.cjs",
+          "line": 22,
+          "column": 45
+        },
+        {
+          "title": "cross-workbench keyboard accessibility high-contrast",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3510,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:18:39.319Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-d27040d4da05dc6e7313",
+          "file": "release.spec.cjs",
+          "line": 22,
+          "column": 45
+        },
+        {
+          "title": "responsive report viewport interaction and visible provenance",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2599,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 24\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 24\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs:23:1146",
+                    "location": {
+                      "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                      "column": 1146,
+                      "line": 23
+                    },
+                    "snippet": "  21 | test('measured project-load baseline and bounded concurrent transport stress',async({page})=>{const samples=[];for(let i=0;i<20;i++){const tick=performance.now();expect((await page.request.get(base+'/api/propulsion/designs/'+designId)).ok()).toBe(true);samples.push(performance.now()-tick);}samples.sort((a,b)=>a-b);const p95=samples[Math.floor(samples.length*.95)-1],budgetMs=Math.max(1000,p95*20),latencies=[];let peakRss=0;const results=await Promise.all(Array.from({length:32},async()=>{const tick=performance.now(),response=await page.request.get(base+'/api/propulsion/designs/'+designId);latencies.push(performance.now()-tick);try{peakRss=Math.max(peakRss,Number(child.execFileSync('/bin/ps',['-o','rss=','-p',String(server.pid)],{encoding:'utf8'}).trim())*1024);}catch{}return response.status();}));expect(results.every(v=>v===200||v===503)).toBe(true);expect(results.filter(v=>v===200).length).toBeGreaterThan(0);expect(Math.max(...latencies)).toBeLessThan(budgetMs);save('stress.json',{pass:true,serial_p95_ms:p95,relative_budget_ms:budgetMs,budget_rule:'max(1000ms,20 times measured serial p95); local project fixture only',concurrent_requests:32,status_counts:{ok:results.filter(v=>v===200).length,busy:results.filter(v=>v===503).length},max_ms:Math.max(...latencies),sampled_server_rss_max_bytes:peakRss,whole_system_peak:false});});\n  22 | for(const theme of ['dark','high-contrast'])test('cross-workbench keyboard accessibility '+theme,async({page})=>{const results=[];for(const view of ['native-geometry','simulation','comparison','knowledge','reports']){await page.goto(base+'/app/workbench/'+view);await page.getByLabel('Theme',{exact:true}).selectOption(theme);await page.addScriptTag({path:require.resolve('axe-core/axe.min.js')});const selector={'native-geometry':'#ngg-workbench',simulation:'#sim-workbench',comparison:'#vv-workbench',knowledge:'#kr-workbench',reports:'#kr-workbench'}[view];await expect(page.locator(selector)).toBeVisible();const audit=await page.evaluate(selector=>axe.run(document.querySelector(selector),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}}),selector);results.push({view,violations:audit.violations});save('accessibility-'+theme+'.json',results);expect(audit.violations).toEqual([]);await page.locator('button:visible').first().focus();await expect(page.locator('button:visible').first()).toBeFocused();}save('accessibility-'+theme+'.json',results);});\n> 23 | test('responsive report viewport interaction and visible provenance',async({page})=>{const results=[];for(const width of [1440,1024,390])await test.step('Inspect report at '+width+'px',async()=>{await page.setViewportSize({width,height:1200});await page.goto(base+'/app/workbench/reports');await expect(page.locator('#kr-context')).toContainText('report project');if(!await page.locator('#kr-history').isVisible())await page.locator('#kr-focus').click();await expect(page.locator('#kr-history')).toBeVisible();await page.locator('#kr-history').selectOption(reportId);await expect(page.locator('#kr-lineage tbody tr')).toHaveCount(5);const tick=performance.now();if(await page.locator('#kr-focus').getAttribute('aria-pressed')!=='true')await page.locator('#kr-focus').click();const row=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth}));expect(row.scrollWidth).toBeLessThanOrEqual(width);results.push({...row,focusInteractionMs:performance.now()-tick});await page.screenshot({path:path.join(out,'packaged-responsive-'+width+'.png'),fullPage:true});});save('responsive.json',results);expect(pageErrors).toEqual([]);});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^\n  24 | test('same-root restart rollback preserves persistent project and blocks modern endpoints',async({page})=>{const before=persistentHashes(),credentialHash=hash(fs.readFileSync(path.join(state,'first-login.json')));expect(Object.keys(before).length).toBeGreaterThan(0);await stop();await start(false);await login(page);await page.goto(base+'/app/workbench/knowledge');await expect(page.locator('h1')).toHaveText('Maharshi Bharadwaj');for(const api of ['/api/ngg/context','/api/simulation/context','/api/comparison/context','/api/knowledge-reports/context'])expect((await page.request.get(base+api)).status()).toBe(404);const design=(await(await page.request.get(base+'/api/propulsion/designs/'+designId)).json()).design;expect(design).toEqual(JSON.parse(fs.readFileSync(path.join(out,'project-before.json'))));expect(persistentHashes()).toEqual(before);expect(hash(fs.readFileSync(path.join(state,'first-login.json')))).toBe(credentialHash);save('rollback-drill.json',{pass:true,same_private_root:true,project_id:designId,persistent_file_sha256:before,credentials_unchanged:true,legacy_route_works:true,modern_apis_disabled:true,ephemeral_run_report_history:'Intentional restart loss; exact package retained before restart',destructive_migration:false});await page.screenshot({path:path.join(out,'packaged-rollback.png'),fullPage:true});});\n  25 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "column": 1146,
+                        "line": 23
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 24\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+   \"COSMOS is not defined\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  21 | test('measured project-load baseline and bounded concurrent transport stress',async({page})=>{const samples=[];for(let i=0;i<20;i++){const tick=performance.now();expect((await page.request.get(base+'/api/propulsion/designs/'+designId)).ok()).toBe(true);samples.push(performance.now()-tick);}samples.sort((a,b)=>a-b);const p95=samples[Math.floor(samples.length*.95)-1],budgetMs=Math.max(1000,p95*20),latencies=[];let peakRss=0;const results=await Promise.all(Array.from({length:32},async()=>{const tick=performance.now(),response=await page.request.get(base+'/api/propulsion/designs/'+designId);latencies.push(performance.now()-tick);try{peakRss=Math.max(peakRss,Number(child.execFileSync('/bin/ps',['-o','rss=','-p',String(server.pid)],{encoding:'utf8'}).trim())*1024);}catch{}return response.status();}));expect(results.every(v=>v===200||v===503)).toBe(true);expect(results.filter(v=>v===200).length).toBeGreaterThan(0);expect(Math.max(...latencies)).toBeLessThan(budgetMs);save('stress.json',{pass:true,serial_p95_ms:p95,relative_budget_ms:budgetMs,budget_rule:'max(1000ms,20 times measured serial p95); local project fixture only',concurrent_requests:32,status_counts:{ok:results.filter(v=>v===200).length,busy:results.filter(v=>v===503).length},max_ms:Math.max(...latencies),sampled_server_rss_max_bytes:peakRss,whole_system_peak:false});});\n  22 | for(const theme of ['dark','high-contrast'])test('cross-workbench keyboard accessibility '+theme,async({page})=>{const results=[];for(const view of ['native-geometry','simulation','comparison','knowledge','reports']){await page.goto(base+'/app/workbench/'+view);await page.getByLabel('Theme',{exact:true}).selectOption(theme);await page.addScriptTag({path:require.resolve('axe-core/axe.min.js')});const selector={'native-geometry':'#ngg-workbench',simulation:'#sim-workbench',comparison:'#vv-workbench',knowledge:'#kr-workbench',reports:'#kr-workbench'}[view];await expect(page.locator(selector)).toBeVisible();const audit=await page.evaluate(selector=>axe.run(document.querySelector(selector),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}}),selector);results.push({view,violations:audit.violations});save('accessibility-'+theme+'.json',results);expect(audit.violations).toEqual([]);await page.locator('button:visible').first().focus();await expect(page.locator('button:visible').first()).toBeFocused();}save('accessibility-'+theme+'.json',results);});\n> 23 | test('responsive report viewport interaction and visible provenance',async({page})=>{const results=[];for(const width of [1440,1024,390])await test.step('Inspect report at '+width+'px',async()=>{await page.setViewportSize({width,height:1200});await page.goto(base+'/app/workbench/reports');await expect(page.locator('#kr-context')).toContainText('report project');if(!await page.locator('#kr-history').isVisible())await page.locator('#kr-focus').click();await expect(page.locator('#kr-history')).toBeVisible();await page.locator('#kr-history').selectOption(reportId);await expect(page.locator('#kr-lineage tbody tr')).toHaveCount(5);const tick=performance.now();if(await page.locator('#kr-focus').getAttribute('aria-pressed')!=='true')await page.locator('#kr-focus').click();const row=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth}));expect(row.scrollWidth).toBeLessThanOrEqual(width);results.push({...row,focusInteractionMs:performance.now()-tick});await page.screenshot({path:path.join(out,'packaged-responsive-'+width+'.png'),fullPage:true});});save('responsive.json',results);expect(pageErrors).toEqual([]);});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^\n  24 | test('same-root restart rollback preserves persistent project and blocks modern endpoints',async({page})=>{const before=persistentHashes(),credentialHash=hash(fs.readFileSync(path.join(state,'first-login.json')));expect(Object.keys(before).length).toBeGreaterThan(0);await stop();await start(false);await login(page);await page.goto(base+'/app/workbench/knowledge');await expect(page.locator('h1')).toHaveText('Maharshi Bharadwaj');for(const api of ['/api/ngg/context','/api/simulation/context','/api/comparison/context','/api/knowledge-reports/context'])expect((await page.request.get(base+api)).status()).toBe(404);const design=(await(await page.request.get(base+'/api/propulsion/designs/'+designId)).json()).design;expect(design).toEqual(JSON.parse(fs.readFileSync(path.join(out,'project-before.json'))));expect(persistentHashes()).toEqual(before);expect(hash(fs.readFileSync(path.join(state,'first-login.json')))).toBe(credentialHash);save('rollback-drill.json',{pass:true,same_private_root:true,project_id:designId,persistent_file_sha256:before,credentials_unchanged:true,legacy_route_works:true,modern_apis_disabled:true,ephemeral_run_report_history:'Intentional restart loss; exact package retained before restart',destructive_migration:false});await page.screenshot({path:path.join(out,'packaged-rollback.png'),fullPage:true});});\n  25 |\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs:23:1146"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Inspect report at 1440px",
+                      "duration": 684
+                    },
+                    {
+                      "title": "Inspect report at 1024px",
+                      "duration": 552
+                    },
+                    {
+                      "title": "Inspect report at 390px",
+                      "duration": 348
+                    }
+                  ],
+                  "startTime": "2026-10-11T06:18:42.845Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p12-journey.POkBvW/browser-output/release-responsive-report--7afa3-tion-and-visible-provenance/error-context.md"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p12-journey.POkBvW/browser-output/release-responsive-report--7afa3-tion-and-visible-provenance/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "column": 1146,
+                    "line": 23
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-6134836b22a1e8f25af6",
+          "file": "release.spec.cjs",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "same-root restart rollback preserves persistent project and blocks modern endpoints",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:18:45.814Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-18988a946c630842e2c3",
+          "file": "release.spec.cjs",
+          "line": 24,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-11T06:18:14.701Z",
+    "duration": 31153.067,
+    "expected": 5,
+    "skipped": 1,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

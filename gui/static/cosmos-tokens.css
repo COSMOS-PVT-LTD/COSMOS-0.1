@@ -3,7 +3,8 @@
  * Baseline: docs/COSMOS_0.1_UI_UX_DESIGN_SYSTEM.md
  */
 
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&family=STIX+Two+Math&display=swap");
+/* Standalone desktop: use installed fonts and the local system fallbacks below.
+   UI rendering must not depend on a remote Google Fonts stylesheet. */
 
 :root {
   /* Base palette */

@@ -1,0 +1,92 @@
+{
+  "scope": "Real GUI/native calculation over synthetic properties and boundaries; not hardware evidence",
+  "qa_root": "/private/tmp/cosmos-r06-operating-qa.YQvvwK",
+  "project_id": "fb8aa4fb-2931-4689-b090-832b1113f3c9",
+  "commit_id": "d6e36662-680a-43ca-8cc8-09afe817a9cc",
+  "content_sha256": "e00a794d0f1d647fb84936de64c6f1f1aeaaf8e0f38b3ea8872b1c35a6a098b0",
+  "original_input_result_and_restart_bytes_exact": true,
+  "baseline_unchanged": true,
+  "all_residual_and_iteration_export_values_exact": true,
+  "independent_residual_rows": 16,
+  "nonlinear_history_samples": 4,
+  "thermal_history_samples": 20,
+  "current_solved_candidate": true,
+  "physical_validation": "NOT_PERFORMED",
+  "svg_nonzero_dimensions": [
+    660.0,
+    512.0
+  ],
+  "svg_source_binding": "Paired complete provenance/source bundle; not standalone inline SHA metadata",
+  "unknowns": {
+    "chamber_pressure": {
+      "unit": "Pa",
+      "value": 5006967.54682203
+    },
+    "fuel_flow": {
+      "unit": "kg/s",
+      "value": 0.8341150628589802
+    },
+    "gg_fuel_flow": {
+      "unit": "kg/s",
+      "value": 0.005206015654763077
+    },
+    "gg_oxidizer_flow": {
+      "unit": "kg/s",
+      "value": 0.0119724742171496
+    },
+    "gg_pressure": {
+      "unit": "Pa",
+      "value": 1005079.0374685121
+    },
+    "oxidizer_flow": {
+      "unit": "kg/s",
+      "value": 2.004056691497974
+    },
+    "shaft_speed": {
+      "unit": "rad/s",
+      "value": 1005.3855762804768
+    }
+  },
+  "external_energy_ledger_w": {
+    "auxiliary_boundary": 0.0,
+    "cold_feed_common_reference": -2299353.512748844,
+    "core_exit_total_enthalpy": -2255898.469287593,
+    "gg_exit_total_enthalpy": -46741.716266393174,
+    "shaft_loss_to_environment": 3287.394323572475,
+    "signed_residual": 0.7215184303931892
+  },
+  "files": {
+    "record": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-preliminary-model-engine-operating-record.json",
+      "sha256": "e00a794d0f1d647fb84936de64c6f1f1aeaaf8e0f38b3ea8872b1c35a6a098b0"
+    },
+    "restart_record": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-preliminary-model-engine-operating-record (1).json",
+      "sha256": "e00a794d0f1d647fb84936de64c6f1f1aeaaf8e0f38b3ea8872b1c35a6a098b0"
+    },
+    "inputs": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-preliminary-model-engine-operating-inputs.json",
+      "sha256": "b42e4ec4f8b75c19314336856fc3e40e66cfea14b7178b40045d46bb0350ef2f"
+    },
+    "csv": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-preliminary-model-engine-operating-residuals.csv",
+      "sha256": "c8e712a0cd4dff668acdb99315bfce047da58952d32f886952907876653a3dab"
+    },
+    "plot_csv": {
+      "path": "/Users/vaibhavkumarn/Downloads/operating-nonlinear-history.csv",
+      "sha256": "c5b5610ddf18f0c424b06bb92c06b6a68a29e76023fdf399d6e26e894ad84a9a"
+    },
+    "plot_source": {
+      "path": "/Users/vaibhavkumarn/Downloads/operating-nonlinear-history.source.json",
+      "sha256": "bfbfaadf8751c43683b8b3681344e7a782900ec629610ce4c5bf30d10675eed5"
+    },
+    "plot_provenance": {
+      "path": "/Users/vaibhavkumarn/Downloads/operating-nonlinear-history.provenance.json",
+      "sha256": "017639a95d7e670c44a452f1d6f0fae0aa8221c920bd5ba66fbb88a9da574101"
+    },
+    "svg": {
+      "path": "/Users/vaibhavkumarn/Downloads/operating-nonlinear-history (1).svg",
+      "sha256": "4b3ac0a1b69832420648364bd1f417a3d3600defcec2639b854a8d33cb142f82"
+    }
+  }
+}

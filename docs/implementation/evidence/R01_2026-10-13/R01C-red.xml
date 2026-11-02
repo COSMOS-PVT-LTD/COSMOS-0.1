@@ -1,0 +1,1324 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="64" skipped="0" tests="72" time="0.570" timestamp="2026-10-13T00:46:45.839702+05:30" hostname="vaibhavs-MacBook-Air.local"><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[temperature-0.0-operating_point]" time="0.004"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='55...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'temperature', value = 0.0
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='55...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[temperature-0.0-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'temperature', value = 0.0
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[temperature--1.0-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='1f...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'temperature', value = -1.0
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='1f...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[temperature--1.0-thermochemistry]" time="0.003"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'temperature', value = -1.0
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[temperature-nan-operating_point]" time="0.003" /><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[temperature-nan-thermochemistry]" time="0.002"><failure message="core.exceptions.InvalidInputError: magnitude must be finite. Received nan.">stage = 'thermochemistry', field = 'temperature', value = nan
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+&gt;       result = runner(design, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+systems/stages/_helpers.py:62: in guarded
+    result = function(design, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+systems/stages/thermochemistry.py:55: in run_thermochemistry_stage
+    op.chamber_temperature = Quantity(float(assume_chamber_temperature_k), SI.get("K"))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;string&gt;:6: in __init__
+    ???
+core/quantity.py:84: in __post_init__
+    validate_finite(self.magnitude, "magnitude"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+value = nan, name = 'magnitude'
+
+    def validate_finite(value: float, name: str) -&gt; float:
+        """
+        Validate that a value is finite.
+    
+        Parameters
+        ----------
+        value : float
+            Value to validate.
+        name : str
+            Parameter name.
+    
+        Returns
+        -------
+        float
+            Validated value.
+    
+        Raises
+        ------
+        InvalidInputError
+            If value is NaN or infinite.
+        """
+        if not math.isfinite(value):
+&gt;           raise InvalidInputError(
+                f"{name} must be finite. Received {value!r}."
+            )
+E           core.exceptions.InvalidInputError: magnitude must be finite. Received nan.
+
+core/validation.py:95: InvalidInputError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[temperature-inf-operating_point]" time="0.002" /><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[temperature-inf-thermochemistry]" time="0.002"><failure message="core.exceptions.InvalidInputError: magnitude must be finite. Received inf.">stage = 'thermochemistry', field = 'temperature', value = inf
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+&gt;       result = runner(design, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+systems/stages/_helpers.py:62: in guarded
+    result = function(design, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+systems/stages/thermochemistry.py:55: in run_thermochemistry_stage
+    op.chamber_temperature = Quantity(float(assume_chamber_temperature_k), SI.get("K"))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;string&gt;:6: in __init__
+    ???
+core/quantity.py:84: in __post_init__
+    validate_finite(self.magnitude, "magnitude"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+value = inf, name = 'magnitude'
+
+    def validate_finite(value: float, name: str) -&gt; float:
+        """
+        Validate that a value is finite.
+    
+        Parameters
+        ----------
+        value : float
+            Value to validate.
+        name : str
+            Parameter name.
+    
+        Returns
+        -------
+        float
+            Validated value.
+    
+        Raises
+        ------
+        InvalidInputError
+            If value is NaN or infinite.
+        """
+        if not math.isfinite(value):
+&gt;           raise InvalidInputError(
+                f"{name} must be finite. Received {value!r}."
+            )
+E           core.exceptions.InvalidInputError: magnitude must be finite. Received inf.
+
+core/validation.py:95: InvalidInputError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[temperature--inf-operating_point]" time="0.002" /><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[temperature--inf-thermochemistry]" time="0.002"><failure message="core.exceptions.InvalidInputError: magnitude must be finite. Received -inf.">stage = 'thermochemistry', field = 'temperature', value = -inf
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+&gt;       result = runner(design, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+systems/stages/_helpers.py:62: in guarded
+    result = function(design, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+systems/stages/thermochemistry.py:55: in run_thermochemistry_stage
+    op.chamber_temperature = Quantity(float(assume_chamber_temperature_k), SI.get("K"))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;string&gt;:6: in __init__
+    ???
+core/quantity.py:84: in __post_init__
+    validate_finite(self.magnitude, "magnitude"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+value = -inf, name = 'magnitude'
+
+    def validate_finite(value: float, name: str) -&gt; float:
+        """
+        Validate that a value is finite.
+    
+        Parameters
+        ----------
+        value : float
+            Value to validate.
+        name : str
+            Parameter name.
+    
+        Returns
+        -------
+        float
+            Validated value.
+    
+        Raises
+        ------
+        InvalidInputError
+            If value is NaN or infinite.
+        """
+        if not math.isfinite(value):
+&gt;           raise InvalidInputError(
+                f"{name} must be finite. Received {value!r}."
+            )
+E           core.exceptions.InvalidInputError: magnitude must be finite. Received -inf.
+
+core/validation.py:95: InvalidInputError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[temperature-True-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='e1...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'temperature', value = True
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='e1...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[temperature-True-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'temperature', value = True
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma-0.5-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='67...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'gamma', value = 0.5
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='67...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma-0.5-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'gamma', value = 0.5
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma-1.0-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='08...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'gamma', value = 1.0
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='08...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma-1.0-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'gamma', value = 1.0
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma-3.01-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='22...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'gamma', value = 3.01
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='22...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma-3.01-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'gamma', value = 3.01
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma-nan-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='a2...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'gamma', value = nan
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='a2...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma-nan-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'gamma', value = nan
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma-inf-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='e2...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'gamma', value = inf
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='e2...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma-inf-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'gamma', value = inf
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma--inf-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='b5...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'gamma', value = -inf
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='b5...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma--inf-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'gamma', value = -inf
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma-True-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='87...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'gamma', value = True
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='87...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[gamma-True-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'gamma', value = True
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[molar_mass-0.0-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='1c...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'molar_mass', value = 0.0
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='1c...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[molar_mass-0.0-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'molar_mass', value = 0.0
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[molar_mass--0.01-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='3c...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'molar_mass', value = -0.01
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='3c...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[molar_mass--0.01-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'molar_mass', value = -0.01
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[molar_mass-nan-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='11...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'molar_mass', value = nan
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='11...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[molar_mass-nan-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'molar_mass', value = nan
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[molar_mass-inf-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='9f...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'molar_mass', value = inf
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='9f...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[molar_mass-inf-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'molar_mass', value = inf
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[molar_mass--inf-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='fb...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'molar_mass', value = -inf
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='fb...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[molar_mass--inf-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'molar_mass', value = -inf
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[molar_mass-True-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='3b...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'molar_mass', value = True
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='3b...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_bad_override_never_partially_mutates_operating_point[molar_mass-True-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'molar_mass', value = True
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_bad_override_never_partially_mutates_operating_point(stage, field, value):
+        design = design_with_current_assumptions()
+        original = design.operating_point
+        before = deepcopy(original.to_canonical_dict())
+        names = ({"temperature": "chamber_temperature", "gamma": "gamma",
+                  "molar_mass": "molecular_weight_kg_per_mol"} if stage == "operating_point" else
+                 {"temperature": "assume_chamber_temperature_k", "gamma": "assume_gamma",
+                  "molar_mass": "assume_molar_mass_kg_per_mol"})
+        kwargs = {names["temperature"]: 3200., names["gamma"]: 1.25, names["molar_mass"]: .022}
+        kwargs[names[field]] = value
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+        result = runner(design, **kwargs)
+&gt;       assert result.status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:50: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_invalid_restored_assumption_cannot_be_promoted_current[gamma-0.5-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='08...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +    where CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='08...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0') = &lt;function run_operating_point_stage at 0x102311940&gt;(PropulsionDesign(name='R01C synthetic software regression only', design_id='3f632d8d-9d9f-41a2-8c36-6823854ec7dd', des...', source='systems')], editor_drafts={}, subsystem_inputs={}, thermochemistry_configuration={}, schema_version='0.1.0'))&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'gamma', value = 0.5
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", [("gamma", .5), ("molar_mass", -.01), ("temperature", 0.)])
+    def test_invalid_restored_assumption_cannot_be_promoted_current(stage, field, value):
+        design = design_with_current_assumptions()
+        if field == "temperature":
+            design.operating_point.chamber_temperature = Quantity(value, SI.get("K"))
+        else:
+            setattr(design.operating_point, "molecular_weight" if field == "molar_mass" else field, value)
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+&gt;       assert runner(design).status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='08...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +    where CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='08...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0') = &lt;function run_operating_point_stage at 0x102311940&gt;(PropulsionDesign(name='R01C synthetic software regression only', design_id='3f632d8d-9d9f-41a2-8c36-6823854ec7dd', des...', source='systems')], editor_drafts={}, subsystem_inputs={}, thermochemistry_configuration={}, schema_version='0.1.0'))
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:68: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_invalid_restored_assumption_cannot_be_promoted_current[gamma-0.5-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +    where CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0') = &lt;function run_thermochemistry_stage at 0x102733880&gt;(PropulsionDesign(name='R01C synthetic software regression only', design_id='796f7de2-20b6-4461-8519-30896dd24da3', des...', source='systems')], editor_drafts={}, subsystem_inputs={}, thermochemistry_configuration={}, schema_version='0.1.0'))&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'gamma', value = 0.5
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", [("gamma", .5), ("molar_mass", -.01), ("temperature", 0.)])
+    def test_invalid_restored_assumption_cannot_be_promoted_current(stage, field, value):
+        design = design_with_current_assumptions()
+        if field == "temperature":
+            design.operating_point.chamber_temperature = Quantity(value, SI.get("K"))
+        else:
+            setattr(design.operating_point, "molecular_weight" if field == "molar_mass" else field, value)
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+&gt;       assert runner(design).status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +    where CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0') = &lt;function run_thermochemistry_stage at 0x102733880&gt;(PropulsionDesign(name='R01C synthetic software regression only', design_id='796f7de2-20b6-4461-8519-30896dd24da3', des...', source='systems')], editor_drafts={}, subsystem_inputs={}, thermochemistry_configuration={}, schema_version='0.1.0'))
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:68: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_invalid_restored_assumption_cannot_be_promoted_current[molar_mass--0.01-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='cf...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +    where CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='cf...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0') = &lt;function run_operating_point_stage at 0x102311940&gt;(PropulsionDesign(name='R01C synthetic software regression only', design_id='80a3bb95-77fe-433a-aac3-2a3520cd3d76', des...', source='systems')], editor_drafts={}, subsystem_inputs={}, thermochemistry_configuration={}, schema_version='0.1.0'))&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'molar_mass', value = -0.01
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", [("gamma", .5), ("molar_mass", -.01), ("temperature", 0.)])
+    def test_invalid_restored_assumption_cannot_be_promoted_current(stage, field, value):
+        design = design_with_current_assumptions()
+        if field == "temperature":
+            design.operating_point.chamber_temperature = Quantity(value, SI.get("K"))
+        else:
+            setattr(design.operating_point, "molecular_weight" if field == "molar_mass" else field, value)
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+&gt;       assert runner(design).status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='cf...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +    where CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='cf...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0') = &lt;function run_operating_point_stage at 0x102311940&gt;(PropulsionDesign(name='R01C synthetic software regression only', design_id='80a3bb95-77fe-433a-aac3-2a3520cd3d76', des...', source='systems')], editor_drafts={}, subsystem_inputs={}, thermochemistry_configuration={}, schema_version='0.1.0'))
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:68: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_invalid_restored_assumption_cannot_be_promoted_current[molar_mass--0.01-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +    where CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0') = &lt;function run_thermochemistry_stage at 0x102733880&gt;(PropulsionDesign(name='R01C synthetic software regression only', design_id='c9f38954-b564-4a3b-9f8b-3ed176434410', des...', source='systems')], editor_drafts={}, subsystem_inputs={}, thermochemistry_configuration={}, schema_version='0.1.0'))&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'molar_mass', value = -0.01
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", [("gamma", .5), ("molar_mass", -.01), ("temperature", 0.)])
+    def test_invalid_restored_assumption_cannot_be_promoted_current(stage, field, value):
+        design = design_with_current_assumptions()
+        if field == "temperature":
+            design.operating_point.chamber_temperature = Quantity(value, SI.get("K"))
+        else:
+            setattr(design.operating_point, "molecular_weight" if field == "molar_mass" else field, value)
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+&gt;       assert runner(design).status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +    where CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0') = &lt;function run_thermochemistry_stage at 0x102733880&gt;(PropulsionDesign(name='R01C synthetic software regression only', design_id='c9f38954-b564-4a3b-9f8b-3ed176434410', des...', source='systems')], editor_drafts={}, subsystem_inputs={}, thermochemistry_configuration={}, schema_version='0.1.0'))
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:68: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_invalid_restored_assumption_cannot_be_promoted_current[temperature-0.0-operating_point]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='06...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status&#10; +    where CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='06...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0') = &lt;function run_operating_point_stage at 0x102311940&gt;(PropulsionDesign(name='R01C synthetic software regression only', design_id='0e8ebaab-42a0-4a23-933e-eeb09487fe2f', des...', source='systems')], editor_drafts={}, subsystem_inputs={}, thermochemistry_configuration={}, schema_version='0.1.0'))&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'operating_point', field = 'temperature', value = 0.0
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", [("gamma", .5), ("molar_mass", -.01), ("temperature", 0.)])
+    def test_invalid_restored_assumption_cannot_be_promoted_current(stage, field, value):
+        design = design_with_current_assumptions()
+        if field == "temperature":
+            design.operating_point.chamber_temperature = Quantity(value, SI.get("K"))
+        else:
+            setattr(design.operating_point, "molecular_weight" if field == "molar_mass" else field, value)
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+&gt;       assert runner(design).status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='06...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0').status
+E        +    where CalculationResult(calculation_type='workflow.operating_point', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_id='06...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='operating_point', schema_version='0.1.0') = &lt;function run_operating_point_stage at 0x102311940&gt;(PropulsionDesign(name='R01C synthetic software regression only', design_id='0e8ebaab-42a0-4a23-933e-eeb09487fe2f', des...', source='systems')], editor_drafts={}, subsystem_inputs={}, thermochemistry_configuration={}, schema_version='0.1.0'))
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:68: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_invalid_restored_assumption_cannot_be_promoted_current[temperature-0.0-thermochemistry]" time="0.002"><failure message="AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;&#10; +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status&#10; +    where CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0') = &lt;function run_thermochemistry_stage at 0x102733880&gt;(PropulsionDesign(name='R01C synthetic software regression only', design_id='80c6c150-85e3-4def-ba99-fddf4434a100', des...', source='systems')], editor_drafts={}, subsystem_inputs={}, thermochemistry_configuration={}, schema_version='0.1.0'))&#10; +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED">stage = 'thermochemistry', field = 'temperature', value = 0.0
+
+    @pytest.mark.parametrize("stage", ["operating_point", "thermochemistry"])
+    @pytest.mark.parametrize("field,value", [("gamma", .5), ("molar_mass", -.01), ("temperature", 0.)])
+    def test_invalid_restored_assumption_cannot_be_promoted_current(stage, field, value):
+        design = design_with_current_assumptions()
+        if field == "temperature":
+            design.operating_point.chamber_temperature = Quantity(value, SI.get("K"))
+        else:
+            setattr(design.operating_point, "molecular_weight" if field == "molar_mass" else field, value)
+        runner = run_operating_point_stage if stage == "operating_point" else run_thermochemistry_stage
+&gt;       assert runner(design).status is ResultStatus.FAILED
+E       AssertionError: assert &lt;ResultStatus.CURRENT: 'CURRENT'&gt; is &lt;ResultStatus.FAILED: 'FAILED'&gt;
+E        +  where &lt;ResultStatus.CURRENT: 'CURRENT'&gt; = CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0').status
+E        +    where CalculationResult(calculation_type='thermochemistry.assumed_state', status=&lt;ResultStatus.CURRENT: 'CURRENT'&gt;, result_i...lculation_revision=5), software_version='0.1.0', design_revision=5, stage_id='thermochemistry', schema_version='0.1.0') = &lt;function run_thermochemistry_stage at 0x102733880&gt;(PropulsionDesign(name='R01C synthetic software regression only', design_id='80c6c150-85e3-4def-ba99-fddf4434a100', des...', source='systems')], editor_drafts={}, subsystem_inputs={}, thermochemistry_configuration={}, schema_version='0.1.0'))
+E        +  and   &lt;ResultStatus.FAILED: 'FAILED'&gt; = ResultStatus.FAILED
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:68: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[temperature-0.0]" time="0.005"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'temperature', value = 0.0
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[temperature--1.0]" time="0.003"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'temperature', value = -1.0
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[temperature-nan]" time="0.003" /><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[temperature-inf]" time="0.003" /><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[temperature--inf]" time="0.003" /><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[temperature-True]" time="0.003"><failure message="assert not True">field = 'temperature', value = True
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+&gt;       assert not result["execution_ok"]
+E       assert not True
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:81: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[gamma-0.5]" time="0.004"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'gamma', value = 0.5
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[gamma-1.0]" time="0.003"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'gamma', value = 1.0
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[gamma-3.01]" time="0.003"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'gamma', value = 3.01
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[gamma-nan]" time="0.003"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'gamma', value = nan
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[gamma-inf]" time="0.003"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'gamma', value = inf
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[gamma--inf]" time="0.003"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'gamma', value = -inf
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[gamma-True]" time="0.003"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'gamma', value = True
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[molar_mass-0.0]" time="0.004"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'molar_mass', value = 0.0
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[molar_mass--0.01]" time="0.003"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'molar_mass', value = -0.01
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[molar_mass-nan]" time="0.003"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'molar_mass', value = nan
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[molar_mass-inf]" time="0.003"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'molar_mass', value = inf
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[molar_mass--inf]" time="0.003"><failure message="AssertionError: assert 'CURRENT' == 'FAILED'&#10;  &#10;  - FAILED&#10;  + CURRENT">field = 'molar_mass', value = -inf
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+        assert not result["execution_ok"]
+&gt;       assert result["stages"]["operating_point"]["status"] == "FAILED"
+E       AssertionError: assert 'CURRENT' == 'FAILED'
+E         
+E         - FAILED
+E         + CURRENT
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:82: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_public_phase3_api_never_exposes_bad_assumptions_as_current[molar_mass-True]" time="0.003"><failure message="assert not True">field = 'molar_mass', value = True
+
+    @pytest.mark.parametrize("field,value", BAD_ASSUMPTIONS)
+    def test_public_phase3_api_never_exposes_bad_assumptions_as_current(field, value):
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+        kwargs = {"chamber_temperature_k": 3200., "gamma": 1.25,
+                  "molecular_weight_kg_per_mol": .022, "throat_area_m2": .001}
+        key = {"temperature": "chamber_temperature_k", "gamma": "gamma", "molar_mass": "molecular_weight_kg_per_mol"}[field]
+        kwargs[key] = value
+        result = run_phase3(design, **kwargs)
+&gt;       assert not result["execution_ok"]
+E       assert not True
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:81: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_valid_boundary_assumptions_remain_supported" time="0.002" /><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_direct_thermochemistry_invalid_override_never_invokes_external_engine" time="0.003"><failure message="AssertionError: assert 'AssertionError' == 'InvalidInputError'&#10;  &#10;  - InvalidInputError&#10;  + AssertionError">def test_direct_thermochemistry_invalid_override_never_invokes_external_engine():
+        design = design_with_current_assumptions()
+        before = deepcopy(design.operating_point.to_canonical_dict())
+    
+        class MustNotRun:
+            def evaluate(self, request):
+                raise AssertionError("Invalid manual input must be rejected before engine dispatch")
+    
+        result = run_thermochemistry_stage(design, engine=MustNotRun(), assume_gamma=.5)
+        assert result.status is ResultStatus.FAILED
+&gt;       assert result.errors[0]["code"] == "InvalidInputError"
+E       AssertionError: assert 'AssertionError' == 'InvalidInputError'
+E         
+E         - InvalidInputError
+E         + AssertionError
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:108: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_calculation_canonical_projections_are_nested_defensive_copies" time="0.000"><failure message="AssertionError: assert {'assumptions...ors': [], ...} == {'assumptions...ors': [], ...}&#10;  &#10;  Omitting 16 identical items, use -vv to show&#10;  Differing items:&#10;  {'outputs': {'nested': {'rows': [2, 3, 4]}}} != {'outputs': {'nested': {'rows': [2, 3]}}}&#10;  {'inputs': {'rows': [{'value': 9}]}} != {'inputs': {'rows': [{'value': 1}]}}&#10;  Use -v to get more diff">def test_calculation_canonical_projections_are_nested_defensive_copies():
+        result = CalculationResult("projection-regression", inputs={"rows": [{"value": 1}]},
+                                   outputs={"nested": {"rows": [2, 3]}})
+        before = deepcopy(result.to_canonical_dict())
+        exported = result.to_canonical_dict()
+        exported["inputs"]["rows"][0]["value"] = 9
+        exported["outputs"]["nested"]["rows"].append(4)
+&gt;       assert result.to_canonical_dict() == before
+E       AssertionError: assert {'assumptions...ors': [], ...} == {'assumptions...ors': [], ...}
+E         
+E         Omitting 16 identical items, use -vv to show
+E         Differing items:
+E         {'outputs': {'nested': {'rows': [2, 3, 4]}}} != {'outputs': {'nested': {'rows': [2, 3]}}}
+E         {'inputs': {'rows': [{'value': 9}]}} != {'inputs': {'rows': [{'value': 1}]}}
+E         Use -v to get more diff
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:119: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_design_projection_and_restore_do_not_alias_nested_live_state" time="0.001"><failure message="AssertionError: assert {'chamber_des...6+00:00', ...} == {'chamber_des...6+00:00', ...}&#10;  &#10;  Omitting 15 identical items, use -vv to show&#10;  Differing items:&#10;  {'structural_design': {'rows': [{'value': 9}]}} != {'structural_design': {'rows': [{'value': 1}]}}&#10;  {'injector_design': {'rows': [{'value': 9}]}} != {'injector_design': {'rows': [{'value': 1}]}}&#10;  {'thermal_design': {'rows': [{'value': 9}]}} != {'thermal_design': {'rows': [{'value': 1}]}}&#10;  {'chamber_design': {'rows': [{'value': 9}]}} != {'chamber_design': {'rows': [{'value': 1}]}}...&#10;  &#10;  ...Full output truncated (8 lines hidden), use '-vv' to show">def test_design_projection_and_restore_do_not_alias_nested_live_state():
+        design = populated_projection_design()
+        before = deepcopy(design.to_canonical_dict())
+        exported = design.to_canonical_dict()
+        mutate_projection(exported)
+&gt;       assert design.to_canonical_dict() == before
+E       AssertionError: assert {'chamber_des...6+00:00', ...} == {'chamber_des...6+00:00', ...}
+E         
+E         Omitting 15 identical items, use -vv to show
+E         Differing items:
+E         {'structural_design': {'rows': [{'value': 9}]}} != {'structural_design': {'rows': [{'value': 1}]}}
+E         {'injector_design': {'rows': [{'value': 9}]}} != {'injector_design': {'rows': [{'value': 1}]}}
+E         {'thermal_design': {'rows': [{'value': 9}]}} != {'thermal_design': {'rows': [{'value': 1}]}}
+E         {'chamber_design': {'rows': [{'value': 9}]}} != {'chamber_design': {'rows': [{'value': 1}]}}...
+E         
+E         ...Full output truncated (8 lines hidden), use '-vv' to show
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:160: AssertionError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_r01_scientific_hardening" name="test_change_event_projection_and_restore_are_defensive" time="0.000"><failure message="AssertionError: assert {'value': [1, 9]} == {'value': [1]}&#10;  &#10;  Differing items:&#10;  {'value': [1, 9]} != {'value': [1]}&#10;  Use -v to get more diff">def test_change_event_projection_and_restore_are_defensive():
+        event = DesignChangeEvent("nested", {"value": [1]}, {"value": [2]}, 1, "2026-10-13T00:00:00+00:00")
+        data = event.to_canonical_dict()
+        restored = DesignChangeEvent.from_canonical_dict(data)
+        data["old_value"]["value"].append(9)
+        data["new_value"]["value"].append(9)
+&gt;       assert event.old_value == restored.old_value == {"value": [1]}
+E       AssertionError: assert {'value': [1, 9]} == {'value': [1]}
+E         
+E         Differing items:
+E         {'value': [1, 9]} != {'value': [1]}
+E         Use -v to get more diff
+
+tests/unit_tests/systems_layer/test_r01_scientific_hardening.py:173: AssertionError</failure></testcase><testcase classname="tests.unit_tests.physics.test_compressible_flow" name="test_moc_invariants_and_no_contour" time="0.000" /><testcase classname="tests.unit_tests.physics.test_compressible_flow" name="test_moc_invariants_reject_nonfinite_angle[nan]" time="0.000"><failure message="Failed: DID NOT RAISE &lt;class 'core.exceptions.InvalidInputError'&gt;">angle = nan
+
+    @pytest.mark.parametrize("angle", [float("nan"), float("inf"), -float("inf")])
+    def test_moc_invariants_reject_nonfinite_angle(angle: float) -&gt; None:
+&gt;       with pytest.raises(InvalidInputError, match="flow angle must be finite"):
+E       Failed: DID NOT RAISE &lt;class 'core.exceptions.InvalidInputError'&gt;
+
+tests/unit_tests/physics/test_compressible_flow.py:193: Failed</failure></testcase><testcase classname="tests.unit_tests.physics.test_compressible_flow" name="test_moc_invariants_reject_nonfinite_angle[inf]" time="0.000"><failure message="Failed: DID NOT RAISE &lt;class 'core.exceptions.InvalidInputError'&gt;">angle = inf
+
+    @pytest.mark.parametrize("angle", [float("nan"), float("inf"), -float("inf")])
+    def test_moc_invariants_reject_nonfinite_angle(angle: float) -&gt; None:
+&gt;       with pytest.raises(InvalidInputError, match="flow angle must be finite"):
+E       Failed: DID NOT RAISE &lt;class 'core.exceptions.InvalidInputError'&gt;
+
+tests/unit_tests/physics/test_compressible_flow.py:193: Failed</failure></testcase><testcase classname="tests.unit_tests.physics.test_compressible_flow" name="test_moc_invariants_reject_nonfinite_angle[-inf]" time="0.000"><failure message="Failed: DID NOT RAISE &lt;class 'core.exceptions.InvalidInputError'&gt;">angle = -inf
+
+    @pytest.mark.parametrize("angle", [float("nan"), float("inf"), -float("inf")])
+    def test_moc_invariants_reject_nonfinite_angle(angle: float) -&gt; None:
+&gt;       with pytest.raises(InvalidInputError, match="flow angle must be finite"):
+E       Failed: DID NOT RAISE &lt;class 'core.exceptions.InvalidInputError'&gt;
+
+tests/unit_tests/physics/test_compressible_flow.py:193: Failed</failure></testcase></testsuite></testsuites>

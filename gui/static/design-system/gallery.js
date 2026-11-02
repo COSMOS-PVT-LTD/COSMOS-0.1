@@ -1,0 +1,36 @@
+(function () {
+  'use strict';
+  const D = CosmosDS, area = document.createElement('div');
+  const intro = document.createElement('h1'); intro.textContent = 'Scientific component laboratory'; area.append(intro);
+  const notice = document.createElement('p'); notice.textContent = 'P03 synthetic fixtures · no scientific API calls, persistence of designs, real jobs, signoff or export. Production shell adoption is P04.'; area.append(notice);
+  const controls = document.createElement('div'), theme = document.createElement('select'); theme.setAttribute('aria-label', 'Theme');
+  ['dark','high-contrast'].forEach(name => { const option = document.createElement('option'); option.value = name; option.textContent = name; theme.append(option); }); theme.addEventListener('change', () => { document.querySelectorAll('.cosmos-ds').forEach(root => {root.dataset.theme=theme.value;}); });
+  const scale = document.createElement('select'); scale.setAttribute('aria-label', 'Font scale'); ['100','125','150','200'].forEach(value => { const option = document.createElement('option'); option.value=value;option.textContent=`${value}%`;scale.append(option); }); scale.addEventListener('change', () => { document.documentElement.style.fontSize = `${Number(scale.value)*16/100}px`; }); controls.append(theme,scale);area.append(controls);
+  const context = document.createElement('p'); context.id = 'lab-context'; context.textContent='Workbench: rocket · active demo-r1'; area.append(context);
+  const tabs = D.WorkbenchTabs({items:[{id:'rocket',label:'Rocket Engine'},{id:'ngg',label:'Native Geometry'},{id:'knowledge',label:'Maharshi Knowledge'}],onSelect:key => {context.textContent=`Workbench: ${key} · active demo-r1`;}});area.append(tabs);
+  const witness = document.createElement('output'); witness.id='canonical-value';witness.textContent='Canonical pressure: 500000 Pa';area.append(witness);
+  const events = document.createElement('output'); events.id='lab-event';events.setAttribute('aria-live','polite'); events.textContent='No action requested';area.append(events);
+  function emit(text) { events.textContent=text; }
+  const grid = document.createElement('div');grid.className='ds-grid';area.append(grid);
+  const field={label:'Chamber pressure Pc',dimension:'pressure',unit:'MPa',valueSI:500000,minSI:0,onChange:value=>{witness.textContent=`Canonical pressure: ${value.valueSI} Pa`;}};
+  grid.append(D.PropertyInspector({fields:[field,{label:'Nozzle length L',dimension:'length',unit:'mm',valueSI:.25,minSI:0}]}));
+  grid.append(D.UnitInput({label:'Ambient pressure Pa',dimension:'pressure',unit:'Pa',valueSI:0,minSI:0}));
+  grid.append(D.EngineeringStatus({execution:'completed',numerical:'converged',verification:'unverified',validation:'not-validated'}));
+  grid.append(D.JobMonitor({state:'running',progress:.4,details:'Synthetic fixture only',onCancel:()=>emit('Cancellation requested; acknowledgement pending')}));
+  grid.append(D.ParameterTable({rows:Array.from({length:10000},(_,i)=>({label:`Parameter ${i+1}`,value:i,unit:'Pa',source:'Synthetic fixture'}))}));
+  grid.append(D.ProjectTree({items:Array.from({length:10000},(_,i)=>({id:`object-${i}`,label:`Object ${i+1}`})),onSelect:key=>emit(`Inspect ${key}`)}));
+  grid.append(D.PlotPanel({title:'Illustrative residual history',x:{quantity:'Iteration',unit:'1'},y:{quantity:'Normalized residual',unit:'1'},points:[[0,1],[1,.4],[2,.08],[3,.006],[4,.0002]],kind:'residual',scale:'log',residualDefinition:'|f(x)| / declared reference norm; synthetic data'}));
+  grid.append(D.Legend({quantity:'Illustrative wall temperature',unit:'K',min:300,max:900,clipping:'none'}));
+  grid.append(D.ArtifactBrowser({items:[{name:'Illustrative mesh',representation:'Tessellated surface',status:'UNVERIFIED',hash:'a'.repeat(64),href:'#lab-context'}]}));
+  grid.append(D.SplitDock({left:D.EmptyState({title:'Viewport',reason:'No production geometry linked'}),right:D.EmptyState({title:'Context',reason:'Inspect a synthetic artifact'})}));
+  grid.append(D.CommandPalette({commands:[{id:'inspect',label:'Inspect input snapshot'},{id:'geometry',label:'Generate geometry — unavailable',disabled:true}],onCommand:key=>emit(`Command intent: ${key}`)}));
+  grid.append(D.ErrorDetails({code:'INSUFFICIENT_EVIDENCE',message:'No physical validation record supplied',correlationId:'demo-job-1',recovery:'Attach an independently reviewed reference'}));
+  grid.append(D.ReviewSignoff({onReview:()=>emit('Review intent recorded locally; hardware not certified')}));
+  grid.append(D.ExportWizard({artifact:{geometryQa:'passed',freshness:'current',sourceHash:'a'.repeat(64)},onExport:()=>emit('Preview STL intent only; no file or scientific result published')}));
+  grid.append(D.EvidenceLink({label:'Inspect P03 component contracts',href:'#lab-context'}));
+  grid.append(D.EmptyState({title:'No accepted simulation study',reason:'Simulation integration is planned; no result or convergence claim exists'}));
+  const stateGrid = document.createElement('section');stateGrid.className='ds-grid';stateGrid.id='component-states';stateGrid.setAttribute('aria-label','Component state fixtures');
+  D.states.forEach(state=> {const item=D.EmptyState({title:`State: ${state}`,reason:`Explicit ${state} fixture; status is not conveyed by color alone`});D.applyState(item,state);if(state==='focus')item.tabIndex=0;stateGrid.append(item);});area.append(stateGrid);
+  document.querySelector('#lab').append(D.CosmosShell({project:'P03 fixture',revision:'demo-r1',content:area}));
+  window.labFixture={pressure:document.querySelector('[data-component="UnitInput"]'),canonicalValue:()=>Number(witness.textContent.match(/[-\d.]+/)[0])};
+})();

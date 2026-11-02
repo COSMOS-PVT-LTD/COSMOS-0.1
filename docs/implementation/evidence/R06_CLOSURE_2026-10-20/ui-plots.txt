@@ -1,0 +1,501 @@
+Browser tab: 8, Title: "COSMOS — Projects & Mission", URL: "http://127.0.0.1:8873/app/projects?project=fb8aa4fb-2931-4689-b090-832b1113f3c9".
+1 AXWebArea COSMOS — Projects & Mission, URL: 127.0.0.1:8873/app/projects?project=fb8aa4fb-2931-4689-b090-832b1113f3c9
+	2 container
+		3 container cosmos-p04-shell
+			4 container
+				5 container Breadcrumbs
+					6 link Description: Projects & Mission, Value: 127.0.0.1:8873/app/projects
+					7 text  / COSMOS — Projects & Mission
+				8 text COSMOS · active r— · inspecting current r— · Design: none · Managed project Operating solver — SYNTHETIC SOFTWARE QA ONLY · fb8aa4fb-2931-4689-b090-832b1113f3c9
+				9 text Persisted design
+				10 pop up button (collapsed, settable) Description: Persisted design, Value: Choose an existing design, Secondary Actions: Expand
+					11 menu
+						12 (selected) Choose an existing design
+				13 text Inspected revision
+				14 pop up button (disabled, collapsed, settable) Description: Inspected revision, Value: No current persisted revision, Secondary Actions: Expand
+					15 menu
+						16 (disabled) No current persisted revision
+				17 button (expanded) Navigation, Secondary Actions: Collapse
+				18 button (expanded) Inspector, Secondary Actions: Collapse
+				19 button (expanded) Diagnostics, Secondary Actions: Collapse
+				20 checkbox Focus workspace, Value: 0
+				21 button Open commands
+				22 button (collapsed) Workspace controls, Secondary Actions: Expand
+					23 text Workspace controls
+			24 container Description: Project and workbench navigation, ID: p04-left
+				25 container Modern workbenches
+					26 link Description: Projects & Mission, Value: 127.0.0.1:8873/app/projects
+					27 link Description: Rocket Engine, Value: 127.0.0.1:8873/app/workbench/rocket-engine
+					28 button (disabled) Native Geometry · not enabled, Help: This capability is not enabled in the current application catalog
+					29 button (disabled) Simulation · planned, Help: Planned catalog capability; no active workbench destination
+					30 button (disabled) Comparison & V&V · not enabled, Help: This capability is not enabled in the current application catalog
+					31 link Description: Maharshi Knowledge, Value: 127.0.0.1:8873/app/workbench/knowledge
+					32 button (disabled) Reports & History · not enabled, Help: This capability is not enabled in the current application catalog
+					33 link Description: Visualization and Graphs, Value: 127.0.0.1:8873/app/workbench/visualization
+					34 button (collapsed) All existing workbenches, Secondary Actions: Expand
+						35 text All existing workbenches
+				36 text Navigation maturity follows the existing registry.
+				37 container Project tree
+					38 heading Project tree, Value: 2, ID: ds-6
+						39 text Project tree
+					40 outline Project objects
+						41 row (selected) Owned domain · propulsion
+							42 text Owned domain · propulsion
+			43 splitter Description: Resize navigation, Value: 224
+			44 container Active workbench
+				45 button (collapsed) Authoritative project sources and retained activity, Secondary Actions: Expand
+					46 text Authoritative project sources and retained activity
+				47 container project-overview
+					48 heading Projects & Mission, Value: 1
+						49 text Projects & Mission
+					50 text Server-owned projects and immutable saved snapshots. CURRENT means selected freshness, not engineering or physical validation.
+					51 container Create managed project
+						52 container
+							53 text Project title
+							54 text field (settable) Project title
+						55 container
+							56 text Mission / intended-use notes
+							57 text field (settable) Mission / intended-use notes
+						58 button Create project
+					59 container Managed project list
+						60 heading Managed projects, Value: 2
+							61 text Managed projects
+						62 button Operating solver — SYNTHETIC SOFTWARE QA ONLY · ACTIVE
+						63 button First project page
+					64 container Selected managed project
+						65 heading Operating solver — SYNTHETIC SOFTWARE QA ONLY, Value: 2
+							66 text Operating solver — SYNTHETIC SOFTWARE QA ONLY
+						67 text ACTIVE · project v1 · owner USR-764125eecb3ad8e1
+						68 container
+							69 text Cloned project title
+							70 text field (settable) Cloned project title, Value: Operating solver — SYNTHETIC SOFTWARE QA ONLY (inputs clone)
+						71 button Clone editable inputs and retain complete origin archive
+						72 container
+							73 text Project title
+							74 text field (settable) Project title, Value: Operating solver — SYNTHETIC SOFTWARE QA ONLY
+						75 container
+							76 text Mission notes
+							77 text field (settable) Mission notes
+						78 button Save project metadata
+						79 button Archive project
+						80 button (disabled) Restore project
+						81 text Recoverable delete retains snapshots; no permanent purge.
+						82 container
+							83 text Exact project ID to confirm recoverable delete
+							84 text field (settable) Exact project ID to confirm recoverable delete
+						85 button Recoverably delete project
+						86 container
+							87 text New propulsion design name
+							88 text field (settable) New propulsion design name
+						89 button Create propulsion design
+						90 heading Propulsion designs — first 20; no domain jobs are inferred, Value: 3
+							91 text Propulsion designs — first 20; no domain jobs are inferred
+						92 link Description: Download exact project archive (owner only; no credentials), Value: 127.0.0.1:8873/api/projects/fb8aa4fb-2931-4689-b090-832b1113f3c9/package?version=1&hash=a64414e80006d996e0e56af21adb5e87a8c02be187848bee4b61e7162e0c5012
+						93 link Description: Synthetic subsystem regression only · input r9 · saved v1, Value: 127.0.0.1:8873/app/workbench/rocket-engine?project=fb8aa4fb-2931-4689-b090-832b1113f3c9&design=478e8e9e-6ece-5729-941b-0a9c16754e44
+						94 container Managed geometry and durable attempts
+							95 heading Managed geometry · software fixtures only, Value: 3
+								96 text Managed geometry · software fixtures only
+							97 text Exact snapshots, graphs, requests, attempts and retained bytes. Storage completion is not engineering publication or physical validation.
+							98 text No geometry editor opened.
+							99 container
+								100 text Fixture operation
+								101 pop up button (collapsed, settable) Description: Fixture operation, Value: sphere, Secondary Actions: Expand
+									102 menu
+										103 (selected) sphere
+										104 union
+										105 difference
+										106 intersection
+										107 self_union
+							108 container
+								109 text Fixture backend
+								110 pop up button (collapsed, settable) Description: Fixture backend, Value: occt, Secondary Actions: Expand
+									111 menu
+										112 (selected) occt
+										113 picogk
+							114 container
+								115 text Declared voxel size in metres
+								116 pop up button (collapsed, settable) Description: Declared voxel size in metres, Value: 0.0005, Secondary Actions: Expand
+									117 menu
+										118 (selected) 0.0005
+										119 0.001
+										120 0.00025
+							121 button Create managed fixture inputs
+							122 button Save geometry input edits
+							123 button (disabled) Build exact saved fixture inputs
+							124 button Discard geometry drafts and reload opened inputs
+							125 button Refresh retained attempts
+							126 text Native build runtime is not configured in this application. Saved sources/history remain available; no solver success is invented.
+							127 heading Managed fixture inputs, Value: 4
+								128 text Managed fixture inputs
+							129 text Exact authorized geometry source API
+							130 container Managed geometry exact source preview
+								131 text Choose an exact source or attempt.
+						132 container Managed studies and solver runs
+							133 heading Managed study/run · spherical software benchmark only, Value: 3
+								134 text Managed study/run · spherical software benchmark only
+							135 text Retains exact study, mesh, model/solver hashes, monitor events and datasets. Execution COMPLETED does not mean numerical convergence, experimental validation or production handoff.
+							136 text No study opened.
+							137 container
+								138 text Exact owned geometry attempt ID for a new study
+								139 text field (settable) Exact owned geometry attempt ID for a new study
+							140 container
+								141 text Conductivity [W/(m·K)]
+								142 text field (settable) Conductivity [W/(m·K)], Value: 10
+							143 container
+								144 text Volumetric generation [W/m³]
+								145 text field (settable) Volumetric generation [W/m³], Value: 1000000
+							146 container
+								147 text Surface temperature [K]
+								148 text field (settable) Surface temperature [K], Value: 300
+							149 container
+								150 text Radial cell count [8,16,32,64]
+								151 text field (settable) Radial cell count [8,16,32,64], Value: 16
+							152 container
+								153 text Relative equation residual tolerance
+								154 text field (settable) Relative equation residual tolerance, Value: 1e-8
+							155 container
+								156 text Maximum solver iterations
+								157 text field (settable) Maximum solver iterations, Value: 10000
+							158 button Create new radial benchmark study with displayed settings
+							159 button Save displayed study settings
+							160 button Run exact saved radial benchmark
+							161 button Discard study drafts and reload
+							162 button Refresh retained solver attempts
+							163 heading Retained studies, Value: 4
+								164 text Retained studies
+							165 text Exact authorized study source API
+							166 container Managed study exact source preview
+								167 text Open a retained study or create one from an exact selected OCCT sphere build.
+						168 button (collapsed) Project requirements and exact selected components, Secondary Actions: Expand
+							169 text Project requirements and exact selected components
+						170 button (collapsed) Managed comparisons and research reports, Secondary Actions: Expand
+							171 text Managed comparisons and research reports
+						172 button (collapsed) Rocket sensitivity — explicit saved preliminary baseline, Secondary Actions: Expand
+							173 text Rocket sensitivity — explicit saved preliminary baseline
+						174 button (collapsed) Pressure-fed assessment — saved preliminary baseline, Secondary Actions: Expand
+							175 text Pressure-fed assessment — saved preliminary baseline
+						176 button (collapsed) Coupled pressure-fed / gas-generator design-point assessment, Secondary Actions: Expand
+							177 text Coupled pressure-fed / gas-generator design-point assessment
+						178 container managed-engine-operating
+							179 button (expanded) Solved engine operating point — CEA / regenerative feedback, Secondary Actions: Collapse
+								180 text Solved engine operating point — CEA / regenerative feedback
+							181 text Solved candidate retained; baseline unchanged. Physical validation not performed.
+							182 text Solved steady PF/GG network; NASA HP feedback with counterflow fuel and nonadiabatic divergent frozen-gas nozzle. Regulated tank boundaries; no film injection, shock, two-phase, startup or physical acceptance. Explicit sourced characteristic fits/windows and SI specification required; no engineering defaults.
+							183 text Uses exact saved CURRENT divergent contour and saved channel/wall geometry. Recomputes candidate flows, pressures, combustion, wall/coolant state and gas-side energy extraction. The existing design is not overwritten. Physical validation NOT_PERFORMED.
+							184 container Explicit sourced operating model — no numerical defaults
+								185 text Explicit sourced operating model — no numerical defaults
+								186 container
+									187 text Operating solver exact saved baseline
+									188 pop up button (collapsed, settable) Description: Operating solver exact saved baseline, Value: Synthetic subsystem regression only · d8a24791-290f-43bd-9d7b-4c99c5ebca8e, Secondary Actions: Expand
+										189 menu
+											190 Choose exact saved source
+											191 (selected) Synthetic subsystem regression only · d8a24791-290f-43bd-9d7b-4c99c5ebca8e
+								192 container
+									193 text Operating solver cycle
+									194 pop up button (collapsed, settable) Description: Operating solver cycle, Value: GAS_GENERATOR, Secondary Actions: Expand
+										195 menu
+											196 Choose explicitly
+											197 PRESSURE_FED
+											198 (selected) GAS_GENERATOR
+								199 container
+									200 text Solved cooling routing
+									201 pop up button (collapsed, settable) Description: Solved cooling routing, Value: FUEL_CORE_SERIES, Secondary Actions: Expand
+										202 menu
+											203 Choose explicitly
+											204 NONE_EXPLICIT
+											205 (selected) FUEL_CORE_SERIES
+								206 button (collapsed) oxidizer liquid state, resistance and applicability, Secondary Actions: Expand
+									207 text oxidizer liquid state, resistance and applicability
+								208 button (collapsed) oxidizer pump characteristic and GG branch — gas-generator only, Secondary Actions: Expand
+									209 text oxidizer pump characteristic and GG branch — gas-generator only
+								210 button (collapsed) fuel liquid state, resistance and applicability, Secondary Actions: Expand
+									211 text fuel liquid state, resistance and applicability
+								212 button (collapsed) fuel pump characteristic and GG branch — gas-generator only, Secondary Actions: Expand
+									213 text fuel pump characteristic and GG branch — gas-generator only
+								214 button (collapsed) Gas-generator effective throat and turbine — GG only, Secondary Actions: Expand
+									215 text Gas-generator effective throat and turbine — GG only
+								216 button (collapsed) Thermal iteration and frozen-gas property window, Secondary Actions: Expand
+									217 text Thermal iteration and frozen-gas property window
+								218 button (collapsed) Unknown chamber_pressure — bounds and normalization, Secondary Actions: Expand
+									219 text Unknown chamber_pressure — bounds and normalization
+								220 button (collapsed) Unknown oxidizer_flow — bounds and normalization, Secondary Actions: Expand
+									221 text Unknown oxidizer_flow — bounds and normalization
+								222 button (collapsed) Unknown fuel_flow — bounds and normalization, Secondary Actions: Expand
+									223 text Unknown fuel_flow — bounds and normalization
+								224 button (collapsed) Unknown shaft_speed — bounds and normalization, Secondary Actions: Expand
+									225 text Unknown shaft_speed — bounds and normalization
+								226 button (collapsed) Unknown gg_pressure — bounds and normalization, Secondary Actions: Expand
+									227 text Unknown gg_pressure — bounds and normalization
+								228 button (collapsed) Unknown gg_oxidizer_flow — bounds and normalization, Secondary Actions: Expand
+									229 text Unknown gg_oxidizer_flow — bounds and normalization
+								230 button (collapsed) Unknown gg_fuel_flow — bounds and normalization, Secondary Actions: Expand
+									231 text Unknown gg_fuel_flow — bounds and normalization
+								232 button (collapsed) Numerical budgets and independent dimensional acceptance, Secondary Actions: Expand
+									233 text Numerical budgets and independent dimensional acceptance
+								234 container
+									235 button (expanded) Optional import of your explicit specification JSON — no generated inputs, Secondary Actions: Collapse
+										236 text Optional import of your explicit specification JSON — no generated inputs
+									237 text entry area (settable)
+									238 button
+								239 button Run and retain solved engine candidate
+								240 button Abandon uncertain operating command — keep entered inputs
+								241 button Discard local operating draft
+							242 heading Retained operating candidates and diagnostics, Value: 4
+								243 text Retained operating candidates and diagnostics
+							244 button Inspect operating candidate 47dbcd11-4240-5876-a999-0fa91c618ea2
+							245 heading Captured operating inputs — interrupted calls retained, Value: 4
+								246 text Captured operating inputs — interrupted calls retained
+							247 button Inspect operating capture 47dbcd11-4240-5876-a999-0fa91c618ea2
+							248 heading Retained operating solver execution · COMPLETED, Value: 4
+								249 text Retained operating solver execution · COMPLETED
+							250 text Project fb8aa4fb-2931-4689-b090-832b1113f3c9 · commit d6e36662-680a-43ca-8cc8-09afe817a9cc · SHA256 e00a794d0f1d647fb84936de64c6f1f1aeaaf8e0f38b3ea8872b1c35a6a098b0
+							251 text CURRENT source/methods — not physical acceptance
+							252 text Physical validation NOT_PERFORMED · upstream workflow unchanged
+							253 text Termination RESIDUAL_CONVERGED · numerical convergence true · conservation PASS
+							254 text CURRENT SOLVED CANDIDATE — declared model only
+							255 text chamber_pressure = 5006967.54682203 Pa
+							256 text fuel_flow = 0.8341150628589802 kg/s
+							257 text gg_fuel_flow = 0.005206015654763077 kg/s
+							258 text gg_oxidizer_flow = 0.0119724742171496 kg/s
+							259 text gg_pressure = 1005079.0374685121 Pa
+							260 text oxidizer_flow = 2.004056691497974 kg/s
+							261 text shaft_speed = 1005.3855762804768 rad/s
+							262 text Core thrust 8522.147336520025 N · core O/F 2.4026141964502443
+							263 text Regenerative heat 242672.51393978877 W · return coolant 416.41044819776766 K
+							264 table
+								265 row
+									266 cell
+										267 text Independent residual
+									268 cell
+										269 text Signed value
+									270 cell
+										271 text Unit
+									272 cell
+										273 text Declared tolerance
+									274 cell
+										275 text Check
+								276 row
+									277 cell
+										278 text oxidizer_core_pressure
+									279 cell
+										280 text 0.00001643458381295204
+									281 cell
+										282 text Pa
+									283 cell
+										284 text 10
+									285 cell
+										286 text PASS
+								287 row
+									288 cell
+										289 text fuel_core_pressure
+									290 cell
+										291 text 0.000016962643712759018
+									292 cell
+										293 text Pa
+									294 cell
+										295 text 10
+									296 cell
+										297 text PASS
+								298 row
+									299 cell
+										300 text core_throat_mass
+									301 cell
+										302 text 1.1103572727932942e-8
+									303 cell
+										304 text kg/s
+									305 cell
+										306 text 0.00001
+									307 cell
+										308 text PASS
+								309 row
+									310 cell
+										311 text oxidizer_gg_pressure
+									312 cell
+										313 text 0.000004393048584461212
+									314 cell
+										315 text Pa
+									316 cell
+										317 text 10
+									318 cell
+										319 text PASS
+								320 row
+									321 cell
+										322 text fuel_gg_pressure
+									323 cell
+										324 text 0.00000440794974565506
+									325 cell
+										326 text Pa
+									327 cell
+										328 text 10
+									329 cell
+										330 text PASS
+								331 row
+									332 cell
+										333 text gg_throat_mass
+									334 cell
+										335 text 2.8471822122178025e-11
+									336 cell
+										337 text kg/s
+									338 cell
+										339 text 0.00001
+									340 cell
+										341 text PASS
+								342 row
+									343 cell
+										344 text shaft_power
+									345 cell
+										346 text 0.0000938912526180502
+									347 cell
+										348 text W
+									349 cell
+										350 text 10
+									351 cell
+										352 text PASS
+								353 row
+									354 cell
+										355 text gg_HP_enthalpy
+									356 cell
+										357 text 0.16928848343559366
+									358 cell
+										359 text J/kg
+									360 cell
+										361 text 1
+									362 cell
+										363 text PASS
+								364 row
+									365 cell
+										366 text turbine_energy
+									367 cell
+										368 text 7.275957614183426e-12
+									369 cell
+										370 text W
+									371 cell
+										372 text 10
+									373 cell
+										374 text PASS
+								375 row
+									376 cell
+										377 text core_HP_enthalpy
+									378 cell
+										379 text 0.25356238542008214
+									380 cell
+										381 text J/kg
+									382 cell
+										383 text 1
+									384 cell
+										385 text PASS
+								386 row
+									387 cell
+										388 text nozzle_energy
+									389 cell
+										390 text 1.0477378964424133e-8
+									391 cell
+										392 text W
+									393 cell
+										394 text 10
+									395 cell
+										396 text PASS
+								397 row
+									398 cell
+										399 text nozzle_momentum_max
+									400 cell
+										401 text 1.7266188478970435e-12
+									402 cell
+										403 text N
+									404 cell
+										405 text 0.000001
+									406 cell
+										407 text PASS
+								408 row
+									409 cell
+										410 text heat_exchange_coupling
+									411 cell
+										412 text -0.004903485794784501
+									413 cell
+										414 text W
+									415 cell
+										416 text 10
+									417 cell
+										418 text PASS
+								419 row
+									420 cell
+										421 text coolant_energy
+									422 cell
+										423 text -2.0372681319713593e-10
+									424 cell
+										425 text W
+									426 cell
+										427 text 10
+									428 cell
+										429 text PASS
+								430 row
+									431 cell
+										432 text core_net_energy_including_regeneration
+									433 cell
+										434 text 0.718704200791413
+									435 cell
+										436 text W
+									437 cell
+										438 text 10
+									439 cell
+										440 text PASS
+								441 row
+									442 cell
+										443 text external_engine_energy
+									444 cell
+										445 text 0.7215184303931892
+									446 cell
+										447 text W
+									448 cell
+										449 text 10
+									450 cell
+										451 text PASS
+							452 pop up button (expanded, settable) Description: Operating plot selection, Value: Thermal fixed-point heat mismatch, Secondary Actions: Collapse
+								453 menu
+									454 Signed balance residual / declared tolerance
+									455 Operating-point normalized residual history
+									456 (selected) Thermal fixed-point heat mismatch
+							457 container Thermal fixed-point heat mismatch. Thermal iteration [1], linear axis; Thermal fixed-point heat mismatch [W], linear axis. Sum of absolute cell heat mismatches: 20/20 displayed source points. Uncertainty not quantified. Assessment/study project fb8aa4fb-2931-4689-b090-832b1113f3c9, commit d6e36662-680a-43ca-8cc8-09afe817a9cc, baseline d8a24791-290f-43bd-9d7b-4c99c5ebca8e, status COMPLETED. Exact source table/export is separate; reduction is display only.
+							458 button Prepare operating plot CSV
+							459 button Prepare operating plot SVG
+							460 button Show source-bound operating history and balance plots
+							461 link Description: Download original operating residuals CSV, Value: 127.0.0.1:8873/api/projects/fb8aa4fb-2931-4689-b090-832b1113f3c9/engine-operating/47dbcd11-4240-5876-a999-0fa91c618ea2/residuals.csv?commit=d6e36662-680a-43ca-8cc8-09afe817a9cc
+							462 link Description: Download original operating record JSON, Value: 127.0.0.1:8873/api/projects/fb8aa4fb-2931-4689-b090-832b1113f3c9/engine-operating/47dbcd11-4240-5876-a999-0fa91c618ea2/record.json?commit=d6e36662-680a-43ca-8cc8-09afe817a9cc
+							463 link Description: Download original operating inputs JSON, Value: 127.0.0.1:8873/api/projects/fb8aa4fb-2931-4689-b090-832b1113f3c9/engine-operating/47dbcd11-4240-5876-a999-0fa91c618ea2/inputs.json?commit=d6e36662-680a-43ca-8cc8-09afe817a9cc
+							464 link Description: Inspect operating source and dependencies, Value: 127.0.0.1:8873/app/projects?project=fb8aa4fb-2931-4689-b090-832b1113f3c9&commit=d6e36662-680a-43ca-8cc8-09afe817a9cc&domain=engine-operating-point
+							465 button (collapsed) Exact source preview — full original available as download, Secondary Actions: Expand
+								466 text Exact source preview — full original available as download
+							467 button Refresh operating history
+						468 button (collapsed) Propulsion experimental-validation preparation — measurements required, Secondary Actions: Expand
+							469 text Propulsion experimental-validation preparation — measurements required
+			470 splitter Description: Resize inspector, Value: 280
+			471 container Description: Context inspector, ID: p04-right
+				472 container No inspected design
+					473 heading No inspected design, Value: 2, ID: ds-4
+						474 text No inspected design
+					475 text Select an existing stored design. Project names in browser preferences are not durable Project records.
+			476 splitter Description: Resize diagnostics, Value: 176
+			477 container Description: Diagnostics and retained task activity, ID: p04-bottom
+				478 container
+					479 text No shell read error
+					480 button Refresh domain tasks and history
+				499 heading Domain task queue and retained history, Value: 2
+					500 text Domain task queue and retained history
+				501 text Knowledge jobs are persisted by their service; native/simulation histories are bounded actor sessions, not durable Project authority.
+				502 container No reported jobs in available domains
+					503 heading No reported jobs in available domains, Value: 2, ID: ds-22
+						504 text No reported jobs in available domains
+					505 text Refresh to read actual services. No synthetic job or solver success is invented.
+		488 button Maharshi Bharadwaj Maharshi, ID: maharshi-module, Help: Maharshi Bharadwaj — click for pop-up, double-click for Knowledge workbench. Drag to move; Shift+wheel or corner handle to resize.
+			489 image Maharshi Bharadwaj
+			490 text Maharshi
+		491 container cosmos-engineering-root
+			492 container cosmos-recent-panel
+				493 heading RECENT WORKBENCHES, Value: 4
+					494 text RECENT WORKBENCHES
+				495 text None yet
+				496 heading RECENT FILES, Value: 4
+					497 text RECENT FILES
+				498 text None yet
+
+The focused UI element is 452 pop up button (expanded, settable) Description: Operating plot selection, Value: Thermal fixed-point heat mismatch, Secondary Actions: Collapse

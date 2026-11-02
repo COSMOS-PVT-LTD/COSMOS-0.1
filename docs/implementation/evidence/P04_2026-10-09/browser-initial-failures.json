@@ -1,0 +1,622 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.7.0/bin/node",
+      "/tmp/cosmos-p03.pfPm6s/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "tests/ui/app-shell/playwright.config.cjs"
+    ],
+    "configFile": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell/playwright.config.cjs",
+    "rootDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/cosmos-p04.nde5pm/browser-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/tmp/cosmos-p04.nde5pm/browser-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell",
+        "snapshotDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "deviceScaleFactor": 1,
+          "reducedMotion": "reduce",
+          "launchOptions": {
+            "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/P04_2026-10-09/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "shell.spec.cjs",
+      "file": "shell.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "dashboard reads real fixture designs and history is explicitly not snapshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4265,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:29:57.588Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-0acc15a7fb7012d1c113",
+          "file": "shell.spec.cjs",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "draft survives modes units themes dock changes rollback and reenabling",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1659,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:30:08.077Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-f39bb3348362e7ab8c59",
+          "file": "shell.spec.cjs",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "dirty navigation and design changes can be cancelled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 674,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:30:09.752Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-c8f77591d66de01ef3dc",
+          "file": "shell.spec.cjs",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "command search focus recovery unsupported action and restore command",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5636,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.p04-toolbar dialog')\nExpected: not visible\nReceived: visible\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" locator('.p04-toolbar dialog') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.p04-toolbar dialog')\u001b[22m\n\u001b[2m    14 × locator resolved to <dialog open=\"\" aria-labelledby=\"ds-1\">…</dialog>\u001b[22m\n\u001b[2m       - unexpected value \"visible\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.p04-toolbar dialog')\nExpected: not visible\nReceived: visible\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" locator('.p04-toolbar dialog') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.p04-toolbar dialog')\u001b[22m\n\u001b[2m    14 × locator resolved to <dialog open=\"\" aria-labelledby=\"ds-1\">…</dialog>\u001b[22m\n\u001b[2m       - unexpected value \"visible\"\u001b[22m\n\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell/shell.spec.cjs:27:742",
+                    "location": {
+                      "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell/shell.spec.cjs",
+                      "column": 742,
+                      "line": 27
+                    },
+                    "snippet": "  25 | });\n  26 | test('dirty navigation and design changes can be cancelled',async({page})=>{await rocket(page);await page.locator('#ed-pc').fill('9');page.on('dialog',d=>d.dismiss());await page.locator('.p04-left nav a').filter({hasText:'Projects & Mission'}).click();await expect(page.locator('#ed-pc')).toHaveValue('9');await page.getByLabel('Persisted design',{exact:true}).selectOption(designs[1].design_id);await expect(page.locator('#ed-pc')).toHaveValue('9');await expect(page.locator('#p04-context')).toContainText(designs[0].name);});\n> 27 | test('command search focus recovery unsupported action and restore command',async({page})=>{await ready(page);await page.getByRole('button',{name:'Inspector',exact:true}).click();await page.keyboard.press('Control+k');const dialog=page.locator('.p04-toolbar dialog');await expect(dialog).toBeVisible();await page.getByLabel('Find a command').fill('restore');await page.getByRole('button',{name:'Restore default dock panels'}).click();await expect(page.locator('.p04-right')).toBeVisible();await page.keyboard.press('Control+k');await page.getByLabel('Find a command').fill('geometry');await expect(page.getByRole('button',{name:'Generate geometry — unavailable'})).toBeDisabled();await page.keyboard.press('Escape');await expect(dialog).not.toBeVisible();});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^\n  28 | test('three keyboard resizers and collapsed panels persist and recover',async({page})=>{await ready(page);for(const label of ['Resize navigation','Resize inspector','Resize diagnostics']){const sep=page.getByRole('separator',{name:label});await sep.focus();await sep.press('End');await expect(sep).toHaveAttribute('aria-valuenow',label==='Resize navigation'?'360':label==='Resize inspector'?'420':'360');}await page.getByRole('button',{name:'Diagnostics',exact:true}).click();await page.reload();await expect(page.locator('#cosmos-p04-shell')).toBeVisible();await expect(page.locator('.p04-bottom')).toBeHidden();await page.getByRole('button',{name:'Restore default panels',exact:true}).click();await expect(page.locator('.p04-bottom')).toBeVisible();await expect(page.getByRole('separator',{name:'Resize navigation'})).toHaveAttribute('aria-valuenow','224');});\n  29 | test('corrupt preferences recover with visible diagnostic',async({page})=>{await page.addInitScript(k=>localStorage.setItem(k,'{broken'),key);await ready(page);await expect(page.locator('.p04-diagnostics')).toContainText('UI_STORAGE_UNAVAILABLE');await page.getByRole('button',{name:'Restore default panels',exact:true}).click();await expect(page.locator('#cosmos-p04-shell')).toBeVisible();});\n  30 | test('startup read failure retains legacy and retry recovers',async({page})=>{let fail=true;await page.route('**/api/ui/shell',route=>fail?route.fulfill({status:503,json:{ok:false,error:{code:'P04_FIXTURE_UNAVAILABLE',message:'Test-only backend read failure'}}}):route.continue());await page.goto(base+'/app/workbench/rocket-engine');await expect(page.getByLabel('Shell startup diagnostic')).toContainText('P04_FIXTURE_UNAVAILABLE');await expect(page.locator('.app-frame')).toBeVisible();await expect(page.locator('#cosmos-p04-shell')).toHaveCount(0);fail=false;await page.getByRole('button',{name:'Retry shell read'}).click();await expect(page.locator('#cosmos-p04-shell')).toBeVisible();});"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell/shell.spec.cjs",
+                        "column": 742,
+                        "line": 27
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.p04-toolbar dialog')\nExpected: not visible\nReceived: visible\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" locator('.p04-toolbar dialog') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.p04-toolbar dialog')\u001b[22m\n\u001b[2m    14 × locator resolved to <dialog open=\"\" aria-labelledby=\"ds-1\">…</dialog>\u001b[22m\n\u001b[2m       - unexpected value \"visible\"\u001b[22m\n\n\n  25 | });\n  26 | test('dirty navigation and design changes can be cancelled',async({page})=>{await rocket(page);await page.locator('#ed-pc').fill('9');page.on('dialog',d=>d.dismiss());await page.locator('.p04-left nav a').filter({hasText:'Projects & Mission'}).click();await expect(page.locator('#ed-pc')).toHaveValue('9');await page.getByLabel('Persisted design',{exact:true}).selectOption(designs[1].design_id);await expect(page.locator('#ed-pc')).toHaveValue('9');await expect(page.locator('#p04-context')).toContainText(designs[0].name);});\n> 27 | test('command search focus recovery unsupported action and restore command',async({page})=>{await ready(page);await page.getByRole('button',{name:'Inspector',exact:true}).click();await page.keyboard.press('Control+k');const dialog=page.locator('.p04-toolbar dialog');await expect(dialog).toBeVisible();await page.getByLabel('Find a command').fill('restore');await page.getByRole('button',{name:'Restore default dock panels'}).click();await expect(page.locator('.p04-right')).toBeVisible();await page.keyboard.press('Control+k');await page.getByLabel('Find a command').fill('geometry');await expect(page.getByRole('button',{name:'Generate geometry — unavailable'})).toBeDisabled();await page.keyboard.press('Escape');await expect(dialog).not.toBeVisible();});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^\n  28 | test('three keyboard resizers and collapsed panels persist and recover',async({page})=>{await ready(page);for(const label of ['Resize navigation','Resize inspector','Resize diagnostics']){const sep=page.getByRole('separator',{name:label});await sep.focus();await sep.press('End');await expect(sep).toHaveAttribute('aria-valuenow',label==='Resize navigation'?'360':label==='Resize inspector'?'420':'360');}await page.getByRole('button',{name:'Diagnostics',exact:true}).click();await page.reload();await expect(page.locator('#cosmos-p04-shell')).toBeVisible();await expect(page.locator('.p04-bottom')).toBeHidden();await page.getByRole('button',{name:'Restore default panels',exact:true}).click();await expect(page.locator('.p04-bottom')).toBeVisible();await expect(page.getByRole('separator',{name:'Resize navigation'})).toHaveAttribute('aria-valuenow','224');});\n  29 | test('corrupt preferences recover with visible diagnostic',async({page})=>{await page.addInitScript(k=>localStorage.setItem(k,'{broken'),key);await ready(page);await expect(page.locator('.p04-diagnostics')).toContainText('UI_STORAGE_UNAVAILABLE');await page.getByRole('button',{name:'Restore default panels',exact:true}).click();await expect(page.locator('#cosmos-p04-shell')).toBeVisible();});\n  30 | test('startup read failure retains legacy and retry recovers',async({page})=>{let fail=true;await page.route('**/api/ui/shell',route=>fail?route.fulfill({status:503,json:{ok:false,error:{code:'P04_FIXTURE_UNAVAILABLE',message:'Test-only backend read failure'}}}):route.continue());await page.goto(base+'/app/workbench/rocket-engine');await expect(page.getByLabel('Shell startup diagnostic')).toContainText('P04_FIXTURE_UNAVAILABLE');await expect(page.locator('.app-frame')).toBeVisible();await expect(page.locator('#cosmos-p04-shell')).toHaveCount(0);fail=false;await page.getByRole('button',{name:'Retry shell read'}).click();await expect(page.locator('#cosmos-p04-shell')).toBeVisible();});\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell/shell.spec.cjs:27:742"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:30:10.442Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p04.nde5pm/browser-output/shell-command-search-focus-e5bd2--action-and-restore-command/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell/shell.spec.cjs",
+                    "column": 742,
+                    "line": 27
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-802358b3dd4d84ca0216",
+          "file": "shell.spec.cjs",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "three keyboard resizers and collapsed panels persist and recover",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 841,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:30:16.620Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-b76f8468075ac0a47a0d",
+          "file": "shell.spec.cjs",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "corrupt preferences recover with visible diagnostic",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 417,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:30:18.093Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-865abd915d791405bea4",
+          "file": "shell.spec.cjs",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "startup read failure retains legacy and retry recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 482,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:30:18.524Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-0e269b590897a7bc5a2a",
+          "file": "shell.spec.cjs",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "queue failures are diagnostics not empty success and cancellation is unavailable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 789,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:30:19.016Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-5c6bccfd392d43e2c3dc",
+          "file": "shell.spec.cjs",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "source inputs unchanged under 200 percent scaling and narrow layout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 468,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:30:19.817Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-02f03ddb770fb5a1fa7a",
+          "file": "shell.spec.cjs",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "profile notifications and help delegates remain accessible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 396,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:30:20.300Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-f294c570ba91e5d3eb76",
+          "file": "shell.spec.cjs",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "flag-off and explicit route override preserve actual legacy chrome",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5400,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#ed-pc')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('#ed-pc') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#ed-pc')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#ed-pc')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('#ed-pc') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#ed-pc')\u001b[22m\n\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell/shell.spec.cjs:34:605",
+                    "location": {
+                      "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell/shell.spec.cjs",
+                      "column": 605,
+                      "line": 34
+                    },
+                    "snippet": "  32 | test('source inputs unchanged under 200 percent scaling and narrow layout',async({page})=>{await page.setViewportSize({width:1024,height:768});await rocket(page);await page.locator('#ed-pc').fill('0');await page.getByLabel('Font scale',{exact:true}).selectOption('200');await expect(page.locator('#ed-pc')).toHaveValue('0');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:path.join(evidence,'rocket-1024-200pct.png')});});\n  33 | test('profile notifications and help delegates remain accessible',async({page})=>{await ready(page);await page.getByRole('button',{name:'Profile',exact:true}).click();await expect(page.locator('#profile-modal')).toBeVisible();await page.keyboard.press('Escape');await page.getByRole('button',{name:'Notifications',exact:true}).click();await expect(page.locator('#cosmos-notifications-panel')).toBeVisible();await expect(page.locator('.p04-toolbar a').filter({hasText:'Help'})).toHaveAttribute('href','/app/help');});\n> 34 | test('flag-off and explicit route override preserve actual legacy chrome',async({page})=>{await page.request.post(legacy+'/api/auth/login',{data:{login_id:'cosmos-admin',password:'COSMOS-Dev-2026!',login_profile:'ADMIN'}});await page.goto(legacy+'/app/workbench/rocket-engine?stage=requirements');await expect(page.locator('#ed-pc')).toBeVisible();await expect(page.locator('#cosmos-p04-shell')).toHaveCount(0);expect(await page.locator('script[src*=\"app-shell\"]').count()).toBe(0);await page.goto(base+'/app/workbench/rocket-engine?stage=requirements&shell=legacy');await expect(page.locator('#ed-pc')).toBeVisible();await expect(page.locator('#cosmos-p04-shell')).toHaveCount(0);});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^\n  35 | test('all twelve actual modern workbenches remain reachable',async({page})=>{const catalog=await(await page.request.get(base+'/api/workbenches')).json();const results=[];for(const item of catalog.pages.flatMap(p=>p.items)){await ready(page,item.route);await expect(page.locator('.p04-workbench .app-frame')).toBeVisible();results.push({workbenchId:item.workbench_id,route:item.route,status:item.status,http:200});}fs.writeFileSync(path.join(evidence,'route-compatibility.json'),JSON.stringify(results,null,2)+'\\n');expect(results).toHaveLength(12);});\n  36 | test('input responsiveness and no unrelated plot mutations',async({page})=>{await rocket(page);const result=await page.evaluate(async()=>{let mutations=0;const plots=document.querySelector('#suite-results'),observer=new MutationObserver(items=>mutations+=items.length);if(plots)observer.observe(plots,{childList:true,subtree:true});const input=document.getElementById('ed-pc'),times=[];for(let i=0;i<50;i++){const start=performance.now();input.value=String(10+i/10);input.dispatchEvent(new Event('input',{bubbles:true}));times.push(performance.now()-start);}await new Promise(requestAnimationFrame);observer.disconnect();times.sort((a,b)=>a-b);return{samples:50,p50Ms:times[24],p95Ms:times[47],maxMs:times.at(-1),plotMutations:mutations,jsHeapBytes:performance.memory?.usedJSHeapSize||null};});fs.writeFileSync(path.join(evidence,'interaction-metrics.json'),JSON.stringify(result,null,2)+'\\n');expect(result.plotMutations).toBe(0);expect(result.p95Ms).toBeLessThan(100);});\n  37 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell/shell.spec.cjs",
+                        "column": 605,
+                        "line": 34
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#ed-pc')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('#ed-pc') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#ed-pc')\u001b[22m\n\n\n  32 | test('source inputs unchanged under 200 percent scaling and narrow layout',async({page})=>{await page.setViewportSize({width:1024,height:768});await rocket(page);await page.locator('#ed-pc').fill('0');await page.getByLabel('Font scale',{exact:true}).selectOption('200');await expect(page.locator('#ed-pc')).toHaveValue('0');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:path.join(evidence,'rocket-1024-200pct.png')});});\n  33 | test('profile notifications and help delegates remain accessible',async({page})=>{await ready(page);await page.getByRole('button',{name:'Profile',exact:true}).click();await expect(page.locator('#profile-modal')).toBeVisible();await page.keyboard.press('Escape');await page.getByRole('button',{name:'Notifications',exact:true}).click();await expect(page.locator('#cosmos-notifications-panel')).toBeVisible();await expect(page.locator('.p04-toolbar a').filter({hasText:'Help'})).toHaveAttribute('href','/app/help');});\n> 34 | test('flag-off and explicit route override preserve actual legacy chrome',async({page})=>{await page.request.post(legacy+'/api/auth/login',{data:{login_id:'cosmos-admin',password:'COSMOS-Dev-2026!',login_profile:'ADMIN'}});await page.goto(legacy+'/app/workbench/rocket-engine?stage=requirements');await expect(page.locator('#ed-pc')).toBeVisible();await expect(page.locator('#cosmos-p04-shell')).toHaveCount(0);expect(await page.locator('script[src*=\"app-shell\"]').count()).toBe(0);await page.goto(base+'/app/workbench/rocket-engine?stage=requirements&shell=legacy');await expect(page.locator('#ed-pc')).toBeVisible();await expect(page.locator('#cosmos-p04-shell')).toHaveCount(0);});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^\n  35 | test('all twelve actual modern workbenches remain reachable',async({page})=>{const catalog=await(await page.request.get(base+'/api/workbenches')).json();const results=[];for(const item of catalog.pages.flatMap(p=>p.items)){await ready(page,item.route);await expect(page.locator('.p04-workbench .app-frame')).toBeVisible();results.push({workbenchId:item.workbench_id,route:item.route,status:item.status,http:200});}fs.writeFileSync(path.join(evidence,'route-compatibility.json'),JSON.stringify(results,null,2)+'\\n');expect(results).toHaveLength(12);});\n  36 | test('input responsiveness and no unrelated plot mutations',async({page})=>{await rocket(page);const result=await page.evaluate(async()=>{let mutations=0;const plots=document.querySelector('#suite-results'),observer=new MutationObserver(items=>mutations+=items.length);if(plots)observer.observe(plots,{childList:true,subtree:true});const input=document.getElementById('ed-pc'),times=[];for(let i=0;i<50;i++){const start=performance.now();input.value=String(10+i/10);input.dispatchEvent(new Event('input',{bubbles:true}));times.push(performance.now()-start);}await new Promise(requestAnimationFrame);observer.disconnect();times.sort((a,b)=>a-b);return{samples:50,p50Ms:times[24],p95Ms:times[47],maxMs:times.at(-1),plotMutations:mutations,jsHeapBytes:performance.memory?.usedJSHeapSize||null};});fs.writeFileSync(path.join(evidence,'interaction-metrics.json'),JSON.stringify(result,null,2)+'\\n');expect(result.plotMutations).toBe(0);expect(result.p95Ms).toBeLessThan(100);});\n  37 |\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell/shell.spec.cjs:34:605"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:30:20.714Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p04.nde5pm/browser-output/shell-flag-off-and-explici-769fb-eserve-actual-legacy-chrome/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/app-shell/shell.spec.cjs",
+                    "column": 605,
+                    "line": 34
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-760eed72fdd5319ba66e",
+          "file": "shell.spec.cjs",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "all twelve actual modern workbenches remain reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1513,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:30:26.618Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-e8ee7a147f6e53e86fa4",
+          "file": "shell.spec.cjs",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "input responsiveness and no unrelated plot mutations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 625,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T19:30:28.667Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "756dead9be1e71ca09b6-81a90cb19570a842b604",
+          "file": "shell.spec.cjs",
+          "line": 36,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T19:29:57.275Z",
+    "duration": 32109.376,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

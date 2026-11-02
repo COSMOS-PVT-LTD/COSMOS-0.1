@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "checkpointFiles": 1755,
+  "existingChanges": [
+    "gui/app_shell.py",
+    "gui/server.py",
+    "gui/static/app-shell/shell.js",
+    "gui/static/propulsion-suite.js"
+  ],
+  "addedFiles": [
+    "gui/static/rocket-workbench/README.md",
+    "gui/static/rocket-workbench/contracts.d.ts",
+    "gui/static/rocket-workbench/model.js",
+    "gui/static/rocket-workbench/styles.css",
+    "gui/static/rocket-workbench/view.js",
+    "tests/js/rocket_workbench.test.cjs",
+    "tests/ui/rocket-workbench/capture_before.cjs",
+    "tests/ui/rocket-workbench/contract-consumer.ts",
+    "tests/ui/rocket-workbench/p04-compatibility.config.cjs",
+    "tests/ui/rocket-workbench/p04-compatibility.spec.cjs",
+    "tests/ui/rocket-workbench/playwright.config.cjs",
+    "tests/ui/rocket-workbench/workbench.spec.cjs",
+    "tests/unit_tests/gui/test_rocket_workbench.py"
+  ],
+  "unexpected": [],
+  "scientificSourceChanged": false
+}

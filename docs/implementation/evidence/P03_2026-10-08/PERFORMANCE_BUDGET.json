@@ -1,0 +1,17 @@
+{
+  "scope": "Development-device synchronous input-handler fixture only",
+  "samplesPerFixture": 50,
+  "sourceBaseline": "legacy-interaction-baseline.json",
+  "p95CeilingMs": 0.30000007152557373,
+  "measuredP03P95Ms": 0.10000002384185791,
+  "withinMeasuredBudget": true,
+  "unrelatedPlotTableMutationBudget": 0,
+  "observedJsHeapBaselineBytes": 3921492,
+  "memoryPolicy": "Record this observed fixture heap baseline for future like-for-like comparison; not an RSS or full-app ceiling",
+  "limitations": [
+    "Synthetic synchronous dispatch; no paint/end-to-end SLA",
+    "Timer quantization and browser GC",
+    "10k in-memory arrays, bounded DOM only",
+    "P04 must rebaseline real integrated state and viewport work"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "preceding_manifest_sha256": "996981fe051ac0eb7442006fa5508c76658107d7379ad604853a0b8ba412d679",
+  "preceding_sources": 1401,
+  "unchanged": 1392,
+  "declared_edits": [
+    "api/context_projects.py",
+    "api/nozzle_geometry.py",
+    "api/project_authority.py",
+    "gui/server.py",
+    "gui/static/projects.js",
+    "gui/static/workbench/native-geometry.html",
+    "infrastructure/persistence/durable_jobs.py",
+    "systems/geometry/qa.py",
+    "systems/geometry/service.py"
+  ],
+  "unexpected": [],
+  "missing": [],
+  "new_sources": [
+    "api/component_geometry.py",
+    "gui/static/component-geometry.css",
+    "gui/static/component-geometry.js",
+    "plugins/geometry/component_adapter.py",
+    "plugins/geometry/component_protocol.py",
+    "plugins/geometry/workers/component_step_reader.py",
+    "plugins/geometry/workers/component_worker.py",
+    "simulation/component_handoff.py",
+    "systems/geometry/component_authority.py",
+    "systems/geometry/component_model.py",
+    "systems/geometry/component_qa.py",
+    "systems/geometry/component_reference.py",
+    "systems/geometry/component_review.py",
+    "systems/geometry/component_sections.py",
+    "systems/geometry/component_workspace.py",
+    "tests/fixtures/component_geometry.py",
+    "tests/integration_tests/geometry/test_component_native.py",
+    "tests/integration_tests/gui/test_component_projects_http.py",
+    "tests/js/component-geometry.test.cjs",
+    "tests/unit_tests/systems_layer/test_component_geometry.py",
+    "tests/unit_tests/systems_layer/test_component_sections.py"
+  ],
+  "old_core_physics_numerics_changed": [],
+  "pass": true
+}

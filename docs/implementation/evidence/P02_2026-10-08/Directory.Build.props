@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'P02Worker'">
+    <BaseIntermediateOutputPath>$(WorkerBuildRoot)/obj/</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(WorkerBuildRoot)/obj/</MSBuildProjectExtensionsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'ShapeProbe'">
+    <BaseIntermediateOutputPath>$(ShapeBuildRoot)/obj/</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(ShapeBuildRoot)/obj/</MSBuildProjectExtensionsPath>
+  </PropertyGroup>
+</Project>

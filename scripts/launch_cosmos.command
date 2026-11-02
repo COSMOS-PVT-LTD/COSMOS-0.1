@@ -2,6 +2,10 @@
 # Double-click launcher for COSMOS 0.1 native desktop (macOS).
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+COSMOS_DESKTOP_APP="$HOME/Applications/COSMOS Desktop.app"
+if [ -x "$COSMOS_DESKTOP_APP/Contents/MacOS/cosmos-launcher" ]; then
+  exec /usr/bin/open "$COSMOS_DESKTOP_APP"
+fi
 cd "$ROOT"
 if [ -x "$ROOT/.venv-remediation/bin/python" ]; then
   PY="${PYTHON:-$ROOT/.venv-remediation/bin/python}"

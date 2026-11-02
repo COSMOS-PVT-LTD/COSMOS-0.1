@@ -1,0 +1,47 @@
+{
+  "phase": "R05",
+  "date": "2026-10-19",
+  "software_status": "IMPLEMENTED_AND_LOCALLY_QUALIFIED",
+  "live_migration": "NOT_EXECUTED_REQUIRES_CONCRETE_MAPPING_AND_CONFIRMATION",
+  "default_root_preview_only": true,
+  "per_requirement": {
+    "PRJ-01": "PASS_ACCEPTED_SOFTWARE_SCOPE",
+    "PRJ-02": "PASS_ACCEPTED_SOFTWARE_SCOPE",
+    "PRJ-03": "PASS_ACCEPTED_SOFTWARE_SCOPE",
+    "PRJ-04": "PASS_ACCEPTED_SOFTWARE_SCOPE",
+    "PRJ-05": "PASS_ACCEPTED_SOFTWARE_SCOPE",
+    "PRJ-06": "PASS_ACCEPTED_SOFTWARE_SCOPE",
+    "PRJ-07": "PASS_ACCEPTED_SOFTWARE_SCOPE",
+    "PRJ-08": "PASS_ACCEPTED_SOFTWARE_SCOPE",
+    "PRJ-09": "PASS_ACCEPTED_SOFTWARE_SCOPE",
+    "PRJ-10": "PASS_ACCEPTED_SOFTWARE_SCOPE",
+    "PRJ-11": "PASS_ACCEPTED_SOFTWARE_SCOPE",
+    "PRJ-12": "PASS_ACCEPTED_SOFTWARE_SCOPE"
+  },
+  "python": {
+    "passed": 3314,
+    "skipped": 18,
+    "native_geometry_integration_passed": 79
+  },
+  "javascript_passed": 398,
+  "ruff": "PASS",
+  "mypy_source_files": 381,
+  "strict_typescript_consumers": 7,
+  "default_preview": {
+    "files": 5,
+    "supported": 2,
+    "unsupported_in_place": 3,
+    "preview_sha256": "8e35c8cd63db7ae26964aa883dfe2707d11280eaf30b652fd3bd214dd53694c1",
+    "all_source_hashes_unchanged": true
+  },
+  "limitations": [
+    "Original actor-session previews remain distinct; managed editing is in Projects and shared exact-source pane",
+    "R11 general Knowledge equation reconstruction is not supplied; retained report claim/source bytes survive",
+    "No whole-application auth/Knowledge backup, live switch, qualified signature, remote CI, release or physical validation"
+  ],
+  "native_ui_restart_and_download": "PASS_RETAINED_PROOF",
+  "late_native_recheck": "MAC_LOCKED_BROWSER_CHECKS_COMPLETED",
+  "commit_push_release": false,
+  "owner_data_changed": false,
+  "report": "IMPLEMENTATION_REPORT.md"
+}

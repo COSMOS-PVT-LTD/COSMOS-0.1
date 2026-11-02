@@ -118,10 +118,8 @@ class MarkdownIngestionAdapter(VaultBackedAdapter):
                 "Markdown artifact must be UTF-8 encoded."
             ) from exc
 
-        normalized = "\n".join(
-            line.rstrip()
-            for line in markdown_text.replace("\r\n", "\n").split("\n")
-        )
+        from knowledge.ingestion_adapters.normalize import normalize_markdown_text
+        normalized = normalize_markdown_text(markdown_text)
 
         return self._build_result(
             request,

@@ -1,0 +1,167 @@
+- banner:
+  - button "Double-click to edit profile"
+  - generic: COSMOS
+  - button "Project Default Project":
+    - generic: Project
+    - generic: Default Project
+  - generic: Workspace
+  - generic: Workbench
+  - generic: Solver
+  - generic: IDLE
+  - generic: AI
+  - generic: Maharshi
+  - generic: COSMOS Administrator
+  - generic: Administration Infrastructure · ADMIN
+  - button "Command search":
+    - generic: ⌘K
+    - text: Command
+  - button "Job manager": Jobs
+  - button "Notifications":
+    - text: Alerts
+    - generic: "1"
+  - button "Properties panel": Properties
+  - button "Default Project"
+  - button "COSMOS Administrator"
+- complementary "Primary navigation":
+  - generic: Workspaces
+  - button "Command":
+    - generic: Command
+  - button "Rocket Engine":
+    - generic: Rocket Engine
+  - button "Knowledge":
+    - generic: Knowledge
+  - button "Workbench" [expanded]:
+    - generic: Workbench
+    - generic: ▾
+  - button "Python" [expanded]:
+    - generic: Python
+    - generic: ▾
+  - button "Launch desktop"
+  - button "Knowledge dev server"
+  - button "Scripting add-ons" [disabled]
+  - generic: Secondary
+  - button "Project":
+    - generic: Project
+  - button "Jobs":
+    - generic: Jobs
+  - generic: System
+  - button "Audit Trail":
+    - generic: Audit Trail
+  - button "Administration":
+    - generic: Administration
+  - button "Help":
+    - generic: Help
+  - button "Log out":
+    - generic: Log out
+- main:
+  - heading "Maharshi Bharadwaj" [level=1]
+  - generic: Local intake, governed review, evidence-backed chat, live knowledge graph
+  - generic: 0 sources · 0 ready · 0 pending · provider FALSE
+  - generic "Diagnostics and qualification"
+  - heading "Upload" [level=2]
+  - strong: Drag & Drop Files Here
+  - generic: or choose a file · PDF, Markdown, CSV, Office, images · up to 100 MB
+  - generic: No file selected
+  - button "Choose file"
+  - button "Upload" [disabled]
+  - button "SOURCES 0 documents":
+    - text: SOURCES
+    - generic: 0 documents
+  - generic: No sources uploaded yet.
+  - heading "Knowledge graph" [level=2]
+  - generic: 0 nodes
+  - generic: 0 links
+  - heading "Knowledge chat" [level=2]
+  - textbox "Ask about ingested sources or approved engineering knowledge…"
+  - button "Send"
+  - button "New conversation"
+  - heading "Semantic search" [level=2]
+  - searchbox "Engineering retrieval query…"
+  - combobox "Retrieval mode":
+    - option "Hybrid" [selected]
+    - option "Documents"
+    - option "Unified foundation"
+    - option "Semantic (Step-7 index)"
+  - spinbutton "Top K": "8"
+  - button "Search"
+  - generic: Run a query to inspect retrieval diagnostics.
+  - heading "Validation center" [level=2]
+  - button "Refresh"
+  - table:
+    - rowgroup:
+      - row "Severity Category Source Message":
+        - columnheader "Severity"
+        - columnheader "Category"
+        - columnheader "Source"
+        - columnheader "Message"
+    - rowgroup:
+      - row "No validation findings.":
+        - cell "No validation findings."
+  - heading "Knowledge trace" [level=2]
+  - generic: Trace appears after search or chat with evidence.
+  - button "Copy trace" [disabled]
+  - heading "Sources & jobs" [level=2]
+  - button "Refresh"
+  - button "Backup"
+  - table:
+    - rowgroup:
+      - row "Source Format Text Job Actions":
+        - columnheader "Source"
+        - columnheader "Format"
+        - columnheader "Text"
+        - columnheader "Job"
+        - columnheader "Actions"
+    - rowgroup:
+      - row "No sources yet.":
+        - cell "No sources yet."
+  - heading "Review workbench" [level=2]
+  - table:
+    - rowgroup:
+      - row "Document Summary":
+        - columnheader "Document"
+        - columnheader "Summary"
+        - columnheader
+    - rowgroup:
+      - row "No documents awaiting approval.":
+        - cell "No documents awaiting approval."
+- region "Engineering console":
+  - button "Jobs 0":
+    - text: Jobs
+    - generic: "0"
+  - button "Solver IDLE":
+    - text: Solver
+    - generic: IDLE
+  - button "Convergence —":
+    - text: Convergence
+    - generic: —
+  - button "Log"
+  - button "Events"
+- button "Maharshi Bharadwaj Maharshi":
+  - img "Maharshi Bharadwaj"
+  - generic: Maharshi
+- heading "Recent Workbenches" [level=4]
+- text: None yet
+- heading "Recent Files" [level=4]
+- text: None yet
+- complementary:
+  - heading [level=3]: Properties
+  - button: ✕
+- complementary:
+  - heading [level=3]: Job Manager
+  - button: ✕
+  - paragraph: 0 active · 0 failed · 0 total
+  - table:
+    - rowgroup:
+      - row:
+        - columnheader: Source
+        - columnheader: Status
+        - columnheader: Type
+        - columnheader: Created
+        - columnheader: Error
+  - button: Refresh Jobs
+- complementary:
+  - heading [level=3]: Notifications
+  - button: ✕
+  - strong: COSMOS engineering environment ready
+  - generic: Default Project
+  - time: 2026-10-08T10:22:39.196Z

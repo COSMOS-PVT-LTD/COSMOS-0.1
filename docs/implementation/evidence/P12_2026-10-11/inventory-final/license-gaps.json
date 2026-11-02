@@ -1,0 +1,25 @@
+{
+  "distribution_approved": false,
+  "python_metadata_or_notice_gaps": [
+    "python-0-proxy-tools-0.1.0",
+    "python-0-pyobjc-framework-security-12.2.2",
+    "python-1-ezdxf-1.4.4",
+    "python-1-fonttools-4.66.1",
+    "python-1-gmsh-4.15.0",
+    "python-1-idna-3.20",
+    "python-1-numpy-2.4.6"
+  ],
+  "native_and_embedded_asset_gaps": [
+    "Upstream prebuilt Boost/ICU/lzma/zstd exact source revisions and notice closure are not provided by the managed source manifest.",
+    "Native Skia transitive notices need a complete release-level SBOM; no rendering path was exercised.",
+    "Local native rpath references the temporary dependency prefix; relocation, signing and notarization are unverified.",
+    "Upstream prebuilt minOS is 26.5; locally compiled minOS is 26.0. Older macOS compatibility is unverified.",
+    "The embedded Jost font declares SIL OFL-1.1, not Apache-2.0; font notices and environment asset provenance need release review."
+  ],
+  "additional_release_limits": [
+    "OCCT LGPL exception and Gmsh GPL proprietary distribution need qualified legal review; native bytes excluded from bundle",
+    "PDFium/Skia/VTK/transitive binary source/notice closure is not inferred from top-level metadata",
+    "OS system libraries and Python interpreter have not been redistributed or given a complete release closure",
+    "Environment inventory has hashes, not an authoritative exact native vulnerability database or legal clearance"
+  ]
+}

@@ -1,0 +1,291 @@
+Browser tab: 4, Title: "COSMOS — Projects & Mission", URL: "http://127.0.0.1:8866/app/projects?project=79e5db7f-b59b-465e-85ab-ee887f88dd33".
+1 AXWebArea COSMOS — Projects & Mission, URL: 127.0.0.1:8866/app/projects?project=79e5db7f-b59b-465e-85ab-ee887f88dd33
+	2 container
+		3 container cosmos-p04-shell
+			4 container
+				5 container Breadcrumbs
+					6 link Description: Projects & Mission, Value: 127.0.0.1:8866/app/projects
+					7 text  / COSMOS — Projects & Mission
+				90 text COSMOS · active r— · inspecting current r— · Design: none · Managed project R06 sensitivity — synthetic software baseline · 79e5db7f-b59b-465e-85ab-ee887f88dd33
+				9 text Persisted design
+				10 pop up button (collapsed, settable) Description: Persisted design, Value: Choose an existing design, Secondary Actions: Expand
+					11 menu
+						12 (selected) Choose an existing design
+				13 text Inspected revision
+				14 pop up button (disabled, collapsed, settable) Description: Inspected revision, Value: No current persisted revision, Secondary Actions: Expand
+					15 menu
+						16 (disabled) No current persisted revision
+				17 button (expanded) Navigation, Secondary Actions: Collapse
+				18 button (expanded) Inspector, Secondary Actions: Collapse
+				19 button (expanded) Diagnostics, Secondary Actions: Collapse
+				20 checkbox Focus workspace, Value: 0
+				21 button Open commands
+				22 button (collapsed) Workspace controls, Secondary Actions: Expand
+					23 text Workspace controls
+			24 container Description: Project and workbench navigation, ID: p04-left
+				25 container Modern workbenches
+					26 link Description: Projects & Mission, Value: 127.0.0.1:8866/app/projects
+					27 link Description: Rocket Engine, Value: 127.0.0.1:8866/app/workbench/rocket-engine
+					28 button (disabled) Native Geometry · not enabled, Help: This capability is not enabled in the current application catalog
+					29 button (disabled) Simulation · planned, Help: Planned catalog capability; no active workbench destination
+					30 button (disabled) Comparison & V&V · not enabled, Help: This capability is not enabled in the current application catalog
+					31 link Description: Maharshi Knowledge, Value: 127.0.0.1:8866/app/workbench/knowledge
+					32 button (disabled) Reports & History · not enabled, Help: This capability is not enabled in the current application catalog
+					33 link Description: Visualization and Graphs, Value: 127.0.0.1:8866/app/workbench/visualization
+					34 button (collapsed) All existing workbenches, Secondary Actions: Expand
+						35 text All existing workbenches
+				36 text Navigation maturity follows the existing registry.
+				91 container Project tree
+					92 heading Project tree, Value: 2, ID: ds-6
+						93 text Project tree
+					94 outline Project objects
+						95 row (selected) Owned domain · propulsion
+							96 text Owned domain · propulsion
+			41 splitter Description: Resize navigation, Value: 224
+			42 container Active workbench
+				97 button (collapsed) Authoritative project sources and retained activity, Secondary Actions: Expand
+					98 text Authoritative project sources and retained activity
+				43 container project-overview
+					44 heading Projects & Mission, Value: 1
+						45 text Projects & Mission
+					46 text Server-owned projects and immutable saved snapshots. CURRENT means selected freshness, not engineering or physical validation.
+					47 container Create managed project
+						48 container
+							49 text Project title
+							50 text field (settable) Project title
+						51 container
+							52 text Mission / intended-use notes
+							53 text field (settable) Mission / intended-use notes
+						54 button Create project
+					55 container Managed project list
+						56 heading Managed projects, Value: 2
+							57 text Managed projects
+						58 button R06 sensitivity — synthetic software baseline · ACTIVE
+						59 button First project page
+					60 container Selected managed project
+						99 heading R06 sensitivity — synthetic software baseline, Value: 2
+							100 text R06 sensitivity — synthetic software baseline
+						101 text ACTIVE · project v1 · owner USR-9191c7c270e32225
+						102 text No hardware evidence or cycle closure
+						103 container
+							104 text Cloned project title
+							105 text field (settable) Cloned project title, Value: R06 sensitivity — synthetic software baseline (inputs clone)
+						106 button Clone editable inputs and retain complete origin archive
+						107 container
+							108 text Project title
+							109 text field (settable) Project title, Value: R06 sensitivity — synthetic software baseline
+						110 container
+							111 text Mission notes
+							112 text field (settable) Mission notes, Value: No hardware evidence or cycle closure
+						113 button Save project metadata
+						114 button Archive project
+						115 button (disabled) Restore project
+						116 text Recoverable delete retains snapshots; no permanent purge.
+						117 container
+							118 text Exact project ID to confirm recoverable delete
+							119 text field (settable) Exact project ID to confirm recoverable delete
+						120 button Recoverably delete project
+						121 container
+							122 text New propulsion design name
+							123 text field (settable) New propulsion design name
+						124 button Create propulsion design
+						125 heading Propulsion designs — first 20; no domain jobs are inferred, Value: 3
+							126 text Propulsion designs — first 20; no domain jobs are inferred
+						127 link Description: Download exact project archive (owner only; no credentials), Value: 127.0.0.1:8866/api/projects/79e5db7f-b59b-465e-85ab-ee887f88dd33/package?version=1&hash=3bff59331c3e1852158d7b2f43ec6bc230e3035c6888eb7e7e03708144d3808f
+						128 link Description: Sensitivity software fixture · input r6 · saved v1, Value: 127.0.0.1:8866/app/workbench/rocket-engine?project=79e5db7f-b59b-465e-85ab-ee887f88dd33&design=956cc95a-b4c8-59c8-9ca1-04a29ffb52e2
+						129 container Managed geometry and durable attempts
+							130 heading Managed geometry · software fixtures only, Value: 3
+								131 text Managed geometry · software fixtures only
+							132 text Exact snapshots, graphs, requests, attempts and retained bytes. Storage completion is not engineering publication or physical validation.
+							133 text No geometry editor opened.
+							134 container
+								135 text Fixture operation
+								136 pop up button (collapsed, settable) Description: Fixture operation, Value: sphere, Secondary Actions: Expand
+									137 menu
+										138 (selected) sphere
+										139 union
+										140 difference
+										141 intersection
+										142 self_union
+							143 container
+								144 text Fixture backend
+								145 pop up button (collapsed, settable) Description: Fixture backend, Value: occt, Secondary Actions: Expand
+									146 menu
+										147 (selected) occt
+										148 picogk
+							149 container
+								150 text Declared voxel size in metres
+								151 pop up button (collapsed, settable) Description: Declared voxel size in metres, Value: 0.0005, Secondary Actions: Expand
+									152 menu
+										153 (selected) 0.0005
+										154 0.001
+										155 0.00025
+							156 button Create managed fixture inputs
+							157 button Save geometry input edits
+							158 button (disabled) Build exact saved fixture inputs
+							159 button Discard geometry drafts and reload opened inputs
+							160 button Refresh retained attempts
+							161 text Native build runtime is not configured in this application. Saved sources/history remain available; no solver success is invented.
+							162 heading Managed fixture inputs, Value: 4
+								163 text Managed fixture inputs
+							164 text Exact authorized geometry source API
+							165 container Managed geometry exact source preview
+								166 text Choose an exact source or attempt.
+						167 container Managed studies and solver runs
+							168 heading Managed study/run · spherical software benchmark only, Value: 3
+								169 text Managed study/run · spherical software benchmark only
+							170 text Retains exact study, mesh, model/solver hashes, monitor events and datasets. Execution COMPLETED does not mean numerical convergence, experimental validation or production handoff.
+							171 text No study opened.
+							172 container
+								173 text Exact owned geometry attempt ID for a new study
+								174 text field (settable) Exact owned geometry attempt ID for a new study
+							175 container
+								176 text Conductivity [W/(m·K)]
+								177 text field (settable) Conductivity [W/(m·K)], Value: 10
+							178 container
+								179 text Volumetric generation [W/m³]
+								180 text field (settable) Volumetric generation [W/m³], Value: 1000000
+							181 container
+								182 text Surface temperature [K]
+								183 text field (settable) Surface temperature [K], Value: 300
+							184 container
+								185 text Radial cell count [8,16,32,64]
+								186 text field (settable) Radial cell count [8,16,32,64], Value: 16
+							187 container
+								188 text Relative equation residual tolerance
+								189 text field (settable) Relative equation residual tolerance, Value: 1e-8
+							190 container
+								191 text Maximum solver iterations
+								192 text field (settable) Maximum solver iterations, Value: 10000
+							193 button Create new radial benchmark study with displayed settings
+							194 button Save displayed study settings
+							195 button Run exact saved radial benchmark
+							196 button Discard study drafts and reload
+							197 button Refresh retained solver attempts
+							198 heading Retained studies, Value: 4
+								199 text Retained studies
+							200 text Exact authorized study source API
+							201 container Managed study exact source preview
+								202 text Open a retained study or create one from an exact selected OCCT sphere build.
+						203 button (collapsed) Project requirements and exact selected components, Secondary Actions: Expand
+							204 text Project requirements and exact selected components
+						205 button (collapsed) Managed comparisons and research reports, Secondary Actions: Expand
+							206 text Managed comparisons and research reports
+						207 container
+							208 button (expanded) Rocket sensitivity — explicit saved preliminary baseline, Secondary Actions: Collapse
+								209 text Rocket sensitivity — explicit saved preliminary baseline
+							261 text Sensitivity retained. Completion/currentness is not physical validation or cycle closure.
+							211 container
+								212 text Exact saved propulsion baseline
+								213 pop up button (collapsed, settable) Exact saved propulsion baseline, Value: Sensitivity software fixture · input r6 · saved v1 · 5c417159-74ea-483b-a0ed-9c88e98e0ea1, Secondary Actions: Expand
+									214 menu
+										215 Choose an exact saved design
+										216 (selected) Sensitivity software fixture · input r6 · saved v1 · 5c417159-74ea-483b-a0ed-9c88e98e0ea1
+							217 container
+								218 text Explicit varied parameter
+								219 pop up button (collapsed, settable) Explicit varied parameter, Value: Throat area [m2], Secondary Actions: Expand
+									220 menu
+										221 Choose a parameter
+										222 Chamber pressure [Pa]
+										223 Ambient pressure [Pa]
+										224 (selected) Throat area [m2]
+										225 Nozzle expansion ratio [1]
+							226 container
+								227 text Input SI unit
+								228 text field Input SI unit, Value: m2
+							229 container
+								230 text Explicit increasing sample values — comma separated
+								231 text field (settable) Explicit increasing sample values — comma separated, Value: 0.0008,0.001,0.0012
+							232 container
+								233 text Selected output
+								234 pop up button (collapsed, settable) Selected output, Value: Calculated thrust [N], Secondary Actions: Expand
+									235 menu
+										236 Choose an output
+										237 (selected) Calculated thrust [N]
+										238 Core mass flow [kg/s]
+										239 Ideal specific impulse [s]
+										240 Exit velocity [m/s]
+							241 container
+								242 text Absolute centered-difference step in the displayed SI unit
+								243 text field (settable) Absolute centered-difference step in the displayed SI unit, Value: 0.00001
+							244 button Run and retain explicit sensitivity study
+							245 button Discard sensitivity draft
+							246 button Refresh retained sensitivity list
+							262 heading Retained sensitivity studies, Value: 4
+								263 text Retained sensitivity studies
+							264 button Inspect sensitivity 7399c986-b62f-5c6a-93e2-5ad6fd428a38
+							265 button Inspect sensitivity b5769de9-a1bb-544a-bf51-9a8b666a76e1
+							266 heading Retained sensitivity · COMPLETED · baseline/methods current, Value: 4
+								267 text Retained sensitivity · COMPLETED · baseline/methods current
+							268 text Saved input r6 · commit bcc14e34-4aa3-47c1-b789-2a131570b1e3 · SHA256 7c27e85dca07b679287e182075aac10c725e2fa7e0b7215ed6cef1764d756324 Method oat-explicit-values+centered-difference-h-and-h/2-v1 · baseline 5c417159-74ea-483b-a0ed-9c88e98e0ea1 · uncertainty NOT_QUANTIFIED · physical validation NOT_PERFORMED
+							269 table Requested samples: throat_area_m2 [m2] → thrust [N]
+								270 text Requested samples: throat_area_m2 [m2] → thrust [N]
+								271 row
+									272 cell
+										273 text Input value
+									274 cell
+										275 text Status
+									276 cell
+										277 text Output value
+									278 cell
+										279 text Reason
+								280 row
+									281 cell
+										282 text 0.0008
+									283 cell
+										284 text EVALUATED
+									285 cell
+										286 text 6969.229917991202
+								287 row
+									288 cell
+										289 text 0.001
+									290 cell
+										291 text EVALUATED
+									292 cell
+										293 text 8711.537397489003
+								294 row
+									295 cell
+										296 text 0.0012
+									297 cell
+										298 text EVALUATED
+									299 cell
+										300 text 10453.8448769868
+							301 text Step 0.00001 [m2]: EVALUATED · derivative 8711537.397489063 [N/(m2)] Step 0.000005 [m2]: EVALUATED · derivative 8711537.397488972 [N/(m2)] Absolute h versus h/2 derivative difference: 9.12696123123169e-8; not an error bound.
+							302 link Description: Inspect exact authenticated record envelope, Value: 127.0.0.1:8866/api/projects/79e5db7f-b59b-465e-85ab-ee887f88dd33/sensitivity/b5769de9-a1bb-544a-bf51-9a8b666a76e1
+							303 link Description: Open source-backed sensitivity plots and exports, Value: 127.0.0.1:8866/app/workbench/visualization?project=79e5db7f-b59b-465e-85ab-ee887f88dd33&sensitivity=b5769de9-a1bb-544a-bf51-9a8b666a76e1&commit=bcc14e34-4aa3-47c1-b789-2a131570b1e3&domain=propulsion-sensitivity
+							304 button (collapsed) Exact canonical source preview, Secondary Actions: Expand
+								305 text Exact canonical source preview
+							249 text First slice: one-at-a-time assumed-state performance only. CEA/global/cycle sensitivity is not supported here. The source design is never edited. No uncertainty or physical validation is implied.
+			61 splitter Description: Resize inspector, Value: 280
+			62 container Description: Context inspector, ID: p04-right
+				63 container No inspected design
+					64 heading No inspected design, Value: 2, ID: ds-4
+						65 text No inspected design
+					66 text Select an existing stored design. Project names in browser preferences are not durable Project records.
+			67 splitter Description: Resize diagnostics, Value: 176
+			68 container Description: Diagnostics and retained task activity, ID: p04-bottom
+				69 container
+					258 text Shell diagnostic: MANAGED_DRAFTS
+					71 button Refresh domain tasks and history
+					259 button (collapsed) Error details: MANAGED_DRAFTS, Secondary Actions: Expand
+						260 text Error details: MANAGED_DRAFTS
+				306 heading Domain task queue and retained history, Value: 2
+					307 text Domain task queue and retained history
+				308 text Knowledge jobs are persisted by their service; native/simulation histories are bounded actor sessions, not durable Project authority.
+				309 container No reported jobs in available domains
+					310 heading No reported jobs in available domains, Value: 2, ID: ds-20
+						311 text No reported jobs in available domains
+					312 text Refresh to read actual services. No synthetic job or solver success is invented.
+		79 button Maharshi Bharadwaj Maharshi, ID: maharshi-module, Help: Maharshi Bharadwaj — click for pop-up, double-click for Knowledge workbench. Drag to move; Shift+wheel or corner handle to resize.
+			80 image Maharshi Bharadwaj
+			81 text Maharshi
+		82 container cosmos-engineering-root
+			83 container cosmos-recent-panel
+				84 heading RECENT WORKBENCHES, Value: 4
+					85 text RECENT WORKBENCHES
+				86 text None yet
+				87 heading RECENT FILES, Value: 4
+					88 text RECENT FILES
+				89 text None yet
+
+The focused UI element is 1 AXWebArea COSMOS — Projects & Mission, URL: 127.0.0.1:8866/app/projects?project=79e5db7f-b59b-465e-85ab-ee887f88dd33

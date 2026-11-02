@@ -1,0 +1,35 @@
+[
+  {
+    "step": "opened_by_ctrl_k",
+    "state": {
+      "dialog": true,
+      "id": "cosmos-command-input",
+      "tag": "INPUT"
+    }
+  },
+  {
+    "step": "shift_tab_wrap",
+    "state": {
+      "dialog": true,
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Backup Knowledge Vault↵"
+    }
+  },
+  {
+    "step": "tab_wrap_back",
+    "state": {
+      "dialog": true,
+      "id": "cosmos-command-input",
+      "tag": "INPUT"
+    }
+  },
+  {
+    "step": "escape_restore",
+    "state": {
+      "dialog": false,
+      "id": "",
+      "tag": "BODY"
+    }
+  }
+]

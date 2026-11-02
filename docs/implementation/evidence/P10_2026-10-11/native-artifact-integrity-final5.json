@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "records": 2,
+  "retained": [
+    {
+      "path": "docs/implementation/evidence/P10_2026-10-11/native-artifacts-final5/occt/export.step",
+      "sha256": "18c74c0489ede4bfedc451f6920e42cca72f175bb13a96de9469279f3cee78b2"
+    },
+    {
+      "path": "docs/implementation/evidence/P10_2026-10-11/native-artifacts-final5/occt/source.brep",
+      "sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3"
+    },
+    {
+      "path": "docs/implementation/evidence/P10_2026-10-11/native-artifacts-final5/picogk/export-conditioned.stl",
+      "sha256": "20f7c9844acf1374a6c6781f71ee6738df7ba6672611df6fcff90a35affc5f28"
+    },
+    {
+      "path": "docs/implementation/evidence/P10_2026-10-11/native-artifacts-final5/picogk/source.vdb",
+      "sha256": "fa36d71d6fafda880ca9f0f16c368b8095fffc4fba0021dfd67348a75cb022e2"
+    }
+  ],
+  "cross_kernel": true
+}

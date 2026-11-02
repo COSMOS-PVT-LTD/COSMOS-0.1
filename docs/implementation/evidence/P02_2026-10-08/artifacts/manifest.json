@@ -1,0 +1,47 @@
+[
+  {
+    "sourcePath": "/private/tmp/cosmos-p02.rOuMVo/source-benchmarks-complete/15136452-0f3f-4bbe-a566-c8ac1cb574ae/sphere-0.stl",
+    "persistedPath": "artifacts/source-sphere-0.001000m.stl",
+    "sha256": "e6769f35e83ea078e3898260465bdc022ef530173398c0e19bf265b31fed33c5",
+    "unit": "m",
+    "frame": "right-handed-xyz",
+    "status": "UNVERIFIED",
+    "p02FixturePass": true
+  },
+  {
+    "sourcePath": "/private/tmp/cosmos-p02.rOuMVo/source-benchmarks-complete/7b7d16a9-e63b-4adf-8e05-d250ef3e85ac/difference-0.stl",
+    "persistedPath": "artifacts/source-difference-0.001000m.stl",
+    "sha256": "7991bb072032f81725157e58bb8b3949634ca50e396acc46e021a390f18b4ab9",
+    "unit": "m",
+    "frame": "right-handed-xyz",
+    "status": "UNVERIFIED",
+    "p02FixturePass": false
+  },
+  {
+    "sourcePath": "/private/tmp/cosmos-p02.rOuMVo/source-benchmarks-complete/80043c20-cf04-4f06-a324-a6bda6a0dc36/intersection-0.stl",
+    "persistedPath": "artifacts/source-intersection-0.001000m.stl",
+    "sha256": "2074eca4dbfc3c9872509e407983f5c261e31951a542e86c8819d95cfca025e1",
+    "unit": "m",
+    "frame": "right-handed-xyz",
+    "status": "UNVERIFIED",
+    "p02FixturePass": false
+  },
+  {
+    "sourcePath": "/private/tmp/cosmos-p02.rOuMVo/source-benchmarks-complete/09f3be6a-52ef-42df-bc69-ae960924cc5c/difference-0.stl",
+    "persistedPath": "artifacts/source-difference-0.000500m.stl",
+    "sha256": "6c8793f65e702daf96465994f097b549fceb7c84a9dbc95ff996a28c7c209045",
+    "unit": "m",
+    "frame": "right-handed-xyz",
+    "status": "UNVERIFIED",
+    "p02FixturePass": false
+  },
+  {
+    "sourcePath": "/private/tmp/cosmos-p02.rOuMVo/source-benchmarks-complete/a76a7e3a-b6a9-4933-9943-56d11c08152e/difference-0.stl",
+    "persistedPath": "artifacts/source-difference-0.000250m.stl",
+    "sha256": "0345ddd4639d29696c37ad3ea98b2635f4a5169a63488feb68963522b7584fea",
+    "unit": "m",
+    "frame": "right-handed-xyz",
+    "status": "UNVERIFIED",
+    "p02FixturePass": false
+  }
+]

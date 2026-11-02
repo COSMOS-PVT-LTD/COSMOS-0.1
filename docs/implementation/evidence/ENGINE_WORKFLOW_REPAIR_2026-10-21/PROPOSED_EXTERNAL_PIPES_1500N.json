@@ -1,0 +1,13 @@
+{
+  "scope": "ISOLATED_GEOMETRY_HYPOTHESIS_NOT_INSTALLED_ENGINE_INPUTS",
+  "source": "User-requested lower coolant inlet, upper collector-to-fuel-head return and direct oxidizer routing. Exact retained four opening positions and bore radii; separately declared provisional pipe wall, bend radius and lengths. No pressure rating, seal/weld, bend loss, plume exposure, material, heated-flow or engine-operating acceptance implied.",
+  "lower_header_port": "lower-coolant-header.port-0",
+  "upper_header_port": "upper-coolant-header.port-0",
+  "fuel_manifold_port": "isolated-dual-manifold.port-0",
+  "oxidizer_manifold_port": "isolated-dual-manifold.port-9",
+  "wall_thickness_m": 0.0012,
+  "return_bend_radius_m": 0.012,
+  "return_stub_length_m": 0.025,
+  "fuel_supply_length_m": 0.08,
+  "oxidizer_supply_length_m": 0.08
+}

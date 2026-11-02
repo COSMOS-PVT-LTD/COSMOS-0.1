@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "authority": "P01 proposal grounded in P00; not production routing configuration",
+  "repo_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "primary": [
+    {"id":"projects","label":"Projects & Mission","maturity":"PROPOSED","phase":"P04","intent":"Choose project, inspect design revisions and recover layout."},
+    {"id":"rocket","label":"Rocket Engine","maturity":"ACTIVE / PARTIAL","phase":"P05","intent":"Edit explicit inputs, inspect dependency impact, preflight, run supported preliminary calculations."},
+    {"id":"ngg","label":"Native Geometry","maturity":"PLANNED","phase":"P06–P08","intent":"Build and inspect representation-aware geometry from an immutable snapshot."},
+    {"id":"simulation","label":"Simulation","maturity":"PLANNED","phase":"P09","intent":"Configure a study from accepted geometry and monitor truthful solver state."},
+    {"id":"vv","label":"Comparison & V&V","maturity":"PLANNED","phase":"P10","intent":"Align independent reference data, units, frames and evidence before comparison."},
+    {"id":"knowledge","label":"Maharshi Knowledge","maturity":"ACTIVE","phase":"P11","intent":"Inspect approved sources, model applicability and missing-evidence states."},
+    {"id":"reports","label":"Reports & History","maturity":"PROPOSED / PARTIAL","phase":"P04/P11","intent":"Inspect revision/run/artifact lineage and prepare evidence-bearing reports."}
+  ],
+  "compatibility_catalog": [
+    {"id":"rocket-engine","route":"/app/workbench/rocket-engine","target":"rocket","maturity":"ACTIVE / PARTIAL"},
+    {"id":"turbopumps","route":"/app/workbench/turbopumps","target":"catalog","maturity":"PLANNED"},
+    {"id":"pid","route":"/app/workbench/pid","target":"catalog","maturity":"PLANNED"},
+    {"id":"structures","route":"/app/workbench/structures","target":"catalog","maturity":"PLANNED"},
+    {"id":"rocket-staging","route":"/app/workbench/rocket-staging","target":"catalog","maturity":"PLANNED"},
+    {"id":"manufacturing","route":"/app/workbench/manufacturing","target":"catalog","maturity":"PLANNED"},
+    {"id":"simulation","route":"/app/workbench/simulation","target":"simulation","maturity":"PLANNED"},
+    {"id":"visualization","route":"/app/workbench/visualization","target":"catalog","maturity":"PLANNED"},
+    {"id":"documentation","route":"/app/workbench/documentation","target":"catalog","maturity":"PLANNED"},
+    {"id":"code-comparison","route":"/app/workbench/code-comparison","target":"catalog","maturity":"PLANNED"},
+    {"id":"plm","route":"/app/workbench/plm","target":"catalog","maturity":"PLANNED"},
+    {"id":"knowledge","route":"/app/workbench/knowledge","target":"knowledge","maturity":"ACTIVE"}
+  ],
+  "rocket_groups": [
+    {"id":"setup","label":"Define","stage_ids":["design_project","requirements","propellants","cycle","operating_point"]},
+    {"id":"calculate","label":"Calculate","stage_ids":["thermochemistry","performance"]},
+    {"id":"subsystems","label":"Size subsystems","stage_ids":["injector","chamber","thermal","cooling","nozzle","structure","materials"]},
+    {"id":"review","label":"Review & export","stage_ids":["performance_summary","consistency","design_review"]}
+  ],
+  "modes": ["Guided","Standard","Expert"],
+  "prototype_only": true
+}

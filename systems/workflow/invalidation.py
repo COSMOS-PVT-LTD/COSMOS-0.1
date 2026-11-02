@@ -14,6 +14,13 @@ __all__ = (
 
 # Map engineering input categories → root stage whose dependents go STALE.
 INPUT_FIELD_ROOTS: dict[str, str] = {
+    "thermochemistry_configuration": "thermochemistry",
+    "injector_inputs": "injector",
+    "cooling_inputs": "cooling",
+    "nozzle_inputs": "nozzle",
+    "chamber_inputs": "chamber",
+    "structure_inputs": "structure",
+    "materials_inputs": "materials",
     "target_chamber_pressure": "requirements",
     "target_thrust": "requirements",
     "propellant_configuration": "propellants",
@@ -57,7 +64,7 @@ def invalidate_from_stage(
     Returns the list of stage IDs that were marked stale.
     """
 
-    targets = list(graph.transitive_dependents(stage_id))
+    targets = list(graph.transitive_dependents(stage_id, data_only=True))
     if include_root:
         targets = [stage_id, *targets]
     marked: list[str] = []

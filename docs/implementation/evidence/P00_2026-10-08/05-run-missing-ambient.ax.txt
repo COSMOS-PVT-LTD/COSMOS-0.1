@@ -1,0 +1,281 @@
+Browser tab: 6, Title: "COSMOS 0.1 — Rocket Engine Propulsion Suite", URL: "http://127.0.0.1:8790/app/workbench/rocket-engine?stage=thermochemistry".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 294-315
+~1 AXWebArea COSMOS 0.1 — Rocket Engine Propulsion Suite, URL: 127.0.0.1:8790/app/workbench/rocket-engine?stage=thermochemistry
+~				180 text REV 8
+~				182 text Saved editor drafts — separate from results
+~				61 pop up button (collapsed, settable) Description: Open saved design, Value: P00 audit methalox fixture · rev 8 · draft, ID: design-picker, Secondary Actions: Expand
+~						188 (selected) P00 audit methalox fixture · rev 8 · draft
+~				195 button 01 Requirements IMPLEMENTED CURRENT
+~					199 text CURRENT
+~				200 button 02 Propellant Definition IMPLEMENTED CURRENT
+~					204 text CURRENT
+~				210 button 04 Operating Point IMPLEMENTED CURRENT
+~					214 text CURRENT
+~				215 button 05 Thermochemistry PARTIAL CURRENT
+~					219 text CURRENT
+~				220 button 06 Mass Flow / Performance PARTIAL FAILED
+~					224 text FAILED
+~				92 heading 05 Thermochemistry, Value: 2, ID: suite-module-title
+~					288 text 05 Thermochemistry
+~				289 text PARTIAL · result CURRENT
+~				290 text PARTIAL — optional NASA CEA 3.3.4 equilibrium with explicit inlet temperatures, or explicitly ASSUMED Tc/γ/MW. No physical validation.
+~				291 heading Run Phase 3 on the active design, Value: 3
+~					292 text Run Phase 3 on the active design
+~				293 text NASA CEA computes equilibrium chamber/throat/exit states and ideal performance. Enter reactant temperatures, throat area and expansion ratio explicitly. No fallback on solver failure. Use 00 Design for assumed-state inputs.
++				294 container
++					295 text Thermochemistry source
++					296 pop up button (collapsed, settable) Thermochemistry source, Value: NASA CEA 3.3.4 · equilibrium, ID: wf-thermo-mode, Secondary Actions: Expand
++						297 menu
++							298 (selected) NASA CEA 3.3.4 · equilibrium
++							299 Explicit assumed chamber state
++				300 container
++					301 text Fuel inlet temperature [K] · CEA
++					302 stepper (settable, float) Fuel inlet temperature [K] · CEA, Value: 111.66999816894531, Details: 111.67, ID: wf-fuel-temp
++				303 container
++					304 text Oxidizer inlet temperature [K] · CEA
++					305 stepper (settable, float) Oxidizer inlet temperature [K] · CEA, Value: 90.16999816894531, Details: 90.17, ID: wf-ox-temp
++				306 container
++					307 text At [m²]
++					308 stepper (settable, float) At [m²], Value: 0.0010000000474974513, Details: 0.001, ID: wf-at
++				309 container
++					310 text ε (Ae/At > 1)
++					311 stepper (settable, integer) ε (Ae/At > 1), Value: 10, ID: wf-eps
++				312 button Run Phase 3 (same design)
++			313 container suite-result
++				314 text EXECUTION FAILED · phase_status=FAILED · workflow_complete=false · readiness=INCOMPLETE · validation=NOT_CLAIMED · design=1c6ce9ca-077c-4f18-ae7c-825100f10391
++				315 container
++					316 heading requirements · CURRENT · SYS-01.requirements.capture, Value: 4
++						317 text requirements · CURRENT · SYS-01.requirements.capture
++					318 text MODEL
+Model ID: SYS-01.requirements.capture
+Name: 
+Source: COSMOS Systems requirements stage
+Verification: PASS
+Validation: NOT_CLAIMED
+Validity: NOT_APPLICABLE
+
+INPUTS
+ambient_pressure: —
+ambient_temperature: —
+burn_duration: —
+cycle_type: —
+expansion_ratio: 10
+mixture_ratio: 2.7239
+notes: —
+operating_altitude: —
+propellant_selection: —
+target_chamber_pressure: 5 bar
+target_thrust: 1 kN
+
+OUTPUTS
+fields_set: 4 1
+
+WARNINGS
+- No propellant_selection or cycle_type recorded.
++				319 container
++					320 heading propellants · CURRENT · SYS-02.propellants.registry, Value: 4
++						321 text propellants · CURRENT · SYS-02.propellants.registry
++					322 text MODEL
+Model ID: SYS-02.propellants.registry
+Name: 
+Source: oxidizer=NIST Chemistry WebBook; fuel=NIST Chemistry WebBook
+Verification: PASS
+Validation: NOT_CLAIMED
+Validity: VALID
+
+INPUTS
+fuel_id: LCH4
+fuel_pressure: —
+fuel_state: —
+fuel_temperature: —
+mixture_ratio: 2.7239
+oxidizer_id: LOX
+oxidizer_pressure: —
+oxidizer_state: —
+oxidizer_temperature: —
+database: already_loaded
+
+OUTPUTS
+oxidizer_name: Liquid Oxygen 1
+fuel_name: Liquid Methane 1
+oxidizer_cea_species: O2(L) 1
+fuel_cea_species: CH4(L) 1
+oxidizer_mw_kg_per_kmol: 31.998 kg/kmol
+fuel_mw_kg_per_kmol: 16.043 kg/kmol
+mixture_ratio: 2.7239 1
+
+ASSUMPTIONS
+- Registry lookup only — no combustion equilibrium evaluated.
+- Database: propellants_master_candidate_v1.json (Physics).
++				323 container
++					324 heading operating_point · CURRENT · SYS-04.operating_point.establish, Value: 4
++						325 text operating_point · CURRENT · SYS-04.operating_point.establish
++					326 text MODEL
+Model ID: SYS-04.operating_point.establish
+Name: 
+Source: COSMOS Systems operating-point stage
+Verification: PASS
+Validation: NOT_CLAIMED
+Validity: NOT_APPLICABLE
+
+INPUTS
+requirements: {"ambient_pressure":null,"ambient_temperature":null,"burn_duration":null,"cycle_type":null,"expansion_ratio":10,"mixture_ratio":2.7239,"notes":null,"operating_altitude":null,"propellant_selection":null,"target_chamber_pressure":{"magnitude":5,"unit":{"symbol":"bar","name":"bar","dimension":{"length":-1,"mass":1,"time":-2,"current":0,"temperature":0,"amount":0,"luminous_intensity":0},"factor_to_si":100000,"offset_to_si":0}},"target_thrust":{"magnitude":1,"unit":{"symbol":"kN","name":"kilonewton","dimension":{"length":1,"mass":1,"time":-2,"current":0,"temperature":0,"amount":0,"luminous_intensity":0},"factor_to_si":1000,"offset_to_si":0}}}
+overrides: {"chamber_temperature":null,"gamma":null,"molecular_weight_kg_per_mol":null}
+dependency_gaps: {"stage_id":"cycle","requirement":"DEFERRED","reason":"Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point construction defers the cycle analysis and is not a complete engine design.","status":"NOT_CALCULATED","satisfied":false}
+
+OUTPUTS
+ambient_pressure: —
+ambient_temperature: —
+chamber_pressure: 5 bar
+chamber_temperature: —
+chamber_temperature_is_assumption: false
+characteristic_velocity: —
+fuel_mass_flow: —
+gamma: —
+gamma_is_assumption: false
+mass_flow: —
+mixture_ratio: 2.7239
+molecular_weight: —
+oxidizer_mass_flow: —
+
+WARNINGS
+- gamma unset — thermochemistry or explicit gamma required for performance.
+- DEFERRED dependency cycle=NOT_CALCULATED: Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point construction defers the cycle analysis and is not a complete engine design.
+
+ASSUMPTIONS
+- DEFERRED dependency cycle=NOT_CALCULATED: Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point construction defers the cycle analysis and is not a complete engine design.
++				327 container
++					328 heading thermochemistry · CURRENT · PHYS-003.cea.interface:nasa/cea, Value: 4
++						329 text thermochemistry · CURRENT · PHYS-003.cea.interface:nasa/cea
++					330 text NASA CEA 3.3.4 · converged equilibrium · ideal infinite-area combustor · validation NOT_CLAIMED. Gamma is the CEA isentropic exponent, not a constant Cp/Cv approximation.
++					331 table CEA stations (SI); Cp and conductivity below use frozen transport properties
++						332 text CEA stations (SI); Cp and conductivity below use frozen transport properties
++						333 row
++							334 cell
++								335 text Station
++							336 cell
++								337 text P [Pa]
++							338 cell
++								339 text T [K]
++							340 cell
++								341 text Mach
++							342 cell
++								343 text γs
++							344 cell
++								345 text Ve [m/s]
++							346 cell
++								347 text Cp [J/(kg K)]
++							348 cell
++								349 text μ [Pa s]
++							350 cell
++								351 text k [W/(m K)]
++						352 row
++							353 cell
++								354 text chamber
++							355 cell
++								356 text 500000
++							357 cell
++								358 text 3093.34
++							359 cell
++								360 text 0.00000
++							361 cell
++								362 text 1.13251
++							363 cell
++								364 text 0.00000
++							365 cell
++								366 text 2470.27
++							367 cell
++								368 text 0.0000985300
++							369 cell
++								370 text 0.383999
++						371 row
++							372 cell
++								373 text throat
++							374 cell
++								375 text 288750
++							376 cell
++								377 text 2935.04
++							378 cell
++								379 text 0.999998
++							380 cell
++								381 text 1.13439
++							382 cell
++								383 text 1200.30
++							384 cell
++								385 text 2453.30
++							386 cell
++								387 text 0.0000950052
++							388 cell
++								389 text 0.364453
++						390 row
++							391 cell
++								392 text exit
++							393 cell
++								394 text 6682.88
++							395 cell
++								396 text 1754.86
++							397 cell
++								398 text 3.17033
++							399 cell
++								400 text 1.21584
++							401 cell
++								402 text 2992.71
++							403 cell
++								404 text 2237.56
++							405 cell
++								406 text 0.0000659383
++							407 cell
++								408 text 0.224941
++					409 button (collapsed) Chamber composition · mole fractions ≥ 10⁻⁶ (full trace species retained in JSON export), Secondary Actions: Expand
++						410 text Chamber composition · mole fractions ≥ 10⁻⁶ (full trace species retained in JSON export)
++					411 text MODEL
+Model ID: PHYS-003.cea.interface:nasa/cea
+Name: 
+Source: NASA CEA (Gordon & McBride, NASA RP-1311) as reference engine.
+Verification: EXTERNAL_SOLVER_CONVERGED
+Validation: NOT_CLAIMED
+Validity: VALID
+
+INPUTS
+fuel_id: LCH4
+oxidizer_id: LOX
+mixture_ratio: 2.7239
+chamber_pressure: 5 bar
+engine: nasa/cea
+engine_version: 3.3.4
+expansion_ratio: 10
+thermochemistry_configuration: {"fuel_temperature_k":111.67,"mode":"nasa_cea","oxidizer_temperature_k":90.17}
+
+OUTPUTS
+chamber_temperature: 3093.338429072098 K
+gamma: 1.1325095522748805 1
+molar_mass: 0.018985146143173624 kg/mol
+cstar: 1832.209565177435 m/s
+engine_provenance: {"source":"https://github.com/nasa/cea/tree/v3.3.4","license":"Apache-2.0","database_sha256":{"thermo.lib":"dab359a56d3001c6d2c320aaf5eee9c2dc4069cb74ad0c7e36ecd1f61d905e7d","trans.lib":"c203d9330746405e1b57008cd697354745ab991694b4ca11ed556b18cb834111"},"fuel_species":"CH4(L)","oxidizer_species":"O2(L)","fuel_temperature_k":111.67,"oxidizer_temperature_k":90.17,"reactant_temperature_defaults_used":false,"chemistry_mode":"equilibrium","combustor":"infinite_area","converged":true,"requested_expansion_ratio":10,"reactant_temperature_ranges_k":{"CH4(L)":[101.643,121.643],"O2(L)":[80.17,100.17]},"reactant_enthalpy_limitation":"Liquid/reactant-only database entries use tabulated reference enthalpy, not a heated-liquid EOS model. Temperature-range acceptance does not establish liquid phase or pressure validity."}
+
+WARNINGS
+- Validation: NOT_CLAIMED. Solver convergence is not physical engine validation.
+- Liquid/reactant-only database entries use tabulated reference enthalpy, not a heated-liquid EOS model. Temperature-range acceptance does not establish liquid phase or pressure validity.
+
+ASSUMPTIONS
+- External engine is the thermochemical authority.
+- COSMOS validates and normalizes the returned contract.
+- Infinite-area adiabatic combustor and ideal equilibrium nozzle; no combustion/loss efficiency correction.
++				412 container
++					413 heading performance · FAILED · PHYS-004.choked.mass_flow, Value: 4
++						414 text performance · FAILED · PHYS-004.choked.mass_flow
++					415 text CALCULATION FAILED
+
+Reason:
+performance requires explicit ambient_pressure (zero for vacuum).
+
+Code:
+InvalidInputError
+
+Action:
+Correct the input.
++				416 text 0
++				417 text IDLE
++				418 text —
+The focused UI element is 312 button Run Phase 3 (same design)

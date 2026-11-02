@@ -26,17 +26,9 @@ __all__ = (
 # Downstream stage may run when the named upstream capability is NOT_IMPLEMENTED.
 # The orchestrator must still record the stub result; it must not invent physics.
 BYPASSABLE_WHEN_UNIMPLEMENTED: dict[tuple[str, str], str] = {
-    ("chamber", "injector"): (
-        "Injector orifice/element physics is NOT_IMPLEMENTED; chamber L* sizing "
-        "proceeds from performance geometry only."
-    ),
-    ("nozzle", "cooling"): (
-        "Regenerative/film cooling is NOT_IMPLEMENTED; nozzle uses isentropic "
-        "1D stations without a cooled-wall model."
-    ),
     ("operating_point", "cycle"): (
-        "Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point "
-        "construction defers the cycle analysis and is not a complete engine design."
+        "Preliminary operating-point construction does not consume a feed/power balance. "
+        "Selected steady PF/GG assessments and solved operating points are separate exact-baseline calculations; cycle selection is not a solved balance."
     ),
 }
 
@@ -65,20 +57,20 @@ STAGE_ENGINEERING_NOTES: dict[str, str] = {
     "design_project": "One PropulsionDesign identity. New/Clone create; Run updates the same design.",
     "requirements": "Authoritative targets (Pc, thrust, O/F, expansion). Changing them marks dependents STALE.",
     "propellants": "Physics registry identity only. Concatenated labels such as LOX/RP-1 are display, not IDs.",
-    "cycle": "NOT_IMPLEMENTED — no validated cycle power-balance model exists in COSMOS 0.1 Physics.",
+    "cycle": "Selected steady PF/GG models available in managed cycle/operating assessments. Explicit feed inputs required. This upstream selection is not a downstream solved balance; other cycles unsupported.",
     "operating_point": "Built from requirements and propellants. Gamma/Tc may be explicit analysis assumptions.",
-    "thermochemistry": "PARTIAL — NASA CEA is UNAVAILABLE; Tc/γ/MW are ASSUMED when supplied.",
-    "performance": "PARTIAL — choked isentropic mass flow and ideal thrust. No loss model.",
-    "injector": "NOT_IMPLEMENTED — orifice/element injector design is not in frozen Physics.",
+    "thermochemistry": "PARTIAL — optional NASA CEA 3.3.4 equilibrium with explicit inlet temperatures, or explicitly ASSUMED Tc/γ/MW. No physical validation.",
+    "performance": "PARTIAL — CEA ideal equilibrium nozzle in CEA mode, otherwise constant-gamma isentropic nozzle. No loss/separation model.",
+    "injector": "PARTIAL — liquid-orifice hydraulics with explicit Cd/properties; no atomization or combustion stability prediction.",
     "chamber": "PARTIAL — preliminary L* geometry from throat area. Injector volume is neglected.",
     "thermal": "PARTIAL — Bartz gas-side HTC at the throat. Gas properties are analysis inputs.",
-    "cooling": "NOT_IMPLEMENTED — regenerative/film cooling is not available.",
-    "nozzle": "PARTIAL — 1D isentropic stations reused from Performance. MOC/Rao contour is NOT_IMPLEMENTED.",
-    "structure": "PARTIAL — thin-wall hoop/longitudinal stress vs handbook yield. Not a certified allowable.",
+    "cooling": "PARTIAL — single-phase divergent-nozzle channels; optional gaseous-slot film estimate. No boiling or liquid-film evaporation.",
+    "nozzle": "PARTIAL — tangent bell contour and quasi-1D stations. Not optimized Rao/MOC, CFD or a separation model.",
+    "structure": "PARTIAL — selectable thin-wall or closed-end Lamé smooth-cylinder pressure stresses vs temperature-valid handbook typical yield. No cooled-ligament or thermal-stress qualification.",
     "materials": "PARTIAL — Physics handbook catalog lookup. Not MMPDS/ASME certified allowables.",
     "performance_summary": "Aggregation of CURRENT stage results. Does not invent missing physics.",
     "consistency": "Checks required CURRENT results and documented NOT_IMPLEMENTED bypasses.",
-    "design_review": "READY only when required implemented stages are CURRENT. Injector/cooling/cycle keep INCOMPLETE.",
+    "design_review": "CURRENT means input freshness, not validation. Missing inputs and missing exact selected-cycle assessment keep INCOMPLETE.",
 }
 
 
@@ -140,6 +132,9 @@ class StageDependency:
 
 
 def _dependency(downstream: str, upstream: str) -> StageDependency:
+    if downstream == "chamber" and upstream == "injector":
+        return StageDependency(upstream, DependencyRequirement.INFORMATIONAL,
+                               "Preliminary L* geometry does not consume injector hydraulic sizing or model atomization.")
     reason = BYPASSABLE_WHEN_UNIMPLEMENTED.get((downstream, upstream))
     if reason is not None:
         return StageDependency(upstream, DependencyRequirement.DEFERRED, reason)
@@ -312,7 +307,7 @@ def build_default_propulsion_graph() -> WorkflowGraph:
             "cycle",
             "Engine Cycle",
             ("requirements",),
-            StageImplementationStatus.NOT_IMPLEMENTED,
+            StageImplementationStatus.PARTIAL,
         ),
         (
             "operating_point",
@@ -336,7 +331,7 @@ def build_default_propulsion_graph() -> WorkflowGraph:
             "injector",
             "Injector",
             ("performance",),
-            StageImplementationStatus.NOT_IMPLEMENTED,
+            StageImplementationStatus.PARTIAL,
         ),
         (
             "chamber",
@@ -353,8 +348,8 @@ def build_default_propulsion_graph() -> WorkflowGraph:
         (
             "cooling",
             "Cooling System",
-            ("thermal",),
-            StageImplementationStatus.NOT_IMPLEMENTED,  # regen/film not available
+            ("thermal", "nozzle"),
+            StageImplementationStatus.PARTIAL,
         ),
         (
             "materials",
@@ -371,8 +366,8 @@ def build_default_propulsion_graph() -> WorkflowGraph:
         (
             "nozzle",
             "Nozzle",
-            ("chamber", "cooling", "performance"),
-            StageImplementationStatus.PARTIAL,  # isentropic / area-ratio; no MOC
+            ("chamber", "performance"),
+            StageImplementationStatus.PARTIAL,
         ),
         (
             "performance_summary",

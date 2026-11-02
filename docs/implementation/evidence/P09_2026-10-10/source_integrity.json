@@ -1,0 +1,14 @@
+{
+  "baseline_files": 2922,
+  "changed_existing_paths": [
+    ".github/workflows/ci.yml",
+    "gui/server.py"
+  ],
+  "unexpected_changes": [],
+  "pass": true,
+  "preserved_dirty_tree": true,
+  "retained_before_bytes": [
+    ".github/workflows/ci.yml",
+    "gui/server.py"
+  ]
+}

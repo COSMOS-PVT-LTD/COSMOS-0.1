@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "serial_p95_ms": 12.984958000000915,
+  "relative_budget_ms": 1000,
+  "budget_rule": "max(1000ms,20 times measured serial p95); local project fixture only",
+  "concurrent_requests": 32,
+  "status_counts": {
+    "ok": 32,
+    "busy": 0
+  },
+  "max_ms": 103.50141599999915,
+  "sampled_server_rss_max_bytes": 33505280,
+  "whole_system_peak": false
+}

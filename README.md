@@ -70,6 +70,16 @@ Owner acceptance and protected-main merge are separate from numerical qualificat
 
 ## Quick start (native desktop — default)
 
+The integrated private Mac installation is **`~/Applications/COSMOS Desktop.app`**.
+Double-click it, then choose **Engine CAD** or **Main COSMOS workspace**. Both
+existing data roots remain in place; the app does not migrate or merge projects.
+This installation embeds its Python, CEA, CAD and PicoGK runtimes rather than
+depending on a checkout virtualenv. Its separately executed desktop qualification
+and remaining boundaries are recorded in
+`docs/implementation/evidence/DESKTOP_STANDALONE_2026-10-28/IMPLEMENTATION.md`.
+Native menus expose implemented workspaces and the explicitly unqualified
+compact-research generator. Full engine regeneration and R08 remain on hold.
+
 COSMOS 0.1 is a **local installed desktop application** (native window via pywebview),
 not a website. The UI is served on `127.0.0.1` inside your own app window — the same
 pattern used by many modern engineering tools that embed a local shell.
@@ -95,9 +105,8 @@ Headless HTTP only (CI / API testing):
 python main.py --headless --port 8780
 ```
 
-If pywebview is missing, `python main.py` prints install instructions and temporarily
-opens the default browser so you are not blocked — install desktop dependencies and
-relaunch for the native window.
+If pywebview is missing, desktop launch stops with an install diagnostic; it does
+not silently open a browser. Browser mode requires the explicit `--browser` flag.
 
 ### Bootstrap administrator (local development)
 

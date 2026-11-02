@@ -1,0 +1,785 @@
+{
+  "ok": true,
+  "applied": true,
+  "preview_sha256": "fab1e0faae959979214971dc5c20e56870ef3f2d6139c866c5d85aa5cb1269c1",
+  "baseline": {
+    "authority": {
+      "project_id": "bb7ebea6-15f9-43b8-b6c0-fd2a2d358155",
+      "object_id": "df304528-9e6f-5b60-9239-474e3cca0fae",
+      "commit_id": "2afd02ce-36b8-4939-b71b-c5f8d7872d6a",
+      "head": {
+        "version": 1,
+        "content_hash": "79217ab64a39873573dc9d50d569a02d9c838a52d426c2c4da2e0c28705564d9"
+      },
+      "input_revision": 0
+    },
+    "record": {
+      "action": "SELECT_COMPACT_DEVELOPMENT_BASELINE",
+      "component_source": {
+        "commit_id": "06f920dc-ff93-4aa3-8c74-a08c43f2bac3",
+        "domain": "engine-component-model",
+        "head": {
+          "content_hash": "06bd663a0e2b9305f119b286c813055de0e10478436a32a79da90ef45656e694",
+          "version": 3
+        },
+        "kind": "RETAINED_COMPONENT",
+        "object_id": "afc95eb3-2d0c-55b7-95eb-2644f67e01d0"
+      },
+      "engineering_acceptance": "NOT_PERFORMED",
+      "matched_physics": "REQUIRES_CANDIDATE_MATCHED_RECOMPUTATION",
+      "method_sources": {
+        "api/component_geometry.py": "02348090de1901e8f9f8545d32f63147e7cdecf3d3338037aa58372845454659",
+        "api/component_interfaces.py": "6d87cf125fbb11921c74bf8b70ff4976de01f1e0ad66d4fbbbe1f7d4073cd191",
+        "api/engine_redesign.py": "d7c4a92820971bc62f0591bd6fd5188389a8ffc8a6d658cc6f51678354b8a629",
+        "api/nozzle_geometry.py": "d0da646a52888125eb09a29592f84b800d40f3c4c1f9611e1f6c71cdd27e9bdd",
+        "api/occt_component_runtime.py": "4318cff4c2d531ce0ad24025d97d176f5830598d654a9ba4a10f7399aedd97e3",
+        "core/__init__.py": "b4e8c397ef9b367f4f69c927b456ddf7957978fcd834b410d722d0be801a0b91",
+        "core/config_v0_1_1.py": "712067ab8453b6e7712ae572aacefcc7e7eb482f0ef4a975c155b125ed0162bb",
+        "core/constants.py": "9442be7efe0547b47d95e4a13dd6a6c66e2ce520650b219cd6b2af63501888d1",
+        "core/contracts.py": "434758a24bd63f4031529693e7330a55072b12f85582f88c6460f9a0fcd2bd3c",
+        "core/dimension.py": "a69cc2d155b7f17257aff7d0e0e10cbb9289b0e8d76da1ab62b310b114d6747c",
+        "core/exceptions.py": "7f9c85fc091bdd3115f395b8b0c4d9c943dc9c5ed149e424444de44fa51c01d9",
+        "core/hashing.py": "3eb14e6d967a529df578daa84f5ce3899895658a61e5c6548e7cd17986cf14d2",
+        "core/logger.py": "ba1d0a48c5c1c26effbc00572c4de77747667423b6bf824a9ed303b6eb324d06",
+        "core/metadata.py": "f42b819f85e006e27c477b85a89fccfd6e85ba6793e27171e9e9ab77ebbdf05a",
+        "core/physical_constant.py": "5785495ef1e3cf37bd18d2fbbf82b060d756e9e68c791dcf541d7cc4f123a6e3",
+        "core/quantity.py": "8d7f4607f1926909fb8d27ad4648c4aa88421226ec1599325f631c762021e5c2",
+        "core/serialization.py": "4244d335a739fc7f225352f9d0ebfcd92d838df6888f7e2f37abfdda91bc56ba",
+        "core/settings.py": "a1ece7f5afe9e1a7e03c5c322ea992a5d46451be6d7a2fa4efad92711df2c8b8",
+        "core/unit.py": "384cd184eb40e16e53d2bdcf22ae902b1ba495cba7c143bfccbac2c6f1a48e96",
+        "core/units.py": "81bdcfdd0f3c1df321bdd9d0c3eb25a956965dd4c9186c22cb3052fc0843697f",
+        "core/validation.py": "14ef134767491bad094d2013bdcb0e38704a9a44360a573c40a6d1bf1576c379",
+        "core/version.py": "0df38f07e687f249265525e68c30055659d058efb9a777c8b210900de6b5e8fe",
+        "infrastructure/geometry/supervisor.py": "65b4abd075945d341469acc8e8a9ecd6e28903ff3689f54416b67082d9dcaf93",
+        "infrastructure/persistence/durable_jobs.py": "56bf355fe4cda163493fa7bebb3cb87099d77ed5c175e0e512d0ba5b6aea99d0",
+        "physics/fluids/sector_passage.py": "77162037e322db20278b0f00a850c09106790f540ed1347753db880446406ebb",
+        "plugins/geometry/adapters.py": "7702bf5721b7c971594e6d00ccb905b8f084dac7ffefb1680402373eb54a68f0",
+        "plugins/geometry/component_adapter.py": "0b042f8880c4d21b91bdfebb6af76f27a41c4330d3968b2a7db1933b65817947",
+        "plugins/geometry/component_protocol.py": "cd971192d6063b6f8f67a2e1d091fd7d02533cb159f729aedcedc3c453502c68",
+        "plugins/geometry/protocol.py": "d20863669635f39c1949ed66fef99380886c38712d0a0e410e1468454a73bb5e",
+        "plugins/geometry/workers/component_step_reader.py": "de42cca7b92b66c83db754735a82086cf80ea82ce82f144e521ba076c3093cbc",
+        "plugins/geometry/workers/component_worker.py": "29b2e6fe5b15ed95e83f3972c25c25f831ac5dee7afdb321eb2c640a0e1474e7",
+        "plugins/geometry/workers/stl_encoding.py": "2e61f3ece0292cb8fdb42f22e8d245b1079519dbe608c683c7de6a383ef73318",
+        "simulation/component_handoff.py": "ebf10f27f44399a7726efa0198a55b23cf1e8f4ede7edd9841797e4a6cf77c4d",
+        "systems/contracts/geometry/__init__.py": "2c00a67983c35d68e6d00fcebffbae6c8d2de054754215c37f17a87fc21cd526",
+        "systems/contracts/geometry/_wire.py": "682b7b3fec08796eb27f5a1cde3f7cef7ec2e23229f9df1248316a7db32b96bb",
+        "systems/contracts/geometry/artifacts.py": "6e43877d3e3a9af3afddf50bd10bfc5ae09e5b58e901a5bbbddb1394fbd7a51a",
+        "systems/contracts/geometry/build.py": "44288bf077b796a5404d7266a8527f9b1032d1c4bb4936692aec5015d1f230d8",
+        "systems/contracts/geometry/graph.py": "f65dd5061a0d797f33962b3522684489003e5b815fc53fac97e5892eaa9c3613",
+        "systems/contracts/geometry/schema.py": "1bc2efca3ccf393acf3102eff16c54b4bee6b448c12fafd8026dd6f888b209e2",
+        "systems/contracts/geometry/snapshot.py": "b73a1419e7a21b30653664206c020fc3780df0dfa1fd7c8721f14a2e368fd592",
+        "systems/geometry/authority.py": "15b6aec446fd55691b4af3bcf7ac096a8d496e87abee8b7cdd2fd741ee21850b",
+        "systems/geometry/component_authority.py": "a6e9ac4c3548227859506dc005505957b7a91bf0d8ade6938238ad347e839158",
+        "systems/geometry/component_circuits.py": "ed1d18e8d46a33e7f0a7264a0db68b383582785d417c093b1107ddf502d4a35f",
+        "systems/geometry/component_interfaces.py": "31bc49ff42d0629a04f982e651cd5f3d124dbe3b55e4752f90c3928cfe48760d",
+        "systems/geometry/component_joints.py": "5e2063eef97e4dfc4e72b783b1343a72fd0314ca7e5c657c74ae8a123cedecb5",
+        "systems/geometry/component_model.py": "cc7513fe7024ed68b28d01d0767e592420f54383175bece6ef492e81507dac28",
+        "systems/geometry/component_qa.py": "e072201ae701a13fc3444c12604e2a2f5a3533b57b711991d3e3f44d89a370a3",
+        "systems/geometry/component_reference.py": "584f134e9f285ffa7253848fef08037dc33d41721f2ca7deeb4dab4815d13bea",
+        "systems/geometry/component_review.py": "a9adeefb8abdad71bd2d9a8f68a0b9199ced7dbdb0b64e1ca61a2d89006a33fd",
+        "systems/geometry/component_sections.py": "e1ecbe2f31fb0d5d8753671c3d33b78c84804ac54d7421e6bb6c2180c114c1ba",
+        "systems/geometry/component_workspace.py": "9acd9562cf4eb4811b4ff297dcfa2f4a972d8056b537613085019cc01201fc3e",
+        "systems/geometry/development_baseline.py": "b2b2ceceaf5beee354906a02ee2e58b9180032e41d7af50605562e623fb0f854",
+        "systems/geometry/driving_constraints.py": "4b5e50f061b5c0af41bbe54a21f527c6bb12fe29559413ce2b1866d8d2d31438",
+        "systems/geometry/engine_builds.py": "a50840ba8e62d1361fca7153268d4fcb7c11520c5155719c3d31f1f906068fca",
+        "systems/geometry/engine_redesign.py": "4eb4c48b3a69155b71da7b0cc94b014b1833ffc6f23ef087a9b6a5b377d6183b",
+        "systems/geometry/engine_redesign_authority.py": "18bfd82b6d3094b440ff4fe401640dcd7117946c85d04c1cbd205b0bed2df0f4",
+        "systems/geometry/qa.py": "292092bc55212558a3d3c048bef5159eb7b8440e6f03091b2076fa16fa4ab167",
+        "systems/geometry/service.py": "bdc1b57083b80c87c36b9e47e76e8bf57148e91870f607b384d8048196e53bf6"
+      },
+      "native_generation": "NOT_ESTABLISHED_BY_SELECTION",
+      "physical_validation": "NOT_PERFORMED",
+      "previous_baseline_commit_id": null,
+      "previous_selection": {
+        "commit_id": "06f920dc-ff93-4aa3-8c74-a08c43f2bac3",
+        "domain": "engine-component-model",
+        "head": {
+          "content_hash": "06bd663a0e2b9305f119b286c813055de0e10478436a32a79da90ef45656e694",
+          "version": 3
+        },
+        "kind": "RETAINED_COMPONENT",
+        "object_id": "afc95eb3-2d0c-55b7-95eb-2644f67e01d0"
+      },
+      "propulsion_commit_id": "3ce745d6-445a-4fca-81af-be9c09f200dc",
+      "r08": "ON_HOLD",
+      "reason": "User approved superseding the old development default while retaining immutable sources and history. No engineering or hot-fire approval; R08 remains on hold.",
+      "selection": {
+        "commit_id": "dcf4adff-9540-443e-9e6e-a4775fab92fd",
+        "domain": "engine-redesign-candidate",
+        "head": {
+          "content_hash": "6199e3314e40655e9cc242c28c634ec513e46a13fd9702b2a68c6026dc841b73",
+          "version": 1
+        },
+        "kind": "COMPACT_CANDIDATE",
+        "object_id": "c5fa70b5-6fa6-55c2-ad0e-6c37a6de84cb"
+      },
+      "selection_scope": "PRELIMINARY_GEOMETRY_DEVELOPMENT_ONLY",
+      "source_retention": "RETAINED_IMMUTABLE_NOT_DELETED"
+    },
+    "upstream_current": true,
+    "selected_geometry_head": {
+      "version": 1,
+      "content_hash": "6199e3314e40655e9cc242c28c634ec513e46a13fd9702b2a68c6026dc841b73"
+    },
+    "engineering_acceptance": "NOT_PERFORMED"
+  },
+  "candidate": {
+    "project_id": "bb7ebea6-15f9-43b8-b6c0-fd2a2d358155",
+    "object_id": "c5fa70b5-6fa6-55c2-ad0e-6c37a6de84cb",
+    "commit_id": "dcf4adff-9540-443e-9e6e-a4775fab92fd",
+    "head": {
+      "version": 1,
+      "content_hash": "6199e3314e40655e9cc242c28c634ec513e46a13fd9702b2a68c6026dc841b73"
+    },
+    "input_revision": 0
+  },
+  "research_input": {
+    "schema": "cosmos.compact-engine-input.v1",
+    "source_commit_id": "06f920dc-ff93-4aa3-8c74-a08c43f2bac3",
+    "source_model": {
+      "snapshot_json": "{\"content_sha256\":\"aad3c9bd84740db826ce16c58c2399efa0420e6b293483c668426ea96815b558\",\"contract_type\":\"DesignSnapshot\",\"created_at\":\"2026-10-24T20:09:38.524682+00:00\",\"frame_id\":\"world\",\"frames\":[{\"content_sha256\":\"bc8331739e146378344e97b5ab0b69b720d14c3369d5394327d52ebd0510a97c\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"fuel-supply\",\"handedness\":\"right\",\"origin_m\":[0.03981437549989808,0.04180443251875772,0.0],\"parent_frame_id\":\"world\",\"rotation\":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"62408ea841401fd707bd89be0b31bcee04b6efd83a8719ff3dccc2cddaef4fef\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"head-frame\",\"handedness\":\"right\",\"origin_m\":[-0.3416666666666667,0.0,0.0],\"parent_frame_id\":\"world\",\"rotation\":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"5aa82d7373c084a41516f4aa8ab312ece0309fbf7882d60eb193ffd719ca12f9\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"lower-coolant-header\",\"handedness\":\"right\",\"origin_m\":[0.03981437549989808,0.0,0.0],\"parent_frame_id\":\"world\",\"rotation\":[-1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,-1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"2cd28ece2a6fd58bf04769504b4b95cd1c8f0227d843941d321274416e143406\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"oxidizer-supply\",\"handedness\":\"right\",\"origin_m\":[-0.4216666666666667,-0.041,5.021051876504149e-18],\"parent_frame_id\":\"world\",\"rotation\":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"a0c9fd0c2b8de9682feaca77877a8d22d814d6807b3ef17e3105031fe5202e24\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"radial-plate-frame\",\"handedness\":\"right\",\"origin_m\":[-0.3226666666666667,0.0,0.0],\"parent_frame_id\":\"world\",\"rotation\":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"baa584debf2e1e03bf7739d2c9b5d621c24180d24755c61b3671f927b1d2aa17\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"return-collector\",\"handedness\":\"right\",\"origin_m\":[-0.2876666666666667,0.06306439496422706,0.0],\"parent_frame_id\":\"world\",\"rotation\":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"9ea48143bce1a8a51c56521506c5c1e9ba6f5491278b0154ba01743fa204f3ee\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"return-elbow-a\",\"handedness\":\"right\",\"origin_m\":[-0.2626666666666667,0.06306439496422706,0.0],\"parent_frame_id\":\"world\",\"rotation\":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"9f6abcd29ad239d0bf1736c9282bfd08c82808222c3375aa6eec4ddcc957a650\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"return-elbow-b\",\"handedness\":\"right\",\"origin_m\":[-0.2506666666666667,0.098,0.0],\"parent_frame_id\":\"world\",\"rotation\":[0.0,-1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"f988594b1a2dbd06fcd5772dc9670cf9d7f159a5fa0644e96c4ddebe20a62e5a\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"return-elbow-c\",\"handedness\":\"right\",\"origin_m\":[-0.3666666666666666,0.11,0.0],\"parent_frame_id\":\"world\",\"rotation\":[-1.0,0.0,0.0,0.0,-1.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"d31ae78ddcc19596beabb35c4b68fadf0b36b3c1e2e27225854f38362a4703b5\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"return-elbow-d\",\"handedness\":\"right\",\"origin_m\":[-0.3786666666666667,0.03865,0.0],\"parent_frame_id\":\"world\",\"rotation\":[0.0,1.0,0.0,-1.0,0.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"4bfbabc4cf893697ed9e63f885198e0d5a8fb34cf4c31153219d0155a52dea6d\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"return-head\",\"handedness\":\"right\",\"origin_m\":[-0.3666666666666667,0.02665,0.0],\"parent_frame_id\":\"world\",\"rotation\":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"19eb6094089618d62e2edab3eefad355a867a3f008106ad3e65373e11452f8c8\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"return-inward\",\"handedness\":\"right\",\"origin_m\":[-0.3786666666666667,0.098,0.0],\"parent_frame_id\":\"world\",\"rotation\":[0.0,1.0,0.0,-1.0,0.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"870da8d8c863bcf0fddfe358e55cf4abf31f30fd72663a53938819b027d8198c\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"return-outward\",\"handedness\":\"right\",\"origin_m\":[-0.2506666666666667,0.07506439496422705,0.0],\"parent_frame_id\":\"world\",\"rotation\":[0.0,-1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"42ea8a41a9113e1c6f28c519db3898dfb580213f6d18fa77f3fb4aaafb1e767d\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"return-over-flange\",\"handedness\":\"right\",\"origin_m\":[-0.2626666666666667,0.11,0.0],\"parent_frame_id\":\"world\",\"rotation\":[-1.0,0.0,0.0,0.0,-1.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"5306cbae1ce1ff149b09bb344bf521284d46a564a1a3116f71f1304598ff46d3\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"upper-coolant-header\",\"handedness\":\"right\",\"origin_m\":[-0.3146666666666667,0.0,0.0],\"parent_frame_id\":\"world\",\"rotation\":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"},{\"content_sha256\":\"213deb594196916b0978102722aa76df072e4ec9baeaad3b258554b2acecbd45\",\"contract_type\":\"CoordinateFrame\",\"frame_id\":\"world\",\"handedness\":\"right\",\"origin_m\":[0.0,0.0,0.0],\"parent_frame_id\":null,\"rotation\":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0],\"schema_version\":\"1.0.0\",\"units\":\"m\"}],\"parameters_si\":[{\"content_sha256\":\"3f05525c81526eaa0b13695fcb4633f1abfd0dc159acce90710d9de2139c7131\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"collector-mount-bolts.bolt_circle_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-collector-mount-bolts\",\"unit_symbol\":\"m\",\"value_si\":0.085},{\"content_sha256\":\"fa9b453a8bb3f993e558e82cddfc7a85205f35c44c9fa99f6d9154820919abbb\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"collector-mount-bolts.bolt_hole_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-collector-mount-bolts\",\"unit_symbol\":\"m\",\"value_si\":0.0032},{\"content_sha256\":\"6b87ab0fc3f2d2b881edb275a4c4eaa46937fa7baaef4e5919ea303d069d8a5a\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"collector-mount-bolts.count\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-collector-mount-bolts\",\"unit_symbol\":\"1\",\"value_si\":8.0},{\"content_sha256\":\"b5355ad1fe24c6d1677989249105673849092ed1bddaec61b254c54c39315e67\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"collector-mount-bolts.phase\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-collector-mount-bolts\",\"unit_symbol\":\"rad\",\"value_si\":0.0},{\"content_sha256\":\"9ccc701f1034137fe9f6ecbe1b14e87f7ab4901433173f1eb16aa0195afe2960\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"export_tolerance\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"component-spec\",\"unit_symbol\":\"m\",\"value_si\":0.00015},{\"content_sha256\":\"2aa0a4169c73a294226ef96450dbb37ead7847a56d51a68c35ed5d03b54ae660\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"fuel-supply.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-fuel-supply\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"30b85b5158558e48b7b8d4dc274c984160508a04edcb291907af9dcd38e6a0ca\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"fuel-supply.length\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-fuel-supply\",\"unit_symbol\":\"m\",\"value_si\":0.08},{\"content_sha256\":\"c5d0f3a792806cecf7afd57be45b597ceaadaa1bbf818932ab188e67b811ede7\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"fuel-supply.wall_thickness\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-fuel-supply\",\"unit_symbol\":\"m\",\"value_si\":0.0012},{\"content_sha256\":\"297fd7620b994a971cf9fb7e5724e50a77234a17b23797f271aac2e2559af98a\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.count\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"1\",\"value_si\":5.0},{\"content_sha256\":\"5ea2f2e231da9b17c7ea651549b79fe03076a7cb0c9fb6ceb76cf17aded33113\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.depth0\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.00127},{\"content_sha256\":\"3b61a07f6153333c1e20467aa47cfda522c0d49743fbc8a01a76f4b03c624b74\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.depth1\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.00127},{\"content_sha256\":\"367d4f1b3ca3cc73ba58643be78e52a4a2d47c1118f014d3d731115595cc48bb\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.depth2\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.00127},{\"content_sha256\":\"c58255354f28215a5b6361f9ecada15733d0c9a051253acb7abe75b711eed1fb\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.depth3\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.00127},{\"content_sha256\":\"c70ca0b8bff2471fc2fc746af0e4a74328378afbb05bef79050296c1b24563ee\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.depth4\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.00127},{\"content_sha256\":\"c4d98ab436c6ea450253296e36ed0ed77e8c99ed5636c7c7593fe80e5343e0bb\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.face0\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"1\",\"value_si\":-1.0},{\"content_sha256\":\"92c098dcca0da22328e0f8dec6e2026c16e828940df317fce292b57b6b8af90b\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.face1\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"1\",\"value_si\":-1.0},{\"content_sha256\":\"4b2050752319ee1ffd0d3c9e9c1622a059ae6963bb3718f54c6679fa73069f46\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.face2\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"1\",\"value_si\":-1.0},{\"content_sha256\":\"b891158128814e46bcdf68ded62a1a0410e0c782349d5a8f1f605d1d9d5cba26\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.face3\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"1\",\"value_si\":-1.0},{\"content_sha256\":\"d7fb4e81bfeb5ac5528ccce03de349d779db37caed65549875d228ad3257976f\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.face4\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"1\",\"value_si\":1.0},{\"content_sha256\":\"181c7785fb55ad431ee978d1a202136e2ec06ebbfcacd60f66bd806c12eb3070\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.inner_radius0\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.018},{\"content_sha256\":\"7659ef19ff005cce21405e90938d4ea535fd2a7cd9f66e515ffe1d56d44aba87\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.inner_radius1\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.03},{\"content_sha256\":\"c98107982f7bb3601dc95e30a8e5e9c246f3a80428ccbc79688295a6c29a012a\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.inner_radius2\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.035},{\"content_sha256\":\"31f262b43ba36f1725a4f54b741373b9d2801efe0dae8c41f0f0fc8d96348ef1\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.inner_radius3\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.044},{\"content_sha256\":\"4a13c66188181cd05397558435c7f128c37d48695771463d52674d7706a302ef\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.inner_radius4\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.055},{\"content_sha256\":\"37798fbec6a89e50db6d28968f021463976ffa97d0ada30a2c28b9da406cbcab\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.outer_radius0\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.02},{\"content_sha256\":\"2c84ef5f6302fe41bffc2530c1ce0f7fcad66697165799ed6799a03da795e5ff\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.outer_radius1\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.032},{\"content_sha256\":\"21cd6fbe3d11a4ad6bc67122d3232a19a2781ecb5c9f413e72c9a6911eadd9f6\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.outer_radius2\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.037},{\"content_sha256\":\"64246c08ccbec1d4650d0b65ede4f1cdaa6b2f5c8f280f6e074e0836bf6d966f\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.outer_radius3\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.046},{\"content_sha256\":\"030fb842c2b66aeb1b37cb60816ecb1c9ece4f8d0a2f7dd2239cb06ee9681f9e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"gas-joint-groove.outer_radius4\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-gas-joint-groove\",\"unit_symbol\":\"m\",\"value_si\":0.057},{\"content_sha256\":\"5f4b624663adf20f2a648db9891f6c402fb7c18cec286de1ea614f155d0a5aa8\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"head-mount-bolts.bolt_circle_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-head-mount-bolts\",\"unit_symbol\":\"m\",\"value_si\":0.085},{\"content_sha256\":\"8a6f1964a51e6d94572543a05073501f8fa7485a7833d6592333628275223f15\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"head-mount-bolts.bolt_hole_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-head-mount-bolts\",\"unit_symbol\":\"m\",\"value_si\":0.0032},{\"content_sha256\":\"bb9c41b70b17cdb279fa0d810ab3b28156f75dc79755b9841fed57396014d8d1\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"head-mount-bolts.count\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-head-mount-bolts\",\"unit_symbol\":\"1\",\"value_si\":8.0},{\"content_sha256\":\"acbef7158f3f8302f3759d6867fe1d5d4055e975c383e84523df81f727971901\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"head-mount-bolts.phase\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-head-mount-bolts\",\"unit_symbol\":\"rad\",\"value_si\":0.0},{\"content_sha256\":\"554f869ef3cb36bf44693cd45f1e380729a3871a676c6143c4a7c2efa9e78114\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"illustrative-sector-cooling.count\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-illustrative-sector-cooling\",\"unit_symbol\":\"1\",\"value_si\":6.0},{\"content_sha256\":\"a234f242128976f1dac157e8c437580faa9b99167f0d719fc4f2f5f1db4a56de\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"illustrative-sector-cooling.depth\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-illustrative-sector-cooling\",\"unit_symbol\":\"m\",\"value_si\":0.0025},{\"content_sha256\":\"1f839b9db88cad0bd92713377ef13ed6e048ade2c3d84ae98c1a522dac6afc2c\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"illustrative-sector-cooling.fluid_domains\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-illustrative-sector-cooling\",\"unit_symbol\":\"1\",\"value_si\":0.0},{\"content_sha256\":\"4ae35e83fb5a49c13cf7ee57aa7a3879c6defea1807e7cff5f78345baf6fc6f5\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"illustrative-sector-cooling.hot_ligament\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-illustrative-sector-cooling\",\"unit_symbol\":\"m\",\"value_si\":0.0015},{\"content_sha256\":\"9434d4cd2cd7eeb3209c2481e640393594f5fd362536e57b3e0639d656976675\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"illustrative-sector-cooling.phase\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-illustrative-sector-cooling\",\"unit_symbol\":\"rad\",\"value_si\":0.1},{\"content_sha256\":\"29ffedba103c9f434c4b541d8bef4de457fc192a6b676caaeb8eb199f6932171\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"illustrative-sector-cooling.width\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-illustrative-sector-cooling\",\"unit_symbol\":\"rad\",\"value_si\":0.14},{\"content_sha256\":\"4b63016ba8b19f07beba865af7a37b695d799770457cf3d1c4f6aa38d2023d67\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"injector-mount-bolts.bolt_circle_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-injector-mount-bolts\",\"unit_symbol\":\"m\",\"value_si\":0.085},{\"content_sha256\":\"af47bf5b01d769aecedefcd8bedaf2c8ec472ffea21202286a69cecdaf2f8ad2\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"injector-mount-bolts.bolt_hole_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-injector-mount-bolts\",\"unit_symbol\":\"m\",\"value_si\":0.0032},{\"content_sha256\":\"aeb04a1f4fae62b20cd81a7aa2dc7dbc824df6c1030ee9897f54ca249b0b4a9a\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"injector-mount-bolts.count\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-injector-mount-bolts\",\"unit_symbol\":\"1\",\"value_si\":8.0},{\"content_sha256\":\"df6f689d1279d4db9d08278632443df7778284d69f13acc2ae1a7db39ee4dd88\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"injector-mount-bolts.phase\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-injector-mount-bolts\",\"unit_symbol\":\"rad\",\"value_si\":0.0},{\"content_sha256\":\"59587aaafc49683f7d1dd83999b30d723ad1bee6ce9572dffe8054c33b4e6cf9\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.back_web\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.004},{\"content_sha256\":\"c082088709c1787317423301dc33198f8da3810795070f8fae1a7d7d92b410f6\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.count\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"1\",\"value_si\":8.0},{\"content_sha256\":\"12bd2c9668906a4b74d62ffb1c1d82f53c6b0dd9bfd43a5cdd99b480898445e6\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.front_web\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.003},{\"content_sha256\":\"c2954bd28dea85d9fafbd10742ebf860e8d9d3d5b38fff915169e68e51299260\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.fuel_hole_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.001133112544991013},{\"content_sha256\":\"09b6dd34ba399c1a94efc6f95405f6f42ed5518da050645ed6d2c0a3b2a4a2ac\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.fuel_inlet_phase\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"rad\",\"value_si\":0.0},{\"content_sha256\":\"60eacafe15a2be82cd9d33507a4999ec5c0b06ef37ef5fcd916f796e6658a88d\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.fuel_inlet_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"589b7e5cce096c5850e442e61a7d0818bbe4a1a92e775484aa21e395646b72e0\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.fuel_inner\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.0215},{\"content_sha256\":\"f50ba6f300ac134cc0561dda38e961e75e54e197bf31b87b4c869c6cc7d10529\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.fuel_outer\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.0318},{\"content_sha256\":\"c7b651d04d59d0c36dc097c9b11f1a88bf45dd69b776d0af63589dc1970fc5d4\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.oxidizer_hole_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.001434731471867183},{\"content_sha256\":\"97b251cbe71ebc5b9a318c393a7e2a7bc151c4165bfb067bf5412a9958cb2a3a\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.oxidizer_inlet_phase\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"rad\",\"value_si\":3.141592653589793},{\"content_sha256\":\"12a0cd0a6c699a0bdd8950146b530d186327e7002ec548e53a30174a3bfc61dd\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.oxidizer_inlet_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.004},{\"content_sha256\":\"18ac534a51a63245a0b9f171281270b2c1967e61f7e6466ef62bfd498e10b02c\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.oxidizer_inner\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.035},{\"content_sha256\":\"bff1c27eacdbd5c3e62d84b68a3704dd710e45b0f6d1a5319edd0f714f98e6bb\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.oxidizer_outer\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.047},{\"content_sha256\":\"6aa920e1c120ffc4f40895b84f5795f0f13a44ad8df75920b5a1c0e354237d31\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.phase\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"rad\",\"value_si\":0.0},{\"content_sha256\":\"71652c4b395c64bdd46f9f25c25234bf4929d236fcaf3610417130a655e29b1d\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.plenum_length\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.012},{\"content_sha256\":\"a3d0b4526edeaa4a4c020cad0559f5ff892c7b16ebb50913f924cdca182a9826\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.095},{\"content_sha256\":\"c0f2009fa66fbca9df4143162846dd1568156939fa0adb2bfe6c2472993786ba\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.ring_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.03342871345349516},{\"content_sha256\":\"d5c6222c3f59fbfe98d9d5f5491fdb19adfd3979918b3f66b284fcc41bb0ea18\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"isolated-dual-manifold.separation\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-isolated-dual-manifold\",\"unit_symbol\":\"m\",\"value_si\":0.0135},{\"content_sha256\":\"529693f67070d7d93ddabd8b26b189839fa32b5624b9f08fd3f30d04a9a5fb42\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.back_web\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.004},{\"content_sha256\":\"c2cb18aee84e163d00c2915df63c06e7d9a75b27ee3ec7d9551ebaa27c969afc\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.03645443251875772},{\"content_sha256\":\"5e903366a85d76630fd906cfdade58a22a370d62bddea520acfec47ef1715981\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.count\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"1\",\"value_si\":6.0},{\"content_sha256\":\"d3a6a52488568951113fde5e2e9843699a1fc79a9fbfb1243e3a429124fde936\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.front_web\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.003},{\"content_sha256\":\"886795c650cb588b42c178e710c33d53f1187eaaea77cda607e7c388576bdfc8\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.outer_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.05045443251875772},{\"content_sha256\":\"a3df38442f2aede27e20029c4a1393dcc5afe8ac8222d887c4086b8b46b5e77a\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.phase\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"rad\",\"value_si\":-0.24},{\"content_sha256\":\"7b528fc2e66497a7c76f09814e4ac7ed28007c9bcdd77637a29c39b1e6eb81bd\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.plenum_inner\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.03715443251875772},{\"content_sha256\":\"90bcc5a4763e1fe8c3e8b1ebf3e727b40f37b4bad7ae8eb5f399f4e7c421f836\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.plenum_length\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.012},{\"content_sha256\":\"e22cd7353415c42d7752e1f8a5608a343a2db84ae1cd835503afdf9f555ebd0a\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.plenum_outer\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.04645443251875772},{\"content_sha256\":\"c0aa3f7cefbcd1a7a1d26ac1af3fbbe04e329631a4b43a9ceab3b159810893e7\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.port_inner\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.03795443251875772},{\"content_sha256\":\"a4aa80d9e7568f931830cdceb60f2974d8d50a6229513709b55c91813abaf197\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.port_outer\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.04045443251875772},{\"content_sha256\":\"9e3d63cc211133dfb5301c6c04d8197b99c66b6381bcc6493610003f750befa0\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.supply_hole_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"e24e37ab5bb17d7e39d35923417927a955ee1507414a9b4da7edae1e94b1a081\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.supply_phase\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"rad\",\"value_si\":0.0},{\"content_sha256\":\"f307257bee0656196e2e0b5b8bd6b3522c160c906f918ee383bcaedcc97b52c0\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"lower-coolant-header.width\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-lower-coolant-header\",\"unit_symbol\":\"rad\",\"value_si\":0.14},{\"content_sha256\":\"4a7c97784e225bedbb4d1d2eb951d903fc22a59685cfc347fba457649728dc43\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"oxidizer-supply.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-oxidizer-supply\",\"unit_symbol\":\"m\",\"value_si\":0.004},{\"content_sha256\":\"0d33b438b85c31b1fb21c8f6a22d887377b77f888fbf074a1207b4ac91c99fee\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"oxidizer-supply.length\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-oxidizer-supply\",\"unit_symbol\":\"m\",\"value_si\":0.08},{\"content_sha256\":\"1a049373d319db336f8aa026204af1b571d0d4e206007e817d08c514b2cba7d3\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"oxidizer-supply.wall_thickness\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-oxidizer-supply\",\"unit_symbol\":\"m\",\"value_si\":0.0012},{\"content_sha256\":\"082326b06bf33fdb4be369fecc4d4d095dddbad0ed5a3362a293366e29f0b906\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"radial-injector.angle\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-radial-injector\",\"unit_symbol\":\"rad\",\"value_si\":0.25},{\"content_sha256\":\"6b4ff894f17f7a43cb851bdd1edebccfbbc20c22fc952c5d2d55bfffda51f667\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"radial-injector.count\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-radial-injector\",\"unit_symbol\":\"1\",\"value_si\":8.0},{\"content_sha256\":\"af4c9813150b9a281ae142369174c0ac46b686f017cdb40a4065196b456280af\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"radial-injector.fuel_hole_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-radial-injector\",\"unit_symbol\":\"m\",\"value_si\":0.001133112544991013},{\"content_sha256\":\"4f295b42ab8a5d2cb050a5b73c55397312e5fc8888b58b28ccc4944f5acf82ff\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"radial-injector.oxidizer_hole_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-radial-injector\",\"unit_symbol\":\"m\",\"value_si\":0.001434731471867183},{\"content_sha256\":\"24d2e4f54df2e6383f8d9ad383e8bb4684ee24b90c81dfa020004e1c6343398e\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"radial-injector.phase\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-radial-injector\",\"unit_symbol\":\"rad\",\"value_si\":0.0},{\"content_sha256\":\"9a30d55d49814127769e5f0a15778aee7ad34dd4cd730c36306ac58297f34818\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"radial-injector.radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-radial-injector\",\"unit_symbol\":\"m\",\"value_si\":0.095},{\"content_sha256\":\"b488cb92b3155e083963246bf2e7bb9742257d4eaa8df981570b06c4ecaa80a1\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"radial-injector.ring_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-radial-injector\",\"unit_symbol\":\"m\",\"value_si\":0.03342871345349516},{\"content_sha256\":\"03ed75e26c4284713fc81e532ad804b853472c5bb28623ea837ab52dd27a7091\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"radial-injector.separation\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-radial-injector\",\"unit_symbol\":\"m\",\"value_si\":0.0135},{\"content_sha256\":\"ddf115d16adfbbf5a639cbb18dd533c6a0263ce03c64f7e1cf8b20f5b0c72ec2\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"radial-injector.thickness\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-radial-injector\",\"unit_symbol\":\"m\",\"value_si\":0.008},{\"content_sha256\":\"25d8d299c02bd96d8690d9f564ea87f6b866790fe5d7a7f09b3cee4a1665cc7e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-collector.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-collector\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"c3295edf78728fbb05f126954817225cc7bf6ba6dd011b2dc685032fd969b4cf\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-collector.length\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-collector\",\"unit_symbol\":\"m\",\"value_si\":0.025},{\"content_sha256\":\"fc01f5f493f7a94b1214234cab7ee7b820e014434c2e6702adfc6b57add7573c\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-collector.wall_thickness\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-collector\",\"unit_symbol\":\"m\",\"value_si\":0.0012},{\"content_sha256\":\"831d3986870c605e0bfc5785b5a5ff6644bb3b5411fbd725b1878e213d76797b\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-a.angle\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-a\",\"unit_symbol\":\"rad\",\"value_si\":1.570796326794897},{\"content_sha256\":\"476431c0289136b4e56df707b91594ae2f0988b6f5c9f48677aa1c24dea646df\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-a.bend_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-a\",\"unit_symbol\":\"m\",\"value_si\":0.012},{\"content_sha256\":\"f78ec34b23e2ecbb3b38ae2b8af11e01a7a762c57533a6b80e3a7424d3f4e1df\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-a.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-a\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"cefb9038a30354c165409214a6ffe480e51c6dba0e94ff1c3ce9ef0947e50af8\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-a.wall_thickness\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-a\",\"unit_symbol\":\"m\",\"value_si\":0.0012},{\"content_sha256\":\"9a027af69f9c7527b581498ce363fed7bf916ecd1baa2c17e8432afe5c1bd003\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-b.angle\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-b\",\"unit_symbol\":\"rad\",\"value_si\":1.570796326794897},{\"content_sha256\":\"8dba0ae61646d01046d8f965c028a53aa6cd4b35931f02a94ffecdf775cd457b\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-b.bend_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-b\",\"unit_symbol\":\"m\",\"value_si\":0.012},{\"content_sha256\":\"861492b03228369eda6a442fa0778075c60ba06698a6a7e7614f6a0cbdf990b7\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-b.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-b\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"fad5fd6e2cbdea83e545d20853a2c71099349b2ae30ab4a8bc1e1db4e80f5417\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-b.wall_thickness\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-b\",\"unit_symbol\":\"m\",\"value_si\":0.0012},{\"content_sha256\":\"5815c80228de14481b1ac523bc3a8dac71700a46894919150e3417b8151ae7a8\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-c.angle\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-c\",\"unit_symbol\":\"rad\",\"value_si\":1.570796326794897},{\"content_sha256\":\"e998e718a5f73661f11cd8b3ec2a6ef68a97a556c1c3f91a52a9b922a0a6d621\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-c.bend_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-c\",\"unit_symbol\":\"m\",\"value_si\":0.012},{\"content_sha256\":\"a6b4b75a0b599817454693ebe9ee89212e2118f5eb06449d546970c15d6fa356\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-c.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-c\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"6a581811c4d0955e6dc2276ca5d6e797b2e2d98ba19c14d825ad333fb0057711\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-c.wall_thickness\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-c\",\"unit_symbol\":\"m\",\"value_si\":0.0012},{\"content_sha256\":\"7d72e12ac587895ee890ec3b2c08cae1217eb07db7cf9945b680be1197032357\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-d.angle\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-d\",\"unit_symbol\":\"rad\",\"value_si\":1.570796326794897},{\"content_sha256\":\"e0940408a7140ca68491c75ae72d4c27e1d77cdd1f2df409e4cb4f9f6e61d9e5\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-d.bend_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-d\",\"unit_symbol\":\"m\",\"value_si\":0.012},{\"content_sha256\":\"1ad3ed0821ca1d990c76ab55ecdeb69209c7004a50879d01f0754d027249417b\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-d.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-d\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"28b2237a34ab4fd8b3c1ad9d184dbae4d3690314789ec10fe43d9af2664f1713\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-elbow-d.wall_thickness\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-elbow-d\",\"unit_symbol\":\"m\",\"value_si\":0.0012},{\"content_sha256\":\"13174126bda871b8ad075ab60e609a15cb698fba98a9ee6a2a7f5651600999bb\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-head.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-head\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"c330631cb37c6b3224b1e9ea2a661b72cc87886d70b1fd33e777d5432be4da4b\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-head.length\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-head\",\"unit_symbol\":\"m\",\"value_si\":0.025},{\"content_sha256\":\"c8320ed90e111bd665154617e2b80b177841661a7bcf3b4ef11c1df019d50a42\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-head.wall_thickness\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-head\",\"unit_symbol\":\"m\",\"value_si\":0.0012},{\"content_sha256\":\"624fb38fb6842803b001f3d1d0f5c17df0480f11e568fa21eae4b3e2e78b34e9\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-inward.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-inward\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"72d2f93bd5bff14ad9b8827441bee68ab88cfd2ceaa76860613585be11548f29\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-inward.length\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-inward\",\"unit_symbol\":\"m\",\"value_si\":0.05935000000000001},{\"content_sha256\":\"adef4a969d2b5f4641e8aafb50631f7b3ea2e3cf7a94486bac3b10f405ec6e72\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-inward.wall_thickness\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-inward\",\"unit_symbol\":\"m\",\"value_si\":0.0012},{\"content_sha256\":\"385d0e810a132f52d0ba6ef532291c0bc9b7e9c29438212c90d4c690c07c7b22\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-outward.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-outward\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"971f524307cadf1e4ca57a930d9727ad775d17eb9171e8a4e75bbfa06408a7c5\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-outward.length\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-outward\",\"unit_symbol\":\"m\",\"value_si\":0.02293560503577294},{\"content_sha256\":\"bd3a60c641b8025a0665f9740ab27e2924f31d91be5fa64079052e76965cac5d\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-outward.wall_thickness\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-outward\",\"unit_symbol\":\"m\",\"value_si\":0.0012},{\"content_sha256\":\"b3be53d6ec04b4ad34085be5dbc2414ab76a84e17daa03e61c4dbeb3634f996b\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-over-flange.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-over-flange\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"4f5a726b757b5dd4099bf2341edec16dc174153d41cb2d3443cecb7ade62dc51\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-over-flange.length\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-over-flange\",\"unit_symbol\":\"m\",\"value_si\":0.104},{\"content_sha256\":\"badea54d7c19e5ee5ad4771f9283e5b946cc4854bd90ff7ac793da6ef3d9e840\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"return-over-flange.wall_thickness\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-return-over-flange\",\"unit_symbol\":\"m\",\"value_si\":0.0012},{\"content_sha256\":\"e310087212c8e2a47843a7b44651f92eb745384f83fc0e8d1a46e8a48ce943bc\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"source_tolerance\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"component-spec\",\"unit_symbol\":\"m\",\"value_si\":1e-06},{\"content_sha256\":\"80dcce31a21bb67de52765cd5cd86c9a6785400741e71a9ceae96cb718d07dea\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner0\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0514287899284541},{\"content_sha256\":\"95c7f80e98a0b463f8a91034d28130e5e93ace612bb8ecb9c7b5e11a4e463227\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner1\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0514287899284541},{\"content_sha256\":\"f1fa4a30824b2b9564e32be43b0cf5133edc70d3217e7c3f8ee2a0ecd9f3fbfa\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner10\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03048803185830223},{\"content_sha256\":\"29cefe6db817ec7dd9cabfac64eb79b0dd67bf014e02f144a0890d94c03ab9f0\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner11\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03076215551264563},{\"content_sha256\":\"9256fc905578ea2f55b0f4063820c668dc34cdb17aaefdf0b43eb6178fb98d31\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner12\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03103044643984343},{\"content_sha256\":\"2f4ac5c355f15f872b224218bc659b281fa9e74db80803790a11a74f0eea23a0\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner13\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03129290463989561},{\"content_sha256\":\"5b96fef13717530f4cd9812093d639a6d31f9c9b3a8e6e5f51a7db0e427c77fb\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner14\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03154953011280221},{\"content_sha256\":\"a9863373bd6a3e2345d439bf97bea507cc10334a7dc1a875e8334aa47522fa26\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner15\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03180032285856321},{\"content_sha256\":\"3086514870b2cd3174c53d6a783ca3ceed9e50ac24b351a1e954b52a31a6f3a5\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner16\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0320452828771786},{\"content_sha256\":\"1b16aa0d78ee56ce2ceab25602bbe15356d2cad5951bec58eaba2db274adeb77\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner17\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0322844101686484},{\"content_sha256\":\"3f910b9a5ed190447c38ea263114f509475cce36ff903e3c64f884e943905dca\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner18\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0325177047329726},{\"content_sha256\":\"9f6c548c84dfdf750c664b4c15d673e4c1f2302f2b02e69e17a5675e20aa6531\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner19\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0327451665701512},{\"content_sha256\":\"25a6ec9d2253f37ec64f4cf4562e0d76456006250cc01a9b3feaaf51e0252f26\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner2\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0296924257092897},{\"content_sha256\":\"9394c8ecd71ad47595b28cd74351afa22d957841901996de812576ffc999affe\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner20\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03296679568018421},{\"content_sha256\":\"6e520e3b9093f2cc793f98e97329d2ce7699d5829a63644d7d0439fe9f707e13\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner21\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0331825920630716},{\"content_sha256\":\"438a1d7b9c7ae343b565c831fa07bbced508c9120af0bd4bff37cae474dbc59c\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner22\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0333925557188134},{\"content_sha256\":\"81d97038bfc0587a92199ccdb8d2644dc037fa42f69f2476cbc5ab8361039aa9\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner23\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03359668664740961},{\"content_sha256\":\"3a2b520d0a48bf2ffbd1d5fe4d1a6bd291d524850734dd1d39e8e8cb8dfd13c2\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner24\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0337949848488602},{\"content_sha256\":\"933866710125b1507f28e4515b5a077083cfba5b47ba83f3126a27d3ffef478b\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner25\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03398745032316521},{\"content_sha256\":\"76900b8c74b8e3e367c93196ebd3c4c8d3e0c29d55a837262cba6e70164a6b93\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner26\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03417408307032461},{\"content_sha256\":\"2ae9b25b7c3c7fda0b1dfa321a92d55aa767356e84c0c208e992795aa4febf74\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner27\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03435488309033841},{\"content_sha256\":\"1aaff08375f1ad040cf420dcaba5e0457eb1da1637b322ff7d9ad74ba94ddf4b\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner28\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03452985038320662},{\"content_sha256\":\"3311f72f2bd7494a6322e50ac59dd88c34ac6c90f2d719dd494e1ee94c4169c3\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner29\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03469898494892922},{\"content_sha256\":\"8c784bf65fc3af4cb9d4d00d277ff27cac87709bb8ac0266558edb0ce7260699\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner3\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0296924257092897},{\"content_sha256\":\"99a4147f89862c528e74e7bdc702886bd8df29d4eaad359452521321737af7a1\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner30\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03486228678750622},{\"content_sha256\":\"d071f08dc7d5d35ef1ad71cc8c3663c42a449bca3776f7968b036954a58fbbb7\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner31\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03501975589893763},{\"content_sha256\":\"5c2fd99f4fb940570f4b99059ce676f68f874d9d4e04d8613f9756ec974983c0\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner32\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03517139228322344},{\"content_sha256\":\"34aed9d2a1e5bf0b1ec27550fe534c561008597e70ce35f6f3750021d5425876\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner33\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03531719594036364},{\"content_sha256\":\"f99e3e9f7f66cb3f39802933afcef6eb35cfc14d19109402d5d705007a42591d\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner34\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03545716687035824},{\"content_sha256\":\"873e260ba24dab98989a08553d948c5ce90e18038252b446c8d4acf2eb74e34c\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner35\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03559130507320725},{\"content_sha256\":\"df1cccdda5af4d0796739edcd9613d21eab187c11a4410ebbc53935858213a5c\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner36\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03571961054891066},{\"content_sha256\":\"eb95b8898de8543b57b697161fd1408e7b1d693348f32da05a79a4b72810bc88\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner37\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03584208329746847},{\"content_sha256\":\"43400f8e28970cc7d83919b987475fd9a0b5a4dbb196f76f726f1b048858eb2e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner38\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03595872331888068},{\"content_sha256\":\"db3321129b09913376a29e01fca9e8d83d04682ac3f953e83af4e90a2ecdbf33\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner39\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03606953061314729},{\"content_sha256\":\"5fea942df42e46771e6fa8cfbd7fc523c2be1960292af36b69b5199abd9ec9dd\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner4\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.02970903091818288},{\"content_sha256\":\"cf41f7d557b60f1699ec72ff48fefff738f699f9e108ef93bb94be94969fb58f\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner40\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03617450518026829},{\"content_sha256\":\"9ae9cdbe8082e541dbe77cc6965ce96ecd77e0c3cbf99a4490d966a2b9047fd5\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner41\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0362736470202437},{\"content_sha256\":\"6e11eb3517421b29cc5470773a1ebe71e592ece23ae9ce320f92a12812b96e31\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner42\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03636695613307351},{\"content_sha256\":\"54c183e6200578b0d608fcd47c34d0f9dc33c4cda1e6ea540728c9ef0e99c6dd\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner43\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03645443251875772},{\"content_sha256\":\"2b3d427c8ea16a54c60473d32416e61ee3a5252dd2ab6c843cf35c9a68847d8c\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner5\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.02975875368179861},{\"content_sha256\":\"bc77ed2a54d9e693889e5b8405bb1e606896df5dc55a244f230efc213d99d18a\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner6\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0298413159302733},{\"content_sha256\":\"7cab209471df8cdbade5bb954a1609aa990f9dcfc24b4f24840cf54b5fed32b0\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner7\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.02995625594202314},{\"content_sha256\":\"c521c9b842a0993a2209258c5f177f1bba4b721ab960e5b7280dae5461d27a24\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner8\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03010293092587843},{\"content_sha256\":\"22b6fc6df81816890f8a5ab18df847720c09b86aedb5a0677641d22a77ddcd8f\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.inner9\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03028052061583256},{\"content_sha256\":\"861f389c236d22ae910e212df79935641bfecd3f058614c5aef1dfff527b20d3\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer0\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0574287899284541},{\"content_sha256\":\"a39deb2241911c09510f04ec14154afe3fa41878ab1787f1ac0e7524180c3c8a\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer1\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0574287899284541},{\"content_sha256\":\"0905e2e19b93011790847709e62e30c9c567ec90c938eea9bbde3772596b782e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer10\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03648803185830223},{\"content_sha256\":\"e60143a5656dbecd9eff28652decf5ddf94871a7b4dfd891deffeea7c1fc2a67\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer11\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03676215551264563},{\"content_sha256\":\"81f6e24a202bbb00b24720a4358a631f72d9793fa5281de60d4dbf404e55b70a\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer12\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03703044643984343},{\"content_sha256\":\"4364d8285dfe7b9da5df10114d0853c5c47181fdc45b4bbc4ce3243995584a1e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer13\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03729290463989561},{\"content_sha256\":\"3a25b40bc8a219a8f4353bdec798962236c8b6b4446d3803d79b9875c3a81c33\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer14\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03754953011280221},{\"content_sha256\":\"08d9a92804259da192711555fbf268d7975ad6f91f31dc134e52ffa0038e481e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer15\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03780032285856321},{\"content_sha256\":\"bd2cca836bb1f81d95534e8d9aa5e4343ad8f6c957a688918e123e42f643fd05\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer16\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0380452828771786},{\"content_sha256\":\"21acf75bca52ee9d087c2b848ddcf7859bfb64dd15920da02593fff349e0add4\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer17\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0382844101686484},{\"content_sha256\":\"f24ffe42ea2aa8266fd72fb7020baab1cfc443235c969e515a25ddbc63e144f8\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer18\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0385177047329726},{\"content_sha256\":\"53b808c5dd84b316ae4f873e3f695077e8f8c448661d2b1a1ff6e5e5f262e952\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer19\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0387451665701512},{\"content_sha256\":\"a23ab81eb6d545022c22558a0c6fe5e808919dea65aa8ab142bba95081184d0e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer2\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0356924257092897},{\"content_sha256\":\"fd257d4a031b2946ff333dfd43cdffda7f0c4213af6a263fb11b910f05504187\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer20\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03896679568018421},{\"content_sha256\":\"dd99bd2086bb9105f1eae2e5e21f5ed07d697ca68e4a2736f8f1c37c7fb7f31f\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer21\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0391825920630716},{\"content_sha256\":\"762c640cab65cc8eb5e6e401d0f28679a8b9833a7899aff1038057cebe5a4842\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer22\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0393925557188134},{\"content_sha256\":\"b16f36d9d9b5b1d46b66131b5da999522ffe2a9bc621b4832a69b90b08f53514\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer23\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03959668664740961},{\"content_sha256\":\"7938d21d3c6e225a38ab9e67f88690a71cc0e4e9f0f3eae88ae87331eb39e7cf\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer24\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0397949848488602},{\"content_sha256\":\"c8c51e58164485226cf483085c788e77ae46b58b24cc1145931687fc6e25a509\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer25\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03998745032316521},{\"content_sha256\":\"28bc8f4c81ef8a1874c13bf41d6edd9ca7f997e027646b16ee44f59f705a0a9b\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer26\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04017408307032461},{\"content_sha256\":\"66d6c3c3cef5fbea0059ac10eebd0ff72ba7e24ee66898a7ed6ce9faa0b3eb87\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer27\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04035488309033841},{\"content_sha256\":\"a318b1e8fd0ba7baeec8b191f081b6cceacbf6a525b0d4a8cc396a147abcd2ce\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer28\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04052985038320662},{\"content_sha256\":\"ce2bb90334063cc274a3e523fb122d658a8f637b1a82e99227441931c4cc8f2d\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer29\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04069898494892922},{\"content_sha256\":\"6362fb66562288e46cef3684fd68cf18e319e7d1772816a83150081279e5a51e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer3\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0356924257092897},{\"content_sha256\":\"920288f70b1624091c6eb12de4431e081e0837066d1733c999fab4573dbac64a\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer30\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04086228678750622},{\"content_sha256\":\"38f20f8115552e907e78d7fa025be970a5a5d454a5dab60fc4aa5abdfece372e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer31\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04101975589893763},{\"content_sha256\":\"96e737d3a3a2b9338648090a4844f4348d0a5d1b8d3e44fdbbeb144e97971564\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer32\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04117139228322344},{\"content_sha256\":\"13a43f6aa2d28b6273c8c45132712f4fd411ba88aed25fb377f64fe0ba09f16f\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer33\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04131719594036364},{\"content_sha256\":\"25094d50a4fb8af82212b2bd7efc0f7923670c015210092b63ec9bd7b5d7bab0\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer34\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04145716687035824},{\"content_sha256\":\"8ef5e533c2e38a5a79d3b8be0a1271fdab0bdbb243b6ca168a4c70df5097e512\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer35\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04159130507320725},{\"content_sha256\":\"55f17f6b62384815b2396f622e34b90946dcc2fc28e255f1d83f9de1da9b918b\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer36\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04171961054891066},{\"content_sha256\":\"0f3a1abc7954a6a80b1d47ec5d096b5d8408f0a19f9b9ee85639a0072ca2f427\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer37\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04184208329746847},{\"content_sha256\":\"dee65fa62b06ef27eb0144d1903acfbc79c15f24e38c3eea643d4f46fc0cb4fb\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer38\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04195872331888068},{\"content_sha256\":\"a450431d33ba81e29bd3b53eb7ee19daa32592494597b234b18c8fd33d4af3d5\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer39\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04206953061314729},{\"content_sha256\":\"d5834962219f83641fbb4579dcea7699b1a40fccd39cdb1f00a5ae1d91acb3ab\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer4\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03570903091818288},{\"content_sha256\":\"e8d92b4793033bfa5ce679e2d549726ea82f72777a4536723ee0bf011e760e22\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer40\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04217450518026829},{\"content_sha256\":\"1ab7ec507a91d2e83f612c187bde26296904d40136592b6063eabe4c34f7aed4\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer41\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0422736470202437},{\"content_sha256\":\"f86c1652ab8ea7fe6004fc61fbfd6c9c8bc3e65b68aa60dea7632cfb23228e95\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer42\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04236695613307351},{\"content_sha256\":\"b641859a136580665f1d5778690bf059f0cf4e1c4d2d571f9a2636114ca01651\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer43\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.04245443251875772},{\"content_sha256\":\"1c4d86c81db4167f25c853f07fa0d37fdcad864f3f0d0b0de52ed04e2289079e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer5\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03575875368179861},{\"content_sha256\":\"a830548907ef07a0a9961e53e8f45fb2f7443dca17de4f20ee03f06b0fdce72a\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer6\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0358413159302733},{\"content_sha256\":\"f097d18648691bab0a649cb93d686e657a93f318b0e0f5582664c5ae07e5e34a\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer7\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03595625594202314},{\"content_sha256\":\"57f18a9281df5ee5deae09bd932580e220e916305ccdd692a8332ac096edb353\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer8\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03610293092587843},{\"content_sha256\":\"8c3d18c4dcd55c58191a26ce5871f4d7d6b00be6de67dddc7893c60d2017ade2\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.outer9\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.03628052061583256},{\"content_sha256\":\"acdec847c4f3dfde26c822438101855b30a5125e4b65c955bb7dea7a851222f8\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.point_count\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"1\",\"value_si\":44.0},{\"content_sha256\":\"30c040062de6365f879cfb60a0e66e47dcf69dcb84eb9b5d6e9d185616a4ff2a\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x0\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":-0.2876666666666667},{\"content_sha256\":\"038d30dfa2a1cd9fd1bad23d3bf5f980cb10da502586db3a28d9a0fe61c9390e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x1\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":-0.048},{\"content_sha256\":\"4c52f274d7b7cdcb7e8bc1897f7b02ecea05d289aa1500bc1cbb85dfbe8e870d\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x10\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.00296924257092897},{\"content_sha256\":\"db960981e0c73e50a310eb0e5cbe74029cc6f06150ac32295a5ab2a465be8cd5\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x11\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.003450935843057719},{\"content_sha256\":\"066a009507d656ec87bf67576dab5db15a0867b88e47a5f1a7bdfe5bc2bd3745\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x12\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.003936320885922681},{\"content_sha256\":\"fb1cdb1c022dda1aa79dbfd9bf0d63903d6b2607a943c643526b4ef3a63c5689\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x13\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.004425397699523855},{\"content_sha256\":\"b0b1a6e6e59d22e5a977fcd5c50280fa594e000e63572f0deb630e9b6dac981b\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x14\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.004918166283861243},{\"content_sha256\":\"a9e4ac0186ceafc984810cac99b2742b1e6a45a0c681d4aac1091c31f559ea49\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x15\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.005414626638934843},{\"content_sha256\":\"62a14b7cb9be18f2a44480ff0280764a081a2f2a83ea1cc43ca699be0a33f677\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x16\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.005914778764744655},{\"content_sha256\":\"d1584b5005bacd31a7b2b38d2a0b4560009551bdf059e3557d51c87185db8d1c\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x17\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.006418622661290682},{\"content_sha256\":\"ebe20d5d01bf7578c2817fbe236074cc7f6d820dca2e86e849ea284f0531e984\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x18\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.006926158328572921},{\"content_sha256\":\"1292f944c0b73e3d8e367570f5d61900d56e3aed2d2615afe5eb5b1347dc0f5b\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x19\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.007437385766591371},{\"content_sha256\":\"9f04073616ecda4279d2bc2cb492f54ecdcb76b15fce39fa8d12378a4123ca1f\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x2\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":-0.003},{\"content_sha256\":\"edf4dd9072f070003b7f45214d7704dc1b4324875e565f7402d46ba9f4ec571f\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x20\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.007952304975346037},{\"content_sha256\":\"bf3ba548bb351c355cd0b85a9dad20f31c1e5a9058f14d49ca6e5ff05d8a2ae0\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x21\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.008470915954836915},{\"content_sha256\":\"b02cb951a29496bc76e342fb394ea0901c9f249d539ab6deae4da82f5afbb57f\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x22\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.008993218705064004},{\"content_sha256\":\"4d7f7abdffdf95180829c9540a8f26cb01e467451850be86161bb8a9b3d201af\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x23\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.009519213226027308},{\"content_sha256\":\"6f4ce369967f3552046c4717a80b9adfc7f036886baa0cce70777b9afc34ceb2\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x24\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01004889951772682},{\"content_sha256\":\"225e912a432b366d65b0e3c1ea4c8b065d50100fc347dd0db0866857f6a20c06\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x25\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01058227758016255},{\"content_sha256\":\"3c020bb0a69a47386c06c6881fbb18cc3964d75b3bd7237fa0007bc7ce718dce\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x26\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0111193474133345},{\"content_sha256\":\"6b0f0e4bac7a6bab9743f337b194c61344dc58ffd87586c484941928acbc9546\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x27\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01166010901724265},{\"content_sha256\":\"a31de75817e88d50ea21be4e3067bce250498e68e5d5fa97346163051e6b2c71\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x28\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01220456239188702},{\"content_sha256\":\"bd0398ec5a74f3aa0014437a0b8e999e79ae591f757d97f3224472cad8350d9d\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x29\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0127527075372676},{\"content_sha256\":\"9050bfa4b46d85d44090775c3d6110a6585f6b7ef3ba3bb6000e41b52b6232d3\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x3\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0},{\"content_sha256\":\"0bebccf6cc4594f52c61285d052029beb80eb5f559881081caab2c32f7f1e4e7\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x30\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01330454445338439},{\"content_sha256\":\"2df8a2130120d9bcf83a350307ce97854587b829b8c7bee3b894ae2e3a32275b\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x31\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0138600731402374},{\"content_sha256\":\"df4499499ff3cadac188bffa76a50b42dfcb2fee2584908550a036378d4b13be\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x32\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01441929359782662},{\"content_sha256\":\"dd5e1332d6ce3521f754962024241e6dce58a47cf31b2676265ab781feff8eb3\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x33\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01498220582615205},{\"content_sha256\":\"5ee0f95679534f7d55cb566e21772bd07b62bbab36d83fa98264451ecd7d58cc\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x34\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0155488098252137},{\"content_sha256\":\"c406d97454365674d11761fa587f66525847d235b1713f4582170e5d3c3aaf47\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x35\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01611910559501155},{\"content_sha256\":\"6fcb75584cb34b01a225f1a72d4c3140cf030b709216fa7918c3d28c305ffacc\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x36\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01669309313554563},{\"content_sha256\":\"4f87dcfd66dc9e1600ad9dc4cff8a7bc3df1bc73ed824c91686339a58ac2e309\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x37\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01727077244681591},{\"content_sha256\":\"654834b1e460524375a2861312aeaa1027472795bf87f8eb973850b6af707dba\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x38\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01785214352882241},{\"content_sha256\":\"bcc8dc27cb69b757bf1223073558346872bc22bf77184fe4040724f9265f042a\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x39\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01843720638156511},{\"content_sha256\":\"b837c121234678dcbf6ba66695af4bbd56d51617f7aa22000e6e0964daabd557\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x4\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0004437835504126337},{\"content_sha256\":\"04cdc37ce67a807c28a30ca7cd44dfefdeaba2df94b65b5f5a7baa4b73c6b7bf\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x40\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01902596100504404},{\"content_sha256\":\"cfdc97e13721d621a2ff8fc5ccf6097624b34f822925ac0c9a28fc1c3b635f2c\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x41\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.01961840739925917},{\"content_sha256\":\"5e68d7f14757cfb2a2817909f5e26fde5bd1d42ec3e17986cecc4d3db8b48071\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x42\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.02021454556421052},{\"content_sha256\":\"017d49feceff0f45a6e5d7695eb898921bba1bb9cef130f52f91e70b4310d17e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x43\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.02081437549989808},{\"content_sha256\":\"83becf55ee5ad820c5753fc9ccc40f7d4d0d288a47638f482ed8d4a0115e2a1d\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x5\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0008850852831960481},{\"content_sha256\":\"f906ca3d0e17dc61b340eeec44ae26a16f39b256cc714202dcd568a5980f5ff3\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x6\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.001321437260051925},{\"content_sha256\":\"6d2d8296fbc36c72d4adbf2835cdbf31b188e14f346f9b6a9014e0905198a570\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x7\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.0017503992237249},{\"content_sha256\":\"5007b9bea23f103e4fd619066eb071d3f44013295e79adfbc993a99c92278447\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x8\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.002169572244910996},{\"content_sha256\":\"1823401297fbfa5bd5aa6559cdd3e437dba210b8f50ad4174bee6391cc84020e\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"thrust-chamber.x9\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-thrust-chamber\",\"unit_symbol\":\"m\",\"value_si\":0.002576612138043386},{\"content_sha256\":\"6121d8ac881f7fc3dbcb6e58d6852468b4a34b8321dc440c744f789dd8f560a3\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.back_web\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.004},{\"content_sha256\":\"1d8fd41cc6a9d5e8bd67f09215087d0cff2ac4e87660d2572e499a468f611db2\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.bore_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.0514287899284541},{\"content_sha256\":\"a507f20898bbeee4f9523c883459d43483ed4fe1bdc07299f18837b787914c09\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.count\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"1\",\"value_si\":6.0},{\"content_sha256\":\"1322fc21610bd6d712ae70f3778617a288d5b7146aed3127c1e523add451ab97\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.front_web\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.003},{\"content_sha256\":\"e7d41e7258c7c7e984b13d7c88e0a180da46feab6cfa139219afffe52903e7fd\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.outer_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.095},{\"content_sha256\":\"be77939c00e5995bcb6bfa2c9b09be760866392a0929b4d32763b1956cb11a2b\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.phase\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"rad\",\"value_si\":0.1},{\"content_sha256\":\"6a544d99587e0767793a7e428766334d5cbb6009fba0a3a8f089cf6b8d2dad52\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.plenum_inner\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.0521287899284541},{\"content_sha256\":\"4c3a357fa0d3db7a20c36881850ad760ce13c5c69ee5a00c34987c378186ca4c\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.plenum_length\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.02},{\"content_sha256\":\"757dd12751f8bdad4e7d4494982a86149fb1023ef138cbcd16d3cfeac30ebf4f\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.plenum_outer\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.074},{\"content_sha256\":\"f1cb588ef8b6046a4e6ad9a6f73acbb0d01611d6841075ddf079fc36c92f741d\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.port_inner\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.0529287899284541},{\"content_sha256\":\"111dd89bacb7bd098f03f6952cbde69f9c17b00e5afef2e217e0a9d7789f4a01\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.port_outer\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.0554287899284541},{\"content_sha256\":\"e484a7e9f21eaa379dba6279e7db546b6839481ddfa4deb110fc034b21e74df0\",\"contract_type\":\"SIParameter\",\"dimension\":[1,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.supply_hole_radius\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"m\",\"value_si\":0.0035},{\"content_sha256\":\"3b11b4f0a35cdaeeac20d66bd04a35863b232b462abb27ef37ee7427ff2253d6\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.supply_phase\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"rad\",\"value_si\":0.0},{\"content_sha256\":\"1f13481543f7e709e6c65de6d17c31bc0ffa28cdb8400a38203539f06454759a\",\"contract_type\":\"SIParameter\",\"dimension\":[0,0,0,0,0,0,0],\"kind\":\"absolute\",\"name\":\"upper-coolant-header.width\",\"schema_version\":\"1.0.0\",\"source_ref_id\":\"feature-upper-coolant-header\",\"unit_symbol\":\"rad\",\"value_si\":0.14}],\"project_id\":\"engine-component-afc95eb3-2d0c-55b7-95eb-2644f67e01d0\",\"revision_id\":\"model-afc95eb3-2d0c-55b7-95eb-2644f67e01d0-2\",\"schema_version\":\"1.0.0\",\"source_refs\":[{\"content_sha256\":\"6d6f7513f16c19bccdd7afca718117594bcb1ff2b94c9b7a15d6344365c96c55\",\"contract_type\":\"SourceReference\",\"ref_id\":\"component-spec\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"5cf983f2ad7436650265c36b488a50c695d18e1d82e10bca0f86ea0d818f8ec6\",\"source_uri\":\"component-spec/5cf983f2ad7436650265c36b488a50c695d18e1d82e10bca0f86ea0d818f8ec6.json\"},{\"content_sha256\":\"b1d2976dff386afd7483dbc74c608e2056348f65be37915a6c3deca280862a17\",\"contract_type\":\"SourceReference\",\"ref_id\":\"engine-baseline\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"bf82e1bcdd84874a64866c749f0d5650993bac9d73ea2893c949da69d575dc25\",\"source_uri\":\"propulsion/e7b42546-8d70-5ca5-a084-b295c81db826/bf82e1bcdd84874a64866c749f0d5650993bac9d73ea2893c949da69d575dc25.json\"},{\"content_sha256\":\"889a858b8092efbbda31c05faff8397ee12bc70f8a9151c4e7e1da0f5a372d19\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-collector-mount-bolts\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"0654af170b7bb9d0b4efd797d87cc35e322746c498ba88130e81f0c8ea411137\",\"source_uri\":\"component-feature/0654af170b7bb9d0b4efd797d87cc35e322746c498ba88130e81f0c8ea411137.json\"},{\"content_sha256\":\"19cddd947dbf656137bf96859d7bde7a9b1b49ec19a32fc05f8f1336897d92f7\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-fuel-supply\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"4256af546d3787a658ee06353b1e707a911d39c346797dffc6ab1124b1bd75e4\",\"source_uri\":\"component-feature/4256af546d3787a658ee06353b1e707a911d39c346797dffc6ab1124b1bd75e4.json\"},{\"content_sha256\":\"00f599b70a85e7555189f4fdfe7df0625a5e637d4018837032fa53543f8d5e47\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-gas-joint-groove\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"542639f205c6fa262c4adbe241bb150b1e384619b579097f06f2a32102c3d609\",\"source_uri\":\"component-feature/542639f205c6fa262c4adbe241bb150b1e384619b579097f06f2a32102c3d609.json\"},{\"content_sha256\":\"609f9a44dfb424d96ac3a9d60e0a5f68fe60b242196d2baa87e885b19ce23cbc\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-head-mount-bolts\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"428f8d7be40aee4d13c9a8f3fb12a60d8cb02f518268eed1f78eb7beabe53587\",\"source_uri\":\"component-feature/428f8d7be40aee4d13c9a8f3fb12a60d8cb02f518268eed1f78eb7beabe53587.json\"},{\"content_sha256\":\"f1f428727d4a3c665c89ceda620770dcfc3a53ab3f2d55112a407a87a635f353\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-illustrative-sector-cooling\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"d579debe71d560c01d9bf6eac21780ea5ce5f1d06a60501b7fcd56c1a601f5bb\",\"source_uri\":\"component-feature/d579debe71d560c01d9bf6eac21780ea5ce5f1d06a60501b7fcd56c1a601f5bb.json\"},{\"content_sha256\":\"bbd3490a210198d80a4ad7c43f90ab7e96d6f309abf6484080c334cabe91cd97\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-injector-mount-bolts\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"460b083f55edf2b9e46bcf8f5b7e89b54386b2f6939f2ac0ef8fb53e3c47b5e3\",\"source_uri\":\"component-feature/460b083f55edf2b9e46bcf8f5b7e89b54386b2f6939f2ac0ef8fb53e3c47b5e3.json\"},{\"content_sha256\":\"78951f8d087cf8b40509b9b2e9bb5b80acc46938e3f1e4b4acaf94f8f738feec\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-isolated-dual-manifold\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"4c4614930c7a52e885246874cd952012fc66bc884302c26e95d9b383350e62ec\",\"source_uri\":\"component-feature/4c4614930c7a52e885246874cd952012fc66bc884302c26e95d9b383350e62ec.json\"},{\"content_sha256\":\"c6a8eff621f73011ad164b81fcc5db7e32096b62d34da901b722f54ea6a22a03\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-lower-coolant-header\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"879b387252b8fddc460a655dcc61b898c3c8765a116a447f382dda9e698d58e5\",\"source_uri\":\"component-feature/879b387252b8fddc460a655dcc61b898c3c8765a116a447f382dda9e698d58e5.json\"},{\"content_sha256\":\"b56b8df38c1ac6d6630456062749619b165ee8d5c974dab40b2a19dd79f67135\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-oxidizer-supply\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"135e7dadf59dfe11fb034349d978ae04036bb81231da9450cd8bdd3cad10e478\",\"source_uri\":\"component-feature/135e7dadf59dfe11fb034349d978ae04036bb81231da9450cd8bdd3cad10e478.json\"},{\"content_sha256\":\"ce82479386c22c7beb557c6c486930e87f30684704bc0669340549e5e66fc0fe\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-radial-injector\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"7cd929bed758b2d4324be64b067801d097865c8d855500f8572fe8b3acfde509\",\"source_uri\":\"component-feature/7cd929bed758b2d4324be64b067801d097865c8d855500f8572fe8b3acfde509.json\"},{\"content_sha256\":\"4cf75bcd73afd705df8c198d7489b5cbc344f46f7aa7efb8fc7c2ae5c42e522a\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-return-collector\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"54357906c9cb71665225804cc4eb3edbfbed4db1bf402755903b725a067fe48f\",\"source_uri\":\"component-feature/54357906c9cb71665225804cc4eb3edbfbed4db1bf402755903b725a067fe48f.json\"},{\"content_sha256\":\"26bffa0e46c792a57540f7dada77b9e9985a86222ba55fd8281b072deda7b52d\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-return-elbow-a\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"af127c7fdb50bce9aa0272bbb15d5ec7877af89ed1afe4fbd77ebf1484a1878c\",\"source_uri\":\"component-feature/af127c7fdb50bce9aa0272bbb15d5ec7877af89ed1afe4fbd77ebf1484a1878c.json\"},{\"content_sha256\":\"226d9905646c9e60f8a78796380b9f1eafe2ef4f24a1bd2da7be9eb5458fa3d5\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-return-elbow-b\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"5701494b25372bf90bfe2442a9c633978a365e24aafc666f477d8546618ad4e8\",\"source_uri\":\"component-feature/5701494b25372bf90bfe2442a9c633978a365e24aafc666f477d8546618ad4e8.json\"},{\"content_sha256\":\"0d24d40f8272cc107c534571587c743d1dbdb4b7f1aa97b8c581b1cd2980a86f\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-return-elbow-c\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"1dff0dc156944ee478a1589f41f8ef2c0c1d9abae505fc68bf990743945a2ebb\",\"source_uri\":\"component-feature/1dff0dc156944ee478a1589f41f8ef2c0c1d9abae505fc68bf990743945a2ebb.json\"},{\"content_sha256\":\"a1e76db027d23381b8601f7fc2a1f4cee7a867d85907bd65c188157616775252\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-return-elbow-d\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"0ad43fbffe22af87e517fa325fe478bde5263d3a40ae90ebe9888445f479ad5d\",\"source_uri\":\"component-feature/0ad43fbffe22af87e517fa325fe478bde5263d3a40ae90ebe9888445f479ad5d.json\"},{\"content_sha256\":\"d2593088284900f284edc281396252340aaea583de4fa7034d70de6035df2836\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-return-head\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"982e18f7333aa9d553f553b07e707f63f7bdf71b64756d6db9aad35fc010a1c9\",\"source_uri\":\"component-feature/982e18f7333aa9d553f553b07e707f63f7bdf71b64756d6db9aad35fc010a1c9.json\"},{\"content_sha256\":\"bdb68e7bb3563b06cb8ea00ab100bd46a83fdf4b728d419c14e832b5ff745283\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-return-inward\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"b5a8e74047e813ece660636d34031e86636e3db48b03e126e1cef91d9bedb09d\",\"source_uri\":\"component-feature/b5a8e74047e813ece660636d34031e86636e3db48b03e126e1cef91d9bedb09d.json\"},{\"content_sha256\":\"63c127faeea2275933ca1c751e9083b287b62993a90c24e58f0e75b39a12cb0d\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-return-outward\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"d0d50aeba2c7366728e761911d7d13d04c106893946f0a63906104955491f6c1\",\"source_uri\":\"component-feature/d0d50aeba2c7366728e761911d7d13d04c106893946f0a63906104955491f6c1.json\"},{\"content_sha256\":\"91e08ebc49ad7d3779a0a15e19c5d1cff344c3a5c936bd1386ff4389fced5dfe\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-return-over-flange\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"80ca6cbdba8260d93a927fd4f541f8b5ec90d685fa9659669fca504f99a5c74e\",\"source_uri\":\"component-feature/80ca6cbdba8260d93a927fd4f541f8b5ec90d685fa9659669fca504f99a5c74e.json\"},{\"content_sha256\":\"bb6e9ba3bc796f53e3901d5ed0ffb8fff9f0388ab096443310a4463a26ed481b\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-thrust-chamber\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"b1534da4e62b863a98ec03465bfcf18db633a6ed8926ee6a4a63fcad9dbb88b8\",\"source_uri\":\"component-feature/b1534da4e62b863a98ec03465bfcf18db633a6ed8926ee6a4a63fcad9dbb88b8.json\"},{\"content_sha256\":\"f0da041a7bd12448aaf17bacb3074ef3a3d38724a60a0c9586672dfeb9112083\",\"contract_type\":\"SourceReference\",\"ref_id\":\"feature-upper-coolant-header\",\"schema_version\":\"1.0.0\",\"source_sha256\":\"feee5d55f73272383e58edafb4f7b9e72b967ced39d6135ff67a2f7f99a8b064\",\"source_uri\":\"component-feature/feee5d55f73272383e58edafb4f7b9e72b967ced39d6135ff67a2f7f99a8b064.json\"}]}",
+      "graph_json": "{\"content_sha256\":\"3040b5e0b58c9837b90bf86c973c43312983951355ea58d46805593a358033a6\",\"contract_type\":\"GeometryFeatureGraph\",\"features\":[{\"content_sha256\":\"d3bc1a31f06f2e790601b7ecfaf24a4315886efc953a89de38f45a45782f63ba\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[\"upper-coolant-header\"],\"feature_id\":\"collector-mount-bolts\",\"frame_id\":\"upper-coolant-header\",\"operation\":\"interface.bolt_pattern\",\"parameter_refs\":[\"collector-mount-bolts.bolt_circle_radius\",\"collector-mount-bolts.bolt_hole_radius\",\"collector-mount-bolts.count\",\"collector-mount-bolts.phase\",\"export_tolerance\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"9604a393311e370b9f79aa337d0534fd0ee71ef38e0a01abb5b15f44a5f7fadd\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"fuel-supply\",\"frame_id\":\"fuel-supply\",\"operation\":\"pipe.circular\",\"parameter_refs\":[\"export_tolerance\",\"fuel-supply.bore_radius\",\"fuel-supply.length\",\"fuel-supply.wall_thickness\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"14aa0994c5c6963081e7333ac9158e14d0dbbce9eb8ecc8ae0914b192903a17f\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[\"injector-mount-bolts\"],\"feature_id\":\"gas-joint-groove\",\"frame_id\":\"radial-plate-frame\",\"operation\":\"interface.face_grooves\",\"parameter_refs\":[\"export_tolerance\",\"gas-joint-groove.count\",\"gas-joint-groove.depth0\",\"gas-joint-groove.depth1\",\"gas-joint-groove.depth2\",\"gas-joint-groove.depth3\",\"gas-joint-groove.depth4\",\"gas-joint-groove.face0\",\"gas-joint-groove.face1\",\"gas-joint-groove.face2\",\"gas-joint-groove.face3\",\"gas-joint-groove.face4\",\"gas-joint-groove.inner_radius0\",\"gas-joint-groove.inner_radius1\",\"gas-joint-groove.inner_radius2\",\"gas-joint-groove.inner_radius3\",\"gas-joint-groove.inner_radius4\",\"gas-joint-groove.outer_radius0\",\"gas-joint-groove.outer_radius1\",\"gas-joint-groove.outer_radius2\",\"gas-joint-groove.outer_radius3\",\"gas-joint-groove.outer_radius4\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"700c7445be33ebb200d4acaf1786f67765abaed229954f1291aeb0c290854fa7\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[\"isolated-dual-manifold\"],\"feature_id\":\"head-mount-bolts\",\"frame_id\":\"head-frame\",\"operation\":\"interface.bolt_pattern\",\"parameter_refs\":[\"export_tolerance\",\"head-mount-bolts.bolt_circle_radius\",\"head-mount-bolts.bolt_hole_radius\",\"head-mount-bolts.count\",\"head-mount-bolts.phase\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"fb59730f192342398da0e9791a5a09ec09d1419bc93fe6389a53feb9306ffd5e\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[\"thrust-chamber\"],\"feature_id\":\"illustrative-sector-cooling\",\"frame_id\":\"world\",\"operation\":\"cooling.axial_sector\",\"parameter_refs\":[\"export_tolerance\",\"illustrative-sector-cooling.count\",\"illustrative-sector-cooling.depth\",\"illustrative-sector-cooling.fluid_domains\",\"illustrative-sector-cooling.hot_ligament\",\"illustrative-sector-cooling.phase\",\"illustrative-sector-cooling.width\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"cea052038152f55b3a926e7fe5ed33a970eaad84b4660e799549fba553973ed1\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[\"radial-injector\"],\"feature_id\":\"injector-mount-bolts\",\"frame_id\":\"radial-plate-frame\",\"operation\":\"interface.bolt_pattern\",\"parameter_refs\":[\"export_tolerance\",\"injector-mount-bolts.bolt_circle_radius\",\"injector-mount-bolts.bolt_hole_radius\",\"injector-mount-bolts.count\",\"injector-mount-bolts.phase\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"d66553e371701d1793a01b5e63dd25339e56c4cd4ed8e376124d722a1230b2ea\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"isolated-dual-manifold\",\"frame_id\":\"head-frame\",\"operation\":\"manifold.dual_annular\",\"parameter_refs\":[\"export_tolerance\",\"isolated-dual-manifold.back_web\",\"isolated-dual-manifold.count\",\"isolated-dual-manifold.front_web\",\"isolated-dual-manifold.fuel_hole_radius\",\"isolated-dual-manifold.fuel_inlet_phase\",\"isolated-dual-manifold.fuel_inlet_radius\",\"isolated-dual-manifold.fuel_inner\",\"isolated-dual-manifold.fuel_outer\",\"isolated-dual-manifold.oxidizer_hole_radius\",\"isolated-dual-manifold.oxidizer_inlet_phase\",\"isolated-dual-manifold.oxidizer_inlet_radius\",\"isolated-dual-manifold.oxidizer_inner\",\"isolated-dual-manifold.oxidizer_outer\",\"isolated-dual-manifold.phase\",\"isolated-dual-manifold.plenum_length\",\"isolated-dual-manifold.radius\",\"isolated-dual-manifold.ring_radius\",\"isolated-dual-manifold.separation\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"7d2e7221c44e5d710df0ac5a46cf3592bd667ed9147f383e0d1c628185096b2f\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"lower-coolant-header\",\"frame_id\":\"lower-coolant-header\",\"operation\":\"manifold.cooling_annular\",\"parameter_refs\":[\"export_tolerance\",\"lower-coolant-header.back_web\",\"lower-coolant-header.bore_radius\",\"lower-coolant-header.count\",\"lower-coolant-header.front_web\",\"lower-coolant-header.outer_radius\",\"lower-coolant-header.phase\",\"lower-coolant-header.plenum_inner\",\"lower-coolant-header.plenum_length\",\"lower-coolant-header.plenum_outer\",\"lower-coolant-header.port_inner\",\"lower-coolant-header.port_outer\",\"lower-coolant-header.supply_hole_radius\",\"lower-coolant-header.supply_phase\",\"lower-coolant-header.width\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"46826b1e62936253dc98b9189dc077fc3c0718aaa2b3c8d347fa8a961bd89f3d\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"oxidizer-supply\",\"frame_id\":\"oxidizer-supply\",\"operation\":\"pipe.circular\",\"parameter_refs\":[\"export_tolerance\",\"oxidizer-supply.bore_radius\",\"oxidizer-supply.length\",\"oxidizer-supply.wall_thickness\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"6c5132d1271c28cd26a1c67dc74c6c38923e51c08bfa7457d523ba8b7237a505\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"radial-injector\",\"frame_id\":\"radial-plate-frame\",\"operation\":\"injector.biprop_radial_doublet\",\"parameter_refs\":[\"export_tolerance\",\"radial-injector.angle\",\"radial-injector.count\",\"radial-injector.fuel_hole_radius\",\"radial-injector.oxidizer_hole_radius\",\"radial-injector.phase\",\"radial-injector.radius\",\"radial-injector.ring_radius\",\"radial-injector.separation\",\"radial-injector.thickness\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"ef03fd96ed4bbd0579d446fb71c39a86b014265569ffdbb69d52b80e7af1cbb0\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"return-collector\",\"frame_id\":\"return-collector\",\"operation\":\"pipe.circular\",\"parameter_refs\":[\"export_tolerance\",\"return-collector.bore_radius\",\"return-collector.length\",\"return-collector.wall_thickness\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"a622d62d9899cfd6932b8b54b94da6e52cca8639c4e2e631f238570ba9dd04ab\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"return-elbow-a\",\"frame_id\":\"return-elbow-a\",\"operation\":\"pipe.elbow\",\"parameter_refs\":[\"export_tolerance\",\"return-elbow-a.angle\",\"return-elbow-a.bend_radius\",\"return-elbow-a.bore_radius\",\"return-elbow-a.wall_thickness\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"e36a84f14e0d8e7bcffe6a9ddd39982822bced043d4287f90790221687744aac\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"return-elbow-b\",\"frame_id\":\"return-elbow-b\",\"operation\":\"pipe.elbow\",\"parameter_refs\":[\"export_tolerance\",\"return-elbow-b.angle\",\"return-elbow-b.bend_radius\",\"return-elbow-b.bore_radius\",\"return-elbow-b.wall_thickness\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"4067b15a7d62010ff3f961aaf798e8737464a7104d934d7e3dad090be25581e6\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"return-elbow-c\",\"frame_id\":\"return-elbow-c\",\"operation\":\"pipe.elbow\",\"parameter_refs\":[\"export_tolerance\",\"return-elbow-c.angle\",\"return-elbow-c.bend_radius\",\"return-elbow-c.bore_radius\",\"return-elbow-c.wall_thickness\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"26b565b30a44b084d4dd44c473d2f6da388ffe819b34f0a99e02bee0f7c80a7c\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"return-elbow-d\",\"frame_id\":\"return-elbow-d\",\"operation\":\"pipe.elbow\",\"parameter_refs\":[\"export_tolerance\",\"return-elbow-d.angle\",\"return-elbow-d.bend_radius\",\"return-elbow-d.bore_radius\",\"return-elbow-d.wall_thickness\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"5407f685546d16263d2b4efd4f4db4c7277318337433e9ea420618c30f16019d\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"return-head\",\"frame_id\":\"return-head\",\"operation\":\"pipe.circular\",\"parameter_refs\":[\"export_tolerance\",\"return-head.bore_radius\",\"return-head.length\",\"return-head.wall_thickness\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"4d8ab5c6363c19ad8f5f8ae373936ffc76b50008058f4aee4b0f05626e0183b2\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"return-inward\",\"frame_id\":\"return-inward\",\"operation\":\"pipe.circular\",\"parameter_refs\":[\"export_tolerance\",\"return-inward.bore_radius\",\"return-inward.length\",\"return-inward.wall_thickness\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"1771050f86764781e26c7b1fc42be0c88a98896168e505d6bf221a95c1dd1b50\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"return-outward\",\"frame_id\":\"return-outward\",\"operation\":\"pipe.circular\",\"parameter_refs\":[\"export_tolerance\",\"return-outward.bore_radius\",\"return-outward.length\",\"return-outward.wall_thickness\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"ffc1be9ffec8e99fad3df0cd5c35c0d1f6be17b88b8647be28f2f0840e56b682\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"return-over-flange\",\"frame_id\":\"return-over-flange\",\"operation\":\"pipe.circular\",\"parameter_refs\":[\"export_tolerance\",\"return-over-flange.bore_radius\",\"return-over-flange.length\",\"return-over-flange.wall_thickness\",\"source_tolerance\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"cea464ecede0e956781db74aea8f4ffa63fbc5a58248ea9138640b1e13a2a83f\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"thrust-chamber\",\"frame_id\":\"world\",\"operation\":\"profile.wall\",\"parameter_refs\":[\"export_tolerance\",\"source_tolerance\",\"thrust-chamber.inner0\",\"thrust-chamber.inner1\",\"thrust-chamber.inner10\",\"thrust-chamber.inner11\",\"thrust-chamber.inner12\",\"thrust-chamber.inner13\",\"thrust-chamber.inner14\",\"thrust-chamber.inner15\",\"thrust-chamber.inner16\",\"thrust-chamber.inner17\",\"thrust-chamber.inner18\",\"thrust-chamber.inner19\",\"thrust-chamber.inner2\",\"thrust-chamber.inner20\",\"thrust-chamber.inner21\",\"thrust-chamber.inner22\",\"thrust-chamber.inner23\",\"thrust-chamber.inner24\",\"thrust-chamber.inner25\",\"thrust-chamber.inner26\",\"thrust-chamber.inner27\",\"thrust-chamber.inner28\",\"thrust-chamber.inner29\",\"thrust-chamber.inner3\",\"thrust-chamber.inner30\",\"thrust-chamber.inner31\",\"thrust-chamber.inner32\",\"thrust-chamber.inner33\",\"thrust-chamber.inner34\",\"thrust-chamber.inner35\",\"thrust-chamber.inner36\",\"thrust-chamber.inner37\",\"thrust-chamber.inner38\",\"thrust-chamber.inner39\",\"thrust-chamber.inner4\",\"thrust-chamber.inner40\",\"thrust-chamber.inner41\",\"thrust-chamber.inner42\",\"thrust-chamber.inner43\",\"thrust-chamber.inner5\",\"thrust-chamber.inner6\",\"thrust-chamber.inner7\",\"thrust-chamber.inner8\",\"thrust-chamber.inner9\",\"thrust-chamber.outer0\",\"thrust-chamber.outer1\",\"thrust-chamber.outer10\",\"thrust-chamber.outer11\",\"thrust-chamber.outer12\",\"thrust-chamber.outer13\",\"thrust-chamber.outer14\",\"thrust-chamber.outer15\",\"thrust-chamber.outer16\",\"thrust-chamber.outer17\",\"thrust-chamber.outer18\",\"thrust-chamber.outer19\",\"thrust-chamber.outer2\",\"thrust-chamber.outer20\",\"thrust-chamber.outer21\",\"thrust-chamber.outer22\",\"thrust-chamber.outer23\",\"thrust-chamber.outer24\",\"thrust-chamber.outer25\",\"thrust-chamber.outer26\",\"thrust-chamber.outer27\",\"thrust-chamber.outer28\",\"thrust-chamber.outer29\",\"thrust-chamber.outer3\",\"thrust-chamber.outer30\",\"thrust-chamber.outer31\",\"thrust-chamber.outer32\",\"thrust-chamber.outer33\",\"thrust-chamber.outer34\",\"thrust-chamber.outer35\",\"thrust-chamber.outer36\",\"thrust-chamber.outer37\",\"thrust-chamber.outer38\",\"thrust-chamber.outer39\",\"thrust-chamber.outer4\",\"thrust-chamber.outer40\",\"thrust-chamber.outer41\",\"thrust-chamber.outer42\",\"thrust-chamber.outer43\",\"thrust-chamber.outer5\",\"thrust-chamber.outer6\",\"thrust-chamber.outer7\",\"thrust-chamber.outer8\",\"thrust-chamber.outer9\",\"thrust-chamber.point_count\",\"thrust-chamber.x0\",\"thrust-chamber.x1\",\"thrust-chamber.x10\",\"thrust-chamber.x11\",\"thrust-chamber.x12\",\"thrust-chamber.x13\",\"thrust-chamber.x14\",\"thrust-chamber.x15\",\"thrust-chamber.x16\",\"thrust-chamber.x17\",\"thrust-chamber.x18\",\"thrust-chamber.x19\",\"thrust-chamber.x2\",\"thrust-chamber.x20\",\"thrust-chamber.x21\",\"thrust-chamber.x22\",\"thrust-chamber.x23\",\"thrust-chamber.x24\",\"thrust-chamber.x25\",\"thrust-chamber.x26\",\"thrust-chamber.x27\",\"thrust-chamber.x28\",\"thrust-chamber.x29\",\"thrust-chamber.x3\",\"thrust-chamber.x30\",\"thrust-chamber.x31\",\"thrust-chamber.x32\",\"thrust-chamber.x33\",\"thrust-chamber.x34\",\"thrust-chamber.x35\",\"thrust-chamber.x36\",\"thrust-chamber.x37\",\"thrust-chamber.x38\",\"thrust-chamber.x39\",\"thrust-chamber.x4\",\"thrust-chamber.x40\",\"thrust-chamber.x41\",\"thrust-chamber.x42\",\"thrust-chamber.x43\",\"thrust-chamber.x5\",\"thrust-chamber.x6\",\"thrust-chamber.x7\",\"thrust-chamber.x8\",\"thrust-chamber.x9\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"},{\"content_sha256\":\"da6b110ff35598061b4dd3d5a3ca6807ec82b271f1e5d7372aacc07daeb0fd74\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"upper-coolant-header\",\"frame_id\":\"upper-coolant-header\",\"operation\":\"manifold.cooling_front_supply\",\"parameter_refs\":[\"export_tolerance\",\"source_tolerance\",\"upper-coolant-header.back_web\",\"upper-coolant-header.bore_radius\",\"upper-coolant-header.count\",\"upper-coolant-header.front_web\",\"upper-coolant-header.outer_radius\",\"upper-coolant-header.phase\",\"upper-coolant-header.plenum_inner\",\"upper-coolant-header.plenum_length\",\"upper-coolant-header.plenum_outer\",\"upper-coolant-header.port_inner\",\"upper-coolant-header.port_outer\",\"upper-coolant-header.supply_hole_radius\",\"upper-coolant-header.supply_phase\",\"upper-coolant-header.width\"],\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\"}],\"graph_id\":\"components-9bb115f6b059adce34a4d5472a5d6f189a16ac5e4dc6d5c2508b0f239ff9317c\",\"output_feature_ids\":[\"collector-mount-bolts\",\"fuel-supply\",\"gas-joint-groove\",\"head-mount-bolts\",\"illustrative-sector-cooling\",\"lower-coolant-header\",\"oxidizer-supply\",\"return-collector\",\"return-elbow-a\",\"return-elbow-b\",\"return-elbow-c\",\"return-elbow-d\",\"return-head\",\"return-inward\",\"return-outward\",\"return-over-flange\"],\"schema_version\":\"1.0.0\",\"snapshot_id\":\"aad3c9bd84740db826ce16c58c2399efa0420e6b293483c668426ea96815b558\"}"
+    },
+    "specification": {
+      "body_part_id": "illustrative-sector-cooling",
+      "channel_family": "variable_radial_axial_sector",
+      "header_part_ids": [
+        "collector-mount-bolts",
+        "lower-coolant-header"
+      ],
+      "return_part_ids": [
+        "return-collector",
+        "return-elbow-a",
+        "return-elbow-b",
+        "return-elbow-c",
+        "return-elbow-d",
+        "return-head",
+        "return-inward",
+        "return-outward",
+        "return-over-flange"
+      ],
+      "schema": "cosmos.compact-engine-candidate.v1",
+      "stations": [
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": -0.2876666666666667
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": -0.048
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": -0.003
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.0
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.0004437835504126337
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.0008850852831960481
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.001321437260051925
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.0017503992237249
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.002169572244910996
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.002576612138043386
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.00296924257092897
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.003450935843057719
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.003936320885922681
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.004425397699523855
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.004918166283861243
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.005414626638934843
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.005914778764744655
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.006418622661290682
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.006926158328572921
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.007437385766591371
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.007952304975346037
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.008470915954836915
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.008993218705064004
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.009519213226027308
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01004889951772682
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01058227758016255
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.0111193474133345
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01166010901724265
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01220456239188702
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.0127527075372676
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01330454445338439
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.0138600731402374
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01441929359782662
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01498220582615205
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.0155488098252137
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01611910559501155
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01669309313554563
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01727077244681591
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01785214352882241
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01843720638156511
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01902596100504404
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.01961840739925917
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.02021454556421052
+          }
+        },
+        {
+          "depth": {
+            "unit": "m",
+            "value": 0.0025
+          },
+          "hot_ligament": {
+            "unit": "m",
+            "value": 0.0015
+          },
+          "x": {
+            "unit": "m",
+            "value": 0.02081437549989808
+          }
+        }
+      ]
+    },
+    "recipe_sha256": "a357d5c073e62a95b872eb6f210a3537d78d67bd9ad36f82a86166825df478f5"
+  },
+  "source_head_unchanged": true,
+  "qualification": "NOT_PERFORMED"
+}

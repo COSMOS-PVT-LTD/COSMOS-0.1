@@ -1,0 +1,11 @@
+{
+  "pass": true,
+  "baseline_files": 3080,
+  "only_changed": [
+    ".github/workflows/ci.yml",
+    "gui/server.py"
+  ],
+  "unrelated_work_preserved": true,
+  "synthetic_test_cache_exactly_restored": true,
+  "baseline_commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987"
+}

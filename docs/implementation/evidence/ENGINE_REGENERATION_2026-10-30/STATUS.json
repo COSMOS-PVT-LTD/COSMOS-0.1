@@ -1,0 +1,129 @@
+{
+  "schema": "cosmos.compact-regeneration-closeout.v1",
+  "date": "2026-10-30",
+  "status": "FULL_SAVED_CAD_REGENERATED_MATCHED_PHYSICS_BLOCKED",
+  "request_fully_completed": false,
+  "campaign": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/output/engine-redesign-regenerated-2026-10-30",
+  "source": {
+    "project_id": "bb7ebea6-15f9-43b8-b6c0-fd2a2d358155",
+    "selection_commit_id": "2afd02ce-36b8-4939-b71b-c5f8d7872d6a",
+    "candidate_commit_id": "dcf4adff-9540-443e-9e6e-a4775fab92fd",
+    "component_source_commit_id": "06f920dc-ff93-4aa3-8c74-a08c43f2bac3",
+    "baseline_commit_id": "3ce745d6-445a-4fca-81af-be9c09f200dc",
+    "recipe_sha256": "a357d5c073e62a95b872eb6f210a3537d78d67bd9ad36f82a86166825df478f5"
+  },
+  "saved_source_heads_unchanged": true,
+  "old_records_deleted": false,
+  "app_installed": false,
+  "cad": {
+    "metal_groups": 6,
+    "step_reimport": "PASS_SOFTWARE_CHECKS",
+    "picogk_voxel_m": 0.0006000000238418579,
+    "native_triangles": 3654936,
+    "native_topology": "PASS_BASIC_CLOSED_ORIENTED_MESH_CHECKS",
+    "maximum_observed_relative_part_volume_error": 0.00621643400907119,
+    "display_triangles": 199792,
+    "engineering_accuracy_accepted": false
+  },
+  "matched_thermal_feed_solved": false,
+  "physics_blockers": [
+    "FEED_CHARACTERISTICS_REQUIRED",
+    "FULL_HOT_GAS_COVERAGE_REQUIRED",
+    "HEATED_OPERATING_CLOSURE_REQUIRED",
+    "MATERIAL_CONDITION_UNRESOLVED",
+    "NO_WALL_LIQUID_DOMAIN_OVERLAP",
+    "RIB_ROOF_BIMETAL_MODEL_REQUIRED",
+    "VARIABLE_SECTOR_TRANSFER_UNSUPPORTED"
+  ],
+  "focused_python_tests": [
+    {
+      "file": "all-focused-final.xml",
+      "tests": 72,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "native-feature-tests.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "python_passed": 75,
+  "javascript_passed": 32,
+  "native_display": "PASS",
+  "old_0p5mm_attempt": "TIMED_OUT_600S_INCOMPLETE_RETAINED",
+  "r08": "ON_HOLD",
+  "runtime_admission": "NOT_PERFORMED_FOR_COMPACT_EXTENSION",
+  "engineering_acceptance": "NOT_PERFORMED",
+  "physical_validation": "NOT_PERFORMED",
+  "free_bytes_after": 13967544320,
+  "artifacts": {
+    "preflight.json": {
+      "bytes": 949,
+      "sha256": "d07d2bc8341864af78f0eddf469d12a4fa50c379ea48f85602d69169a418d244"
+    },
+    "research-input.json": {
+      "bytes": 134857,
+      "sha256": "6475c08f50ce025c130214dcccf8e7ed8c4921b3c75d761ebda6e2d3228e85a7"
+    },
+    "matched-analysis-final.json": {
+      "bytes": 34045,
+      "sha256": "eb896aa438f9c57a9d6869286cc1d59b8ec48e9f7f7278a852f210b3f5d81221"
+    },
+    "independent-inspection-final.json": {
+      "bytes": 13211,
+      "sha256": "78fe70a2c53f13547dfb1ce91af2d06c39806956da2d75eff3e3f992f8b2d6b8"
+    },
+    "native-display-final.json": {
+      "bytes": 369,
+      "sha256": "6c6db62f0b71efd11e75da3aa70e453dbf342e5cef4a2c59f93ade92315e6e48"
+    },
+    "optimized-managed-comparison-v2.json": {
+      "bytes": 4519,
+      "sha256": "baf4e5df29da904674aa54e14227cdc97f9e10cba3689c0c816df3379e26e28f"
+    },
+    "occt/manifest.json": {
+      "bytes": 10215,
+      "sha256": "f6401e50b7244f1d1aba33b4ed4c21378d827b7c96dc3b529dc4591ec64de64b"
+    },
+    "occt/UNQUALIFIED-assembly.step": {
+      "bytes": 3101058,
+      "sha256": "2b57096654246cd3a7b0d282642fcc36c1f02e5707ca84c259ce6ea705311328"
+    },
+    "picogk-optimized-0p6mm/manifest.json": {
+      "bytes": 9380,
+      "sha256": "e668ac11976e007ce76fc29944badee376829a32c9c3f2426c2ee771b7c81fba"
+    },
+    "picogk-optimized-0p6mm/UNQUALIFIED-export.stl": {
+      "bytes": 182746884,
+      "sha256": "5d79a87473a08b9a6949bb60ce362bc2e1f6413ad6f94bf750e20b86a3272c23"
+    },
+    "picogk-optimized-0p6mm/UNQUALIFIED-source.vdb": {
+      "bytes": 55641641,
+      "sha256": "46d82e60a4a7f9d53efdc9d692dfa49e3a6be0732ab935751141c5fbaea5f462"
+    },
+    "display/manifest.json": {
+      "bytes": 3277,
+      "sha256": "62323cd9f303b13f135636baa713af3cadac04052a38f3a2b67c845cf1817932"
+    },
+    "display/DISPLAY-ONLY-export.stl": {
+      "bytes": 9989684,
+      "sha256": "e57d53646d97d1abaf5a7e616cbe10ae081645668101005de242838bb380879c"
+    },
+    "all-focused-final.xml": {
+      "bytes": 11892,
+      "sha256": "3e71d3d3a511bd8e5d90058a7efcff0e00b9e3b76ec3c0201904f82b3aac2d90"
+    },
+    "native-feature-tests.xml": {
+      "bytes": 752,
+      "sha256": "e5872fef4203329a2fa1de78802bf88ea4380bd6f2985aed6dbb3bb3ab0a52af"
+    },
+    "javascript-tests.log": {
+      "bytes": 3231,
+      "sha256": "1f1f9dd07f0869c4f357f177171cecf6320516b0ee78cb0da82127dfb4a3e061"
+    }
+  }
+}

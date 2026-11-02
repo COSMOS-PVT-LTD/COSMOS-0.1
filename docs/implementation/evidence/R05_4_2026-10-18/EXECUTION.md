@@ -1,0 +1,13 @@
+# R05.4 study/run adapter implementation
+
+User requested the next development phase. Implement the first R05.4 study/run slice under accepted ADR-R05-001. R05.3 native storage core passed; its native desktop/workload/integrated-history qualification stays open, not waived by this development work. No R05.4 acceptance or whole-PRJ claim before evidence.
+
+Reuse the existing software-only OCCT sphere handoff, StudySnapshot/StudySettings, mesh builder and SimulationWorkbench finite-volume solver/model. Never turn fixture persistence into engine thermal design, physical validation, signed review or engineering publication. Keep all existing scientific JSON/source namespace/hash contracts and legacy preview behavior.
+
+Plan: add exact authorized upstream commit/job dependencies to fresh versioned storage; transitive current applicability must be checked transactionally at run admission/selection, without mutating historical receipts. Add durable original solver monitor events. Materialize only hash-checked retained BREP/STEP bytes in task-owned execution scratch, then invoke the existing simulation service against immutable inputs. Retain exact study/mesh/model/solver, native run/status/dataset/monitor bytes and terminal failure/cancel/restart states. Integrate project-scoped API and a bounded usable Projects panel. Comparisons, criteria ordering, reports, claims and review-intent persistence remain later R05.4 slices.
+
+No existing database transformation, owner-root activation, actor guessing, credentials/trust change, method/equation/tolerance change, commit/push or release. Preserve inherited dirty work. Verify fresh temporary roots, native sphere→study/run→restart exact byte/source reads, stale upstream/edited study/superseding run/cancel/role/flag-off/corruption/quota paths, then regression/static/type/source preservation. Keep native/default-suite/human/physical evidence distinct.
+
+## Completed bounded slice
+
+See `IMPLEMENTATION_REPORT.md`, `STATUS.json` and `source-final.json`. First study/run implementation and scoped software checks pass: full3193 Python/89 skipped,393 JS,15 affected native cases; Ruff/Mypy374/strict TypeScript/source preservation PASS. Actual native dataset Save now matches retained bytes; deterministic journal unlink/fstat race reproduced and fixed without relaxing file guards. First-failure receipts retained. Whole R05.4 and unfinished R05.3 qualification remain OPEN. Next are comparison/reference/predeclared-criteria and report/claim-source/review-intent adapters. Own QA native window/server/tab closed; roots/evidence retained. No usage limit reached, data migration, commit/push or release.

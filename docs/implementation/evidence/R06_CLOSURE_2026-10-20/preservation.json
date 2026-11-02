@@ -1,0 +1,39 @@
+{
+  "preceding_manifest_sha256": "9df335a4def7690d23a8f0f75173c4512c151f7f610d7265f4509f08f8be3db4",
+  "preceding_sources": 1350,
+  "unchanged": 1343,
+  "declared_edits": [
+    "api/context_projects.py",
+    "api/project_authority.py",
+    "gui/server.py",
+    "gui/static/managed-cycle.css",
+    "gui/static/projects.js",
+    "gui/static/visualization/chart.js",
+    "gui/static/visualization/exports.js"
+  ],
+  "unexpected": [],
+  "missing": [],
+  "new_sources": [
+    "api/engine_operating.py",
+    "api/engine_operating_projects.py",
+    "gui/static/managed-engine-operating.js",
+    "numerics/nonlinear_solver/bounded.py",
+    "physics/compressible_flow/heated_nozzle.py",
+    "physics/feed/characteristics.py",
+    "physics/heat_transfer/pressure_cooling.py",
+    "plugins/nasa_cea/chamber.py",
+    "systems/cycle/engine_operating.py",
+    "systems/cycle/operating_contract.py",
+    "systems/projects/engine_operating.py",
+    "tests/fixtures/engine_operating.py",
+    "tests/integration_tests/gui/test_engine_operating_http.py",
+    "tests/js/engine_operating.test.cjs",
+    "tests/ui/r06_operating/check_exports.py",
+    "tests/ui/r06_operating/preview.py",
+    "tests/unit_tests/numerics/test_bounded_system.py",
+    "tests/unit_tests/physics/test_heated_nozzle.py",
+    "tests/unit_tests/systems_layer/test_engine_operating.py"
+  ],
+  "old_physics_core_numerics_sources_changed": [],
+  "pass": true
+}

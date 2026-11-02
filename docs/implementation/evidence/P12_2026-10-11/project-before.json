@@ -1,0 +1,419 @@
+{
+  "chamber_design": null,
+  "change_log": [],
+  "cooling_design": null,
+  "created_at": "2026-10-11T06:20:34+00:00",
+  "cycle_configuration": {
+    "cycle_type": "UNSPECIFIED",
+    "implementation_status": "NOT_IMPLEMENTED",
+    "parameters": {},
+    "reason": "No validated cycle-power-balance implementation in COSMOS_0.1 Physics."
+  },
+  "description": "",
+  "design_id": "eb98a370-bcdf-46d2-b81d-d8d37ab1ad89",
+  "engineer": null,
+  "editor_drafts": {},
+  "subsystem_inputs": {},
+  "thermochemistry_configuration": {},
+  "injector_design": null,
+  "material_selection": null,
+  "name": "P12 isolated persisted project",
+  "nozzle_design": null,
+  "operating_point": {
+    "ambient_pressure": null,
+    "ambient_temperature": null,
+    "chamber_pressure": null,
+    "chamber_temperature": null,
+    "chamber_temperature_is_assumption": false,
+    "characteristic_velocity": null,
+    "fuel_mass_flow": null,
+    "gamma": null,
+    "gamma_is_assumption": false,
+    "mass_flow": null,
+    "mixture_ratio": null,
+    "molecular_weight": null,
+    "oxidizer_mass_flow": null
+  },
+  "propellant_configuration": {
+    "fuel_id": null,
+    "fuel_pressure": null,
+    "fuel_state": null,
+    "fuel_temperature": null,
+    "mixture_ratio": null,
+    "oxidizer_id": null,
+    "oxidizer_pressure": null,
+    "oxidizer_state": null,
+    "oxidizer_temperature": null
+  },
+  "requirements": {
+    "ambient_pressure": null,
+    "ambient_temperature": null,
+    "burn_duration": null,
+    "cycle_type": null,
+    "expansion_ratio": null,
+    "mixture_ratio": null,
+    "notes": null,
+    "operating_altitude": null,
+    "propellant_selection": null,
+    "target_chamber_pressure": null,
+    "target_thrust": null
+  },
+  "revision": 0,
+  "schema_version": "0.1.0",
+  "software_version": "0.1.0",
+  "status": {
+    "value": "draft"
+  },
+  "structural_design": null,
+  "thermal_design": null,
+  "updated_at": "2026-10-11T06:20:34+00:00",
+  "workflow": {
+    "graph": {
+      "nodes": {
+        "chamber": {
+          "dependencies": [
+            "performance",
+            "injector"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "performance",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            },
+            {
+              "stage_id": "injector",
+              "requirement": "INFORMATIONAL",
+              "reason": "Preliminary L* geometry does not consume injector hydraulic sizing or model atomization."
+            }
+          ],
+          "implementation_status": "PARTIAL",
+          "name": "Combustion Chamber",
+          "result_id": null,
+          "stage_id": "chamber",
+          "status": "NOT_CALCULATED"
+        },
+        "consistency": {
+          "dependencies": [
+            "performance_summary"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "performance_summary",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            }
+          ],
+          "implementation_status": "IMPLEMENTED",
+          "name": "System Consistency Check",
+          "result_id": null,
+          "stage_id": "consistency",
+          "status": "NOT_CALCULATED"
+        },
+        "cooling": {
+          "dependencies": [
+            "thermal",
+            "nozzle"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "thermal",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            },
+            {
+              "stage_id": "nozzle",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            }
+          ],
+          "implementation_status": "PARTIAL",
+          "name": "Cooling System",
+          "result_id": null,
+          "stage_id": "cooling",
+          "status": "NOT_CALCULATED"
+        },
+        "cycle": {
+          "dependencies": [
+            "requirements"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "requirements",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            }
+          ],
+          "implementation_status": "NOT_IMPLEMENTED",
+          "name": "Engine Cycle",
+          "result_id": null,
+          "stage_id": "cycle",
+          "status": "NOT_CALCULATED"
+        },
+        "design_project": {
+          "dependencies": [],
+          "dependency_edges": [],
+          "implementation_status": "PARTIAL",
+          "name": "Design Project",
+          "result_id": null,
+          "stage_id": "design_project",
+          "status": "CURRENT"
+        },
+        "design_review": {
+          "dependencies": [
+            "consistency"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "consistency",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            }
+          ],
+          "implementation_status": "IMPLEMENTED",
+          "name": "Design Review",
+          "result_id": null,
+          "stage_id": "design_review",
+          "status": "NOT_CALCULATED"
+        },
+        "injector": {
+          "dependencies": [
+            "performance"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "performance",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            }
+          ],
+          "implementation_status": "PARTIAL",
+          "name": "Injector",
+          "result_id": null,
+          "stage_id": "injector",
+          "status": "NOT_CALCULATED"
+        },
+        "materials": {
+          "dependencies": [
+            "chamber"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "chamber",
+              "requirement": "INFORMATIONAL",
+              "reason": "Material identity lookup is independent of chamber geometry."
+            }
+          ],
+          "implementation_status": "PARTIAL",
+          "name": "Material Selection",
+          "result_id": null,
+          "stage_id": "materials",
+          "status": "NOT_CALCULATED"
+        },
+        "nozzle": {
+          "dependencies": [
+            "chamber",
+            "performance"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "chamber",
+              "requirement": "INFORMATIONAL",
+              "reason": "Ideal 1D stations use performance geometry, not chamber sizing."
+            },
+            {
+              "stage_id": "performance",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            }
+          ],
+          "implementation_status": "PARTIAL",
+          "name": "Nozzle",
+          "result_id": null,
+          "stage_id": "nozzle",
+          "status": "NOT_CALCULATED"
+        },
+        "operating_point": {
+          "dependencies": [
+            "propellants",
+            "cycle"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "propellants",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            },
+            {
+              "stage_id": "cycle",
+              "requirement": "DEFERRED",
+              "reason": "Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point construction defers the cycle analysis and is not a complete engine design."
+            }
+          ],
+          "implementation_status": "IMPLEMENTED",
+          "name": "Operating Point",
+          "result_id": null,
+          "stage_id": "operating_point",
+          "status": "NOT_CALCULATED"
+        },
+        "performance": {
+          "dependencies": [
+            "thermochemistry",
+            "operating_point"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "thermochemistry",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            },
+            {
+              "stage_id": "operating_point",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            }
+          ],
+          "implementation_status": "PARTIAL",
+          "name": "Mass Flow / Performance",
+          "result_id": null,
+          "stage_id": "performance",
+          "status": "NOT_CALCULATED"
+        },
+        "performance_summary": {
+          "dependencies": [
+            "nozzle",
+            "structure",
+            "thermal",
+            "performance"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "nozzle",
+              "requirement": "OPTIONAL",
+              "reason": "Aggregate only available CURRENT subsystem outputs."
+            },
+            {
+              "stage_id": "structure",
+              "requirement": "OPTIONAL",
+              "reason": "Aggregate only available CURRENT subsystem outputs."
+            },
+            {
+              "stage_id": "thermal",
+              "requirement": "OPTIONAL",
+              "reason": "Aggregate only available CURRENT subsystem outputs."
+            },
+            {
+              "stage_id": "performance",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            }
+          ],
+          "implementation_status": "IMPLEMENTED",
+          "name": "Engine Performance Summary",
+          "result_id": null,
+          "stage_id": "performance_summary",
+          "status": "NOT_CALCULATED"
+        },
+        "propellants": {
+          "dependencies": [
+            "requirements"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "requirements",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            }
+          ],
+          "implementation_status": "IMPLEMENTED",
+          "name": "Propellant Definition",
+          "result_id": null,
+          "stage_id": "propellants",
+          "status": "NOT_CALCULATED"
+        },
+        "requirements": {
+          "dependencies": [
+            "design_project"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "design_project",
+              "requirement": "INFORMATIONAL",
+              "reason": "Design identity already exists."
+            }
+          ],
+          "implementation_status": "IMPLEMENTED",
+          "name": "Requirements",
+          "result_id": null,
+          "stage_id": "requirements",
+          "status": "NOT_CALCULATED"
+        },
+        "structure": {
+          "dependencies": [
+            "chamber",
+            "materials"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "chamber",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            },
+            {
+              "stage_id": "materials",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            }
+          ],
+          "implementation_status": "PARTIAL",
+          "name": "Structural Analysis",
+          "result_id": null,
+          "stage_id": "structure",
+          "status": "NOT_CALCULATED"
+        },
+        "thermal": {
+          "dependencies": [
+            "chamber"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "chamber",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            }
+          ],
+          "implementation_status": "PARTIAL",
+          "name": "Thermal Analysis",
+          "result_id": null,
+          "stage_id": "thermal",
+          "status": "NOT_CALCULATED"
+        },
+        "thermochemistry": {
+          "dependencies": [
+            "operating_point",
+            "propellants"
+          ],
+          "dependency_edges": [
+            {
+              "stage_id": "operating_point",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            },
+            {
+              "stage_id": "propellants",
+              "requirement": "REQUIRED",
+              "reason": "Consumed by the downstream calculation."
+            }
+          ],
+          "implementation_status": "PARTIAL",
+          "name": "Thermochemistry",
+          "result_id": null,
+          "stage_id": "thermochemistry",
+          "status": "NOT_CALCULATED"
+        }
+      }
+    },
+    "result_history": [],
+    "results": {}
+  }
+}

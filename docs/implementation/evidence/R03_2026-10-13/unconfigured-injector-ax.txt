@@ -1,0 +1,241 @@
+Browser tab: 6, Title: "COSMOS 0.1 — Rocket Engine Propulsion Suite", URL: "http://127.0.0.1:8845/app/workbench/rocket-engine?design=9b83c865-f3b9-43a6-84ff-057892ced1e4&stage=injector".
+1 AXWebArea COSMOS 0.1 — Rocket Engine Propulsion Suite, URL: 127.0.0.1:8845/app/workbench/rocket-engine?design=9b83c865-f3b9-43a6-84ff-057892ced1e4&stage=injector
+	2 container
+		3 container cosmos-p04-shell
+			4 container
+				5 container Breadcrumbs
+					6 link Description: Projects & Mission, Value: 127.0.0.1:8845/app/projects
+					7 text  / Rocket Engine
+				8 text COSMOS · Project context: Default Project (UI only) · Design: Synthetic presentation fixture B — not hardware evidence · active r7 · inspecting current r7
+				9 text Persisted design
+				10 pop up button (collapsed, settable) Description: Persisted design, Value: Synthetic presentation fixture B — not hardware evidence · r7, Secondary Actions: Expand
+					11 menu
+						12 Choose an existing design
+						13 Synthetic R03 renamed fixture A — not hardware evidence · r8
+						14 (selected) Synthetic presentation fixture B — not hardware evidence · r7
+				15 button Project context
+				16 text Inspected revision
+				17 pop up button (collapsed, settable) Description: Inspected revision, Value: r7 · current persisted revision, Secondary Actions: Expand
+					18 menu
+						19 (disabled) r7 · current persisted revision
+						20 (disabled) r7 · cooling_inputs event (not snapshot)
+						21 (disabled) r6 · nozzle_inputs event (not snapshot)
+						22 (disabled) r5 · propellant_selection event (not snapshot)
+						23 (disabled) r4 · expansion_ratio event (not snapshot)
+						24 (disabled) r3 · mixture_ratio event (not snapshot)
+						25 (disabled) r2 · ambient_pressure event (not snapshot)
+						26 (disabled) r1 · target_chamber_pressure event (not snapshot)
+				27 text Mode
+				28 pop up button (collapsed, settable) Description: Mode, Value: Standard, Secondary Actions: Expand
+					29 menu
+						30 Guided
+						31 (selected) Standard
+						32 Expert
+				33 text Shell units
+				34 pop up button (collapsed, settable) Description: Shell units, Value: Source units, Secondary Actions: Expand
+					35 menu
+						36 (selected) Source units
+						37 SI display
+				38 text Theme
+				39 pop up button (collapsed, settable) Description: Theme, Value: Dark, Secondary Actions: Expand
+					40 menu
+						41 (selected) Dark
+						42 High contrast
+				43 text Font scale
+				44 pop up button (collapsed, settable) Description: Font scale, Value: 100%, Secondary Actions: Expand
+					45 menu
+						46 (selected) 100%
+						47 125%
+						48 150%
+						49 200%
+				50 button (collapsed) Navigation, Secondary Actions: Expand
+				51 button (collapsed) Inspector, Secondary Actions: Expand
+				52 button (expanded) Diagnostics, Secondary Actions: Collapse
+				53 button Restore default panels
+				54 button Use legacy layout
+				55 button Notifications
+				56 button Profile
+				57 link Description: Help, Value: 127.0.0.1:8845/app/help
+				58 button Open commands
+			59 container
+				60 heading Rocket Engine Propulsion Design Suite, Value: 1
+					61 text Rocket Engine Propulsion Design Suite
+				62 container Active design
+					63 text Synthetic presentation fixture B — not hardware evidence
+					64 text REV 7
+					65 text draft
+					66 text Pc 50.00 bar
+					67 text O/F 2.3
+					68 text Target thrust —
+					69 text Propellants LOX / RP1
+					70 button New, ID: design-new
+					71 button Save, ID: design-save
+					72 button Clone, ID: design-clone
+					73 button Recalculate, ID: design-recalculate
+					74 button Reload, ID: design-reload
+					75 button Review, ID: design-review
+				76 container
+					77 heading 07 Injector, Value: 2, ID: suite-module-title
+						78 text 07 Injector
+					79 text PARTIAL · result NOT_CALCULATED
+				80 text Persisted inputs · PARTIAL · editor units unchanged
+				81 button (disabled) Undo last draft edit
+				82 link Description: Workbench help, Value: 127.0.0.1:8845/app/help
+				83 button Use legacy rocket view
+				84 container suite-forms
+					85 heading Liquid injector hydraulic sizing, Value: 3
+						86 text Liquid injector hydraulic sizing
+					87 text Requires CURRENT Performance. Explicit liquid properties, pressure drops, Cd and counts; no gas injectors, spray layout or combustion stability model.
+					88 container
+						89 text Oxidizer liquid density [kg/m³]
+						90 stepper (settable) Oxidizer liquid density [kg/m³], ID: sub-injector-oxidizer_density_kg_m3
+					91 container
+						92 text Fuel liquid density [kg/m³]
+						93 stepper (settable) Fuel liquid density [kg/m³], ID: sub-injector-fuel_density_kg_m3
+					94 container
+						95 text Oxidizer viscosity [Pa·s]
+						96 stepper (settable) Oxidizer viscosity [Pa·s], ID: sub-injector-oxidizer_viscosity_pa_s
+					97 container
+						98 text Fuel viscosity [Pa·s]
+						99 stepper (settable) Fuel viscosity [Pa·s], ID: sub-injector-fuel_viscosity_pa_s
+					100 container
+						101 text Oxidizer ΔP [Pa]
+						102 stepper (settable) Oxidizer ΔP [Pa], ID: sub-injector-oxidizer_pressure_drop_pa
+					103 container
+						104 text Fuel ΔP [Pa]
+						105 stepper (settable) Fuel ΔP [Pa], ID: sub-injector-fuel_pressure_drop_pa
+					106 container
+						107 text Oxidizer discharge coefficient
+						108 stepper (settable) Oxidizer discharge coefficient, ID: sub-injector-oxidizer_cd
+					109 container
+						110 text Fuel discharge coefficient
+						111 stepper (settable) Fuel discharge coefficient, ID: sub-injector-fuel_cd
+					112 container
+						113 text Oxidizer hole count
+						114 stepper (settable) Oxidizer hole count, ID: sub-injector-oxidizer_hole_count
+					115 container
+						116 text Fuel hole count
+						117 stepper (settable) Fuel hole count, ID: sub-injector-fuel_hole_count
+					118 container
+						119 text Properties / Cd source and operating state
+						120 text field (settable) Properties / Cd source and operating state, ID: sub-injector-property_source
+					121 button Run injector on active design
+				122 heading Result, Value: 3
+					123 text Result
+				124 container
+					125 text NOT_CALCULATED — computed values unavailable: API envelope does not permit display as a current answer. Inspect the unchanged stored DTO below.
+					126 definition list
+						127 container Freshness
+							128 text Freshness
+						129 text NOT_CALCULATED
+						130 container Stage
+							131 text Stage
+						132 text injector
+						133 container Display eligibility
+							134 text Display eligibility
+						135 text false
+						136 container Result ID
+							137 text Result ID
+						138 text fefdfa27-f833-4132-bc8c-9903a18baf47
+						139 container Design revision
+							140 text Design revision
+						141 text 5
+						142 container Model
+							143 text Model
+						144 text Not supplied
+						145 container Model version
+							146 text Model version
+						147 text Not supplied
+						148 container Source
+							149 text Source
+						150 text Not supplied
+						151 container Reference
+							152 text Reference
+						153 text Not supplied
+						154 container Validity
+							155 text Validity
+						156 text UNKNOWN
+						157 container Verification
+							158 text Verification
+						159 text UNKNOWN
+						160 container Validation
+							161 text Validation
+						162 text NOT_CLAIMED
+					163 container Stored operating conditions / inputs (not a current result) — quantity table; scroll horizontally when needed
+						164 table Stored operating conditions / inputs (not a current result)
+							165 text Stored operating conditions / inputs (not a current result)
+							166 row
+								167 cell
+									168 text Quantity / field
+								169 cell
+									170 text Value
+								171 cell
+									172 text Supplied unit
+								173 cell
+									174 text Source key
+							175 row
+								176 cell
+									177 text No supplied fields
+								178 cell
+									179 text Unavailable — not supplied
+								180 cell
+									181 text Not supplied
+								182 cell
+									183 text —
+					184 container Outputs unavailable as current — NOT_CALCULATED — quantity table; scroll horizontally when needed
+						185 table Outputs unavailable as current — NOT_CALCULATED
+							186 text Outputs unavailable as current — NOT_CALCULATED
+							187 row
+								188 cell
+									189 text Quantity / field
+								190 cell
+									191 text Value
+								192 cell
+									193 text Supplied unit
+								194 cell
+									195 text Source key
+							196 row
+								197 cell
+									198 text No supplied fields
+								199 cell
+									200 text Unavailable — API envelope does not permit display as a current answer
+								201 cell
+									202 text Not supplied
+								203 cell
+									204 text —
+					205 heading Warnings, Value: 5
+						206 text Warnings
+					207 content list
+						208 container
+							209 AXListMarker • 
+							210 text injector: preliminary model available, but explicit subsystem inputs have not been configured.
+					211 button (collapsed) Raw received result DTO (JSON) · source keys and precision, Secondary Actions: Expand
+						212 text Raw received result DTO (JSON) · source keys and precision
+			213 splitter Description: Resize diagnostics, Value: 176
+			214 container Description: Diagnostics and knowledge job queue, ID: p04-bottom
+				215 container Rocket action activity
+					216 heading Rocket action activity, Value: 2
+						217 text Rocket action activity
+					218 text Workbench idle; no solver queue is inferred.
+					219 content list
+						220 container
+							221 AXListMarker 1. 
+							222 text Opened injector; retained draft context
+						223 container
+							224 AXListMarker 2. 
+							225 text Opened design_project; retained draft context
+				226 container
+					227 text No shell read error
+					228 button Refresh knowledge queue
+				229 heading Knowledge ingestion queue, Value: 2
+					230 text Knowledge ingestion queue
+				231 text This is not a physics/native solver queue; cancellation API is unavailable.
+				232 container No knowledge jobs
+					233 heading No knowledge jobs, Value: 2, ID: ds-10
+						234 text No knowledge jobs
+					235 text No synthetic job or solver success is invented.
+		236 button Maharshi Bharadwaj Maharshi, ID: maharshi-module, Help: Maharshi Bharadwaj — click for pop-up, double-click for Knowledge workbench. Drag to move; Shift+wheel or corner handle to resize.
+			237 image Maharshi Bharadwaj
+			238 text Maharshi
+
+The focused UI element is 1 AXWebArea COSMOS 0.1 — Rocket Engine Propulsion Suite, URL: 127.0.0.1:8845/app/workbench/rocket-engine?design=9b83c865-f3b9-43a6-84ff-057892ced1e4&stage=injector

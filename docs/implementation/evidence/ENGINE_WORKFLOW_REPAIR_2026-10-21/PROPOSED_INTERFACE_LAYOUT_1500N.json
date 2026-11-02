@@ -1,0 +1,38 @@
+{
+  "schema": "cosmos.proposed-interface-layout.v1",
+  "scope": "PROVISIONAL_ISOLATED_GEOMETRY_STUDY_NOT_APPROVED_ENGINE_INPUTS",
+  "source": "2026-10-21 user-requested manifold/flange exploration. Geometry hypotheses only. Current approved cold injector bore radii and counts are retained, not resized. New radial pair layout, plenum/web/feed-port dimensions and mounting collars are provisional; their hydraulic loss, hot strength, attachment, seal and manufacturing suitability are not established.",
+  "pair_separation_m": 0.0135,
+  "injector_to_chamber_gap_m": 0.0,
+  "head": {
+    "back_web_m": 0.004,
+    "plenum_length_m": 0.012,
+    "front_web_m": 0.003,
+    "fuel_inner_m": 0.0215,
+    "fuel_outer_m": 0.0318,
+    "oxidizer_inner_m": 0.035,
+    "oxidizer_outer_m": 0.047,
+    "fuel_inlet_radius_m": 0.0035,
+    "oxidizer_inlet_radius_m": 0.004,
+    "fuel_inlet_phase_rad": 0.0,
+    "oxidizer_inlet_phase_rad": 3.141592653589793
+  },
+  "mounting_collar": {
+    "outer_radius_m": 0.075,
+    "thickness_m": 0.006,
+    "bolt_circle_radius_m": 0.066,
+    "bolt_hole_radius_m": 0.0032,
+    "count": 8,
+    "phase_rad": 0.0,
+    "attachment_status": "COLLAR_TO_BODY_ATTACHMENT_WELD_AND_SEAL_NOT_DEFINED"
+  },
+  "numerical_interface_tolerance_m": 0.000001,
+  "not_supplied": [
+    "Nozzle-end inlet plenum and its supply port/pipe",
+    "Upper collector/outlet below the chamber flange",
+    "Heated fuel return pipe and direct LOX line",
+    "Selected seal/gland, preload and attachment design",
+    "Matched thermal/material/feed operating-point solution",
+    "Hardware or physical-validation approval"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "gate_id": "G5",
+  "phase": "P07_NGG_KERNELS",
+  "requirement_ids": [
+    "P07.Execute",
+    "G5.KernelFixtures",
+    "G5.TopologyQA",
+    "G5.ExportRoundTrip"
+  ],
+  "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "dirty_checkout": true,
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "native_manifest": "native-runtime-manifest.json"
+  },
+  "commands": [
+    "python -m pytest -q",
+    "P07_NATIVE_CONFIG=<explicit-hash-checked-config> python -m pytest -q tests/integration_tests/geometry",
+    "node --test tests/js/*.test.cjs",
+    "python -m ruff check <established-whole-source-scope>",
+    "python -m mypy core physics numerics systems api infrastructure/geometry plugins/geometry",
+    "python verify_physics.py",
+    "python reaudit_candidates.py"
+  ],
+  "test_artifacts": [
+    "test-summary.json",
+    "candidate-reaudit.json",
+    "logs/native-complete.xml",
+    "runs/final3/fixtures",
+    "physics_parity.json",
+    "source_integrity.json",
+    "predecessor_integrity.json"
+  ],
+  "reviewer": "Codex local software evidence; no independent CAD-lead/physical/release signoff",
+  "decision": "PARTIAL_G5_NOT_PASSED",
+  "date": "2026-10-09T05:34:02.821368+00:00",
+  "blockers": [
+    "test_occt_step_independent_tool_reimport[union]",
+    "test_occt_step_independent_tool_reimport[difference]",
+    "test_occt_step_independent_tool_reimport[intersection]",
+    "test_occt_step_and_stl_representation_aware_export"
+  ],
+  "tests": {
+    "python": {
+      "total": 2619,
+      "passed": 2560,
+      "failed": 0,
+      "skipped": 59,
+      "failures": []
+    },
+    "focused": {
+      "total": 84,
+      "passed": 84,
+      "failed": 0,
+      "skipped": 0,
+      "failures": []
+    },
+    "native": {
+      "total": 54,
+      "passed": 50,
+      "failed": 4,
+      "skipped": 0,
+      "failures": [
+        "test_occt_step_independent_tool_reimport[union]",
+        "test_occt_step_independent_tool_reimport[difference]",
+        "test_occt_step_independent_tool_reimport[intersection]",
+        "test_occt_step_and_stl_representation_aware_export"
+      ]
+    },
+    "native_guards_replay": {
+      "total": 24,
+      "passed": 24,
+      "failed": 0,
+      "skipped": 0,
+      "failures": []
+    },
+    "javascript_passed": 94,
+    "ruff": "PASS",
+    "mypy_source_files": 336,
+    "python_compile": "PASS",
+    "physics_http_exact_cases": 5,
+    "candidate_reaudit_records": 30,
+    "golden_dotnet_vectors": 14,
+    "native_optional_skips_in_python_suite": 54,
+    "existing_skips": 5
+  },
+  "implemented": [
+    "bounded POSIX supervisor",
+    "default-disabled PicoGK and direct OCCT adapters",
+    "P06 immutable typed candidates",
+    "independent mesh QA and STEP-tool reimport",
+    "explicit representation-aware candidate export",
+    "native fixture and .NET transport conformance"
+  ],
+  "g5_pass": false,
+  "p08_ready": false,
+  "production_native_activation": false,
+  "published_artifacts": 0,
+  "physical_validation_claimed": false,
+  "native_distribution_approved": false,
+  "existing_source_changes": [],
+  "next": "P08_NGG_WORKBENCH \u2014 withheld until G5 closure"
+}

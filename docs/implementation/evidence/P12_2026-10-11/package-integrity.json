@@ -1,0 +1,76 @@
+{
+  "pass": true,
+  "app": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/dist/P12-release-preview/COSMOS 0.1 Release Preview.app",
+  "source_files_verified": 881,
+  "external_runtime": true,
+  "external_python_sha256": "690ff84223d152000549f124e52752a724c0797a0f88a5c68b2b6fa304e50e36",
+  "files": {
+    "Contents/Info.plist": "be72815422654797ac5645725cad94ae669e7c2fcc1d022fa19859da0bcd67c1",
+    "Contents/MacOS/cosmos-launcher": "1ba06807c3f5ff0d37418ef865fce94488223fb9757135a04e5cc0307426d176",
+    "Contents/Resources/LICENSE": "271fbeffb189811c71172a357ef68e293278e01d80fb72385e49c600ff8619c2",
+    "Contents/Resources/NOTICE": "79cf1bc0605feb586f4c64d3e154a89534233351e373a8513d7054ea80e35392",
+    "Contents/Resources/cosmos_logo.png": "a2140395d5b4423612cf48ee32e1b8cb1977aa9449bc042689ec383871c4327b",
+    "Contents/Resources/frozen-contract-registry.json": "c494dbb76c8faabf5925d8bb648b48ca773d04b1fa269b0cfb8a4f61934e54a9",
+    "Contents/Resources/launch_preview.py": "2b462fc2bfb0d5e602b2181e49822ed6b90d86c9a082aab70993846cdc19f61e",
+    "Contents/Resources/preview-manifest.json": "648c32c8f96311e3efefddf641db6384391e7d831845aabf541e4d38a4fc0f94",
+    "Contents/_CodeSignature/CodeDirectory": "e41e4117b3bf941b1b4f7c83092a907c324c35863c3dad846d85ed67195f39d8",
+    "Contents/_CodeSignature/CodeRequirements": "37ec1122e307f3949e1e5d074991ca2f6e5226dd9a2ffbe473f426fc4a7f1dd5",
+    "Contents/_CodeSignature/CodeResources": "df88cf180f8d420d866394d3455e2dffcfc074c1c5b4db04cba19b9e5f273af4",
+    "Contents/_CodeSignature/CodeSignature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "signing": {
+    "integrity_verification": true,
+    "identity": "ad-hoc",
+    "developer_id": false,
+    "notarized": false,
+    "production_distribution_approved": false,
+    "commands": [
+      {
+        "command": [
+          "/usr/bin/codesign",
+          "--force",
+          "--sign",
+          "-",
+          "--timestamp=none",
+          "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/dist/P12-release-preview/COSMOS 0.1 Release Preview.app"
+        ],
+        "exit_code": 0,
+        "log": "codesign-adhoc.log"
+      },
+      {
+        "command": [
+          "/usr/bin/codesign",
+          "--verify",
+          "--deep",
+          "--strict",
+          "--verbose=2",
+          "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/dist/P12-release-preview/COSMOS 0.1 Release Preview.app"
+        ],
+        "exit_code": 0,
+        "log": "codesign-verify.log"
+      },
+      {
+        "command": [
+          "/usr/bin/codesign",
+          "--display",
+          "--verbose=4",
+          "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/dist/P12-release-preview/COSMOS 0.1 Release Preview.app"
+        ],
+        "exit_code": 0,
+        "log": "codesign-display.log"
+      },
+      {
+        "command": [
+          "/usr/sbin/spctl",
+          "--assess",
+          "--type",
+          "execute",
+          "--verbose=4",
+          "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/dist/P12-release-preview/COSMOS 0.1 Release Preview.app"
+        ],
+        "exit_code": 3,
+        "log": "gatekeeper-assessment.log"
+      }
+    ]
+  }
+}

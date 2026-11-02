@@ -9,7 +9,7 @@ from gui.workbenches.propulsion_suite import (
 from gui.workbenches.registry import workbench_by_id
 
 
-def test_suite_has_live_nozzle_and_heat_transfer() -> None:
+def test_suite_has_live_nozzle_flow_and_partial_cooling() -> None:
     ids = [m.module_id for m in PROPULSION_SUITE_MODULES]
     assert "nozzle-flow" in ids
     assert "heat-transfer" in ids
@@ -17,7 +17,11 @@ def test_suite_has_live_nozzle_and_heat_transfer() -> None:
     nozzle = suite_module_by_id("nozzle-flow")
     heat = suite_module_by_id("heat-transfer")
     assert nozzle is not None and nozzle.status == "live"
-    assert heat is not None and heat.status == "live"
+    assert heat is not None and heat.status == "partial"
+    assert "regenerative" in heat.description
+    for module_id in ("injectors", "nozzle-contour"):
+        module = suite_module_by_id(module_id)
+        assert module is not None and module.status == "partial"
     assert "isentropic_stagnation" in nozzle.physics_ops
     assert "bartz" in heat.physics_ops
 

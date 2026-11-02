@@ -1,0 +1,191 @@
+Browser tab: 6, Title: "COSMOS — Projects & Mission", URL: "http://127.0.0.1:8845/app/projects?view=history".
+1 AXWebArea COSMOS — Projects & Mission, URL: 127.0.0.1:8845/app/projects?view=history
+	2 container
+		77 container cosmos-p04-shell
+			78 container
+				79 container Breadcrumbs
+					80 link Description: Projects & Mission, Value: 127.0.0.1:8845/app/projects
+					81 text  / COSMOS — Projects & Mission
+				82 text COSMOS · Project context: Default Project (UI only) · Design: Synthetic presentation fixture B — not hardware evidence · active r7 · inspecting current r7
+				83 text Persisted design
+				84 pop up button (collapsed, settable) Description: Persisted design, Value: Synthetic presentation fixture B — not hardware evidence · r7, Secondary Actions: Expand
+					85 menu
+						86 Choose an existing design
+						87 Synthetic R03 renamed fixture A — not hardware evidence · r8
+						88 (selected) Synthetic presentation fixture B — not hardware evidence · r7
+				89 button Project context
+				90 text Inspected revision
+				91 pop up button (collapsed, settable) Description: Inspected revision, Value: r7 · current persisted revision, Secondary Actions: Expand
+					92 menu
+						93 (disabled) r7 · current persisted revision
+						94 (disabled) r7 · cooling_inputs event (not snapshot)
+						95 (disabled) r6 · nozzle_inputs event (not snapshot)
+						96 (disabled) r5 · propellant_selection event (not snapshot)
+						97 (disabled) r4 · expansion_ratio event (not snapshot)
+						98 (disabled) r3 · mixture_ratio event (not snapshot)
+						99 (disabled) r2 · ambient_pressure event (not snapshot)
+						100 (disabled) r1 · target_chamber_pressure event (not snapshot)
+				101 text Mode
+				102 pop up button (collapsed, settable) Description: Mode, Value: Standard, Secondary Actions: Expand
+					103 menu
+						104 Guided
+						105 (selected) Standard
+						106 Expert
+				107 text Shell units
+				108 pop up button (collapsed, settable) Description: Shell units, Value: Source units, Secondary Actions: Expand
+					109 menu
+						110 (selected) Source units
+						111 SI display
+				112 text Theme
+				113 pop up button (collapsed, settable) Description: Theme, Value: Dark, Secondary Actions: Expand
+					114 menu
+						115 (selected) Dark
+						116 High contrast
+				117 text Font scale
+				118 pop up button (collapsed, settable) Description: Font scale, Value: 100%, Secondary Actions: Expand
+					119 menu
+						120 (selected) 100%
+						121 125%
+						122 150%
+						123 200%
+				124 button (expanded) Navigation, Secondary Actions: Collapse
+				125 button (expanded) Inspector, Secondary Actions: Collapse
+				126 button (expanded) Diagnostics, Secondary Actions: Collapse
+				127 button Restore default panels
+				128 button Use legacy layout
+				129 button Notifications
+				130 button Profile
+				131 link Description: Help, Value: 127.0.0.1:8845/app/help
+				132 button Open commands
+			133 container Description: Project and workbench navigation, ID: p04-left
+				134 container Modern workbenches
+					135 link Description: Projects & Mission, Value: 127.0.0.1:8845/app/projects
+					136 link Description: Rocket Engine, Value: 127.0.0.1:8845/app/workbench/rocket-engine
+					137 button (disabled) Native Geometry · not enabled, Help: This capability is not enabled in the current application catalog
+					138 link Description: Simulation, Value: 127.0.0.1:8845/app/workbench/simulation
+					139 link Description: Comparison & V&V, Value: 127.0.0.1:8845/app/workbench/comparison
+					140 link Description: Maharshi Knowledge, Value: 127.0.0.1:8845/app/workbench/knowledge
+					141 link Description: Reports & History, Value: 127.0.0.1:8845/app/workbench/reports
+					142 link Description: Visualization and Graphs, Value: 127.0.0.1:8845/app/workbench/visualization
+					143 button (collapsed) All existing workbenches, Secondary Actions: Expand
+						144 text All existing workbenches
+				145 text Navigation maturity follows the existing registry.
+				146 container Project tree
+					147 heading Project tree, Value: 2, ID: ds-8
+						148 text Project tree
+					149 outline Project objects
+						150 row (selected) Synthetic R03 renamed fixture A — not hardware evidence · r8
+							151 text Synthetic R03 renamed fixture A — not hardware evidence · r8
+						152 row (selectable) Synthetic presentation fixture B — not hardware evidence · r7
+							153 text Synthetic presentation fixture B — not hardware evidence · r7
+			154 splitter Description: Resize navigation, Value: 224
+			155 container project-overview
+				156 heading Project change-event history, Value: 1
+					157 text Project change-event history
+				158 text Existing propulsion designs; project context is a UI preference, not a new persistence store.
+				159 text 2 stored designs · 6 active workbenches · 8 planned
+				160 button Refresh overview
+				161 button Open Rocket Engine
+				162 container
+					163 heading Synthetic R03 renamed fixture A — not hardware evidence, Value: 2
+						164 text Synthetic R03 renamed fixture A — not hardware evidence
+					165 text Current r8 · draft ID 26b0a98b-5691-47b2-bc30-db6fc74ebbbe
+					166 button Inspect Synthetic R03 renamed fixture A — not hardware evidence
+					167 button Open Synthetic R03 renamed fixture A — not hardware evidence
+				168 container
+					169 heading Synthetic presentation fixture B — not hardware evidence, Value: 2
+						170 text Synthetic presentation fixture B — not hardware evidence
+					171 text Current r7 · draft ID 9b83c865-f3b9-43a6-84ff-057892ced1e4
+					172 button Inspect Synthetic presentation fixture B — not hardware evidence
+					173 button Open Synthetic presentation fixture B — not hardware evidence
+				174 text Bounded 20-design view; historical entries are change events, not immutable snapshots.
+				175 container Change events are not restorable snapshots
+					176 heading Change events are not restorable snapshots, Value: 2, ID: ds-9
+						177 text Change events are not restorable snapshots
+					178 text This compatibility view inspects current designs and retained change-event metadata. It is not a published report archive or production signoff.
+				179 button Open research Reports workbench
+			180 splitter Description: Resize inspector, Value: 280
+			181 container Description: Context inspector, ID: p04-right
+				182 heading Persisted design inspection, Value: 2
+					183 text Persisted design inspection
+				184 text Design ID: 9b83c865-f3b9-43a6-84ff-057892ced1e4
+				185 text Revision 7; no scientific values are changed here
+				186 container Stored inputs
+					187 heading Stored inputs, Value: 2, ID: ds-6
+						188 text Stored inputs
+					189 container Stored inputs table scroll area
+						190 table
+							191 row
+								192 cell
+									193 text Parameter
+								194 cell
+									195 text Value
+								196 cell
+									197 text Unit
+								198 cell
+									199 text Provenance
+							200 row
+								201 cell
+									202 text Chamber pressure Pc
+								203 cell
+									204 text 5000000
+								205 cell
+									206 text Pa
+								207 cell
+									208 text Existing DesignStore; display only
+							209 row
+								210 cell
+									211 text Target thrust
+								212 cell
+									213 text Missing
+								214 cell
+									215 text —
+								216 cell
+									217 text Existing DesignStore; display only
+							218 row
+								219 cell
+									220 text Mixture ratio O/F
+								221 cell
+									222 text 2.3
+								223 cell
+									224 text 1
+								225 cell
+									226 text Existing requirements
+					227 button (disabled) Previous parameter rows
+					228 button (disabled) Next parameter rows
+					229 text Rows 1–3 of 3; bounded 20-row window
+				230 container Engineering status
+					231 heading Engineering status, Value: 2, ID: ds-7
+						232 text Engineering status
+					233 text execution: idle
+					234 text numerical: not-run
+					235 text freshness: current
+					236 text verification: unverified
+					237 text validation: not-validated
+				238 text Shell state only. Inspect the original workbench for stage-level numerical results and assumptions.
+				239 link Description: Inspect original design DTO, Value: 127.0.0.1:8845/api/propulsion/designs/9b83c865-f3b9-43a6-84ff-057892ced1e4
+			240 splitter Description: Resize diagnostics, Value: 176
+			241 container Description: Diagnostics and knowledge job queue, ID: p04-bottom
+				242 container
+					243 text No shell read error
+					244 button Refresh knowledge queue
+				245 heading Knowledge ingestion queue, Value: 2
+					246 text Knowledge ingestion queue
+				247 text This is not a physics/native solver queue; cancellation API is unavailable.
+				248 container No knowledge jobs
+					249 heading No knowledge jobs, Value: 2, ID: ds-11
+						250 text No knowledge jobs
+					251 text No synthetic job or solver success is invented.
+		66 button Maharshi Bharadwaj Maharshi, ID: maharshi-module, Help: Maharshi Bharadwaj — click for pop-up, double-click for Knowledge workbench. Drag to move; Shift+wheel or corner handle to resize.
+			67 image Maharshi Bharadwaj
+			68 text Maharshi
+		69 container cosmos-engineering-root
+			70 container cosmos-recent-panel
+				71 heading RECENT WORKBENCHES, Value: 4
+					72 text RECENT WORKBENCHES
+				73 text None yet
+				74 heading RECENT FILES, Value: 4
+					75 text RECENT FILES
+				76 text None yet
+
+The focused UI element is 1 AXWebArea COSMOS — Projects & Mission, URL: 127.0.0.1:8845/app/projects?view=history

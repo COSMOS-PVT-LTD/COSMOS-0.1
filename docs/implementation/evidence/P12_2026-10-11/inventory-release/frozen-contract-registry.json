@@ -1,0 +1,43 @@
+{
+  "schema_version": "p12-frozen-registry-v1",
+  "scope": "Exact local source/transport freeze; not human acceptance",
+  "files": {
+    "api/authentication.py": "3361bac67d9f3454c6cccdc51ccf6ad18543d91c5f791828e04c3ddabb3ce832",
+    "api/comparison_workbench.py": "9acc34e78729c269cd4428b42b09c0c7d201eadf1e3e14a762ad5f34e037841d",
+    "api/knowledge_reports.py": "8aad1a84a936b3808310332842291cebfcbfb5b94dc9ea2fa1a557cb0f510c2f",
+    "api/ngg_workbench.py": "349962787aac0e5e433516c79f65f8414128f55ada4ae6647752f3c669573ce4",
+    "api/simulation_workbench.py": "f975f8113bf31b4efacaa2275bd7e0f9d54b71ee901972017997446eff53907d",
+    "gui/server.py": "ccda4f0e776f6b7a97e202b307a958accb6b9ac48eb02b1a6744784224347e68",
+    "gui/static/app-shell/model.js": "df20823256aa42ada68c215d805be37509f6651a87a5cae0dd115b89deecc960",
+    "gui/static/design-system/components.js": "ee6e7345a75f9bf91bd62374f701f8603f26dd4af83d9318c1c3e077d32a6796",
+    "gui/static/knowledge-reports/model.js": "d07d91a11707127159b0a3795c28f66b04909595b4289011fc110890e787b823",
+    "infrastructure/release/launch_preview.py": "2b462fc2bfb0d5e602b2181e49822ed6b90d86c9a082aab70993846cdc19f61e",
+    "infrastructure/release/security.py": "33e5197b86d3b15b92f446854df93070dd9b5c54911f6ebcbbe22c2b7b666314",
+    "plugins/geometry/protocol.py": "d20863669635f39c1949ed66fef99380886c38712d0a0e410e1468454a73bb5e",
+    "requirements-release-macos.txt": "0255053028fbcf94331ed0d2d1ccec42ed3b9dad70fed95065a5a61fb3e070f5",
+    "simulation/contracts.py": "c6a45eb23ff7a6ff4d5e327175c84b2f3594aa9206065d05a17bb0f36efae2ba",
+    "systems/contracts/geometry/__init__.py": "2c00a67983c35d68e6d00fcebffbae6c8d2de054754215c37f17a87fc21cd526",
+    "systems/contracts/geometry/_wire.py": "682b7b3fec08796eb27f5a1cde3f7cef7ec2e23229f9df1248316a7db32b96bb",
+    "systems/contracts/geometry/artifacts.py": "6e43877d3e3a9af3afddf50bd10bfc5ae09e5b58e901a5bbbddb1394fbd7a51a",
+    "systems/contracts/geometry/build.py": "44288bf077b796a5404d7266a8527f9b1032d1c4bb4936692aec5015d1f230d8",
+    "systems/contracts/geometry/graph.py": "f65dd5061a0d797f33962b3522684489003e5b815fc53fac97e5892eaa9c3613",
+    "systems/contracts/geometry/schema.py": "1bc2efca3ccf393acf3102eff16c54b4bee6b448c12fafd8026dd6f888b209e2",
+    "systems/contracts/geometry/schemas/geometry-v1.schema.json": "23a9c777ee54003240769741a984156830452b29c7d8ebdf32769a35beb736b5",
+    "systems/contracts/geometry/snapshot.py": "b73a1419e7a21b30653664206c020fc3780df0dfa1fd7c8721f14a2e368fd592",
+    "validation/contracts.py": "db925e826c3cc87044413d5a04fe8820aeb322512f79bcd6c948f1b66481545b",
+    "validation/reporting.py": "5d50fc4f8ed730889c185133ab1bc63124fe63cc68c6f56131974e8048dca992"
+  },
+  "wire_version": "NGG-json-v1 / geometry 1.0.0",
+  "study_schema": "p09 steady-spherical-conduction-v1",
+  "report_schema": "p11-engineering-report-v1",
+  "flags_default_off": [
+    "COSMOS_NEW_SHELL",
+    "COSMOS_NGG",
+    "COSMOS_NEW_SIM_UI",
+    "COSMOS_NEW_VV_UI",
+    "COSMOS_NEW_KNOWLEDGE_REPORTS_UI"
+  ],
+  "release_profile": "local-preview only; no production profile",
+  "approval": "unsigned automated freeze",
+  "content_sha256": "c10061763193c9eb9c69b3ea605d7d92baf408f59922a1e2b8b34ef9824f3a18"
+}

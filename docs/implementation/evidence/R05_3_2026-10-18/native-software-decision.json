@@ -1,0 +1,18 @@
+{
+  "gate": "R05_3_RESTORED_NATIVE_SOFTWARE_FIXTURES",
+  "software_g5_pass": true,
+  "p08_may_begin": true,
+  "legacy_p08_key_is_runtime_policy_not_phase_approval": true,
+  "native_tests_passed": 62,
+  "final_coordinator_native_tests_passed": 6,
+  "native_test_log_sha256": "961b62691c38e9fcd892cae96354c7b1507d5a6fe21cb68db2fd7edbfbc40b00",
+  "final_coordinator_log_sha256": "9986aa049be5c70855f5f146338e766f068a67eb283e30b35090fddbd56b8353",
+  "qa_tolerances_relaxed": false,
+  "historical_g5_modified": false,
+  "engineering_publication_approved": false,
+  "production_native_distribution_approved": false,
+  "physical_validation_claimed": false,
+  "candidate_change_after_initial_run": [
+    "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/systems/geometry/authority.py"
+  ]
+}

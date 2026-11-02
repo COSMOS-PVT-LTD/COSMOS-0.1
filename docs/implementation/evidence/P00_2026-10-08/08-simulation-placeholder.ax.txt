@@ -1,0 +1,32 @@
+Browser tab: 6, Title: "COSMOS 0.1 — Workbench", URL: "http://127.0.0.1:8790/app/workbench/simulation".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 52-53, 61-62, 64-70, 91-92, 96, 160-161, 163-165, 167-168, 170-171, 173-177, 695-855
+~1 AXWebArea COSMOS 0.1 — Workbench, URL: 127.0.0.1:8790/app/workbench/simulation
++					14 text IDLE
+~			49 heading Simulation, Value: 1, ID: workbench-title
+~				50 text Simulation
+~			51 text CFD, FEA, and coupled physics simulation launchers.
++		52 container Description: Engineering console, ID: engineering-console
++			53 button JOBS 0, ID: console-jobs-btn
++				54 text JOBS
++				55 text 0
++			56 button SOLVER IDLE, ID: console-solver-btn
++				57 text SOLVER
++				58 text IDLE
++			59 button CONVERGENCE —, ID: console-convergence-btn
++				60 text CONVERGENCE
++				61 text —
++			62 button LOG, ID: console-log-btn
++			63 button EVENTS, ID: console-events-btn
++		64 button Maharshi Bharadwaj Maharshi, ID: maharshi-module, Help: Maharshi Bharadwaj — click for pop-up, double-click for Knowledge workbench. Drag to move; Shift+wheel or corner handle to resize.
++			65 image Maharshi Bharadwaj
++			66 text Maharshi
++		67 container cosmos-engineering-root
++			68 container cosmos-recent-panel
++				69 heading RECENT WORKBENCHES, Value: 4
++					70 text RECENT WORKBENCHES
++				71 text None yet
++				72 heading RECENT FILES, Value: 4
++					73 text RECENT FILES
++				74 text None yet
+The focused UI element is 1 AXWebArea COSMOS 0.1 — Workbench, URL: 127.0.0.1:8790/app/workbench/simulation

@@ -1,0 +1,5 @@
+{
+  "elapsed_s": 0.33671120810322464,
+  "process_cumulative_peak_rss_bytes": 37257216,
+  "scope": "macOS Python process cumulative RSS; not whole app/native/Chrome peak or per-run allocation"
+}

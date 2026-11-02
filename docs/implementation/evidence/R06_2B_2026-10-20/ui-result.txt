@@ -1,0 +1,460 @@
+Browser tab: 5, Title: "COSMOS — Projects & Mission", URL: "http://127.0.0.1:8867/app/projects?project=80cdb6c3-9adb-4465-877f-21ef8b98840d".
+1 AXWebArea COSMOS — Projects & Mission, URL: 127.0.0.1:8867/app/projects?project=80cdb6c3-9adb-4465-877f-21ef8b98840d
+	2 container
+		36 container cosmos-p04-shell
+			37 container
+				38 container Breadcrumbs
+					39 link Description: Projects & Mission, Value: 127.0.0.1:8867/app/projects
+					40 text  / COSMOS — Projects & Mission
+				41 text COSMOS · active r— · inspecting current r— · Design: none · Managed project Pressure-fed QA — synthetic feed assumptions · 80cdb6c3-9adb-4465-877f-21ef8b98840d
+				42 text Persisted design
+				43 pop up button (collapsed, settable) Description: Persisted design, Value: Choose an existing design, Secondary Actions: Expand
+					44 menu
+						45 (selected) Choose an existing design
+						46 Pressure-fed software verification only · r7
+				47 text Inspected revision
+				48 pop up button (disabled, collapsed, settable) Description: Inspected revision, Value: No current persisted revision, Secondary Actions: Expand
+					49 menu
+						50 (disabled) No current persisted revision
+				51 button (collapsed) Navigation, Secondary Actions: Expand
+				52 button (collapsed) Inspector, Secondary Actions: Expand
+				53 button (collapsed) Diagnostics, Secondary Actions: Expand
+				54 checkbox Focus workspace, Value: 0
+				55 button Open commands
+				56 button (collapsed) Workspace controls, Secondary Actions: Expand
+					57 text Workspace controls
+			58 container Active workbench
+				59 button (collapsed) Authoritative project sources and retained activity, Secondary Actions: Expand
+					60 text Authoritative project sources and retained activity
+				61 container project-overview
+					62 heading Projects & Mission, Value: 1
+						63 text Projects & Mission
+					64 text Server-owned projects and immutable saved snapshots. CURRENT means selected freshness, not engineering or physical validation.
+					65 container Create managed project
+						66 container
+							67 text Project title
+							68 text field (settable) Project title
+						69 container
+							70 text Mission / intended-use notes
+							71 text field (settable) Mission / intended-use notes
+						72 button Create project
+					73 container Managed project list
+						74 heading Managed projects, Value: 2
+							75 text Managed projects
+						76 button Pressure-fed QA — synthetic feed assumptions · ACTIVE
+						77 button First project page
+						372 text Save or explicitly discard managed geometry/study/comparison/report drafts before switching or refreshing project context.
+					78 container Selected managed project
+						79 heading Pressure-fed QA — synthetic feed assumptions, Value: 2
+							80 text Pressure-fed QA — synthetic feed assumptions
+						81 text ACTIVE · project v1 · owner USR-f8713cc3bc8eddb8
+						82 text Software QA only; not engine/hardware evidence
+						83 container
+							84 text Cloned project title
+							85 text field (settable) Cloned project title, Value: Pressure-fed QA — synthetic feed assumptions (inputs clone)
+						86 button Clone editable inputs and retain complete origin archive
+						87 container
+							88 text Project title
+							89 text field (settable) Project title, Value: Pressure-fed QA — synthetic feed assumptions
+						90 container
+							91 text Mission notes
+							92 text field (settable) Mission notes, Value: Software QA only; not engine/hardware evidence
+						93 button Save project metadata
+						94 button Archive project
+						95 button (disabled) Restore project
+						96 text Recoverable delete retains snapshots; no permanent purge.
+						97 container
+							98 text Exact project ID to confirm recoverable delete
+							99 text field (settable) Exact project ID to confirm recoverable delete
+						100 button Recoverably delete project
+						101 container
+							102 text New propulsion design name
+							103 text field (settable) New propulsion design name
+						104 button Create propulsion design
+						105 heading Propulsion designs — first 20; no domain jobs are inferred, Value: 3
+							106 text Propulsion designs — first 20; no domain jobs are inferred
+						107 link Description: Download exact project archive (owner only; no credentials), Value: 127.0.0.1:8867/api/projects/80cdb6c3-9adb-4465-877f-21ef8b98840d/package?version=1&hash=4103222e9379da4130e53da7d6bd6f74a4e2bf16529c92f0cb881e52a807738b
+						108 link Description: Pressure-fed software verification only · input r7 · saved v1, Value: 127.0.0.1:8867/app/workbench/rocket-engine?project=80cdb6c3-9adb-4465-877f-21ef8b98840d&design=b404731e-db3b-5f4b-a42e-d0bd1a97f761
+						109 container Managed geometry and durable attempts
+							110 heading Managed geometry · software fixtures only, Value: 3
+								111 text Managed geometry · software fixtures only
+							112 text Exact snapshots, graphs, requests, attempts and retained bytes. Storage completion is not engineering publication or physical validation.
+							113 text No geometry editor opened.
+							114 container
+								115 text Fixture operation
+								116 pop up button (collapsed, settable) Description: Fixture operation, Value: sphere, Secondary Actions: Expand
+									117 menu
+										118 (selected) sphere
+										119 union
+										120 difference
+										121 intersection
+										122 self_union
+							123 container
+								124 text Fixture backend
+								125 pop up button (collapsed, settable) Description: Fixture backend, Value: occt, Secondary Actions: Expand
+									126 menu
+										127 (selected) occt
+										128 picogk
+							129 container
+								130 text Declared voxel size in metres
+								131 pop up button (collapsed, settable) Description: Declared voxel size in metres, Value: 0.0005, Secondary Actions: Expand
+									132 menu
+										133 (selected) 0.0005
+										134 0.001
+										135 0.00025
+							136 button Create managed fixture inputs
+							137 button Save geometry input edits
+							138 button (disabled) Build exact saved fixture inputs
+							139 button Discard geometry drafts and reload opened inputs
+							140 button Refresh retained attempts
+							141 text Native build runtime is not configured in this application. Saved sources/history remain available; no solver success is invented.
+							142 heading Managed fixture inputs, Value: 4
+								143 text Managed fixture inputs
+							144 text Exact authorized geometry source API
+							145 container Managed geometry exact source preview
+								146 text Choose an exact source or attempt.
+						147 container Managed studies and solver runs
+							148 heading Managed study/run · spherical software benchmark only, Value: 3
+								149 text Managed study/run · spherical software benchmark only
+							150 text Retains exact study, mesh, model/solver hashes, monitor events and datasets. Execution COMPLETED does not mean numerical convergence, experimental validation or production handoff.
+							151 text No study opened.
+							152 container
+								153 text Exact owned geometry attempt ID for a new study
+								154 text field (settable) Exact owned geometry attempt ID for a new study
+							155 container
+								156 text Conductivity [W/(m·K)]
+								157 text field (settable) Conductivity [W/(m·K)], Value: 10
+							158 container
+								159 text Volumetric generation [W/m³]
+								160 text field (settable) Volumetric generation [W/m³], Value: 1000000
+							161 container
+								162 text Surface temperature [K]
+								163 text field (settable) Surface temperature [K], Value: 300
+							164 container
+								165 text Radial cell count [8,16,32,64]
+								166 text field (settable) Radial cell count [8,16,32,64], Value: 16
+							167 container
+								168 text Relative equation residual tolerance
+								169 text field (settable) Relative equation residual tolerance, Value: 1e-8
+							170 container
+								171 text Maximum solver iterations
+								172 text field (settable) Maximum solver iterations, Value: 10000
+							173 button Create new radial benchmark study with displayed settings
+							174 button Save displayed study settings
+							175 button Run exact saved radial benchmark
+							176 button Discard study drafts and reload
+							177 button Refresh retained solver attempts
+							178 heading Retained studies, Value: 4
+								179 text Retained studies
+							180 text Exact authorized study source API
+							181 container Managed study exact source preview
+								182 text Open a retained study or create one from an exact selected OCCT sphere build.
+						183 button (collapsed) Project requirements and exact selected components, Secondary Actions: Expand
+							184 text Project requirements and exact selected components
+						185 button (collapsed) Managed comparisons and research reports, Secondary Actions: Expand
+							186 text Managed comparisons and research reports
+						187 button (collapsed) Rocket sensitivity — explicit saved preliminary baseline, Secondary Actions: Expand
+							188 text Rocket sensitivity — explicit saved preliminary baseline
+						189 container managed-pressure-fed
+							190 button (expanded) Pressure-fed assessment — saved preliminary baseline, Secondary Actions: Collapse
+								191 text Pressure-fed assessment — saved preliminary baseline
+							383 text Assessment retained; source design unchanged. Cycle completion and physical validation not claimed.
+							193 text Assumed-state, specified-flow, steady incompressible core-only pressure budget. No full cycle closure, CEA/diversion coupling or pressurant sizing. Tank free surface (zero liquid surface velocity) to injector inlet manifold. Injector static delta-p defines sink pressure; other loss entries are irreversible upstream losses at the declared core flow/temperature.
+							194 text This is a downstream assessment, not the upstream cycle stage. Selecting a cycle or closing this budget does not qualify a complete engine. Scientific applicability, actual subsystem coupling and physical validation remain unassessed.
+							195 container Explicit assessment inputs — no property or loss defaults
+								196 text Explicit assessment inputs — no property or loss defaults
+								197 container
+									198 text Exact saved pressure-fed propulsion baseline
+									199 pop up button (collapsed, settable) Description: Exact saved pressure-fed propulsion baseline, Value: Pressure-fed software verification only · input r7 · saved v1 · df87340f-28a0-476b-8e8e-6f38db0560cb, Secondary Actions: Expand
+										200 menu
+											201 Choose an exact saved design
+											202 (selected) Pressure-fed software verification only · input r7 · saved v1 · df87340f-28a0-476b-8e8e-6f38db0560cb
+								203 container
+									204 text Flow regime
+									205 pop up button (collapsed, settable) Description: Flow regime, Value: Steady single-phase incompressible liquid, Secondary Actions: Expand
+										206 menu
+											207 Choose explicitly
+											208 (selected) Steady single-phase incompressible liquid
+								209 container
+									210 text Pressurant scope
+									211 pop up button (collapsed, settable) Description: Pressurant scope, Value: Imposed regulated tank pressure — boundary only, Secondary Actions: Expand
+										212 menu
+											213 Choose explicitly
+											214 (selected) Imposed regulated tank pressure — boundary only
+								215 container
+									216 text Stream accounting
+									217 pop up button (collapsed, settable) Description: Stream accounting, Value: Core only — no external diversion, Secondary Actions: Expand
+										218 menu
+											219 Choose explicitly
+											220 (selected) Core only — no external diversion
+								221 container
+									222 text Gravitational acceleration [m/s2]
+									223 text field (settable) Description: Gravitational acceleration, Value: 10
+								224 container
+									225 text Absolute pressure comparison tolerance [Pa]
+									226 text field (settable) Description: Absolute pressure comparison tolerance, Value: 0.000001
+								227 container
+									228 text Absolute mass-flow comparison tolerance [kg/s]
+									229 text field (settable) Description: Absolute mass-flow comparison tolerance, Value: 1e-12
+								230 container
+									231 text External oxidizer outflow — explicit zero required [kg/s]
+									232 text field (settable) Description: External oxidizer outflow — explicit zero required, Value: 0
+								233 container
+									234 text External fuel outflow — explicit zero required [kg/s]
+									235 text field (settable) Description: External fuel outflow — explicit zero required, Value: 0
+								248 container
+									249 button (expanded) Oxidizer feed inputs, Secondary Actions: Collapse
+										250 text Oxidizer feed inputs
+									251 container oxidizer declared liquid data
+										252 text oxidizer declared liquid data
+										253 container
+											254 text oxidizer phase declaration
+											255 pop up button (collapsed, settable) Description: oxidizer phase declaration, Value: Single-phase LIQUID (caller declared), Secondary Actions: Expand
+												256 menu
+													257 Choose explicitly
+													258 (selected) Single-phase LIQUID (caller declared)
+										259 container
+											260 text oxidizer Declared liquid temperature [K]
+											261 text field (settable) Description: oxidizer Declared liquid temperature, Value: 90
+										262 container
+											263 text oxidizer Declared liquid density [kg/m3]
+											264 text field (settable) Description: oxidizer Declared liquid density, Value: 1000
+										265 container
+											266 text oxidizer Supplied regulated tank absolute pressure [Pa]
+											267 text field (settable) Description: oxidizer Supplied regulated tank absolute pressure, Value: 5182000
+										268 container
+											269 text oxidizer Independently supplied tank withdrawal [kg/s]
+											270 text field (settable) Description: oxidizer Independently supplied tank withdrawal, Value: 2.030220554862814
+										271 container
+											272 text oxidizer Injector inlet manifold flow area [m2]
+											273 text field (settable) Description: oxidizer Injector inlet manifold flow area, Value: 0.001015110277431407
+										274 container
+											275 text oxidizer Manifold minus tank free-surface elevation [m]
+											276 text field (settable) Description: oxidizer Manifold minus tank free-surface elevation, Value: 3
+										277 container
+											278 text oxidizer Manifold-to-chamber STATIC pressure drop [Pa]
+											279 text field (settable) Description: oxidizer Manifold-to-chamber STATIC pressure drop, Value: 100000
+										280 container
+											281 text oxidizer Density / phase / temperature source or explicit assumption
+											282 text field (settable) Description: oxidizer Density / phase / temperature source or explicit assumption, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+										283 container
+											284 text oxidizer Tank-pressure boundary source or explicit assumption
+											285 text field (settable) Description: oxidizer Tank-pressure boundary source or explicit assumption, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+										286 container
+											287 text oxidizer Tank-withdrawal source or explicit assumption
+											288 text field (settable) Description: oxidizer Tank-withdrawal source or explicit assumption, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+										289 container
+											290 text oxidizer Injector static pressure-drop source / applicable conditions
+											291 text field (settable) Description: oxidizer Injector static pressure-drop source / applicable conditions, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+										292 container
+											293 text oxidizer feed_line irreversible loss UPSTREAM of manifold [Pa]
+											294 text field (settable) Description: oxidizer feed_line irreversible loss UPSTREAM of manifold, Value: 20000
+										295 container
+											296 text oxidizer feed_line loss source / flow / conditions
+											297 text field (settable) Description: oxidizer feed_line loss source / flow / conditions, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+										298 container
+											299 text oxidizer valves irreversible loss UPSTREAM of manifold [Pa]
+											300 text field (settable) Description: oxidizer valves irreversible loss UPSTREAM of manifold, Value: 30000
+										301 container
+											302 text oxidizer valves loss source / flow / conditions
+											303 text field (settable) Description: oxidizer valves loss source / flow / conditions, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+										304 container
+											305 text oxidizer cooling irreversible loss UPSTREAM of manifold [Pa]
+											306 text field (settable) Description: oxidizer cooling irreversible loss UPSTREAM of manifold, Value: 0
+										307 container
+											308 text oxidizer cooling loss source / flow / conditions
+											309 text field (settable) Description: oxidizer cooling loss source / flow / conditions, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+								310 container
+									311 button (expanded) Fuel feed inputs, Secondary Actions: Collapse
+										312 text Fuel feed inputs
+									313 container fuel declared liquid data
+										314 text fuel declared liquid data
+										315 container
+											316 text fuel phase declaration
+											317 pop up button (collapsed, settable) Description: fuel phase declaration, Value: Single-phase LIQUID (caller declared), Secondary Actions: Expand
+												318 menu
+													319 Choose explicitly
+													320 (selected) Single-phase LIQUID (caller declared)
+										321 container
+											322 text fuel Declared liquid temperature [K]
+											323 text field (settable) Description: fuel Declared liquid temperature, Value: 290
+										324 container
+											325 text fuel Declared liquid density [kg/m3]
+											326 text field (settable) Description: fuel Declared liquid density, Value: 1000
+										327 container
+											328 text fuel Supplied regulated tank absolute pressure [Pa]
+											329 text field (settable) Description: fuel Supplied regulated tank absolute pressure, Value: 5182000
+										330 container
+											331 text fuel Independently supplied tank withdrawal [kg/s]
+											332 text field (settable) Description: fuel Independently supplied tank withdrawal, Value: 1.015110277431407
+										333 container
+											334 text fuel Injector inlet manifold flow area [m2]
+											335 text field (settable) Description: fuel Injector inlet manifold flow area, Value: 0.0005075551387157034
+										336 container
+											337 text fuel Manifold minus tank free-surface elevation [m]
+											338 text field (settable) Description: fuel Manifold minus tank free-surface elevation, Value: 3
+										339 container
+											340 text fuel Manifold-to-chamber STATIC pressure drop [Pa]
+											341 text field (settable) Description: fuel Manifold-to-chamber STATIC pressure drop, Value: 100000
+										342 container
+											343 text fuel Density / phase / temperature source or explicit assumption
+											344 text field (settable) Description: fuel Density / phase / temperature source or explicit assumption, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+										345 container
+											346 text fuel Tank-pressure boundary source or explicit assumption
+											347 text field (settable) Description: fuel Tank-pressure boundary source or explicit assumption, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+										348 container
+											349 text fuel Tank-withdrawal source or explicit assumption
+											350 text field (settable) Description: fuel Tank-withdrawal source or explicit assumption, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+										351 container
+											352 text fuel Injector static pressure-drop source / applicable conditions
+											353 text field (settable) Description: fuel Injector static pressure-drop source / applicable conditions, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+										354 container
+											355 text fuel feed_line irreversible loss UPSTREAM of manifold [Pa]
+											356 text field (settable) Description: fuel feed_line irreversible loss UPSTREAM of manifold, Value: 20000
+										357 container
+											358 text fuel feed_line loss source / flow / conditions
+											359 text field (settable) Description: fuel feed_line loss source / flow / conditions, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+										360 container
+											361 text fuel valves irreversible loss UPSTREAM of manifold [Pa]
+											362 text field (settable) Description: fuel valves irreversible loss UPSTREAM of manifold, Value: 30000
+										363 container
+											364 text fuel valves loss source / flow / conditions
+											365 text field (settable) Description: fuel valves loss source / flow / conditions, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+										366 container
+											367 text fuel cooling irreversible loss UPSTREAM of manifold [Pa]
+											368 text field (settable) Description: fuel cooling irreversible loss UPSTREAM of manifold, Value: 0
+										369 container
+											370 text fuel cooling loss source / flow / conditions
+											371 text field (settable) Description: fuel cooling loss source / flow / conditions, Value: Explicit synthetic software-QA assumption at displayed core flow and declared liquid temperature; not measured hardware data.
+								240 button Run and retain pressure-fed assessment
+								241 button Abandon uncertain command — keep entered inputs
+								242 button Discard pressure-fed draft
+							384 heading Retained pressure-fed assessments, Value: 4
+								385 text Retained pressure-fed assessments
+							386 button Inspect assessment 1ed8b305-6f76-5cb9-8e43-e47bcc9b22a9
+							387 heading Captured input receipts — including interrupted/in-progress calls, Value: 4
+								388 text Captured input receipts — including interrupted/in-progress calls
+							389 button Inspect input capture 1ed8b305-6f76-5cb9-8e43-e47bcc9b22a9
+							374 heading Retained pressure-fed assessment · COMPLETED, Value: 4
+								390 text Retained pressure-fed assessment · COMPLETED
+							391 text Baseline and method sources current — not physical acceptance.
+							392 text Commit 6d054921-9a21-4c93-96d9-b8fe233559c9 · SHA256 5ab43fe4775ae0aba4decb8db7ad2b60b87e208d0f6871fee14d2dcba6894267
+							393 text Baseline df87340f-28a0-476b-8e8e-6f38db0560cb · captured inputs 3a30b8cb-d5bb-4ca9-8352-1c64ba866d97
+							394 text Declared algebraic pressure/mass tolerances satisfied — full cycle is NOT complete.
+							375 table Independent liquid mass continuity
+								395 text Independent liquid mass continuity
+								396 row
+									397 cell
+										398 text Stream
+									399 cell
+										400 text Core required [kg/s]
+									401 cell
+										402 text Supplied withdrawal [kg/s]
+									403 cell
+										404 text Signed mass residual [kg/s]
+									405 cell
+										406 text Within declared mass tolerance
+								407 row
+									408 cell
+										409 text fuel
+									410 cell
+										411 text 1.015110277431407
+									412 cell
+										413 text 1.015110277431407
+									414 cell
+										415 text 0
+									416 cell
+										417 text true
+								418 row
+									419 cell
+										420 text oxidizer
+									421 cell
+										422 text 2.0302205548628143
+									423 cell
+										424 text 2.030220554862814
+									425 cell
+										426 text -4.440892098500626e-16
+									427 cell
+										428 text true
+							376 table Static pressure, velocity/elevation head and irreversible losses
+								429 text Static pressure, velocity/elevation head and irreversible losses
+								430 row
+									431 cell
+										432 text Stream
+									433 cell
+										434 text Required manifold static [Pa abs]
+									435 cell
+										436 text Kinetic change [Pa]
+									437 cell
+										438 text Elevation change [Pa]
+									439 cell
+										440 text Upstream irreversible loss [Pa]
+									441 cell
+										442 text Required tank [Pa abs]
+									443 cell
+										444 text Supplied tank [Pa abs]
+									445 cell
+										446 text Signed pressure residual [Pa]
+									447 cell
+										448 text Pressure state
+								449 row
+									450 cell
+										451 text fuel
+									452 cell
+										453 text 5100000
+									454 cell
+										455 text 2000
+									456 cell
+										457 text 30000
+									458 cell
+										459 text 50000
+									460 cell
+										461 text 5182000
+									462 cell
+										463 text 5182000
+									464 cell
+										465 text 0
+									466 cell
+										467 text BALANCED_WITHIN_TOLERANCE
+								468 row
+									469 cell
+										470 text oxidizer
+									471 cell
+										472 text 5100000
+									473 cell
+										474 text 2000.000000000001
+									475 cell
+										476 text 30000
+									477 cell
+										478 text 50000
+									479 cell
+										480 text 5182000
+									481 cell
+										482 text 5182000
+									483 cell
+										484 text -9.094947017729282e-13
+									485 cell
+										486 text BALANCED_WITHIN_TOLERANCE
+							487 text Total mass residual -4.440892098500626e-16 kg/s · pressure tolerance 0.000001 Pa · mass tolerance 1e-12 kg/s
+							488 text Shaft power NOT_APPLICABLE (not zero); pressurant consumption/work NOT_ASSESSED; injector/cooling/diversion coupling NOT_ASSESSED; physical validation NOT_PERFORMED.
+							377 link Description: Download residuals CSV with exact source identity, Value: 127.0.0.1:8867/api/projects/80cdb6c3-9adb-4465-877f-21ef8b98840d/pressure-fed/1ed8b305-6f76-5cb9-8e43-e47bcc9b22a9/residuals.csv?commit=6d054921-9a21-4c93-96d9-b8fe233559c9
+							378 link Description: Download original retained assessment JSON, Value: 127.0.0.1:8867/api/projects/80cdb6c3-9adb-4465-877f-21ef8b98840d/pressure-fed/1ed8b305-6f76-5cb9-8e43-e47bcc9b22a9/record.json?commit=6d054921-9a21-4c93-96d9-b8fe233559c9
+							379 link Description: Download original captured inputs JSON, Value: 127.0.0.1:8867/api/projects/80cdb6c3-9adb-4465-877f-21ef8b98840d/pressure-fed/1ed8b305-6f76-5cb9-8e43-e47bcc9b22a9/inputs.json?commit=6d054921-9a21-4c93-96d9-b8fe233559c9
+							380 link Description: Inspect exact authenticated assessment envelope, Value: 127.0.0.1:8867/api/projects/80cdb6c3-9adb-4465-877f-21ef8b98840d/pressure-fed/1ed8b305-6f76-5cb9-8e43-e47bcc9b22a9?commit=6d054921-9a21-4c93-96d9-b8fe233559c9
+							381 link Description: Inspect shared project source and upstream lineage, Value: 127.0.0.1:8867/app/projects?project=80cdb6c3-9adb-4465-877f-21ef8b98840d&commit=6d054921-9a21-4c93-96d9-b8fe233559c9&domain=pressure-fed-assessment
+							382 button (collapsed) Canonical record preview — full original available as download, Secondary Actions: Expand
+								489 text Canonical record preview — full original available as download
+							247 button Refresh retained pressure-fed history
+		25 button Maharshi Bharadwaj Maharshi, ID: maharshi-module, Help: Maharshi Bharadwaj — click for pop-up, double-click for Knowledge workbench. Drag to move; Shift+wheel or corner handle to resize.
+			26 image Maharshi Bharadwaj
+			27 text Maharshi
+		28 container cosmos-engineering-root
+			29 container cosmos-recent-panel
+				30 heading RECENT WORKBENCHES, Value: 4
+					31 text RECENT WORKBENCHES
+				32 text None yet
+				33 heading RECENT FILES, Value: 4
+					34 text RECENT FILES
+				35 text None yet
+
+The focused UI element is 1 AXWebArea COSMOS — Projects & Mission, URL: 127.0.0.1:8867/app/projects?project=80cdb6c3-9adb-4465-877f-21ef8b98840d

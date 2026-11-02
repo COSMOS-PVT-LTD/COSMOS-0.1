@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "checkpointFiles": 1808,
+  "existingChanges": [],
+  "addedFiles": [
+    "systems/contracts/geometry/README.md",
+    "systems/contracts/geometry/__init__.py",
+    "systems/contracts/geometry/_wire.py",
+    "systems/contracts/geometry/artifacts.py",
+    "systems/contracts/geometry/build.py",
+    "systems/contracts/geometry/graph.py",
+    "systems/contracts/geometry/schema.py",
+    "systems/contracts/geometry/schemas/geometry-v1.schema.json",
+    "systems/contracts/geometry/snapshot.py",
+    "tests/contracts/geometry/golden-v1.json",
+    "tests/contracts/geometry/test_golden_vectors.py",
+    "tests/contracts/geometry/test_json_schema.py",
+    "tests/fixtures/geometry_contracts.py",
+    "tests/unit_tests/systems_layer/test_geometry_artifacts.py",
+    "tests/unit_tests/systems_layer/test_geometry_build.py",
+    "tests/unit_tests/systems_layer/test_geometry_graph.py",
+    "tests/unit_tests/systems_layer/test_geometry_snapshot.py",
+    "tests/unit_tests/systems_layer/test_geometry_wire.py"
+  ],
+  "unexpected": [],
+  "existingScientificSourceChanged": false
+}

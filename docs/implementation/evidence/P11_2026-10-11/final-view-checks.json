@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unitHeaderWhitespace": "nowrap",
+      "loadAndInspectMs": 330.8382909999998
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "unitHeaderWhitespace": "nowrap",
+      "loadAndInspectMs": 128.61570900000015
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "unitHeaderWhitespace": "nowrap",
+      "loadAndInspectMs": 96.58829199999991
+    }
+  ],
+  "unchanged_report_history": true,
+  "themeViolations": 0
+}

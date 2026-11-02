@@ -21,7 +21,7 @@ from systems.contracts.results import (
 from systems.projects.models import PropulsionDesign
 from systems.stages._helpers import failed_result, make_result, stage_guard
 
-__all__ = ("run_propellants_stage",)
+__all__ = ("ensure_propellant_registry_loaded", "run_propellants_stage")
 
 _CANDIDATE_DB = (
     Path(__file__).resolve().parents[2]
@@ -32,7 +32,7 @@ _CANDIDATE_DB = (
 )
 
 
-def _ensure_registry_loaded() -> str:
+def ensure_propellant_registry_loaded() -> str:
     """Load the verified candidate propellant DB if registry is empty."""
 
     if registry_size() > 0:
@@ -71,7 +71,7 @@ def run_propellants_stage(design: PropulsionDesign) -> CalculationResult:
         cfg.mixture_ratio = float(design.requirements.mixture_ratio)
 
     try:
-        db_note = _ensure_registry_loaded()
+        db_note = ensure_propellant_registry_loaded()
         if not cfg.oxidizer_id or not cfg.fuel_id:
             raise PropellantNotFoundError(
                 "oxidizer_id and fuel_id are required (or propellant_selection 'OX/FUEL')."

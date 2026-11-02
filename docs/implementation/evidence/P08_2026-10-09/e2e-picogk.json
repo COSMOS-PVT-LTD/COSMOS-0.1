@@ -1,0 +1,688 @@
+{
+  "context": {
+    "policy": "software-fixtures-only",
+    "project_id": "p07-software-fixtures",
+    "settings": {
+      "backend": "picogk",
+      "operation": "sphere",
+      "voxel_m": 0.0005
+    },
+    "snapshot": {
+      "content_sha256": "7106bad6e4c95ed40a9fb16778bc8c7939c943d6d39c1169b992d6b18e8d70d4",
+      "contract_type": "DesignSnapshot",
+      "created_at": "2026-10-09T06:35:48.387833+00:00",
+      "frame_id": "world",
+      "frames": [
+        {
+          "content_sha256": "213deb594196916b0978102722aa76df072e4ec9baeaad3b258554b2acecbd45",
+          "contract_type": "CoordinateFrame",
+          "frame_id": "world",
+          "handedness": "right",
+          "origin_m": [
+            0,
+            0,
+            0
+          ],
+          "parent_frame_id": null,
+          "rotation": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "schema_version": "1.0.0",
+          "units": "m"
+        }
+      ],
+      "parameters_si": [
+        {
+          "content_sha256": "7500a35284bd4aaf87886454425793e14ddf8c3c7d89408a08bef25d70ccbb9e",
+          "contract_type": "SIParameter",
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kind": "absolute",
+          "name": "body.radius",
+          "schema_version": "1.0.0",
+          "source_ref_id": "p07-analytic-fixture",
+          "unit_symbol": "m",
+          "value_si": 0.01
+        },
+        {
+          "content_sha256": "8efb904826881e90fad5cf1a932449f56e61eefdb33f52a898df4532f1f55a2d",
+          "contract_type": "SIParameter",
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kind": "absolute",
+          "name": "body.x",
+          "schema_version": "1.0.0",
+          "source_ref_id": "p07-analytic-fixture",
+          "unit_symbol": "m",
+          "value_si": 0
+        },
+        {
+          "content_sha256": "13d05673c07882e40ba2828ca4b99f219a1d49496f0bb0558e9710e0524cb114",
+          "contract_type": "SIParameter",
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kind": "absolute",
+          "name": "body.y",
+          "schema_version": "1.0.0",
+          "source_ref_id": "p07-analytic-fixture",
+          "unit_symbol": "m",
+          "value_si": 0
+        },
+        {
+          "content_sha256": "9a7700b80bafbbf3068ac6f27156454b9b502b72c1fb24dbd314cedc574e9676",
+          "contract_type": "SIParameter",
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kind": "absolute",
+          "name": "body.z",
+          "schema_version": "1.0.0",
+          "source_ref_id": "p07-analytic-fixture",
+          "unit_symbol": "m",
+          "value_si": 0
+        }
+      ],
+      "project_id": "p07-software-fixtures",
+      "revision_id": "p08-26c65a39e6af496b9af0f64b18b6e2d1",
+      "schema_version": "1.0.0",
+      "source_refs": [
+        {
+          "content_sha256": "2f9628573080fcd691f06fe9d85aa05874f68ace0220a78c55cddd0ae4ff3d3e",
+          "contract_type": "SourceReference",
+          "ref_id": "p07-analytic-fixture",
+          "schema_version": "1.0.0",
+          "source_sha256": "8acac97a809cbc7cc623ec52101fc93de9547f27b8a054442ac3631c3be56552",
+          "source_uri": "systems/geometry/software_fixtures.py"
+        }
+      ]
+    },
+    "graph": {
+      "content_sha256": "248857539478abf22ed5ef7ebfb9dec26148956c381d114554eca9a5d46c0b3b",
+      "contract_type": "GeometryFeatureGraph",
+      "features": [
+        {
+          "content_sha256": "93966f972f5ea51b9bea812f3a3e0521eb3805e322983aca79955640561f9659",
+          "contract_type": "GeometryFeature",
+          "dependency_ids": [],
+          "feature_id": "body",
+          "frame_id": "world",
+          "operation": "primitive.sphere",
+          "parameter_refs": [
+            "body.radius",
+            "body.x",
+            "body.y",
+            "body.z"
+          ],
+          "representation": "implicit_field",
+          "schema_version": "1.0.0"
+        }
+      ],
+      "graph_id": "fixture-sphere",
+      "output_feature_ids": [
+        "body"
+      ],
+      "schema_version": "1.0.0",
+      "snapshot_id": "7106bad6e4c95ed40a9fb16778bc8c7939c943d6d39c1169b992d6b18e8d70d4"
+    },
+    "request": {
+      "approximation_profile": "sparse_volume",
+      "backend_id": "picogk",
+      "backend_version": "picogk-2.2.0.p07v1",
+      "content_sha256": "52e56a44a2a24dfefbf6a0385ce184eaa87801fbe44a26fa6fbe5d41fdfea269",
+      "contract_type": "GeometryBuildRequest",
+      "correlation_id": "p08-09d8e255d810400fabf5a4caa9525b2e",
+      "export_tolerance_m": 0.00075,
+      "feature_graph_id": "fixture-sphere",
+      "feature_graph_sha256": "248857539478abf22ed5ef7ebfb9dec26148956c381d114554eca9a5d46c0b3b",
+      "frame_id": "world",
+      "output_formats": [
+        "stl"
+      ],
+      "representation": "implicit_field",
+      "request_id": "request-fdf62c8e5dac4e12b82267f424c5e4b8",
+      "schema_version": "1.0.0",
+      "snapshot_id": "7106bad6e4c95ed40a9fb16778bc8c7939c943d6d39c1169b992d6b18e8d70d4",
+      "source_tolerance_m": 0.00075,
+      "voxel_resolution_m": 0.0005
+    },
+    "revision_count": 3,
+    "job_ids": [
+      "job-ab2df9d6344e41f7888bdd2a3731f93a"
+    ],
+    "published": false,
+    "physical_validation": false
+  },
+  "status": {
+    "job_id": "job-407f888cd3494a958603699089264871",
+    "snapshot_id": "7106bad6e4c95ed40a9fb16778bc8c7939c943d6d39c1169b992d6b18e8d70d4",
+    "current": true,
+    "state": "accepted",
+    "progress_fraction": null,
+    "published": false,
+    "engineering_export_eligible": false,
+    "byte_integrity": true,
+    "fixture_exchange_eligible": true,
+    "record": {
+      "artifacts": [
+        {
+          "approximation_profile": "sparse_volume",
+          "artifact_id": "artifact-0",
+          "backend_id": "picogk",
+          "backend_version": "picogk-2.2.0.p07v1",
+          "content_sha256": "f11aeec75ae04e0753f32ffe727852a9530bcf083e97b0f36907c50470e21897",
+          "contract_type": "GeometryArtifact",
+          "export_tolerance_m": 0.00075,
+          "feature_graph_sha256": "248857539478abf22ed5ef7ebfb9dec26148956c381d114554eca9a5d46c0b3b",
+          "frame_id": "world",
+          "generated_at": "2026-10-09T06:35:49.648017+00:00",
+          "geometry_revision_id": "geometry-job-407f888cd3494a958603699089264871",
+          "job_id": "job-407f888cd3494a958603699089264871",
+          "output_format": "stl",
+          "representation": "implicit_field",
+          "schema_version": "1.0.0",
+          "sha256": "20f7c9844acf1374a6c6781f71ee6738df7ba6672611df6fcff90a35affc5f28",
+          "size_bytes": 747084,
+          "snapshot_id": "7106bad6e4c95ed40a9fb16778bc8c7939c943d6d39c1169b992d6b18e8d70d4",
+          "source_artifact_sha256": "37cac6a27044ea2e342e60b490fdfaefdbe833d2189fbf066f2d1796d5d5ecea",
+          "source_tolerance_m": 0.00075,
+          "storage_uri": "job-407f888cd3494a958603699089264871/export-conditioned.stl",
+          "topology_report_id": "report-job-407f888cd3494a958603699089264871-0",
+          "units": "m",
+          "voxel_resolution_m": 0.0005
+        }
+      ],
+      "content_sha256": "3f57af35ec46fda10d92dd3a7b734ba5f449de095b92ae5a200c33996ae9bd61",
+      "contract_type": "GeometryBuildRecord",
+      "events": [
+        {
+          "artifact_ids": [],
+          "code": null,
+          "content_sha256": "d303f9cb018b4f53af4c52be658aceac17e1b45c3a1de240df09c5f9b7bb8c66",
+          "contract_type": "GeometryBuildEvent",
+          "correlation_id": "p08-09d8e255d810400fabf5a4caa9525b2e",
+          "evidence_refs": [],
+          "job_id": "job-407f888cd3494a958603699089264871",
+          "message": "Geometry phase completed",
+          "progress_fraction": null,
+          "schema_version": "1.0.0",
+          "seq": 0,
+          "stage": "draft",
+          "state": "draft",
+          "timestamp": "2026-10-09T06:35:48.580297+00:00"
+        },
+        {
+          "artifact_ids": [],
+          "code": null,
+          "content_sha256": "cec1a9cba36f3f5e9b3a8bc1ff0128985da6e7e26ffa464a218ef133baf5e679",
+          "contract_type": "GeometryBuildEvent",
+          "correlation_id": "p08-09d8e255d810400fabf5a4caa9525b2e",
+          "evidence_refs": [],
+          "job_id": "job-407f888cd3494a958603699089264871",
+          "message": "Geometry phase completed",
+          "progress_fraction": null,
+          "schema_version": "1.0.0",
+          "seq": 1,
+          "stage": "validating",
+          "state": "validating",
+          "timestamp": "2026-10-09T06:35:48.580349+00:00"
+        },
+        {
+          "artifact_ids": [],
+          "code": null,
+          "content_sha256": "c141733329d8929f646590a8cbde301a678b32d77df6ad9ca8ea3f05dd28a242",
+          "contract_type": "GeometryBuildEvent",
+          "correlation_id": "p08-09d8e255d810400fabf5a4caa9525b2e",
+          "evidence_refs": [],
+          "job_id": "job-407f888cd3494a958603699089264871",
+          "message": "Geometry phase completed",
+          "progress_fraction": null,
+          "schema_version": "1.0.0",
+          "seq": 2,
+          "stage": "queued",
+          "state": "queued",
+          "timestamp": "2026-10-09T06:35:48.580373+00:00"
+        },
+        {
+          "artifact_ids": [],
+          "code": null,
+          "content_sha256": "869cffa444e09c68fa3ddd9e90e9c8531a2fcac32419cfb78693bd2ed6ac959f",
+          "contract_type": "GeometryBuildEvent",
+          "correlation_id": "p08-09d8e255d810400fabf5a4caa9525b2e",
+          "evidence_refs": [],
+          "job_id": "job-407f888cd3494a958603699089264871",
+          "message": "Geometry phase completed",
+          "progress_fraction": null,
+          "schema_version": "1.0.0",
+          "seq": 3,
+          "stage": "kernel",
+          "state": "running",
+          "timestamp": "2026-10-09T06:35:48.580393+00:00"
+        },
+        {
+          "artifact_ids": [],
+          "code": null,
+          "content_sha256": "da8e025f8d2d5d7f6a9fb97be1f77ea02fc4498ee8741167381da6e89754012a",
+          "contract_type": "GeometryBuildEvent",
+          "correlation_id": "p08-09d8e255d810400fabf5a4caa9525b2e",
+          "evidence_refs": [],
+          "job_id": "job-407f888cd3494a958603699089264871",
+          "message": "Geometry phase completed",
+          "progress_fraction": null,
+          "schema_version": "1.0.0",
+          "seq": 4,
+          "stage": "independent_qa",
+          "state": "qa",
+          "timestamp": "2026-10-09T06:35:48.947431+00:00"
+        },
+        {
+          "artifact_ids": [],
+          "code": null,
+          "content_sha256": "b53e6dcea9d5c58672a0701a817bdec580a07c30796c948b124369f2edce7df6",
+          "contract_type": "GeometryBuildEvent",
+          "correlation_id": "p08-09d8e255d810400fabf5a4caa9525b2e",
+          "evidence_refs": [],
+          "job_id": "job-407f888cd3494a958603699089264871",
+          "message": "Software fixture QA accepted; not published or physically validated",
+          "progress_fraction": null,
+          "schema_version": "1.0.0",
+          "seq": 5,
+          "stage": "software_fixture_acceptance",
+          "state": "accepted",
+          "timestamp": "2026-10-09T06:35:49.648085+00:00"
+        }
+      ],
+      "feature_graph": {
+        "content_sha256": "248857539478abf22ed5ef7ebfb9dec26148956c381d114554eca9a5d46c0b3b",
+        "contract_type": "GeometryFeatureGraph",
+        "features": [
+          {
+            "content_sha256": "93966f972f5ea51b9bea812f3a3e0521eb3805e322983aca79955640561f9659",
+            "contract_type": "GeometryFeature",
+            "dependency_ids": [],
+            "feature_id": "body",
+            "frame_id": "world",
+            "operation": "primitive.sphere",
+            "parameter_refs": [
+              "body.radius",
+              "body.x",
+              "body.y",
+              "body.z"
+            ],
+            "representation": "implicit_field",
+            "schema_version": "1.0.0"
+          }
+        ],
+        "graph_id": "fixture-sphere",
+        "output_feature_ids": [
+          "body"
+        ],
+        "schema_version": "1.0.0",
+        "snapshot_id": "7106bad6e4c95ed40a9fb16778bc8c7939c943d6d39c1169b992d6b18e8d70d4"
+      },
+      "job_id": "job-407f888cd3494a958603699089264871",
+      "named_selections": [],
+      "reports": [
+        {
+          "acceptance_policy_id": "p07.software-fixtures.v1",
+          "artifact_id": "artifact-0",
+          "checks": [
+            {
+              "check_id": "topology",
+              "content_sha256": "8ba729cfbbf7384afefc6f31f2c442cf1aae57653b80bea55214fbc20f989426",
+              "contract_type": "GeometryCheck",
+              "evidence_refs": [
+                "evidence-job-407f888cd3494a958603699089264871"
+              ],
+              "limit": null,
+              "observed": null,
+              "passed": true,
+              "schema_version": "1.0.0",
+              "unit": "1"
+            },
+            {
+              "check_id": "dimensions",
+              "content_sha256": "cbfc2b4bf47a67ef8892fe16cec09500a9f743d135a8ff94faa791519faa99bf",
+              "contract_type": "GeometryCheck",
+              "evidence_refs": [
+                "evidence-job-407f888cd3494a958603699089264871"
+              ],
+              "limit": null,
+              "observed": null,
+              "passed": true,
+              "schema_version": "1.0.0",
+              "unit": "1"
+            },
+            {
+              "check_id": "export_round_trip",
+              "content_sha256": "3874a3c679bc277c5bc4d2978be222c1cb6de9622435fe04c3786095162055bb",
+              "contract_type": "GeometryCheck",
+              "evidence_refs": [
+                "evidence-job-407f888cd3494a958603699089264871"
+              ],
+              "limit": null,
+              "observed": null,
+              "passed": true,
+              "schema_version": "1.0.0",
+              "unit": "1"
+            }
+          ],
+          "content_sha256": "8f7cf5959bbd937ba02ec362cbf1550a0fae5b585eb58e5b534d1479172d0a2b",
+          "contract_type": "GeometryValidationReport",
+          "disposition": "accepted",
+          "report_id": "report-job-407f888cd3494a958603699089264871-0",
+          "reviewer_id": "p07-independent-software-audit",
+          "schema_version": "1.0.0"
+        }
+      ],
+      "request": {
+        "approximation_profile": "sparse_volume",
+        "backend_id": "picogk",
+        "backend_version": "picogk-2.2.0.p07v1",
+        "content_sha256": "52e56a44a2a24dfefbf6a0385ce184eaa87801fbe44a26fa6fbe5d41fdfea269",
+        "contract_type": "GeometryBuildRequest",
+        "correlation_id": "p08-09d8e255d810400fabf5a4caa9525b2e",
+        "export_tolerance_m": 0.00075,
+        "feature_graph_id": "fixture-sphere",
+        "feature_graph_sha256": "248857539478abf22ed5ef7ebfb9dec26148956c381d114554eca9a5d46c0b3b",
+        "frame_id": "world",
+        "output_formats": [
+          "stl"
+        ],
+        "representation": "implicit_field",
+        "request_id": "request-fdf62c8e5dac4e12b82267f424c5e4b8",
+        "schema_version": "1.0.0",
+        "snapshot_id": "7106bad6e4c95ed40a9fb16778bc8c7939c943d6d39c1169b992d6b18e8d70d4",
+        "source_tolerance_m": 0.00075,
+        "voxel_resolution_m": 0.0005
+      },
+      "schema_version": "1.0.0",
+      "snapshot": {
+        "content_sha256": "7106bad6e4c95ed40a9fb16778bc8c7939c943d6d39c1169b992d6b18e8d70d4",
+        "contract_type": "DesignSnapshot",
+        "created_at": "2026-10-09T06:35:48.387833+00:00",
+        "frame_id": "world",
+        "frames": [
+          {
+            "content_sha256": "213deb594196916b0978102722aa76df072e4ec9baeaad3b258554b2acecbd45",
+            "contract_type": "CoordinateFrame",
+            "frame_id": "world",
+            "handedness": "right",
+            "origin_m": [
+              0,
+              0,
+              0
+            ],
+            "parent_frame_id": null,
+            "rotation": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "schema_version": "1.0.0",
+            "units": "m"
+          }
+        ],
+        "parameters_si": [
+          {
+            "content_sha256": "7500a35284bd4aaf87886454425793e14ddf8c3c7d89408a08bef25d70ccbb9e",
+            "contract_type": "SIParameter",
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "kind": "absolute",
+            "name": "body.radius",
+            "schema_version": "1.0.0",
+            "source_ref_id": "p07-analytic-fixture",
+            "unit_symbol": "m",
+            "value_si": 0.01
+          },
+          {
+            "content_sha256": "8efb904826881e90fad5cf1a932449f56e61eefdb33f52a898df4532f1f55a2d",
+            "contract_type": "SIParameter",
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "kind": "absolute",
+            "name": "body.x",
+            "schema_version": "1.0.0",
+            "source_ref_id": "p07-analytic-fixture",
+            "unit_symbol": "m",
+            "value_si": 0
+          },
+          {
+            "content_sha256": "13d05673c07882e40ba2828ca4b99f219a1d49496f0bb0558e9710e0524cb114",
+            "contract_type": "SIParameter",
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "kind": "absolute",
+            "name": "body.y",
+            "schema_version": "1.0.0",
+            "source_ref_id": "p07-analytic-fixture",
+            "unit_symbol": "m",
+            "value_si": 0
+          },
+          {
+            "content_sha256": "9a7700b80bafbbf3068ac6f27156454b9b502b72c1fb24dbd314cedc574e9676",
+            "contract_type": "SIParameter",
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "kind": "absolute",
+            "name": "body.z",
+            "schema_version": "1.0.0",
+            "source_ref_id": "p07-analytic-fixture",
+            "unit_symbol": "m",
+            "value_si": 0
+          }
+        ],
+        "project_id": "p07-software-fixtures",
+        "revision_id": "p08-26c65a39e6af496b9af0f64b18b6e2d1",
+        "schema_version": "1.0.0",
+        "source_refs": [
+          {
+            "content_sha256": "2f9628573080fcd691f06fe9d85aa05874f68ace0220a78c55cddd0ae4ff3d3e",
+            "contract_type": "SourceReference",
+            "ref_id": "p07-analytic-fixture",
+            "schema_version": "1.0.0",
+            "source_sha256": "8acac97a809cbc7cc623ec52101fc93de9547f27b8a054442ac3631c3be56552",
+            "source_uri": "systems/geometry/software_fixtures.py"
+          }
+        ]
+      }
+    },
+    "qa": {
+      "conditioning": {
+        "conditioned_export_sha256": "20f7c9844acf1374a6c6781f71ee6738df7ba6672611df6fcff90a35affc5f28",
+        "positive_area_epsilon": null,
+        "profile": "exact_zero_faces_v1",
+        "removed_exact_zero_faces": 0,
+        "source_export_sha256": "66dc7328eec353d6ceed7c82da57596738a720ca96b27e8b2f3016f61d2aa28d",
+        "surviving_vertices_identical": true,
+        "voxel_refinement": false
+      },
+      "conditioning_profile": "exact_zero_faces_v1",
+      "operation": "sphere",
+      "physical_validation_claimed": false,
+      "policy": "p07.software-fixtures.v1",
+      "process": {
+        "code": "OK",
+        "elapsed_s": 0.35999816679395735,
+        "exit_code": 0,
+        "observed_rss_bytes": 53149696,
+        "pid": 41626
+      },
+      "publishing_performed": false,
+      "qa-stl": {
+        "bidirectional_sampling_scope": "vertices+face centroids to analytic SDF; fixed analytic sphere samples to planar triangles; not certified Hausdorff",
+        "centroid_error_m": 7.566691504043344e-18,
+        "centroid_limit_m": 0.001,
+        "centroid_m": [
+          5.354206864930313e-18,
+          5.334882892939213e-18,
+          3.5540636392639463e-19
+        ],
+        "components": 1,
+        "degenerate_faces": 0,
+        "dimensions_pass": true,
+        "forward_limit_m": 0.00075,
+        "forward_max_m": 0.000014324203198107233,
+        "forward_p95_m": 0.000012700055019477727,
+        "forward_sample_count": 22412,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "pass": true,
+        "physical_validation_claimed": false,
+        "relative_volume_error": 0.002866473669187525,
+        "relative_volume_limit": 0.005500000000000001,
+        "reverse_limit_m": 0.001,
+        "reverse_max_m": 0.000013789988998220143,
+        "reverse_p95_m": 0.000012960870917221471,
+        "reverse_sample_count": 266,
+        "topology_pass": true,
+        "triangle_count": 14940,
+        "units": "m",
+        "volume_m3": 0.0000041767831479586206
+      },
+      "worker_observations": {
+        "actual_voxel_m": 0.0005,
+        "input_unit": "m",
+        "kernel_unit": "mm",
+        "native_peak_bytes": 2773280,
+        "volume_m3": 0.00000418242138671875,
+        "wire_sha256": {
+          "graph": "3b0b156a416d31b6458b0a0d47ffc57db4720a50352a8bdaeeb6658eb3090585",
+          "request": "ccc5793fd0207d76bf3c0cfe94ccc7da0d7f506365706e924ae0a3ea3375e413",
+          "snapshot": "3f1610e8c609c33f3f9d68a3551f0bab857fe2275374e38109bbefbc002747f0"
+        }
+      }
+    }
+  },
+  "reimport": {
+    "state": "completed",
+    "result": {
+      "pass": true,
+      "qa": {
+        "topology_pass": true,
+        "triangle_count": 14940,
+        "components": 1,
+        "degenerate_faces": 0,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "volume_m3": 0.0000041767831479586206,
+        "relative_volume_error": 0.002866473669187525,
+        "relative_volume_limit": 0.005500000000000001,
+        "centroid_m": [
+          5.354206864930313e-18,
+          5.334882892939213e-18,
+          3.5540636392639463e-19
+        ],
+        "centroid_error_m": 7.566691504043344e-18,
+        "centroid_limit_m": 0.001,
+        "forward_sample_count": 22412,
+        "reverse_sample_count": 266,
+        "forward_max_m": 0.000014324203198107233,
+        "forward_p95_m": 0.000012700055019477727,
+        "forward_limit_m": 0.00075,
+        "reverse_max_m": 0.000013789988998220143,
+        "reverse_p95_m": 0.000012960870917221471,
+        "reverse_limit_m": 0.001,
+        "bidirectional_sampling_scope": "vertices+face centroids to analytic SDF; fixed analytic sphere samples to planar triangles; not certified Hausdorff",
+        "units": "m",
+        "physical_validation_claimed": false,
+        "dimensions_pass": true,
+        "pass": true
+      },
+      "snapshot_id": "7106bad6e4c95ed40a9fb16778bc8c7939c943d6d39c1169b992d6b18e8d70d4",
+      "artifact_sha256": "20f7c9844acf1374a6c6781f71ee6738df7ba6672611df6fcff90a35affc5f28",
+      "independent_reimport": true,
+      "published": false,
+      "physical_validation": false
+    }
+  },
+  "viewport": {
+    "renderer": "WebGL1-event-driven",
+    "triangleCount": 14940,
+    "bufferBytes": 537840,
+    "loadMs": 0.6999999284744263,
+    "frameCpuMs": [
+      2.3000000715255737,
+      0.10000002384185791,
+      0.8999999761581421,
+      0,
+      0.09999990463256836,
+      0,
+      0.20000004768371582,
+      0.2999999523162842,
+      0.20000004768371582,
+      0.09999990463256836,
+      0.10000002384185791
+    ],
+    "certifiedGeometry": false
+  }
+}

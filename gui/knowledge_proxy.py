@@ -49,6 +49,8 @@ def dispatch_knowledge_request(
     proxy.headers = handler.headers
     proxy.path = subpath
     proxy.workspace = workspace
+    proxy.trusted_principal = True
+    proxy.release_preview = getattr(getattr(handler, "application", None), "release_preview", False)
     for attr in (
         "requestline",
         "command",

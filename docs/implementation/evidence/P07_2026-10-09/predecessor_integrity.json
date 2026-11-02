@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "entries": [
+    {
+      "phase": "P05_2026-10-09",
+      "pass": true,
+      "sealed_entries": 71,
+      "manifest_sha256": "2e84aa31e144eb29292ae762f2a7ac49f00f4a9688d37419d54b8a0ce29c92da"
+    },
+    {
+      "phase": "P06_2026-10-09",
+      "pass": true,
+      "sealed_entries": 56,
+      "manifest_sha256": "ec50155fc3f526a3a88417f5d0da50399bd46828baff73498af3a54df443d43e"
+    },
+    {
+      "phase": "P02 completion",
+      "pass": true,
+      "artifact_entries": 32,
+      "manifest_sha256": "541c57c967738d3bef8ed9684a7b69ee21109c0901a9a4384e15f4b24eae140e"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "cases": 5,
+  "comparison": "exact",
+  "numericalTolerance": 0,
+  "excludedMetadataKeys": [
+    "computed_at",
+    "consistency_result_id",
+    "created_at",
+    "design_id",
+    "generated_at",
+    "last_updated",
+    "performance_result_id",
+    "result_id",
+    "run_id",
+    "summary_result_id",
+    "timestamp",
+    "updated_at"
+  ],
+  "baselineSHA256": "daa1fc9b616c49c6d75f53feab3cf604896b0fda76268090fd251be055fce93a",
+  "physicalValidationClaimed": false
+}

@@ -37,6 +37,7 @@ def run_thermal_stage(
     wall_temperature_k: float | None = None,
     mach: float | None = None,
     throat_curvature_radius_m: float | None = None,
+    property_mode: str | None = None,
 ) -> CalculationResult:
     """Evaluate Bartz HTC at the throat station using OP / nozzle data."""
 
@@ -45,6 +46,24 @@ def run_thermal_stage(
     inputs: dict[str, object] = {}
     try:
         saved = design.thermal_design or {}
+        cfg = design.subsystem_inputs.get("thermal", {})
+        mode = property_mode or cfg.get("property_mode", "EXPLICIT")
+        property_basis = cfg.get("property_source", "Explicit gas-property analysis inputs; applicability requires engineering review.")
+        if mode not in {"EXPLICIT", "CEA_CHAMBER_FROZEN_TRANSPORT"}:
+            raise InvalidInputError("Unknown thermal gas-property mode.")
+        if mode == "CEA_CHAMBER_FROZEN_TRANSPORT":
+            if any(value is not None for value in (viscosity_pa_s, conductivity_w_m_k, cp_j_kg_k)):
+                raise InvalidInputError("CEA property mode cannot be mixed with manual gas transport inputs.")
+            thermo = design.workflow.current_result("thermochemistry")
+            if thermo is None or thermo.inputs.get("engine") != "nasa/cea":
+                raise InsufficientDataError("CURRENT native NASA CEA thermochemistry required for selected transport mode.")
+            row = thermo.outputs["rocket_stations"]["chamber"]
+            viscosity_pa_s = row["viscosity_pa_s"]
+            conductivity_w_m_k = row["conductivity_frozen_w_m_k"]
+            cp_j_kg_k = row["cp_frozen_j_kg_k"]
+            property_basis = {"thermochemistry_result_id": thermo.result_id, "station": "chamber",
+                              "transport": "frozen-composition Cp and conductivity; not a frozen nozzle solve",
+                              "engine_provenance": thermo.outputs["engine_provenance"]}
         values = {
             "viscosity_pa_s": viscosity_pa_s,
             "conductivity_w_m_k": conductivity_w_m_k,
@@ -53,6 +72,8 @@ def run_thermal_stage(
         }
         resolved: dict[str, float] = {}
         for key, value in values.items():
+            if value is None and key in cfg:
+                value = float(cfg[key])
             if value is None and key in saved:
                 value = float(saved[key])
             if value is None:
@@ -83,6 +104,8 @@ def run_thermal_stage(
                 "thermal requires chamber_temperature for Taw approximation."
             )
 
+        if throat_curvature_radius_m is None:
+            throat_curvature_radius_m = cfg.get("throat_curvature_radius_m")
         if throat_curvature_radius_m is None and "throat_curvature_radius_m" in nozzle:
             throat_curvature_radius_m = float(nozzle["throat_curvature_radius_m"])
         if (
@@ -99,6 +122,8 @@ def run_thermal_stage(
         conductivity = Quantity(conductivity_w_m_k, UNIT_THERMAL_CONDUCTIVITY)
         cp = Quantity(cp_j_kg_k, UNIT_SPECIFIC_HEAT)
         inputs = {
+            "gas_property_mode": mode,
+            "gas_property_source": property_basis,
             "viscosity": mu.to_canonical_dict(),
             "conductivity": conductivity.to_canonical_dict(),
             "specific_heat": cp.to_canonical_dict(),
@@ -141,7 +166,7 @@ def run_thermal_stage(
             },
         )
         assumptions = [
-            "Gas properties (μ, k, Cp) are analysis inputs / assumptions.",
+            "Gas properties (μ, k, Cp) source: " + mode + "; validity of the Bartz approximation is not established by CEA convergence.",
             "Taw approximated by chamber temperature at this stage.",
         ]
         if gamma_assumed:

@@ -1,0 +1,13 @@
+{
+  "scope": "APPROVED_ISOLATED_CONCEPT_STUDY_NOT_OWNER_INPUTS_OR_HARDWARE_ACCEPTANCE",
+  "source": "User approved an isolated revised mechanical concept on2026-10-21. The95mm outer mounting radius,74mm collector plenum outer radius and85mm bolt-circle radius are explicit geometry hypotheses, not pressure/thermal sizing or selected hardware. Preserve retained injector bores and total gas-bore volume; do not install into owner project.",
+  "header_part_id": "upper-header-bolts",
+  "injector_part_id": "radial-injector",
+  "head_part_id": "isolated-dual-manifold",
+  "chamber_part_id": "illustrative-sector-cooling",
+  "mount_outer_radius_m": 0.095,
+  "collector_plenum_outer_radius_m": 0.074,
+  "bolt_circle_radius_m": 0.085,
+  "bolt_hole_radius_m": 0.0032,
+  "bolt_count": 8
+}

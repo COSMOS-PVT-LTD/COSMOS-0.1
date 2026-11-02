@@ -1,0 +1,5 @@
+# Isolated developer QA only. Exact subset of the original P07 wheel pins.
+# No application installation or redistribution acceptance.
+cadquery-ocp==7.8.1.1.post1 --hash=sha256:b80b28a2b24bfe52ddcc7962429455a0f8457e33747a0e4e3d184134e286ea7b
+gmsh==4.15.0 --hash=sha256:042f76562244dfbad46edfeacaa092c8c95a9df8fb4fd7611771477f0031be0d
+vtk==9.3.1 --hash=sha256:c977486b0e4d87cddb3f2c7c0710d1c86243cdd01286cbd036231143d8eb4f6e

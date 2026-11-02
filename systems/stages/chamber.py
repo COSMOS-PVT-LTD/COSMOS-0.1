@@ -40,13 +40,14 @@ def run_chamber_stage(
         if "throat_area_m2" not in nozzle:
             raise InvalidInputError("chamber sizing requires nozzle throat_area_m2 (run performance).")
         at = validate_positive(float(nozzle["throat_area_m2"]), "throat_area_m2")
-        lstar = characteristic_length_m
+        cfg = design.subsystem_inputs.get("chamber", {})
+        lstar = characteristic_length_m if characteristic_length_m is not None else cfg.get("characteristic_length_m")
         if lstar is None and design.chamber_design and "characteristic_length_m" in design.chamber_design:
             lstar = float(design.chamber_design["characteristic_length_m"])  # type: ignore[arg-type]
         if lstar is None:
             raise InsufficientDataError("chamber requires explicit characteristic_length_m (L*).")
         lstar = validate_positive(lstar, "characteristic_length_m")
-        cr = contraction_ratio
+        cr = contraction_ratio if contraction_ratio is not None else cfg.get("contraction_ratio")
         if cr is None and design.chamber_design:
             cr = design.chamber_design.get("contraction_ratio")
         if cr is None:

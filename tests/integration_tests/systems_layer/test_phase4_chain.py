@@ -47,8 +47,8 @@ def test_phase3_then_phase4_subsystems() -> None:
     )
     assert p4["ok"] is True
     assert p4["phase_status"] == "PARTIAL"
-    assert p4["stages"]["injector"]["status"] == ResultStatus.NOT_IMPLEMENTED.value
-    assert p4["stages"]["cooling"]["status"] == ResultStatus.NOT_IMPLEMENTED.value
+    assert p4["stages"]["injector"]["status"] == ResultStatus.NOT_CALCULATED.value
+    assert p4["stages"]["cooling"]["status"] == ResultStatus.NOT_CALCULATED.value
     assert p4["stages"]["chamber"]["status"] == ResultStatus.CURRENT.value
     assert p4["stages"]["thermal"]["status"] == ResultStatus.CURRENT.value
     assert p4["stages"]["structure"]["status"] == ResultStatus.CURRENT.value

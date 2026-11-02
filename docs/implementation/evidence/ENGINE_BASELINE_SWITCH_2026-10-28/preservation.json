@@ -1,0 +1,12 @@
+{
+  "schema": "cosmos.development-baseline-preservation.v1",
+  "old_head_count": 7,
+  "old_commit_count": 9,
+  "unchanged_old_heads": 7,
+  "unchanged_old_commits": 9,
+  "new_heads": 2,
+  "new_commits": 2,
+  "default_app_metadata_unchanged": true,
+  "default_app_metadata_sha256": "9ab89201846dfdc581e3fd4ffd5cf98258952b20c5818d9d22bead3ef713aeac",
+  "deleted_records": 0
+}

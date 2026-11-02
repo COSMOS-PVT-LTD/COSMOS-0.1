@@ -1,0 +1,84 @@
+{
+  "clientWidth": 1100,
+  "labels": [
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgb(159, 179, 200)",
+      "fontSize": "12px",
+      "text": "Thermochemistry sourceNASA CEA 3.3.4 · equilibriumExplicit assumed chamber state"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgb(159, 179, 200)",
+      "fontSize": "12px",
+      "text": "Fuel inlet temperature [K] · CEA"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgb(159, 179, 200)",
+      "fontSize": "12px",
+      "text": "Oxidizer inlet temperature [K] · CEA"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgb(159, 179, 200)",
+      "fontSize": "12px",
+      "text": "At [m²]"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgb(159, 179, 200)",
+      "fontSize": "12px",
+      "text": "ε (Ae/At > 1)"
+    }
+  ],
+  "navButtons": [
+    {
+      "ariaCurrent": null,
+      "ariaSelected": null,
+      "tabIndex": 0,
+      "text": "00Design ProjectPARTIALCURRENT"
+    },
+    {
+      "ariaCurrent": null,
+      "ariaSelected": null,
+      "tabIndex": 0,
+      "text": "01RequirementsIMPLEMENTEDCURRENT"
+    },
+    {
+      "ariaCurrent": null,
+      "ariaSelected": null,
+      "tabIndex": 0,
+      "text": "02Propellant DefinitionIMPLEMENTEDCURRENT"
+    },
+    {
+      "ariaCurrent": null,
+      "ariaSelected": null,
+      "tabIndex": 0,
+      "text": "03Engine CycleNOT IMPLEMENTEDNOT_CALCULATED"
+    }
+  ],
+  "scrollWidth": 1100,
+  "tokens": [
+    {
+      "key": "--cosmos-muted",
+      "value": "#365570"
+    },
+    {
+      "key": "--cosmos-panel",
+      "value": "#0A1220"
+    },
+    {
+      "key": "--text-label",
+      "value": "#365570"
+    },
+    {
+      "key": "--text-muted",
+      "value": "#B0CCE0"
+    }
+  ],
+  "viewport": {
+    "height": 700,
+    "width": 1100
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "label": "after-restart",
+  "synthetic_workflow_only_not_real_acceptance": true,
+  "project_id": "c0a41c41-8d3f-4d7a-8552-0b3bcbc3e24f",
+  "job_id": "8a422446-15a1-43f3-81f4-e0ed2a008d75",
+  "build_object_id": "db4e9313-d9fa-5c4a-9471-5da25fc2cced",
+  "source_commit_id": "6477900c-da3f-4e51-ac76-b0fd9f5b8ed9",
+  "state": "COMPLETED",
+  "current_generated_candidate": true,
+  "native_triangles": 123984,
+  "native_parts": 4,
+  "native_faces": 1182,
+  "stage_count": 6,
+  "qa_step_pass": true,
+  "qa_stl_pass": true,
+  "semantic_mapping_pass": true,
+  "part_errors": [
+    {
+      "part_id": "feature-2",
+      "relative_volume_error": 1.3876102690230103e-13,
+      "centroid_error_m": 2.5144556464084155e-14,
+      "implicit_residual_max_m": 1.5616500252704668e-14,
+      "reverse_max_m": 1.0204159583844287e-14,
+      "topology_pass": true,
+      "semantic_mapping_pass": true
+    },
+    {
+      "part_id": "feature-2.fluid-0",
+      "relative_volume_error": 2.6861044732553753e-13,
+      "centroid_error_m": 3.004084729363132e-14,
+      "implicit_residual_max_m": 8.364836601160164e-15,
+      "reverse_max_m": 8.402002204471437e-15,
+      "topology_pass": true,
+      "semantic_mapping_pass": true
+    },
+    {
+      "part_id": "feature-2.fluid-1",
+      "relative_volume_error": 1.401725374433685e-13,
+      "centroid_error_m": 2.4697718640669395e-14,
+      "implicit_residual_max_m": 1.0181092080507881e-14,
+      "reverse_max_m": 1.0204159583844287e-14,
+      "topology_pass": true,
+      "semantic_mapping_pass": true
+    },
+    {
+      "part_id": "feature-2.fluid-2",
+      "relative_volume_error": 1.353500877606838e-13,
+      "centroid_error_m": 2.74974594632482e-14,
+      "implicit_residual_max_m": 6.680420105986684e-15,
+      "reverse_max_m": 6.6708362153874964e-15,
+      "topology_pass": true,
+      "semantic_mapping_pass": true
+    }
+  ],
+  "named_selections": 34,
+  "interfaces": 12,
+  "material_regions": 4,
+  "reviewer_distinct": true,
+  "review_source_declares_synthetic": true,
+  "study_current": true,
+  "study_execution_status": "NOT_STARTED",
+  "study_mesh_status": "NOT_GENERATED",
+  "solver_supported": false,
+  "physical_validation": "NOT_PERFORMED",
+  "baseline_unchanged": true,
+  "model_head_version": 4,
+  "section": {
+    "part_id": "feature-2",
+    "feature_id": "feature-2",
+    "frame_id": "world",
+    "local_x_m": -0.2,
+    "world_plane_origin_m": [
+      -0.2,
+      0.0,
+      0.0
+    ],
+    "world_plane_normal": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "area_m2": 0.0011203925835532418,
+    "boundaries": [
+      {
+        "kind": "annulus",
+        "inner_radius_m": 0.02820947917738782,
+        "outer_radius_m": 0.03420947917738781,
+        "phase_rad": 0.0,
+        "width_rad": 6.283185307179586
+      },
+      {
+        "kind": "removed-cooling-sector",
+        "inner_radius_m": 0.030209479177387817,
+        "outer_radius_m": 0.03220947917738782,
+        "phase_rad": 0.15,
+        "width_rad": 0.3
+      },
+      {
+        "kind": "removed-cooling-sector",
+        "inner_radius_m": 0.030209479177387817,
+        "outer_radius_m": 0.03220947917738782,
+        "phase_rad": 2.244395102393195,
+        "width_rad": 0.3
+      },
+      {
+        "kind": "removed-cooling-sector",
+        "inner_radius_m": 0.030209479177387817,
+        "outer_radius_m": 0.03220947917738782,
+        "phase_rad": 4.338790204786391,
+        "width_rad": 0.3
+      }
+    ],
+    "method": "EXACT_SOURCE_FORMULA_FOR_SUPPORTED_LOCAL_AXIAL_PLANE",
+    "scope": "Analytic profile/sector/through-bore section of this source-bound CAD candidate, not arbitrary-plane kernel intersection, a tessellation measurement or structural/flow capacity acceptance"
+  },
+  "downloads": [
+    {
+      "name": "source.brep",
+      "bytes": 14184111,
+      "sha256": "a3eb347a0b62879d9487063a53f9f778b5dcd0e1034fcc8d7a7a3d9c569cdfd9",
+      "browser_download_equal": true
+    },
+    {
+      "name": "export.step",
+      "bytes": 4758862,
+      "sha256": "bf1205426da6c72f4da1d7283cd5d91004fe4ecde2bae6e31d4190da97e49969",
+      "browser_download_equal": true
+    },
+    {
+      "name": "export.stl",
+      "bytes": 6199284,
+      "sha256": "62880a09e37ee9c389d6fbc9ca94d6c03eb5574c798ed9c34803b578220a412a",
+      "browser_download_equal": true
+    },
+    {
+      "name": "record.json",
+      "bytes": 600348,
+      "sha256": "d52dd120430ccc8e86319f094cadfda024e483adf69e58f9edcf0eb200b8c9d9",
+      "browser_download_equal": true
+    },
+    {
+      "name": "inputs.json",
+      "bytes": 532835,
+      "sha256": "d193a244a7d2248f035904c0a1c19a6ff74ac2d1a7d550496f524d8f4d1b7852",
+      "browser_download_equal": true
+    },
+    {
+      "name": "reviewed.step",
+      "bytes": 4758862,
+      "sha256": "bf1205426da6c72f4da1d7283cd5d91004fe4ecde2bae6e31d4190da97e49969",
+      "browser_download_equal": true
+    },
+    {
+      "name": "setup.json",
+      "bytes": 80272,
+      "sha256": "f62d82abd327958085bc28f657dce0fe87e2cdefe76a31d731834c16212e6480",
+      "browser_download_equal": true
+    }
+  ],
+  "identical_retained_originals_after_restart": true
+}

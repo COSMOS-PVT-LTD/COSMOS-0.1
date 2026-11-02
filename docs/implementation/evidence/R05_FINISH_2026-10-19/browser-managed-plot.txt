@@ -1,0 +1,124 @@
+Browser tab: 3, Title: "COSMOS — Visualization and Graphs", URL: "http://127.0.0.1:8865/app/workbench/visualization?project=0e22e007-d868-45e1-830d-9ee86346bfae".
+1 AXWebArea COSMOS — Visualization and Graphs, URL: 127.0.0.1:8865/app/workbench/visualization?project=0e22e007-d868-45e1-830d-9ee86346bfae
+	2 container cosmos-p04-shell
+		3 container
+			4 container Breadcrumbs
+				5 link Description: Projects & Mission, Value: 127.0.0.1:8865/app/projects
+				6 text  / Visualization and Graphs
+			7 text COSMOS · active r— · inspecting current r— · Design: none · Managed project R05 final managed journey — synthetic software only · 0e22e007-d868-45e1-830d-9ee86346bfae
+			8 text Persisted design
+			9 pop up button (collapsed, settable) Description: Persisted design, Value: Choose an existing design, Secondary Actions: Expand
+				10 menu
+					11 (selected) Choose an existing design
+			12 text Inspected revision
+			13 pop up button (disabled, collapsed, settable) Description: Inspected revision, Value: No current persisted revision, Secondary Actions: Expand
+				14 menu
+					15 (disabled) No current persisted revision
+			16 button (collapsed) Navigation, Secondary Actions: Expand
+			17 button (collapsed) Inspector, Secondary Actions: Expand
+			18 button (collapsed) Diagnostics, Secondary Actions: Expand
+			19 checkbox Restore workspace, Value: 1
+			20 button Open commands
+			21 button (collapsed) Workspace controls, Secondary Actions: Expand
+				22 text Workspace controls
+		53 container Active workbench
+			54 button (collapsed) Authoritative project sources and retained activity, Secondary Actions: Expand
+				55 text Authoritative project sources and retained activity
+			56 container
+				62 text Read-only source projections · preliminary engine models / software benchmark · no physical or production acceptance
+				63 container Select exact source
+					64 container
+						65 text Engineering design
+						66 pop up button (collapsed, settable) Engineering design, Value: Select an engineering design, ID: viz-design, Secondary Actions: Expand
+							67 menu
+								68 (selected) Select an engineering design
+					69 button Reload current source, ID: viz-reload
+					70 checkbox Restore workspace (Escape), Value: 1, ID: viz-focus
+					127 container
+						128 button (expanded) Open a simulation run, Secondary Actions: Collapse
+							129 text Open a simulation run
+						130 text Actor-owned completed P09 run ID
+						131 text field (settable) Actor-owned completed P09 run ID, Value: 537c63b4-bdd2-4c92-9bf4-7703762f682d, ID: viz-run
+						132 button Load current run, ID: viz-run-load
+						133 link Description: Simulation workbench, Value: 127.0.0.1:8865/app/workbench/simulation
+				179 text Current source loaded. Zoom with the chart controls; exports include source metadata.
+				74 container Scientific plot workspace
+					75 container
+						76 text Plot
+						77 pop up button (collapsed, settable) Plot, Value: Radial temperature, ID: viz-plot, Secondary Actions: Expand
+							135 menu
+								136 (selected) Radial temperature
+								137 Normalized residual
+								138 Signed power imbalance
+					78 container
+						79 text X scale
+						80 pop up button (collapsed, settable) X scale, Value: Linear, ID: viz-x, Secondary Actions: Expand
+							81 menu
+								82 (selected) Linear
+								83 Logarithmic
+					84 container
+						85 text Y scale
+						86 pop up button (collapsed, settable) Y scale, Value: Linear, ID: viz-y, Secondary Actions: Expand
+							87 menu
+								88 (selected) Linear
+								89 Logarithmic
+					90 button Reset zoom, ID: viz-reset
+					91 heading Radial temperature, Value: 2, ID: viz-title
+						139 text Radial temperature
+					93 container ID: viz-chart, Description: Radial temperature. Radius [m], linear axis; Radial temperature [K], linear axis. Computed: 16/16 displayed source points; Analytic reference: 16/16 displayed source points. Uncertainty not quantified. Simulation run sim-407515a2b4c04395ad41eafb9041dce4, study 7c79dc1596241be70d86f29de35c3c628803da37e4c5eb046e1d8f1e6122ca55, status completed, freshness current. Exact source table/export is separate; reduction is display only.
+					180 text Source samples: 16. Source clipping: none; zoom affects the view only. Uncertainty: not quantified. Computed: 16/16 points displayed (none). Analytic reference: 16/16 points displayed (none).
+					94 button Export SVG + provenance, ID: viz-svg
+					95 button Export exact CSV + provenance, ID: viz-csv
+					96 button Export source JSON, ID: viz-json
+					97 button (collapsed) Exact source data — un-decimated, Secondary Actions: Expand
+						98 text Exact source data — un-decimated
+				99 container Source and model provenance
+					100 heading Source lineage, Value: 2
+						101 text Source lineage
+					141 definition list viz-lineage
+						142 container DOMAIN
+							143 text DOMAIN
+						144 text simulation
+						145 container RUN ID
+							146 text RUN ID
+						147 text sim-407515a2b4c04395ad41eafb9041dce4
+						148 container STUDY ID
+							149 text STUDY ID
+						150 text 7c79dc1596241be70d86f29de35c3c628803da37e4c5eb046e1d8f1e6122ca55
+						151 container CONTENT SHA256
+							152 text CONTENT SHA256
+						153 text 4f249c45b2393045d490207b9a5469fe4daca7785caba8b929ed8e9fe0174a08
+						154 container STATUS
+							155 text STATUS
+						156 text completed
+						157 container FRESHNESS
+							158 text FRESHNESS
+						159 text current
+						160 container MODEL ID
+							161 text MODEL ID
+						162 text steady-spherical-conduction-v1
+						163 container VERIFICATION
+							164 text VERIFICATION
+						165 text analytic-benchmark-passed
+						166 container VALIDATION
+							167 text VALIDATION
+						168 text not-performed
+						169 container CONVERGENCE
+							170 text CONVERGENCE
+						171 text converged
+						172 container CONSERVATION
+							173 text CONSERVATION
+						174 text {"generated_power_w":4.188790204786391,"limit":8e-8,"outward_power_w":4.188790158179167,"passed":true,"relative_imbalance":1.1126655303241714e-8,"signed_imbalance_w":-4.660722474625345e-8}
+						175 container SOURCE REFS
+							176 text SOURCE REFS
+						177 text [{"path":"physics/heat_transfer/spherical_conduction.py","sha256":"28d9d63738f8c64a778bbd522cf64508351ea28ada67a1970f89ce16b00aa102"},{"path":"numerics/finite_volume/radial_diffusion.py","sha256":"17723ed167b1eff992ed4ebe4283aba3406409dc8e5759a614cdfbdc8639082e"}]
+					102 heading Interpretation, Value: 3
+						103 text Interpretation
+					104 text Uncertainty is not quantified. Do not infer error bars or confidence from line thickness.
+					178 text One-dimensional radial profile; not an arbitrary 3D field.
+					105 button (collapsed) Model assumptions and limitations, Secondary Actions: Expand
+						106 text Model assumptions and limitations
+					107 button (collapsed) Unavailable results, Secondary Actions: Expand
+						108 text Unavailable results
+
+The focused UI element is 53 container Active workbench

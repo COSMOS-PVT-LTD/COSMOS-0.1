@@ -1,0 +1,246 @@
+{
+  "gate_id": "G1",
+  "requirement_ids": [
+    "G1",
+    "GOV-001",
+    "GOV-003",
+    "GOV-004",
+    "GOV-006",
+    "GOV-008",
+    "GOV-009",
+    "GOV-010",
+    "UX-001",
+    "UX-002",
+    "UX-003",
+    "UX-004",
+    "UX-005",
+    "UX-006",
+    "UX-007",
+    "UX-008"
+  ],
+  "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "environment": {
+    "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python",
+    "python": "3.11.4",
+    "source_scope": "HEAD plus original dirty working tree; P00 drift checked",
+    "browser": "Codex in-app browser",
+    "viewport_checks": [
+      "1280x720 requested",
+      "1100x700 requested"
+    ]
+  },
+  "commands": [
+    "node --test docs/implementation/evidence/P01_2026-10-08/prototype/model.test.cjs",
+    "node --check <prototype/model.js and prototype/prototype.js>",
+    "python <P01>/check_evidence.py",
+    "ruff check <P01>/check_evidence.py",
+    "git diff --check",
+    "CUA real-browser synthetic task walkthrough; not production E2E"
+  ],
+  "test_artifacts": [
+    "prototype-tests.log",
+    "browser-observations.json",
+    "source_integrity.json"
+  ],
+  "reviewer": "Codex automated checks; explicit user approval in this chat on 2026-10-08",
+  "decision": "PASS / ACCEPTED_BY_OWNER",
+  "date": "2026-10-08",
+  "blockers": [],
+  "claims": [
+    {
+      "claim_id": "P01-E01",
+      "requirement_ids": [
+        "GOV-001",
+        "GOV-006"
+      ],
+      "claim": "Original source preserved; no approved architecture amendment inferred",
+      "artifacts": [
+        {
+          "path": "source_integrity.json",
+          "sha256": "e4026c3a2b88364ceee0ea7f9a96a8f607b9b42fa49f82b067cdd9c33892f241"
+        },
+        {
+          "path": "P01_SCOPE_AND_PLAN.md",
+          "sha256": "8103ac6950b59fb1dcf83f0a3f759ee711b028957697bf26d90af61f3c9b7832"
+        },
+        {
+          "path": "P01_MIGRATION_SEAMS.md",
+          "sha256": "a02fbd34b456294e7e1c68ecc2408043fcd0db6797489749e9c45facfbcd56e5"
+        }
+      ],
+      "status": "PROTOTYPE_OR_PLAN_ONLY",
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "P01-E02",
+      "requirement_ids": [
+        "UX-001",
+        "UX-005",
+        "GOV-003"
+      ],
+      "claim": "Persistent and distinct active/inspected context proposed; immutable example lineage is synthetic",
+      "artifacts": [
+        {
+          "path": "P01_NAVIGATION_SPEC.md",
+          "sha256": "48159a2dbc3b26549d1ba69154f6c8e4c44eda4e659e50bbcbc4f2852a3114d9"
+        },
+        {
+          "path": "P01_TASK_FLOWS.md",
+          "sha256": "a9297ecf1bf7a6076f609a1cf706153db5fd1182e2d958fbf3d456c5ea14dfa2"
+        },
+        {
+          "path": "navigation.json",
+          "sha256": "bb49a200ed9302b6512b96bdee8abd0d64160e6cb41fba683f9f441ca629099b"
+        },
+        {
+          "path": "browser-observations.json",
+          "sha256": "c680cf1c8dd832ae2dcd0632feed13198bb347e6a756a9868eb4bebefc0ee3d9"
+        }
+      ],
+      "status": "PROTOTYPE_OR_PLAN_ONLY",
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "P01-E03",
+      "requirement_ids": [
+        "UX-002",
+        "UX-003",
+        "GOV-004",
+        "GOV-009"
+      ],
+      "claim": "Unit-bearing inputs and independent status dimensions; unsupported real operations disabled",
+      "artifacts": [
+        {
+          "path": "prototype/model.js",
+          "sha256": "9782c60415a082306fe1eda392940fa20d17937edae0fcce16af131e551f237e"
+        },
+        {
+          "path": "prototype/prototype.js",
+          "sha256": "9921cbcd4f7ed86b005ee96382a3135ce1b6997911ff20153fcb16c935ee4b36"
+        },
+        {
+          "path": "prototype-tests.log",
+          "sha256": "a001882d5e577de80a80906c05fd54d13202b7d689e53132f522041d69b23aa9"
+        },
+        {
+          "path": "P01_WIREFRAMES.md",
+          "sha256": "19b7a3d30fa25e6ced37a6ad69f194de5913d576219b841c803b342647ed7458"
+        }
+      ],
+      "status": "PROTOTYPE_OR_PLAN_ONLY",
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "P01-E04",
+      "requirement_ids": [
+        "UX-004",
+        "GOV-009"
+      ],
+      "claim": "Source/assumption inspection and explicit missing-evidence recovery",
+      "artifacts": [
+        {
+          "path": "P01_TASK_FLOWS.md",
+          "sha256": "a9297ecf1bf7a6076f609a1cf706153db5fd1182e2d958fbf3d456c5ea14dfa2"
+        },
+        {
+          "path": "browser-observations.json",
+          "sha256": "c680cf1c8dd832ae2dcd0632feed13198bb347e6a756a9868eb4bebefc0ee3d9"
+        },
+        {
+          "path": "screenshots/08-knowledge-missing-evidence.jpg",
+          "sha256": "213b48de446c4fb71876760162c85dd336a455fe774f6912cd1f29dcf100ed92"
+        }
+      ],
+      "status": "PROTOTYPE_OR_PLAN_ONLY",
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "P01-E05",
+      "requirement_ids": [
+        "UX-006",
+        "UX-007",
+        "UX-008"
+      ],
+      "claim": "Prototype keyboard/layout/safe reset spot checks; real worker responsiveness and full accessibility remain future gates",
+      "artifacts": [
+        {
+          "path": "P01_ACCESSIBILITY_PLAN.md",
+          "sha256": "ef1272d9fbada865bc74641caaa9f9e7e180106151847e9efce8dd17b84a81d6"
+        },
+        {
+          "path": "browser-observations.json",
+          "sha256": "c680cf1c8dd832ae2dcd0632feed13198bb347e6a756a9868eb4bebefc0ee3d9"
+        },
+        {
+          "path": "source_integrity.json",
+          "sha256": "e4026c3a2b88364ceee0ea7f9a96a8f607b9b42fa49f82b067cdd9c33892f241"
+        }
+      ],
+      "status": "PROTOTYPE_OR_PLAN_ONLY",
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "P01-E06",
+      "requirement_ids": [
+        "GOV-008",
+        "GOV-010"
+      ],
+      "claim": "Typed negative paths and additive migration/rollback plan; not production rollback qualification",
+      "artifacts": [
+        {
+          "path": "P01_MIGRATION_SEAMS.md",
+          "sha256": "a02fbd34b456294e7e1c68ecc2408043fcd0db6797489749e9c45facfbcd56e5"
+        },
+        {
+          "path": "prototype/model.test.cjs",
+          "sha256": "da45fcca395d157f06cb1e7c0d32777661e0052effbe22149a18a0d2a31262b6"
+        },
+        {
+          "path": "prototype-tests.log",
+          "sha256": "a001882d5e577de80a80906c05fd54d13202b7d689e53132f522041d69b23aa9"
+        }
+      ],
+      "status": "PROTOTYPE_OR_PLAN_ONLY",
+      "confidence": "HIGH for stated limited scope"
+    },
+    {
+      "claim_id": "P01-E07",
+      "requirement_ids": [
+        "G1"
+      ],
+      "claim": "Navigation and prototypes ready; owner acceptance not fabricated",
+      "artifacts": [
+        {
+          "path": "P01_REVIEW_RECORD.md",
+          "sha256": "9967304d59c966f238cd49f2e4708d30b0de80dac59cd82e96c5c5afc5b6c6a0"
+        },
+        {
+          "path": "G1_DECISION.json",
+          "sha256": "e82524902b182d3e12b8abcb578a1ba8a18c2bd4d82fc0d2f777d557ac0c835a"
+        },
+        {
+          "path": "P01_PHASE_REPORT.md",
+          "sha256": "3dd34fd84e76916b2e60e5253f85e51dbd77e131d86764a9a26c72e2a025c0d6"
+        }
+      ],
+      "status": "PROTOTYPE_OR_PLAN_ONLY",
+      "confidence": "HIGH for stated limited scope"
+    }
+  ],
+  "owner_acceptance": {
+    "source": "Explicit user message in this chat",
+    "date": "2026-10-08",
+    "statement": "execute p03 , i approve p01 and also complete p02",
+    "scope": "P01 experience architecture only; no architecture deviation or release approval"
+  },
+  "owner_acceptance_artifacts": [
+    {
+      "path": "approval/G1_PRE_APPROVAL.json",
+      "sha256": "63430040951fecc3b2fa16ebe2aecd702408cd1ca05898966f6727c8f9609de9"
+    },
+    {
+      "path": "G1_DECISION.json",
+      "sha256": "e82524902b182d3e12b8abcb578a1ba8a18c2bd4d82fc0d2f777d557ac0c835a"
+    }
+  ]
+}

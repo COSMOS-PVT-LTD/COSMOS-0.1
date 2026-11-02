@@ -1,0 +1,78 @@
+{
+  "domain_test_case_counts": {
+    "api": 56,
+    "core": 77,
+    "gui": 20,
+    "knowledge": 1090,
+    "numerics": 207,
+    "physics": 140,
+    "plugins": 7,
+    "systems_layer": 87
+  },
+  "loopback_login_http_seconds": {
+    "median": 0.0004162079421803355,
+    "samples": [
+      0.010375040932558477,
+      0.0006426669424399734,
+      0.0003964169882237911,
+      0.0004204170545563102,
+      0.0003976660082116723,
+      0.0004162079421803355,
+      0.00031687505543231964
+    ],
+    "scope": "warm loopback HTTP transfer only, not browser startup or interaction latency"
+  },
+  "original_snapshot_files_changed": [],
+  "persistence_probe": {
+    "first_writer_drafts": {
+      "p00-proof": "first writer draft"
+    },
+    "lost_first_writer_change": true,
+    "revision_files": [
+      "p00-diagnostic-only.json"
+    ],
+    "saved_drafts": {},
+    "saved_name": "second writer change",
+    "saved_revision": 1,
+    "scope": "Two aggregates loaded before the first save; API base_revision checks compare with each loaded object. HTTP race exposure is inferred, not stress-tested."
+  },
+  "result_mutability_probe": {
+    "current_result_input_mutation_allowed": true,
+    "interpretation": "Current envelopes are mutable; published immutable snapshots need a separate boundary."
+  },
+  "skipped_tests": [
+    {
+      "class": "tests.unit_tests.knowledge.test_constant",
+      "name": "test_constant_hashable",
+      "reason": "Hashability depends on nested immutable models."
+    },
+    {
+      "class": "tests.unit_tests.knowledge.test_dimension",
+      "name": "test_dimension_hashable",
+      "reason": "Reference/Document hashability not implemented yet."
+    },
+    {
+      "class": "tests.unit_tests.knowledge.test_engineering_domain",
+      "name": "test_engineering_domain_hashable",
+      "reason": "Document hashability will be implemented after the Knowledge Foundation models are completed."
+    },
+    {
+      "class": "tests.unit_tests.knowledge.test_subsystem",
+      "name": "test_subsystem_hashable",
+      "reason": "Hashability will be enabled after all Knowledge Foundation models become fully immutable."
+    },
+    {
+      "class": "tests.unit_tests.knowledge.test_unit",
+      "name": "test_unit_hashable",
+      "reason": "Document contains mappingproxy and is not yet hashable."
+    }
+  ],
+  "static_direct_import_violations": [],
+  "test_categories_collected": {
+    "benchmark_tests": 8,
+    "integration_tests": 108,
+    "regression_tests": 109,
+    "unit_tests": 1995,
+    "validation_tests": 19
+  }
+}

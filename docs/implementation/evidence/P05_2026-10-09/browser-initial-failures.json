@@ -1,0 +1,983 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.7.0/bin/node",
+      "/tmp/cosmos-p03.pfPm6s/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "tests/ui/rocket-workbench/playwright.config.cjs"
+    ],
+    "configFile": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/playwright.config.cjs",
+    "rootDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/cosmos-p05.iKaDQF/browser-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench",
+        "testIgnore": [],
+        "testMatch": [
+          "workbench.spec.cjs"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/tmp/cosmos-p05.iKaDQF/browser-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench",
+        "snapshotDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench",
+        "testIgnore": [],
+        "testMatch": "workbench.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "reducedMotion": "reduce",
+          "deviceScaleFactor": 1,
+          "launchOptions": {
+            "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/P05_2026-10-09/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "workbench.spec.cjs",
+      "file": "workbench.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "grouped navigation all original tasks and explicit units",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 775,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:21.035Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-9d72d71e6b775186249c",
+          "file": "workbench.spec.cjs",
+          "line": 17,
+          "column": 1
+        },
+        {
+          "title": "draft undo restores value and dirty state with no backend mutation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 686,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:22.733Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-c5c162e83a2ce3a2d138",
+          "file": "workbench.spec.cjs",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "draft aliases survive navigation and undo in another editor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 505,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:23.440Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-9ec7e47a68110c86ef7b",
+          "file": "workbench.spec.cjs",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "save retains canonical source units and prevents undo across saved revision",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 485,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:23.957Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-0a040cc494df18982c01",
+          "file": "workbench.spec.cjs",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "workbench-only rollback and reenable retain original field identity drafts and nav",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 479,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:24.453Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-b8b4dce6b1cb27586fc4",
+          "file": "workbench.spec.cjs",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "global rollback reenabling preserves full workbench context",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 547,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:24.944Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-5596f777aa10f27ab922",
+          "file": "workbench.spec.cjs",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "legacy flag route override and malformed presentation override are safe",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5391,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#ed-pc')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('#ed-pc') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#ed-pc')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#ed-pc')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('#ed-pc') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#ed-pc')\u001b[22m\n\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs:23:600",
+                    "location": {
+                      "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs",
+                      "column": 600,
+                      "line": 23
+                    },
+                    "snippet": "  21 | test('workbench-only rollback and reenable retain original field identity drafts and nav',async({page})=>{await ready(page);await page.locator('#ed-pc').fill('71');await page.evaluate(()=>window.p05OriginalField=document.getElementById('ed-pc'));await page.getByRole('button',{name:'Use legacy rocket view'}).click();await expect(page.locator('.p05-rocket')).toHaveCount(0);await expect(page.locator('#cosmos-p04-shell')).toBeVisible();await expect(page.locator('.suite-layout > #suite-nav')).toBeVisible();await expect(page.locator('#suite-nav > button')).toHaveCount(20);await expect(page.locator('#ed-pc')).toHaveValue('71');expect(await page.evaluate(()=>window.p05OriginalField===document.getElementById('ed-pc'))).toBe(true);await page.getByRole('button',{name:'Enable modern rocket view'}).click();await expect(page.locator('.p05-rocket')).toBeVisible();await expect(page.locator('#ed-pc')).toHaveValue('71');});\n  22 | test('global rollback reenabling preserves full workbench context',async({page})=>{await ready(page);await page.locator('#ed-pc').fill('72');await page.getByRole('button',{name:'Use legacy layout',exact:true}).click();await expect(page.locator('#cosmos-p04-shell')).toHaveCount(0);await expect(page.locator('#ed-pc')).toHaveValue('72');await expect(page.locator('#p05-result-inspector')).toHaveCount(0);await page.getByRole('button',{name:'Enable modern shell'}).click();await expect(page.locator('.p05-rocket')).toBeVisible();await expect(page.locator('#ed-pc')).toHaveValue('72');});\n> 23 | test('legacy flag route override and malformed presentation override are safe',async({page})=>{await page.request.post(legacy+'/api/auth/login',{data:login});await page.goto(legacy+'/app/workbench/rocket-engine?stage=requirements');await expect(page.locator('#ed-pc')).toBeVisible();expect(await page.locator('script[src*=\"rocket-workbench\"]').count()).toBe(0);for(const query of ['&shell=legacy','&rocket_ui=legacy','&rocket_ui=bad','&rocket_ui=modern&rocket_ui=legacy']){await page.goto(base+'/app/workbench/rocket-engine?stage=requirements&design='+id+query);await expect(page.locator('#ed-pc')).toBeVisible();await expect(page.locator('.p05-rocket')).toHaveCount(0);}});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ^\n  24 | test('all stage and tool navigation maintains original services without invented calculators',async({page})=>{await ready(page);for(const workspace of ['propellants','cycle','thermochemistry','performance','injector','chamber','thermal','cooling','nozzle','structure','materials','performance_summary','consistency','design_review','nozzle-flow','heat-transfer','structures']){await page.locator('#suite-nav button[data-workspace-id=\"'+workspace+'\"]').click();await expect(page.locator('#p05-result-inspector')).toContainText('Active editor: '+workspace);await expect(page.locator('#suite-module-title')).not.toBeEmpty();}await page.locator('#suite-nav button[data-workspace-id=\"cycle\"]').click();await expect(page.locator('#p05-result-inspector')).toContainText('Not implemented');});\n  25 | test('keyboard navigation and help trace are accessible',async({page})=>{await ready(page);const first=page.locator('#suite-nav button').first();await first.focus();await first.press('End');await expect(page.locator('#suite-nav button').last()).toBeFocused();await page.keyboard.press('Home');await expect(first).toBeFocused();await page.locator('#p05-result-inspector summary').filter({hasText:'Input contract'}).click();await expect(page.locator('#p05-result-inspector')).toContainText('core/quantity.py');await expect(page.getByRole('link',{name:'Workbench help',exact:true})).toHaveAttribute('href','/app/help');});\n  26 | test('source units mode theme scaling docks and dirty guards preserve values',async({page})=>{await ready(page);await page.locator('#ed-pc').fill('0');await page.getByLabel('Shell units',{exact:true}).selectOption('SI');await page.getByLabel('Mode',{exact:true}).selectOption('Expert');await page.getByLabel('Theme',{exact:true}).selectOption('high-contrast');await page.getByLabel('Font scale',{exact:true}).selectOption('200');await expect(page.locator('.p05-rocket')).toHaveAttribute('data-theme','high-contrast');await expect(page.locator('#ed-pc')).toHaveValue('0');page.on('dialog',dialog=>dialog.dismiss());await page.locator('.p04-left nav a').filter({hasText:'Projects & Mission'}).click();await expect(page.locator('#ed-pc')).toHaveValue('0');});"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs",
+                        "column": 600,
+                        "line": 23
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#ed-pc')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('#ed-pc') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#ed-pc')\u001b[22m\n\n\n  21 | test('workbench-only rollback and reenable retain original field identity drafts and nav',async({page})=>{await ready(page);await page.locator('#ed-pc').fill('71');await page.evaluate(()=>window.p05OriginalField=document.getElementById('ed-pc'));await page.getByRole('button',{name:'Use legacy rocket view'}).click();await expect(page.locator('.p05-rocket')).toHaveCount(0);await expect(page.locator('#cosmos-p04-shell')).toBeVisible();await expect(page.locator('.suite-layout > #suite-nav')).toBeVisible();await expect(page.locator('#suite-nav > button')).toHaveCount(20);await expect(page.locator('#ed-pc')).toHaveValue('71');expect(await page.evaluate(()=>window.p05OriginalField===document.getElementById('ed-pc'))).toBe(true);await page.getByRole('button',{name:'Enable modern rocket view'}).click();await expect(page.locator('.p05-rocket')).toBeVisible();await expect(page.locator('#ed-pc')).toHaveValue('71');});\n  22 | test('global rollback reenabling preserves full workbench context',async({page})=>{await ready(page);await page.locator('#ed-pc').fill('72');await page.getByRole('button',{name:'Use legacy layout',exact:true}).click();await expect(page.locator('#cosmos-p04-shell')).toHaveCount(0);await expect(page.locator('#ed-pc')).toHaveValue('72');await expect(page.locator('#p05-result-inspector')).toHaveCount(0);await page.getByRole('button',{name:'Enable modern shell'}).click();await expect(page.locator('.p05-rocket')).toBeVisible();await expect(page.locator('#ed-pc')).toHaveValue('72');});\n> 23 | test('legacy flag route override and malformed presentation override are safe',async({page})=>{await page.request.post(legacy+'/api/auth/login',{data:login});await page.goto(legacy+'/app/workbench/rocket-engine?stage=requirements');await expect(page.locator('#ed-pc')).toBeVisible();expect(await page.locator('script[src*=\"rocket-workbench\"]').count()).toBe(0);for(const query of ['&shell=legacy','&rocket_ui=legacy','&rocket_ui=bad','&rocket_ui=modern&rocket_ui=legacy']){await page.goto(base+'/app/workbench/rocket-engine?stage=requirements&design='+id+query);await expect(page.locator('#ed-pc')).toBeVisible();await expect(page.locator('.p05-rocket')).toHaveCount(0);}});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ^\n  24 | test('all stage and tool navigation maintains original services without invented calculators',async({page})=>{await ready(page);for(const workspace of ['propellants','cycle','thermochemistry','performance','injector','chamber','thermal','cooling','nozzle','structure','materials','performance_summary','consistency','design_review','nozzle-flow','heat-transfer','structures']){await page.locator('#suite-nav button[data-workspace-id=\"'+workspace+'\"]').click();await expect(page.locator('#p05-result-inspector')).toContainText('Active editor: '+workspace);await expect(page.locator('#suite-module-title')).not.toBeEmpty();}await page.locator('#suite-nav button[data-workspace-id=\"cycle\"]').click();await expect(page.locator('#p05-result-inspector')).toContainText('Not implemented');});\n  25 | test('keyboard navigation and help trace are accessible',async({page})=>{await ready(page);const first=page.locator('#suite-nav button').first();await first.focus();await first.press('End');await expect(page.locator('#suite-nav button').last()).toBeFocused();await page.keyboard.press('Home');await expect(first).toBeFocused();await page.locator('#p05-result-inspector summary').filter({hasText:'Input contract'}).click();await expect(page.locator('#p05-result-inspector')).toContainText('core/quantity.py');await expect(page.getByRole('link',{name:'Workbench help',exact:true})).toHaveAttribute('href','/app/help');});\n  26 | test('source units mode theme scaling docks and dirty guards preserve values',async({page})=>{await ready(page);await page.locator('#ed-pc').fill('0');await page.getByLabel('Shell units',{exact:true}).selectOption('SI');await page.getByLabel('Mode',{exact:true}).selectOption('Expert');await page.getByLabel('Theme',{exact:true}).selectOption('high-contrast');await page.getByLabel('Font scale',{exact:true}).selectOption('200');await expect(page.locator('.p05-rocket')).toHaveAttribute('data-theme','high-contrast');await expect(page.locator('#ed-pc')).toHaveValue('0');page.on('dialog',dialog=>dialog.dismiss());await page.locator('.p04-left nav a').filter({hasText:'Projects & Mission'}).click();await expect(page.locator('#ed-pc')).toHaveValue('0');});\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs:23:600"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:25.502Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p05.iKaDQF/browser-output/workbench-legacy-flag-rout-1958f-sentation-override-are-safe/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs",
+                    "column": 600,
+                    "line": 23
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-858dd3df418be9e2d021",
+          "file": "workbench.spec.cjs",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "all stage and tool navigation maintains original services without invented calculators",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1679,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:31.335Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-a546f92b160851ea86fe",
+          "file": "workbench.spec.cjs",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "keyboard navigation and help trace are accessible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 534,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:33.349Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-9140858aba72c26cc124",
+          "file": "workbench.spec.cjs",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "source units mode theme scaling docks and dirty guards preserve values",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 541,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:33.894Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-80bae2be28fccecbb326",
+          "file": "workbench.spec.cjs",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "CURRENT scientific inspection does not claim numerical convergence or validation",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 230,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"CURRENT\"\u001b[39m\nReceived: \u001b[31m\"FAILED\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"CURRENT\"\u001b[39m\nReceived: \u001b[31m\"FAILED\"\u001b[39m\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs:27:182",
+                    "location": {
+                      "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs",
+                      "column": 182,
+                      "line": 27
+                    },
+                    "snippet": "  25 | test('keyboard navigation and help trace are accessible',async({page})=>{await ready(page);const first=page.locator('#suite-nav button').first();await first.focus();await first.press('End');await expect(page.locator('#suite-nav button').last()).toBeFocused();await page.keyboard.press('Home');await expect(first).toBeFocused();await page.locator('#p05-result-inspector summary').filter({hasText:'Input contract'}).click();await expect(page.locator('#p05-result-inspector')).toContainText('core/quantity.py');await expect(page.getByRole('link',{name:'Workbench help',exact:true})).toHaveAttribute('href','/app/help');});\n  26 | test('source units mode theme scaling docks and dirty guards preserve values',async({page})=>{await ready(page);await page.locator('#ed-pc').fill('0');await page.getByLabel('Shell units',{exact:true}).selectOption('SI');await page.getByLabel('Mode',{exact:true}).selectOption('Expert');await page.getByLabel('Theme',{exact:true}).selectOption('high-contrast');await page.getByLabel('Font scale',{exact:true}).selectOption('200');await expect(page.locator('.p05-rocket')).toHaveAttribute('data-theme','high-contrast');await expect(page.locator('#ed-pc')).toHaveValue('0');page.on('dialog',dialog=>dialog.dismiss());await page.locator('.p04-left nav a').filter({hasText:'Projects & Mission'}).click();await expect(page.locator('#ed-pc')).toHaveValue('0');});\n> 27 | test('CURRENT scientific inspection does not claim numerical convergence or validation',async({page})=>{const response=await phase3(page);expect(response.stages.performance.status).toBe('CURRENT');await ready(page,'performance');await expect(page.locator('.p05-status-axes')).toContainText('CURRENT');await expect(page.locator('.p05-status-axes')).toContainText('NOT_REPORTED');await expect(page.locator('.p05-status-axes')).toContainText('NOT_CLAIMED');await expect(page.locator('#p05-result-inspector [data-component=\"ParameterTable\"]')).not.toHaveCount(0);const link=page.getByRole('link',{name:'Inspect stored stage result (may be stale)'});expect((await page.request.get(await link.getAttribute('href'))).ok()).toBe(true);});\n     |                                                                                                                                                                                      ^\n  28 | test('stale outputs remain labeled historical with explicit recovery',async({page})=>{await phase3(page);await page.request.post(base+'/api/propulsion/designs/'+id+'/requirements',{data:{updates:{target_chamber_pressure:{magnitude:55,unit_symbol:'bar'}}}});await ready(page,'performance');await expect(page.locator('#p05-result-inspector')).toContainText('Historical outputs — STALE');await expect(page.locator('#p05-result-inspector')).toContainText('Save and recalculate');await expect(page.locator('.p05-status-axes')).toContainText('STALE');});\n  29 | test('error and retry keep draft while actual action status recovers',async({page})=>{await ready(page);let fail=true;await page.route('**/api/propulsion/designs/'+id+'/save',route=>fail?route.fulfill({status:503,json:{ok:false,error:{code:'P05_TEST_ONLY_FAILURE',message:'Test-only backend outage',action:'Retry save'}}}):route.continue());await page.locator('#ed-pc').fill('62');await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-result-inspector')).toContainText('P05_TEST_ONLY_FAILURE');await expect(page.locator('#ed-pc')).toHaveValue('62');await expect(page.locator('#p05-task-state')).toContainText('Unsaved draft');fail=false;await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-task-state')).toContainText('Persisted inputs');});\n  30 | test('running original action locks undo navigation and input controls',async({page})=>{await ready(page);let release;const gate=new Promise(resolve=>release=resolve);await page.route('**/api/propulsion/designs/'+id+'/save',async route=>{await gate;await route.fulfill({status:503,json:{ok:false,error:{code:'P05_TEST_BUSY',message:'Test-only failure'}}});});await page.locator('#ed-pc').fill('63');await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-task-state')).toContainText('Action running');await expect(page.locator('#ed-pc')).toBeDisabled();await expect(page.getByRole('button',{name:'Undo last draft edit'})).toBeDisabled();await expect(page.locator('#suite-nav button').first()).toBeDisabled();await expect(page.locator('.p05-activity')).toContainText('cancellation unavailable');release();await expect(page.locator('#p05-task-state')).toContainText('Unsaved draft');});"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs",
+                        "column": 182,
+                        "line": 27
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"CURRENT\"\u001b[39m\nReceived: \u001b[31m\"FAILED\"\u001b[39m\n\n  25 | test('keyboard navigation and help trace are accessible',async({page})=>{await ready(page);const first=page.locator('#suite-nav button').first();await first.focus();await first.press('End');await expect(page.locator('#suite-nav button').last()).toBeFocused();await page.keyboard.press('Home');await expect(first).toBeFocused();await page.locator('#p05-result-inspector summary').filter({hasText:'Input contract'}).click();await expect(page.locator('#p05-result-inspector')).toContainText('core/quantity.py');await expect(page.getByRole('link',{name:'Workbench help',exact:true})).toHaveAttribute('href','/app/help');});\n  26 | test('source units mode theme scaling docks and dirty guards preserve values',async({page})=>{await ready(page);await page.locator('#ed-pc').fill('0');await page.getByLabel('Shell units',{exact:true}).selectOption('SI');await page.getByLabel('Mode',{exact:true}).selectOption('Expert');await page.getByLabel('Theme',{exact:true}).selectOption('high-contrast');await page.getByLabel('Font scale',{exact:true}).selectOption('200');await expect(page.locator('.p05-rocket')).toHaveAttribute('data-theme','high-contrast');await expect(page.locator('#ed-pc')).toHaveValue('0');page.on('dialog',dialog=>dialog.dismiss());await page.locator('.p04-left nav a').filter({hasText:'Projects & Mission'}).click();await expect(page.locator('#ed-pc')).toHaveValue('0');});\n> 27 | test('CURRENT scientific inspection does not claim numerical convergence or validation',async({page})=>{const response=await phase3(page);expect(response.stages.performance.status).toBe('CURRENT');await ready(page,'performance');await expect(page.locator('.p05-status-axes')).toContainText('CURRENT');await expect(page.locator('.p05-status-axes')).toContainText('NOT_REPORTED');await expect(page.locator('.p05-status-axes')).toContainText('NOT_CLAIMED');await expect(page.locator('#p05-result-inspector [data-component=\"ParameterTable\"]')).not.toHaveCount(0);const link=page.getByRole('link',{name:'Inspect stored stage result (may be stale)'});expect((await page.request.get(await link.getAttribute('href'))).ok()).toBe(true);});\n     |                                                                                                                                                                                      ^\n  28 | test('stale outputs remain labeled historical with explicit recovery',async({page})=>{await phase3(page);await page.request.post(base+'/api/propulsion/designs/'+id+'/requirements',{data:{updates:{target_chamber_pressure:{magnitude:55,unit_symbol:'bar'}}}});await ready(page,'performance');await expect(page.locator('#p05-result-inspector')).toContainText('Historical outputs — STALE');await expect(page.locator('#p05-result-inspector')).toContainText('Save and recalculate');await expect(page.locator('.p05-status-axes')).toContainText('STALE');});\n  29 | test('error and retry keep draft while actual action status recovers',async({page})=>{await ready(page);let fail=true;await page.route('**/api/propulsion/designs/'+id+'/save',route=>fail?route.fulfill({status:503,json:{ok:false,error:{code:'P05_TEST_ONLY_FAILURE',message:'Test-only backend outage',action:'Retry save'}}}):route.continue());await page.locator('#ed-pc').fill('62');await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-result-inspector')).toContainText('P05_TEST_ONLY_FAILURE');await expect(page.locator('#ed-pc')).toHaveValue('62');await expect(page.locator('#p05-task-state')).toContainText('Unsaved draft');fail=false;await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-task-state')).toContainText('Persisted inputs');});\n  30 | test('running original action locks undo navigation and input controls',async({page})=>{await ready(page);let release;const gate=new Promise(resolve=>release=resolve);await page.route('**/api/propulsion/designs/'+id+'/save',async route=>{await gate;await route.fulfill({status:503,json:{ok:false,error:{code:'P05_TEST_BUSY',message:'Test-only failure'}}});});await page.locator('#ed-pc').fill('63');await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-task-state')).toContainText('Action running');await expect(page.locator('#ed-pc')).toBeDisabled();await expect(page.getByRole('button',{name:'Undo last draft edit'})).toBeDisabled();await expect(page.locator('#suite-nav button').first()).toBeDisabled();await expect(page.locator('.p05-activity')).toContainText('cancellation unavailable');release();await expect(page.locator('#p05-task-state')).toContainText('Unsaved draft');});\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs:27:182"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:34.472Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p05.iKaDQF/browser-output/workbench-CURRENT-scientif-77493-l-convergence-or-validation/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs",
+                    "column": 182,
+                    "line": 27
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-680b6afcbcbd0b9d3e10",
+          "file": "workbench.spec.cjs",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "stale outputs remain labeled historical with explicit recovery",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5802,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#p05-result-inspector')\nExpected substring: \u001b[32m\"Historical outputs — STALE\"\u001b[39m\nReceived string:    \u001b[31m\"Scientific inspectionActive editor: performance · r6. Separate from any historical event inspected above.ExecutionFAILEDFreshnessNOT_REPORTED (FAILED)NumericalNOT_REPORTEDVerificationUNKNOWNValidationNOT_CLAIMEDModel: PHYS-004.choked.mass_flowError details: InvalidInputErrorperformance requires explicit ambient_pressure (zero for vacuum).Correlation: not suppliedRecovery: Inspect explicit inputs and backend diagnostic, then retry.WarningsThis stored result is not the active CURRENT answer.Input contract & scientific service traceEditor input trace (all fields)ParameterValueUnitProvenancewf-thermo-modeThermochemistry sourceSource units (editor)Run Phase 3 → /run/phase3wf-fuel-tempFuel inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-ox-tempOxidizer inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-atAt [m²]Source units (editor)Run Phase 3 → /run/phase3wf-epsε (Ae/At > 1)Source units (editor)Run Phase 3 → /run/phase3Previous parameter rowsNext parameter rowsRows 1–5 of 5; bounded 20-row windowRun Phase 3 → /run/phase3API: api/propulsion_workflow.pySystems/service: systems/stages/performance.pyScientific implementation: physics/compressible_flow/Editor labels define existing units. Shell SI display does not rewrite editor inputs. Source paths identify implementation, not physical validation.Inspect persisted design DTOInspect dependency & freshness DTOInspect stored stage result (may be stale)Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('#p05-result-inspector') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#p05-result-inspector')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" id=\"p05-result-inspector\" class=\"cosmos-ds p05-inspection\" aria-label=\"Active workbench scientific inspection\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"Scientific inspectionActive editor: design_project · r—. Separate from any historical event inspected above.No result for this workspaceOne PropulsionDesign identity. New/Clone create; Run updates the same design.Input contract & scientific service traceRecalculate / save / createAPI: api/propulsion_workflow.pySystems/service: api/propulsion_workflow.pyScientific implementation: systems/workflow/orchestrator.pyEditor labels define existing units. Shell SI display does not rewrite editor inputs. Source paths identify implementation, not physical validation.Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.\"\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" id=\"p05-result-inspector\" class=\"cosmos-ds p05-inspection\" aria-label=\"Active workbench scientific inspection\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"Scientific inspectionActive editor: performance · r6. Separate from any historical event inspected above.No result for this workspacePARTIAL — CEA ideal equilibrium nozzle in CEA mode, otherwise constant-gamma isentropic nozzle. No loss/separation model.Input contract & scientific service traceEditor input trace (all fields)ParameterValueUnitProvenancewf-thermo-modeThermochemistry sourceSource units (editor)Run Phase 3 → /run/phase3wf-fuel-tempFuel inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-ox-tempOxidizer inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-atAt [m²]Source units (editor)Run Phase 3 → /run/phase3wf-epsε (Ae/At > 1)Source units (editor)Run Phase 3 → /run/phase3Previous parameter rowsNext parameter rowsRows 1–5 of 5; bounded 20-row windowRun Phase 3 → /run/phase3API: api/propulsion_workflow.pySystems/service: systems/stages/performance.pyScientific implementation: physics/compressible_flow/Editor labels define existing units. Shell SI display does not rewrite editor inputs. Source paths identify implementation, not physical validation.Inspect persisted design DTOInspect dependency & freshness DTOInspect stored stage result (may be stale)Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.\"\u001b[22m\n\u001b[2m    12 × locator resolved to <section data-theme=\"dark\" id=\"p05-result-inspector\" class=\"cosmos-ds p05-inspection\" aria-label=\"Active workbench scientific inspection\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"Scientific inspectionActive editor: performance · r6. Separate from any historical event inspected above.ExecutionFAILEDFreshnessNOT_REPORTED (FAILED)NumericalNOT_REPORTEDVerificationUNKNOWNValidationNOT_CLAIMEDModel: PHYS-004.choked.mass_flowError details: InvalidInputErrorperformance requires explicit ambient_pressure (zero for vacuum).Correlation: not suppliedRecovery: Inspect explicit inputs and backend diagnostic, then retry.WarningsThis stored result is not the active CURRENT answer.Input contract & scientific service traceEditor input trace (all fields)ParameterValueUnitProvenancewf-thermo-modeThermochemistry sourceSource units (editor)Run Phase 3 → /run/phase3wf-fuel-tempFuel inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-ox-tempOxidizer inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-atAt [m²]Source units (editor)Run Phase 3 → /run/phase3wf-epsε (Ae/At > 1)Source units (editor)Run Phase 3 → /run/phase3Previous parameter rowsNext parameter rowsRows 1–5 of 5; bounded 20-row windowRun Phase 3 → /run/phase3API: api/propulsion_workflow.pySystems/service: systems/stages/performance.pyScientific implementation: physics/compressible_flow/Editor labels define existing units. Shell SI display does not rewrite editor inputs. Source paths identify implementation, not physical validation.Inspect persisted design DTOInspect dependency & freshness DTOInspect stored stage result (may be stale)Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#p05-result-inspector')\nExpected substring: \u001b[32m\"Historical outputs — STALE\"\u001b[39m\nReceived string:    \u001b[31m\"Scientific inspectionActive editor: performance · r6. Separate from any historical event inspected above.ExecutionFAILEDFreshnessNOT_REPORTED (FAILED)NumericalNOT_REPORTEDVerificationUNKNOWNValidationNOT_CLAIMEDModel: PHYS-004.choked.mass_flowError details: InvalidInputErrorperformance requires explicit ambient_pressure (zero for vacuum).Correlation: not suppliedRecovery: Inspect explicit inputs and backend diagnostic, then retry.WarningsThis stored result is not the active CURRENT answer.Input contract & scientific service traceEditor input trace (all fields)ParameterValueUnitProvenancewf-thermo-modeThermochemistry sourceSource units (editor)Run Phase 3 → /run/phase3wf-fuel-tempFuel inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-ox-tempOxidizer inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-atAt [m²]Source units (editor)Run Phase 3 → /run/phase3wf-epsε (Ae/At > 1)Source units (editor)Run Phase 3 → /run/phase3Previous parameter rowsNext parameter rowsRows 1–5 of 5; bounded 20-row windowRun Phase 3 → /run/phase3API: api/propulsion_workflow.pySystems/service: systems/stages/performance.pyScientific implementation: physics/compressible_flow/Editor labels define existing units. Shell SI display does not rewrite editor inputs. Source paths identify implementation, not physical validation.Inspect persisted design DTOInspect dependency & freshness DTOInspect stored stage result (may be stale)Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('#p05-result-inspector') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#p05-result-inspector')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" id=\"p05-result-inspector\" class=\"cosmos-ds p05-inspection\" aria-label=\"Active workbench scientific inspection\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"Scientific inspectionActive editor: design_project · r—. Separate from any historical event inspected above.No result for this workspaceOne PropulsionDesign identity. New/Clone create; Run updates the same design.Input contract & scientific service traceRecalculate / save / createAPI: api/propulsion_workflow.pySystems/service: api/propulsion_workflow.pyScientific implementation: systems/workflow/orchestrator.pyEditor labels define existing units. Shell SI display does not rewrite editor inputs. Source paths identify implementation, not physical validation.Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.\"\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" id=\"p05-result-inspector\" class=\"cosmos-ds p05-inspection\" aria-label=\"Active workbench scientific inspection\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"Scientific inspectionActive editor: performance · r6. Separate from any historical event inspected above.No result for this workspacePARTIAL — CEA ideal equilibrium nozzle in CEA mode, otherwise constant-gamma isentropic nozzle. No loss/separation model.Input contract & scientific service traceEditor input trace (all fields)ParameterValueUnitProvenancewf-thermo-modeThermochemistry sourceSource units (editor)Run Phase 3 → /run/phase3wf-fuel-tempFuel inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-ox-tempOxidizer inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-atAt [m²]Source units (editor)Run Phase 3 → /run/phase3wf-epsε (Ae/At > 1)Source units (editor)Run Phase 3 → /run/phase3Previous parameter rowsNext parameter rowsRows 1–5 of 5; bounded 20-row windowRun Phase 3 → /run/phase3API: api/propulsion_workflow.pySystems/service: systems/stages/performance.pyScientific implementation: physics/compressible_flow/Editor labels define existing units. Shell SI display does not rewrite editor inputs. Source paths identify implementation, not physical validation.Inspect persisted design DTOInspect dependency & freshness DTOInspect stored stage result (may be stale)Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.\"\u001b[22m\n\u001b[2m    12 × locator resolved to <section data-theme=\"dark\" id=\"p05-result-inspector\" class=\"cosmos-ds p05-inspection\" aria-label=\"Active workbench scientific inspection\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"Scientific inspectionActive editor: performance · r6. Separate from any historical event inspected above.ExecutionFAILEDFreshnessNOT_REPORTED (FAILED)NumericalNOT_REPORTEDVerificationUNKNOWNValidationNOT_CLAIMEDModel: PHYS-004.choked.mass_flowError details: InvalidInputErrorperformance requires explicit ambient_pressure (zero for vacuum).Correlation: not suppliedRecovery: Inspect explicit inputs and backend diagnostic, then retry.WarningsThis stored result is not the active CURRENT answer.Input contract & scientific service traceEditor input trace (all fields)ParameterValueUnitProvenancewf-thermo-modeThermochemistry sourceSource units (editor)Run Phase 3 → /run/phase3wf-fuel-tempFuel inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-ox-tempOxidizer inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-atAt [m²]Source units (editor)Run Phase 3 → /run/phase3wf-epsε (Ae/At > 1)Source units (editor)Run Phase 3 → /run/phase3Previous parameter rowsNext parameter rowsRows 1–5 of 5; bounded 20-row windowRun Phase 3 → /run/phase3API: api/propulsion_workflow.pySystems/service: systems/stages/performance.pyScientific implementation: physics/compressible_flow/Editor labels define existing units. Shell SI display does not rewrite editor inputs. Source paths identify implementation, not physical validation.Inspect persisted design DTOInspect dependency & freshness DTOInspect stored stage result (may be stale)Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.\"\u001b[22m\n\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs:28:342",
+                    "location": {
+                      "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs",
+                      "column": 342,
+                      "line": 28
+                    },
+                    "snippet": "  26 | test('source units mode theme scaling docks and dirty guards preserve values',async({page})=>{await ready(page);await page.locator('#ed-pc').fill('0');await page.getByLabel('Shell units',{exact:true}).selectOption('SI');await page.getByLabel('Mode',{exact:true}).selectOption('Expert');await page.getByLabel('Theme',{exact:true}).selectOption('high-contrast');await page.getByLabel('Font scale',{exact:true}).selectOption('200');await expect(page.locator('.p05-rocket')).toHaveAttribute('data-theme','high-contrast');await expect(page.locator('#ed-pc')).toHaveValue('0');page.on('dialog',dialog=>dialog.dismiss());await page.locator('.p04-left nav a').filter({hasText:'Projects & Mission'}).click();await expect(page.locator('#ed-pc')).toHaveValue('0');});\n  27 | test('CURRENT scientific inspection does not claim numerical convergence or validation',async({page})=>{const response=await phase3(page);expect(response.stages.performance.status).toBe('CURRENT');await ready(page,'performance');await expect(page.locator('.p05-status-axes')).toContainText('CURRENT');await expect(page.locator('.p05-status-axes')).toContainText('NOT_REPORTED');await expect(page.locator('.p05-status-axes')).toContainText('NOT_CLAIMED');await expect(page.locator('#p05-result-inspector [data-component=\"ParameterTable\"]')).not.toHaveCount(0);const link=page.getByRole('link',{name:'Inspect stored stage result (may be stale)'});expect((await page.request.get(await link.getAttribute('href'))).ok()).toBe(true);});\n> 28 | test('stale outputs remain labeled historical with explicit recovery',async({page})=>{await phase3(page);await page.request.post(base+'/api/propulsion/designs/'+id+'/requirements',{data:{updates:{target_chamber_pressure:{magnitude:55,unit_symbol:'bar'}}}});await ready(page,'performance');await expect(page.locator('#p05-result-inspector')).toContainText('Historical outputs — STALE');await expect(page.locator('#p05-result-inspector')).toContainText('Save and recalculate');await expect(page.locator('.p05-status-axes')).toContainText('STALE');});\n     |                                                                                                                                                                                                                                                                                                                                                      ^\n  29 | test('error and retry keep draft while actual action status recovers',async({page})=>{await ready(page);let fail=true;await page.route('**/api/propulsion/designs/'+id+'/save',route=>fail?route.fulfill({status:503,json:{ok:false,error:{code:'P05_TEST_ONLY_FAILURE',message:'Test-only backend outage',action:'Retry save'}}}):route.continue());await page.locator('#ed-pc').fill('62');await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-result-inspector')).toContainText('P05_TEST_ONLY_FAILURE');await expect(page.locator('#ed-pc')).toHaveValue('62');await expect(page.locator('#p05-task-state')).toContainText('Unsaved draft');fail=false;await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-task-state')).toContainText('Persisted inputs');});\n  30 | test('running original action locks undo navigation and input controls',async({page})=>{await ready(page);let release;const gate=new Promise(resolve=>release=resolve);await page.route('**/api/propulsion/designs/'+id+'/save',async route=>{await gate;await route.fulfill({status:503,json:{ok:false,error:{code:'P05_TEST_BUSY',message:'Test-only failure'}}});});await page.locator('#ed-pc').fill('63');await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-task-state')).toContainText('Action running');await expect(page.locator('#ed-pc')).toBeDisabled();await expect(page.getByRole('button',{name:'Undo last draft edit'})).toBeDisabled();await expect(page.locator('#suite-nav button').first()).toBeDisabled();await expect(page.locator('.p05-activity')).toContainText('cancellation unavailable');release();await expect(page.locator('#p05-task-state')).toContainText('Unsaved draft');});\n  31 | test('slow shell startup retains original field node and edited value',async({page})=>{let release;const gate=new Promise(resolve=>release=resolve);await page.route('**/api/ui/shell',async route=>{await gate;await route.continue();});await page.goto(base+'/app/workbench/rocket-engine?stage=requirements&design='+id);await expect(page.locator('#ed-pc')).toBeVisible();await page.locator('#ed-pc').fill('65');await page.evaluate(()=>window.p05SlowField=document.getElementById('ed-pc'));release();await expect(page.locator('.p05-rocket')).toBeVisible();expect(await page.evaluate(()=>window.p05SlowField===document.getElementById('ed-pc'))).toBe(true);await expect(page.locator('#ed-pc')).toHaveValue('65');});"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs",
+                        "column": 342,
+                        "line": 28
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#p05-result-inspector')\nExpected substring: \u001b[32m\"Historical outputs — STALE\"\u001b[39m\nReceived string:    \u001b[31m\"Scientific inspectionActive editor: performance · r6. Separate from any historical event inspected above.ExecutionFAILEDFreshnessNOT_REPORTED (FAILED)NumericalNOT_REPORTEDVerificationUNKNOWNValidationNOT_CLAIMEDModel: PHYS-004.choked.mass_flowError details: InvalidInputErrorperformance requires explicit ambient_pressure (zero for vacuum).Correlation: not suppliedRecovery: Inspect explicit inputs and backend diagnostic, then retry.WarningsThis stored result is not the active CURRENT answer.Input contract & scientific service traceEditor input trace (all fields)ParameterValueUnitProvenancewf-thermo-modeThermochemistry sourceSource units (editor)Run Phase 3 → /run/phase3wf-fuel-tempFuel inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-ox-tempOxidizer inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-atAt [m²]Source units (editor)Run Phase 3 → /run/phase3wf-epsε (Ae/At > 1)Source units (editor)Run Phase 3 → /run/phase3Previous parameter rowsNext parameter rowsRows 1–5 of 5; bounded 20-row windowRun Phase 3 → /run/phase3API: api/propulsion_workflow.pySystems/service: systems/stages/performance.pyScientific implementation: physics/compressible_flow/Editor labels define existing units. Shell SI display does not rewrite editor inputs. Source paths identify implementation, not physical validation.Inspect persisted design DTOInspect dependency & freshness DTOInspect stored stage result (may be stale)Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('#p05-result-inspector') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#p05-result-inspector')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" id=\"p05-result-inspector\" class=\"cosmos-ds p05-inspection\" aria-label=\"Active workbench scientific inspection\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"Scientific inspectionActive editor: design_project · r—. Separate from any historical event inspected above.No result for this workspaceOne PropulsionDesign identity. New/Clone create; Run updates the same design.Input contract & scientific service traceRecalculate / save / createAPI: api/propulsion_workflow.pySystems/service: api/propulsion_workflow.pyScientific implementation: systems/workflow/orchestrator.pyEditor labels define existing units. Shell SI display does not rewrite editor inputs. Source paths identify implementation, not physical validation.Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.\"\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" id=\"p05-result-inspector\" class=\"cosmos-ds p05-inspection\" aria-label=\"Active workbench scientific inspection\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"Scientific inspectionActive editor: performance · r6. Separate from any historical event inspected above.No result for this workspacePARTIAL — CEA ideal equilibrium nozzle in CEA mode, otherwise constant-gamma isentropic nozzle. No loss/separation model.Input contract & scientific service traceEditor input trace (all fields)ParameterValueUnitProvenancewf-thermo-modeThermochemistry sourceSource units (editor)Run Phase 3 → /run/phase3wf-fuel-tempFuel inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-ox-tempOxidizer inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-atAt [m²]Source units (editor)Run Phase 3 → /run/phase3wf-epsε (Ae/At > 1)Source units (editor)Run Phase 3 → /run/phase3Previous parameter rowsNext parameter rowsRows 1–5 of 5; bounded 20-row windowRun Phase 3 → /run/phase3API: api/propulsion_workflow.pySystems/service: systems/stages/performance.pyScientific implementation: physics/compressible_flow/Editor labels define existing units. Shell SI display does not rewrite editor inputs. Source paths identify implementation, not physical validation.Inspect persisted design DTOInspect dependency & freshness DTOInspect stored stage result (may be stale)Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.\"\u001b[22m\n\u001b[2m    12 × locator resolved to <section data-theme=\"dark\" id=\"p05-result-inspector\" class=\"cosmos-ds p05-inspection\" aria-label=\"Active workbench scientific inspection\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"Scientific inspectionActive editor: performance · r6. Separate from any historical event inspected above.ExecutionFAILEDFreshnessNOT_REPORTED (FAILED)NumericalNOT_REPORTEDVerificationUNKNOWNValidationNOT_CLAIMEDModel: PHYS-004.choked.mass_flowError details: InvalidInputErrorperformance requires explicit ambient_pressure (zero for vacuum).Correlation: not suppliedRecovery: Inspect explicit inputs and backend diagnostic, then retry.WarningsThis stored result is not the active CURRENT answer.Input contract & scientific service traceEditor input trace (all fields)ParameterValueUnitProvenancewf-thermo-modeThermochemistry sourceSource units (editor)Run Phase 3 → /run/phase3wf-fuel-tempFuel inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-ox-tempOxidizer inlet temperature [K] · CEASource units (editor)Run Phase 3 → /run/phase3wf-atAt [m²]Source units (editor)Run Phase 3 → /run/phase3wf-epsε (Ae/At > 1)Source units (editor)Run Phase 3 → /run/phase3Previous parameter rowsNext parameter rowsRows 1–5 of 5; bounded 20-row windowRun Phase 3 → /run/phase3API: api/propulsion_workflow.pySystems/service: systems/stages/performance.pyScientific implementation: physics/compressible_flow/Editor labels define existing units. Shell SI display does not rewrite editor inputs. Source paths identify implementation, not physical validation.Inspect persisted design DTOInspect dependency & freshness DTOInspect stored stage result (may be stale)Sensitivity study: unavailable — no verified sweep service. Numerical convergence is only reported when the backend explicitly supplies it. CURRENT is freshness, not verification or experimental validation.\"\u001b[22m\n\n\n  26 | test('source units mode theme scaling docks and dirty guards preserve values',async({page})=>{await ready(page);await page.locator('#ed-pc').fill('0');await page.getByLabel('Shell units',{exact:true}).selectOption('SI');await page.getByLabel('Mode',{exact:true}).selectOption('Expert');await page.getByLabel('Theme',{exact:true}).selectOption('high-contrast');await page.getByLabel('Font scale',{exact:true}).selectOption('200');await expect(page.locator('.p05-rocket')).toHaveAttribute('data-theme','high-contrast');await expect(page.locator('#ed-pc')).toHaveValue('0');page.on('dialog',dialog=>dialog.dismiss());await page.locator('.p04-left nav a').filter({hasText:'Projects & Mission'}).click();await expect(page.locator('#ed-pc')).toHaveValue('0');});\n  27 | test('CURRENT scientific inspection does not claim numerical convergence or validation',async({page})=>{const response=await phase3(page);expect(response.stages.performance.status).toBe('CURRENT');await ready(page,'performance');await expect(page.locator('.p05-status-axes')).toContainText('CURRENT');await expect(page.locator('.p05-status-axes')).toContainText('NOT_REPORTED');await expect(page.locator('.p05-status-axes')).toContainText('NOT_CLAIMED');await expect(page.locator('#p05-result-inspector [data-component=\"ParameterTable\"]')).not.toHaveCount(0);const link=page.getByRole('link',{name:'Inspect stored stage result (may be stale)'});expect((await page.request.get(await link.getAttribute('href'))).ok()).toBe(true);});\n> 28 | test('stale outputs remain labeled historical with explicit recovery',async({page})=>{await phase3(page);await page.request.post(base+'/api/propulsion/designs/'+id+'/requirements',{data:{updates:{target_chamber_pressure:{magnitude:55,unit_symbol:'bar'}}}});await ready(page,'performance');await expect(page.locator('#p05-result-inspector')).toContainText('Historical outputs — STALE');await expect(page.locator('#p05-result-inspector')).toContainText('Save and recalculate');await expect(page.locator('.p05-status-axes')).toContainText('STALE');});\n     |                                                                                                                                                                                                                                                                                                                                                      ^\n  29 | test('error and retry keep draft while actual action status recovers',async({page})=>{await ready(page);let fail=true;await page.route('**/api/propulsion/designs/'+id+'/save',route=>fail?route.fulfill({status:503,json:{ok:false,error:{code:'P05_TEST_ONLY_FAILURE',message:'Test-only backend outage',action:'Retry save'}}}):route.continue());await page.locator('#ed-pc').fill('62');await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-result-inspector')).toContainText('P05_TEST_ONLY_FAILURE');await expect(page.locator('#ed-pc')).toHaveValue('62');await expect(page.locator('#p05-task-state')).toContainText('Unsaved draft');fail=false;await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-task-state')).toContainText('Persisted inputs');});\n  30 | test('running original action locks undo navigation and input controls',async({page})=>{await ready(page);let release;const gate=new Promise(resolve=>release=resolve);await page.route('**/api/propulsion/designs/'+id+'/save',async route=>{await gate;await route.fulfill({status:503,json:{ok:false,error:{code:'P05_TEST_BUSY',message:'Test-only failure'}}});});await page.locator('#ed-pc').fill('63');await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-task-state')).toContainText('Action running');await expect(page.locator('#ed-pc')).toBeDisabled();await expect(page.getByRole('button',{name:'Undo last draft edit'})).toBeDisabled();await expect(page.locator('#suite-nav button').first()).toBeDisabled();await expect(page.locator('.p05-activity')).toContainText('cancellation unavailable');release();await expect(page.locator('#p05-task-state')).toContainText('Unsaved draft');});\n  31 | test('slow shell startup retains original field node and edited value',async({page})=>{let release;const gate=new Promise(resolve=>release=resolve);await page.route('**/api/ui/shell',async route=>{await gate;await route.continue();});await page.goto(base+'/app/workbench/rocket-engine?stage=requirements&design='+id);await expect(page.locator('#ed-pc')).toBeVisible();await page.locator('#ed-pc').fill('65');await page.evaluate(()=>window.p05SlowField=document.getElementById('ed-pc'));release();await expect(page.locator('.p05-rocket')).toBeVisible();expect(await page.evaluate(()=>window.p05SlowField===document.getElementById('ed-pc'))).toBe(true);await expect(page.locator('#ed-pc')).toHaveValue('65');});\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs:28:342"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:35.027Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p05.iKaDQF/browser-output/workbench-stale-outputs-re-faf42-ical-with-explicit-recovery/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs",
+                    "column": 342,
+                    "line": 28
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-fdbccde4085aebd69c79",
+          "file": "workbench.spec.cjs",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "error and retry keep draft while actual action status recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 936,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:41.704Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-7680a2789f7821134757",
+          "file": "workbench.spec.cjs",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "running original action locks undo navigation and input controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 524,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:43.140Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-de442867defbf0b2b0ac",
+          "file": "workbench.spec.cjs",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "slow shell startup retains original field node and edited value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 412,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:43.678Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-6f4caf05a672d2f6e543",
+          "file": "workbench.spec.cjs",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "bounded parameter window and explicit SI display do not change raw result",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 501,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"null\"\u001b[39m\nReceived: \u001b[31m\"{\\\"assumptions\\\":[],\\\"calculation_type\\\":\\\"performance.choked_nozzle_thrust\\\",\\\"design_revision\\\":5,\\\"errors\\\":[{\\\"code\\\":\\\"InvalidInputError\\\",\\\"message\\\":\\\"performance requires explicit ambient_pressure (zero for vacuum).\\\",\\\"model\\\":\\\"PHYS-004.choked.mass_flow\\\",\\\"stage\\\":\\\"performance\\\"}],\\\"inputs\\\":{},\\\"model_id\\\":\\\"PHYS-004.choked.mass_flow\\\",\\\"model_version\\\":null,\\\"outputs\\\":{},\\\"provenance\\\":{\\\"source\\\":null,\\\"reference\\\":null,\\\"model\\\":\\\"PHYS-004.choked.mass_flow\\\",\\\"version\\\":null,\\\"software_version\\\":\\\"0.1.0\\\",\\\"implementation_revision\\\":null,\\\"calculation_revision\\\":5},\\\"result_id\\\":\\\"58d9c687-145f-4535-88f1-33e644ba7956\\\",\\\"schema_version\\\":\\\"0.1.0\\\",\\\"software_version\\\":\\\"0.1.0\\\",\\\"stage_id\\\":\\\"performance\\\",\\\"status\\\":\\\"FAILED\\\",\\\"validation\\\":{\\\"status\\\":\\\"NOT_CLAIMED\\\",\\\"reference\\\":null},\\\"validity\\\":{\\\"status\\\":\\\"UNKNOWN\\\",\\\"checks\\\":[],\\\"violations\\\":[\\\"performance requires explicit ambient_pressure (zero for vacuum).\\\"],\\\"valid_range\\\":null},\\\"verification\\\":{\\\"status\\\":\\\"UNKNOWN\\\",\\\"reference\\\":null},\\\"warnings\\\":[\\\"This stored result is not the active CURRENT answer.\\\"],\\\"ok\\\":false}\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"null\"\u001b[39m\nReceived: \u001b[31m\"{\\\"assumptions\\\":[],\\\"calculation_type\\\":\\\"performance.choked_nozzle_thrust\\\",\\\"design_revision\\\":5,\\\"errors\\\":[{\\\"code\\\":\\\"InvalidInputError\\\",\\\"message\\\":\\\"performance requires explicit ambient_pressure (zero for vacuum).\\\",\\\"model\\\":\\\"PHYS-004.choked.mass_flow\\\",\\\"stage\\\":\\\"performance\\\"}],\\\"inputs\\\":{},\\\"model_id\\\":\\\"PHYS-004.choked.mass_flow\\\",\\\"model_version\\\":null,\\\"outputs\\\":{},\\\"provenance\\\":{\\\"source\\\":null,\\\"reference\\\":null,\\\"model\\\":\\\"PHYS-004.choked.mass_flow\\\",\\\"version\\\":null,\\\"software_version\\\":\\\"0.1.0\\\",\\\"implementation_revision\\\":null,\\\"calculation_revision\\\":5},\\\"result_id\\\":\\\"58d9c687-145f-4535-88f1-33e644ba7956\\\",\\\"schema_version\\\":\\\"0.1.0\\\",\\\"software_version\\\":\\\"0.1.0\\\",\\\"stage_id\\\":\\\"performance\\\",\\\"status\\\":\\\"FAILED\\\",\\\"validation\\\":{\\\"status\\\":\\\"NOT_CLAIMED\\\",\\\"reference\\\":null},\\\"validity\\\":{\\\"status\\\":\\\"UNKNOWN\\\",\\\"checks\\\":[],\\\"violations\\\":[\\\"performance requires explicit ambient_pressure (zero for vacuum).\\\"],\\\"valid_range\\\":null},\\\"verification\\\":{\\\"status\\\":\\\"UNKNOWN\\\",\\\"reference\\\":null},\\\"warnings\\\":[\\\"This stored result is not the active CURRENT answer.\\\"],\\\"ok\\\":false}\"\u001b[39m\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs:32:490",
+                    "location": {
+                      "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs",
+                      "column": 490,
+                      "line": 32
+                    },
+                    "snippet": "  30 | test('running original action locks undo navigation and input controls',async({page})=>{await ready(page);let release;const gate=new Promise(resolve=>release=resolve);await page.route('**/api/propulsion/designs/'+id+'/save',async route=>{await gate;await route.fulfill({status:503,json:{ok:false,error:{code:'P05_TEST_BUSY',message:'Test-only failure'}}});});await page.locator('#ed-pc').fill('63');await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-task-state')).toContainText('Action running');await expect(page.locator('#ed-pc')).toBeDisabled();await expect(page.getByRole('button',{name:'Undo last draft edit'})).toBeDisabled();await expect(page.locator('#suite-nav button').first()).toBeDisabled();await expect(page.locator('.p05-activity')).toContainText('cancellation unavailable');release();await expect(page.locator('#p05-task-state')).toContainText('Unsaved draft');});\n  31 | test('slow shell startup retains original field node and edited value',async({page})=>{let release;const gate=new Promise(resolve=>release=resolve);await page.route('**/api/ui/shell',async route=>{await gate;await route.continue();});await page.goto(base+'/app/workbench/rocket-engine?stage=requirements&design='+id);await expect(page.locator('#ed-pc')).toBeVisible();await page.locator('#ed-pc').fill('65');await page.evaluate(()=>window.p05SlowField=document.getElementById('ed-pc'));release();await expect(page.locator('.p05-rocket')).toBeVisible();expect(await page.evaluate(()=>window.p05SlowField===document.getElementById('ed-pc'))).toBe(true);await expect(page.locator('#ed-pc')).toHaveValue('65');});\n> 32 | test('bounded parameter window and explicit SI display do not change raw result',async({page})=>{await phase3(page);await ready(page,'performance');await expect(page.locator('#p05-result-inspector')).toContainText('bounded 20-row window');const before=JSON.stringify(await page.evaluate(()=>COSMOS.rocketPresentation.readResult()));await page.getByLabel('Shell units',{exact:true}).selectOption('SI');expect(JSON.stringify(await page.evaluate(()=>COSMOS.rocketPresentation.readResult()))).toBe(before);await expect(page.locator('#ed-pc')).toHaveCount(0);});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^\n  33 | test('read-only snapshot immutable and input responsiveness avoids result rebuilds',async({page})=>{await ready(page);const metrics=await page.evaluate(async()=>{const context=COSMOS.rocketPresentation.readContext();const input=document.getElementById('ed-pc'),panel=document.getElementById('p05-result-inspector');let mutations=0;const observer=new MutationObserver(items=>mutations+=items.length);observer.observe(panel,{subtree:true,childList:true});const samples=[];for(let i=0;i<50;i++){const start=performance.now();input.value=String(50+i/100);input.dispatchEvent(new Event('input',{bubbles:true}));samples.push(performance.now()-start);}await new Promise(requestAnimationFrame);await new Promise(requestAnimationFrame);observer.disconnect();samples.sort((a,b)=>a-b);return{immutable:Object.isFrozen(context)&&Object.isFrozen(context.stages),samples:50,p95Ms:samples[47],inspectorMutations:mutations};});fs.writeFileSync(path.join(evidence,'interaction-metrics.json'),JSON.stringify(metrics,null,2)+'\\n');expect(metrics.immutable).toBe(true);expect(metrics.p95Ms).toBeLessThan(100);expect(metrics.inspectorMutations).toBe(0);});\n  34 | test('narrow 200 percent layout has visible editor no document overflow',async({page})=>{await page.setViewportSize({width:1024,height:768});await ready(page);await page.getByLabel('Font scale',{exact:true}).selectOption('200');await page.locator('#ed-pc').scrollIntoViewIfNeeded();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);const box=await page.locator('#ed-pc').boundingBox();expect(box.width).toBeGreaterThan(100);expect(box.y+box.height).toBeLessThanOrEqual(768);await page.screenshot({path:path.join(evidence,'after-1024-200pct.png')});});\n  35 | test('after screenshots original requirement thermo and cooling workflows',async({page})=>{const designs=(await(await page.request.get(base+'/api/propulsion/designs')).json()).designs;id=designs.find(d=>d.name==='P04 Fixture A').design_id;for(const stage of ['requirements','thermochemistry','cooling']){await ready(page,stage);await expect(page.locator('#suite-forms .suite-card').first()).toBeVisible();await page.screenshot({path:path.join(evidence,'after-'+stage+'.png')});}});"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs",
+                        "column": 490,
+                        "line": 32
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"null\"\u001b[39m\nReceived: \u001b[31m\"{\\\"assumptions\\\":[],\\\"calculation_type\\\":\\\"performance.choked_nozzle_thrust\\\",\\\"design_revision\\\":5,\\\"errors\\\":[{\\\"code\\\":\\\"InvalidInputError\\\",\\\"message\\\":\\\"performance requires explicit ambient_pressure (zero for vacuum).\\\",\\\"model\\\":\\\"PHYS-004.choked.mass_flow\\\",\\\"stage\\\":\\\"performance\\\"}],\\\"inputs\\\":{},\\\"model_id\\\":\\\"PHYS-004.choked.mass_flow\\\",\\\"model_version\\\":null,\\\"outputs\\\":{},\\\"provenance\\\":{\\\"source\\\":null,\\\"reference\\\":null,\\\"model\\\":\\\"PHYS-004.choked.mass_flow\\\",\\\"version\\\":null,\\\"software_version\\\":\\\"0.1.0\\\",\\\"implementation_revision\\\":null,\\\"calculation_revision\\\":5},\\\"result_id\\\":\\\"58d9c687-145f-4535-88f1-33e644ba7956\\\",\\\"schema_version\\\":\\\"0.1.0\\\",\\\"software_version\\\":\\\"0.1.0\\\",\\\"stage_id\\\":\\\"performance\\\",\\\"status\\\":\\\"FAILED\\\",\\\"validation\\\":{\\\"status\\\":\\\"NOT_CLAIMED\\\",\\\"reference\\\":null},\\\"validity\\\":{\\\"status\\\":\\\"UNKNOWN\\\",\\\"checks\\\":[],\\\"violations\\\":[\\\"performance requires explicit ambient_pressure (zero for vacuum).\\\"],\\\"valid_range\\\":null},\\\"verification\\\":{\\\"status\\\":\\\"UNKNOWN\\\",\\\"reference\\\":null},\\\"warnings\\\":[\\\"This stored result is not the active CURRENT answer.\\\"],\\\"ok\\\":false}\"\u001b[39m\n\n  30 | test('running original action locks undo navigation and input controls',async({page})=>{await ready(page);let release;const gate=new Promise(resolve=>release=resolve);await page.route('**/api/propulsion/designs/'+id+'/save',async route=>{await gate;await route.fulfill({status:503,json:{ok:false,error:{code:'P05_TEST_BUSY',message:'Test-only failure'}}});});await page.locator('#ed-pc').fill('63');await page.getByRole('button',{name:'Save requirements',exact:true}).click();await expect(page.locator('#p05-task-state')).toContainText('Action running');await expect(page.locator('#ed-pc')).toBeDisabled();await expect(page.getByRole('button',{name:'Undo last draft edit'})).toBeDisabled();await expect(page.locator('#suite-nav button').first()).toBeDisabled();await expect(page.locator('.p05-activity')).toContainText('cancellation unavailable');release();await expect(page.locator('#p05-task-state')).toContainText('Unsaved draft');});\n  31 | test('slow shell startup retains original field node and edited value',async({page})=>{let release;const gate=new Promise(resolve=>release=resolve);await page.route('**/api/ui/shell',async route=>{await gate;await route.continue();});await page.goto(base+'/app/workbench/rocket-engine?stage=requirements&design='+id);await expect(page.locator('#ed-pc')).toBeVisible();await page.locator('#ed-pc').fill('65');await page.evaluate(()=>window.p05SlowField=document.getElementById('ed-pc'));release();await expect(page.locator('.p05-rocket')).toBeVisible();expect(await page.evaluate(()=>window.p05SlowField===document.getElementById('ed-pc'))).toBe(true);await expect(page.locator('#ed-pc')).toHaveValue('65');});\n> 32 | test('bounded parameter window and explicit SI display do not change raw result',async({page})=>{await phase3(page);await ready(page,'performance');await expect(page.locator('#p05-result-inspector')).toContainText('bounded 20-row window');const before=JSON.stringify(await page.evaluate(()=>COSMOS.rocketPresentation.readResult()));await page.getByLabel('Shell units',{exact:true}).selectOption('SI');expect(JSON.stringify(await page.evaluate(()=>COSMOS.rocketPresentation.readResult()))).toBe(before);await expect(page.locator('#ed-pc')).toHaveCount(0);});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^\n  33 | test('read-only snapshot immutable and input responsiveness avoids result rebuilds',async({page})=>{await ready(page);const metrics=await page.evaluate(async()=>{const context=COSMOS.rocketPresentation.readContext();const input=document.getElementById('ed-pc'),panel=document.getElementById('p05-result-inspector');let mutations=0;const observer=new MutationObserver(items=>mutations+=items.length);observer.observe(panel,{subtree:true,childList:true});const samples=[];for(let i=0;i<50;i++){const start=performance.now();input.value=String(50+i/100);input.dispatchEvent(new Event('input',{bubbles:true}));samples.push(performance.now()-start);}await new Promise(requestAnimationFrame);await new Promise(requestAnimationFrame);observer.disconnect();samples.sort((a,b)=>a-b);return{immutable:Object.isFrozen(context)&&Object.isFrozen(context.stages),samples:50,p95Ms:samples[47],inspectorMutations:mutations};});fs.writeFileSync(path.join(evidence,'interaction-metrics.json'),JSON.stringify(metrics,null,2)+'\\n');expect(metrics.immutable).toBe(true);expect(metrics.p95Ms).toBeLessThan(100);expect(metrics.inspectorMutations).toBe(0);});\n  34 | test('narrow 200 percent layout has visible editor no document overflow',async({page})=>{await page.setViewportSize({width:1024,height:768});await ready(page);await page.getByLabel('Font scale',{exact:true}).selectOption('200');await page.locator('#ed-pc').scrollIntoViewIfNeeded();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);const box=await page.locator('#ed-pc').boundingBox();expect(box.width).toBeGreaterThan(100);expect(box.y+box.height).toBeLessThanOrEqual(768);await page.screenshot({path:path.join(evidence,'after-1024-200pct.png')});});\n  35 | test('after screenshots original requirement thermo and cooling workflows',async({page})=>{const designs=(await(await page.request.get(base+'/api/propulsion/designs')).json()).designs;id=designs.find(d=>d.name==='P04 Fixture A').design_id;for(const stage of ['requirements','thermochemistry','cooling']){await ready(page,stage);await expect(page.locator('#suite-forms .suite-card').first()).toBeVisible();await page.screenshot({path:path.join(evidence,'after-'+stage+'.png')});}});\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs:32:490"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:44.100Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p05.iKaDQF/browser-output/workbench-bounded-paramete-441af-ay-do-not-change-raw-result/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs",
+                    "column": 490,
+                    "line": 32
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-dbdc83faafa4ef67f81d",
+          "file": "workbench.spec.cjs",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "read-only snapshot immutable and input responsiveness avoids result rebuilds",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 499,
+                  "error": {
+                    "message": "Error: page.evaluate: TypeError: Cannot set properties of null (setting 'value')\n    at eval (eval at evaluate (:370:30), <anonymous>:14:19)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+                    "stack": "Error: page.evaluate: TypeError: Cannot set properties of null (setting 'value')\n    at eval (eval at evaluate (:370:30), <anonymous>:14:19)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:370:30), <anonymous>:14:19)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs:33:144",
+                    "location": {
+                      "file": "eval at evaluate (:370:30), <anonymous>",
+                      "column": 19,
+                      "line": 14
+                    }
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "eval at evaluate (:370:30), <anonymous>",
+                        "column": 19,
+                        "line": 14
+                      },
+                      "message": "Error: page.evaluate: TypeError: Cannot set properties of null (setting 'value')\n    at eval (eval at evaluate (:370:30), <anonymous>:14:19)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:370:30), <anonymous>:14:19)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/rocket-workbench/workbench.spec.cjs:33:144"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:45.014Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p05.iKaDQF/browser-output/workbench-read-only-snapsh-1e77b-ness-avoids-result-rebuilds/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "eval at evaluate (:370:30), <anonymous>",
+                    "column": 19,
+                    "line": 14
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-766f55ab6e05fe7f5900",
+          "file": "workbench.spec.cjs",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "narrow 200 percent layout has visible editor no document overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 657,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:46.234Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-c89be32c73a43ada0d5d",
+          "file": "workbench.spec.cjs",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "after screenshots original requirement thermo and cooling workflows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 887,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:47.236Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-2558a764a4de15ffc8ae",
+          "file": "workbench.spec.cjs",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "axe accessibility dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 690,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:48.136Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-81dd210c1c6ad4c9c2a3",
+          "file": "workbench.spec.cjs",
+          "line": 36,
+          "column": 45
+        },
+        {
+          "title": "axe accessibility high-contrast",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 689,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:16:48.838Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e1735e0a6e42817e4de2-f56c0e4055f1d066177e",
+          "file": "workbench.spec.cjs",
+          "line": 36,
+          "column": 45
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T20:16:20.692Z",
+    "duration": 28915.911999999997,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}

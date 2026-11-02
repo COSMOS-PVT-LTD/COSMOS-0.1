@@ -1,0 +1,191 @@
+{
+  "package": "COSMOS 0.1 Full UI UX Modernization and NGG Codex Pack",
+  "version": "1.0.0",
+  "generated": "2026-10-08",
+  "files": [
+    {
+      "path": "00_START_HERE.md",
+      "sha256": "60ad1bd0b6678c8861361003d2e755e61f4717d1599054890a9b4c8fb71b33f9"
+    },
+    {
+      "path": "01_MASTER_CODEX_PROMPT.md",
+      "sha256": "8f07746234c3351a13c352d3d768f204120d74a8f2c68c96ff5d5e463121fa4f"
+    },
+    {
+      "path": "02_EXECUTION_SEQUENCE.md",
+      "sha256": "959540423a8b5fdf80d98ffdafc85328fd01414df50881e378dcfaaea1dc04d6"
+    },
+    {
+      "path": "03_BASELINE_ARCHITECTURE_AND_SOURCE_LIMITS.md",
+      "sha256": "ab31b9f50e4dd714aae660a443beb1330d90775c6636fcb028342c2f24b70654"
+    },
+    {
+      "path": "acceptance/RELEASE_GATES.md",
+      "sha256": "929c60d1da0cc4de50c634d3ef6330f9572f1ff341ad756092bbd5868a48056b"
+    },
+    {
+      "path": "acceptance/TEST_MATRIX.md",
+      "sha256": "4185efa95df1972c38780cb194d89de0e992417b8003baa01804bde18ff0e55a"
+    },
+    {
+      "path": "diagrams/01_PLATFORM_ARCHITECTURE.md",
+      "sha256": "36b0e6ce5399679a008e51068e17e2e93bf902375050fec696ac0b0d78881896"
+    },
+    {
+      "path": "diagrams/02_NGG_DATA_FLOW.md",
+      "sha256": "790e7c37f91b444e7066c41644379001b951167002f1045fb9dc4fe898cb9f8f"
+    },
+    {
+      "path": "diagrams/03_WORKBENCH_UX_FLOW.md",
+      "sha256": "92cbbc61eeb42f72af6918a22b3e7a8e889df2e9478df43e8832a9d2e39ed569"
+    },
+    {
+      "path": "diagrams/04_RELEASE_DEPENDENCIES.md",
+      "sha256": "e539f9424356d6f75e0b5a5c6725e825873864dd66af2c62f03fab9038dd92d9"
+    },
+    {
+      "path": "prompts/P00_REPOSITORY_AUDIT.md",
+      "sha256": "18e1c4420fec64cd9cc7bd2f0599d37caf72a0cbc9e9d916bfbaeee6cc2d047b"
+    },
+    {
+      "path": "prompts/P01_EXPERIENCE_ARCHITECTURE.md",
+      "sha256": "e20a1d5d27f1a618bc0e4c4c786c6256d801c2e7cf37a7e270c86d31362bcd9d"
+    },
+    {
+      "path": "prompts/P02_PICOGK_FEASIBILITY.md",
+      "sha256": "c4d9153e61f453b8ee0446c0739118c147aee2127d43bfddf7634296972895de"
+    },
+    {
+      "path": "prompts/P03_DESIGN_SYSTEM.md",
+      "sha256": "47a0ccb489a7af397dbabab0556ac70e4ea812885ab877ea22a63804bf167b85"
+    },
+    {
+      "path": "prompts/P04_APP_SHELL.md",
+      "sha256": "922f7cfdb626ee2fdfa7ffb1fdf4dbb2f2ffb3e3cc34f92a5a2bed40f1000249"
+    },
+    {
+      "path": "prompts/P05_ROCKET_ENGINE.md",
+      "sha256": "8e2e746cc2d798024ed9ce562591a8b04b9431293e6de81647018c87d0e1db96"
+    },
+    {
+      "path": "prompts/P06_NGG_CONTRACTS.md",
+      "sha256": "e5f21291d570622860c4876164750dcc1e7c64bc12c6bc20ea8009077679dcbb"
+    },
+    {
+      "path": "prompts/P07_NGG_KERNELS.md",
+      "sha256": "6d0159c4ec4d9cf4ea59abeb8b1df8797fdfbe879e198c8d5bf66cb40b0dcc8a"
+    },
+    {
+      "path": "prompts/P08_NGG_WORKBENCH.md",
+      "sha256": "d352c23dfd0ef23be67970d0738428202dba6e5b55ac8d78892a49a2abba98ea"
+    },
+    {
+      "path": "prompts/P09_SIMULATION.md",
+      "sha256": "18397bb539cf52cd5b23e2c029fc3a834301bbdda686c75062bd32fc2ea91bc0"
+    },
+    {
+      "path": "prompts/P10_COMPARISON_VV.md",
+      "sha256": "8c4954862df6f31580f702b14b9b5bf7e0e74bbd014ecd772cb934e798775801"
+    },
+    {
+      "path": "prompts/P11_KNOWLEDGE_REPORTS.md",
+      "sha256": "0b5e10b07d2ca82ddc7344040ce0c3ae31827bbf6a6622640bf560717000930a"
+    },
+    {
+      "path": "prompts/P12_RELEASE_HARDENING.md",
+      "sha256": "6707246903314a4e4901197d9695c62827475dca6fec197a787990a35d085a24"
+    },
+    {
+      "path": "references/SOURCE_REGISTER.md",
+      "sha256": "1d00a4128ce9e7ffe14bdfcb370c4b5a899308121b19f12588bb2c263883af8b"
+    },
+    {
+      "path": "specs/00_ENGINEERING_GOVERNANCE.md",
+      "sha256": "a844edf862e5a8230e4f338b26014bc66837eb748012aaef1870ad47c8df3416"
+    },
+    {
+      "path": "specs/01_PLATFORM_UX_ARCHITECTURE.md",
+      "sha256": "daf1490d743ad189011ea318eab4d0e263600907c6c4ac2f10bcf221110940ff"
+    },
+    {
+      "path": "specs/02_DESIGN_SYSTEM.md",
+      "sha256": "b1bd358de8480528052867d9a6ec8adb424b50e0ef4833d8145952b86f063026"
+    },
+    {
+      "path": "specs/03_NGG_SYSTEM_ARCHITECTURE.md",
+      "sha256": "628c48a5e63914cc36d99e6a45d62a777e88e03ac6ddc629b3afd31cdb77b7af"
+    },
+    {
+      "path": "specs/04_DATA_CONTRACTS_AND_STATES.md",
+      "sha256": "2647aae7e976bacb9e6aed177e418534303c058048dda127a06e01185876e514"
+    },
+    {
+      "path": "specs/05_GEOMETRY_QA_AND_VV.md",
+      "sha256": "28b1c13dfb0228a4a9ce50f62d08832cf4e1303dcd6ad73fca865cce461c4f0c"
+    },
+    {
+      "path": "specs/06_SOLVER_AND_SCIENTIFIC_VISUALIZATION.md",
+      "sha256": "6893d3da3e2d432dbb4e7aaf88660e5a2078fae2ad0d61b865e0bf81648328e8"
+    },
+    {
+      "path": "specs/07_MIGRATION_SECURITY_PERFORMANCE.md",
+      "sha256": "e19bf4db887ea65488ac7eff2f6fbfd0c27d533a01b28e8dbd5b8690ebd24f96"
+    },
+    {
+      "path": "templates/ADR_TEMPLATE.md",
+      "sha256": "c00057d2e063350d5272ba8e2c77061c5e7226fde196d99ffd178fd157f55b01"
+    },
+    {
+      "path": "templates/AS_BUILT_CAPABILITY_MATRIX.csv",
+      "sha256": "9a8bd313227130e527d2d1acf281221edd379b8ef37c2429aa061647c7fa13a3"
+    },
+    {
+      "path": "templates/PHASE_REPORT_TEMPLATE.md",
+      "sha256": "3b6c2527acabbe71993b77254691de287216ef1c7c92089d2e3d3b7c184968cf"
+    },
+    {
+      "path": "videos/00_EXPLAINER_VIDEO_PRODUCTION_PLAN.md",
+      "sha256": "7422d8f839de7d75f3f1a662c8cdc7735bb4d6f5bf8619f6ffef4837bb04a18d"
+    },
+    {
+      "path": "videos/V01_PLATFORM_STORYBOARD.md",
+      "sha256": "8403877b72e98bfb4058ea056bb1dd0cbecc098f6c97cafb0fad53a0d3add40f"
+    },
+    {
+      "path": "videos/V02_NGG_STORYBOARD.md",
+      "sha256": "063fdbe96b6bd400afd0e73ce93542d3812ae94cf87c9718f84305f53ff519ec"
+    },
+    {
+      "path": "videos/V03_SOLVER_VV_STORYBOARD.md",
+      "sha256": "710c4aa38387e161f9e63c107d935da01bec8c715c287a3db589380dc7e90e4c"
+    },
+    {
+      "path": "workbenches/00_PROJECT_SHELL.md",
+      "sha256": "4a8882d4c7fd8cdd47282bdb98e24f1c28f8934d5ea009bf3f10a35222119cfe"
+    },
+    {
+      "path": "workbenches/01_ROCKET_ENGINE.md",
+      "sha256": "e22cd61fa3801e72469467d3e74c78734ef799fce2177f51d9de250068d9b66d"
+    },
+    {
+      "path": "workbenches/02_NGG.md",
+      "sha256": "c746f314dd403f2529c7c563b04c8659e180fe00016ab5b76ead2803f540eb1e"
+    },
+    {
+      "path": "workbenches/03_SIMULATION.md",
+      "sha256": "93e47cb8f0ce63a216477e24c535b3945d14dd8ec196ed776081696d8e897306"
+    },
+    {
+      "path": "workbenches/04_COMPARISON_VV.md",
+      "sha256": "4a666bee235960b9ee73e9abf6abdade6d2a4635891cbe7cd2319bb5fbccc6f1"
+    },
+    {
+      "path": "workbenches/05_MAHARSHI.md",
+      "sha256": "82b5bdc14ed421723c2bf41242272b260cbc2484566f8a1c7a06f89f5773c2bb"
+    },
+    {
+      "path": "workbenches/06_REPORTS.md",
+      "sha256": "f76a3523658a3869b9777e37efdff3a7fb93742a69349d686fb17cab9983a686"
+    }
+  ]
+}

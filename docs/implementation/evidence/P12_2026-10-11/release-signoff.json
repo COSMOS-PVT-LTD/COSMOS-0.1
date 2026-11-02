@@ -1,0 +1,14 @@
+{
+  "phase": "P12_RELEASE_HARDENING",
+  "automated_local_preview_checks": "PASS",
+  "release_owner": "PENDING",
+  "platform_acceptance": "PENDING",
+  "security_acceptance": "PENDING",
+  "legal_distribution_acceptance": "PENDING",
+  "independent_engineering_acceptance": "PENDING",
+  "signed_human_approval": false,
+  "official_private_reporting_channel": "NOT_CONFIGURED",
+  "physical_experiment": "NOT_PERFORMED",
+  "production_handoff": "BLOCKED",
+  "note": "Automated/source freeze and earlier phase approvals are not release signatures"
+}

@@ -1,0 +1,63 @@
+{
+  "measurements": [
+    {
+      "kind": "modern-startup",
+      "ms": 1474.694583
+    },
+    {
+      "kind": "route-load",
+      "route": "/app/projects",
+      "ms": 313.07366699999966
+    },
+    {
+      "kind": "route-load",
+      "route": "/app/workbench/rocket-engine",
+      "ms": 157.05674999999974
+    },
+    {
+      "kind": "route-load",
+      "route": "/app/workbench/native-geometry",
+      "ms": 236.15754199999992
+    },
+    {
+      "kind": "route-load",
+      "route": "/app/workbench/simulation",
+      "ms": 206.12725000000046
+    },
+    {
+      "kind": "route-load",
+      "route": "/app/workbench/comparison",
+      "ms": 328.90508299999965
+    },
+    {
+      "kind": "route-load",
+      "route": "/app/workbench/knowledge",
+      "ms": 215.09816599999976
+    },
+    {
+      "kind": "route-load",
+      "route": "/app/workbench/reports",
+      "ms": 187.10045900000023
+    },
+    {
+      "kind": "geometry-build-and-inspect",
+      "ms": 14838.300333
+    },
+    {
+      "kind": "solver-run-and-two-plots",
+      "ms": 153.27600000000166
+    },
+    {
+      "kind": "report-export-twice",
+      "ms": 22.67620899999747,
+      "bytes": 57502
+    },
+    {
+      "kind": "legacy-restart",
+      "ms": 2954.443791999998
+    }
+  ],
+  "pageErrors": [],
+  "assetFailures": [],
+  "scope": "Small actual Mac local fixture; timings and sampled server RSS, not whole-system peak/production budgets"
+}

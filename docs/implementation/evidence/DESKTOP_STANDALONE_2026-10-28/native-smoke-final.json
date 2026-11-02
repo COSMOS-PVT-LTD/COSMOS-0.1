@@ -1,0 +1,265 @@
+{
+  "schema": "cosmos.desktop-native-smoke.v1",
+  "isolated_root": "/tmp/cosmos-desktop-native-say2wwy8",
+  "browser_fallback": false,
+  "routes": [
+    {
+      "label": "Projects",
+      "path": "/app/projects",
+      "title": "COSMOS \u2014 Projects & Mission",
+      "bytes": 28906,
+      "unauthenticated": false,
+      "error": false
+    },
+    {
+      "label": "Rocket Engine",
+      "path": "/app/workbench/rocket-engine",
+      "title": "COSMOS 0.1 \u2014 Rocket Engine Propulsion Suite",
+      "bytes": 22403,
+      "unauthenticated": false,
+      "error": false
+    },
+    {
+      "label": "Native Geometry / CAD",
+      "path": "/app/workbench/native-geometry",
+      "title": "COSMOS \u2014 Native Geometry Generator",
+      "bytes": 11070,
+      "unauthenticated": false,
+      "error": false
+    },
+    {
+      "label": "Simulation",
+      "path": "/app/workbench/simulation",
+      "title": "COSMOS \u2014 Simulation software benchmark",
+      "bytes": 30207,
+      "unauthenticated": false,
+      "error": false
+    },
+    {
+      "label": "Verification and Comparison",
+      "path": "/app/workbench/comparison",
+      "title": "COSMOS \u2014 Comparison and V&V",
+      "bytes": 31610,
+      "unauthenticated": false,
+      "error": false
+    },
+    {
+      "label": "Visualization and Graphs",
+      "path": "/app/workbench/visualization",
+      "title": "COSMOS \u2014 Visualization and Graphs",
+      "bytes": 13427,
+      "unauthenticated": false,
+      "error": false
+    },
+    {
+      "label": "Knowledge",
+      "path": "/app/workbench/knowledge",
+      "title": "COSMOS \u2014 Knowledge and Reports",
+      "bytes": 33483,
+      "unauthenticated": false,
+      "error": false
+    },
+    {
+      "label": "Reports, History and Governance",
+      "path": "/app/workbench/reports",
+      "title": "COSMOS \u2014 Knowledge and Reports",
+      "bytes": 33496,
+      "unauthenticated": false,
+      "error": false
+    }
+  ],
+  "native_backend": "webview.platforms.cocoa",
+  "login_status": 200,
+  "catalog": {
+    "pages": [
+      {
+        "page": 1,
+        "items": [
+          {
+            "workbench_id": "rocket-engine",
+            "title": "Rocket Engine",
+            "route": "/app/workbench/rocket-engine",
+            "status": "active",
+            "description": "Full propulsion design suite (RPA/RPL-inspired): chamber, nozzle, cooling, injectors, structures.",
+            "design_type": "Propulsion",
+            "revision": "REV 0.5",
+            "validation_state": "ACTIVE",
+            "domain": "propulsion"
+          },
+          {
+            "workbench_id": "turbopumps",
+            "title": "Turbopumps",
+            "route": "/app/workbench/turbopumps",
+            "status": "planned",
+            "description": "Pump, turbine, and feed-system rotordynamics.",
+            "design_type": "Turbomachinery",
+            "revision": "REV 0.1",
+            "validation_state": "PLANNED",
+            "domain": "propulsion"
+          },
+          {
+            "workbench_id": "pid",
+            "title": "Piping Instrumentation & Documentation",
+            "route": "/app/workbench/pid",
+            "status": "planned",
+            "description": "P&ID authoring, instrumentation, and documentation control.",
+            "design_type": "Engineering Module",
+            "revision": "REV 0.1",
+            "validation_state": "PLANNED",
+            "domain": "general"
+          },
+          {
+            "workbench_id": "structures",
+            "title": "Structures",
+            "route": "/app/workbench/structures",
+            "status": "planned",
+            "description": "Structural analysis, loads, and hardware substantiation.",
+            "design_type": "Engineering Module",
+            "revision": "REV 0.1",
+            "validation_state": "PLANNED",
+            "domain": "general"
+          },
+          {
+            "workbench_id": "native-geometry",
+            "title": "Native Geometry \u00b7 software fixtures",
+            "status": "active",
+            "route": "/app/workbench/native-geometry",
+            "page": 1,
+            "description": "Optional local qualified fixtures; no engineering publication",
+            "modules": [
+              "Fixture tree",
+              "Viewport",
+              "Independent QA"
+            ],
+            "validation_state": "SOFTWARE_FIXTURES_ONLY"
+          },
+          {
+            "workbench_id": "comparison",
+            "title": "Comparison and V&V",
+            "route": "/app/workbench/comparison",
+            "status": "active",
+            "page": 1,
+            "description": "Scoped comparisons and evidence; not independent engineering acceptance",
+            "validation_state": "EVIDENCE_PREVIEW_ONLY"
+          },
+          {
+            "workbench_id": "reports",
+            "title": "Reports, History and Governance",
+            "route": "/app/workbench/reports",
+            "status": "active",
+            "page": 1,
+            "description": "Reproducible research review packages; independent acceptance pending",
+            "validation_state": "EVIDENCE_PREVIEW_ONLY"
+          }
+        ]
+      },
+      {
+        "page": 2,
+        "items": [
+          {
+            "workbench_id": "rocket-staging",
+            "title": "Rocket Staging",
+            "route": "/app/workbench/rocket-staging",
+            "status": "planned",
+            "description": "Stage sizing, mass properties, and mission envelope planning.",
+            "design_type": "Engineering Module",
+            "revision": "REV 0.1",
+            "validation_state": "PLANNED",
+            "domain": "general"
+          },
+          {
+            "workbench_id": "manufacturing",
+            "title": "Manufacturing",
+            "route": "/app/workbench/manufacturing",
+            "status": "planned",
+            "description": "Process planning, tooling, and build readiness.",
+            "design_type": "Engineering Module",
+            "revision": "REV 0.1",
+            "validation_state": "PLANNED",
+            "domain": "general"
+          },
+          {
+            "workbench_id": "simulation",
+            "title": "Simulation \u00b7 software benchmark",
+            "route": "/app/workbench/simulation",
+            "status": "active",
+            "description": "Steady spherical conduction benchmark; no engineering CFD/FEA publication",
+            "design_type": "Engineering Module",
+            "revision": "REV 0.1",
+            "validation_state": "SOFTWARE_BENCHMARK_ONLY",
+            "domain": "general",
+            "modules": [
+              "Study",
+              "Radial mesh",
+              "Solver",
+              "Monitoring",
+              "Field profile"
+            ]
+          },
+          {
+            "workbench_id": "visualization",
+            "title": "Visualization and Graphs",
+            "route": "/app/workbench/visualization",
+            "status": "active",
+            "description": "Source-bound nozzle, cooling and radial benchmark plots; offline exports and Knowledge graph navigation.",
+            "design_type": "Scientific Data Explorer",
+            "revision": "REV 0.1",
+            "validation_state": "SOURCE_VIEW_ONLY",
+            "domain": "visualization"
+          }
+        ]
+      },
+      {
+        "page": 3,
+        "items": [
+          {
+            "workbench_id": "documentation",
+            "title": "Documentation",
+            "route": "/app/workbench/documentation",
+            "status": "planned",
+            "description": "Controlled engineering documentation and release packages.",
+            "design_type": "Engineering Module",
+            "revision": "REV 0.1",
+            "validation_state": "PLANNED",
+            "domain": "general"
+          },
+          {
+            "workbench_id": "code-comparison",
+            "title": "Code Comparison with OTCS",
+            "route": "/app/workbench/code-comparison",
+            "status": "planned",
+            "description": "Traceability against OTCS and external reference implementations.",
+            "design_type": "Engineering Module",
+            "revision": "REV 0.1",
+            "validation_state": "PLANNED",
+            "domain": "general"
+          },
+          {
+            "workbench_id": "plm",
+            "title": "PLM",
+            "route": "/app/workbench/plm",
+            "status": "planned",
+            "description": "Product lifecycle, revisions, and configuration management.",
+            "design_type": "Engineering Module",
+            "revision": "REV 0.1",
+            "validation_state": "PLANNED",
+            "domain": "general"
+          },
+          {
+            "workbench_id": "knowledge",
+            "title": "Maharshi Bharadwaj",
+            "route": "/app/workbench/knowledge",
+            "status": "active",
+            "description": "COSMOS knowledge infrastructure \u2014 governed intake, review, search, and engineering chat.",
+            "design_type": "Knowledge Infrastructure",
+            "revision": "REV 0.1",
+            "validation_state": "ACTIVE",
+            "domain": "knowledge"
+          }
+        ]
+      }
+    ]
+  },
+  "webgl2": true,
+  "pass": true
+}

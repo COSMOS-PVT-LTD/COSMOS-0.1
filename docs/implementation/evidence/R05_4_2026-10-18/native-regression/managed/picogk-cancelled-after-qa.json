@@ -1,0 +1,70 @@
+{
+  "backend": "picogk",
+  "boundary": "cancelled-after-qa",
+  "state": "CANCELLED",
+  "selected_attempt": false,
+  "input_current": true,
+  "job_id": "0a107410-28b2-43a9-ac0d-876efff6f45c",
+  "record_sha256": "f5e42fbf07b4993eccf9be808a167b4f93f5605a7a2ee64a284738d61c40c4d9",
+  "stages": [
+    {
+      "sequence": 0,
+      "native_job_id": "job-e7dad2f0a57c4f84b77002b3eebccf8e",
+      "state": "draft",
+      "stage": "draft",
+      "content_hash": "82aedd1b93ef49835eb4269b5ae74a3f2d84435639c145a0582ba09bff882be6",
+      "byte_length": 449,
+      "created_at": "2026-10-18T04:53:21.691784+00:00"
+    },
+    {
+      "sequence": 1,
+      "native_job_id": "job-e7dad2f0a57c4f84b77002b3eebccf8e",
+      "state": "validating",
+      "stage": "validating",
+      "content_hash": "631c4543b53618f1bc4f955e09d0717d4bd667ee855208f35cf447519562b2a2",
+      "byte_length": 459,
+      "created_at": "2026-10-18T04:53:21.698742+00:00"
+    },
+    {
+      "sequence": 2,
+      "native_job_id": "job-e7dad2f0a57c4f84b77002b3eebccf8e",
+      "state": "queued",
+      "stage": "queued",
+      "content_hash": "2d74f7bc2f29e9a83074956d4d665e01b068293ddc50787dbea30118a82168d7",
+      "byte_length": 451,
+      "created_at": "2026-10-18T04:53:21.705978+00:00"
+    },
+    {
+      "sequence": 3,
+      "native_job_id": "job-e7dad2f0a57c4f84b77002b3eebccf8e",
+      "state": "running",
+      "stage": "kernel",
+      "content_hash": "7268e38e3fee2b5ae900c925a02a5c6128df3f34468de1677658841c7e520826",
+      "byte_length": 452,
+      "created_at": "2026-10-18T04:53:21.713568+00:00"
+    },
+    {
+      "sequence": 4,
+      "native_job_id": "job-e7dad2f0a57c4f84b77002b3eebccf8e",
+      "state": "qa",
+      "stage": "independent_qa",
+      "content_hash": "a0d1af4a797144f9895462495abba186bf4ab73eb6ce09aaf078e0d573ccfb70",
+      "byte_length": 455,
+      "created_at": "2026-10-18T04:53:22.365663+00:00"
+    },
+    {
+      "sequence": 5,
+      "native_job_id": "job-e7dad2f0a57c4f84b77002b3eebccf8e",
+      "state": "accepted",
+      "stage": "software_fixture_acceptance",
+      "content_hash": "2e20019175aab5ae056818dd107720ff98d8269afd9b40a41c292f752765dd77",
+      "byte_length": 517,
+      "created_at": "2026-10-18T04:53:23.431595+00:00"
+    }
+  ],
+  "blobs": [],
+  "exact_restart_bytes_verified": true,
+  "software_only": true,
+  "engineering_publication": false,
+  "physical_validation": false
+}

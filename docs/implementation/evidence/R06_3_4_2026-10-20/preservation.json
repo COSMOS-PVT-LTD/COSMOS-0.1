@@ -1,0 +1,19 @@
+{
+  "preceding_source_manifest_sha256": "54545cdc7a6f6c712de202ad687309f067cdb7be009e8d097782831a86e63589",
+  "preceding_sources": 921,
+  "unchanged": 913,
+  "declared_edits": [
+    "api/context_projects.py",
+    "api/pressure_fed_projects.py",
+    "api/project_authority.py",
+    "gui/server.py",
+    "gui/static/projects.js",
+    "gui/static/visualization/chart.js",
+    "gui/static/visualization/exports.js",
+    "systems/projects/pressure_fed.py"
+  ],
+  "missing": [],
+  "unexpected": [],
+  "old_scientific_core_physics_numerics_changed": [],
+  "pass": true
+}

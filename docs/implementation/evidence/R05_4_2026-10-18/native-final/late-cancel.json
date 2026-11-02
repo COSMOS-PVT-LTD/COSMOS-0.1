@@ -1,0 +1,248 @@
+{
+  "boundary": "late-cancel",
+  "state": "CANCELLED",
+  "selected": false,
+  "input_current": true,
+  "study_source_sha256": "1fa8daba26a2b2fe82f84b589b8477b7facaa14b8e33047a59bfd0bd9fb08784",
+  "mesh": {
+    "cell_volumes_m3": [
+      1.0226538585904276e-09,
+      7.158577010132992e-09,
+      1.9430423313218115e-08,
+      3.7838192767845835e-08,
+      6.23818853740161e-08,
+      9.306150113172882e-08,
+      1.298770400409844e-07,
+      1.7282850210178222e-07,
+      2.219158873141226e-07,
+      2.7713919567800614e-07,
+      3.384984271934312e-07,
+      4.0599358186039946e-07,
+      4.796246596789109e-07,
+      5.593916606489644e-07,
+      6.452945847705584e-07,
+      7.373334320436993e-07
+    ],
+    "cells": 16,
+    "center_condition": "regular-zero-flux",
+    "faces_m": [
+      0.0,
+      0.000625,
+      0.00125,
+      0.001875,
+      0.0025,
+      0.003125,
+      0.00375,
+      0.004375,
+      0.005,
+      0.005625,
+      0.00625,
+      0.006875,
+      0.0075,
+      0.008125,
+      0.00875,
+      0.009375,
+      0.01
+    ],
+    "frame_id": "world",
+    "geometry_revision_id": "geometry-job-4aeb7c7c24c74d58baab5aca22c552e9",
+    "geometry_sha256": "650d5587a58e33c59db841921b42c7629cca2cf3ff98216ee80e6548e421e392",
+    "geometry_snapshot_id": "4de5d4b9e3c91ca0b10f7e74c1f21ae5dacd9496123a216a817c9db13d80dd2a",
+    "handoff_sha256": "633d2ad6b5c4027ff78e96769de9d83cb25a84afc46d7467f3ab0727d5d962d1",
+    "integrity_sha256": "ab3b5182e66adbd14b82961d13aebe0b842bd55a8bea7e5b7199908129add20e",
+    "kind": "1d-spherical-finite-volume",
+    "material_region": "solid-sphere",
+    "mesh_sha256": "05ab2eec2f09f86729db6998e7db1096ac2f26bb173b8feef86d18bd0a2aaf95",
+    "named_selection": {
+      "content_sha256": "87ff6be99caa3383d73f27fa5b52167acd57a832f5a64ed28410f6d0a45c5f0c",
+      "contract_type": "NamedSelection",
+      "entity_refs": [
+        "radial-outer-shell"
+      ],
+      "feature_ref": "body",
+      "geometry_revision_id": "geometry-job-4aeb7c7c24c74d58baab5aca22c552e9",
+      "mapping_status": "exact",
+      "remap_confidence": 1.0,
+      "schema_version": "1.0.0",
+      "semantic_id": "outer-surface"
+    },
+    "outer_boundary_face": 16,
+    "production_handoff": false,
+    "source_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+    "units": "m"
+  },
+  "study_json": "{\"content_sha256\":\"b4e799ae98b35d45cdda7393f8df58d58f011fb2f9457850f1a4c9790935db5f\",\"contract_type\":\"StudySnapshot\",\"handoff\":{\"artifact\":{\"approximation_profile\":\"none\",\"artifact_id\":\"artifact-0\",\"backend_id\":\"occt\",\"backend_version\":\"occt-7.8.1.ocp-7.8.1.1.g5v2\",\"content_sha256\":\"d6a5b775e0095e3939c6c9754b02442f82c04bd567b2d7d385c2b8f22779c24a\",\"contract_type\":\"GeometryArtifact\",\"export_tolerance_m\":1e-06,\"feature_graph_sha256\":\"27d3d23d327632e5465c4ef139d681ad3aa689956764f0676f14e1d1e2d4d2cf\",\"frame_id\":\"world\",\"generated_at\":\"2026-10-18T04:42:42.951609+00:00\",\"geometry_revision_id\":\"geometry-job-4aeb7c7c24c74d58baab5aca22c552e9\",\"job_id\":\"job-4aeb7c7c24c74d58baab5aca22c552e9\",\"output_format\":\"step\",\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\",\"sha256\":\"650d5587a58e33c59db841921b42c7629cca2cf3ff98216ee80e6548e421e392\",\"size_bytes\":2128,\"snapshot_id\":\"4de5d4b9e3c91ca0b10f7e74c1f21ae5dacd9496123a216a817c9db13d80dd2a\",\"source_artifact_sha256\":\"ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3\",\"source_tolerance_m\":1e-08,\"storage_uri\":\"job-4aeb7c7c24c74d58baab5aca22c552e9/export.step\",\"topology_report_id\":\"report-job-4aeb7c7c24c74d58baab5aca22c552e9-0\",\"units\":\"m\",\"voxel_resolution_m\":null},\"content_sha256\":\"633d2ad6b5c4027ff78e96769de9d83cb25a84afc46d7467f3ab0727d5d962d1\",\"contract_type\":\"FixtureHandoff\",\"frame_id\":\"world\",\"geometry_snapshot_id\":\"4de5d4b9e3c91ca0b10f7e74c1f21ae5dacd9496123a216a817c9db13d80dd2a\",\"integrity_sha256\":\"ab3b5182e66adbd14b82961d13aebe0b842bd55a8bea7e5b7199908129add20e\",\"radius_m\":0.01,\"schema_version\":\"1.0.0\",\"scope\":\"software-sphere-radial-benchmark-only\",\"selection\":{\"content_sha256\":\"87ff6be99caa3383d73f27fa5b52167acd57a832f5a64ed28410f6d0a45c5f0c\",\"contract_type\":\"NamedSelection\",\"entity_refs\":[\"radial-outer-shell\"],\"feature_ref\":\"body\",\"geometry_revision_id\":\"geometry-job-4aeb7c7c24c74d58baab5aca22c552e9\",\"mapping_status\":\"exact\",\"remap_confidence\":1.0,\"schema_version\":\"1.0.0\",\"semantic_id\":\"outer-surface\"}},\"model\":\"steady-spherical-conduction-v1\",\"model_sha256\":\"28d9d63738f8c64a778bbd522cf64508351ea28ada67a1970f89ce16b00aa102\",\"schema_version\":\"1.0.0\",\"settings\":{\"cells\":16,\"conductivity_w_m_k\":10.0,\"content_sha256\":\"229796745d573b2e2b9131adff4eba1b5b13688002f917708a3c4eea07aa787b\",\"contract_type\":\"StudySettings\",\"generation_w_m3\":1000000.0,\"max_iterations\":10000,\"relative_residual\":1e-08,\"schema_version\":\"1.0.0\",\"surface_k\":300.0},\"solver_sha256\":\"17723ed167b1eff992ed4ebe4283aba3406409dc8e5759a614cdfbdc8639082e\"}",
+  "monitors": [
+    {
+      "sequence": 0,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "e40397d8f23aa4af2644bb6055fe1e919ac579d60eef1a11fb79bcbd9c6709db",
+      "byte_length": 144,
+      "created_at": "2026-10-18T04:42:43.112052+00:00"
+    },
+    {
+      "sequence": 1,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "b664752ed92fb60fc46787caa4d584a98143de5eb956cb9ac8b5c588d2a29bdc",
+      "byte_length": 162,
+      "created_at": "2026-10-18T04:42:43.119268+00:00"
+    },
+    {
+      "sequence": 2,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "42b9c715864c565edd72d3440db5ddf5dc8b34256e8c7d5de2271d616793a67b",
+      "byte_length": 163,
+      "created_at": "2026-10-18T04:42:43.128749+00:00"
+    },
+    {
+      "sequence": 3,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "970a5c311e0ea385285d84b6cf0a1d9256ff6237b92a53264c499ff13f1c7766",
+      "byte_length": 163,
+      "created_at": "2026-10-18T04:42:43.138442+00:00"
+    },
+    {
+      "sequence": 4,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "a6be2c82b237564f6f48b52fe04cdc4a61f58d49e5324153b5add69e06fa43d7",
+      "byte_length": 164,
+      "created_at": "2026-10-18T04:42:43.145431+00:00"
+    },
+    {
+      "sequence": 5,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "050458eaa9f4bc29e20f080e3d0c8771ae9fe7c46cec9a636460476beff3f3cf",
+      "byte_length": 165,
+      "created_at": "2026-10-18T04:42:43.151604+00:00"
+    },
+    {
+      "sequence": 6,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "c92dd83842036a63dfbf933b759659454da9f685ce48f216ef885077c4bebece",
+      "byte_length": 166,
+      "created_at": "2026-10-18T04:42:43.161629+00:00"
+    },
+    {
+      "sequence": 7,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "5c33f3b55a7132d7ab531a25c7212780b10bfe4229be2402653f4a983360e6ff",
+      "byte_length": 167,
+      "created_at": "2026-10-18T04:42:43.173555+00:00"
+    },
+    {
+      "sequence": 8,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "2478006c936b76725ab4124771317d837beae1baaf2a75ae3d6c2259cc118d51",
+      "byte_length": 167,
+      "created_at": "2026-10-18T04:42:43.181939+00:00"
+    },
+    {
+      "sequence": 9,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "797231d655622893956d63196edbf16c8b1a7073ce0df02afbc0c06109f33620",
+      "byte_length": 168,
+      "created_at": "2026-10-18T04:42:43.189066+00:00"
+    },
+    {
+      "sequence": 10,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "47e0171b93d0187a1bef5e9e2f59680a9612555c6589bb995003552e89f64a4a",
+      "byte_length": 168,
+      "created_at": "2026-10-18T04:42:43.197819+00:00"
+    },
+    {
+      "sequence": 11,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "bfb1567d89d6cce6c3177836f5a62bd81b1434bfa05b9805f04f7459198010ae",
+      "byte_length": 170,
+      "created_at": "2026-10-18T04:42:43.208153+00:00"
+    },
+    {
+      "sequence": 12,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "869fee832d7cc63a0f5e2f2899c42e0281e4e23935a8f40ec14704b3937e0440",
+      "byte_length": 169,
+      "created_at": "2026-10-18T04:42:43.217380+00:00"
+    },
+    {
+      "sequence": 13,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "073744b4eb42a2294bf691d3361500daf5165232a134a17bc7416068c75539b2",
+      "byte_length": 170,
+      "created_at": "2026-10-18T04:42:43.224529+00:00"
+    },
+    {
+      "sequence": 14,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "39e07836c3c817476b7327dfd6fe91c212e8960d59f6ec0320951390a1d7932c",
+      "byte_length": 169,
+      "created_at": "2026-10-18T04:42:43.237913+00:00"
+    },
+    {
+      "sequence": 15,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "b37c1bc833254c4106ed1c024e2405963f7a141b7c67e9dbda3c5f5c1411db8c",
+      "byte_length": 170,
+      "created_at": "2026-10-18T04:42:43.250240+00:00"
+    },
+    {
+      "sequence": 16,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "dfa45e4883c14565ebb03af999728c5e3e8737caac28b0bec77d0c0d17db21b1",
+      "byte_length": 169,
+      "created_at": "2026-10-18T04:42:43.257250+00:00"
+    },
+    {
+      "sequence": 17,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "b7442055ad13c30d3cbea5c21dad148f51d314a78ef8f5023a38b1d18c87625b",
+      "byte_length": 168,
+      "created_at": "2026-10-18T04:42:43.266708+00:00"
+    },
+    {
+      "sequence": 18,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "03d73ee76a82152a6d640f6d158d56016e5e1e19ee5211507585aaab221c8331",
+      "byte_length": 170,
+      "created_at": "2026-10-18T04:42:43.278116+00:00"
+    },
+    {
+      "sequence": 19,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "90caf0d5b424a3a7aa38099f3dbfc3a460e8e373ecd13a3a24f3838dae53af67",
+      "byte_length": 168,
+      "created_at": "2026-10-18T04:42:43.287912+00:00"
+    },
+    {
+      "sequence": 20,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "475ffcf0091d85235ad3d85e81cc160e2864939f4a2c5cf9ead81bda89a1ccbb",
+      "byte_length": 170,
+      "created_at": "2026-10-18T04:42:43.295925+00:00"
+    },
+    {
+      "sequence": 21,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "3db069fc2db8b941f1065c7f60c5f4e4b925a438816548df2024253241b6909e",
+      "byte_length": 170,
+      "created_at": "2026-10-18T04:42:43.308374+00:00"
+    },
+    {
+      "sequence": 22,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "9929d3265efffb4a73d612c21f9ee900db88f8fe66ba58b6880b7c57ca44ec65",
+      "byte_length": 169,
+      "created_at": "2026-10-18T04:42:43.321059+00:00"
+    },
+    {
+      "sequence": 23,
+      "run_id": "sim-ef1363def9f24c48b6fa0d478da796e6",
+      "content_hash": "e206999ff5cad64326bbadfdd0058434ea81f7be8d580bb5f8fd7b96a23c3bcf",
+      "byte_length": 169,
+      "created_at": "2026-10-18T04:42:43.329606+00:00"
+    }
+  ],
+  "dataset_sha256": null,
+  "exact_restart_bytes_verified": true,
+  "physical_validation": false
+}

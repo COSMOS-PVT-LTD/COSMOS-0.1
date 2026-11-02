@@ -1,0 +1,19 @@
+{
+  "decision": "SOFTWARE_EVIDENCE_RECORDED_ONLY",
+  "independent_engineering_acceptance": "PENDING",
+  "reviewer_identity": "No qualified independent human reviewer appointed in this execution",
+  "preview_review_intents": [
+    {
+      "actor": "cosmos-admin",
+      "experimental_validation": false,
+      "independent_acceptance": false,
+      "kind": "review-intent-not-engineering-acceptance",
+      "note": "Evidence inspected for the stated software scope only; independent engineering acceptance remains pending.",
+      "production_handoff": false,
+      "report_sha256": "2c45fc2137a7ddf91f989d89e2ef6db63d6f852e125bad89d9cbcd06721f7925"
+    }
+  ],
+  "experimental_validation": "NOT_PERFORMED",
+  "production_handoff": "BLOCKED",
+  "signed_human_approval": false
+}

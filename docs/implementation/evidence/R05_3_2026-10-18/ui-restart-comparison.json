@@ -1,0 +1,5 @@
+{
+  "exactEventPreviewSurvivedRestart": true,
+  "attemptStatusLinesSurvivedRestart": true,
+  "readOnlyControlsExpectedToDiffer": true
+}

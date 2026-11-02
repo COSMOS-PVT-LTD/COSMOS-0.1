@@ -1,0 +1,9 @@
+{
+  "code": "CANCELLED",
+  "pid": 25405,
+  "exit_code": -9,
+  "observed_rss_bytes": 180207616,
+  "stdout": "{\"protocol\":\"cosmos.ngg.worker.v1\",\"job_id\":\"native-cancel\",\"correlation_id\":\"correlation-union\",\"event_type\":\"started\",\"backend_version\":\"picogk-2.2.0.p07v1\"}\n",
+  "elapsed_s": 0.31552591698709875,
+  "scope": "after started event, native session; not certified mid-operation callback"
+}

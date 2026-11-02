@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="18.367" timestamp="2026-10-19T09:00:51.359673+05:30" hostname="vaibhavs-MacBook-Air.local"><testcase classname="tests.integration_tests.geometry.test_managed_evidence_journey" name="test_actual_durable_comparison_report_journey_restart[False]" time="10.131" /><testcase classname="tests.integration_tests.geometry.test_managed_evidence_journey" name="test_actual_durable_comparison_report_journey_restart[True]" time="7.792"><failure message="AssertionError: {'error': {'action': 'Correct the input or select a valid model range.', 'code': 'InternalError', 'message': &quot;'_GeneratorContextManager' object has no attribute 'service'&quot;}, 'ok': False}&#10;assert 500 == 200">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/R05_4_2026-10-18/n...PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-r05_3-native.IcKKdc/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-513/test_actual_durable_comparison1')
+with_claim = True
+
+    @pytest.mark.parametrize("with_claim", [False, True])
+    def test_actual_durable_comparison_report_journey_restart(native_config, tmp_path, with_claim):
+        root, native = tmp_path / "application", tmp_path / "native"
+        native.mkdir()
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(OCCTAdapter(command(native_config, "occt"), supervisor, enabled=True), native,
+                step_reader=command(native_config, "step_reader"))
+            try:
+                with running(root) as (app, base, client):
+                    project = new_project(base, client, "Actual R05 evidence journey — software only")
+                    prefix = "/api/projects/" + project["project_id"]
+                    geometry = create(base, client, project)
+                    app.project_api.geometry.coordinator.services = lambda: {"occt": service}
+                    route = url(project, geometry)
+                    build = request(client, base, route + "/jobs", {"expected": geometry["authority"]["head"], "operation_id": str(uuid4())})
+                    assert terminal(client, base, route + "/jobs/" + build["job_id"])["state"] == "COMPLETED"
+                    study = request(client, base, prefix + "/studies", {"geometry_job_id": build["job_id"], "settings": SETTINGS,
+                        "expected": asdict(Head.absent()), "operation_id": str(uuid4())})
+                    study_route = prefix + "/studies/" + study["authority"]["object_id"]
+                    run = request(client, base, study_route + "/jobs", {"expected": study["authority"]["head"], "operation_id": str(uuid4())})
+                    assert terminal(client, base, study_route + "/jobs/" + run["job_id"])["state"] == "COMPLETED"
+                    head = asdict(Head.absent())
+                    def ledger(action, values):
+                        nonlocal head
+                        result = request(client, base, prefix + "/evidence/" + action, {**values, "expected": head, "operation_id": str(uuid4())})
+                        head = result["authority"]["head"]
+                        return result
+                    policy = ledger("declare", {"criteria": criteria()})["record"]["last_result"]["criteria_id"]
+                    candidate = ledger("use-run", {"run_job_id": run["job_id"]})["record"]["last_result"]["dataset_id"]
+                    reference = ledger("reference", {"candidate_id": candidate})["record"]["last_result"]["dataset_id"]
+                    assessment = ledger("assess", {"candidate_id": candidate, "reference_id": reference, "criteria_id": policy})
+                    # Assessment has its own identity; it must not replace the ledger CAS head.
+                    head = request(client, base, prefix + "/evidence")["ledger"]["authority"]["head"]
+                    assessment_id = assessment["authority"]["object_id"]
+                    claim_raw = add_knowledge(app.knowledge_workspace()) if with_claim else None
+&gt;                   report = request(client, base, prefix + "/reports", {"title": "Actual retained software evidence &lt;script&gt;not executed&lt;/script&gt;",
+                        "assessment_id": assessment_id, "claim_ids": [CLAIM_ID] if with_claim else [], "expected": asdict(Head.absent()), "operation_id": str(uuid4())})
+
+tests/integration_tests/geometry/test_managed_evidence_journey.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;urllib.request.OpenerDirector object at 0x10dea61d0&gt;
+base = 'http://127.0.0.1:57995'
+path = '/api/projects/e593c2d9-a3b9-4ab4-bf80-c4b434c7af2b/reports'
+data = {'assessment_id': '94e5d6356457df32eb4c78da1c7c923905b211a85540755098098303cb9391b8', 'claim_ids': ['EQ-p11-synthetic'...8996fb92427ae41e4649b934ca495991b7852b855', 'version': 0}, 'operation_id': '066e376b-898a-4ff1-b7ba-c1381aca3d56', ...}
+expected = 200
+
+    def request(client, base, path, data=None, expected=200):
+        payload = json.dumps(data).encode() if data is not None else None
+        try:
+            with client.open(
+                urllib.request.Request(
+                    base + path, data=payload, headers={"Content-Type": "application/json"}
+                ),
+                timeout=15,
+            ) as response:
+                code, body = response.status, json.load(response)
+        except urllib.error.HTTPError as error:
+            code, body = error.code, json.load(error)
+&gt;       assert code == expected, body
+E       AssertionError: {'error': {'action': 'Correct the input or select a valid model range.', 'code': 'InternalError', 'message': "'_GeneratorContextManager' object has no attribute 'service'"}, 'ok': False}
+E       assert 500 == 200
+
+tests/integration_tests/gui/test_project_authority_http.py:37: AssertionError</failure></testcase></testsuite></testsuites>

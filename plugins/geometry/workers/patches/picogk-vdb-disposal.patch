@@ -1,0 +1,33 @@
+diff --git a/IO/OpenVdbFile.cs b/IO/OpenVdbFile.cs
+index 1382a8f..19f9806 100644
+--- a/IO/OpenVdbFile.cs
++++ b/IO/OpenVdbFile.cs
+@@ -175,9 +175,18 @@ namespace PicoGK
+             for (int n=0; n<nFieldCount(); n++)
+             {
+                 IFieldWithMetadata xData = xField(n);
+-                xData.oMetaData()._SetValue("PicoGK.Library",   Library.strName());
+-                xData.oMetaData()._SetValue("PicoGK.Version",   Library.strVersion());
+-                xData.oMetaData()._SetValue("PicoGK.VoxelSize", lib.fVoxelSize / 1000f);
++                try
++                {
++                    xData.oMetaData()._SetValue("PicoGK.Library", Library.strName());
++                    xData.oMetaData()._SetValue("PicoGK.Version", Library.strVersion());
++                    xData.oMetaData()._SetValue("PicoGK.VoxelSize", lib.fVoxelSize / 1000f);
++                }
++                finally
++                {
++                    // COSMOS P07: xField creates a temporary owning wrapper.
++                    // Release it deterministically; do not wait for Library cleanup.
++                    (xData as IDisposable)?.Dispose();
++                }
+             }
+ 
+             if (!_bSaveToFile(  lib.hThis,
+@@ -507,4 +516,4 @@ namespace PicoGK
+             return 0f;
+         }
+     }
+-}
+\ No newline at end of file
++}

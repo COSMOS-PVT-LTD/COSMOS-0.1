@@ -1,0 +1,15 @@
+{
+  "project": "b5b9e070-8c1c-419e-a7bb-c160c1d7eedd",
+  "geometry": "ca693d0a-3602-520c-b46b-95a816e67499",
+  "geometryJob": "1a0c860b-c1b9-4417-ad71-49ac854d9432",
+  "study": "ab8e346e-2716-5f2e-b398-2a8af6a75289",
+  "studyCommit": "36eac3eb-ad72-499e-9fc5-0f7588952118",
+  "savedVersion": 2,
+  "inputRevision": 1,
+  "originalRun": "6bbca043-9f49-4800-a4d9-2de5770528bc",
+  "revisedRun": "39976f54-2148-43d1-91a8-b313c5db1093",
+  "revisedRunSourceSha256": "b076866f48a5141698a7d3e14ced0b5592777162360739c178f4f5ad7df4e726",
+  "unsavedRunRefused": true,
+  "browserConsoleErrors": 0,
+  "physicalValidation": false
+}

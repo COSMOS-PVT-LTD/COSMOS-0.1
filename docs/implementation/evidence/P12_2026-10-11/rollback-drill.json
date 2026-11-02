@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "same_private_root": true,
+  "project_id": "eb98a370-bcdf-46d2-b81d-d8d37ab1ad89",
+  "persistent_file_sha256": {
+    "propulsion_designs/eb98a370-bcdf-46d2-b81d-d8d37ab1ad89.json": "994433a201475a0a57cdb3e457c405c78c2da62036fe72405a0ae9a5426f877b"
+  },
+  "credentials_unchanged": true,
+  "legacy_route_works": true,
+  "modern_apis_disabled": true,
+  "ephemeral_run_report_history": "Intentional restart loss; exact package retained before restart",
+  "destructive_migration": false
+}

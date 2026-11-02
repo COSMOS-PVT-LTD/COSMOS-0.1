@@ -1,0 +1,280 @@
+{
+  "run_id": "sim-3d8c620d6496498fa21c90042c9510c6",
+  "study_id": "f70ed30f020dbb5703169e7dbda7024e04fd1ee6adb92263364b0ae83f6811a0",
+  "state": "completed",
+  "freshness": "current",
+  "events": [
+    {
+      "seq": 0,
+      "iteration": 0,
+      "normalized_residual": 1,
+      "power_imbalance_w": -4.188790204786391,
+      "correlation_id": "sim-3d8c620d6496498fa21c90042c9510c6"
+    },
+    {
+      "seq": 1,
+      "iteration": 1,
+      "normalized_residual": 0.7763424277262465,
+      "power_imbalance_w": -3.2304490368853105,
+      "correlation_id": "sim-3d8c620d6496498fa21c90042c9510c6"
+    }
+  ],
+  "geometry_integrity_current": true,
+  "diagnostic": null,
+  "dataset_sha256": "1db71a6b5b11a17098c4270584d4cf90b195846fd390f2a55d471d6089090c73",
+  "production_handoff": false,
+  "result": {
+    "cfl_time_step": "not-applicable-steady-elliptic",
+    "conservation_checks": {
+      "generated_power_w": 4.188790204786391,
+      "limit": 8e-8,
+      "outward_power_w": 0.958341167901081,
+      "passed": false,
+      "relative_imbalance": 0.7712128989401245,
+      "signed_imbalance_w": -3.2304490368853105
+    },
+    "diagnostics": [
+      {
+        "action": "Inspect residual and conservation; explicitly revise settings or mesh and submit a new run",
+        "cause": "Iteration limit reached before equation residual tolerance",
+        "code": "NUMERICAL_ITERATION_LIMIT"
+      }
+    ],
+    "elapsed_s": 0.0025078339967876673,
+    "engineering_review": "pending",
+    "execution_status": "completed",
+    "experimental_validation": "not-performed",
+    "field": {
+      "clipping": "none",
+      "color_map": "Blue-Gold",
+      "interpretation": "1D radial profile; not a 3D field",
+      "max": 300.0363384692042,
+      "min": 300.0130208333333,
+      "quantity": "Temperature",
+      "unit": "K"
+    },
+    "iterations": [
+      0,
+      1
+    ],
+    "max_reference_error_k": 1.6520182291666856,
+    "mesh": {
+      "cell_volumes_m3": [
+        1.0226538585904276e-9,
+        7.158577010132992e-9,
+        1.9430423313218115e-8,
+        3.7838192767845835e-8,
+        6.23818853740161e-8,
+        9.306150113172882e-8,
+        1.298770400409844e-7,
+        1.7282850210178222e-7,
+        2.219158873141226e-7,
+        2.7713919567800614e-7,
+        3.384984271934312e-7,
+        4.0599358186039946e-7,
+        4.796246596789109e-7,
+        5.593916606489644e-7,
+        6.452945847705584e-7,
+        7.373334320436993e-7
+      ],
+      "cells": 16,
+      "center_condition": "regular-zero-flux",
+      "faces_m": [
+        0,
+        0.000625,
+        0.00125,
+        0.001875,
+        0.0025,
+        0.003125,
+        0.00375,
+        0.004375,
+        0.005,
+        0.005625,
+        0.00625,
+        0.006875,
+        0.0075,
+        0.008125,
+        0.00875,
+        0.009375,
+        0.01
+      ],
+      "frame_id": "world",
+      "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+      "geometry_sha256": "d2394f4c38754f0f10046b38d6e20e1d5b157d74685050f28b5c98a10502b712",
+      "geometry_snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+      "handoff_sha256": "bcfaf51cbeaf75b8213461e4abdfc9a2530729e1f8f21d79c51ec290e7fb0681",
+      "integrity_sha256": "47c379575e81464949a6c93528ab62fee863fdf1d5c0ae97650851b73a1f3b12",
+      "kind": "1d-spherical-finite-volume",
+      "material_region": "solid-sphere",
+      "mesh_sha256": "81747b94e595c7b5e7be22f9384489685ecbe4c3cb42f5f9272523bfddb5f868",
+      "named_selection": {
+        "content_sha256": "14f7585c0f63d528a691a4a972a5412dda1ac2d13e8d6ebffc8160b0808116ce",
+        "contract_type": "NamedSelection",
+        "entity_refs": [
+          "radial-outer-shell"
+        ],
+        "feature_ref": "body",
+        "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+        "mapping_status": "exact",
+        "remap_confidence": 1,
+        "schema_version": "1.0.0",
+        "semantic_id": "outer-surface"
+      },
+      "outer_boundary_face": 16,
+      "production_handoff": false,
+      "source_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+      "units": "m"
+    },
+    "normalized_residuals": [
+      1,
+      0.7763424277262465
+    ],
+    "numerical_convergence": "nonconverged",
+    "physical_admissibility": "passed-positive-finite-temperature",
+    "power_imbalance_w": [
+      -4.188790204786391,
+      -3.2304490368853105
+    ],
+    "production_handoff": false,
+    "radii_m": [
+      0.0003125,
+      0.0009375,
+      0.0015625,
+      0.0021875,
+      0.0028125,
+      0.0034375,
+      0.0040625,
+      0.004687500000000001,
+      0.0053124999999999995,
+      0.0059375,
+      0.006562500000000001,
+      0.0071874999999999994,
+      0.0078125,
+      0.0084375,
+      0.009062500000000001,
+      0.0096875
+    ],
+    "reference_error_limit_k": 0.006510416666666667,
+    "reference_k": [
+      301.6650390625,
+      301.6520182291667,
+      301.6259765625,
+      301.5869140625,
+      301.5348307291667,
+      301.4697265625,
+      301.3916015625,
+      301.3004557291667,
+      301.1962890625,
+      301.0791015625,
+      300.9488932291667,
+      300.8056640625,
+      300.6494140625,
+      300.4801432291667,
+      300.2978515625,
+      300.1025390625
+    ],
+    "residual_definition": "L2(b-A(T-Ts))/L2(b); b=qV",
+    "residual_scale": "linear",
+    "run_id": "sim-3d8c620d6496498fa21c90042c9510c6",
+    "schema_version": "p09-dataset-v1",
+    "solution_verification": "not-accepted",
+    "source_refs": [
+      {
+        "path": "physics/heat_transfer/spherical_conduction.py",
+        "sha256": "28d9d63738f8c64a778bbd522cf64508351ea28ada67a1970f89ce16b00aa102"
+      },
+      {
+        "path": "numerics/finite_volume/radial_diffusion.py",
+        "sha256": "17723ed167b1eff992ed4ebe4283aba3406409dc8e5759a614cdfbdc8639082e"
+      }
+    ],
+    "study": {
+      "content_sha256": "f70ed30f020dbb5703169e7dbda7024e04fd1ee6adb92263364b0ae83f6811a0",
+      "contract_type": "StudySnapshot",
+      "handoff": {
+        "artifact": {
+          "approximation_profile": "none",
+          "artifact_id": "artifact-0",
+          "backend_id": "occt",
+          "backend_version": "occt-7.8.1.ocp-7.8.1.1.g5v2",
+          "content_sha256": "13eb4411bf0d59b57da3dd818cf59fe1c1deda873952dfcfaceb250a14a2be84",
+          "contract_type": "GeometryArtifact",
+          "export_tolerance_m": 0.000001,
+          "feature_graph_sha256": "fbf181c71d02b0e51114c3ff016c44795a8c185c7cb6e7e866fb5cc285e291f9",
+          "frame_id": "world",
+          "generated_at": "2026-10-10T18:21:30.882151+00:00",
+          "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+          "job_id": "job-79795aacc4a942f896c2f6fb03b8b795",
+          "output_format": "step",
+          "representation": "analytic_brep",
+          "schema_version": "1.0.0",
+          "sha256": "d2394f4c38754f0f10046b38d6e20e1d5b157d74685050f28b5c98a10502b712",
+          "size_bytes": 2128,
+          "snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+          "source_artifact_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+          "source_tolerance_m": 1e-8,
+          "storage_uri": "job-79795aacc4a942f896c2f6fb03b8b795/export.step",
+          "topology_report_id": "report-job-79795aacc4a942f896c2f6fb03b8b795-0",
+          "units": "m",
+          "voxel_resolution_m": null
+        },
+        "content_sha256": "bcfaf51cbeaf75b8213461e4abdfc9a2530729e1f8f21d79c51ec290e7fb0681",
+        "contract_type": "FixtureHandoff",
+        "frame_id": "world",
+        "geometry_snapshot_id": "8a2128466be9626dc59bed6ec253ceba179464d0c61eb795397c155d243427f1",
+        "integrity_sha256": "47c379575e81464949a6c93528ab62fee863fdf1d5c0ae97650851b73a1f3b12",
+        "radius_m": 0.01,
+        "schema_version": "1.0.0",
+        "scope": "software-sphere-radial-benchmark-only",
+        "selection": {
+          "content_sha256": "14f7585c0f63d528a691a4a972a5412dda1ac2d13e8d6ebffc8160b0808116ce",
+          "contract_type": "NamedSelection",
+          "entity_refs": [
+            "radial-outer-shell"
+          ],
+          "feature_ref": "body",
+          "geometry_revision_id": "geometry-job-79795aacc4a942f896c2f6fb03b8b795",
+          "mapping_status": "exact",
+          "remap_confidence": 1,
+          "schema_version": "1.0.0",
+          "semantic_id": "outer-surface"
+        }
+      },
+      "model": "steady-spherical-conduction-v1",
+      "model_sha256": "28d9d63738f8c64a778bbd522cf64508351ea28ada67a1970f89ce16b00aa102",
+      "schema_version": "1.0.0",
+      "settings": {
+        "cells": 16,
+        "conductivity_w_m_k": 10,
+        "content_sha256": "a7ab526f64be6248ca750a6578881260a20d3358db3f21c1434cc4d1731e87cf",
+        "contract_type": "StudySettings",
+        "generation_w_m3": 1000000,
+        "max_iterations": 1,
+        "relative_residual": 1e-8,
+        "schema_version": "1.0.0",
+        "surface_k": 300
+      },
+      "solver_sha256": "17723ed167b1eff992ed4ebe4283aba3406409dc8e5759a614cdfbdc8639082e"
+    },
+    "study_id": "f70ed30f020dbb5703169e7dbda7024e04fd1ee6adb92263364b0ae83f6811a0",
+    "temperature_k": [
+      300.0130208333333,
+      300.0208333333333,
+      300.02544070512823,
+      300.0284294871795,
+      300.03046689337083,
+      300.0319109535673,
+      300.032969884256,
+      300.033770311167,
+      300.0343918672277,
+      300.03488611645736,
+      300.0352873641587,
+      300.0356190260247,
+      300.0358974778942,
+      300.0361344372533,
+      300.0363384692042,
+      300.02383198969375
+    ],
+    "termination_reason": "iteration_limit"
+  }
+}

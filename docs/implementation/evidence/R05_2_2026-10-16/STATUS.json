@@ -1,0 +1,103 @@
+{
+  "phase": "R05",
+  "slice": "R05.2",
+  "date": "2026-10-16",
+  "base_head": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "status": "PROPULSION_VERTICAL_SLICE_GATE_PASSED_R05_IN_PROGRESS",
+  "architecture_decision": {
+    "id": "ADR-R05-001",
+    "status": "ACCEPTED",
+    "owner_response": "i approve"
+  },
+  "verification": {
+    "new_authenticated_http_tests": {"passed": 21, "failed": 0},
+    "final_targeted_http_and_existing_architecture": {"passed": 25, "failed": 0, "seconds": 15.11},
+    "existing_foundation_tests_in_full_suite": 83,
+    "full_python": {"passed": 3126, "failed": 0, "skipped": 74, "seconds": 146.13},
+    "javascript": {"passed": 388, "failed": 0, "skipped": 0, "new_project_transport_tests": 11},
+    "ruff": "PASS",
+    "mypy": {"status": "PASS", "source_files": 364, "scope": "existing CI scope including persistence, not all legacy GUI modules"},
+    "strict_typescript": {"status": "PASS", "version": "6.0.3", "consumer_files": 6, "rocket_contract_included": true},
+    "source_manifest_check": "PASS",
+    "diff_whitespace_check": "PASS",
+    "cea_fixture_cache_restored_and_cmp_checked": true,
+    "first_full_run": {
+      "passed": 3125,
+      "failed": 1,
+      "skipped": 74,
+      "cause": "GUI imported deep Systems exception type",
+      "fix": "API boundary classifies ordinary exceptions; architecture test unchanged",
+      "retained_log": "first-full-python-boundary-failure.log"
+    },
+    "browser_ui_to_http_to_storage_journey": "PASS_BOUNDED_SYNTHETIC_FIXTURE",
+    "native_cocoa_project_restart_history_smoke": "PASS_BOUNDED_SYNTHETIC_FIXTURE",
+    "ui_receipt": "UI_JOURNEY.json",
+    "remote_ci_run": false,
+    "full_native_accessibility_workload_qualification": false,
+    "genuine_human_usability_observations": 0,
+    "device_power_loss_qualification": false,
+    "runtime": {"os": "macOS arm64", "python": "3.11.4", "node": "26.7.0", "matches_remote_ci_runtime_matrix": false}
+  },
+  "preservation": {
+    "original_files": 4942,
+    "unchanged": 4890,
+    "declared_edits": 52,
+    "unexpected": 0,
+    "missing": 0,
+    "two_additional_original_paths": ["systems/persistence/design_store.py", "gui/static/cosmos-api.js"],
+    "some_previously_declared_paths_intentionally_extended": true,
+    "historical_p_evidence_resealed": false
+  },
+  "implemented": [
+    "active stable-account principal and authenticated project-scoped API",
+    "app lifetime composition, coordinator lease and defaults-off durable flag",
+    "real managed project and propulsion editor integration",
+    "separate input revision, saved storage version, source/input commit and result identities",
+    "exact immutable historical source and checksummed calculation response context",
+    "same-input distinct recalculations using existing scientific functions",
+    "late calculation history without overwriting a newer selected head",
+    "historical activation and branching with existing derived-output invalidation",
+    "managed legacy-route and direct DesignStore bypass protection including flag-off",
+    "explicit editor CAS token separate from background and history reads",
+    "bounded project and history paging, scoped exact source deep links",
+    "same-root server restart and independent native Cocoa inspection"
+  ],
+  "storage_compatibility": {
+    "physical_namespace": "engineering_state/v1",
+    "fresh_database_schema": 2,
+    "foundation_v1_readable_without_rewrite": true,
+    "managed_commands_refuse_schema_v1_until_explicit_upgrade": true,
+    "automatic_schema_upgrade_or_reset": false,
+    "authority_loss_allows_legacy_fallback": false
+  },
+  "remaining": [
+    "R05.3 geometry, artifact and durable job attempt/event persistence with publication interruption matrix",
+    "R05.4 study/run/dataset, comparison/criteria and report/review durable lineage",
+    "R05.5 explicit schema transforms, dry-run inventory, owner-mapped confirmed migration, coherent backup/package/rollback",
+    "R05.6 full cross-domain native and per-PRJ acceptance",
+    "complete design-list paging UI beyond its explicitly labelled first 20",
+    "role-aware owner-control usability; server enforcement already authoritative",
+    "separate R02/R03 human/accessibility/workload and R04 trust gates"
+  ],
+  "acceptance": {
+    "r05_2_scoped_software_gate": "PASS",
+    "ready_for_r05_3": true,
+    "whole_prj_items_marked_complete": [],
+    "whole_r05_complete": false,
+    "production_or_physical_readiness": false,
+    "durable_job_queue_or_recovery_claimed": false
+  },
+  "change_control": {
+    "user_data_migrated": false,
+    "owner_application_roots_initialized": false,
+    "owner_native_or_server_sessions_restarted": false,
+    "only_synthetic_qa_server_restarted_and_closed": true,
+    "scientific_methods_or_defaults_changed": false,
+    "credentials_or_trust_policy_changed": false,
+    "committed_or_pushed": false,
+    "released": false,
+    "actual_migration_requires_specific_preview_and_confirmation": true,
+    "usage_limit_reached": false,
+    "memory_updated": false
+  }
+}

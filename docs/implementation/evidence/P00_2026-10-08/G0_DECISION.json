@@ -1,0 +1,38 @@
+{
+  "gate_id": "G0",
+  "phase": "P00_REPOSITORY_AUDIT",
+  "decision": "PASS",
+  "date": "2026-10-08",
+  "commit_sha_before": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "commit_sha_after": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "source_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+  "requirements_addressed": [
+    "P00 outputs",
+    "G0 proof",
+    "as-built mapping of GOV/UX/NGG requirements, not implementation compliance"
+  ],
+  "paths_changed": [
+    "docs/implementation/evidence/P00_2026-10-08/"
+  ],
+  "production_files_changed": [],
+  "original_source_hashes_changed": [],
+  "evidence_missing": [],
+  "python_passed": 2234,
+  "python_skipped": 5,
+  "javascript_passed": 23,
+  "capability_rows": 43,
+  "dependencies_added": [],
+  "licenses_changed": [],
+  "hosted_ci_run": false,
+  "numerical_regression": "No production changes; current-tree suite/refinement/native CEA checks pass within recorded scope",
+  "reviewer": "Codex automated audit; human engineering signoff not claimed",
+  "blockers": [],
+  "release_ready": false,
+  "next": "P01_EXPERIENCE_ARCHITECTURE",
+  "next_scope": "Information architecture and prototypes only; G1 review before full production redesign",
+  "risks": [
+    "Security/packaging/support-target qualification",
+    "Immutable publication and transactional lineage",
+    "Unimplemented geometry/simulation/V&V capabilities"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "schema": "cosmos.pressure-fed-assessment-input.v1",
+  "regime": "STEADY_SINGLE_PHASE_INCOMPRESSIBLE",
+  "pressurant_boundary": "REGULATED_TANK_PRESSURE",
+  "flow_accounting": "CORE_ONLY_NO_DIVERSION",
+  "gravity": {
+    "value": 10,
+    "unit": "m/s2"
+  },
+  "pressure_tolerance": {
+    "value": 1e-06,
+    "unit": "Pa"
+  },
+  "mass_flow_tolerance": {
+    "value": 1e-12,
+    "unit": "kg/s"
+  },
+  "external_oxidizer_outflow": {
+    "value": 0,
+    "unit": "kg/s"
+  },
+  "external_fuel_outflow": {
+    "value": 0,
+    "unit": "kg/s"
+  },
+  "streams": {
+    "oxidizer": {
+      "phase": "LIQUID",
+      "temperature": {
+        "value": 90,
+        "unit": "K"
+      },
+      "density": {
+        "value": 1000,
+        "unit": "kg/m3"
+      },
+      "density_source": "Synthetic constant for balance verification, not measured propellant data",
+      "tank_pressure": {
+        "value": 5182000,
+        "unit": "Pa"
+      },
+      "tank_pressure_source": "Synthetic imposed absolute tank boundary",
+      "tank_mass_flow": {
+        "value": 2.030220554862814,
+        "unit": "kg/s"
+      },
+      "tank_mass_flow_source": "Synthetic independently specified withdrawal",
+      "manifold_area": {
+        "value": 0.001015110277431407,
+        "unit": "m2"
+      },
+      "elevation_rise": {
+        "value": 3,
+        "unit": "m"
+      },
+      "injector_static_pressure_drop": {
+        "value": 100000,
+        "unit": "Pa"
+      },
+      "injector_source": "Synthetic Pc-to-manifold STATIC delta-p, not upstream energy loss",
+      "losses": {
+        "feed_line": {
+          "pressure_equivalent": {
+            "value": 20000,
+            "unit": "Pa"
+          },
+          "source": "Synthetic irreversible upstream loss at declared flow and temperature; no injector double count"
+        },
+        "valves": {
+          "pressure_equivalent": {
+            "value": 30000,
+            "unit": "Pa"
+          },
+          "source": "Synthetic irreversible upstream loss at declared flow and temperature; no injector double count"
+        },
+        "cooling": {
+          "pressure_equivalent": {
+            "value": 0,
+            "unit": "Pa"
+          },
+          "source": "Synthetic irreversible upstream loss at declared flow and temperature; no injector double count"
+        }
+      }
+    },
+    "fuel": {
+      "phase": "LIQUID",
+      "temperature": {
+        "value": 290,
+        "unit": "K"
+      },
+      "density": {
+        "value": 1000,
+        "unit": "kg/m3"
+      },
+      "density_source": "Synthetic constant for balance verification, not measured propellant data",
+      "tank_pressure": {
+        "value": 5182000,
+        "unit": "Pa"
+      },
+      "tank_pressure_source": "Synthetic imposed absolute tank boundary",
+      "tank_mass_flow": {
+        "value": 1.015110277431407,
+        "unit": "kg/s"
+      },
+      "tank_mass_flow_source": "Synthetic independently specified withdrawal",
+      "manifold_area": {
+        "value": 0.0005075551387157034,
+        "unit": "m2"
+      },
+      "elevation_rise": {
+        "value": 3,
+        "unit": "m"
+      },
+      "injector_static_pressure_drop": {
+        "value": 100000,
+        "unit": "Pa"
+      },
+      "injector_source": "Synthetic Pc-to-manifold STATIC delta-p, not upstream energy loss",
+      "losses": {
+        "feed_line": {
+          "pressure_equivalent": {
+            "value": 20000,
+            "unit": "Pa"
+          },
+          "source": "Synthetic irreversible upstream loss at declared flow and temperature; no injector double count"
+        },
+        "valves": {
+          "pressure_equivalent": {
+            "value": 30000,
+            "unit": "Pa"
+          },
+          "source": "Synthetic irreversible upstream loss at declared flow and temperature; no injector double count"
+        },
+        "cooling": {
+          "pressure_equivalent": {
+            "value": 0,
+            "unit": "Pa"
+          },
+          "source": "Synthetic irreversible upstream loss at declared flow and temperature; no injector double count"
+        }
+      }
+    }
+  }
+}

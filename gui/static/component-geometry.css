@@ -1,0 +1,20 @@
+.component-editor {--component-gap:1rem;margin-block:1rem;padding:1rem;border:1px solid var(--ds-border,#3b4754);border-radius:6px;max-width:100%;overflow-wrap:anywhere}
+.component-editor>summary{font-size:1.15rem;font-weight:650;cursor:pointer;margin-block-end:1rem}
+.component-editor .component-grid{display:grid;grid-template-columns:minmax(230px,1fr) minmax(300px,2fr);gap:var(--component-gap);margin-block:1rem}
+.component-editor section,.component-editor fieldset,.component-editor details{min-width:0;margin-block:.8rem}
+.component-editor section[aria-label="Component feature tree"] button{display:block;text-align:left;width:100%;margin-block:.4rem}
+.component-editor button,.component-editor select,.component-editor input{min-height:36px;max-width:100%}
+.component-editor button{margin:.25rem .35rem .25rem 0;white-space:normal}
+.component-editor label{display:block;margin-block:.5rem;font-size:.88rem}
+.component-editor label>input:not([type=checkbox]),.component-editor label>textarea,.component-editor label>select{display:block;width:100%;box-sizing:border-box;margin-top:.3rem}
+.component-editor input[type=checkbox]{min-height:auto;margin-inline-end:.5rem}
+.component-editor textarea{font:13px/1.5 ui-monospace,monospace;resize:vertical;min-height:100px}
+.component-editor pre{white-space:pre-wrap;max-height:420px;overflow:auto;font-size:12px}
+.component-editor table{display:block;overflow:auto;border-collapse:collapse;width:100%;font-size:.82rem}
+.component-editor th,.component-editor td{border:1px solid var(--ds-border,#45515d);padding:.5rem;text-align:left}
+.component-editor :focus-visible{outline:2px solid var(--ds-accent,#69baff);outline-offset:3px}
+.component-editor .component-notice{border-inline-start:3px solid #cfa352;padding:.7rem;background:var(--ds-surface-raised,#202b36)}
+.component-editor .component-viewport canvas{display:block;width:100%;height:440px;background:var(--ds-surface-canvas,#14212b)}
+.component-editor [role=status]{min-height:2.5rem;padding:.5rem;border:1px solid var(--ds-border,#45515d)}
+#component-workspace{max-width:1600px;margin-inline:auto}#component-workspace>label{display:block;margin-block:1rem}#component-workspace select{max-width:100%}
+@media(max-width:850px){.component-editor .component-grid{grid-template-columns:minmax(0,1fr)}.component-editor .component-viewport canvas{height:320px}.component-editor{padding:.65rem}}

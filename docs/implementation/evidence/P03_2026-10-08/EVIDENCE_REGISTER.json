@@ -1,0 +1,515 @@
+{
+  "gate_id": "G2",
+  "requirement_ids": [
+    "G2",
+    "GOV-001",
+    "GOV-002",
+    "GOV-003",
+    "GOV-004",
+    "GOV-007",
+    "GOV-009",
+    "GOV-010",
+    "specs/02_DESIGN_SYSTEM.md"
+  ],
+  "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "environment": {
+    "os": "26.5.2",
+    "machine": "arm64",
+    "python": "3.11.4",
+    "node": "v26.7.0",
+    "chrome": "Google Chrome 154.0.8037.98",
+    "toolVersions": {
+      "@playwright/test": "1.64.0",
+      "axe-core": "4.14.0",
+      "pngjs": "7.0.0",
+      "typescript": "6.0.3"
+    },
+    "viewport": [
+      1440,
+      1000
+    ],
+    "scaledViewport": [
+      1024,
+      768
+    ],
+    "deviceScaleFactor": 1,
+    "workers": 1,
+    "retries": 0,
+    "reducedMotion": "reduce",
+    "browserContexts": "fresh, headless; never user profiles",
+    "source": "Pinned HEAD plus pre-existing dirty checkout; source_before.json checkpoint"
+  },
+  "date": "2026-10-08",
+  "reviewer": "Codex Frontend lead role; automated browser and source evidence",
+  "decision": "PASS_TESTED_OPT_IN_FOUNDATION",
+  "blockers": [],
+  "commands": [
+    "pytest --import-mode=importlib -q: 2234 passed, 5 skipped",
+    "node --test tests/js/*.test.cjs: 57 passed",
+    "Playwright configured regression: 44 passed",
+    "Ruff repository and phase scopes: pass",
+    "Mypy scientific/API scope: 318 files pass",
+    "TypeScript strict public consumer contracts: pass",
+    "build_tokens.py --check",
+    "check_scope.py",
+    "git diff --check"
+  ],
+  "test_artifacts": [
+    "browser-tests.json",
+    "accessibility-dark.json",
+    "accessibility-high-contrast.json",
+    "screenshots/",
+    "logs/",
+    "source_integrity.json"
+  ],
+  "artifacts": [
+    {
+      "path": "docs/implementation/evidence/P01_2026-10-08/EVIDENCE_REGISTER.json",
+      "sha256": "1b33a28c63baa7b60f43e862f3fdfd3027301fb1bdd257fbc8a2eba47ebf8d9f"
+    },
+    {
+      "path": "docs/implementation/evidence/P01_2026-10-08/G1_DECISION.json",
+      "sha256": "e82524902b182d3e12b8abcb578a1ba8a18c2bd4d82fc0d2f777d557ac0c835a"
+    },
+    {
+      "path": "docs/implementation/evidence/P01_2026-10-08/P01_REVIEW_RECORD.md",
+      "sha256": "9967304d59c966f238cd49f2e4708d30b0de80dac59cd82e96c5c5afc5b6c6a0"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/ENVIRONMENT.json",
+      "sha256": "07d46d683447ff5c9aad1edf3639342ee6b1b37d817865fdac55930e8fa13f10"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/G2_DECISION.json",
+      "sha256": "b6cb34f7040941867890fab3c88c7749de707b1f2ad3ae5bc9299331079620bc"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/P03_BUILD_AND_REPRODUCE.md",
+      "sha256": "2f094a4fa4722222f6ee69159441ede491e746c509179dda15122ab4211c5793"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/P03_IMPLEMENTATION_REPORT.md",
+      "sha256": "7581b4dba95a2eda97e457329dee9d488263a82add5390bd0bd189bb93b527b7"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/P03_SCOPE_AND_PLAN.md",
+      "sha256": "22bec25a65abc5025434891cd852170eb1bc9fd4e0d733640386a9e58a12004c"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/P03_SCRIPTED_TASK_STUDIES.md",
+      "sha256": "26f00af2bdbee92da281cc8c075f0394025670ceb7c2f659fde1c2047d9b49db"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/PERFORMANCE_BUDGET.json",
+      "sha256": "ba06e791a78c35c13b497e7ee37417123f0544d2d5496f69f3a7532817d31a15"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/accessibility-dark.json",
+      "sha256": "e7b11b9483216c51215ec37265c7d5c9ccd73ede58bac768ecd99199a55f05b4"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/accessibility-high-contrast.json",
+      "sha256": "e03bb99e37a7d34aeb5eca5931c46b9c98b15341dd41ffa483540b2f1a027e28"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/browser-tests.json",
+      "sha256": "c6c26d1e20208c80e5c63e0e71c25c5dec587ce3daac70b764b1968c92210436"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/cache-generated-after-tests.json",
+      "sha256": "fba7575f43a5f9df2fff2eeaece405a98a67749fd8d0b64dd3beb2f43eb42228"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/calibration/legacy-structures-actual.png",
+      "sha256": "af72bd12b37fa72a3535c85486e5bb1037bf9c65b04eadf78974860801ce37a0"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/check_scope.py",
+      "sha256": "b412e93b93a67532a0eedbb0f3b1d68586049612b734504cbc8f9643d3ea59a5"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/finalize_evidence.py",
+      "sha256": "86f367096063ae60cb0d98e87101e63905e5b4a93959538b1e73093d2617e4b4"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/interaction-performance.json",
+      "sha256": "ad1812c404ae9bddfea02916a822fe971b8bfe21baa910bfdae2b6f01dea2f27"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/legacy-interaction-baseline.json",
+      "sha256": "6be5e9fc84dce6a669c8db92a92582e6edb98b07d8daed29f9c13930c91db45f"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/legacy-rasterization-calibration.json",
+      "sha256": "94cfe6c3cfbb9d024baf90b8f2bf15fadf0d70cf43a17b981acff567add48445"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/browser-baseline-fixed.log",
+      "sha256": "d5cb9aa34b5c23d9330cdf78d220edbb5b4cbac5111aa1c644eab275be8c253b"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/browser-baseline.log",
+      "sha256": "cab1f9e83f6e74e88422edecd7a46d7765a3a7939cc36a1b267291d7bf733c75"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/browser-regression-accepted.log",
+      "sha256": "b52f69a9cc26b8600208cbf73c8325059a3ba336fbc95d1f324a15f7967f6089"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/browser-regression-calibrated.log",
+      "sha256": "621ef7f32d633e180989a558a7d276279a0bd4f005ff86bc297724351af9f03d"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/browser-regression-final.log",
+      "sha256": "f64f04e02a477050f50f94654a4fdcaf7fdd8160ba63578454aed7a55413b62f"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/browser-regression.log",
+      "sha256": "99b5efd2687531bfa57a8d98c78c8e7ed62eab688b708a2040fde9aa92484217"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/components-baseline-final.log",
+      "sha256": "d922719c903271f9182865690aa13fe730da340264d70c6ec5214650545697e4"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/design-system-unit-final.log",
+      "sha256": "45a6687cdd72c564dd1011b5d59fe025eb01bb607e4b07f31320c0d7219245ef"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/design-system-unit.log",
+      "sha256": "21239f56ba5c50ef0733042bcd8078f9557a96ed84a36edd55b8b5f2d3d4c072"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/js-tests-final.log",
+      "sha256": "29cb4b033eef99f360394c6c432c536af0ec9dc164572a1c0360bb2d1fc56a3a"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/js-tests.log",
+      "sha256": "4a66c0fdb9e262cc0b85cee42703fb33cd2d4d17c689cc3a001b3cf74a37961d"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/legacy-baseline-settled.log",
+      "sha256": "275436457afb7ec52418be5d07b72c4b311c49af32a40042882f4349f447f2f1"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/legacy-regression-settled.log",
+      "sha256": "db9757032014c35a29f4883d64fee60a07a083d8551ec69d6c835ee01a0dce6d"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/legacy-server.log",
+      "sha256": "6311b535b06c6956142c16f78dcb0032cbe51a26a1e97b70fef110229a1cc210"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/mypy.log",
+      "sha256": "7332dc3d363a098775411b7d6d866f031aeac35534364dcc71db72620ab67fae"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/npm-install.log",
+      "sha256": "550451eb6124d6853c0b8244fc243f06298d4ebf7ac9c794bf04e6e7f2bd2edf"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/p02-completion-final.log",
+      "sha256": "f2edf5e8f9fa9d7dee5d9435bbaeb4a3596d2c29ad17778709aa1d5ecec5d214"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/p02-completion.log",
+      "sha256": "f2edf5e8f9fa9d7dee5d9435bbaeb4a3596d2c29ad17778709aa1d5ecec5d214"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/p02-export-tests-final.log",
+      "sha256": "6f8a987ff9d3dcb6541362dcfb63b18ec406e6a8b06eb1797ce44daef9fbd18f"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/p02-export-tests.log",
+      "sha256": "e0d9723408580ec4ea0058882d5d24bc509d89bc5b9b8d2442e52e48a89a5c36"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/p02-independent-tests.log",
+      "sha256": "811eabda5dc298da232b3c7953fbe433089645edff6f53063d91016c4136c0a2"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/p02-raw-retest.log",
+      "sha256": "14d1a24b89189d7f182928798d57580331e83cc43d19be1c94f4f585bf81d7c8"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/p02-retained-verify.log",
+      "sha256": "b2258f0859acc891a179c77f988b65543a3b6a7ec3116e3d0a9351531c14033d"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/pixel-tool.log",
+      "sha256": "76b81ab2d365e924c717c068d147b677977a9f53c242873da515f91805869e0b"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/pytest.log",
+      "sha256": "4dd38c1297bad0a8f9e9217a0136daef9899efd67d1ad4e3418f5b5ba97c4b71"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/pytest.xml",
+      "sha256": "3a0e2615d3d6550e38902234aefefb8af592f054c833bbd524ee947c04fcce65"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/ruff-phase-final.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/ruff-phase.log",
+      "sha256": "d6d62828664057d142dde79348b0b5cf87490c3d1f8dca6b276815bce659c352"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/ruff-regression-final.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/ruff-regression.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/source-scope.log",
+      "sha256": "c960be0cbecfb253790bec2b5dd2db8ac99178a17d8b13fc03b99e5998e30eee"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/tokens-check.log",
+      "sha256": "48ce4314650e4e14160c0ae761efd87d8e4a16ea3546704c2a43e76ab412cfbe"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/tool-lock.log",
+      "sha256": "5575b3a86ef16f02c583e08e1cbac0045bc460dd780485093a8af84d592ea6f4"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/typecheck-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/logs/typescript-install.log",
+      "sha256": "dfd32481acd42eba9e2b9786b314faa0ebfd7b718cf4718222ad629b49ff4c9d"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/ArtifactBrowser.png",
+      "sha256": "965454f8943f7f3a198c41f91162c5fd26d696ce459e02a9a7b63900a830222d"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/CommandPalette.png",
+      "sha256": "e3bd96752edcfe8bc3b8cc18a90f0ddd3a803cbc67d7e667c027dbd5ef698e76"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/CosmosShell.png",
+      "sha256": "394b915863f3a1fb096793a9bdf6f5209d74b2d90acb8d52363a9251c082cb61"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/EmptyState.png",
+      "sha256": "b2353e5caf8b59f853d6bbf6bd956932b51259726a6d8a4098958950a6d347cf"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/EngineeringStatus.png",
+      "sha256": "ef113ff37189b026430f084e276e9fec0ee82f3f43283d5e8306b26997ed9523"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/ErrorDetails.png",
+      "sha256": "1ec28c5916e2fd37f5535522abbc449036df6ddbd83bdecaa1cc26b352bbf280"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/EvidenceLink.png",
+      "sha256": "9b659659b75cfba71f20de394fa2ce4415a62e7929e15a725018a26fecd8827d"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/ExportWizard.png",
+      "sha256": "25d7ec44654d295e8d7205e4ae542eb7cd61a75bfd9dd25c0dd70647bd0166ed"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/JobMonitor.png",
+      "sha256": "d13502ff70e9e12cfb61a11a940c09b8288a0e23ee74716ce90e02435b3c86e0"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/Legend.png",
+      "sha256": "16dfeabf0158b393999aa9e612d440d1665cc85564a778607580e676cdaf63f6"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/ParameterTable.png",
+      "sha256": "31665ba8f24fc7e5fd7a97f1b81e67f6fd3306feb671ae8cc6623a223d077094"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/PlotPanel.png",
+      "sha256": "10250c517c8953e022c304e0193dd0af1b3e39363f3e21e9b39ec469bc11a8ab"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/ProjectTree.png",
+      "sha256": "7c7a1838351f6e6ae116c0d152ab8a8aee164e805dcf32e9029a172136f8e730"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/PropertyInspector.png",
+      "sha256": "b64f0c0ffd6391164028d1d2908d8addd2a8a715fe12174fcfe3d9ee76198bb2"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/ReviewSignoff.png",
+      "sha256": "1d0a36d2d8b4074696b6344919bd48333b38db0d9f9b1c20e6526aaff7cdad87"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/SplitDock.png",
+      "sha256": "dd444e42d4121915c5155e2db57f436643f9c9256f78a7c80429ad911cdcfa0d"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/UnitInput.png",
+      "sha256": "540b5aa624a8415bd895a0b76d163dc57c3bd7f639db76a9cff06e6c38eb6a71"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/WorkbenchTabs.png",
+      "sha256": "7746475ab7eb602d44595fbed9cac42b2be8648dc56f1c124ba9424e5e31755d"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/legacy-code-comparison.png",
+      "sha256": "d16d773859d812144d662947f89fc4b117bde7bf538dcf8d68f2d40cedf2f0cb"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/legacy-documentation.png",
+      "sha256": "ec37f769b6020a85785a4aa7bd160bb81d41d38f64fcfa15040c3853151d2641"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/legacy-knowledge.png",
+      "sha256": "a286e611434d6096508c693965d5dd52fb1b2cbd4136456c23d2b2c8dfdeef19"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/legacy-manufacturing.png",
+      "sha256": "9aec03f0813959325df85b53e8d480bad76c70405020e8e9fbef05245add5b0f"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/legacy-pid.png",
+      "sha256": "6f999f526d52f53967c82b0fd163da93bf30bd4394f85d09207046c578902125"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/legacy-plm.png",
+      "sha256": "7f1324ea47012ae98e0e47b9420072a2cc1f077262b426304d56efa1ae25d4f8"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/legacy-rocket-engine.png",
+      "sha256": "f8405bdb9ef71bf018f8f6c1c992baaba3b8be4cfd54c87a71968a3455f1b717"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/legacy-rocket-staging.png",
+      "sha256": "c663a3d7fa919263e45330188136f81bca2eb1803f291cfb991c9fc418683613"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/legacy-simulation.png",
+      "sha256": "db831055ddbb46646ab3559827e2264a64384c24c3eede18fae3eefb31fcdf77"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/legacy-structures.png",
+      "sha256": "73248888d6b40b3a0ca1412edfa396f9565f9d673a13812a96f14928628e6754"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/legacy-turbopumps.png",
+      "sha256": "816e12a35cc99dfec48d51434a7a23980bbbc78763013d1afa05683b9c47d738"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/legacy-visualization.png",
+      "sha256": "11f0da7d725a6041c073fa8419f01a25f3040750aa75f57dfdf08acc30585472"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/minimum-200pct.png",
+      "sha256": "e62966d604e3dfe148b04fb932d9a74a25bd4c4afcc2b3de6cdec23b86f2327a"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/screenshots/states.png",
+      "sha256": "78d40472d9e624fd3f521f61768ccd3b3fac84b5b203f9bf46a9d7bbdf35c19b"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/source_before.json",
+      "sha256": "52ae5cd5bcf98c8c3dec7c029335ca6ea174d3bace64e5009ef48b2112dc5c9c"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/source_integrity.json",
+      "sha256": "b11eaeda05f2288c609e9ef0c69c02d9b5592a5d4de16f782c121bd1c3e8510b"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/tooling/axe-core-LICENSE.txt",
+      "sha256": "af175b9d96ee93c21a036152e1b905b0b95304d4ae8c2c921c7609100ba8df7e"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/tooling/package-lock.json",
+      "sha256": "8412d288d509e17152652bf1117eeaa6b106af8dd8efea6f3c743f15ba095b6c"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/tooling/package.json",
+      "sha256": "039de27a7dcd7b407304f1ce3e29d16100b2cc2f0a4dc96ff148642bd73a1635"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/tooling/playwright-LICENSE.txt",
+      "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/tooling/pngjs-LICENSE.txt",
+      "sha256": "be75ef59c5cf59715588a17a82dff7dd3e83c4dba3c458676bb9311e05fbedc5"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_2026-10-08/tooling/typescript-LICENSE.txt",
+      "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+    },
+    {
+      "path": "gui/static/design-system/README.md",
+      "sha256": "b46d532c0a91bb382dfc50e2946c96887cd55576992783b8129dd24a964d5fd3"
+    },
+    {
+      "path": "gui/static/design-system/build_tokens.py",
+      "sha256": "fec9166e40ac6263bed3ca44050cd72f396edfcb0d9257490064ccc178cb7d22"
+    },
+    {
+      "path": "gui/static/design-system/components.css",
+      "sha256": "ccfc99107999defa7b61e0ad36a21452cc39dae594309bbbaaee3cbcc3d19c8f"
+    },
+    {
+      "path": "gui/static/design-system/components.d.ts",
+      "sha256": "8b7a47a0a9e733f164c9334188aef073b8792bf2532457ca90f9147c7534092f"
+    },
+    {
+      "path": "gui/static/design-system/components.js",
+      "sha256": "ee6e7345a75f9bf91bd62374f701f8603f26dd4af83d9318c1c3e077d32a6796"
+    },
+    {
+      "path": "gui/static/design-system/gallery.js",
+      "sha256": "8854e68cb5fd926cddc0d1a8dec706c7fd25fab3bf84c0e1287a50f3b3affb71"
+    },
+    {
+      "path": "gui/static/design-system/index.html",
+      "sha256": "aa5b38456c40af6e3169753b417d8a3394f46b786dd469a2d1676aa88a2e9aa5"
+    },
+    {
+      "path": "gui/static/design-system/tokens.css",
+      "sha256": "37119b3c2d26f4545e7b6b29ab6f56997441a9a1d11aa9f5e17884ab18cc860b"
+    },
+    {
+      "path": "gui/static/design-system/tokens.json",
+      "sha256": "fb62231ecf77d06112e494f7ff261bc4fe22dd379d964a10df31ed6de9f33eef"
+    },
+    {
+      "path": "tests/js/design_system.test.cjs",
+      "sha256": "d1a8bf5d738513d554412f138c96d6a66c976b53f2fcbeccb6e18facc39f8fff"
+    },
+    {
+      "path": "tests/ui/design-system/calibrate_visual.cjs",
+      "sha256": "afd95b62b4d1c5d2e00f2f107794787911893b5b2850b375f81cedb7a864df73"
+    },
+    {
+      "path": "tests/ui/design-system/components.spec.cjs",
+      "sha256": "20e9de1f69e313df0f0fef4d99a4472bac5604afe6a3e427583665de46f90e89"
+    },
+    {
+      "path": "tests/ui/design-system/legacy.spec.cjs",
+      "sha256": "c53ddf009ad146dcfc286d247416ff747133274811d7173e166a4d3dd2ba5ce3"
+    },
+    {
+      "path": "tests/ui/design-system/playwright.config.cjs",
+      "sha256": "d6aa5a6b8ada3e67c7adcfc3a0fcfb51de823c3ca424561f797aa2606c4902f8"
+    },
+    {
+      "path": "tests/ui/design-system/serve_legacy.py",
+      "sha256": "07d7b127b8559bb4617ae5bff801e4b53a37e0a55338fac665e958778357692b"
+    },
+    {
+      "path": "tests/ui/design-system/type_contracts.ts",
+      "sha256": "310041cd614a016a6d849a304d28b327c02200dc144fb64e69faa28194b20da4"
+    }
+  ]
+}

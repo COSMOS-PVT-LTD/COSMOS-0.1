@@ -1,0 +1,125 @@
+{
+  "schema": "cosmos.desktop-delivery.v1",
+  "status": "LOCAL_DESKTOP_DELIVERY_VERIFIED",
+  "app": "/Users/vaibhavkumarn/Applications/COSMOS Desktop.app",
+  "desktop_shortcut": "/Users/vaibhavkumarn/Desktop/COSMOS Desktop.app",
+  "standalone_runtime": true,
+  "external_python_or_venv_required": false,
+  "external_development_server_required": false,
+  "user_data_migrated": false,
+  "tests": {
+    "tests": 267,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_routes": 8,
+  "native_backend": "webview.platforms.cocoa",
+  "webgl2": true,
+  "reports": [
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Desktop.app/Contents/Resources/app/desktop-qualification/native-components.xml",
+      "sha256": "e472267a8cc00f232f5e9192a0d730016f2111a7e70cbf97fb7a309bc8970f76",
+      "tests": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Desktop.app/Contents/Resources/app/desktop-qualification/component-http.xml",
+      "sha256": "a7601112d30380de9b11922f52bd7e3bdb8ea7792c13ac3a6b9b97dfb06a1b9b",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Desktop.app/Contents/Resources/app/desktop-qualification/driving-constraints.xml",
+      "sha256": "5ae8a714d462a2c4c805b96ce008d287266571839abef615a760e62e7e33f49d",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Desktop.app/Contents/Resources/app/desktop-qualification/pico-unit.xml",
+      "sha256": "7665ccd01e8f92ba39df30c8546ff742c0d79077c82201ba39a3e60a62dabc7d",
+      "tests": 25,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Desktop.app/Contents/Resources/app/desktop-qualification/pico-native.xml",
+      "sha256": "3167008844618c3bd7ca950e2c5baf14925476594e0eeba4a55a38660b2f04a6",
+      "tests": 37,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Desktop.app/Contents/Resources/app/desktop-qualification/pico-http.xml",
+      "sha256": "8712f25abc6ef6ddb36cc930e4f7100fffb1872032887772b064b0d13a869c7e",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Applications/COSMOS Desktop.app/Contents/Resources/app/desktop-qualification/pico-preview.xml",
+      "sha256": "5e34986e00587d29d3ca683d8c0d0709481dd97d8b2b9e4b2ca1aef2d202e830",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/output/desktop-final-lifecycle-2026-10-28.xml",
+      "sha256": "8e40ae9f24873241f5502c32f388742490e84a9ff59d0f9a8f0639c810b47db6",
+      "tests": 41,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/output/desktop-integration-2026-10-28.xml",
+      "sha256": "18a43cc52a542e10f1f1fc6c08ae783891f925320843b323a518e286617121eb",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/output/desktop-compatibility-2026-10-28.xml",
+      "sha256": "0473926952b5a75bf6da481f3755ed840c7d4af5cf69d01152e0eb42f7ef4c88",
+      "tests": 66,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/output/desktop-cea-2026-10-28.xml",
+      "sha256": "4b5010033a56c8cb1bf3839aa69ba819f856e78ad10299fc5f7a313866ca2161",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/output/desktop-compact-native-2026-10-28.xml",
+      "sha256": "65f06ef6755db20917f9d53682fbbd9b31330a1f896435772ddbd42cd7f5aada",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "physical_validation": "NOT_PERFORMED",
+  "full_engine_regeneration": "ON_HOLD",
+  "r08": "ON_HOLD",
+  "developer_id_signed": false,
+  "notarized": false,
+  "public_distribution_approved": false,
+  "local_ad_hoc_signature_verified": true,
+  "launcher_sha256": "9d1a389b6fc6fa07ff50e15758141b1682884da3f8de687b039cec9a23111f26"
+}

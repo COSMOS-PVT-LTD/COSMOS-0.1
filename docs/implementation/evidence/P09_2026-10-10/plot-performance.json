@@ -1,0 +1,38 @@
+[
+  {
+    "width": 1440,
+    "loadAndPlotMs": 126.26862500000061,
+    "scrollWidth": 1440,
+    "plotCount": 4,
+    "labels": [
+      "Computed radial temperature: Radius (m), Temperature (K), linear scale",
+      "Independent analytic reference: Radius (m), Reference temperature (K), linear scale",
+      "Normalized equation residual: Iteration (1), Relative L2 residual (1), linear scale",
+      "Signed conservation imbalance: Iteration (1), Outward minus generated power (W), linear scale"
+    ]
+  },
+  {
+    "width": 1024,
+    "loadAndPlotMs": 96.94929200000115,
+    "scrollWidth": 1024,
+    "plotCount": 4,
+    "labels": [
+      "Computed radial temperature: Radius (m), Temperature (K), linear scale",
+      "Independent analytic reference: Radius (m), Reference temperature (K), linear scale",
+      "Normalized equation residual: Iteration (1), Relative L2 residual (1), linear scale",
+      "Signed conservation imbalance: Iteration (1), Outward minus generated power (W), linear scale"
+    ]
+  },
+  {
+    "width": 390,
+    "loadAndPlotMs": 76.2469170000004,
+    "scrollWidth": 390,
+    "plotCount": 4,
+    "labels": [
+      "Computed radial temperature: Radius (m), Temperature (K), linear scale",
+      "Independent analytic reference: Radius (m), Reference temperature (K), linear scale",
+      "Normalized equation residual: Iteration (1), Relative L2 residual (1), linear scale",
+      "Signed conservation imbalance: Iteration (1), Outward minus generated power (W), linear scale"
+    ]
+  }
+]

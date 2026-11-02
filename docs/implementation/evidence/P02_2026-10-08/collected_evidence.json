@@ -1,0 +1,247 @@
+[
+  {
+    "path": "logs/shape-build.log",
+    "sha256": "06a2647239542bf9dc18985a2c1576c5bddab42f009dfeffd9789f59462f9ce7",
+    "bytes": 28693
+  },
+  {
+    "path": "logs/managed-build.log",
+    "sha256": "63cd2e1886048deae2ec144c9887431ea03a9b530eb29cf871ffb0f9275415b7",
+    "bytes": 2728
+  },
+  {
+    "path": "logs/prebuilt-benchmarks-complete.log",
+    "sha256": "373e0ea858f7739d221dc5af69f039a90adc5fed9c816131298b432794bae3f5",
+    "bytes": 172
+  },
+  {
+    "path": "logs/native-configure.log",
+    "sha256": "d01d27fad9752dffd273cceaf9372ec6e17dc002e23f5d42e52474649de43f05",
+    "bytes": 331
+  },
+  {
+    "path": "logs/source-benchmarks.log",
+    "sha256": "6aec4de8a6c7cb4beb7c7ce37f5448e125c81ddce8649c1c5ebec2115e9a45b6",
+    "bytes": 997
+  },
+  {
+    "path": "logs/mesh-audit-tests.log",
+    "sha256": "811eabda5dc298da232b3c7953fbe433089645edff6f53063d91016c4136c0a2",
+    "bytes": 109
+  },
+  {
+    "path": "logs/tbb-configure.log",
+    "sha256": "71cfbd2a9fd8aa0b79cb468617abc0da7113318a1537be8bbbcd2fbe1e4e3659",
+    "bytes": 1188
+  },
+  {
+    "path": "logs/managed-build-clean.log",
+    "sha256": "7b05bbb1f4ed3ab0eb43221387d30dea6a3d5b9c422effe9a53eb2eeb680b7c0",
+    "bytes": 446
+  },
+  {
+    "path": "logs/tbb-install-sdk.log",
+    "sha256": "5b0292542006848740afd77cb28bac3eb3287e420cd5e3125441e7bd83621d5f",
+    "bytes": 14007
+  },
+  {
+    "path": "logs/tbb-configure-sdk.log",
+    "sha256": "d8c38300f3958e41be1926ce2209675817699f15d2d55ab28a1a7b729c60ef43",
+    "bytes": 1192
+  },
+  {
+    "path": "logs/native-load-trace.log",
+    "sha256": "9817895020376195b1bf9b9fd9364fc8f8ad4f17e499d3983e4e45108fd9a69c",
+    "bytes": 132798
+  },
+  {
+    "path": "logs/native-minimal-sdk-build.log",
+    "sha256": "d1bc1a3825b2b2fc57051bb3d429088ad5e0876d9416cce51a21a301de0c4c1a",
+    "bytes": 5874
+  },
+  {
+    "path": "logs/prebuilt-benchmarks.log",
+    "sha256": "6aec4de8a6c7cb4beb7c7ce37f5448e125c81ddce8649c1c5ebec2115e9a45b6",
+    "bytes": 997
+  },
+  {
+    "path": "logs/mesh-audit-tests-final.log",
+    "sha256": "d4be35de3d82250986690334669c4d88ae35b2993f723c16c8c675d6299bc32e",
+    "bytes": 109
+  },
+  {
+    "path": "logs/native-minimal-sdk-configure.log",
+    "sha256": "93dd10e5fc897cb8b6bec12a64f6dd3cb0d99d66ed1cbc3f367d16e22848f05e",
+    "bytes": 2640
+  },
+  {
+    "path": "logs/build-tools-install.log",
+    "sha256": "cfa526e66a0682c1d09dc4dc714d0a4e56f9721967aac8572753c76e1b3c5c8b",
+    "bytes": 786
+  },
+  {
+    "path": "logs/tbb-build.log",
+    "sha256": "addba6480568482b8d6d7c0eeec856fe29daca21f2f9bfa1e4d10110562c11e1",
+    "bytes": 2376
+  },
+  {
+    "path": "logs/ruff-final.log",
+    "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "bytes": 19
+  },
+  {
+    "path": "logs/shape-build-final.log",
+    "sha256": "380034f048a3ff0663c779b9ef932f4039a91c99ac4caa72c3efdb53ec1711de",
+    "bytes": 27301
+  },
+  {
+    "path": "logs/tbb-build-sdk.log",
+    "sha256": "91a558f02670db70c13221d4d73a44d9214dec51a97040fd009979e9b730f8e0",
+    "bytes": 3744
+  },
+  {
+    "path": "logs/source-benchmarks-complete.log",
+    "sha256": "1aa74e21abf9f4ec8684122cb454c0110808bc94ffdb4f3fcbfb74f76a207ffb",
+    "bytes": 186
+  },
+  {
+    "path": "logs/native-minimal-configure.log",
+    "sha256": "05aee200ee3c8ab070f529bc3d6a3337ca6be8b7df050eeec385ef92043b1684",
+    "bytes": 2168
+  },
+  {
+    "path": "logs/managed-build-final.log",
+    "sha256": "5d8245f8b5a3edef71d375e7d32c4d5fa3c97aebe475ba382e6a9ec528c76e1e",
+    "bytes": 304
+  },
+  {
+    "path": "licenses/PicoGK/LICENSE",
+    "sha256": "50e6751797c50dedd75ef1b8a0d9e42f5f8472e9fbce91f34718e9f97b0c780a",
+    "bytes": 11324
+  },
+  {
+    "path": "licenses/PicoGKRuntime/LICENSE",
+    "sha256": "50e6751797c50dedd75ef1b8a0d9e42f5f8472e9fbce91f34718e9f97b0c780a",
+    "bytes": 11324
+  },
+  {
+    "path": "licenses/LEAP71_ShapeKernel/LICENSE",
+    "sha256": "50e6751797c50dedd75ef1b8a0d9e42f5f8472e9fbce91f34718e9f97b0c780a",
+    "bytes": 11324
+  },
+  {
+    "path": "licenses/OpenVDB/LICENSE",
+    "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+    "bytes": 10173
+  },
+  {
+    "path": "licenses/OpenVDB/RE-LICENSE_NOTE.txt",
+    "sha256": "ac78fb9ed20b3276fb7892e81adcc9a1d483feb46a554a4529a40c92779f0744",
+    "bytes": 824
+  },
+  {
+    "path": "licenses/OpenVDB/openvdb/openvdb/LICENSE",
+    "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+    "bytes": 10173
+  },
+  {
+    "path": "licenses/GLFW/LICENSE.md",
+    "sha256": "149704059b5d0bf551637e50042dd4de9c2cae921021f6636298911e3a5f9462",
+    "bytes": 904
+  },
+  {
+    "path": "licenses/Dear-ImGui/LICENSE.txt",
+    "sha256": "173506a2d6f7fb67990d257fb2507f188690eca39060c39469ae7bef43aae2a3",
+    "bytes": 1083
+  },
+  {
+    "path": "licenses/oneTBB/LICENSE.txt",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "bytes": 11357
+  },
+  {
+    "path": "licenses/SkiaSharp/LICENSE.txt",
+    "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938",
+    "bytes": 1129
+  },
+  {
+    "path": "licenses/SkiaSharp.NativeAssets.macOS/LICENSE.txt",
+    "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938",
+    "bytes": 1129
+  },
+  {
+    "path": "licenses/SkiaSharp.NativeAssets.Win32/LICENSE.txt",
+    "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938",
+    "bytes": 1129
+  },
+  {
+    "path": "licenses/cmake/LICENSE_Apache_20",
+    "sha256": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68",
+    "bytes": 10273
+  },
+  {
+    "path": "licenses/cmake/LICENSE_BSD_3",
+    "sha256": "a39f63ec8a8e9d63ee8fd85eac9eda615995216eff43c500f68c08d4c922bf3f",
+    "bytes": 1668
+  },
+  {
+    "path": "licenses/ninja/LICENSE_Apache_20",
+    "sha256": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68",
+    "bytes": 10273
+  },
+  {
+    "path": "licenses/dotnet-sdk/LICENSE.txt",
+    "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+    "bytes": 1116
+  },
+  {
+    "path": "licenses/dotnet-sdk/ThirdPartyNotices.txt",
+    "sha256": "e7035d738ba828bc7aa7569913bfb89bab6e852fd6e0ce2f5fbc210c9acfefb3",
+    "bytes": 77438
+  },
+  {
+    "path": "licenses/Dear-ImGui/imstb_truetype.h",
+    "sha256": "88f0a25e27f5eefd6ec50c42fc5fe3026aa8170603efa08aa18d622db8660923",
+    "bytes": 199503
+  },
+  {
+    "path": "licenses/Dear-ImGui/imstb_rectpack.h",
+    "sha256": "2efa3d5f7d003c19743b15155dad9f46d9f9fc783a18893d703b431d3c990972",
+    "bytes": 20344
+  },
+  {
+    "path": "licenses/Dear-ImGui/imstb_textedit.h",
+    "sha256": "a985f5fa0ed97353d493b497961e9eef52082edcd045cf6954b69990ec9d0741",
+    "bytes": 60111
+  },
+  {
+    "path": "licenses/Dear-ImGui/backends/imgui_impl_opengl3_loader.h",
+    "sha256": "d3aa3e1f3d23c8c88817832e17d8dd0f2d0b599ae28430067c3fad563b8b7cd5",
+    "bytes": 41175
+  },
+  {
+    "path": "artifacts/source-sphere-0.001000m.stl",
+    "sha256": "e6769f35e83ea078e3898260465bdc022ef530173398c0e19bf265b31fed33c5",
+    "bytes": 183084
+  },
+  {
+    "path": "artifacts/source-difference-0.001000m.stl",
+    "sha256": "7991bb072032f81725157e58bb8b3949634ca50e396acc46e021a390f18b4ab9",
+    "bytes": 178284
+  },
+  {
+    "path": "artifacts/source-intersection-0.001000m.stl",
+    "sha256": "2074eca4dbfc3c9872509e407983f5c261e31951a542e86c8819d95cfca025e1",
+    "bytes": 95084
+  },
+  {
+    "path": "artifacts/source-difference-0.000500m.stl",
+    "sha256": "6c8793f65e702daf96465994f097b549fceb7c84a9dbc95ff996a28c7c209045",
+    "bytes": 735084
+  },
+  {
+    "path": "artifacts/source-difference-0.000250m.stl",
+    "sha256": "0345ddd4639d29696c37ad3ea98b2635f4a5169a63488feb68963522b7584fea",
+    "bytes": 2982284
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "source": "fixed official npm release archives",
+  "packages": {
+    "three": {
+      "version": "0.186.0",
+      "url": "https://registry.npmjs.org/three/-/three-0.186.0.tgz",
+      "archive_sha256": "61eeff9d7616005c9a481c796f52287d81fbbbc0d55eaca5565322924252c1aa",
+      "files": {
+        "three.module.js": {
+          "bytes": 662772,
+          "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+          "upstream_sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+          "modification": "none"
+        },
+        "three.core.js": {
+          "bytes": 1458113,
+          "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+          "upstream_sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+          "modification": "none"
+        },
+        "OrbitControls.js": {
+          "bytes": 40767,
+          "sha256": "30386f7141d5ce5d5e0a3ab643e4eb16265f4564466108105ce449857f62fdda",
+          "upstream_sha256": "3d79d07ecb686b4e5d93232eedab255331c1beef711e13164eaa1f68655a5f2b",
+          "modification": "local relative module import"
+        },
+        "LICENSE": {
+          "bytes": 1081,
+          "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+          "upstream_sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+          "modification": "none"
+        }
+      }
+    },
+    "echarts": {
+      "version": "6.1.0",
+      "url": "https://registry.npmjs.org/echarts/-/echarts-6.1.0.tgz",
+      "archive_sha256": "681aff88cc1038c3fa941a3a53d1b177a52250b05335efc607d6105ae13be481",
+      "files": {
+        "echarts.min.js": {
+          "bytes": 1121883,
+          "sha256": "b66b25aeb4df84e33199dc21694014d336d222cbd9deb0e5a7c14bd6aa0d0fd0",
+          "upstream_sha256": "b66b25aeb4df84e33199dc21694014d336d222cbd9deb0e5a7c14bd6aa0d0fd0",
+          "modification": "none"
+        },
+        "LICENSE": {
+          "bytes": 11990,
+          "sha256": "634293835b43a6dd2094fa39182a3d9a6b9ca43b7fdb9ac354e8037af2a3093a",
+          "upstream_sha256": "634293835b43a6dd2094fa39182a3d9a6b9ca43b7fdb9ac354e8037af2a3093a",
+          "modification": "none"
+        },
+        "NOTICE": {
+          "bytes": 168,
+          "sha256": "d491d358344f842685c1b1585970999db65fe30ecf7ef3867af8814f4016c016",
+          "upstream_sha256": "d491d358344f842685c1b1585970999db65fe30ecf7ef3867af8814f4016c016",
+          "modification": "none"
+        }
+      }
+    }
+  }
+}

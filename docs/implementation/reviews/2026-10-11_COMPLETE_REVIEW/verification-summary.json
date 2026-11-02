@@ -1,0 +1,147 @@
+{
+  "generated_at_utc": "2026-10-12T04:27:21.975947+00:00",
+  "javascript": {
+    "cancelled": 0,
+    "fail": 0,
+    "log": "javascript-tests.log",
+    "pass": 134,
+    "sha256": "38cebc0c8f606cd60f6710211ad8f494adaec8e9add927092899aa4fbd833a53",
+    "skipped": 0,
+    "status": "PASS",
+    "tests": 134,
+    "todo": 0
+  },
+  "mypy": {
+    "basis": "Recorded fresh command log; not a new command execution by this finalizer",
+    "log": "mypy.log",
+    "scope": "Existing explicitly selected packages; not whole-repository/GUI typing",
+    "sha256": "70ced0fa58a9c5cdc054b02c96eb21e3709dc2c7fc6eb24b5179a92c6b7d3e16",
+    "source_files": 351,
+    "status": "PASS"
+  },
+  "native_overlap_accounting": {
+    "full_suite_skips_exercised_as_native_passes": 69,
+    "note": "Do not add supplemental native passes to full-suite passes as independent/unique tests. Counts above identify overlap and optional backend coverage.",
+    "overlapping_with_full_suite": 69,
+    "raw_supplemental_testcase_rows": 71,
+    "repeated_between_native_and_p08": 2,
+    "supplemental_not_in_full_suite": [],
+    "unique_supplemental_identifiers": 69,
+    "unique_supplemental_passed": 69
+  },
+  "native_p08_flag_specific": {
+    "duplicate_identifiers": [],
+    "elapsed_testcase_seconds": 12.075,
+    "errors": 0,
+    "failed": 0,
+    "failure_identifiers": [],
+    "passed": 2,
+    "sha256": "a8139f2e1ccf15ea511cd7becd3c84284cb3c2ff91d1cb6c4339bd8e0962814a",
+    "skip_reasons": {},
+    "skipped": 0,
+    "source": "native-p08.xml",
+    "status": "PASS",
+    "testcases": 2,
+    "unique_identifiers": 2
+  },
+  "native_supplemental": {
+    "duplicate_identifiers": [],
+    "elapsed_testcase_seconds": 184.455,
+    "errors": 0,
+    "failed": 0,
+    "failure_identifiers": [],
+    "passed": 67,
+    "sha256": "b7921d4941eaa2e304f0bb1cbc28d40daba7a128f36e5f54f796e6b6cb929363",
+    "skip_reasons": {
+      "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG": 2
+    },
+    "skipped": 2,
+    "source": "native-tests.xml",
+    "status": "PASS",
+    "testcases": 69,
+    "unique_identifiers": 69
+  },
+  "not_covered_by_green_tests": [
+    "Production release or physical readiness",
+    "Security role-spoof/legacy mutation defects reproduced separately",
+    "Unqualified platforms/standalone installation/signing",
+    "Missing experimental data and human acceptance"
+  ],
+  "pip_consistency": {
+    "basis": "Recorded fresh command log; not a new command execution by this finalizer",
+    "log": "pip-check.log",
+    "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+    "status": "PASS"
+  },
+  "python_full_suite": {
+    "duplicate_identifiers": [],
+    "elapsed_testcase_seconds": 87.236,
+    "errors": 0,
+    "failed": 0,
+    "failure_identifiers": [],
+    "passed": 2803,
+    "sha256": "b850a349cdaab2c733a5baad93bf6a76915cdfa55ff586a3f99815d031459683",
+    "skip_reasons": {
+      "Document contains mappingproxy and is not yet hashable.": 1,
+      "Document hashability will be implemented after the Knowledge Foundation models are completed.": 1,
+      "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence": 7,
+      "Explicit qualified native runtime required; run separately for G8": 4,
+      "Hashability depends on nested immutable models.": 1,
+      "Hashability will be enabled after all Knowledge Foundation models become fully immutable.": 1,
+      "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback": 56,
+      "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG": 2,
+      "Reference/Document hashability not implemented yet.": 1
+    },
+    "skipped": 74,
+    "source": "python-tests.xml",
+    "status": "PASS",
+    "testcases": 2877,
+    "unique_identifiers": 2877
+  },
+  "ruff": {
+    "basis": "Recorded fresh command log; not a new command execution by this finalizer",
+    "log": "ruff.log",
+    "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "status": "PASS"
+  },
+  "scope": "Fresh local review checks, not release/engineering/physical acceptance",
+  "security_diagnostic": {
+    "assertion": "Reproduced existing defects; successful reproduction is not a security PASS",
+    "sha256": "a08c0a87352c6016398ecf4efeb65183fa6a1b3e954ea2ba8c495be7864502a8",
+    "source": "security-boundary-probe.json"
+  },
+  "typescript": {
+    "basis": "Coordinator-observed exit code and exact command; empty success log alone is not used as proof",
+    "compiler": "/private/tmp/cosmos-p03.pfPm6s/node_modules/typescript/bin/tsc",
+    "consumers": [
+      "tests/ui/design-system/type_contracts.ts",
+      "tests/ui/app-shell/type_contracts.ts",
+      "tests/ui/rocket-workbench/contract-consumer.ts",
+      "tests/ui/ngg/type_contracts.ts",
+      "tests/ui/simulation/type_contracts.ts",
+      "tests/ui/comparison/type_contracts.ts",
+      "tests/ui/knowledge_reports/type_contracts.ts"
+    ],
+    "consumers_count": 7,
+    "executable": "/opt/homebrew/bin/node",
+    "execution_evidence": "execution-status.json",
+    "execution_evidence_sha256": "19cc435377d75d30e3c3429fc5f01eace36d3e676c63823ae90634620279d8eb",
+    "exit_code": 0,
+    "flags": [
+      "--strict",
+      "--noEmit",
+      "--target",
+      "ES2022",
+      "--lib",
+      "ES2022,DOM",
+      "--module",
+      "Node16",
+      "--moduleResolution",
+      "Node16"
+    ],
+    "log": "typescript.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "observed_by": "coordinating reviewer exec_command result",
+    "status": "PASS"
+  }
+}

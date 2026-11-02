@@ -188,6 +188,12 @@ def test_moc_invariants_and_no_contour() -> None:
         generate_contour()
 
 
+@pytest.mark.parametrize("angle", [float("nan"), float("inf"), -float("inf")])
+def test_moc_invariants_reject_nonfinite_angle(angle: float) -> None:
+    with pytest.raises(InvalidInputError, match="flow angle must be finite"):
+        invariants(2.0, angle, GAMMA)
+
+
 def test_deflection_from_mach_angle_is_zero() -> None:
     theta = deflection_from_wave_angle(2.0, mach_angle(2.0), GAMMA)
     assert theta == pytest.approx(0.0, abs=1.0e-12)

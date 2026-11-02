@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "plot_id": "nozzle-contour",
+  "source_sha256": "3d92f6e2a8afd72f1fd02ec05eae102b07ff9d07e785aa14f7dab78790ffae01",
+  "source_rows": 81,
+  "exact_series_points": 81,
+  "csv_values_all_matched": true,
+  "svg_units_and_visible_qualification": true,
+  "provenance_source_record_exact": true,
+  "no_physical_validation_claim": true,
+  "files": {
+    "nozzle-contour.source.json": "11248361544f7e380c9372aeff7a7e3936eb7540cf4c0684fe73483c0eb6ffe8",
+    "nozzle-contour.csv": "d55139513834e3cd3402fc9bb57d012b6c3aca353c51ea0b661d9b7fb4e245f7",
+    "nozzle-contour.svg": "c6d7e801f1bbee122fdb19e905c398a6ce23619b7e68f083dd5a4e4842d7b2e2",
+    "nozzle-contour.provenance.json": "b83b1f440fda520907eb14602744d0c40c6f96dd7af0891cf0ca1bad0de650d8"
+  }
+}

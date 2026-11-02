@@ -1,0 +1,99 @@
+- banner:
+  - button "Edit profile photo"
+  - generic: COSMOS
+  - button "Project Default Project":
+    - generic: Project
+    - generic: Default Project
+  - generic: Workspace
+  - generic: Workbench
+  - generic: Solver
+  - generic: IDLE
+  - generic: AI
+  - generic: Maharshi
+  - generic: COSMOS Administrator
+  - generic: Administration Infrastructure · ADMIN
+  - button "Command search":
+    - generic: ⌘K
+    - text: Command
+  - button "Job manager": Jobs
+  - button "Notifications":
+    - text: Alerts
+    - generic: "1"
+  - button "Properties panel": Properties
+  - button "Default Project"
+  - button "COSMOS Administrator"
+- complementary "Primary navigation":
+  - generic: Workspaces
+  - button "Command":
+    - generic: Command
+  - button "Rocket Engine":
+    - generic: Rocket Engine
+  - button "Knowledge":
+    - generic: Knowledge
+  - button "Workbench" [expanded]:
+    - generic: Workbench
+    - generic: ▾
+  - button "Python" [expanded]:
+    - generic: Python
+    - generic: ▾
+  - button "Launch desktop"
+  - button "Knowledge dev server"
+  - button "Scripting add-ons" [disabled]
+  - generic: Secondary
+  - button "Project":
+    - generic: Project
+  - button "Jobs":
+    - generic: Jobs
+  - generic: System
+  - button "Audit Trail":
+    - generic: Audit Trail
+  - button "Administration":
+    - generic: Administration
+  - button "Help":
+    - generic: Help
+  - button "Log out":
+    - generic: Log out
+- main:
+  - heading "Simulation" [level=1]
+  - paragraph: CFD, FEA, and coupled physics simulation launchers.
+- region "Engineering console":
+  - button "Jobs 0":
+    - text: Jobs
+    - generic: "0"
+  - button "Solver IDLE":
+    - text: Solver
+    - generic: IDLE
+  - button "Convergence —":
+    - text: Convergence
+    - generic: —
+  - button "Log"
+  - button "Events"
+- button "Maharshi Bharadwaj Maharshi":
+  - img "Maharshi Bharadwaj"
+  - generic: Maharshi
+- heading "Recent Workbenches" [level=4]
+- text: None yet
+- heading "Recent Files" [level=4]
+- text: None yet
+- complementary:
+  - heading [level=3]: Properties
+  - button: ✕
+- complementary:
+  - heading [level=3]: Job Manager
+  - button: ✕
+  - paragraph: 0 active · 0 failed · 0 total
+  - table:
+    - rowgroup:
+      - row:
+        - columnheader: Source
+        - columnheader: Status
+        - columnheader: Type
+        - columnheader: Created
+        - columnheader: Error
+  - button: Refresh Jobs
+- complementary:
+  - heading [level=3]: Notifications
+  - button: ✕
+  - strong: COSMOS engineering environment ready
+  - generic: Default Project
+  - time: 2026-10-08T10:22:39.196Z

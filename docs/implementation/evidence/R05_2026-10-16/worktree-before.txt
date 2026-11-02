@@ -1,0 +1,189 @@
+ M .github/workflows/ci.yml
+ M .gitignore
+ M SECURITY.md
+ M api/authentication.py
+ M api/authorization.py
+ M api/propulsion_workflow.py
+ M gui/knowledge_proxy.py
+ M gui/native_window.py
+ M gui/server.py
+ M gui/static/app.js
+ M gui/static/cosmos-api.js
+ M gui/static/cosmos-shell.css
+ M gui/static/cosmos.css
+ M gui/static/engineering-ux.js
+ M gui/static/maharshi.css
+ M gui/static/maharshi.js
+ M gui/static/propulsion-suite.css
+ M gui/static/propulsion-suite.js
+ M gui/static/rbac.js
+ M gui/static/workbench/knowledge.html
+ M gui/static/workbench/rocket-engine.html
+ M gui/workbenches/propulsion_suite.py
+ M gui/workbenches/registry.py
+ M knowledge/foundation/document_pipeline.py
+ M knowledge/ingestion_adapters/html.py
+ M knowledge/ingestion_adapters/normalize.py
+ M knowledge/workspace/backup.py
+ M knowledge/workspace/server.py
+ M knowledge/workspace/session.py
+ M physics/compressible_flow/moc_nozzle.py
+ M physics/heat_transfer/film_cooling.py
+ M physics/thermochemistry/cea_interface.py
+ M plugins/nasa_cea/README.md
+ M plugins/nasa_cea/engine.py
+ M requirements-cea.txt
+ M scripts/build_macos_app.sh
+ M scripts/smoke_nasa_cea_methalox.py
+ M systems/contracts/results.py
+ M systems/projects/models.py
+ M systems/stages/nozzle.py
+ M systems/stages/operating_point.py
+ M systems/stages/performance.py
+ M systems/stages/propellants.py
+ M systems/stages/structure.py
+ M systems/stages/thermochemistry.py
+ M systems/workflow/graph.py
+ M systems/workflow/invalidation.py
+ M systems/workflow/orchestrator.py
+ M systems/workflow/state.py
+ M tests/integration_tests/gui/test_propulsion_e2e_http.py
+ M tests/integration_tests/systems_layer/test_immediate_remediation.py
+ M tests/integration_tests/systems_layer/test_phase4_chain.py
+ M tests/js/remediation_workflow.test.cjs
+ M tests/unit_tests/api/test_propulsion_catalogs.py
+ M tests/unit_tests/api/test_propulsion_workflow.py
+ M tests/unit_tests/gui/test_propulsion_suite.py
+ M tests/unit_tests/physics/test_compressible_flow.py
+ M tests/unit_tests/plugins/test_nasa_cea_engine.py
+ M tests/unit_tests/systems_layer/test_immediate_remediation.py
+?? api/comparison_workbench.py
+?? api/knowledge_reports.py
+?? api/ngg_workbench.py
+?? api/simulation_workbench.py
+?? api/visualization_workbench.py
+?? docs/implementation/
+?? documentation/development/COSMOS_CEA_INTEGRATION_001.md
+?? documentation/development/COSMOS_INJECTOR_COOLING_NOZZLE_FOUNDATION_001.md
+?? documentation/development/COSMOS_P12_RELEASE_PREVIEW.md
+?? gui/app_shell.py
+?? gui/comparison_ui.py
+?? gui/knowledge_reports_ui.py
+?? gui/ngg.py
+?? gui/simulation_ui.py
+?? gui/static/app-shell/
+?? gui/static/comparison/
+?? gui/static/design-system/
+?? gui/static/knowledge-reports/
+?? gui/static/ngg/
+?? gui/static/rocket-workbench/
+?? gui/static/simulation/
+?? gui/static/vendor/
+?? gui/static/visualization/
+?? gui/static/workbench/comparison.html
+?? gui/static/workbench/knowledge-reports.html
+?? gui/static/workbench/native-geometry.html
+?? gui/static/workbench/simulation.html
+?? gui/static/workbench/visualization.html
+?? infrastructure/geometry/
+?? infrastructure/release/
+?? infrastructure/transport/
+?? knowledge/workspace/evidence_navigation.py
+?? numerics/finite_volume/radial_diffusion.py
+?? numerics/mesh/parametric_curve.py
+?? physics/compressible_flow/bell_nozzle.py
+?? physics/compressible_flow/external_nozzle.py
+?? physics/heat_transfer/nozzle_profile.py
+?? physics/heat_transfer/regenerative.py
+?? physics/heat_transfer/spherical_conduction.py
+?? physics/injectors/
+?? plugins/geometry/
+?? requirements-release-macos.txt
+?? scripts/benchmark_r02_r03.cjs
+?? scripts/build_release_preview.py
+?? scripts/collect_release_inventory.py
+?? scripts/vendor_visualization.py
+?? scripts/verify_cea_reference.py
+?? scripts/verify_completion_preservation.py
+?? scripts/verify_visualization_csv.py
+?? scripts/verify_visualization_exports.py
+?? simulation/
+?? systems/configuration/
+?? systems/contracts/geometry/
+?? systems/geometry/
+?? systems/stages/subsystems.py
+?? systems/visualization/
+?? tests/contracts/
+?? tests/fixtures/geometry_contracts.py
+?? tests/fixtures/knowledge_reports.py
+?? tests/fixtures/ngg_cases.py
+?? tests/fixtures/propulsion_subsystems.py
+?? tests/fixtures/vv_cases.py
+?? tests/integration_tests/geometry/
+?? tests/integration_tests/gui/test_app_shell_http.py
+?? tests/integration_tests/gui/test_cea_http.py
+?? tests/integration_tests/gui/test_comparison_http.py
+?? tests/integration_tests/gui/test_knowledge_reports_http.py
+?? tests/integration_tests/gui/test_ngg_http.py
+?? tests/integration_tests/gui/test_r01_assumed_thermo_http.py
+?? tests/integration_tests/gui/test_r01_authorization_http.py
+?? tests/integration_tests/gui/test_r01_recovery_upload_http.py
+?? tests/integration_tests/gui/test_r03_capability_navigation_http.py
+?? tests/integration_tests/gui/test_release_preview_http.py
+?? tests/integration_tests/gui/test_simulation_http.py
+?? tests/integration_tests/gui/test_subsystems_http.py
+?? tests/integration_tests/gui/test_visualization_http.py
+?? tests/integration_tests/simulation/
+?? tests/integration_tests/validation/
+?? tests/js/app_shell.test.cjs
+?? tests/js/app_shell_bridge.test.cjs
+?? tests/js/comparison.test.cjs
+?? tests/js/design_system.test.cjs
+?? tests/js/knowledge_graph.test.cjs
+?? tests/js/knowledge_graph_response.test.cjs
+?? tests/js/knowledge_reports.test.cjs
+?? tests/js/ngg.test.cjs
+?? tests/js/r03_domain_tasks.test.cjs
+?? tests/js/r03_draft_redo.test.cjs
+?? tests/js/r03_layout_completion.test.cjs
+?? tests/js/r03_metrics.test.cjs
+?? tests/js/r03_result_presentation.test.cjs
+?? tests/js/release_rbac.test.cjs
+?? tests/js/remediation_dialogs.test.cjs
+?? tests/js/rocket_workbench.test.cjs
+?? tests/js/scientific_chart.test.cjs
+?? tests/js/simulation.test.cjs
+?? tests/js/visualization_exports.test.cjs
+?? tests/ui/
+?? tests/unit_tests/api/test_cea_workflow.py
+?? tests/unit_tests/api/test_subsystem_workflow.py
+?? tests/unit_tests/gui/test_app_shell.py
+?? tests/unit_tests/gui/test_native_exports.py
+?? tests/unit_tests/gui/test_ngg.py
+?? tests/unit_tests/gui/test_rocket_workbench.py
+?? tests/unit_tests/gui/test_simulation_flag.py
+?? tests/unit_tests/infrastructure/test_geometry_supervisor.py
+?? tests/unit_tests/infrastructure/test_multipart_transport.py
+?? tests/unit_tests/infrastructure/test_release_hardening.py
+?? tests/unit_tests/knowledge/test_evidence_navigation.py
+?? tests/unit_tests/knowledge/workspace/test_backup_hardening.py
+?? tests/unit_tests/knowledge/workspace/test_r01_session_boundaries.py
+?? tests/unit_tests/numerics/test_parametric_curve.py
+?? tests/unit_tests/numerics/test_radial_diffusion.py
+?? tests/unit_tests/physics/test_cea_contract.py
+?? tests/unit_tests/physics/test_propulsion_subsystems.py
+?? tests/unit_tests/plugins/test_geometry_protocol.py
+?? tests/unit_tests/plugins/test_stl_encoding.py
+?? tests/unit_tests/simulation/
+?? tests/unit_tests/systems_layer/test_geometry_artifacts.py
+?? tests/unit_tests/systems_layer/test_geometry_build.py
+?? tests/unit_tests/systems_layer/test_geometry_graph.py
+?? tests/unit_tests/systems_layer/test_geometry_snapshot.py
+?? tests/unit_tests/systems_layer/test_geometry_wire.py
+?? tests/unit_tests/systems_layer/test_ngg_qa.py
+?? tests/unit_tests/systems_layer/test_ngg_service.py
+?? tests/unit_tests/systems_layer/test_r01_scientific_hardening.py
+?? tests/unit_tests/systems_layer/test_target_comparison.py
+?? tests/unit_tests/systems_layer/test_visualization_plots.py
+?? tests/unit_tests/validation/
+?? validation/

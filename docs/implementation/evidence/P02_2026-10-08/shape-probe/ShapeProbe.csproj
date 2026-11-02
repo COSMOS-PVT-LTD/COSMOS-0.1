@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputPath>$(ShapeBuildRoot)/bin/</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(PicoGKSourcePath)/PicoGK.csproj" />
+    <Compile Include="$(ShapeKernelSourcePath)/ShapeKernel/**/*.cs" />
+  </ItemGroup>
+</Project>

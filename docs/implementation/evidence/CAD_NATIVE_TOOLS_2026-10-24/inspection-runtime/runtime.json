@@ -1,0 +1,13 @@
+{
+  "schema": "cosmos.cad-tools-runtime.v1",
+  "python": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-cad-inspection/bin/python",
+  "python_sha256": "690ff84223d152000549f124e52752a724c0797a0f88a5c68b2b6fa304e50e36",
+  "method_sha256": {
+    "systems/geometry/cad_tools.py": "4d8f7f477e1eab31db2bf55aacf341e91d59c269dd72d560aaa25e8a260edc42",
+    "systems/geometry/manufacturing_drawing.py": "6aa7cf138bc9081a48984f9dd1ea5d2379da2804956fa00e25820f5aa7869436",
+    "plugins/geometry/workers/cad_inspection_worker.py": "2718bba2d1bdb99cf10e5a4ad0c2d2ca3be4c57b8259cfa0d89d885e7c95123d",
+    "api/cad_tools.py": "df7e39bf48ef0076287a78c5f7e020c8c95eab46701cd0e6f9f24152f10f6658"
+  },
+  "receipt": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/CAD_NATIVE_TOOLS_2026-10-24/inspection-runtime/software-receipt.json",
+  "receipt_sha256": "d469f48c5f21ac557953ba859f71bcabed90cf284350a8e28de16549e057db9e"
+}

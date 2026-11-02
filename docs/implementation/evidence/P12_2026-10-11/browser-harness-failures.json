@@ -1,0 +1,411 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.7.0/bin/node",
+      "/private/tmp/cosmos-p03.pfPm6s/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config=tests/ui/release_hardening/playwright.config.cjs"
+    ],
+    "configFile": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/playwright.config.cjs",
+    "rootDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/cosmos-p12-journey.4Rnhy9/browser-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening",
+        "testIgnore": [],
+        "testMatch": [
+          "release.spec.cjs"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/tmp/cosmos-p12-journey.4Rnhy9/browser-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening",
+        "snapshotDir": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening",
+        "testIgnore": [],
+        "testMatch": "release.spec.cjs",
+        "timeout": 90000,
+        "use": {
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "reducedMotion": "reduce",
+          "deviceScaleFactor": 1,
+          "launchOptions": {
+            "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/P12_2026-10-11/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "release.spec.cjs",
+      "file": "release.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "private packaged login and all existing modern routes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2129,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:11:06.241Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-7ba38fb2cdc230244e8e",
+          "file": "release.spec.cjs",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "actual native geometry simulation comparison and reproducible report download",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9926,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:11:16.897Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-c3166ac1656fd78e6278",
+          "file": "release.spec.cjs",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "measured project-load baseline and bounded concurrent transport stress",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 427,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:11:26.836Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-4bdb7a9630ce4a3d2514",
+          "file": "release.spec.cjs",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "cross-workbench keyboard accessibility dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1745,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:11:27.275Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-bd123f30f953cc238611",
+          "file": "release.spec.cjs",
+          "line": 21,
+          "column": 45
+        },
+        {
+          "title": "cross-workbench keyboard accessibility high-contrast",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1695,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:11:29.028Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-d27040d4da05dc6e7313",
+          "file": "release.spec.cjs",
+          "line": 21,
+          "column": 45
+        },
+        {
+          "title": "responsive report viewport interaction and visible provenance",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 90163,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:11:30.738Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p12-journey.4Rnhy9/browser-output/release-responsive-report--7afa3-tion-and-visible-provenance/error-context.md"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p12-journey.4Rnhy9/browser-output/release-responsive-report--7afa3-tion-and-visible-provenance/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-6134836b22a1e8f25af6",
+          "file": "release.spec.cjs",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "same-root restart rollback preserves persistent project and blocks modern endpoints",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1654,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m{\"chamber_design\": null, \"change_log\": [], \"cooling_design\": null, \"created_at\": \"2026-10-11T06:11:16+00:00\", \"cycle_configuration\": {\"cycle_type\": \"UNSPECIFIED\", \"implementation_status\": \"NOT_IMPLEMENTED\", \"parameters\": {}, \"reason\": \"No validated cycle-power-balance implementation in COSMOS_0.1 Physics.\"}, \"description\": \"\", \"design_id\": \"9b50a1a1-7c27-4e3d-9b48-9b451ef32014\", \"editor_drafts\": {}, \"engineer\": null, \"injector_design\": null, \"material_selection\": null, \"name\": \"P12 isolated persisted project\", \"nozzle_design\": null, \"operating_point\": {\"ambient_pressure\": null, \"ambient_temperature\": null, \"chamber_pressure\": null, \"chamber_temperature\": null, \"chamber_temperature_is_assumption\": false, \"characteristic_velocity\": null, \"fuel_mass_flow\": null, \"gamma\": null, \"gamma_is_assumption\": false, \"mass_flow\": null, \"mixture_ratio\": null, \"molecular_weight\": null, \"oxidizer_mass_flow\": null}, \"propellant_configuration\": {\"fuel_id\": null, \"fuel_pressure\": null, \"fuel_state\": null, \"fuel_temperature\": null, \"mixture_ratio\": null, \"oxidizer_id\": null, \"oxidizer_pressure\": null, \"oxidizer_state\": null, \"oxidizer_temperature\": null}, \"requirements\": {\"ambient_pressure\": null, \"ambient_temperature\": null, \"burn_duration\": null, \"cycle_type\": null, \"expansion_ratio\": null, \"mixture_ratio\": null, \"notes\": null, \"operating_altitude\": null, \"propellant_selection\": null, \"target_chamber_pressure\": null, \"target_thrust\": null}, \"revision\": 0, \"schema_version\": \"0.1.0\", \"software_version\": \"0.1.0\", \"status\": {\"value\": \"draft\"}, \"structural_design\": null, \"subsystem_inputs\": {}, \"thermal_design\": null, \"thermochemistry_configuration\": {}, \"updated_at\": \"2026-10-11T06:11:16+00:00\", \"workflow\": {\"graph\": {\"nodes\": {\"chamber\": {\"dependencies\": [\"performance\", \"injector\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance\"}, {\"reason\": \"Preliminary L* geometry does not consume injector hydraulic sizing or model atomization.\", \"requirement\": \"INFORMATIONAL\", \"stage_id\": \"injector\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Combustion Chamber\", \"result_id\": null, \"stage_id\": \"chamber\", \"status\": \"NOT_CALCULATED\"}, \"consistency\": {\"dependencies\": [\"performance_summary\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance_summary\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"System Consistency Check\", \"result_id\": null, \"stage_id\": \"consistency\", \"status\": \"NOT_CALCULATED\"}, \"cooling\": {\"dependencies\": [\"thermal\", \"nozzle\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"thermal\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"nozzle\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Cooling System\", \"result_id\": null, \"stage_id\": \"cooling\", \"status\": \"NOT_CALCULATED\"}, \"cycle\": {\"dependencies\": [\"requirements\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"requirements\"}], \"implementation_status\": \"NOT_IMPLEMENTED\", \"name\": \"Engine Cycle\", \"result_id\": null, \"stage_id\": \"cycle\", \"status\": \"NOT_CALCULATED\"}, \"design_project\": {\"dependencies\": [], \"dependency_edges\": [], \"implementation_status\": \"PARTIAL\", \"name\": \"Design Project\", \"result_id\": null, \"stage_id\": \"design_project\", \"status\": \"CURRENT\"}, \"design_review\": {\"dependencies\": [\"consistency\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"consistency\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Design Review\", \"result_id\": null, \"stage_id\": \"design_review\", \"status\": \"NOT_CALCULATED\"}, \"injector\": {\"dependencies\": [\"performance\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Injector\", \"result_id\": null, \"stage_id\": \"injector\", \"status\": \"NOT_CALCULATED\"}, \"materials\": {\"dependencies\": [\"chamber\"], \"dependency_edges\": [{\"reason\": \"Material identity lookup is independent of chamber geometry.\", \"requirement\": \"INFORMATIONAL\", \"stage_id\": \"chamber\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Material Selection\", \"result_id\": null, \"stage_id\": \"materials\", \"status\": \"NOT_CALCULATED\"}, \"nozzle\": {\"dependencies\": [\"chamber\", \"performance\"], \"dependency_edges\": [{\"reason\": \"Ideal 1D stations use performance geometry, not chamber sizing.\", \"requirement\": \"INFORMATIONAL\", \"stage_id\": \"chamber\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Nozzle\", \"result_id\": null, \"stage_id\": \"nozzle\", \"status\": \"NOT_CALCULATED\"}, \"operating_point\": {\"dependencies\": [\"propellants\", \"cycle\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"propellants\"}, {\"reason\": \"Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point construction defers the cycle analysis and is not a complete engine design.\", \"requirement\": \"DEFERRED\", \"stage_id\": \"cycle\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Operating Point\", \"result_id\": null, \"stage_id\": \"operating_point\", \"status\": \"NOT_CALCULATED\"}, \"performance\": {\"dependencies\": [\"thermochemistry\", \"operating_point\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"thermochemistry\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"operating_point\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Mass Flow / Performance\", \"result_id\": null, \"stage_id\": \"performance\", \"status\": \"NOT_CALCULATED\"}, \"performance_summary\": {\"dependencies\": [\"nozzle\", \"structure\", \"thermal\", \"performance\"], \"dependency_edges\": [{\"reason\": \"Aggregate only available CURRENT subsystem outputs.\", \"requirement\": \"OPTIONAL\", \"stage_id\": \"nozzle\"}, {\"reason\": \"Aggregate only available CURRENT subsystem outputs.\", \"requirement\": \"OPTIONAL\", \"stage_id\": \"structure\"}, {\"reason\": \"Aggregate only available CURRENT subsystem outputs.\", \"requirement\": \"OPTIONAL\", \"stage_id\": \"thermal\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Engine Performance Summary\", \"result_id\": null, \"stage_id\": \"performance_summary\", \"status\": \"NOT_CALCULATED\"}, \"propellants\": {\"dependencies\": [\"requirements\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"requirements\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Propellant Definition\", \"result_id\": null, \"stage_id\": \"propellants\", \"status\": \"NOT_CALCULATED\"}, \"requirements\": {\"dependencies\": [\"design_project\"], \"dependency_edges\": [{\"reason\": \"Design identity already exists.\", \"requirement\": \"INFORMATIONAL\", \"stage_id\": \"design_project\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Requirements\", \"result_id\": null, \"stage_id\": \"requirements\", \"status\": \"NOT_CALCULATED\"}, \"structure\": {\"dependencies\": [\"chamber\", \"materials\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"chamber\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"materials\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Structural Analysis\", \"result_id\": null, \"stage_id\": \"structure\", \"status\": \"NOT_CALCULATED\"}, \"thermal\": {\"dependencies\": [\"chamber\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"chamber\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Thermal Analysis\", \"result_id\": null, \"stage_id\": \"thermal\", \"status\": \"NOT_CALCULATED\"}, \"thermochemistry\": {\"dependencies\": [\"operating_point\", \"propellants\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"operating_point\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"propellants\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Thermochemistry\", \"result_id\": null, \"stage_id\": \"thermochemistry\", \"status\": \"NOT_CALCULATED\"}}}, \"result_history\": [], \"results\": {}}}\u001b[39m\nReceived: \u001b[31mundefined\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m{\"chamber_design\": null, \"change_log\": [], \"cooling_design\": null, \"created_at\": \"2026-10-11T06:11:16+00:00\", \"cycle_configuration\": {\"cycle_type\": \"UNSPECIFIED\", \"implementation_status\": \"NOT_IMPLEMENTED\", \"parameters\": {}, \"reason\": \"No validated cycle-power-balance implementation in COSMOS_0.1 Physics.\"}, \"description\": \"\", \"design_id\": \"9b50a1a1-7c27-4e3d-9b48-9b451ef32014\", \"editor_drafts\": {}, \"engineer\": null, \"injector_design\": null, \"material_selection\": null, \"name\": \"P12 isolated persisted project\", \"nozzle_design\": null, \"operating_point\": {\"ambient_pressure\": null, \"ambient_temperature\": null, \"chamber_pressure\": null, \"chamber_temperature\": null, \"chamber_temperature_is_assumption\": false, \"characteristic_velocity\": null, \"fuel_mass_flow\": null, \"gamma\": null, \"gamma_is_assumption\": false, \"mass_flow\": null, \"mixture_ratio\": null, \"molecular_weight\": null, \"oxidizer_mass_flow\": null}, \"propellant_configuration\": {\"fuel_id\": null, \"fuel_pressure\": null, \"fuel_state\": null, \"fuel_temperature\": null, \"mixture_ratio\": null, \"oxidizer_id\": null, \"oxidizer_pressure\": null, \"oxidizer_state\": null, \"oxidizer_temperature\": null}, \"requirements\": {\"ambient_pressure\": null, \"ambient_temperature\": null, \"burn_duration\": null, \"cycle_type\": null, \"expansion_ratio\": null, \"mixture_ratio\": null, \"notes\": null, \"operating_altitude\": null, \"propellant_selection\": null, \"target_chamber_pressure\": null, \"target_thrust\": null}, \"revision\": 0, \"schema_version\": \"0.1.0\", \"software_version\": \"0.1.0\", \"status\": {\"value\": \"draft\"}, \"structural_design\": null, \"subsystem_inputs\": {}, \"thermal_design\": null, \"thermochemistry_configuration\": {}, \"updated_at\": \"2026-10-11T06:11:16+00:00\", \"workflow\": {\"graph\": {\"nodes\": {\"chamber\": {\"dependencies\": [\"performance\", \"injector\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance\"}, {\"reason\": \"Preliminary L* geometry does not consume injector hydraulic sizing or model atomization.\", \"requirement\": \"INFORMATIONAL\", \"stage_id\": \"injector\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Combustion Chamber\", \"result_id\": null, \"stage_id\": \"chamber\", \"status\": \"NOT_CALCULATED\"}, \"consistency\": {\"dependencies\": [\"performance_summary\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance_summary\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"System Consistency Check\", \"result_id\": null, \"stage_id\": \"consistency\", \"status\": \"NOT_CALCULATED\"}, \"cooling\": {\"dependencies\": [\"thermal\", \"nozzle\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"thermal\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"nozzle\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Cooling System\", \"result_id\": null, \"stage_id\": \"cooling\", \"status\": \"NOT_CALCULATED\"}, \"cycle\": {\"dependencies\": [\"requirements\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"requirements\"}], \"implementation_status\": \"NOT_IMPLEMENTED\", \"name\": \"Engine Cycle\", \"result_id\": null, \"stage_id\": \"cycle\", \"status\": \"NOT_CALCULATED\"}, \"design_project\": {\"dependencies\": [], \"dependency_edges\": [], \"implementation_status\": \"PARTIAL\", \"name\": \"Design Project\", \"result_id\": null, \"stage_id\": \"design_project\", \"status\": \"CURRENT\"}, \"design_review\": {\"dependencies\": [\"consistency\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"consistency\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Design Review\", \"result_id\": null, \"stage_id\": \"design_review\", \"status\": \"NOT_CALCULATED\"}, \"injector\": {\"dependencies\": [\"performance\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Injector\", \"result_id\": null, \"stage_id\": \"injector\", \"status\": \"NOT_CALCULATED\"}, \"materials\": {\"dependencies\": [\"chamber\"], \"dependency_edges\": [{\"reason\": \"Material identity lookup is independent of chamber geometry.\", \"requirement\": \"INFORMATIONAL\", \"stage_id\": \"chamber\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Material Selection\", \"result_id\": null, \"stage_id\": \"materials\", \"status\": \"NOT_CALCULATED\"}, \"nozzle\": {\"dependencies\": [\"chamber\", \"performance\"], \"dependency_edges\": [{\"reason\": \"Ideal 1D stations use performance geometry, not chamber sizing.\", \"requirement\": \"INFORMATIONAL\", \"stage_id\": \"chamber\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Nozzle\", \"result_id\": null, \"stage_id\": \"nozzle\", \"status\": \"NOT_CALCULATED\"}, \"operating_point\": {\"dependencies\": [\"propellants\", \"cycle\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"propellants\"}, {\"reason\": \"Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point construction defers the cycle analysis and is not a complete engine design.\", \"requirement\": \"DEFERRED\", \"stage_id\": \"cycle\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Operating Point\", \"result_id\": null, \"stage_id\": \"operating_point\", \"status\": \"NOT_CALCULATED\"}, \"performance\": {\"dependencies\": [\"thermochemistry\", \"operating_point\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"thermochemistry\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"operating_point\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Mass Flow / Performance\", \"result_id\": null, \"stage_id\": \"performance\", \"status\": \"NOT_CALCULATED\"}, \"performance_summary\": {\"dependencies\": [\"nozzle\", \"structure\", \"thermal\", \"performance\"], \"dependency_edges\": [{\"reason\": \"Aggregate only available CURRENT subsystem outputs.\", \"requirement\": \"OPTIONAL\", \"stage_id\": \"nozzle\"}, {\"reason\": \"Aggregate only available CURRENT subsystem outputs.\", \"requirement\": \"OPTIONAL\", \"stage_id\": \"structure\"}, {\"reason\": \"Aggregate only available CURRENT subsystem outputs.\", \"requirement\": \"OPTIONAL\", \"stage_id\": \"thermal\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Engine Performance Summary\", \"result_id\": null, \"stage_id\": \"performance_summary\", \"status\": \"NOT_CALCULATED\"}, \"propellants\": {\"dependencies\": [\"requirements\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"requirements\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Propellant Definition\", \"result_id\": null, \"stage_id\": \"propellants\", \"status\": \"NOT_CALCULATED\"}, \"requirements\": {\"dependencies\": [\"design_project\"], \"dependency_edges\": [{\"reason\": \"Design identity already exists.\", \"requirement\": \"INFORMATIONAL\", \"stage_id\": \"design_project\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Requirements\", \"result_id\": null, \"stage_id\": \"requirements\", \"status\": \"NOT_CALCULATED\"}, \"structure\": {\"dependencies\": [\"chamber\", \"materials\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"chamber\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"materials\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Structural Analysis\", \"result_id\": null, \"stage_id\": \"structure\", \"status\": \"NOT_CALCULATED\"}, \"thermal\": {\"dependencies\": [\"chamber\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"chamber\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Thermal Analysis\", \"result_id\": null, \"stage_id\": \"thermal\", \"status\": \"NOT_CALCULATED\"}, \"thermochemistry\": {\"dependencies\": [\"operating_point\", \"propellants\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"operating_point\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"propellants\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Thermochemistry\", \"result_id\": null, \"stage_id\": \"thermochemistry\", \"status\": \"NOT_CALCULATED\"}}}, \"result_history\": [], \"results\": {}}}\u001b[39m\nReceived: \u001b[31mundefined\u001b[39m\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs:23:734",
+                    "location": {
+                      "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                      "column": 734,
+                      "line": 23
+                    },
+                    "snippet": "  21 | for(const theme of ['dark','high-contrast'])test('cross-workbench keyboard accessibility '+theme,async({page})=>{const results=[];for(const view of ['native-geometry','simulation','comparison','knowledge','reports']){await page.goto(base+'/app/workbench/'+view);await page.getByLabel('Theme',{exact:true}).selectOption(theme);await page.addScriptTag({path:require.resolve('axe-core/axe.min.js')});const selector={'native-geometry':'#ngg-workbench',simulation:'#sim-workbench',comparison:'#vv-workbench',knowledge:'#kr-workbench',reports:'#kr-workbench'}[view];await expect(page.locator(selector)).toBeVisible();const audit=await page.evaluate(selector=>axe.run(document.querySelector(selector),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}}),selector);results.push({view,violations:audit.violations});save('accessibility-'+theme+'.json',results);expect(audit.violations).toEqual([]);await page.locator('button:visible').first().focus();await expect(page.locator('button:visible').first()).toBeFocused();}save('accessibility-'+theme+'.json',results);});\n  22 | test('responsive report viewport interaction and visible provenance',async({page})=>{const results=[];for(const width of [1440,1024,390]){await page.setViewportSize({width,height:1200});await page.goto(base+'/app/workbench/reports');await expect(page.locator('#kr-context')).toContainText('report project');await page.locator('#kr-history').selectOption(reportId);await expect(page.locator('#kr-lineage tbody tr')).toHaveCount(5);const tick=performance.now();await page.locator('#kr-focus').click();const row=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth}));expect(row.scrollWidth).toBeLessThanOrEqual(width);results.push({...row,focusInteractionMs:performance.now()-tick});await page.screenshot({path:path.join(out,'packaged-responsive-'+width+'.png'),fullPage:true});}save('responsive.json',results);expect(pageErrors).toEqual([]);});\n> 23 | test('same-root restart rollback preserves persistent project and blocks modern endpoints',async({page})=>{const before=persistentHashes(),credentialHash=hash(fs.readFileSync(path.join(state,'first-login.json')));expect(Object.keys(before).length).toBeGreaterThan(0);await stop();await start(false);await login(page);await page.goto(base+'/app/workbench/knowledge');await expect(page.locator('h1')).toHaveText('Maharshi Bharadwaj');for(const api of ['/api/ngg/context','/api/simulation/context','/api/comparison/context','/api/knowledge-reports/context'])expect((await page.request.get(base+api)).status()).toBe(404);const design=(await(await page.request.get(base+'/api/propulsion/designs/'+designId)).json()).design;expect(design).toEqual(JSON.parse(fs.readFileSync(path.join(out,'project-before.json'))));expect(persistentHashes()).toEqual(before);expect(hash(fs.readFileSync(path.join(state,'first-login.json')))).toBe(credentialHash);save('rollback-drill.json',{pass:true,same_private_root:true,project_id:designId,persistent_file_sha256:before,credentials_unchanged:true,legacy_route_works:true,modern_apis_disabled:true,ephemeral_run_report_history:'Intentional restart loss; exact package retained before restart',destructive_migration:false});await page.screenshot({path:path.join(out,'packaged-rollback.png'),fullPage:true});});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^\n  24 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                        "column": 734,
+                        "line": 23
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m{\"chamber_design\": null, \"change_log\": [], \"cooling_design\": null, \"created_at\": \"2026-10-11T06:11:16+00:00\", \"cycle_configuration\": {\"cycle_type\": \"UNSPECIFIED\", \"implementation_status\": \"NOT_IMPLEMENTED\", \"parameters\": {}, \"reason\": \"No validated cycle-power-balance implementation in COSMOS_0.1 Physics.\"}, \"description\": \"\", \"design_id\": \"9b50a1a1-7c27-4e3d-9b48-9b451ef32014\", \"editor_drafts\": {}, \"engineer\": null, \"injector_design\": null, \"material_selection\": null, \"name\": \"P12 isolated persisted project\", \"nozzle_design\": null, \"operating_point\": {\"ambient_pressure\": null, \"ambient_temperature\": null, \"chamber_pressure\": null, \"chamber_temperature\": null, \"chamber_temperature_is_assumption\": false, \"characteristic_velocity\": null, \"fuel_mass_flow\": null, \"gamma\": null, \"gamma_is_assumption\": false, \"mass_flow\": null, \"mixture_ratio\": null, \"molecular_weight\": null, \"oxidizer_mass_flow\": null}, \"propellant_configuration\": {\"fuel_id\": null, \"fuel_pressure\": null, \"fuel_state\": null, \"fuel_temperature\": null, \"mixture_ratio\": null, \"oxidizer_id\": null, \"oxidizer_pressure\": null, \"oxidizer_state\": null, \"oxidizer_temperature\": null}, \"requirements\": {\"ambient_pressure\": null, \"ambient_temperature\": null, \"burn_duration\": null, \"cycle_type\": null, \"expansion_ratio\": null, \"mixture_ratio\": null, \"notes\": null, \"operating_altitude\": null, \"propellant_selection\": null, \"target_chamber_pressure\": null, \"target_thrust\": null}, \"revision\": 0, \"schema_version\": \"0.1.0\", \"software_version\": \"0.1.0\", \"status\": {\"value\": \"draft\"}, \"structural_design\": null, \"subsystem_inputs\": {}, \"thermal_design\": null, \"thermochemistry_configuration\": {}, \"updated_at\": \"2026-10-11T06:11:16+00:00\", \"workflow\": {\"graph\": {\"nodes\": {\"chamber\": {\"dependencies\": [\"performance\", \"injector\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance\"}, {\"reason\": \"Preliminary L* geometry does not consume injector hydraulic sizing or model atomization.\", \"requirement\": \"INFORMATIONAL\", \"stage_id\": \"injector\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Combustion Chamber\", \"result_id\": null, \"stage_id\": \"chamber\", \"status\": \"NOT_CALCULATED\"}, \"consistency\": {\"dependencies\": [\"performance_summary\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance_summary\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"System Consistency Check\", \"result_id\": null, \"stage_id\": \"consistency\", \"status\": \"NOT_CALCULATED\"}, \"cooling\": {\"dependencies\": [\"thermal\", \"nozzle\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"thermal\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"nozzle\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Cooling System\", \"result_id\": null, \"stage_id\": \"cooling\", \"status\": \"NOT_CALCULATED\"}, \"cycle\": {\"dependencies\": [\"requirements\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"requirements\"}], \"implementation_status\": \"NOT_IMPLEMENTED\", \"name\": \"Engine Cycle\", \"result_id\": null, \"stage_id\": \"cycle\", \"status\": \"NOT_CALCULATED\"}, \"design_project\": {\"dependencies\": [], \"dependency_edges\": [], \"implementation_status\": \"PARTIAL\", \"name\": \"Design Project\", \"result_id\": null, \"stage_id\": \"design_project\", \"status\": \"CURRENT\"}, \"design_review\": {\"dependencies\": [\"consistency\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"consistency\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Design Review\", \"result_id\": null, \"stage_id\": \"design_review\", \"status\": \"NOT_CALCULATED\"}, \"injector\": {\"dependencies\": [\"performance\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Injector\", \"result_id\": null, \"stage_id\": \"injector\", \"status\": \"NOT_CALCULATED\"}, \"materials\": {\"dependencies\": [\"chamber\"], \"dependency_edges\": [{\"reason\": \"Material identity lookup is independent of chamber geometry.\", \"requirement\": \"INFORMATIONAL\", \"stage_id\": \"chamber\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Material Selection\", \"result_id\": null, \"stage_id\": \"materials\", \"status\": \"NOT_CALCULATED\"}, \"nozzle\": {\"dependencies\": [\"chamber\", \"performance\"], \"dependency_edges\": [{\"reason\": \"Ideal 1D stations use performance geometry, not chamber sizing.\", \"requirement\": \"INFORMATIONAL\", \"stage_id\": \"chamber\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Nozzle\", \"result_id\": null, \"stage_id\": \"nozzle\", \"status\": \"NOT_CALCULATED\"}, \"operating_point\": {\"dependencies\": [\"propellants\", \"cycle\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"propellants\"}, {\"reason\": \"Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point construction defers the cycle analysis and is not a complete engine design.\", \"requirement\": \"DEFERRED\", \"stage_id\": \"cycle\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Operating Point\", \"result_id\": null, \"stage_id\": \"operating_point\", \"status\": \"NOT_CALCULATED\"}, \"performance\": {\"dependencies\": [\"thermochemistry\", \"operating_point\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"thermochemistry\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"operating_point\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Mass Flow / Performance\", \"result_id\": null, \"stage_id\": \"performance\", \"status\": \"NOT_CALCULATED\"}, \"performance_summary\": {\"dependencies\": [\"nozzle\", \"structure\", \"thermal\", \"performance\"], \"dependency_edges\": [{\"reason\": \"Aggregate only available CURRENT subsystem outputs.\", \"requirement\": \"OPTIONAL\", \"stage_id\": \"nozzle\"}, {\"reason\": \"Aggregate only available CURRENT subsystem outputs.\", \"requirement\": \"OPTIONAL\", \"stage_id\": \"structure\"}, {\"reason\": \"Aggregate only available CURRENT subsystem outputs.\", \"requirement\": \"OPTIONAL\", \"stage_id\": \"thermal\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"performance\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Engine Performance Summary\", \"result_id\": null, \"stage_id\": \"performance_summary\", \"status\": \"NOT_CALCULATED\"}, \"propellants\": {\"dependencies\": [\"requirements\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"requirements\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Propellant Definition\", \"result_id\": null, \"stage_id\": \"propellants\", \"status\": \"NOT_CALCULATED\"}, \"requirements\": {\"dependencies\": [\"design_project\"], \"dependency_edges\": [{\"reason\": \"Design identity already exists.\", \"requirement\": \"INFORMATIONAL\", \"stage_id\": \"design_project\"}], \"implementation_status\": \"IMPLEMENTED\", \"name\": \"Requirements\", \"result_id\": null, \"stage_id\": \"requirements\", \"status\": \"NOT_CALCULATED\"}, \"structure\": {\"dependencies\": [\"chamber\", \"materials\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"chamber\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"materials\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Structural Analysis\", \"result_id\": null, \"stage_id\": \"structure\", \"status\": \"NOT_CALCULATED\"}, \"thermal\": {\"dependencies\": [\"chamber\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"chamber\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Thermal Analysis\", \"result_id\": null, \"stage_id\": \"thermal\", \"status\": \"NOT_CALCULATED\"}, \"thermochemistry\": {\"dependencies\": [\"operating_point\", \"propellants\"], \"dependency_edges\": [{\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"operating_point\"}, {\"reason\": \"Consumed by the downstream calculation.\", \"requirement\": \"REQUIRED\", \"stage_id\": \"propellants\"}], \"implementation_status\": \"PARTIAL\", \"name\": \"Thermochemistry\", \"result_id\": null, \"stage_id\": \"thermochemistry\", \"status\": \"NOT_CALCULATED\"}}}, \"result_history\": [], \"results\": {}}}\u001b[39m\nReceived: \u001b[31mundefined\u001b[39m\n\n  21 | for(const theme of ['dark','high-contrast'])test('cross-workbench keyboard accessibility '+theme,async({page})=>{const results=[];for(const view of ['native-geometry','simulation','comparison','knowledge','reports']){await page.goto(base+'/app/workbench/'+view);await page.getByLabel('Theme',{exact:true}).selectOption(theme);await page.addScriptTag({path:require.resolve('axe-core/axe.min.js')});const selector={'native-geometry':'#ngg-workbench',simulation:'#sim-workbench',comparison:'#vv-workbench',knowledge:'#kr-workbench',reports:'#kr-workbench'}[view];await expect(page.locator(selector)).toBeVisible();const audit=await page.evaluate(selector=>axe.run(document.querySelector(selector),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}}),selector);results.push({view,violations:audit.violations});save('accessibility-'+theme+'.json',results);expect(audit.violations).toEqual([]);await page.locator('button:visible').first().focus();await expect(page.locator('button:visible').first()).toBeFocused();}save('accessibility-'+theme+'.json',results);});\n  22 | test('responsive report viewport interaction and visible provenance',async({page})=>{const results=[];for(const width of [1440,1024,390]){await page.setViewportSize({width,height:1200});await page.goto(base+'/app/workbench/reports');await expect(page.locator('#kr-context')).toContainText('report project');await page.locator('#kr-history').selectOption(reportId);await expect(page.locator('#kr-lineage tbody tr')).toHaveCount(5);const tick=performance.now();await page.locator('#kr-focus').click();const row=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth}));expect(row.scrollWidth).toBeLessThanOrEqual(width);results.push({...row,focusInteractionMs:performance.now()-tick});await page.screenshot({path:path.join(out,'packaged-responsive-'+width+'.png'),fullPage:true});}save('responsive.json',results);expect(pageErrors).toEqual([]);});\n> 23 | test('same-root restart rollback preserves persistent project and blocks modern endpoints',async({page})=>{const before=persistentHashes(),credentialHash=hash(fs.readFileSync(path.join(state,'first-login.json')));expect(Object.keys(before).length).toBeGreaterThan(0);await stop();await start(false);await login(page);await page.goto(base+'/app/workbench/knowledge');await expect(page.locator('h1')).toHaveText('Maharshi Bharadwaj');for(const api of ['/api/ngg/context','/api/simulation/context','/api/comparison/context','/api/knowledge-reports/context'])expect((await page.request.get(base+api)).status()).toBe(404);const design=(await(await page.request.get(base+'/api/propulsion/designs/'+designId)).json()).design;expect(design).toEqual(JSON.parse(fs.readFileSync(path.join(out,'project-before.json'))));expect(persistentHashes()).toEqual(before);expect(hash(fs.readFileSync(path.join(state,'first-login.json')))).toBe(credentialHash);save('rollback-drill.json',{pass:true,same_private_root:true,project_id:designId,persistent_file_sha256:before,credentials_unchanged:true,legacy_route_works:true,modern_apis_disabled:true,ephemeral_run_report_history:'Intentional restart loss; exact package retained before restart',destructive_migration:false});await page.screenshot({path:path.join(out,'packaged-rollback.png'),fullPage:true});});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^\n  24 |\n    at /Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs:23:734"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T06:13:01.556Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p12-journey.4Rnhy9/browser-output/release-same-root-restart--40d5c-and-blocks-modern-endpoints/error-context.md"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/cosmos-p12-journey.4Rnhy9/browser-output/release-same-root-restart--40d5c-and-blocks-modern-endpoints/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/tests/ui/release_hardening/release.spec.cjs",
+                    "column": 734,
+                    "line": 23
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c1a9e36699c03db8c159-18988a946c630842e2c3",
+          "file": "release.spec.cjs",
+          "line": 23,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-11T06:11:05.745Z",
+    "duration": 119939.289,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

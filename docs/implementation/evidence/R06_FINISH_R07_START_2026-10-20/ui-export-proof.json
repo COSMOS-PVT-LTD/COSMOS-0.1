@@ -1,0 +1,116 @@
+{
+  "scope": "Actual browser/native/SQLite/download qualification over synthetic inputs only; no physical evidence",
+  "qa_root": "/private/tmp/cosmos-r06-operating-qa.SSCtHL",
+  "physical_validation": "NOT_PERFORMED",
+  "files": {
+    "operating-sensitivity-0.source.json": {
+      "path": "/Users/vaibhavkumarn/Downloads/operating-sensitivity-0.source.json",
+      "sha256": "13c6d1c27d2b53a61210523188ebbd24cd18ea9198beada993b710be99469481"
+    },
+    "COSMOS-preliminary-model-operating-sensitivity-record.json": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-preliminary-model-operating-sensitivity-record.json",
+      "sha256": "089f8f4a59f73c15c6b81ca3a6b84ab48fa729a4e1141695d82037c2ca62821f"
+    },
+    "COSMOS-preliminary-model-operating-sensitivity-record (1).json": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-preliminary-model-operating-sensitivity-record (1).json",
+      "sha256": "089f8f4a59f73c15c6b81ca3a6b84ab48fa729a4e1141695d82037c2ca62821f"
+    },
+    "operating-sensitivity-0.provenance.json": {
+      "path": "/Users/vaibhavkumarn/Downloads/operating-sensitivity-0.provenance.json",
+      "sha256": "867d557f96431d4da354c51390b6abdcb400f13d72461bbf9dca225e1b050696"
+    },
+    "COSMOS-preliminary-model-operating-sensitivity-inputs.json": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-preliminary-model-operating-sensitivity-inputs.json",
+      "sha256": "e2717419cf56a8960d9919d13a9734832fdfb818d301991505480b640c6b79d3"
+    },
+    "COSMOS-preliminary-model-operating-sensitivity-residuals.csv": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-preliminary-model-operating-sensitivity-residuals.csv",
+      "sha256": "8a7ee6be6618110700bdc453f6c7400635d87cf65b1a011b9c09565bf1533399"
+    },
+    "operating-sensitivity-0.csv": {
+      "path": "/Users/vaibhavkumarn/Downloads/operating-sensitivity-0.csv",
+      "sha256": "384d363af6919681778dc95e8d36df538c9c88fd0a09f64552ebdef462e1a730"
+    },
+    "engine-nozzle-intent.source.json": {
+      "path": "/Users/vaibhavkumarn/Downloads/engine-nozzle-intent.source.json",
+      "sha256": "397c466bf9f6e641aa11d55dc6ec7319a11ee3911eb10d9cfe1510c095f718ce"
+    },
+    "COSMOS-unbuilt-engine-intent-engine-geometry-intent-record.json": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-unbuilt-engine-intent-engine-geometry-intent-record.json",
+      "sha256": "30b4a745fbece2e8c5d28e48db3b41ba3ac33d1045fcfc1c45016756e3463985"
+    },
+    "COSMOS-unbuilt-engine-intent-engine-geometry-intent-record (1).json": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-unbuilt-engine-intent-engine-geometry-intent-record (1).json",
+      "sha256": "30b4a745fbece2e8c5d28e48db3b41ba3ac33d1045fcfc1c45016756e3463985"
+    },
+    "engine-nozzle-intent.provenance.json": {
+      "path": "/Users/vaibhavkumarn/Downloads/engine-nozzle-intent.provenance.json",
+      "sha256": "1fffc7c12621ea06821aecfc23346d6db915bfe1ad08fa82ff8f0c7baadfb84c"
+    },
+    "COSMOS-unbuilt-engine-intent-engine-geometry-intent-inputs.json": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-unbuilt-engine-intent-engine-geometry-intent-inputs.json",
+      "sha256": "187d5d6160111549ab3c7d69a3bb82d2ea0ca7b883cd7736977ab73721cf9edf"
+    },
+    "engine-nozzle-intent.svg": {
+      "path": "/Users/vaibhavkumarn/Downloads/engine-nozzle-intent.svg",
+      "sha256": "84aa54bfa01cdcb48fa010fd2fd12c85048d7a3c212e00241db5a1a7ce47ac91"
+    },
+    "COSMOS-unreviewed-evidence-propulsion-validation-record (2).json": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-unreviewed-evidence-propulsion-validation-record (2).json",
+      "sha256": "17ed818978cf58633aef4e0a61ca6bc04ce995722358949d2521d795ae84cb9c"
+    },
+    "COSMOS-unreviewed-evidence-measurement-template (1).csv": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-unreviewed-evidence-measurement-template (1).csv",
+      "sha256": "c488739b20b0f00e3cde24aa09d2473d8a214f69fe6f837e0d3427eba9a97fd0"
+    }
+  },
+  "operating-sensitivity": {
+    "commit_id": "a4c0e733-7350-470b-8a1a-fb0527f77df2",
+    "content_sha256": "089f8f4a59f73c15c6b81ca3a6b84ab48fa729a4e1141695d82037c2ca62821f",
+    "cases": 5,
+    "plot_samples": 3,
+    "derivatives": [
+      {
+        "status": "AVAILABLE",
+        "step": 1000.0,
+        "value": 0.0002264096314938797
+      },
+      {
+        "status": "AVAILABLE",
+        "step": 500.0,
+        "value": 0.00022641730547184123
+      }
+    ],
+    "refinement_difference_not_error_bound": 7.673977961522886e-09
+  },
+  "engine-geometry-intent": {
+    "commit_id": "ac451831-41de-46b3-a20d-f30ba20499b4",
+    "content_sha256": "30b4a745fbece2e8c5d28e48db3b41ba3ac33d1045fcfc1c45016756e3463985",
+    "snapshot_id": "b9b16ca0f229775e4193408cf8bca9924a17b4f6820531010b427b5e53931fbb",
+    "profile_stations": 81,
+    "feature_order": [
+      "inner-profile",
+      "wall-profile",
+      "nozzle-wall"
+    ],
+    "svg_dimensions": [
+      660.0,
+      512.0
+    ],
+    "cad_built_or_accepted": false
+  },
+  "validation_preparation": {
+    "plan_commit_id": "de081a64-aeb2-445c-9d14-b97e97afe72b",
+    "blank_template_rows": 48,
+    "measurements": 0,
+    "assessments": 0,
+    "blockers": [
+      "MEASUREMENT_DATA_MISSING",
+      "MODEL_APPLICABILITY_REVIEW_REQUIRED",
+      "COMPLETE_UNCERTAINTY_BUDGET_REVIEW_REQUIRED",
+      "INDEPENDENT_QUALIFIED_ACCEPTANCE_REQUIRED"
+    ]
+  },
+  "original_input_result_restart_and_export_bytes_exact": true,
+  "baseline_unchanged": true
+}

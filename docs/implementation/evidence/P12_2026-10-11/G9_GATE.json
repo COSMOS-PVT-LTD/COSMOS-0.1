@@ -1,0 +1,43 @@
+{
+  "gate": "G9 Release",
+  "owner": "Qualified COSMOS release owner (not yet signed)",
+  "phase": "P12_RELEASE_HARDENING",
+  "phase_status": "PARTIAL",
+  "status": "BLOCKED",
+  "local_preview": "PASS",
+  "release_complete": false,
+  "production_handoff": false,
+  "evidence": {
+    "regression": "test-summary.json",
+    "package": "package-integrity.json",
+    "sbom": "inventory-release-final/sbom.cdx.json",
+    "license_limits": "inventory-release-final/license-gaps.json",
+    "rollback": "rollback-drill.json",
+    "frozen_registry": "frozen-contract-registry.json",
+    "security": "security-review.json",
+    "baseline_ci_only": "github-ci.json",
+    "candidate_preservation": "source-integrity.json",
+    "predecessor": "predecessor-integrity.json",
+    "documentation": "P12_IMPLEMENTATION_REPORT.md",
+    "signoff": "release-signoff.json"
+  },
+  "blockers": [
+    {
+      "id": "G9-SECURITY-LEGAL",
+      "status": "OPEN",
+      "closure": "Patch and requalify legacy/native-worker advisories including VTK; qualify untrusted Office/XML imports; establish patched interpreter/native/embedded license and security closure; obtain security/legal approval"
+    },
+    {
+      "id": "G9-PLATFORM",
+      "status": "OPEN",
+      "closure": "Qualify portable installer/runtime availability, trusted Developer ID signing/notarization, declared platform CI/native journeys and representative whole-system performance/accessibility/migration budgets"
+    },
+    {
+      "id": "G9-CI-CHANNEL-SIGNOFF",
+      "status": "OPEN",
+      "closure": "Authorize exact-candidate publication, pass candidate CI, provision/test official private reporting channel, obtain qualified release-owner/platform/security/legal/engineering acceptances"
+    }
+  ],
+  "physical_acceptance": false,
+  "next": "Close G9 evidence/approval blockers; no automatic release or P13"
+}

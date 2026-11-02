@@ -1,0 +1,132 @@
+Browser tab: 6, Title: "COSMOS — Projects & Mission", URL: "http://127.0.0.1:8869/app/projects?project=9d0b0ca1-a723-40ff-944a-1bfcd18febbb".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 322-452
++							465 heading Retained cycle calculation · COMPLETED, Value: 4
++								466 text Retained cycle calculation · COMPLETED
++							467 text HISTORICAL baseline or method sources — originals retained
++							468 text Project 9d0b0ca1-a723-40ff-944a-1bfcd18febbb · commit 468487fe-5b2c-4fdf-b1bd-69930e5b47ff · SHA256 eed5576a59b3846d5e26ac9d2bb31ecaab48c2d998bd31a96b7d472bb1caeeab
++							469 text Baseline 529a9bd8-9c5e-4933-879f-36af2953ce3b · captured inputs ac4564cb-a3e5-4a9e-84a5-c5851fb57ccb
++							470 text BALANCED_DECLARED_DESIGN_POINT · Steady prescribed-component design-point assessment, not a map/speed/full-network operating-point solver
++							471 text Core thrust 8566.416725215131 N · total withdrawal 3.1621685980442393 kg/s · core-only thrust / total propellant Isp 276.24441110539897 s
++							472 text Physical validation NOT_PERFORMED · upstream workflow cycle not promoted · core thermal feedback FROZEN_CORE_NOT_RECOMPUTED
++							473 heading oxidizer mass/pressure ledger — SI units in field names, Value: 5
++								474 text oxidizer mass/pressure ledger — SI units in field names
++							475 definition list
++								476 container core_flow_kg_s
++									477 text core_flow_kg_s
++								478 text 2.1225033073565784
++								479 container external_flow_kg_s
++									480 text external_flow_kg_s
++								481 text 0
++								482 container film_flow_kg_s
++									483 text film_flow_kg_s
++								484 text 0
++								485 container gg_flow_kg_s
++									486 text gg_flow_kg_s
++								487 text 0.05418443389773176
++								488 container inlet_pressure_pa
++									489 text inlet_pressure_pa
++								490 text 1000000
++								491 container outlet_pressure_pa
++									492 text outlet_pressure_pa
++								493 text 6000000
++								494 container required_core_pressure_pa
++									495 text required_core_pressure_pa
++								496 text 6000000
++								497 container withdrawal_kg_s
++									498 text withdrawal_kg_s
++								499 text 2.17668774125431
++							500 heading fuel mass/pressure ledger — SI units in field names, Value: 5
++								501 text fuel mass/pressure ledger — SI units in field names
++							502 definition list
++								503 container core_flow_kg_s
++									504 text core_flow_kg_s
++								505 text 0.9228275249376428
++								506 container external_flow_kg_s
++									507 text external_flow_kg_s
++								508 text 0
++								509 container film_flow_kg_s
++									510 text film_flow_kg_s
++								511 text 0.0084688979545549
++								512 container gg_flow_kg_s
++									513 text gg_flow_kg_s
++								514 text 0.05418443389773176
++								515 container inlet_pressure_pa
++									516 text inlet_pressure_pa
++								517 text 1000000
++								518 container outlet_pressure_pa
++									519 text outlet_pressure_pa
++								520 text 8000000
++								521 container required_core_pressure_pa
++									522 text required_core_pressure_pa
++								523 text 8000000
++								524 container withdrawal_kg_s
++									525 text withdrawal_kg_s
++								526 text 0.9854808567899294
++							527 text oxidizer.injector_mass · PASS
++							528 text Signed residual -4.440892098500626e-16 kg/s
++							529 text Declared absolute tolerance 1e-10 kg/s
++							530 text oxidizer.injector_pressure · PASS
++							531 text Signed residual 0 Pa
++							532 text Declared absolute tolerance 0.000001 Pa
++							533 text fuel.injector_mass · PASS
++							534 text Signed residual 0 kg/s
++							535 text Declared absolute tolerance 1e-10 kg/s
++							536 text fuel.injector_pressure · PASS
++							537 text Signed residual 0 Pa
++							538 text Declared absolute tolerance 0.000001 Pa
++							539 text cooling.core_fuel_flow · PASS
++							540 text Signed residual 0 kg/s
++							541 text Declared absolute tolerance 1e-10 kg/s
++							542 text cooling.inlet_pressure · PASS
++							543 text Signed residual 0 Pa
++							544 text Declared absolute tolerance 0.000001 Pa
++							545 text cooling.pressure · PASS
++							546 text Signed residual 1.6298145055770874e-9 Pa
++							547 text Declared absolute tolerance 0.000001 Pa
++							548 text cooling.energy · PASS
++							549 text Signed residual 5.820766091346741e-11 W
++							550 text Declared absolute tolerance 0.00001 W
++							551 text shaft.power · PASS
++							552 text Signed residual 3.637978807091713e-12 W
++							553 text Declared absolute tolerance 0.00001 W
++							554 text turbine.energy · PASS
++							555 text Signed residual 0 W
++							556 text Declared absolute tolerance 0.00001 W
++							557 text GG.energy · PASS
++							558 text Signed residual 0 W
++							559 text Declared absolute tolerance 0.00001 W
++							560 text GG.mass · PASS
++							561 text Signed residual 0 kg/s
++							562 text Declared absolute tolerance 1e-10 kg/s
++							563 text oxidizer.mass · PASS
++							564 text Signed residual -6.938893903907228e-18 kg/s
++							565 text Declared absolute tolerance 1e-10 kg/s
++							566 text oxidizer.core_pressure · PASS
++							567 text Signed residual 0 Pa
++							568 text Declared absolute tolerance 0.000001 Pa
++							569 text oxidizer.GG_pressure · PASS
++							570 text Signed residual 0 Pa
++							571 text Declared absolute tolerance 0.000001 Pa
++							572 text fuel.mass · PASS
++							573 text Signed residual -5.204170427930421e-17 kg/s
++							574 text Declared absolute tolerance 1e-10 kg/s
++							575 text fuel.core_pressure · PASS
++							576 text Signed residual 0 Pa
++							577 text Declared absolute tolerance 0.000001 Pa
++							578 text fuel.GG_pressure · PASS
++							579 text Signed residual 0 Pa
++							580 text Declared absolute tolerance 0.000001 Pa
++							581 text film.pressure · PASS
++							582 text Signed residual 0 Pa
++							583 text Declared absolute tolerance 0.000001 Pa
++							584 button (collapsed) Pump / turbine / shaft power ledger — SI units in field names, Secondary Actions: Expand
++								585 text Pump / turbine / shaft power ledger — SI units in field names
++							586 button Show source-bound normalized residual plot
++							587 link Description: Download original cycle record JSON, Value: 127.0.0.1:8869/api/projects/9d0b0ca1-a723-40ff-944a-1bfcd18febbb/cycle-assessments/282a6115-0044-5be4-ba45-21a2f5d677bd/record.json?commit=468487fe-5b2c-4fdf-b1bd-69930e5b47ff
++							588 link Description: Download captured cycle inputs JSON, Value: 127.0.0.1:8869/api/projects/9d0b0ca1-a723-40ff-944a-1bfcd18febbb/cycle-assessments/282a6115-0044-5be4-ba45-21a2f5d677bd/inputs.json?commit=468487fe-5b2c-4fdf-b1bd-69930e5b47ff
++							589 link Description: Download raw signed cycle residual CSV, Value: 127.0.0.1:8869/api/projects/9d0b0ca1-a723-40ff-944a-1bfcd18febbb/cycle-assessments/282a6115-0044-5be4-ba45-21a2f5d677bd/residuals.csv?commit=468487fe-5b2c-4fdf-b1bd-69930e5b47ff
++							590 link Description: Inspect exact cycle source and upstream baseline, Value: 127.0.0.1:8869/app/projects?project=9d0b0ca1-a723-40ff-944a-1bfcd18febbb&commit=468487fe-5b2c-4fdf-b1bd-69930e5b47ff&domain=coupled-cycle-assessment
++							591 button (collapsed) Original cycle canonical source preview, Secondary Actions: Expand
++								592 text Original cycle canonical source preview
+The focused UI element is 1 AXWebArea COSMOS — Projects & Mission, URL: 127.0.0.1:8869/app/projects?project=9d0b0ca1-a723-40ff-944a-1bfcd18febbb

@@ -1,0 +1,8 @@
+{
+  "pass": true,
+  "cases": 5,
+  "tolerance": 0,
+  "baseline_path": "docs/implementation/evidence/P08_2026-10-09/physics_after.json",
+  "baseline_sha256": "daa1fc9b616c49c6d75f53feab3cf604896b0fda76268090fd251be055fce93a",
+  "physical_validation": false
+}

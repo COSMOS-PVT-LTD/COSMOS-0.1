@@ -1,0 +1,33 @@
+{
+  "bodyWidth": 1100,
+  "chart": "Nozzle contour radius. Axial position [m], linear axis; Nozzle contour radius [m], linear axis. Radius: 81/81 displayed source points. Uncertainty not quantified. Propulsion design c4a56dc8-945b-4b62-b8ac-fa84007db212, revision 7, result 7a2e0239-6945-490c-ab0e-56652ccb2c8e, status CURRENT. Exact source table/export is separate; reduction is display only.",
+  "chromeHeight": 182.28125,
+  "focus": "true",
+  "height": 700,
+  "paneVisibility": [
+    {
+      "class": "cosmos-ds p04-left",
+      "hidden": true
+    },
+    {
+      "class": "cosmos-ds p04-right",
+      "hidden": true
+    },
+    {
+      "class": "cosmos-ds p04-bottom",
+      "hidden": true
+    }
+  ],
+  "status": "Current source loaded. Zoom with the chart controls; exports include source metadata.",
+  "width": 1100,
+  "workspace": {
+    "bottom": 692,
+    "height": 509.71875,
+    "left": 0,
+    "right": 1100,
+    "top": 182.28125,
+    "width": 1100,
+    "x": 0,
+    "y": 182.28125
+  }
+}

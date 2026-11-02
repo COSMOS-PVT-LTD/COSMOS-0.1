@@ -1,0 +1,15 @@
+Browser tab: 10, Title: "COSMOS — Projects & Mission", URL: "http://127.0.0.1:8874/app/projects?project=292480aa-8ab1-4a53-966f-c16cb08fe098".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
++							451 heading propulsion-validation-plan, Value: 4
++								452 text propulsion-validation-plan
++							453 text Commit de081a64-aeb2-445c-9d14-b97e97afe72b · SHA256 17ed818978cf58633aef4e0a61ca6bc04ce995722358949d2521d795ae84cb9c
++							454 text Current retained source/methods — not physical acceptance
++							455 text Physical validation NOT_PERFORMED · independent acceptance FALSE
++							456 text AWAITING_MEASUREMENTS · MEASUREMENT_DATA_MISSING · MODEL_APPLICABILITY_REVIEW_REQUIRED · COMPLETE_UNCERTAINTY_BUDGET_REVIEW_REQUIRED · INDEPENDENT_QUALIFIED_ACCEPTANCE_REQUIRED
++							457 link Description: Download EMPTY measurement CSV template, Value: 127.0.0.1:8874/api/projects/292480aa-8ab1-4a53-966f-c16cb08fe098/propulsion-validation/records/de081a64-aeb2-445c-9d14-b97e97afe72b/measurement-template.csv
++							458 link Description: Download empty provenance checklist JSON, Value: 127.0.0.1:8874/api/projects/292480aa-8ab1-4a53-966f-c16cb08fe098/propulsion-validation/records/de081a64-aeb2-445c-9d14-b97e97afe72b/metadata-template.json
++							459 link Description: Download original propulsion evidence JSON, Value: 127.0.0.1:8874/api/projects/292480aa-8ab1-4a53-966f-c16cb08fe098/propulsion-validation/records/de081a64-aeb2-445c-9d14-b97e97afe72b/record.json
++							460 link Description: Inspect exact evidence source and dependencies, Value: 127.0.0.1:8874/app/projects?project=292480aa-8ab1-4a53-966f-c16cb08fe098&commit=de081a64-aeb2-445c-9d14-b97e97afe72b&domain=propulsion-validation-plan
++							461 button (collapsed) Original canonical evidence preview, Secondary Actions: Expand
++								462 text Original canonical evidence preview
+The focused UI element is 1 AXWebArea COSMOS — Projects & Mission, URL: 127.0.0.1:8874/app/projects?project=292480aa-8ab1-4a53-966f-c16cb08fe098

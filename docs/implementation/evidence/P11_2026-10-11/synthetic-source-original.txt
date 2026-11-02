@@ -1,0 +1,1 @@
+P11 synthetic source contract. Q = k * A * dT / L. Assumption: constant conductivity. Not a measured experiment or accepted engineering model.

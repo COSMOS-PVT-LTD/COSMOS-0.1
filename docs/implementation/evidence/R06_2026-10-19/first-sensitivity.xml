@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="17" time="1.201" timestamp="2026-10-19T15:04:21.640230+05:30" hostname="vaibhavs-MacBook-Air.local"><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_existing_model_linear_scaling_units_original_bytes_and_step_refinement[throat_area_m2-m2-values0-1e-05]" time="0.001"><failure message="TypeError: update_requirements() got an unexpected keyword argument 'target_chamber_pressure'">parameter = 'throat_area_m2', unit = 'm2', values = [0.0008, 0.001, 0.0012]
+h = 1e-05
+
+    @pytest.mark.parametrize("parameter,unit,values,h", [("throat_area_m2", "m2", [.0008,.001,.0012],1e-5), ("chamber_pressure_pa","Pa",[4e6,5e6,6e6],1000.)])
+    def test_existing_model_linear_scaling_units_original_bytes_and_step_refinement(parameter,unit,values,h):
+&gt;       design = baseline()
+                 ^^^^^^^^^^
+
+tests/unit_tests/systems_layer/test_propulsion_sensitivity.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def baseline():
+        design = create_design(name="Sensitivity software fixture")
+&gt;       update_requirements(design, target_chamber_pressure=5e6, target_thrust=10000, ambient_pressure=0., expansion_ratio=10., mixture_ratio=2.3)
+E       TypeError: update_requirements() got an unexpected keyword argument 'target_chamber_pressure'
+
+tests/unit_tests/systems_layer/test_propulsion_sensitivity.py:17: TypeError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_existing_model_linear_scaling_units_original_bytes_and_step_refinement[chamber_pressure_pa-Pa-values1-1000.0]" time="0.000"><failure message="TypeError: update_requirements() got an unexpected keyword argument 'target_chamber_pressure'">parameter = 'chamber_pressure_pa', unit = 'Pa'
+values = [4000000.0, 5000000.0, 6000000.0], h = 1000.0
+
+    @pytest.mark.parametrize("parameter,unit,values,h", [("throat_area_m2", "m2", [.0008,.001,.0012],1e-5), ("chamber_pressure_pa","Pa",[4e6,5e6,6e6],1000.)])
+    def test_existing_model_linear_scaling_units_original_bytes_and_step_refinement(parameter,unit,values,h):
+&gt;       design = baseline()
+                 ^^^^^^^^^^
+
+tests/unit_tests/systems_layer/test_propulsion_sensitivity.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def baseline():
+        design = create_design(name="Sensitivity software fixture")
+&gt;       update_requirements(design, target_chamber_pressure=5e6, target_thrust=10000, ambient_pressure=0., expansion_ratio=10., mixture_ratio=2.3)
+E       TypeError: update_requirements() got an unexpected keyword argument 'target_chamber_pressure'
+
+tests/unit_tests/systems_layer/test_propulsion_sensitivity.py:17: TypeError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_samples_and_center_stencils_remain_explicit_no_one_sided_fallback" time="0.000"><failure message="TypeError: update_requirements() got an unexpected keyword argument 'target_chamber_pressure'">def test_invalid_samples_and_center_stencils_remain_explicit_no_one_sided_fallback():
+&gt;       result = study(baseline(), specification(parameter="ambient_pressure_pa",unit="Pa",values=[-100.,0.,100.],step=10.), evaluate)
+                       ^^^^^^^^^^
+
+tests/unit_tests/systems_layer/test_propulsion_sensitivity.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def baseline():
+        design = create_design(name="Sensitivity software fixture")
+&gt;       update_requirements(design, target_chamber_pressure=5e6, target_thrust=10000, ambient_pressure=0., expansion_ratio=10., mixture_ratio=2.3)
+E       TypeError: update_requirements() got an unexpected keyword argument 'target_chamber_pressure'
+
+tests/unit_tests/systems_layer/test_propulsion_sensitivity.py:17: TypeError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits0]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits1]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits2]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits3]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits4]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits5]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits6]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits7]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits8]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits9]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits10]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits11]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_spacing_and_cea_refusal_are_not_silent_model_changes" time="0.000"><failure message="TypeError: update_requirements() got an unexpected keyword argument 'target_chamber_pressure'">def test_spacing_and_cea_refusal_are_not_silent_model_changes():
+&gt;       design = baseline()
+                 ^^^^^^^^^^
+
+tests/unit_tests/systems_layer/test_propulsion_sensitivity.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def baseline():
+        design = create_design(name="Sensitivity software fixture")
+&gt;       update_requirements(design, target_chamber_pressure=5e6, target_thrust=10000, ambient_pressure=0., expansion_ratio=10., mixture_ratio=2.3)
+E       TypeError: update_requirements() got an unexpected keyword argument 'target_chamber_pressure'
+
+tests/unit_tests/systems_layer/test_propulsion_sensitivity.py:17: TypeError</failure></testcase><testcase classname="tests.integration_tests.gui.test_sensitivity_projects_http" name="test_exact_saved_sensitivity_restart_plots_replay_stale_and_cross_project" time="0.731"><failure message="AssertionError: {'error': {'action': 'Retain drafts. Reload/reconcile an exact authorized head; do not overwrite or reset storage.', '...ecord', 'message': 'Unsupported request fields; identities/roles/results cannot be posted as authority.'}, 'ok': False}&#10;assert 400 == 200">tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-540/test_exact_saved_sensitivity_r0')
+
+    def test_exact_saved_sensitivity_restart_plots_replay_stale_and_cross_project(tmp_path):
+        root=tmp_path/'application'
+        with running(root) as (app,base,client):
+            project=new_project(base,client)
+            original=configured(base,client,project,new_design(base,client,project))
+&gt;           source=request(client,base,route(project,original)+'/run/phase3',command(original,parameters={'chamber_temperature_k':3000.,'gamma':1.2,'molecular_weight_kg_per_mol':.022,'throat_area_m2':.001,'expansion_ratio':10.}))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration_tests/gui/test_sensitivity_projects_http.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;urllib.request.OpenerDirector object at 0x107bd93d0&gt;
+base = 'http://127.0.0.1:63282'
+path = '/api/projects/80cc71ec-4de1-4924-85f5-92b77d2d805e/designs/91a124a0-6b03-5714-a3f0-dd86870702f8/run/phase3'
+data = {'expected': {'content_hash': 'd76d52caffaa7a7e8b522356c674d286bd04a4f075b303727819c415029cce41', 'version': 2}, 'oper...': {'chamber_temperature_k': 3000.0, 'expansion_ratio': 10.0, 'gamma': 1.2, 'molecular_weight_kg_per_mol': 0.022, ...}}
+expected = 200
+
+    def request(client, base, path, data=None, expected=200):
+        payload = json.dumps(data).encode() if data is not None else None
+        try:
+            with client.open(
+                urllib.request.Request(
+                    base + path, data=payload, headers={"Content-Type": "application/json"}
+                ),
+                timeout=15,
+            ) as response:
+                code, body = response.status, json.load(response)
+        except urllib.error.HTTPError as error:
+            code, body = error.code, json.load(error)
+&gt;       assert code == expected, body
+E       AssertionError: {'error': {'action': 'Retain drafts. Reload/reconcile an exact authorized head; do not overwrite or reset storage.', '...ecord', 'message': 'Unsupported request fields; identities/roles/results cannot be posted as authority.'}, 'ok': False}
+E       assert 400 == 200
+
+tests/integration_tests/gui/test_project_authority_http.py:37: AssertionError</failure></testcase></testsuite></testsuites>

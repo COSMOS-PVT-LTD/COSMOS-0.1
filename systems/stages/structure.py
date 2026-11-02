@@ -1,4 +1,4 @@
-"""Stage 12/13 — materials selection + thin-wall chamber stress."""
+"""Stage 12/13 — catalog materials and bounded smooth-cylinder pressure stress."""
 
 from __future__ import annotations
 
@@ -9,7 +9,13 @@ from physics.exceptions import InsufficientDataError, OutOfRangeError
 from physics.materials.catalog import get_material
 from physics.materials.elastic_properties import yield_strength
 from physics.quantities import kelvin, metre, pascal
-from physics.solid_mechanics.pressure_vessels import cylinder
+from physics.solid_mechanics.pressure_vessels import (
+    THIN_WALL,
+    LameCylinderStress,
+    ThinWallCylinder,
+    cylinder,
+    lame_closed_cylinder,
+)
 from systems.contracts.results import (
     CalculationResult,
     ResultStatus,
@@ -21,11 +27,16 @@ from systems.projects.models import PropulsionDesign
 from systems.stages._helpers import (
     failed_result,
     make_result,
-    not_implemented_result,
     stage_guard,
 )
+from systems.stages.subsystems import run_cooling_stage, run_injector_stage
 
-__all__ = ("run_materials_stage", "run_structure_stage")
+__all__ = (
+    "run_cooling_stage",
+    "run_injector_stage",
+    "run_materials_stage",
+    "run_structure_stage",
+)
 
 
 @stage_guard("materials")
@@ -39,7 +50,7 @@ def run_materials_stage(
     stage_id = "materials"
     try:
         if material_id is None:
-            material_id = str(
+            material_id = design.subsystem_inputs.get("materials", {}).get("material_id") or str(
                 (design.material_selection or {}).get("chamber_material_id") or ""
             )
         if not material_id:
@@ -100,14 +111,25 @@ def run_structure_stage(
     external_pressure: Quantity | None = None,
     external_pressure_source: str | None = None,
     material_temperature_k: float | None = None,
+    pressure_model: str | None = None,
 ) -> CalculationResult:
-    """Thin-wall hoop/longitudinal stress vs catalog yield."""
+    """Explicitly selected thin-wall or Lamé pressure-only preliminary screen."""
 
     stage_id = "structure"
     op = design.operating_point
     selected_id = (design.material_selection or {}).get("chamber_material_id")
     inputs: dict[str, object] = {"material_id": selected_id}
+    model_id = THIN_WALL.model_id
+    calculation_type = "structure.thin_wall"
     try:
+        cfg = design.subsystem_inputs.get("structure", {})
+        pressure_model = pressure_model or cfg.get("pressure_model", "THIN_WALL")
+        if pressure_model not in {"THIN_WALL", "LAME_CLOSED_ENDS"}:
+            raise InvalidInputError("Choose THIN_WALL or LAME_CLOSED_ENDS pressure stresses.")
+        inputs["pressure_model"] = pressure_model
+        if pressure_model == "LAME_CLOSED_ENDS":
+            model_id = "PHYS-007.pressure_vessel.lame_closed_ends"
+            calculation_type = "structure.lame_closed_ends"
         if op.chamber_pressure is None:
             raise InvalidInputError("structure requires chamber_pressure.")
         chamber = design.chamber_design or {}
@@ -119,6 +141,13 @@ def run_structure_stage(
             float(chamber["chamber_diameter_m"]), "chamber_diameter_m"
         )
         saved = design.structural_design or {}
+        if wall_thickness_m is None:
+            wall_thickness_m = cfg.get("wall_thickness_m")
+        if external_pressure is None and cfg.get("external_pressure_pa") is not None:
+            external_pressure = pascal(cfg["external_pressure_pa"])
+            external_pressure_source = cfg.get("external_pressure_source")
+        if material_temperature_k is None:
+            material_temperature_k = cfg.get("material_temperature_k")
         thickness = wall_thickness_m
         if thickness is None and "wall_thickness_m" in saved:
             thickness = float(saved["wall_thickness_m"])
@@ -155,7 +184,7 @@ def run_structure_stage(
         )
         if differential.to_si() < 0:
             raise OutOfRangeError(
-                "External pressure exceeds internal pressure; shell buckling is outside the tensile thin-wall model."
+                "External pressure exceeds internal pressure; shell buckling is outside this tensile pressure-only screen."
             )
         if not selected_id:
             raise InsufficientDataError(
@@ -172,9 +201,23 @@ def run_structure_stage(
             "value": material_temperature_k,
             "unit": "K",
         }
-        wall = cylinder(differential, metre(radius), metre(thickness))
-        if wall.radius_to_thickness < 10:
-            raise OutOfRangeError("Thin-wall cylinder requires radius/thickness >= 10.")
+        extra_outputs = {}
+        wall: ThinWallCylinder | LameCylinderStress
+        if pressure_model == "LAME_CLOSED_ENDS":
+            wall = lame_closed_cylinder(op.chamber_pressure, external_pressure, metre(radius), metre(thickness))
+            governing = wall.von_mises
+            extra_outputs = {"radial_stress_at_bore": wall.radial.to_canonical_dict(),
+                             "von_mises_at_bore": wall.von_mises.to_canonical_dict()}
+            assumptions = wall.identity.assumptions
+            reference = "Lamé bore stresses; closed-end axial force balance; max von Mises at bore"
+        else:
+            wall = cylinder(differential, metre(radius), metre(thickness))
+            if wall.radius_to_thickness < 10:
+                raise OutOfRangeError("Thin-wall cylinder requires radius/thickness >= 10; no automatic model substitution.")
+            governing = wall.hoop
+            assumptions = ("Thin-wall membrane theory.",
+                           "Uniform internal/external absolute pressures; tensile differential membrane load only.")
+            reference = "hoop = (Pin - Pout) r / t; longitudinal = hoop/2"
         sy = yield_strength(material, kelvin(material_temperature_k)).require_valid()
         design.write_derived_slot(
             "structural_design",
@@ -186,6 +229,9 @@ def run_structure_stage(
                 "pressure_differential_pa": differential.to_si(),
                 "material_id": material.material_id,
                 "material_temperature_k": material_temperature_k,
+                "pressure_model": pressure_model,
+                "stress_basis": "BORE_VON_MISES" if pressure_model == "LAME_CLOSED_ENDS" else "HOOP",
+                "stress_over_yield": governing.to_si() / sy.to_si(),
                 "hoop_stress_pa": wall.hoop.to_si(),
                 "longitudinal_stress_pa": wall.longitudinal.to_si(),
                 "yield_strength_pa": sy.to_si(),
@@ -193,13 +239,17 @@ def run_structure_stage(
             },
         )
         result = make_result(
-            calculation_type="structure.thin_wall",
+            calculation_type=calculation_type,
             stage_id=stage_id,
             status=ResultStatus.CURRENT,
-            model_id="PHYS-007.pressure_vessel.thin_wall",
+            model_id=model_id,
             model_version="0.1.0",
             inputs=inputs,
             outputs={
+                **extra_outputs,
+                "pressure_model": pressure_model,
+                "stress_basis": "BORE_VON_MISES" if pressure_model == "LAME_CLOSED_ENDS" else "HOOP",
+                "stress_over_yield": {"value": governing.to_si() / sy.to_si(), "unit": "1"},
                 "hoop_stress": wall.hoop.to_canonical_dict(),
                 "longitudinal_stress": wall.longitudinal.to_canonical_dict(),
                 "yield_strength": sy.to_canonical_dict(),
@@ -209,18 +259,18 @@ def run_structure_stage(
                     "unit": "1",
                 },
             },
-            assumptions=(
-                "Thin-wall membrane theory.",
-                "Uniform internal/external absolute pressures; tensile differential membrane load only.",
+            assumptions=(*assumptions,
                 f"Yield is handbook typical at explicitly supplied {material_temperature_k:g} K.",
             ),
-            warnings=("Not ASME/PED design. Validation: NOT_CLAIMED.",),
+            warnings=("Not ASME/PED design. Validation: NOT_CLAIMED.",
+                      "Smooth cylinder only: no cooling-channel ligaments, bimetallic interfaces, thermal stress, creep, fatigue, joints or nozzle loads.",
+                      "An elastic stress calculation does not establish hardware readiness or an accepted design safety factor."),
             validity=ValidityInfo(status=ValidityState.VALID),
             verification=VerificationInfo(
                 status="PASS",
-                reference="hoop = (Pin - Pout) r / t; longitudinal = hoop/2",
+                reference=reference,
             ),
-            source="Roark / Shigley thin-wall relations via Physics",
+            source=wall.identity.source,
             design_revision=design.revision,
         )
         design.store_stage_result(stage_id, result)
@@ -230,31 +280,13 @@ def run_structure_stage(
         return result
     except Exception as exc:  # noqa: BLE001
         result = failed_result(
-            calculation_type="structure.thin_wall",
+            calculation_type=calculation_type,
             stage_id=stage_id,
             exc=exc,
-            model_id="PHYS-007.pressure_vessel.thin_wall",
+            model_id=model_id,
             inputs=inputs,
             out_of_range=isinstance(exc, OutOfRangeError),
             design_revision=design.revision,
         )
         design.store_stage_result(stage_id, result)
         return result
-
-
-def run_injector_stage(design: PropulsionDesign) -> CalculationResult:
-    return not_implemented_result(
-        calculation_type="injector.design",
-        stage_id="injector",
-        reason="No validated injector orifice/element calculation in COSMOS_0.1 Physics.",
-        design_revision=design.revision,
-    )
-
-
-def run_cooling_stage(design: PropulsionDesign) -> CalculationResult:
-    return not_implemented_result(
-        calculation_type="cooling.regenerative",
-        stage_id="cooling",
-        reason="No validated regenerative/film cooling channel analysis in this foundation.",
-        design_revision=design.revision,
-    )

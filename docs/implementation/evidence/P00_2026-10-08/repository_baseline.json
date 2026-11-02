@@ -1,0 +1,255 @@
+{
+  "area_counts": {
+    "ai": {
+      "directory_exists": false,
+      "files": 0,
+      "python_files": 0
+    },
+    "api": {
+      "directory_exists": true,
+      "files": 7,
+      "python_files": 7
+    },
+    "core": {
+      "directory_exists": true,
+      "files": 17,
+      "python_files": 17
+    },
+    "databases": {
+      "directory_exists": true,
+      "files": 0,
+      "python_files": 0
+    },
+    "engineering": {
+      "directory_exists": false,
+      "files": 0,
+      "python_files": 0
+    },
+    "external": {
+      "directory_exists": false,
+      "files": 0,
+      "python_files": 0
+    },
+    "governance": {
+      "directory_exists": false,
+      "files": 0,
+      "python_files": 0
+    },
+    "gui": {
+      "directory_exists": true,
+      "files": 52,
+      "python_files": 8
+    },
+    "infrastructure": {
+      "directory_exists": true,
+      "files": 5,
+      "python_files": 5
+    },
+    "io": {
+      "directory_exists": false,
+      "files": 0,
+      "python_files": 0
+    },
+    "knowledge": {
+      "directory_exists": true,
+      "files": 418,
+      "python_files": 412
+    },
+    "numerics": {
+      "directory_exists": true,
+      "files": 145,
+      "python_files": 140
+    },
+    "optimization": {
+      "directory_exists": false,
+      "files": 0,
+      "python_files": 0
+    },
+    "physics": {
+      "directory_exists": true,
+      "files": 121,
+      "python_files": 110
+    },
+    "plugins": {
+      "directory_exists": true,
+      "files": 5,
+      "python_files": 4
+    },
+    "projects": {
+      "directory_exists": false,
+      "files": 0,
+      "python_files": 0
+    },
+    "scripts": {
+      "directory_exists": true,
+      "files": 9,
+      "python_files": 3
+    },
+    "simulation": {
+      "directory_exists": false,
+      "files": 0,
+      "python_files": 0
+    },
+    "systems": {
+      "directory_exists": true,
+      "files": 44,
+      "python_files": 44
+    },
+    "tests": {
+      "directory_exists": true,
+      "files": 284,
+      "python_files": 263
+    },
+    "tools": {
+      "directory_exists": true,
+      "files": 4,
+      "python_files": 4
+    },
+    "validation": {
+      "directory_exists": false,
+      "files": 0,
+      "python_files": 0
+    },
+    "visualization": {
+      "directory_exists": false,
+      "files": 0,
+      "python_files": 0
+    }
+  },
+  "branch": "main",
+  "deferred_numerics_modules": [
+    "numerics/automatic_differentiation/hessians.py",
+    "numerics/automatic_differentiation/reverse_mode.py",
+    "numerics/optimization/bayesian.py",
+    "numerics/optimization/genetic_algorithm.py",
+    "numerics/optimization/lbfgs.py",
+    "numerics/optimization/multi_objective.py",
+    "numerics/optimization/nelder_mead.py",
+    "numerics/optimization/particle_swarm.py",
+    "numerics/optimization/simulated_annealing.py",
+    "numerics/sensitivity/global.py",
+    "numerics/sensitivity/morris.py",
+    "numerics/sensitivity/sobol.py",
+    "numerics/uncertainty/polynomial_chaos.py"
+  ],
+  "git_status_before": "M .github/workflows/ci.yml\n M api/propulsion_workflow.py\n M gui/server.py\n M gui/static/app.js\n M gui/static/cosmos-api.js\n M gui/static/cosmos-shell.css\n M gui/static/cosmos.css\n M gui/static/engineering-ux.js\n M gui/static/propulsion-suite.css\n M gui/static/propulsion-suite.js\n M gui/static/workbench/rocket-engine.html\n M gui/workbenches/propulsion_suite.py\n M physics/heat_transfer/film_cooling.py\n M physics/thermochemistry/cea_interface.py\n M plugins/nasa_cea/README.md\n M plugins/nasa_cea/engine.py\n M requirements-cea.txt\n M scripts/build_macos_app.sh\n M scripts/smoke_nasa_cea_methalox.py\n M systems/projects/models.py\n M systems/stages/nozzle.py\n M systems/stages/performance.py\n M systems/stages/propellants.py\n M systems/stages/structure.py\n M systems/stages/thermochemistry.py\n M systems/workflow/graph.py\n M systems/workflow/invalidation.py\n M systems/workflow/orchestrator.py\n M systems/workflow/state.py\n M tests/integration_tests/gui/test_propulsion_e2e_http.py\n M tests/integration_tests/systems_layer/test_immediate_remediation.py\n M tests/integration_tests/systems_layer/test_phase4_chain.py\n M tests/js/remediation_workflow.test.cjs\n M tests/unit_tests/api/test_propulsion_catalogs.py\n M tests/unit_tests/api/test_propulsion_workflow.py\n M tests/unit_tests/gui/test_propulsion_suite.py\n M tests/unit_tests/plugins/test_nasa_cea_engine.py\n M tests/unit_tests/systems_layer/test_immediate_remediation.py\n?? docs/implementation/\n?? documentation/development/COSMOS_CEA_INTEGRATION_001.md\n?? documentation/development/COSMOS_INJECTOR_COOLING_NOZZLE_FOUNDATION_001.md\n?? numerics/mesh/parametric_curve.py\n?? physics/compressible_flow/bell_nozzle.py\n?? physics/compressible_flow/external_nozzle.py\n?? physics/heat_transfer/nozzle_profile.py\n?? physics/heat_transfer/regenerative.py\n?? physics/injectors/\n?? scripts/verify_cea_reference.py\n?? systems/configuration/\n?? systems/stages/subsystems.py\n?? tests/fixtures/propulsion_subsystems.py\n?? tests/integration_tests/gui/test_cea_http.py\n?? tests/integration_tests/gui/test_subsystems_http.py\n?? tests/js/remediation_dialogs.test.cjs\n?? tests/unit_tests/api/test_cea_workflow.py\n?? tests/unit_tests/api/test_subsystem_workflow.py\n?? tests/unit_tests/numerics/test_parametric_curve.py\n?? tests/unit_tests/physics/test_cea_contract.py\n?? tests/unit_tests/physics/test_propulsion_subsystems.py",
+  "import_root_counts": {
+    "AppKit": 1,
+    "PIL": 4,
+    "__future__": 945,
+    "api": 25,
+    "argparse": 5,
+    "ast": 5,
+    "base64": 1,
+    "builtins": 1,
+    "collections": 54,
+    "concurrent": 4,
+    "contextlib": 4,
+    "copy": 2,
+    "core": 446,
+    "csv": 1,
+    "dataclasses": 251,
+    "datetime": 41,
+    "docx": 6,
+    "enum": 70,
+    "fnmatch": 1,
+    "functools": 1,
+    "getpass": 1,
+    "gui": 20,
+    "hashlib": 29,
+    "hmac": 1,
+    "html": 3,
+    "http": 16,
+    "importlib": 7,
+    "infrastructure": 6,
+    "inspect": 3,
+    "io": 11,
+    "itertools": 2,
+    "json": 73,
+    "knowledge": 2144,
+    "logging": 4,
+    "math": 77,
+    "mimetypes": 1,
+    "multiprocessing": 4,
+    "numerics": 376,
+    "numpy": 135,
+    "os": 4,
+    "pathlib": 110,
+    "physics": 501,
+    "platform": 3,
+    "plugins": 13,
+    "pypdf": 1,
+    "pypdfium2": 1,
+    "pytest": 135,
+    "re": 39,
+    "reportlab": 6,
+    "resource": 2,
+    "secrets": 3,
+    "shutil": 4,
+    "socket": 1,
+    "sqlite3": 5,
+    "statistics": 5,
+    "subprocess": 3,
+    "sys": 12,
+    "systems": 172,
+    "tempfile": 3,
+    "tests": 27,
+    "threading": 21,
+    "time": 12,
+    "tools": 2,
+    "tracemalloc": 2,
+    "types": 7,
+    "typing": 82,
+    "typing_extensions": 3,
+    "unittest": 2,
+    "urllib": 21,
+    "uuid": 7,
+    "webbrowser": 1,
+    "webview": 2,
+    "xml": 5,
+    "zipfile": 9
+  },
+  "installed_distributions": {
+    "Pygments": "2.21.0",
+    "bottle": "0.13.4",
+    "cea": "3.3.4",
+    "iniconfig": "2.3.0",
+    "librt": "0.16.0",
+    "mypy": "1.20.2",
+    "mypy_extensions": "1.1.0",
+    "numpy": "2.4.6",
+    "packaging": "26.3",
+    "pathspec": "1.1.1",
+    "pillow": "11.3.0",
+    "pip": "23.1.2",
+    "pluggy": "1.6.0",
+    "proxy_tools": "0.1.0",
+    "pyobjc-core": "12.2.2",
+    "pyobjc-framework-Cocoa": "12.2.2",
+    "pyobjc-framework-Quartz": "12.2.2",
+    "pyobjc-framework-Security": "12.2.2",
+    "pyobjc-framework-WebKit": "12.2.2",
+    "pypdf": "5.9.0",
+    "pypdfium2": "4.30.0",
+    "pytest": "8.4.2",
+    "pywebview": "5.4",
+    "ruff": "0.16.10",
+    "setuptools": "65.5.0",
+    "typing_extensions": "4.16.0"
+  },
+  "machine": "arm64",
+  "parse_errors": [],
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "python_executable": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/.venv-remediation/bin/python",
+  "recorded_at_utc": "2026-10-08T10:21:10.520938+00:00",
+  "remote": "https://github.com/COSMOS-PVT-LTD/COSMOS-0.1.git",
+  "remote_head": "293223ebef190eaa647e67dc581eb186b2b5d987\tHEAD\n293223ebef190eaa647e67dc581eb186b2b5d987\trefs/heads/main",
+  "repo_root": "/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1",
+  "repo_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "snapshot_file_count": 1467,
+  "snapshot_fingerprint_sha256": "117eaaeae0d56255fc6de4d55f65127d14147b05299c631880b297fc47a53a54",
+  "spec_manifest_entries": 46,
+  "spec_manifest_mismatches": [],
+  "user_date": "2026-10-08"
+}

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="34" time="0.354" timestamp="2026-10-11T09:41:27.500177+05:30" hostname="vaibhavs-MacBook-Air.local"><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_navigate_claim_to_exact_source_assumptions_and_review" time="0.002" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_no_sources_or_seed_are_invented" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_missing_source_review_and_assumptions_not_fabricated" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_project_scope_cannot_leak_other_project_source_or_claim" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_large_original_integrity_not_silently_assumed" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_identifier_refuses_paths_and_ambiguous_routes[../outside]" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_identifier_refuses_paths_and_ambiguous_routes[https://example.com]" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_identifier_refuses_paths_and_ambiguous_routes[a/b]" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_identifier_refuses_paths_and_ambiguous_routes[a\\b]" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_identifier_refuses_paths_and_ambiguous_routes[a%2fb]" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_identifier_refuses_paths_and_ambiguous_routes[]" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_identifier_refuses_paths_and_ambiguous_routes[None]" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_identifier_refuses_paths_and_ambiguous_routes[True]" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_query_bounds[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-0]" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_query_bounds[--1]" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_query_bounds[-True]" time="0.000" /><testcase classname="tests.unit_tests.knowledge.test_evidence_navigation" name="test_query_bounds[-10001]" time="0.000" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_exact_report_lineage_and_deterministic_package" time="0.003"><failure message="systems.contracts.geometry._wire.GeometryContractError: Geometry QA checksum mismatch">setup = (&lt;validation.reporting.EngineeringReports object at 0x1048605d0&gt;, &lt;knowledge.workspace.evidence_navigation.EvidenceNav...services.&lt;locals&gt;.Geometry object at 0x1048a2f10&gt;, '2c45fc2137a7ddf91f989d89e2ef6db63d6f852e125bad89d9cbcd06721f7925'))
+
+    def test_exact_report_lineage_and_deterministic_package(setup):
+&gt;       first, second = make(setup), make(setup); r, _, _ = setup
+                        ^^^^^^^^^^^
+
+tests/unit_tests/validation/test_reporting.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/unit_tests/validation/test_reporting.py:26: in make
+    return r.create("actor", title, key, [CLAIM_ID] if claims is None else claims, c, s, g, nav)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validation/reporting.py:88: in create
+    require(hashlib.sha256(candidate.evidence_json.encode()).hexdigest() == study.handoff.integrity_sha256, "PROVENANCE_MISMATCH", "Geometry QA checksum mismatch")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, code = 'PROVENANCE_MISMATCH'
+message = 'Geometry QA checksum mismatch', field = ''
+
+    def require(condition: bool, code: str, message: str, field: str = "") -&gt; None:
+        if not condition:
+&gt;           raise GeometryContractError(code, message, field)
+E           systems.contracts.geometry._wire.GeometryContractError: Geometry QA checksum mismatch
+
+systems/contracts/geometry/_wire.py:37: GeometryContractError</failure></testcase><testcase classname="tests.unit_tests.validation.test_reporting" name="test_defensive_copy_ownership_and_review_never_grants_acceptance" time="0.002"><failure message="systems.contracts.geometry._wire.GeometryContractError: Geometry QA checksum mismatch">setup = (&lt;validation.reporting.EngineeringReports object at 0x104842210&gt;, &lt;knowledge.workspace.evidence_navigation.EvidenceNav...services.&lt;locals&gt;.Geometry object at 0x1048d6290&gt;, '2c45fc2137a7ddf91f989d89e2ef6db63d6f852e125bad89d9cbcd06721f7925'))
+
+    def test_defensive_copy_ownership_and_review_never_grants_acceptance(setup):
+&gt;       result = make(setup); r, _, _ = setup; key = result["report_id"]
+                 ^^^^^^^^^^^
+
+tests/unit_tests/validation/test_reporting.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/unit_tests/validation/test_reporting.py:26: in make
+    return r.create("actor", title, key, [CLAIM_ID] if claims is None else claims, c, s, g, nav)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validation/reporting.py:88: in create
+    require(hashlib.sha256(candidate.evidence_json.encode()).hexdigest() == study.handoff.integrity_sha256, "PROVENANCE_MISMATCH", "Geometry QA checksum mismatch")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, code = 'PROVENANCE_MISMATCH'
+message = 'Geometry QA checksum mismatch', field = ''
+
+    def require(condition: bool, code: str, message: str, field: str = "") -&gt; None:
+        if not condition:
+&gt;           raise GeometryContractError(code, message, field)
+E           systems.contracts.geometry._wire.GeometryContractError: Geometry QA checksum mismatch
+
+systems/contracts/geometry/_wire.py:37: GeometryContractError</failure></testcase><testcase classname="tests.unit_tests.validation.test_reporting" name="test_stale_sources_preserve_original_report_and_refuse_new_generation" time="0.002"><failure message="systems.contracts.geometry._wire.GeometryContractError: Geometry QA checksum mismatch">setup = (&lt;validation.reporting.EngineeringReports object at 0x104852b90&gt;, &lt;knowledge.workspace.evidence_navigation.EvidenceNav...services.&lt;locals&gt;.Geometry object at 0x1047f6610&gt;, '2c45fc2137a7ddf91f989d89e2ef6db63d6f852e125bad89d9cbcd06721f7925'))
+
+    def test_stale_sources_preserve_original_report_and_refuse_new_generation(setup):
+&gt;       original = make(setup); r, nav, (c, s, g, _) = setup; c.freshness = "stale"
+                   ^^^^^^^^^^^
+
+tests/unit_tests/validation/test_reporting.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/unit_tests/validation/test_reporting.py:26: in make
+    return r.create("actor", title, key, [CLAIM_ID] if claims is None else claims, c, s, g, nav)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validation/reporting.py:88: in create
+    require(hashlib.sha256(candidate.evidence_json.encode()).hexdigest() == study.handoff.integrity_sha256, "PROVENANCE_MISMATCH", "Geometry QA checksum mismatch")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, code = 'PROVENANCE_MISMATCH'
+message = 'Geometry QA checksum mismatch', field = ''
+
+    def require(condition: bool, code: str, message: str, field: str = "") -&gt; None:
+        if not condition:
+&gt;           raise GeometryContractError(code, message, field)
+E           systems.contracts.geometry._wire.GeometryContractError: Geometry QA checksum mismatch
+
+systems/contracts/geometry/_wire.py:37: GeometryContractError</failure></testcase><testcase classname="tests.unit_tests.validation.test_reporting" name="test_changed_knowledge_review_marks_original_stale" time="0.002"><failure message="systems.contracts.geometry._wire.GeometryContractError: Geometry QA checksum mismatch">setup = (&lt;validation.reporting.EngineeringReports object at 0x10499e510&gt;, &lt;knowledge.workspace.evidence_navigation.EvidenceNav...services.&lt;locals&gt;.Geometry object at 0x10493bc90&gt;, '2c45fc2137a7ddf91f989d89e2ef6db63d6f852e125bad89d9cbcd06721f7925'))
+
+    def test_changed_knowledge_review_marks_original_stale(setup):
+&gt;       original = make(setup); r, nav, (c, s, g, _) = setup; source = nav.workspace.vault.get(SOURCE_ID)
+                   ^^^^^^^^^^^
+
+tests/unit_tests/validation/test_reporting.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/unit_tests/validation/test_reporting.py:26: in make
+    return r.create("actor", title, key, [CLAIM_ID] if claims is None else claims, c, s, g, nav)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validation/reporting.py:88: in create
+    require(hashlib.sha256(candidate.evidence_json.encode()).hexdigest() == study.handoff.integrity_sha256, "PROVENANCE_MISMATCH", "Geometry QA checksum mismatch")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, code = 'PROVENANCE_MISMATCH'
+message = 'Geometry QA checksum mismatch', field = ''
+
+    def require(condition: bool, code: str, message: str, field: str = "") -&gt; None:
+        if not condition:
+&gt;           raise GeometryContractError(code, message, field)
+E           systems.contracts.geometry._wire.GeometryContractError: Geometry QA checksum mismatch
+
+systems/contracts/geometry/_wire.py:37: GeometryContractError</failure></testcase><testcase classname="tests.unit_tests.validation.test_reporting" name="test_tampered_source_unavailable_and_not_attachable" time="0.001" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_invalid_claim_selection[claims0]" time="0.001" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_invalid_claim_selection[claims1]" time="0.001" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_invalid_claim_selection[claims2]" time="0.001" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_invalid_claim_selection[claims3]" time="0.001" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_invalid_claim_selection[claims4]" time="0.000" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_invalid_title[]" time="0.000" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_invalid_title[ ]" time="0.001" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_invalid_title[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]" time="0.000" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_invalid_title[True]" time="0.000" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_invalid_title[a\x00b]" time="0.000" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_dataset_mismatch_refused" time="0.001" /><testcase classname="tests.unit_tests.validation.test_reporting" name="test_corrupt_stored_report_refuses_export" time="0.002"><failure message="systems.contracts.geometry._wire.GeometryContractError: Geometry QA checksum mismatch">setup = (&lt;validation.reporting.EngineeringReports object at 0x1049153d0&gt;, &lt;knowledge.workspace.evidence_navigation.EvidenceNav...services.&lt;locals&gt;.Geometry object at 0x1049423d0&gt;, '2c45fc2137a7ddf91f989d89e2ef6db63d6f852e125bad89d9cbcd06721f7925'))
+
+    def test_corrupt_stored_report_refuses_export(setup):
+&gt;       value = make(setup); r, _, _ = setup; key = value["report_id"]; r.session("actor").reports[key] += b" "
+                ^^^^^^^^^^^
+
+tests/unit_tests/validation/test_reporting.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/unit_tests/validation/test_reporting.py:26: in make
+    return r.create("actor", title, key, [CLAIM_ID] if claims is None else claims, c, s, g, nav)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validation/reporting.py:88: in create
+    require(hashlib.sha256(candidate.evidence_json.encode()).hexdigest() == study.handoff.integrity_sha256, "PROVENANCE_MISMATCH", "Geometry QA checksum mismatch")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, code = 'PROVENANCE_MISMATCH'
+message = 'Geometry QA checksum mismatch', field = ''
+
+    def require(condition: bool, code: str, message: str, field: str = "") -&gt; None:
+        if not condition:
+&gt;           raise GeometryContractError(code, message, field)
+E           systems.contracts.geometry._wire.GeometryContractError: Geometry QA checksum mismatch
+
+systems/contracts/geometry/_wire.py:37: GeometryContractError</failure></testcase></testsuite></testsuites>

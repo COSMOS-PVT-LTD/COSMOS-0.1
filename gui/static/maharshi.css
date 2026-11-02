@@ -769,3 +769,70 @@ body.mh-compact .mh-admin-only { display: none !important; }
 body.mh-compact .mh-graph { grid-row: 1; grid-column: 1; }
 body.mh-compact .mh-chat { grid-row: 1; grid-column: 2; }
 body.mh-compact .mh-panel { border-radius: 0; }
+
+/* Knowledge is hosted in both the legacy page and the resizable modern shell.
+   Size to the workspace container, not the outer browser width. Graph source
+   inspection stays in normal flow below the WebGL canvas. */
+body.knowledge-workbench-page .content-area,
+body.knowledge-workbench-page #p04-main,
+body.knowledge-workbench-page .maharshi-workspace { min-width: 0; }
+body.knowledge-workbench-page .content-area { container-type: inline-size; }
+body.knowledge-workbench-page .maharshi-workspace {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: none;
+  height: auto;
+  min-height: 0;
+  padding: 0 0 16px;
+  gap: 16px;
+}
+body.knowledge-workbench-page .maharshi-workspace > * {
+  grid-row: auto;
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+body.knowledge-workbench-page .mh-graph .mh-panel-body { overflow: visible; }
+body.knowledge-workbench-page .mh-graph-canvas-wrap {
+  position: relative;
+  inset: auto;
+  height: 360px;
+  min-height: 280px;
+}
+body.knowledge-workbench-page .mh-chat { min-height: 340px; }
+body.knowledge-workbench-page .mh-chat-messages { min-height: 180px; }
+body.knowledge-workbench-page [aria-label="Source-backed Knowledge graph inspection"] {
+  font-size: 14px;
+  line-height: 1.5;
+}
+body.knowledge-workbench-page [aria-label="Source-backed Knowledge graph inspection"] button {
+  color: var(--ds-text-primary, #e6eff8);
+  background: var(--ds-surface-panel, #17263a);
+  border: 1px solid var(--ds-border-subtle, #52667f);
+  border-radius: 6px;
+  padding: 8px 12px;
+  min-height: 38px;
+  cursor: pointer;
+}
+body.knowledge-workbench-page [aria-label="Source-backed Knowledge graph inspection"] button:focus-visible {
+  outline: 3px solid #e7be62;
+  outline-offset: 3px;
+}
+body.knowledge-workbench-page .mh-workspace-head { flex-wrap: wrap; }
+body.knowledge-workbench-page .mh-bottom {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: none;
+}
+body.knowledge-workbench-page .mh-bottom > * { grid-column: 1; grid-row: auto; }
+body.knowledge-workbench-page.mh-embed .content-area { overflow: auto !important; }
+@container (min-width: 980px) {
+  body.knowledge-workbench-page.mh-admin .maharshi-workspace {
+    grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+  }
+  body.knowledge-workbench-page.mh-admin .mh-upload { grid-column: 1; grid-row: 3; }
+  body.knowledge-workbench-page.mh-admin .mh-graph { grid-column: 2; grid-row: 3; }
+  body.knowledge-workbench-page .mh-bottom { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.knowledge-workbench-page .mh-bottom > * { grid-column: auto; }
+}
+@media (max-width: 600px) {
+  body.knowledge-workbench-page .mh-graph-canvas-wrap { height: 280px; }
+  body.knowledge-workbench-page .mh-overview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

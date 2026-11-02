@@ -1,0 +1,58 @@
+{
+  "valid_profile_accepted": true,
+  "manifest_sha256": "aed8eb10db375ece762406856a41743e98c7cc67d4837798a72245a4a8377080",
+  "negative_cases": [
+    {
+      "case": "no-component-profile",
+      "rejected": true,
+      "code": "COMPONENT_RUNTIME_REQUIRED"
+    },
+    {
+      "case": "wrong-component-policy",
+      "rejected": true,
+      "code": "COMPONENT_RUNTIME_REQUIRED"
+    },
+    {
+      "case": "wrong-version",
+      "rejected": true,
+      "code": "COMPONENT_RUNTIME_REQUIRED"
+    },
+    {
+      "case": "missing-separate-receipt",
+      "rejected": true,
+      "code": "COMPONENT_QUALIFICATION_REQUIRED"
+    },
+    {
+      "case": "receipt-digest",
+      "rejected": true,
+      "code": "COMPONENT_QUALIFICATION_REQUIRED"
+    },
+    {
+      "case": "nozzle-receipt-is-not-component-qualification",
+      "rejected": true,
+      "code": "COMPONENT_QUALIFICATION_REQUIRED"
+    },
+    {
+      "case": "untrusted-worker-path",
+      "rejected": true,
+      "code": "COMPONENT_RUNTIME_REQUIRED"
+    },
+    {
+      "case": "replacement-interpreter",
+      "rejected": true,
+      "code": "COMPONENT_RUNTIME_REQUIRED"
+    },
+    {
+      "case": "missing-pinned-reader",
+      "rejected": true,
+      "code": "COMPONENT_RUNTIME_REQUIRED"
+    },
+    {
+      "case": "changed-component-method",
+      "rejected": true,
+      "code": "RUNTIME_HASH_MISMATCH"
+    }
+  ],
+  "native_execution_performed": false,
+  "owner_data_untouched": true
+}

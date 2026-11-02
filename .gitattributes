@@ -43,3 +43,10 @@
 *.xlsx binary
 *.pkl binary
 *.pickle binary
+
+# Retained audit evidence must preserve its original bytes and line endings.
+# Raw exports, vendor notices and captured output are not source formatting targets.
+docs/implementation/evidence/** -text -whitespace
+docs/implementation/reviews/** -text -whitespace
+gui/static/vendor/** -text -whitespace
+plugins/geometry/workers/patches/*.patch -text -whitespace

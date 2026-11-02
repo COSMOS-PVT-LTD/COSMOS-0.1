@@ -1,0 +1,39 @@
+{
+  "preceding_manifest_sha256": "99f8abf099dd80cc44fcfe42d983736ce91243db64abe942a7583c22f142122b",
+  "preceding_sources": 1384,
+  "unchanged": 1375,
+  "declared_edits": [
+    "api/context_projects.py",
+    "api/project_authority.py",
+    "gui/server.py",
+    "gui/static/projects.js",
+    "infrastructure/persistence/durable_jobs.py",
+    "systems/geometry/authority.py",
+    "systems/geometry/qa.py",
+    "systems/geometry/service.py",
+    "tests/unit_tests/infrastructure/test_geometry_stages.py"
+  ],
+  "unexpected": [],
+  "missing": [],
+  "new_sources": [
+    "api/nozzle_geometry.py",
+    "gui/static/managed-engine-builds.js",
+    "plugins/geometry/nozzle_adapter.py",
+    "plugins/geometry/nozzle_protocol.py",
+    "plugins/geometry/workers/nozzle_step_reader.py",
+    "plugins/geometry/workers/nozzle_worker.py",
+    "systems/geometry/engine_builds.py",
+    "systems/geometry/nozzle_qa.py",
+    "systems/geometry/nozzle_reference.py",
+    "systems/geometry/nozzle_workspace.py",
+    "tests/fixtures/nozzle_geometry.py",
+    "tests/integration_tests/geometry/test_engine_nozzle_native.py",
+    "tests/integration_tests/gui/test_engine_nozzle_projects_http.py",
+    "tests/js/engine_nozzle_builds.test.cjs",
+    "tests/ui/r07_nozzle/preview.py",
+    "tests/unit_tests/systems_layer/test_nozzle_distance_search.py",
+    "tests/unit_tests/systems_layer/test_nozzle_reference.py"
+  ],
+  "old_core_physics_numerics_changed": [],
+  "pass": true
+}

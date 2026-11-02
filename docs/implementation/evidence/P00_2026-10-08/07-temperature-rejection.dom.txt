@@ -1,0 +1,248 @@
+- banner:
+  - button "Edit profile photo"
+  - generic: COSMOS
+  - button "Project Default Project":
+    - generic: Project
+    - generic: Default Project
+  - generic: Workspace
+  - generic: Workbench
+  - generic: Solver
+  - generic: IDLE
+  - generic: AI
+  - generic: Maharshi
+  - generic: COSMOS Administrator
+  - generic: Administration Infrastructure · ADMIN
+  - button "Command search":
+    - generic: ⌘K
+    - text: Command
+  - button "Job manager": Jobs
+  - button "Notifications":
+    - text: Alerts
+    - generic: "1"
+  - button "Properties panel": Properties
+  - button "Default Project"
+  - button "COSMOS Administrator"
+- complementary "Primary navigation":
+  - generic: Workspaces
+  - button "Command":
+    - generic: Command
+  - button "Rocket Engine":
+    - generic: Rocket Engine
+  - button "Knowledge":
+    - generic: Knowledge
+  - button "Workbench" [expanded]:
+    - generic: Workbench
+    - generic: ▾
+  - button "Python" [expanded]:
+    - generic: Python
+    - generic: ▾
+  - button "Launch desktop"
+  - button "Knowledge dev server"
+  - button "Scripting add-ons" [disabled]
+  - generic: Secondary
+  - button "Project":
+    - generic: Project
+  - button "Jobs":
+    - generic: Jobs
+  - generic: System
+  - button "Audit Trail":
+    - generic: Audit Trail
+  - button "Administration":
+    - generic: Administration
+  - button "Help":
+    - generic: Help
+  - button "Log out":
+    - generic: Log out
+- main:
+  - heading "Rocket Engine Propulsion Design Suite" [level=1]
+  - paragraph: One design, one workflow, one Physics source of truth. Live modules call COSMOS through the application API — equations are not duplicated in the browser.
+  - generic: LIVE
+  - generic: PARTIAL
+  - generic: PLANNED
+  - region "Active design":
+    - strong: P00 audit methalox fixture
+    - generic: REV 10
+    - generic: draft
+    - status: Saved editor drafts — separate from results
+    - generic: Pc 5.00 bar
+    - generic: O/F 2.7239
+    - generic: Thrust 1.00 kN
+    - generic: Propellants LOX / LCH4
+    - combobox "Open saved design":
+      - option "Open a saved design…"
+      - option "P00 audit methalox fixture · rev 10 · draft" [selected]
+    - button "New"
+    - button "Save"
+    - button "Clone"
+    - button "Recalculate"
+    - button "Reload"
+    - button "Review"
+  - navigation "Propulsion modules":
+    - paragraph: Workflow 00–16
+    - button "00 Design Project PARTIAL CURRENT":
+      - generic: "00"
+      - generic: Design Project
+      - generic: PARTIAL
+      - generic: CURRENT
+    - button "01 Requirements IMPLEMENTED CURRENT":
+      - generic: "01"
+      - generic: Requirements
+      - generic: IMPLEMENTED
+      - generic: CURRENT
+    - button "02 Propellant Definition IMPLEMENTED CURRENT":
+      - generic: "02"
+      - generic: Propellant Definition
+      - generic: IMPLEMENTED
+      - generic: CURRENT
+    - button "03 Engine Cycle NOT IMPLEMENTED NOT_CALCULATED":
+      - generic: "03"
+      - generic: Engine Cycle
+      - generic: NOT IMPLEMENTED
+      - generic: NOT_CALCULATED
+    - button "04 Operating Point IMPLEMENTED CURRENT":
+      - generic: "04"
+      - generic: Operating Point
+      - generic: IMPLEMENTED
+      - generic: CURRENT
+    - button "05 Thermochemistry PARTIAL OUT_OF_RANGE":
+      - generic: "05"
+      - generic: Thermochemistry
+      - generic: PARTIAL
+      - generic: OUT_OF_RANGE
+    - button "06 Mass Flow / Performance PARTIAL FAILED":
+      - generic: "06"
+      - generic: Mass Flow / Performance
+      - generic: PARTIAL
+      - generic: FAILED
+    - button "07 Injector PARTIAL NOT_CALCULATED":
+      - generic: "07"
+      - generic: Injector
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "08 Combustion Chamber PARTIAL NOT_CALCULATED":
+      - generic: "08"
+      - generic: Combustion Chamber
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "09 Thermal Analysis PARTIAL NOT_CALCULATED":
+      - generic: "09"
+      - generic: Thermal Analysis
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "10 Cooling System PARTIAL NOT_CALCULATED":
+      - generic: "10"
+      - generic: Cooling System
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "11 Nozzle PARTIAL NOT_CALCULATED":
+      - generic: "11"
+      - generic: Nozzle
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "12 Structural Analysis PARTIAL NOT_CALCULATED":
+      - generic: "12"
+      - generic: Structural Analysis
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "13 Material Selection PARTIAL NOT_CALCULATED":
+      - generic: "13"
+      - generic: Material Selection
+      - generic: PARTIAL
+      - generic: NOT_CALCULATED
+    - button "14 Engine Performance Summary IMPLEMENTED NOT_CALCULATED":
+      - generic: "14"
+      - generic: Engine Performance Summary
+      - generic: IMPLEMENTED
+      - generic: NOT_CALCULATED
+    - button "15 System Consistency Check IMPLEMENTED NOT_CALCULATED":
+      - generic: "15"
+      - generic: System Consistency Check
+      - generic: IMPLEMENTED
+      - generic: NOT_CALCULATED
+    - button "16 Design Review IMPLEMENTED NOT_CALCULATED":
+      - generic: "16"
+      - generic: Design Review
+      - generic: IMPLEMENTED
+      - generic: NOT_CALCULATED
+    - paragraph: Physics tools
+    - button "Gasdynamics Nozzle Flow LIVE":
+      - generic: Gasdynamics
+      - generic: Nozzle Flow
+      - generic: LIVE
+    - button "Thermal Heat Transfer & Cooling PARTIAL":
+      - generic: Thermal
+      - generic: Heat Transfer & Cooling
+      - generic: PARTIAL
+    - button "Structures Chamber Structures PARTIAL":
+      - generic: Structures
+      - generic: Chamber Structures
+      - generic: PARTIAL
+  - heading "05 Thermochemistry" [level=2]
+  - paragraph: PARTIAL · result OUT_OF_RANGE
+  - paragraph: PARTIAL — optional NASA CEA 3.3.4 equilibrium with explicit inlet temperatures, or explicitly ASSUMED Tc/γ/MW. No physical validation.
+  - paragraph: STALE GEOMETRY — Nozzle geometry. Recalculate before treating these slots as current.
+  - heading "Run Phase 3 on the active design" [level=3]
+  - paragraph: NASA CEA computes equilibrium chamber/throat/exit states and ideal performance. Enter reactant temperatures, throat area and expansion ratio explicitly. No fallback on solver failure. Use 00 Design for assumed-state inputs.
+  - text: Thermochemistry source
+  - combobox "Thermochemistry source":
+    - option "NASA CEA 3.3.4 · equilibrium" [selected]
+    - option "Explicit assumed chamber state"
+  - text: Fuel inlet temperature [K] · CEA
+  - spinbutton "Fuel inlet temperature [K] · CEA": "300"
+  - text: Oxidizer inlet temperature [K] · CEA
+  - spinbutton "Oxidizer inlet temperature [K] · CEA": "90.17"
+  - text: At [m²]
+  - spinbutton "At [m²]": "0.001"
+  - text: ε (Ae/At > 1)
+  - spinbutton "ε (Ae/At > 1)": "10"
+  - button "Run Phase 3 (same design)" [active]
+  - heading "Result" [level=3]
+  - status:
+    - paragraph: EXECUTION FAILED · phase_status=FAILED · workflow_complete=false · readiness=INCOMPLETE · validation=NOT_CLAIMED · design=1c6ce9ca-077c-4f18-ae7c-825100f10391
+    - heading "requirements · CURRENT · SYS-01.requirements.capture" [level=4]
+    - generic: "MODEL Model ID: SYS-01.requirements.capture Name: Source: COSMOS Systems requirements stage Verification: PASS Validation: NOT_CLAIMED Validity: NOT_APPLICABLE INPUTS ambient_pressure: 0 Pa ambient_temperature: — burn_duration: — cycle_type: — expansion_ratio: 10 mixture_ratio: 2.7239 notes: — operating_altitude: — propellant_selection: — target_chamber_pressure: 5 bar target_thrust: 1 kN OUTPUTS fields_set: 5 1 WARNINGS - No propellant_selection or cycle_type recorded."
+    - heading "propellants · CURRENT · SYS-02.propellants.registry" [level=4]
+    - generic: "MODEL Model ID: SYS-02.propellants.registry Name: Source: oxidizer=NIST Chemistry WebBook; fuel=NIST Chemistry WebBook Verification: PASS Validation: NOT_CLAIMED Validity: VALID INPUTS fuel_id: LCH4 fuel_pressure: — fuel_state: — fuel_temperature: — mixture_ratio: 2.7239 oxidizer_id: LOX oxidizer_pressure: — oxidizer_state: — oxidizer_temperature: — database: already_loaded OUTPUTS oxidizer_name: Liquid Oxygen 1 fuel_name: Liquid Methane 1 oxidizer_cea_species: O2(L) 1 fuel_cea_species: CH4(L) 1 oxidizer_mw_kg_per_kmol: 31.998 kg/kmol fuel_mw_kg_per_kmol: 16.043 kg/kmol mixture_ratio: 2.7239 1 ASSUMPTIONS - Registry lookup only — no combustion equilibrium evaluated. - Database: propellants_master_candidate_v1.json (Physics)."
+    - heading "operating_point · CURRENT · SYS-04.operating_point.establish" [level=4]
+    - generic: "MODEL Model ID: SYS-04.operating_point.establish Name: Source: COSMOS Systems operating-point stage Verification: PASS Validation: NOT_CLAIMED Validity: NOT_APPLICABLE INPUTS requirements: {\"ambient_pressure\":{\"magnitude\":0,\"unit\":{\"symbol\":\"Pa\",\"name\":\"pascal\",\"dimension\":{\"length\":-1,\"mass\":1,\"time\":-2,\"current\":0,\"temperature\":0,\"amount\":0,\"luminous_intensity\":0},\"factor_to_si\":1,\"offset_to_si\":0}},\"ambient_temperature\":null,\"burn_duration\":null,\"cycle_type\":null,\"expansion_ratio\":10,\"mixture_ratio\":2.7239,\"notes\":null,\"operating_altitude\":null,\"propellant_selection\":null,\"target_chamber_pressure\":{\"magnitude\":5,\"unit\":{\"symbol\":\"bar\",\"name\":\"bar\",\"dimension\":{\"length\":-1,\"mass\":1,\"time\":-2,\"current\":0,\"temperature\":0,\"amount\":0,\"luminous_intensity\":0},\"factor_to_si\":100000,\"offset_to_si\":0}},\"target_thrust\":{\"magnitude\":1,\"unit\":{\"symbol\":\"kN\",\"name\":\"kilonewton\",\"dimension\":{\"length\":1,\"mass\":1,\"time\":-2,\"current\":0,\"temperature\":0,\"amount\":0,\"luminous_intensity\":0},\"factor_to_si\":1000,\"offset_to_si\":0}}} overrides: {\"chamber_temperature\":null,\"gamma\":null,\"molecular_weight_kg_per_mol\":null} dependency_gaps: {\"stage_id\":\"cycle\",\"requirement\":\"DEFERRED\",\"reason\":\"Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point construction defers the cycle analysis and is not a complete engine design.\",\"status\":\"NOT_CALCULATED\",\"satisfied\":false} OUTPUTS ambient_pressure: 0 Pa ambient_temperature: — chamber_pressure: 5 bar chamber_temperature: 3093.338429072098 K chamber_temperature_is_assumption: false characteristic_velocity: 1832.209565177435 m/s fuel_mass_flow: — gamma: 1.13250955227488 gamma_is_assumption: false mass_flow: 0.2728945473830549 kg/s mixture_ratio: 2.7239 molecular_weight: 0.01898514614317362 oxidizer_mass_flow: — WARNINGS - DEFERRED dependency cycle=NOT_CALCULATED: Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point construction defers the cycle analysis and is not a complete engine design. ASSUMPTIONS - DEFERRED dependency cycle=NOT_CALCULATED: Cycle power balance is NOT_IMPLEMENTED; preliminary operating-point construction defers the cycle analysis and is not a complete engine design."
+    - heading "thermochemistry · OUT_OF_RANGE · PHYS-003.cea.interface" [level=4]
+    - generic: "CALCULATION FAILED Reason: CH4(L) inlet temperature 300.0 K is outside NASA database range [101.643, 121.643] K. Heated/subcooled feed states require qualified enthalpy data. Code: OutOfRangeError Action: Correct the input."
+    - heading "performance · FAILED ·" [level=4]
+    - generic: "CALCULATION FAILED Reason: Required dependencies unavailable: thermochemistry=OUT_OF_RANGE Code: InvalidInputError Action: Correct the input."
+- region "Engineering console":
+  - button "Jobs 0":
+    - text: Jobs
+    - generic: "0"
+  - button "Solver IDLE":
+    - text: Solver
+    - generic: IDLE
+  - button "Convergence —":
+    - text: Convergence
+    - generic: —
+  - button "Log"
+  - button "Events"
+- button "Maharshi Bharadwaj Maharshi":
+  - img "Maharshi Bharadwaj"
+  - generic: Maharshi
+- complementary:
+  - heading [level=3]: Properties
+  - button: ✕
+- complementary:
+  - heading [level=3]: Job Manager
+  - button: ✕
+  - paragraph: 0 active · 0 failed · 0 total
+  - table:
+    - rowgroup:
+      - row:
+        - columnheader: Source
+        - columnheader: Status
+        - columnheader: Type
+        - columnheader: Created
+        - columnheader: Error
+  - button: Refresh Jobs
+- complementary:
+  - heading [level=3]: Notifications
+  - button: ✕
+  - strong: COSMOS engineering environment ready
+  - generic: Default Project
+  - time: 2026-10-08T10:22:39.196Z

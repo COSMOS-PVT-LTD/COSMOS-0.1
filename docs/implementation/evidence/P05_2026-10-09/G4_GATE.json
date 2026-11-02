@@ -1,0 +1,48 @@
+{
+  "gate_id": "G4",
+  "phase": "P05_ROCKET_ENGINE",
+  "owner_role": "Scientific lead",
+  "reviewer": "Codex executed local software evidence; not external physical validation",
+  "status": "PASS",
+  "decision": "PASS_TESTED_PRESENTATION_SLICE_DEFAULT_OFF",
+  "sealed_at_utc": "2026-10-08T20:28:52.870135+00:00",
+  "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "dirty_checkout": true,
+  "scientific_source_changed": false,
+  "physics_parity": {
+    "actual_http_cases": 5,
+    "comparison": "exact",
+    "numerical_tolerance": 0
+  },
+  "tests": {
+    "python_passed": 2272,
+    "python_skipped": 5,
+    "javascript_passed": 94,
+    "p05_browser_passed": 26,
+    "p04_browser_compatibility_passed": 26,
+    "axe_violations_dark": 0,
+    "axe_violations_high_contrast": 0,
+    "ruff": "PASS",
+    "mypy_sources": 318,
+    "typescript": "PASS",
+    "gui_compilation": "PASS"
+  },
+  "interaction": {
+    "immutable": true,
+    "samples": 50,
+    "p95Ms": 0.20000004768371582,
+    "inspectorMutations": 0
+  },
+  "default_off": true,
+  "physical_validation_claimed": false,
+  "sensitivity_service_added": false,
+  "native_geometry_activated": false,
+  "publishing_performed": false,
+  "production_changes": [
+    "gui/app_shell.py",
+    "gui/server.py",
+    "gui/static/app-shell/shell.js",
+    "gui/static/propulsion-suite.js"
+  ],
+  "next": "P06_NGG_CONTRACTS; not started"
+}

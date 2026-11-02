@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="37" time="205.965" timestamp="2026-10-21T20:56:58.610205+05:30" hostname="vaibhavs-MacBook-Air.local"><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[profile.wall]" time="1.357" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[pipe.circular]" time="0.952" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[pipe.elbow]" time="0.002"><failure message="TypeError: 'float' object is not iterable">tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-724/test_actual_component_worker_b2')
+kind = 'pipe.elbow'
+
+    @pytest.mark.parametrize("kind",["profile.wall","pipe.circular","pipe.elbow","cooling.axial_sector","injector.showerhead","injector.doublet","injector.biprop_doublet","injector.biprop_radial_doublet","manifold.dual_annular","manifold.cooling_annular","interface.bolted_flange","interface.bolt_pattern","injector.triplet","injector.coaxial","injector.pintle"])
+    def test_actual_component_worker_builds_each_supported_family(tmp_path,kind):
+&gt;       value=plan(kind); request=request_for(value)
+              ^^^^^^^^^^
+
+tests/integration_tests/geometry/test_component_native.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/fixtures/component_geometry.py:58: in plan
+    return compile_model(model(kind,**kwargs),"engine-component-synthetic-qa","synthetic-revision","2026-10-20T00:00:00+00:00")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+systems/geometry/component_model.py:158: in compile_model
+    return from_contracts(snapshot, graph)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+systems/geometry/component_model.py:208: in from_contracts
+    minimum_angle=float(canonical_json_dumps(math.pi/12))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+core/serialization.py:74: in canonical_json_dumps
+    normalized = normalize_mapping(data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data = 0.2617993877991494
+
+    def normalize_mapping(data: Mapping[str, object]) -&gt; dict[str, object]:
+        """
+        Normalize a mapping to deterministic JSON-compatible values.
+    
+        Keys are sorted lexicographically in output JSON.
+        """
+    
+        normalized: dict[str, object] = {}
+&gt;       for key in sorted(data):
+                   ^^^^^^^^^^^^
+E       TypeError: 'float' object is not iterable
+
+core/serialization.py:60: TypeError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[cooling.axial_sector]" time="3.057" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[injector.showerhead]" time="1.205" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[injector.doublet]" time="1.577" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[injector.biprop_doublet]" time="1.540" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[injector.biprop_radial_doublet]" time="1.567" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[manifold.dual_annular]" time="2.474" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[manifold.cooling_annular]" time="2.072" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[interface.bolted_flange]" time="1.511" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[interface.bolt_pattern]" time="3.906" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[injector.triplet]" time="3.051" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[injector.coaxial]" time="1.871" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_worker_builds_each_supported_family[injector.pintle]" time="1.459" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[profile.wall]" time="2.389" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[pipe.circular]" time="2.049" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[pipe.elbow]" time="0.002"><failure message="TypeError: 'float' object is not iterable">tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-724/test_actual_component_independ2')
+kind = 'pipe.elbow'
+
+    @pytest.mark.parametrize("kind",["profile.wall","pipe.circular","pipe.elbow","cooling.axial_sector","injector.showerhead","injector.doublet","injector.biprop_doublet","injector.biprop_radial_doublet","manifold.dual_annular","manifold.cooling_annular","interface.bolted_flange","interface.bolt_pattern","injector.triplet","injector.coaxial","injector.pintle"])
+    def test_actual_component_independent_step_stl_topology_semantics_and_formulas(tmp_path,kind):
+        from systems.contracts.geometry import BuildState
+        from systems.geometry.component_qa import ComponentBuildService, ComponentQALimits
+        from systems.geometry.component_reference import ComponentReference
+        worker=commands()
+        reader=WorkerCommand((worker.argv[0],str(Path(worker.argv[1]).with_name("component_step_reader.py"))),worker.environment)
+&gt;       value=plan(kind)
+              ^^^^^^^^^^
+
+tests/integration_tests/geometry/test_component_native.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/fixtures/component_geometry.py:58: in plan
+    return compile_model(model(kind,**kwargs),"engine-component-synthetic-qa","synthetic-revision","2026-10-20T00:00:00+00:00")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+systems/geometry/component_model.py:158: in compile_model
+    return from_contracts(snapshot, graph)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+systems/geometry/component_model.py:208: in from_contracts
+    minimum_angle=float(canonical_json_dumps(math.pi/12))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+core/serialization.py:74: in canonical_json_dumps
+    normalized = normalize_mapping(data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data = 0.2617993877991494
+
+    def normalize_mapping(data: Mapping[str, object]) -&gt; dict[str, object]:
+        """
+        Normalize a mapping to deterministic JSON-compatible values.
+    
+        Keys are sorted lexicographically in output JSON.
+        """
+    
+        normalized: dict[str, object] = {}
+&gt;       for key in sorted(data):
+                   ^^^^^^^^^^^^
+E       TypeError: 'float' object is not iterable
+
+core/serialization.py:60: TypeError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[cooling.axial_sector]" time="6.101" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[injector.showerhead]" time="2.164" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[injector.doublet]" time="3.100" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[injector.biprop_doublet]" time="2.826" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[injector.biprop_radial_doublet]" time="2.846" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[manifold.dual_annular]" time="4.834" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[manifold.cooling_annular]" time="3.597" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[interface.bolted_flange]" time="2.429" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[interface.bolt_pattern]" time="5.677" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[injector.triplet]" time="3.644" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[injector.coaxial]" time="1.922" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_actual_component_independent_step_stl_topology_semantics_and_formulas[injector.pintle]" time="1.957" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_independent_reader_resolves_displaced_slender_pipes_at_large_assembly_extent" time="2.311" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_real_saved_engine_chamber_throat_nozzle_internal_channels_and_fluid_domains[False]" time="57.432" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_real_saved_engine_chamber_throat_nozzle_internal_channels_and_fluid_domains[True]" time="71.595" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_component_actual_health_uses_pinned_native_runtime" time="1.047" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_component_actual_process_failure_retains_no_accepted_or_partial_cad" time="0.045" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_component_actual_timeout_is_not_success_or_fallback" time="0.064" /><testcase classname="tests.integration_tests.geometry.test_component_native" name="test_component_actual_launched_process_cancellation" time="0.094" /></testsuite></testsuites>

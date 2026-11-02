@@ -1,0 +1,396 @@
+{
+  "pass": true,
+  "meaning": "Local software fixture G5 closure, including expected negative decisions; not engineering or native distribution acceptance",
+  "records": [
+    {
+      "fixture": "occt-both-sphere",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "occt-empty-disjoint_intersection",
+      "record_state": "failed",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "occt-empty-self_difference",
+      "record_state": "failed",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "occt-step-box",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "occt-step-cylinder",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "occt-step-difference",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "occt-step-intersection",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "occt-step-self_union",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "occt-step-sphere",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "occt-step-union",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-difference-0.00025",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-difference-0.0005",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-difference-0.001",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-intersection-0.00025",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-intersection-0.0005",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-intersection-0.001",
+      "record_state": "rejected",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": false,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-raw-difference-0.00025",
+      "record_state": "rejected",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": false,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-raw-difference-0.0005",
+      "record_state": "rejected",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": false,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-raw-difference-0.001",
+      "record_state": "rejected",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": false,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-self_union-0.00025",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-self_union-0.0005",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-self_union-0.001",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-sphere-0.00025",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-sphere-0.0005",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-sphere-0.001",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-union-0.00025",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-union-0.0005",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "pico-union-0.001",
+      "record_state": "accepted",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "picogk-empty-disjoint_intersection",
+      "record_state": "failed",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    },
+    {
+      "fixture": "picogk-empty-self_difference",
+      "record_state": "failed",
+      "lineage_and_hashes": true,
+      "repeated_independent_export_qa": true,
+      "qa_pass": true,
+      "published": false,
+      "physical_validation": false
+    }
+  ],
+  "convergence": {
+    "sphere": [
+      {
+        "h_m": 0.001,
+        "relative_volume_error": 0.011518041732748114,
+        "forward_max_m": 5.639444444226899e-05,
+        "reverse_max_m": 5.325432637670182e-05,
+        "qa_pass": true
+      },
+      {
+        "h_m": 0.0005,
+        "relative_volume_error": 0.002866473669187525,
+        "forward_max_m": 1.4324203198107233e-05,
+        "reverse_max_m": 1.3789988998220143e-05,
+        "qa_pass": true
+      },
+      {
+        "h_m": 0.00025,
+        "relative_volume_error": 0.000715723851367897,
+        "forward_max_m": 3.682649920670744e-06,
+        "reverse_max_m": 3.7278653147718843e-06,
+        "qa_pass": true
+      }
+    ],
+    "union": [
+      {
+        "h_m": 0.001,
+        "relative_volume_error": 0.00933670704891471,
+        "forward_max_m": 0.00013287861534237722,
+        "reverse_max_m": 0.00023366000518579847,
+        "qa_pass": true
+      },
+      {
+        "h_m": 0.0005,
+        "relative_volume_error": 0.0023572188327347044,
+        "forward_max_m": 8.715990520989994e-05,
+        "reverse_max_m": 0.00013878458695204234,
+        "qa_pass": true
+      },
+      {
+        "h_m": 0.00025,
+        "relative_volume_error": 0.0005960909295393485,
+        "forward_max_m": 4.575100919290871e-05,
+        "reverse_max_m": 6.554823272934898e-05,
+        "qa_pass": true
+      }
+    ],
+    "difference": [
+      {
+        "h_m": 0.001,
+        "relative_volume_error": 0.016274405143204024,
+        "forward_max_m": 0.00043021430405746144,
+        "reverse_max_m": 0.0008652153872263457,
+        "qa_pass": true
+      },
+      {
+        "h_m": 0.0005,
+        "relative_volume_error": 0.003972400643896315,
+        "forward_max_m": 0.00018335636622778852,
+        "reverse_max_m": 0.00037646766035578585,
+        "qa_pass": true
+      },
+      {
+        "h_m": 0.00025,
+        "relative_volume_error": 0.0010006439168001242,
+        "forward_max_m": 0.0001005762434479595,
+        "reverse_max_m": 0.00020655861124396684,
+        "qa_pass": true
+      }
+    ],
+    "intersection": [
+      {
+        "h_m": 0.001,
+        "relative_volume_error": 0.02078086374468404,
+        "forward_max_m": 0.0002278636457166694,
+        "reverse_max_m": 0.00034637280450984867,
+        "qa_pass": false
+      },
+      {
+        "h_m": 0.0005,
+        "relative_volume_error": 0.005292451207709405,
+        "forward_max_m": 0.00011238227101483152,
+        "reverse_max_m": 8.411609278842838e-05,
+        "qa_pass": true
+      },
+      {
+        "h_m": 0.00025,
+        "relative_volume_error": 0.0013998051052056455,
+        "forward_max_m": 5.492836600847102e-05,
+        "reverse_max_m": 7.65593414179984e-05,
+        "qa_pass": true
+      }
+    ],
+    "self_union": [
+      {
+        "h_m": 0.001,
+        "relative_volume_error": 0.011518041732748114,
+        "forward_max_m": 5.639444444226899e-05,
+        "reverse_max_m": 5.325432637670182e-05,
+        "qa_pass": true
+      },
+      {
+        "h_m": 0.0005,
+        "relative_volume_error": 0.002866473669187525,
+        "forward_max_m": 1.4324203198107233e-05,
+        "reverse_max_m": 1.3789988998220143e-05,
+        "qa_pass": true
+      },
+      {
+        "h_m": 0.00025,
+        "relative_volume_error": 0.000715723851367897,
+        "forward_max_m": 3.682649920670744e-06,
+        "reverse_max_m": 3.7278653147718843e-06,
+        "qa_pass": true
+      }
+    ]
+  },
+  "full_G5_pass": true,
+  "conditioning_vertex_changes": 0,
+  "silent_refinement": false
+}

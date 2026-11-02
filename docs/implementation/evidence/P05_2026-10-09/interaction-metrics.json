@@ -1,0 +1,6 @@
+{
+  "immutable": true,
+  "samples": 50,
+  "p95Ms": 0.20000004768371582,
+  "inspectorMutations": 0
+}

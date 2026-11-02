@@ -1,0 +1,36 @@
+{
+  "scope": "Actual GUI-produced synthetic software assessment, not hardware evidence",
+  "project_id": "9d0b0ca1-a723-40ff-944a-1bfcd18febbb",
+  "object_id": "29304057-f35a-512b-9104-061749e817f5",
+  "commit_id": "b8c3197f-1803-4c11-82c4-4f69eff5daa0",
+  "capture_commit_id": "e2d37b82-7c18-4794-af23-5b2181c60a0d",
+  "baseline_commit_id": "529a9bd8-9c5e-4933-879f-36af2953ce3b",
+  "content_sha256": "1613b2e71c09fb3709003d49c5b53fe8a834795990aaba8d30fcb55cc3bdc32c",
+  "exact_record_input_bytes": true,
+  "all_raw_and_normalized_residual_values": true,
+  "baseline_unchanged": true,
+  "current_balanced_assessment": true,
+  "physical_validation": "NOT_PERFORMED",
+  "files": {
+    "record": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-software-fixture-coupled-cycle-record (1).json",
+      "sha256": "1613b2e71c09fb3709003d49c5b53fe8a834795990aaba8d30fcb55cc3bdc32c"
+    },
+    "inputs": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-software-fixture-coupled-cycle-inputs.json",
+      "sha256": "43fedb30bcf8b5c64d158195f839009b0078c96694e5ad10509e299f5fd1cd8f"
+    },
+    "csv": {
+      "path": "/Users/vaibhavkumarn/Downloads/COSMOS-software-fixture-coupled-cycle-residuals (1).csv",
+      "sha256": "7afda85acbbebf99d98302f1ffbc6b9a15e8538290b64cca2e60704918475db9"
+    },
+    "plot": {
+      "path": "/Users/vaibhavkumarn/Downloads/cycle-residuals.source (1).json",
+      "sha256": "d175fcf7d83066c76b29f293c14aee45f223746d57c78a29be9dfdac2a4ede06"
+    },
+    "plot_csv": {
+      "path": "/Users/vaibhavkumarn/Downloads/cycle-residuals.csv",
+      "sha256": "e920cbf6a3f554edcaabf148e987e292bf2eadbddcb68f8717b441762621f480"
+    }
+  }
+}

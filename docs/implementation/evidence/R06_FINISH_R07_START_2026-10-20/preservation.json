@@ -1,0 +1,39 @@
+{
+  "preceding_manifest_sha256": "67fb78de78571af15bdae5f81bd2e41c47b0a4b5416b639caf0478428a085e93",
+  "preceding_sources": 1369,
+  "unchanged": 1358,
+  "declared_edits": [
+    "api/context_projects.py",
+    "api/project_authority.py",
+    "api/propulsion_validation.py",
+    "gui/server.py",
+    "gui/static/cosmos-api.js",
+    "gui/static/managed-engine-operating.js",
+    "gui/static/managed-propulsion-validation.js",
+    "gui/static/projects.js",
+    "gui/static/visualization/chart.js",
+    "gui/static/visualization/exports.js",
+    "systems/projects/propulsion_validation.py"
+  ],
+  "unexpected": [],
+  "missing": [],
+  "new_sources": [
+    "api/engineering_extensions.py",
+    "gui/static/managed-engine-extensions.css",
+    "gui/static/managed-engine-extensions.js",
+    "systems/cycle/operating_sensitivity.py",
+    "systems/geometry/engine_intent.py",
+    "systems/projects/engine_geometry.py",
+    "systems/projects/operating_sensitivity.py",
+    "systems/projects/operating_validation.py",
+    "tests/fixtures/engineering_extensions.py",
+    "tests/integration_tests/gui/test_engineering_extensions_http.py",
+    "tests/integration_tests/gui/test_operating_validation_http.py",
+    "tests/js/engine_extensions.test.cjs",
+    "tests/ui/engineering_extensions/check_exports.py",
+    "tests/unit_tests/systems_layer/test_engineering_extensions.py",
+    "tests/unit_tests/systems_layer/test_operating_sensitivity_native.py"
+  ],
+  "old_core_physics_numerics_changed": [],
+  "pass": true
+}

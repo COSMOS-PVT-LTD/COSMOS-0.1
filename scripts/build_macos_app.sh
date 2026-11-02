@@ -5,8 +5,18 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 APP_NAME="COSMOS 0.1"
 APP_DIR="$ROOT/dist/${APP_NAME}.app"
-PY="${PYTHON:-python3}"
+if [[ -x "$ROOT/.venv-remediation/bin/python" ]]; then
+  PY="${PYTHON:-$ROOT/.venv-remediation/bin/python}"
+else
+  PY="${PYTHON:-python3}"
+fi
 ICON_SRC="$ROOT/gui/assets/cosmos_logo.png"
+
+# Explicit P12 preview mode preserves the existing development bundle.
+if [[ "${1:-}" == "--release-preview" ]]; then
+  shift
+  exec "$PY" "$ROOT/scripts/build_release_preview.py" "$@"
+fi
 
 mkdir -p "$APP_DIR/Contents/MacOS" "$APP_DIR/Contents/Resources"
 
@@ -65,16 +75,16 @@ if [[ -f "$ICON_SRC" ]]; then
   cp "$ICON_SRC" "$APP_DIR/Contents/Resources/cosmos_logo.png"
   if command -v sips >/dev/null 2>&1; then
     mkdir -p "$APP_DIR/Contents/Resources/cosmos_logo.iconset"
-    sips -z 16 16 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_16x16.png" >/dev/null
-    sips -z 32 32 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_16x16@2x.png" >/dev/null
-    sips -z 32 32 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_32x32.png" >/dev/null
-    sips -z 64 64 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_32x32@2x.png" >/dev/null
-    sips -z 128 128 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_128x128.png" >/dev/null
-    sips -z 256 256 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_128x128@2x.png" >/dev/null
-    sips -z 256 256 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_256x256.png" >/dev/null
-    sips -z 512 512 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_256x256@2x.png" >/dev/null
-    sips -z 512 512 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_512x512.png" >/dev/null
-    sips -z 1024 1024 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_512x512@2x.png" >/dev/null
+    sips -s format png -z 16 16 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_16x16.png" >/dev/null
+    sips -s format png -z 32 32 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_16x16@2x.png" >/dev/null
+    sips -s format png -z 32 32 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_32x32.png" >/dev/null
+    sips -s format png -z 64 64 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_32x32@2x.png" >/dev/null
+    sips -s format png -z 128 128 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_128x128.png" >/dev/null
+    sips -s format png -z 256 256 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_128x128@2x.png" >/dev/null
+    sips -s format png -z 256 256 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_256x256.png" >/dev/null
+    sips -s format png -z 512 512 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_256x256@2x.png" >/dev/null
+    sips -s format png -z 512 512 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_512x512.png" >/dev/null
+    sips -s format png -z 1024 1024 "$ICON_SRC" --out "$APP_DIR/Contents/Resources/cosmos_logo.iconset/icon_512x512@2x.png" >/dev/null
     iconutil -c icns "$APP_DIR/Contents/Resources/cosmos_logo.iconset" -o "$APP_DIR/Contents/Resources/cosmos_logo.icns" || true
     rm -rf "$APP_DIR/Contents/Resources/cosmos_logo.iconset"
   fi

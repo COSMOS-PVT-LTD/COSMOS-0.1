@@ -1,0 +1,17 @@
+{
+  "decision": "SOFTWARE_RESEARCH_REPORT_ONLY",
+  "review_intents": [
+    {
+      "actor": "cosmos-admin",
+      "independent_acceptance": false,
+      "kind": "review-intent-not-independent-acceptance",
+      "note": "Research evidence inspected; independent engineering acceptance remains pending.",
+      "production_handoff": false,
+      "report_id": "1febf012d5d273897c1c731db2a4391b619f8ae0d67a62a096bf9669f38c1f65"
+    }
+  ],
+  "signed_human_approval": false,
+  "experimental_validation": "NOT_PERFORMED",
+  "production_handoff": "BLOCKED",
+  "independent_engineering_acceptance": "PENDING"
+}

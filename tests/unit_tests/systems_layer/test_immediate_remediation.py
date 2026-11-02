@@ -257,4 +257,4 @@ def test_typed_edges_roundtrip_and_legacy_migration() -> None:
         for item in restored.graph.get("chamber").dependencies
         if item.stage_id == "injector"
     )
-    assert edge.requirement is DependencyRequirement.DEFERRED
+    assert edge.requirement is DependencyRequirement.INFORMATIONAL

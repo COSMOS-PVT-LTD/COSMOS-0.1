@@ -1,0 +1,40 @@
+{
+  "schema": "cosmos.proposed-interface-layout.v1",
+  "scope": "PROVISIONAL_ISOLATED_GEOMETRY_STUDY_NOT_APPROVED_ENGINE_INPUTS",
+  "source": "User-requested cooling-header exploration. Exact saved passage end count, angular width, radial depth and phase are retained. New annular plenums and circular supply/return cap ports are geometry hypotheses, not sized headers. The reduced injector enclosure and removed interfering plate collar are explicit layout alternatives in an isolated project only. No pipe, seal, preload, distribution loss or hot material approval is implied.",
+  "pair_separation_m": 0.0135,
+  "injector_to_chamber_gap_m": 0.0,
+  "injector_enclosure_radius_basis": "EXACT_CHAMBER_GAS_BORE",
+  "head": {
+    "back_web_m": 0.004, "plenum_length_m": 0.012, "front_web_m": 0.003,
+    "fuel_inner_m": 0.0215, "fuel_outer_m": 0.0318,
+    "oxidizer_inner_m": 0.035, "oxidizer_outer_m": 0.047,
+    "fuel_inlet_radius_m": 0.0035, "oxidizer_inlet_radius_m": 0.004,
+    "fuel_inlet_phase_rad": 0.0, "oxidizer_inlet_phase_rad": 3.141592653589793
+  },
+  "mounting_collar": {
+    "outer_radius_m": 0.075, "thickness_m": 0.006,
+    "bolt_circle_radius_m": 0.066, "bolt_hole_radius_m": 0.0032,
+    "count": 8, "phase_rad": 0.0,
+    "attachment_status": "CHAMBER_COLLAR_ATTACHMENT_NOT_DEFINED_UPPER_HEADER_BOLT_PATTERN_NOT_YET_CUT"
+  },
+  "cooling_headers": {
+    "plenum_inner_clearance_m": 0.0008,
+    "plenum_outer_clearance_m": 0.006,
+    "lower_roof_thickness_m": 0.004,
+    "supply_hole_radius_m": 0.0035,
+    "supply_phase_rad": 0.0,
+    "upper": {"back_web_m": 0.004, "plenum_length_m": 0.020, "front_web_m": 0.003},
+    "lower": {"back_web_m": 0.004, "plenum_length_m": 0.012, "front_web_m": 0.003},
+    "upper_header_bolt_pattern": "NOT_YET_CUT_OR_SIZED",
+    "attachment_and_seals": "NOT_DEFINED"
+  },
+  "numerical_interface_tolerance_m": 0.000001,
+  "not_supplied": [
+    "Heated fuel return pipe and direct LOX / tank feed lines",
+    "Upper-header bolt pattern, selected seals/glands, retained preload and attachment",
+    "Gas-bore extension and plume/line thermal interaction assessment at lower header",
+    "Matched hot-wall/material/header distribution and full feed/operating-point solution",
+    "Physical validation or manufacturing approval"
+  ]
+}

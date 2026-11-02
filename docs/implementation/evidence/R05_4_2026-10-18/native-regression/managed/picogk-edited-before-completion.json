@@ -1,0 +1,83 @@
+{
+  "backend": "picogk",
+  "boundary": "edited-before-completion",
+  "state": "COMPLETED",
+  "selected_attempt": false,
+  "input_current": false,
+  "job_id": "aacdcbc6-2e42-403b-af1c-933122eb4c3d",
+  "record_sha256": "8872ce1a6636a28ef36179a7e5989c1610422471296f9e5aea681cda2ae4a306",
+  "stages": [
+    {
+      "sequence": 0,
+      "native_job_id": "job-7beaa3abc10744e38a4e6b0f6d1cb7a2",
+      "state": "draft",
+      "stage": "draft",
+      "content_hash": "7a8c83f66436021e689c8074b83286563cf4146dc53154b88baa5cdb31898a48",
+      "byte_length": 449,
+      "created_at": "2026-10-18T04:53:08.398739+00:00"
+    },
+    {
+      "sequence": 1,
+      "native_job_id": "job-7beaa3abc10744e38a4e6b0f6d1cb7a2",
+      "state": "validating",
+      "stage": "validating",
+      "content_hash": "239e4d0f913fcd3fd28102bcd5437695bd800bff438e87176843da26f0e0958e",
+      "byte_length": 459,
+      "created_at": "2026-10-18T04:53:08.404061+00:00"
+    },
+    {
+      "sequence": 2,
+      "native_job_id": "job-7beaa3abc10744e38a4e6b0f6d1cb7a2",
+      "state": "queued",
+      "stage": "queued",
+      "content_hash": "ee81f157b7dadebd4cbbaecbbf08f84b6ba07dd9b9adf724ee1dbfc2f72a5eb5",
+      "byte_length": 451,
+      "created_at": "2026-10-18T04:53:08.411163+00:00"
+    },
+    {
+      "sequence": 3,
+      "native_job_id": "job-7beaa3abc10744e38a4e6b0f6d1cb7a2",
+      "state": "running",
+      "stage": "kernel",
+      "content_hash": "320e969891b566ae30047461e8d0f850a3d74c0c38955c53c0231ca206476c43",
+      "byte_length": 452,
+      "created_at": "2026-10-18T04:53:08.417573+00:00"
+    },
+    {
+      "sequence": 4,
+      "native_job_id": "job-7beaa3abc10744e38a4e6b0f6d1cb7a2",
+      "state": "qa",
+      "stage": "independent_qa",
+      "content_hash": "9f6da08d370039d07268596b30587f3f8b28109bd9032155e08c2c403fb9da3e",
+      "byte_length": 455,
+      "created_at": "2026-10-18T04:53:08.946778+00:00"
+    },
+    {
+      "sequence": 5,
+      "native_job_id": "job-7beaa3abc10744e38a4e6b0f6d1cb7a2",
+      "state": "accepted",
+      "stage": "software_fixture_acceptance",
+      "content_hash": "d78228b5b62a273b73a4634cb8798fcfddc4e12bc6c47ca757bd902fedc67f55",
+      "byte_length": 517,
+      "created_at": "2026-10-18T04:53:10.340145+00:00"
+    }
+  ],
+  "blobs": [
+    {
+      "name": "export-conditioned.stl",
+      "content_hash": "29a907b5043ad834f0ceb7551649d2b3a95c9751b0155cff2e2b310789c2b46d",
+      "byte_length": 733984,
+      "kind": "artifact"
+    },
+    {
+      "name": "source.vdb",
+      "content_hash": "9aca92797f83471e7774d0ff188f77a967573b8c5bb9d7b7bc43a6afded6adc1",
+      "byte_length": 217597,
+      "kind": "source"
+    }
+  ],
+  "exact_restart_bytes_verified": true,
+  "software_only": true,
+  "engineering_publication": false,
+  "physical_validation": false
+}

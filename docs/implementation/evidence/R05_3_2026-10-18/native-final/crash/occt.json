@@ -1,0 +1,12 @@
+{
+  "backend": "occt",
+  "actual_host_signal": "SIGKILL",
+  "last_native_stage": "accepted",
+  "recovered_state": "INTERRUPTED",
+  "retained_stages": 6,
+  "selected": false,
+  "durable_exchange_blobs": 0,
+  "native_source_exists": true,
+  "software_only": true,
+  "physical_validation": false
+}

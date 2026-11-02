@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cosmos.local/contracts/ngg/worker-v1",
+  "title": "P07 exact P06 wire envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol", "action", "job_id", "correlation_id", "wires", "wire_sha256"],
+  "properties": {
+    "protocol": {"const": "cosmos.ngg.worker.v1"},
+    "action": {"enum": ["build", "health"]},
+    "job_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"},
+    "correlation_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"},
+    "wires": {"$ref": "#/$defs/wires"},
+    "wire_sha256": {"$ref": "#/$defs/hashes"}
+  },
+  "$defs": {
+    "wires": {
+      "type": "object", "additionalProperties": false,
+      "required": ["request", "snapshot", "graph"],
+      "properties": {"request": {"type": "string"}, "snapshot": {"type": "string"}, "graph": {"type": "string"}}
+    },
+    "hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["request", "snapshot", "graph"],
+      "properties": {"request": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "snapshot": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "graph": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    }
+  }
+}

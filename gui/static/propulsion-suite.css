@@ -1,4 +1,20 @@
 /* Rocket Engine propulsion suite — presentation only */
+.suite-table-scroll { max-width: 100%; overflow-x: auto; margin-block: 0.75rem; }
+.suite-station-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+.suite-station-table caption { text-align: left; color: #9fb3c8; margin-bottom: 0.5rem; }
+.suite-station-table th, .suite-station-table td { text-align: right; white-space: nowrap; border-bottom: 1px solid #2e4256; padding: 0.55rem; }
+.suite-station-table th:first-child { text-align: left; }
+.suite-subsystem-plot { display: block; width: 100%; max-height: 280px; background: #0c1723; margin-block: 0.75rem; }
+.suite-grid [hidden] { display: none; }
+.propulsion-workbench { display: flow-root; }
+.propulsion-workbench .app-frame {
+  height: calc(100dvh - var(--frame-pad) * 2);
+  min-height: 0;
+}
+.propulsion-workbench #cosmos-engineering-root > #cosmos-recent-panel {
+  display: none; /* Recent cards have no host in this workbench. */
+}
+
 .propulsion-workbench .content-area.propulsion-suite {
   min-height: 0;
   overflow: auto;
@@ -63,7 +79,7 @@
 
 .suite-layout {
   display: grid;
-  grid-template-columns: minmax(200px, 240px) 1fr;
+  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
   gap: 0.9rem;
   min-height: min(72vh, 760px);
 }
@@ -110,6 +126,11 @@
 .suite-meta.muted { color: #738797; font-size: 0.78rem; }
 
 .suite-forms { display: grid; gap: 0.75rem; }
+.suite-forms, .suite-card, .suite-result-card, .suite-structured,
+.suite-stage-result, .suite-module-header, .suite-grid label {
+  min-width: 0;
+  max-width: 100%;
+}
 .suite-card {
   border: 1px solid #33485c;
   border-radius: 8px;
@@ -125,6 +146,8 @@
 }
 .suite-grid label { display: grid; gap: 0.25rem; font-size: 0.75rem; color: #9fb3c8; }
 .suite-grid input, .suite-grid select {
+  min-width: 0;
+  width: 100%;
   background: #0b1520;
   border: 1px solid #33485c;
   color: #e8f1f8;
@@ -133,7 +156,7 @@
   font-family: inherit;
 }
 .suite-actions { display: flex; gap: 0.45rem; flex-wrap: wrap; }
-.suite-actions button {
+.suite-actions button, .suite-card > button, .design-context-actions button {
   border: 1px solid #3d6d88;
   background: #123047;
   color: #d7ecf8;
@@ -159,6 +182,36 @@
   min-height: 8rem;
 }
 .suite-result.error { color: #ffb4a8; }
+
+.suite-result-presentation {
+  min-width: 0;
+  white-space: normal;
+  font-family: var(--font-ui, "IBM Plex Sans", system-ui, sans-serif);
+  color: var(--cosmos-text, inherit);
+  display: grid;
+  gap: 0.75rem;
+}
+.suite-result-metadata { display: grid; grid-template-columns: minmax(8rem, auto) minmax(0, 1fr); gap: 0.3rem 0.8rem; margin: 0; }
+.suite-result-metadata dt { font-weight: 600; }
+.suite-result-metadata dd { margin: 0; overflow-wrap: anywhere; }
+.suite-quantity-table { width: 100%; min-width: 42rem; table-layout: fixed; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.suite-quantity-table th:nth-child(1) { width: 28%; }
+.suite-quantity-table th:nth-child(2) { width: 32%; }
+.suite-quantity-table th:nth-child(3) { width: 16%; }
+.suite-quantity-table th:nth-child(4) { width: 24%; }
+.suite-quantity-table caption { text-align: left; font-weight: 600; margin-bottom: 0.5rem; }
+.suite-quantity-table th, .suite-quantity-table td { text-align: left; vertical-align: top; padding: 0.45rem; border-bottom: 1px solid var(--cosmos-border, currentColor); overflow-wrap: anywhere; }
+.suite-quantity-table td:nth-child(2), .suite-quantity-table td:nth-child(3) { font-family: var(--font-mono, ui-monospace, monospace); }
+.suite-quantity-table .suite-quantity-value, .suite-quantity-table td:nth-child(3) { white-space: nowrap; overflow-wrap: normal; }
+.suite-quantity-table td:first-child, .suite-quantity-table th:first-child, .suite-quantity-table td:nth-child(4) { max-width: 24rem; overflow-wrap: anywhere; }
+.suite-source-inspection { min-width: 0; }
+.suite-source-inspection summary { cursor: pointer; overflow-wrap: anywhere; }
+.suite-source-inspection summary:focus-visible, .suite-source-inspection pre:focus-visible, .suite-result-presentation .suite-table-scroll:focus-visible { outline: 2px solid var(--cosmos-focus-ring, var(--cosmos-cyan, currentColor)); outline-offset: 3px; }
+.suite-source-inspection pre, .suite-result-diagnostics { max-width: 100%; max-height: 24rem; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .suite-result-metadata { grid-template-columns: 1fr; gap: 0.2rem; }
+  .suite-result-metadata dd { margin-bottom: 0.4rem; }
+}
 
 .suite-workflow-board {
   margin-top: 0.75rem;
@@ -205,7 +258,7 @@
 }
 .design-context-bar {
   display: grid;
-  grid-template-columns: minmax(12rem, 1.1fr) minmax(14rem, 1.4fr) minmax(16rem, 1.6fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
   gap: 0.75rem;
   align-items: center;
   padding: 0.7rem 0.9rem;
@@ -222,11 +275,15 @@
   color: #c5d8e8;
 }
 .design-context-actions {
+  grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
   justify-content: flex-end;
 }
+.design-context-bar > div { min-width: 0; overflow-wrap: anywhere; }
+.design-context-actions select { max-width: 100%; min-width: 0; color: #e8f1f8; background: #0b1520; border: 1px solid #33485c; }
+#design-context-inputs { color: #ffd39a; }
 .design-context-actions select,
 .design-context-actions button {
   font: inherit;
@@ -236,6 +293,31 @@
 .suite-stage-result pre {
   margin: 0;
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.suite-result { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+.propulsion-workbench .app-body { grid-template-columns: var(--nav-width) minmax(0, 1fr); }
+.propulsion-workbench .app-body.nav-expanded { grid-template-columns: var(--nav-width-expanded) minmax(0, 1fr); }
+.propulsion-workbench .content-area { min-width: 0; }
+.suite-board-table tr.is-ni td { color: #9fb3c8; }
+
+/* Preserve usable workbench height at the supported 1100×700 minimum. */
+@media (min-width: 721px) and (max-width: 1100px) {
+  .propulsion-workbench .app-header {
+    grid-template-columns: 40px minmax(0, 1fr) auto auto;
+    grid-template-rows: auto;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+  .propulsion-workbench .header-meta,
+  .propulsion-workbench .cosmos-toolbar,
+  .propulsion-workbench .user-badge { grid-column: auto; }
+  .propulsion-workbench .avatar { width: 40px; height: 40px; }
+  .propulsion-workbench .user-badge { min-width: 0; max-width: 130px; padding: 8px; }
+  .propulsion-workbench .cosmos-toolbar { gap: 4px; max-width: 340px; }
+  .propulsion-workbench .cosmos-toolbar-btn { padding: 5px 8px; }
+  .propulsion-workbench .zone-brand { display: none; }
+  .propulsion-workbench .zone-pill .zone-value { max-width: 140px; overflow: hidden; text-overflow: ellipsis; }
 }
 
 @media (max-width: 980px) {

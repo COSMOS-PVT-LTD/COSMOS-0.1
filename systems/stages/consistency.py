@@ -51,12 +51,12 @@ def run_consistency_stage(design: PropulsionDesign) -> CalculationResult:
         if current is None:
             continue
         for dep in dependency_assessment(design.workflow, sid):
-            if dep["satisfied"] == "false" and dep["requirement"] == "REQUIRED":
+            if dep["satisfied"] is False and dep["requirement"] == "REQUIRED":
                 violations.append(
                     f"Stage {sid!r} is CURRENT while REQUIRED dependency {dep['stage_id']!r} is {dep['status']}."
                 )
                 checks.append(f"required_dependency:{sid}->{dep['stage_id']}=FAIL")
-            elif dep["satisfied"] == "false":
+            elif dep["satisfied"] is False:
                 warnings.append(f"{sid}: {dep['requirement']} dependency {dep['stage_id']}={dep['status']}: {dep['reason']}")
             else:
                 checks.append(f"dependency:{sid}->{dep['stage_id']}=PASS")
@@ -73,21 +73,22 @@ def run_consistency_stage(design: PropulsionDesign) -> CalculationResult:
         else:
             checks.append("mixture_ratio_match=PASS")
 
-    # Structure hoop/yield advisory (if computed).
+    # Governing preliminary pressure/yield screen, with legacy result support.
     struct = design.workflow.current_result("structure")
-    if struct is not None and "hoop_over_yield" in struct.outputs:
-        raw = struct.outputs["hoop_over_yield"]
+    if struct is not None and ("stress_over_yield" in struct.outputs or "hoop_over_yield" in struct.outputs):
+        ratio_key = "stress_over_yield" if "stress_over_yield" in struct.outputs else "hoop_over_yield"
+        raw = struct.outputs[ratio_key]
         ratio = float(raw["value"] if isinstance(raw, dict) else raw)
         if ratio > 1.0:
             violations.append(
-                f"hoop_over_yield {ratio} > 1.0 (thin-wall stress exceeds yield)."
+                f"{ratio_key} {ratio} > 1.0 (selected pressure stress exceeds catalog typical yield)."
             )
-            checks.append("hoop_over_yield_le_1=FAIL")
+            checks.append(f"{ratio_key}_le_1=FAIL")
         else:
-            checks.append("hoop_over_yield_le_1=PASS")
+            checks.append(f"{ratio_key}_le_1=PASS")
             if ratio > 0.8:
                 warnings.append(
-                    f"hoop_over_yield {ratio} is high for a preliminary thin-wall check."
+                    f"{ratio_key} {ratio} is high for a preliminary pressure-only check."
                 )
 
     # Honest inventory of unavailable capabilities.

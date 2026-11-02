@@ -1,0 +1,260 @@
+Window: "COSMOS R05 FINAL — ISOLATED SOFTWARE QA", App: Python.
+0 standard window COSMOS R05 FINAL — ISOLATED SOFTWARE QA, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: COSMOS — Projects & Mission, URL: 127.0.0.1:8865/app/projects?project=0e22e007-d868-45e1-830d-9ee86346bfae
+			3 container
+				4 container Breadcrumbs
+					5 link Projects & Mission, Value: 127.0.0.1:8865/app/projects
+					6 text  / COSMOS — Projects & Mission
+				7 text COSMOS · active r— · inspecting current r— · Design: none · Managed project R05 final managed journey — synthetic software only · 0e22e007-d868-45e1-830d-9ee86346bfae
+				8 text Persisted design
+				9 pop up button Persisted design, Value: Choose an existing design
+				10 text Inspected revision
+				11 pop up button (disabled) Inspected revision, Value: No current persisted revision
+				12 button (collapsed) Navigation, Secondary Actions: Expand
+				13 button (collapsed) Inspector, Secondary Actions: Expand
+				14 button (collapsed) Diagnostics, Secondary Actions: Expand
+				15 toggle button Restore workspace, Value: on
+				16 button Open commands
+				17 summary Workspace controls, Value: off
+					18 text Workspace controls
+			19 container Active workbench
+				20 summary Authoritative project sources and retained activity, Value: off
+					21 text Authoritative project sources and retained activity
+				22 container
+					23 heading Projects & Mission, Value: 1
+						24 text Projects & Mission
+					25 text Server-owned projects and immutable saved snapshots. CURRENT means selected freshness, not engineering or physical validation.
+					26 container Create managed project
+						27 container
+							28 text Project title
+							29 text field (settable) Project title
+						30 container
+							31 text Mission / intended-use notes
+							32 text field (settable) Mission / intended-use notes
+						33 button Create project
+					34 container Managed project list
+						35 heading Managed projects, Value: 2
+							36 text Managed projects
+						37 button R05 final managed journey — synthetic software only · ACTIVE
+						38 button First project page
+					39 container Selected managed project
+						40 heading R05 final managed journey — synthetic software only, Value: 2
+							41 text R05 final managed journey — synthetic software only
+						42 text ACTIVE · project v1 · owner USR-dee1967dd32feed8
+						43 text No physical validation or signed acceptance
+						44 container
+							45 text Cloned project title
+							46 text field (settable) Cloned project title, Value: R05 final managed journey — synthetic software only (inputs clone)
+						47 button Clone editable inputs and retain complete origin archive
+						48 container
+							49 text Project title
+							50 text field (settable) Project title, Value: R05 final managed journey — synthetic software only
+						51 container
+							52 text Mission notes
+							53 text field (settable) Mission notes, Value: No physical validation or signed acceptance
+						54 button Save project metadata
+						55 button Archive project
+						56 button (disabled) Restore project
+						57 text Recoverable delete retains snapshots; no permanent purge.
+						58 container
+							59 text Exact project ID to confirm recoverable delete
+							60 text field (settable) Exact project ID to confirm recoverable delete
+						61 button Recoverably delete project
+						62 container
+							63 text New propulsion design name
+							64 text field (settable) New propulsion design name
+						65 button Create propulsion design
+						66 heading Propulsion designs — first 20; no domain jobs are inferred, Value: 3
+							67 text Propulsion designs — first 20; no domain jobs are inferred
+						68 link Download exact project archive (owner only; no credentials), Value: 127.0.0.1:8865/api/projects/0e22e007-d868-45e1-830d-9ee86346bfae/package?version=1&hash=d5b9a807e2b94fc24ed861cc7463930ac76e38a505169094a891676ae724792e
+						69 container Managed geometry and durable attempts
+							70 heading Managed geometry · software fixtures only, Value: 3
+								71 text Managed geometry · software fixtures only
+							72 text Exact snapshots, graphs, requests, attempts and retained bytes. Storage completion is not engineering publication or physical validation.
+							73 text Input r0 · saved v1 · commit f1ebfc32-e685-434a-843e-a5f2256fe8bf · source namespace p07-software-fixtures
+							74 container
+								75 text Fixture operation
+								76 pop up button Fixture operation, Value: sphere
+							77 container
+								78 text Fixture backend
+								79 pop up button Fixture backend, Value: occt
+							80 container
+								81 text Declared voxel size in metres
+								82 pop up button Declared voxel size in metres, Value: 0.0005
+							83 button Create managed fixture inputs
+							84 button Save geometry input edits
+							85 button Build exact saved fixture inputs
+							86 button Discard geometry drafts and reload opened inputs
+							87 button Refresh retained attempts
+							88 text Build still requires successful runtime hash checks; errors are retained or explicitly refused.
+							89 heading Managed fixture inputs, Value: 4
+								90 text Managed fixture inputs
+							91 button Open fixture 5d1139d2-dd63-429e-927c-6d4d2c3ca828 · saved v1
+							92 heading Saved geometry sources · read-only inspection, Value: 4
+								93 text Saved geometry sources · read-only inspection
+							94 button Inspect saved v1 · input r0
+							95 heading Retained attempts · no automatic retry, Value: 4
+								96 text Retained attempts · no automatic retry
+							97 text COMPLETED · attempt 0915719b-17c2-4661-96a8-f9131db2ec02 · selected attempt / input current · byte integrity checked only on explicit inspection/download
+							98 button Inspect exact attempt and byte integrity
+							99 link Exact attempt source API, Value: 127.0.0.1:8865/api/projects/0e22e007-d868-45e1-830d-9ee86346bfae/geometry/5d1139d2-dd63-429e-927c-6d4d2c3ca828/jobs/0915719b-17c2-4661-96a8-f9131db2ec02
+							100 button Inspect or refresh retained native stages
+							101 container Retained native stages
+							102 link Download exact export.step · artifact · 2128 bytes, Value: 127.0.0.1:8865/api/projects/0e22e007-d868-45e1-830d-9ee86346bfae/geometry/5d1139d2-dd63-429e-927c-6d4d2c3ca828/jobs/0915719b-17c2-4661-96a8-f9131db2ec02/blobs/export.step/binary
+							103 link Download exact source.brep · source · 917 bytes, Value: 127.0.0.1:8865/api/projects/0e22e007-d868-45e1-830d-9ee86346bfae/geometry/5d1139d2-dd63-429e-927c-6d4d2c3ca828/jobs/0915719b-17c2-4661-96a8-f9131db2ec02/blobs/source.brep/binary
+							104 text Exact authorized geometry source API
+							105 container Managed geometry exact source preview
+								106 text Opened exact input · SHA256 22ac216a3a0d49b21e781288ecf70e445b6094415d7da754efec75a896311343
+{"graph_json":"{\"content_sha256\":\"52ce251edeed922b2a4a3bc6933a153c7e573d61b69579349c4c3eceeece2b16\",\"contract_type\":\"GeometryFeatureGraph\",\"features\":[{\"content_sha256\":\"9c5a97d33d6b111410f908715a6753108ba670216d564d5b857c4f17e0ec9b70\",\"contract_type\":\"GeometryFeature\",\"dependency_ids\":[],\"feature_id\":\"body\",\"frame_id\":\"world\",\"operation\":\"primitive.sphere\",\"parameter_refs\":[\"body.
+						107 container Managed studies and solver runs
+							108 heading Managed study/run · spherical software benchmark only, Value: 3
+								109 text Managed study/run · spherical software benchmark only
+							110 text Retains exact study, mesh, model/solver hashes, monitor events and datasets. Execution COMPLETED does not mean numerical convergence, experimental validation or production handoff.
+							111 text Study 7c79dc1596241be70d86f29de35c3c628803da37e4c5eb046e1d8f1e6122ca55 · input r0 · saved v1 · commit 4a1e125d-3f78-4bb0-b3a2-efa57ae1f019 · upstream current · methods current
+							112 container
+								113 text Exact owned geometry attempt ID for a new study
+								114 text field (settable) Exact owned geometry attempt ID for a new study
+							115 container
+								116 text Conductivity [W/(m·K)]
+								117 text field (settable) Conductivity [W/(m·K)], Value: 10
+							118 container
+								119 text Volumetric generation [W/m³]
+								120 text field (settable) Volumetric generation [W/m³], Value: 1000000
+							121 container
+								122 text Surface temperature [K]
+								123 text field (settable) Surface temperature [K], Value: 300
+							124 container
+								125 text Radial cell count [8,16,32,64]
+								126 text field (settable) Radial cell count [8,16,32,64], Value: 16
+							127 container
+								128 text Relative equation residual tolerance
+								129 text field (settable) Relative equation residual tolerance, Value: 1e-8
+							130 container
+								131 text Maximum solver iterations
+								132 text field (settable) Maximum solver iterations, Value: 10000
+							133 button Create new radial benchmark study with displayed settings
+							134 button Save displayed study settings
+							135 button Run exact saved radial benchmark
+							136 button Discard study drafts and reload
+							137 button Refresh retained solver attempts
+							138 heading Retained studies, Value: 4
+								139 text Retained studies
+							140 button Open study 2361c232-b5de-5092-89be-1ce294c13f90 · saved v1
+							141 heading Exact study source history · read only, Value: 4
+								142 text Exact study source history · read only
+							143 button Inspect study saved v1 · input r0
+							144 heading Durable solver attempts · no automatic retry, Value: 4
+								145 text Durable solver attempts · no automatic retry
+							146 text RUNNING · run attempt 537c63b4-bdd2-4c92-9bf4-7703762f682d · unselected or stale input/dependency · numerical outcome is separate
+							147 button Inspect exact retained run/outcome
+							148 link Exact authorized run API, Value: 127.0.0.1:8865/api/projects/0e22e007-d868-45e1-830d-9ee86346bfae/studies/2361c232-b5de-5092-89be-1ce294c13f90/jobs/537c63b4-bdd2-4c92-9bf4-7703762f682d
+							149 button Inspect or refresh solver monitors
+							150 button Cancel managed solver attempt
+							151 text Exact authorized study source API
+							152 container Managed study exact source preview
+								153 text Exact saved study · not engineering or physical acceptance
+{"geometry_commit_id":"f1ebfc32-e685-434a-843e-a5f2256fe8bf","geometry_job_id":"0915719b-17c2-4661-96a8-f9131db2ec02","mesh_json":"{\"cell_volumes_m3\":[1.0226538585904276e-09,7.158577010132992e-09,1.9430423313218115e-08,3.7838192767845835e-08,6.23818853740161e-08,9.306150113172882e-08,1.298770400409844e-07,1.7282850210178222e-07,2.219158873141226e-07,2.7713919567800614e-07,3.384984271934312e-07,4.0599358186039946e-07,4.796246596789109e-07,5.5939166
+						154 container (expanded) Secondary Actions: Collapse
+							155 summary Managed comparisons and research reports, Value: on
+								156 text Managed comparisons and research reports
+							157 text Owning-project first-import ordering survives restart. Criteria must precede reference exposure. This is software comparison, not independent review or physical validation.
+							158 text Project comparison ledger · saved v3 · exact server ordering retained
+							159 summary 1. Explicit criteria — save before reference exposure, Value: on
+								160 text 1. Explicit criteria — save before reference exposure
+							161 container
+								162 text Criteria intended use
+								163 text field (settable) Criteria intended use, Value: Software sphere benchmark only; no hardware acceptance
+							164 container
+								165 text Criteria rationale — explicit acceptance basis
+								166 text field (settable) Criteria rationale — explicit acceptance basis, Value: Synthetic software QA: declared 0.01 K fixture discrepancy ceiling only; not a physical acceptance basis.
+							167 container
+								168 text Maximum absolute temperature error (K)
+								169 text field (settable) Maximum absolute temperature error (K), Value: 0.01
+							170 container
+								171 text Maximum combined standard output uncertainty (K)
+								172 text field (settable) Maximum combined standard output uncertainty (K), Value: 0.01
+							173 container
+								174 text Declared coverage factor — no confidence interpretation
+								175 text field (settable) Declared coverage factor — no confidence interpretation, Value: 2
+							176 container
+								177 text Declared correlation [-1,1]
+								178 text field (settable) Declared correlation [-1,1], Value: 0
+							179 container
+								180 text Allow explicit mm/degC conversion
+								181 checkbox Allow explicit mm/degC conversion, Value: 0
+							182 button Save explicit criteria before reference import
+							183 summary 2. Exact run candidate and independent reference, Value: on
+								184 text 2. Exact run candidate and independent reference
+							185 container
+								186 text Exact owning-project completed run attempt ID
+								187 text field (settable) Exact owning-project completed run attempt ID, Value: 537c63b4-bdd2-4c92-9bf4-7703762f682d
+							188 container
+								189 text External reference JSON — explicit provenance and uncertainties
+								190 text entry area (settable) External reference JSON — explicit provenance and uncertainties, Value: [text entry area]
+							191 container
+								192 text Candidate dataset
+								193 pop up button Saved run candidate dataset, Value: a3a20549f72fbfe3… · retained run
+							194 container
+								195 text Reference dataset
+								196 pop up button Saved independent reference dataset, Value: 820911863ccb8b02… · analytic-reference
+							197 container
+								198 text Saved criteria
+								199 pop up button Saved predeclared criteria, Value: Software sphere benchmark only; no hardware acceptance · 7b65d10d6ecb
+							200 button Use exact retained completed run
+							201 button Create independent analytic reference
+							202 button Import explicit external reference JSON
+							203 button Assess selected candidate, reference and criteria
+							204 heading Exact retained assessments, Value: 4
+								205 text Exact retained assessments
+							206 button Inspect assessment 5b7a719738554c7e
+							207 summary 3. Research report versions and review intents, Value: on
+								208 text 3. Research report versions and review intents
+							209 container
+								210 text Retained assessment
+								211 pop up button Saved assessment for report, Value: 5b7a719738554c7ed6fff3602f1907ecdc1f9b425adcbf847f064417a9442301
+							212 container
+								213 text Research report title
+								214 text field (settable) Research report title, Value: R05 native durable research report — software fixture only
+							215 container
+								216 text Existing Knowledge claim IDs (comma separated; optional)
+								217 text field (settable) Existing Knowledge claim IDs (comma separated; optional)
+							218 container
+								219 text Review intent note — not a signature
+								220 text entry area (settable) Review intent note — not a signature, Value: [text entry area]
+									221 text (settable) Automated native software workflow inspection only; not a qualified human signature or engineering acceptance.
+							222 text Report saved v2; exact rendered exports retained. Review intents do not approve engineering use.
+							223 link Download exact report.json, Value: 127.0.0.1:8865/api/projects/0e22e007-d868-45e1-830d-9ee86346bfae/reports/784516df-9538-5e23-b033-b7277f6a2b25/files/report.json
+							224 link Download exact report.md, Value: 127.0.0.1:8865/api/projects/0e22e007-d868-45e1-830d-9ee86346bfae/reports/784516df-9538-5e23-b033-b7277f6a2b25/files/report.md
+							225 link Download exact report.html, Value: 127.0.0.1:8865/api/projects/0e22e007-d868-45e1-830d-9ee86346bfae/reports/784516df-9538-5e23-b033-b7277f6a2b25/files/report.html
+							226 link Download exact package.zip, Value: 127.0.0.1:8865/api/projects/0e22e007-d868-45e1-830d-9ee86346bfae/reports/784516df-9538-5e23-b033-b7277f6a2b25/files/package.zip
+							227 button Inspect report version history
+							228 button Create immutable research report
+							229 button Create next version of opened report
+							230 button Record report review intent (not acceptance)
+							231 heading Retained research reports, Value: 4
+								232 text Retained research reports
+							233 button Open report 784516df-9538-5e23-b033-b7277f6a2b25 · saved v1
+							234 button Refresh retained comparison/report index
+							235 button Discard unsaved comparison/report drafts
+							236 text saved v2 · commit c3b6fcee-8487-4b48-a318-bd9a8e60b02b · storage SHA256 74cf2faf96b4ac8298c7b6fec29d9b29850dc3699f6a9471999f572b416f1cee · selected snapshot · upstream current · not engineering acceptance
+							237 text Exact authenticated source API
+							238 container Exact managed evidence source preview
+								239 text {"assessment_id":"5b7a719738554c7ed6fff3602f1907ecdc1f9b425adcbf847f064417a9442301","canonical_json":"{\"actor\":\"USR-dee1967dd32feed8\",\"claim_scope\":\"Supplementary knowledge; attachment does not establish model-use applicability\",\"claims\":[],\"comparison_canonical_json\":\"{\\\"actor\\\":\\\"USR-dee1967dd32feed8\\\",\\\"alignment\\\":\\\"matching coordinates; roundoff-only 1e-12 relative/1e-15m absolute; no interpolation\\\",\\\"blockers\\\":[\\\"NO_MEASURED_REFERENCE\\\",\\\"OUTPUT_UNCERTAINTY_INC
+			240 button Maharshi Bharadwaj Maharshi, Help: Maharshi Bharadwaj — click for pop-up, double-click for Knowledge workbench. Drag to move; Shift+wheel or corner handle to resize.
+			241 container
+				242 heading RECENT WORKBENCHES, Value: 4
+					243 text RECENT WORKBENCHES
+				244 text None yet
+				245 heading RECENT FILES, Value: 4
+					246 text RECENT FILES
+				247 text None yet
+	248 close button
+	249 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	250 minimize button
+	251 text COSMOS R05 FINAL — ISOLATED SOFTWARE QA
+252 menu bar
+	253 Python
+	254 View
+
+The focused UI element is 2 HTML content Description: COSMOS — Projects & Mission, URL: 127.0.0.1:8865/app/projects?project=0e22e007-d868-45e1-830d-9ee86346bfae

@@ -1,0 +1,94 @@
+{
+  "boundary": "nonconverged",
+  "state": "COMPLETED",
+  "selected": true,
+  "input_current": true,
+  "study_source_sha256": "3789dffeb6263aeeb4a61f7433afab22b809e49864e23ad6b6ea4f77fb1eee9c",
+  "mesh": {
+    "cell_volumes_m3": [
+      1.0226538585904276e-09,
+      7.158577010132992e-09,
+      1.9430423313218115e-08,
+      3.7838192767845835e-08,
+      6.23818853740161e-08,
+      9.306150113172882e-08,
+      1.298770400409844e-07,
+      1.7282850210178222e-07,
+      2.219158873141226e-07,
+      2.7713919567800614e-07,
+      3.384984271934312e-07,
+      4.0599358186039946e-07,
+      4.796246596789109e-07,
+      5.593916606489644e-07,
+      6.452945847705584e-07,
+      7.373334320436993e-07
+    ],
+    "cells": 16,
+    "center_condition": "regular-zero-flux",
+    "faces_m": [
+      0.0,
+      0.000625,
+      0.00125,
+      0.001875,
+      0.0025,
+      0.003125,
+      0.00375,
+      0.004375,
+      0.005,
+      0.005625,
+      0.00625,
+      0.006875,
+      0.0075,
+      0.008125,
+      0.00875,
+      0.009375,
+      0.01
+    ],
+    "frame_id": "world",
+    "geometry_revision_id": "geometry-job-8544fb36694844739ecc967d7cc1569c",
+    "geometry_sha256": "34329ad02a4158f7236f585739bd07197808080baaef77365495e0e4273617f1",
+    "geometry_snapshot_id": "a0c200d684b3eafde2d3db656d4ca4e409a2afb9d2af22b3c96c1d78f7ec4e8a",
+    "handoff_sha256": "17f66f451f32af4653a78c66315098c25356c4c58f84c205309014743e6a3ab8",
+    "integrity_sha256": "2b332f5386eee38327d7b03dafc69a921fba8e62c6365e62d5cc3ef511227530",
+    "kind": "1d-spherical-finite-volume",
+    "material_region": "solid-sphere",
+    "mesh_sha256": "7fceaf2490e39673f4ba819d3593994b7a90b5c6966f986c2b5d30e7df2b8cc2",
+    "named_selection": {
+      "content_sha256": "c54ea99e8ef8832af4f3535f9833ac23b44c088d3845f6f9e698e00d88fb0576",
+      "contract_type": "NamedSelection",
+      "entity_refs": [
+        "radial-outer-shell"
+      ],
+      "feature_ref": "body",
+      "geometry_revision_id": "geometry-job-8544fb36694844739ecc967d7cc1569c",
+      "mapping_status": "exact",
+      "remap_confidence": 1.0,
+      "schema_version": "1.0.0",
+      "semantic_id": "outer-surface"
+    },
+    "outer_boundary_face": 16,
+    "production_handoff": false,
+    "source_sha256": "ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3",
+    "units": "m"
+  },
+  "study_json": "{\"content_sha256\":\"4577bcdfaec461242cf2fa70344106c0d55cf593a2989b3c4a58b904dddd9938\",\"contract_type\":\"StudySnapshot\",\"handoff\":{\"artifact\":{\"approximation_profile\":\"none\",\"artifact_id\":\"artifact-0\",\"backend_id\":\"occt\",\"backend_version\":\"occt-7.8.1.ocp-7.8.1.1.g5v2\",\"content_sha256\":\"445c2166c8f489dc3198e85ea949a77596d6a0b4bac746371a2d5e9ff1c07fbe\",\"contract_type\":\"GeometryArtifact\",\"export_tolerance_m\":1e-06,\"feature_graph_sha256\":\"f32cca3956595fad09a88c0069bc23b2f8189d528322309ea2e0d44926c892bf\",\"frame_id\":\"world\",\"generated_at\":\"2026-10-18T04:52:28.217087+00:00\",\"geometry_revision_id\":\"geometry-job-8544fb36694844739ecc967d7cc1569c\",\"job_id\":\"job-8544fb36694844739ecc967d7cc1569c\",\"output_format\":\"step\",\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\",\"sha256\":\"34329ad02a4158f7236f585739bd07197808080baaef77365495e0e4273617f1\",\"size_bytes\":2128,\"snapshot_id\":\"a0c200d684b3eafde2d3db656d4ca4e409a2afb9d2af22b3c96c1d78f7ec4e8a\",\"source_artifact_sha256\":\"ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3\",\"source_tolerance_m\":1e-08,\"storage_uri\":\"job-8544fb36694844739ecc967d7cc1569c/export.step\",\"topology_report_id\":\"report-job-8544fb36694844739ecc967d7cc1569c-0\",\"units\":\"m\",\"voxel_resolution_m\":null},\"content_sha256\":\"17f66f451f32af4653a78c66315098c25356c4c58f84c205309014743e6a3ab8\",\"contract_type\":\"FixtureHandoff\",\"frame_id\":\"world\",\"geometry_snapshot_id\":\"a0c200d684b3eafde2d3db656d4ca4e409a2afb9d2af22b3c96c1d78f7ec4e8a\",\"integrity_sha256\":\"2b332f5386eee38327d7b03dafc69a921fba8e62c6365e62d5cc3ef511227530\",\"radius_m\":0.01,\"schema_version\":\"1.0.0\",\"scope\":\"software-sphere-radial-benchmark-only\",\"selection\":{\"content_sha256\":\"c54ea99e8ef8832af4f3535f9833ac23b44c088d3845f6f9e698e00d88fb0576\",\"contract_type\":\"NamedSelection\",\"entity_refs\":[\"radial-outer-shell\"],\"feature_ref\":\"body\",\"geometry_revision_id\":\"geometry-job-8544fb36694844739ecc967d7cc1569c\",\"mapping_status\":\"exact\",\"remap_confidence\":1.0,\"schema_version\":\"1.0.0\",\"semantic_id\":\"outer-surface\"}},\"model\":\"steady-spherical-conduction-v1\",\"model_sha256\":\"28d9d63738f8c64a778bbd522cf64508351ea28ada67a1970f89ce16b00aa102\",\"schema_version\":\"1.0.0\",\"settings\":{\"cells\":16,\"conductivity_w_m_k\":10.0,\"content_sha256\":\"a7ab526f64be6248ca750a6578881260a20d3358db3f21c1434cc4d1731e87cf\",\"contract_type\":\"StudySettings\",\"generation_w_m3\":1000000.0,\"max_iterations\":1,\"relative_residual\":1e-08,\"schema_version\":\"1.0.0\",\"surface_k\":300.0},\"solver_sha256\":\"17723ed167b1eff992ed4ebe4283aba3406409dc8e5759a614cdfbdc8639082e\"}",
+  "monitors": [
+    {
+      "sequence": 0,
+      "run_id": "sim-579e4313ad634e06b120ad60b496309e",
+      "content_hash": "21d7b178bd7f83f152f8b5ea081b9ab29d8b85f43fbef7c69671782b9ddecf3c",
+      "byte_length": 144,
+      "created_at": "2026-10-18T04:52:28.398041+00:00"
+    },
+    {
+      "sequence": 1,
+      "run_id": "sim-579e4313ad634e06b120ad60b496309e",
+      "content_hash": "98a76f50c19a97ab0a2c3f162f36a3456f9d91dfb34ca790f0fe966e412e7961",
+      "byte_length": 160,
+      "created_at": "2026-10-18T04:52:28.404394+00:00"
+    }
+  ],
+  "dataset_sha256": "0de189291ed8578bfbcff5c92ff862738c59389581285483587c8df6d4b91c5a",
+  "exact_restart_bytes_verified": true,
+  "physical_validation": false
+}

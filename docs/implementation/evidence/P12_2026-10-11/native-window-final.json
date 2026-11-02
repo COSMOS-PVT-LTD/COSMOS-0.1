@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "actual_native_renderer": true,
+  "browser_fallback": false,
+  "backend": "webview.platforms.cocoa",
+  "document": {
+    "title": "COSMOS 0.1 \u2014 Login",
+    "url": "http://127.0.0.1:8842/",
+    "usernameInput": true,
+    "privateHint": true,
+    "oldSharedPasswordVisible": false
+  },
+  "scope": "Existing desktop native adapter and real Cocoa/WebKit login DOM, not all scientific flows inside the native window"
+}

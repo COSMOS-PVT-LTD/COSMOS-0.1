@@ -2,7 +2,8 @@
  * COSMOS 0.1 — centralized role-based access policy (frontend).
  * Backend enforcement remains authoritative in api/authorization.py and knowledge/workspace/access.py.
  */
-(function rbacModule() {
+(function rbacModule(global) {
+ function install(COSMOS) {
   const ROLE = (user) => String(user?.role || "").toUpperCase();
 
   COSMOS.permissions = {
@@ -29,4 +30,8 @@
   COSMOS.canAdmin = (user) => COSMOS.permissions.canAdmin(user || COSMOS.currentUser);
   COSMOS.canAudit = (user) => COSMOS.permissions.canAudit(user || COSMOS.currentUser);
   COSMOS.canKnowledgeAdmin = (user) => COSMOS.permissions.canKnowledgeAdmin(user || COSMOS.currentUser);
-})();
+ }
+ // Legacy and modern templates load these two scripts in both orders.
+ if (global.COSMOS) install(global.COSMOS);
+ else global.CosmosInstallRBAC = install;
+})(window);

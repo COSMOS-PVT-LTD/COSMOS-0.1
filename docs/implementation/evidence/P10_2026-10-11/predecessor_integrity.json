@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "predecessor_files": 2988,
+  "before_overlay": [
+    ".github/workflows/ci.yml",
+    "gui/server.py"
+  ],
+  "historical_seal_unmodified": true
+}

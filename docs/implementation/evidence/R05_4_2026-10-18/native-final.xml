@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="15" time="97.046" timestamp="2026-10-18T10:12:09.259840+05:30" hostname="vaibhavs-MacBook-Air.local"><testcase classname="tests.integration_tests.geometry.test_managed_study_retention" name="test_actual_managed_geometry_study_solver_restart[current]" time="8.600" /><testcase classname="tests.integration_tests.geometry.test_managed_study_retention" name="test_actual_managed_geometry_study_solver_restart[edited-study]" time="8.513" /><testcase classname="tests.integration_tests.geometry.test_managed_study_retention" name="test_actual_managed_geometry_study_solver_restart[edited-geometry]" time="8.561" /><testcase classname="tests.integration_tests.geometry.test_managed_study_retention" name="test_actual_managed_geometry_study_solver_restart[cancel-at-monitor]" time="0.768"><failure message="AssertionError: {'error': {'action': 'Retain drafts. Reload/reconcile an exact authorized head; do not overwrite or reset storage.', 'code': 'IntegrityFailure', 'message': 'Store file is not a private owned regular file.'}, 'ok': False}&#10;assert 503 == 200">native_config = {'evidence_directory': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1/docs/implementation/evidence/R05_4_2026-10-18/n...PYTHONPATH': '/Users/vaibhavkumarn/Desktop/COSMOS/COSMOS_0.1:/private/tmp/cosmos-r05_3-native.IcKKdc/cad-tools'}}, ...}
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-505/test_actual_managed_geometry_s3')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x106b90a50&gt;
+boundary = 'cancel-at-monitor'
+
+    @pytest.mark.parametrize("boundary", ["current", "edited-study", "edited-geometry", "cancel-at-monitor", "late-cancel", "nonconverged", "membership-downgraded"])
+    def test_actual_managed_geometry_study_solver_restart(native_config, tmp_path, monkeypatch, boundary):
+        root = tmp_path / "application"
+        candidates = tmp_path / "native"
+        candidates.mkdir()
+        with WorkerSupervisor(timeout_s=45) as supervisor:
+            service = GeometryBuildService(OCCTAdapter(command(native_config, "occt"), supervisor, enabled=True), candidates,
+                step_reader=command(native_config, "step_reader"))
+            try:
+                with running(root) as (app, base, owner_client):
+                    project = new_project(base, owner_client, "R05.4 actual software sphere study")
+                    geometry = create(base, owner_client, project)
+                    geometry_route = url(project, geometry)
+                    app.project_api.geometry.coordinator.services = lambda: {"occt": service}
+                    native = request(owner_client, base, geometry_route+"/jobs", {"expected": geometry["authority"]["head"], "operation_id": str(uuid4())})
+&gt;                   assert terminal(owner_client, base, geometry_route+"/jobs/"+native["job_id"])["state"] == "COMPLETED"
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration_tests/geometry/test_managed_study_retention.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/geometry/test_managed_study_retention.py:37: in terminal
+    while (value := request(client, base, route))["state"] not in {"COMPLETED", "FAILED", "CANCELLED", "INTERRUPTED"}:
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;urllib.request.OpenerDirector object at 0x106c32fd0&gt;
+base = 'http://127.0.0.1:49212'
+path = '/api/projects/e08af5c9-5c8e-44fa-8e6b-d7c76c3f812b/geometry/63465e4c-48dd-5bd6-9c78-3a50c771e057/jobs/0e2ae5a0-9e48-4b07-8edd-6e87449c1738'
+data = None, expected = 200
+
+    def request(client, base, path, data=None, expected=200):
+        payload = json.dumps(data).encode() if data is not None else None
+        try:
+            with client.open(
+                urllib.request.Request(
+                    base + path, data=payload, headers={"Content-Type": "application/json"}
+                ),
+                timeout=15,
+            ) as response:
+                code, body = response.status, json.load(response)
+        except urllib.error.HTTPError as error:
+            code, body = error.code, json.load(error)
+&gt;       assert code == expected, body
+E       AssertionError: {'error': {'action': 'Retain drafts. Reload/reconcile an exact authorized head; do not overwrite or reset storage.', 'code': 'IntegrityFailure', 'message': 'Store file is not a private owned regular file.'}, 'ok': False}
+E       assert 503 == 200
+
+tests/integration_tests/gui/test_project_authority_http.py:37: AssertionError</failure></testcase><testcase classname="tests.integration_tests.geometry.test_managed_study_retention" name="test_actual_managed_geometry_study_solver_restart[late-cancel]" time="8.725" /><testcase classname="tests.integration_tests.geometry.test_managed_study_retention" name="test_actual_managed_geometry_study_solver_restart[nonconverged]" time="8.415" /><testcase classname="tests.integration_tests.geometry.test_managed_study_retention" name="test_actual_managed_geometry_study_solver_restart[membership-downgraded]" time="8.471" /><testcase classname="tests.integration_tests.geometry.test_managed_native_retention" name="test_actual_native_qa_exact_retention_restart_and_late_gates[current-occt]" time="6.618" /><testcase classname="tests.integration_tests.geometry.test_managed_native_retention" name="test_actual_native_qa_exact_retention_restart_and_late_gates[current-picogk]" time="2.881" /><testcase classname="tests.integration_tests.geometry.test_managed_native_retention" name="test_actual_native_qa_exact_retention_restart_and_late_gates[edited-before-completion-occt]" time="7.760" /><testcase classname="tests.integration_tests.geometry.test_managed_native_retention" name="test_actual_native_qa_exact_retention_restart_and_late_gates[edited-before-completion-picogk]" time="3.346" /><testcase classname="tests.integration_tests.geometry.test_managed_native_retention" name="test_actual_native_qa_exact_retention_restart_and_late_gates[cancelled-after-qa-occt]" time="9.695" /><testcase classname="tests.integration_tests.geometry.test_managed_native_retention" name="test_actual_native_qa_exact_retention_restart_and_late_gates[cancelled-after-qa-picogk]" time="3.808" /><testcase classname="tests.integration_tests.geometry.test_managed_native_crash" name="test_actual_native_acceptance_then_host_kill_never_publishes[occt]" time="8.317" /><testcase classname="tests.integration_tests.geometry.test_managed_native_crash" name="test_actual_native_acceptance_then_host_kill_never_publishes[picogk]" time="2.107" /></testsuite></testsuites>

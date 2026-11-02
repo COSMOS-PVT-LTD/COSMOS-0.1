@@ -1,0 +1,25 @@
+{
+  "scope": "Actual UI-generated software QA downloads only; no physical evidence",
+  "project_id": "80cdb6c3-9adb-4465-877f-21ef8b98840d",
+  "object_id": "1ed8b305-6f76-5cb9-8e43-e47bcc9b22a9",
+  "commit_id": "6d054921-9a21-4c93-96d9-b8fe233559c9",
+  "baseline_commit_id": "df87340f-28a0-476b-8e8e-6f38db0560cb",
+  "canonical_sha256": "5ab43fe4775ae0aba4decb8db7ad2b60b87e208d0f6871fee14d2dcba6894267",
+  "exact_retained_originals": true,
+  "all_two_stream_csv_numeric_values": true,
+  "source_design_unchanged": true,
+  "files": {
+    "-record.json": {
+      "sha256": "5ab43fe4775ae0aba4decb8db7ad2b60b87e208d0f6871fee14d2dcba6894267",
+      "bytes": 89904
+    },
+    "-inputs.json": {
+      "sha256": "913d974bb32605bbd94c5524909ccf762116f15c9ef00122f1f518c74a6c5336",
+      "bytes": 37269
+    },
+    "-residuals.csv": {
+      "sha256": "eb13e0f54921bb61cf4ad333751e8ed3ebd9adecbf0c2d6febecf1cbb910dd9e",
+      "bytes": 1353
+    }
+  }
+}

@@ -1,0 +1,1749 @@
+{
+  "constraints": {
+    "rules": [
+      {
+        "id": "drive-6847ff4e-e6d8-4059-b4cc-9e850e15ca07",
+        "target": {
+          "feature": "fuel-supply",
+          "parameter": "length"
+        },
+        "type": "fixed",
+        "value": {
+          "unit": "m",
+          "value": 0.08
+        }
+      }
+    ],
+    "schema": "cosmos.component-driving-constraints.v1"
+  },
+  "export_tolerance": {
+    "unit": "m",
+    "value": 0.00015
+  },
+  "features": [
+    {
+      "depends_on": [],
+      "frame": "world",
+      "id": "thrust-chamber",
+      "operation": "profile.wall",
+      "parameters": {
+        "inner0": {
+          "unit": "m",
+          "value": 0.0514287899284541
+        },
+        "inner1": {
+          "unit": "m",
+          "value": 0.0514287899284541
+        },
+        "inner10": {
+          "unit": "m",
+          "value": 0.03048803185830223
+        },
+        "inner11": {
+          "unit": "m",
+          "value": 0.03076215551264563
+        },
+        "inner12": {
+          "unit": "m",
+          "value": 0.03103044643984343
+        },
+        "inner13": {
+          "unit": "m",
+          "value": 0.03129290463989561
+        },
+        "inner14": {
+          "unit": "m",
+          "value": 0.03154953011280221
+        },
+        "inner15": {
+          "unit": "m",
+          "value": 0.03180032285856321
+        },
+        "inner16": {
+          "unit": "m",
+          "value": 0.0320452828771786
+        },
+        "inner17": {
+          "unit": "m",
+          "value": 0.0322844101686484
+        },
+        "inner18": {
+          "unit": "m",
+          "value": 0.0325177047329726
+        },
+        "inner19": {
+          "unit": "m",
+          "value": 0.0327451665701512
+        },
+        "inner2": {
+          "unit": "m",
+          "value": 0.0296924257092897
+        },
+        "inner20": {
+          "unit": "m",
+          "value": 0.03296679568018421
+        },
+        "inner21": {
+          "unit": "m",
+          "value": 0.0331825920630716
+        },
+        "inner22": {
+          "unit": "m",
+          "value": 0.0333925557188134
+        },
+        "inner23": {
+          "unit": "m",
+          "value": 0.03359668664740961
+        },
+        "inner24": {
+          "unit": "m",
+          "value": 0.0337949848488602
+        },
+        "inner25": {
+          "unit": "m",
+          "value": 0.03398745032316521
+        },
+        "inner26": {
+          "unit": "m",
+          "value": 0.03417408307032461
+        },
+        "inner27": {
+          "unit": "m",
+          "value": 0.03435488309033841
+        },
+        "inner28": {
+          "unit": "m",
+          "value": 0.03452985038320662
+        },
+        "inner29": {
+          "unit": "m",
+          "value": 0.03469898494892922
+        },
+        "inner3": {
+          "unit": "m",
+          "value": 0.0296924257092897
+        },
+        "inner30": {
+          "unit": "m",
+          "value": 0.03486228678750622
+        },
+        "inner31": {
+          "unit": "m",
+          "value": 0.03501975589893763
+        },
+        "inner32": {
+          "unit": "m",
+          "value": 0.03517139228322344
+        },
+        "inner33": {
+          "unit": "m",
+          "value": 0.03531719594036364
+        },
+        "inner34": {
+          "unit": "m",
+          "value": 0.03545716687035824
+        },
+        "inner35": {
+          "unit": "m",
+          "value": 0.03559130507320725
+        },
+        "inner36": {
+          "unit": "m",
+          "value": 0.03571961054891066
+        },
+        "inner37": {
+          "unit": "m",
+          "value": 0.03584208329746847
+        },
+        "inner38": {
+          "unit": "m",
+          "value": 0.03595872331888068
+        },
+        "inner39": {
+          "unit": "m",
+          "value": 0.03606953061314729
+        },
+        "inner4": {
+          "unit": "m",
+          "value": 0.02970903091818288
+        },
+        "inner40": {
+          "unit": "m",
+          "value": 0.03617450518026829
+        },
+        "inner41": {
+          "unit": "m",
+          "value": 0.0362736470202437
+        },
+        "inner42": {
+          "unit": "m",
+          "value": 0.03636695613307351
+        },
+        "inner43": {
+          "unit": "m",
+          "value": 0.03645443251875772
+        },
+        "inner5": {
+          "unit": "m",
+          "value": 0.02975875368179861
+        },
+        "inner6": {
+          "unit": "m",
+          "value": 0.0298413159302733
+        },
+        "inner7": {
+          "unit": "m",
+          "value": 0.02995625594202314
+        },
+        "inner8": {
+          "unit": "m",
+          "value": 0.03010293092587843
+        },
+        "inner9": {
+          "unit": "m",
+          "value": 0.03028052061583256
+        },
+        "outer0": {
+          "unit": "m",
+          "value": 0.0574287899284541
+        },
+        "outer1": {
+          "unit": "m",
+          "value": 0.0574287899284541
+        },
+        "outer10": {
+          "unit": "m",
+          "value": 0.03648803185830223
+        },
+        "outer11": {
+          "unit": "m",
+          "value": 0.03676215551264563
+        },
+        "outer12": {
+          "unit": "m",
+          "value": 0.03703044643984343
+        },
+        "outer13": {
+          "unit": "m",
+          "value": 0.03729290463989561
+        },
+        "outer14": {
+          "unit": "m",
+          "value": 0.03754953011280221
+        },
+        "outer15": {
+          "unit": "m",
+          "value": 0.03780032285856321
+        },
+        "outer16": {
+          "unit": "m",
+          "value": 0.0380452828771786
+        },
+        "outer17": {
+          "unit": "m",
+          "value": 0.0382844101686484
+        },
+        "outer18": {
+          "unit": "m",
+          "value": 0.0385177047329726
+        },
+        "outer19": {
+          "unit": "m",
+          "value": 0.0387451665701512
+        },
+        "outer2": {
+          "unit": "m",
+          "value": 0.0356924257092897
+        },
+        "outer20": {
+          "unit": "m",
+          "value": 0.03896679568018421
+        },
+        "outer21": {
+          "unit": "m",
+          "value": 0.0391825920630716
+        },
+        "outer22": {
+          "unit": "m",
+          "value": 0.0393925557188134
+        },
+        "outer23": {
+          "unit": "m",
+          "value": 0.03959668664740961
+        },
+        "outer24": {
+          "unit": "m",
+          "value": 0.0397949848488602
+        },
+        "outer25": {
+          "unit": "m",
+          "value": 0.03998745032316521
+        },
+        "outer26": {
+          "unit": "m",
+          "value": 0.04017408307032461
+        },
+        "outer27": {
+          "unit": "m",
+          "value": 0.04035488309033841
+        },
+        "outer28": {
+          "unit": "m",
+          "value": 0.04052985038320662
+        },
+        "outer29": {
+          "unit": "m",
+          "value": 0.04069898494892922
+        },
+        "outer3": {
+          "unit": "m",
+          "value": 0.0356924257092897
+        },
+        "outer30": {
+          "unit": "m",
+          "value": 0.04086228678750622
+        },
+        "outer31": {
+          "unit": "m",
+          "value": 0.04101975589893763
+        },
+        "outer32": {
+          "unit": "m",
+          "value": 0.04117139228322344
+        },
+        "outer33": {
+          "unit": "m",
+          "value": 0.04131719594036364
+        },
+        "outer34": {
+          "unit": "m",
+          "value": 0.04145716687035824
+        },
+        "outer35": {
+          "unit": "m",
+          "value": 0.04159130507320725
+        },
+        "outer36": {
+          "unit": "m",
+          "value": 0.04171961054891066
+        },
+        "outer37": {
+          "unit": "m",
+          "value": 0.04184208329746847
+        },
+        "outer38": {
+          "unit": "m",
+          "value": 0.04195872331888068
+        },
+        "outer39": {
+          "unit": "m",
+          "value": 0.04206953061314729
+        },
+        "outer4": {
+          "unit": "m",
+          "value": 0.03570903091818288
+        },
+        "outer40": {
+          "unit": "m",
+          "value": 0.04217450518026829
+        },
+        "outer41": {
+          "unit": "m",
+          "value": 0.0422736470202437
+        },
+        "outer42": {
+          "unit": "m",
+          "value": 0.04236695613307351
+        },
+        "outer43": {
+          "unit": "m",
+          "value": 0.04245443251875772
+        },
+        "outer5": {
+          "unit": "m",
+          "value": 0.03575875368179861
+        },
+        "outer6": {
+          "unit": "m",
+          "value": 0.0358413159302733
+        },
+        "outer7": {
+          "unit": "m",
+          "value": 0.03595625594202314
+        },
+        "outer8": {
+          "unit": "m",
+          "value": 0.03610293092587843
+        },
+        "outer9": {
+          "unit": "m",
+          "value": 0.03628052061583256
+        },
+        "point_count": {
+          "unit": "1",
+          "value": 44
+        },
+        "x0": {
+          "unit": "m",
+          "value": -0.2876666666666667
+        },
+        "x1": {
+          "unit": "m",
+          "value": -0.048
+        },
+        "x10": {
+          "unit": "m",
+          "value": 0.00296924257092897
+        },
+        "x11": {
+          "unit": "m",
+          "value": 0.003450935843057719
+        },
+        "x12": {
+          "unit": "m",
+          "value": 0.003936320885922681
+        },
+        "x13": {
+          "unit": "m",
+          "value": 0.004425397699523855
+        },
+        "x14": {
+          "unit": "m",
+          "value": 0.004918166283861243
+        },
+        "x15": {
+          "unit": "m",
+          "value": 0.005414626638934843
+        },
+        "x16": {
+          "unit": "m",
+          "value": 0.005914778764744655
+        },
+        "x17": {
+          "unit": "m",
+          "value": 0.006418622661290682
+        },
+        "x18": {
+          "unit": "m",
+          "value": 0.006926158328572921
+        },
+        "x19": {
+          "unit": "m",
+          "value": 0.007437385766591371
+        },
+        "x2": {
+          "unit": "m",
+          "value": -0.003
+        },
+        "x20": {
+          "unit": "m",
+          "value": 0.007952304975346037
+        },
+        "x21": {
+          "unit": "m",
+          "value": 0.008470915954836915
+        },
+        "x22": {
+          "unit": "m",
+          "value": 0.008993218705064004
+        },
+        "x23": {
+          "unit": "m",
+          "value": 0.009519213226027308
+        },
+        "x24": {
+          "unit": "m",
+          "value": 0.01004889951772682
+        },
+        "x25": {
+          "unit": "m",
+          "value": 0.01058227758016255
+        },
+        "x26": {
+          "unit": "m",
+          "value": 0.0111193474133345
+        },
+        "x27": {
+          "unit": "m",
+          "value": 0.01166010901724265
+        },
+        "x28": {
+          "unit": "m",
+          "value": 0.01220456239188702
+        },
+        "x29": {
+          "unit": "m",
+          "value": 0.0127527075372676
+        },
+        "x3": {
+          "unit": "m",
+          "value": 0
+        },
+        "x30": {
+          "unit": "m",
+          "value": 0.01330454445338439
+        },
+        "x31": {
+          "unit": "m",
+          "value": 0.0138600731402374
+        },
+        "x32": {
+          "unit": "m",
+          "value": 0.01441929359782662
+        },
+        "x33": {
+          "unit": "m",
+          "value": 0.01498220582615205
+        },
+        "x34": {
+          "unit": "m",
+          "value": 0.0155488098252137
+        },
+        "x35": {
+          "unit": "m",
+          "value": 0.01611910559501155
+        },
+        "x36": {
+          "unit": "m",
+          "value": 0.01669309313554563
+        },
+        "x37": {
+          "unit": "m",
+          "value": 0.01727077244681591
+        },
+        "x38": {
+          "unit": "m",
+          "value": 0.01785214352882241
+        },
+        "x39": {
+          "unit": "m",
+          "value": 0.01843720638156511
+        },
+        "x4": {
+          "unit": "m",
+          "value": 0.0004437835504126337
+        },
+        "x40": {
+          "unit": "m",
+          "value": 0.01902596100504404
+        },
+        "x41": {
+          "unit": "m",
+          "value": 0.01961840739925917
+        },
+        "x42": {
+          "unit": "m",
+          "value": 0.02021454556421052
+        },
+        "x43": {
+          "unit": "m",
+          "value": 0.02081437549989808
+        },
+        "x5": {
+          "unit": "m",
+          "value": 0.0008850852831960481
+        },
+        "x6": {
+          "unit": "m",
+          "value": 0.001321437260051925
+        },
+        "x7": {
+          "unit": "m",
+          "value": 0.0017503992237249
+        },
+        "x8": {
+          "unit": "m",
+          "value": 0.002169572244910996
+        },
+        "x9": {
+          "unit": "m",
+          "value": 0.002576612138043386
+        }
+      }
+    },
+    {
+      "depends_on": [
+        "thrust-chamber"
+      ],
+      "frame": "world",
+      "id": "illustrative-sector-cooling",
+      "operation": "cooling.axial_sector",
+      "parameters": {
+        "count": {
+          "unit": "1",
+          "value": 6
+        },
+        "depth": {
+          "unit": "m",
+          "value": 0.0025
+        },
+        "fluid_domains": {
+          "unit": "1",
+          "value": 0
+        },
+        "hot_ligament": {
+          "unit": "m",
+          "value": 0.0015
+        },
+        "phase": {
+          "unit": "rad",
+          "value": 0.1
+        },
+        "width": {
+          "unit": "rad",
+          "value": 0.14
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "head-frame",
+      "id": "isolated-dual-manifold",
+      "operation": "manifold.dual_annular",
+      "parameters": {
+        "back_web": {
+          "unit": "m",
+          "value": 0.004
+        },
+        "count": {
+          "unit": "1",
+          "value": 8
+        },
+        "front_web": {
+          "unit": "m",
+          "value": 0.003
+        },
+        "fuel_hole_radius": {
+          "unit": "m",
+          "value": 0.001133112544991013
+        },
+        "fuel_inlet_phase": {
+          "unit": "rad",
+          "value": 0
+        },
+        "fuel_inlet_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "fuel_inner": {
+          "unit": "m",
+          "value": 0.0215
+        },
+        "fuel_outer": {
+          "unit": "m",
+          "value": 0.0318
+        },
+        "oxidizer_hole_radius": {
+          "unit": "m",
+          "value": 0.001434731471867183
+        },
+        "oxidizer_inlet_phase": {
+          "unit": "rad",
+          "value": 3.141592653589793
+        },
+        "oxidizer_inlet_radius": {
+          "unit": "m",
+          "value": 0.004
+        },
+        "oxidizer_inner": {
+          "unit": "m",
+          "value": 0.035
+        },
+        "oxidizer_outer": {
+          "unit": "m",
+          "value": 0.047
+        },
+        "phase": {
+          "unit": "rad",
+          "value": 0
+        },
+        "plenum_length": {
+          "unit": "m",
+          "value": 0.012
+        },
+        "radius": {
+          "unit": "m",
+          "value": 0.095
+        },
+        "ring_radius": {
+          "unit": "m",
+          "value": 0.03342871345349516
+        },
+        "separation": {
+          "unit": "m",
+          "value": 0.0135
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "radial-plate-frame",
+      "id": "radial-injector",
+      "operation": "injector.biprop_radial_doublet",
+      "parameters": {
+        "angle": {
+          "unit": "rad",
+          "value": 0.25
+        },
+        "count": {
+          "unit": "1",
+          "value": 8
+        },
+        "fuel_hole_radius": {
+          "unit": "m",
+          "value": 0.001133112544991013
+        },
+        "oxidizer_hole_radius": {
+          "unit": "m",
+          "value": 0.001434731471867183
+        },
+        "phase": {
+          "unit": "rad",
+          "value": 0
+        },
+        "radius": {
+          "unit": "m",
+          "value": 0.095
+        },
+        "ring_radius": {
+          "unit": "m",
+          "value": 0.03342871345349516
+        },
+        "separation": {
+          "unit": "m",
+          "value": 0.0135
+        },
+        "thickness": {
+          "unit": "m",
+          "value": 0.008
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "upper-coolant-header",
+      "id": "upper-coolant-header",
+      "operation": "manifold.cooling_front_supply",
+      "parameters": {
+        "back_web": {
+          "unit": "m",
+          "value": 0.004
+        },
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.0514287899284541
+        },
+        "count": {
+          "unit": "1",
+          "value": 6
+        },
+        "front_web": {
+          "unit": "m",
+          "value": 0.003
+        },
+        "outer_radius": {
+          "unit": "m",
+          "value": 0.095
+        },
+        "phase": {
+          "unit": "rad",
+          "value": 0.1
+        },
+        "plenum_inner": {
+          "unit": "m",
+          "value": 0.0521287899284541
+        },
+        "plenum_length": {
+          "unit": "m",
+          "value": 0.02
+        },
+        "plenum_outer": {
+          "unit": "m",
+          "value": 0.074
+        },
+        "port_inner": {
+          "unit": "m",
+          "value": 0.0529287899284541
+        },
+        "port_outer": {
+          "unit": "m",
+          "value": 0.0554287899284541
+        },
+        "supply_hole_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "supply_phase": {
+          "unit": "rad",
+          "value": 0
+        },
+        "width": {
+          "unit": "rad",
+          "value": 0.14
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "lower-coolant-header",
+      "id": "lower-coolant-header",
+      "operation": "manifold.cooling_annular",
+      "parameters": {
+        "back_web": {
+          "unit": "m",
+          "value": 0.004
+        },
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.03645443251875772
+        },
+        "count": {
+          "unit": "1",
+          "value": 6
+        },
+        "front_web": {
+          "unit": "m",
+          "value": 0.003
+        },
+        "outer_radius": {
+          "unit": "m",
+          "value": 0.05045443251875772
+        },
+        "phase": {
+          "unit": "rad",
+          "value": -0.24
+        },
+        "plenum_inner": {
+          "unit": "m",
+          "value": 0.03715443251875772
+        },
+        "plenum_length": {
+          "unit": "m",
+          "value": 0.012
+        },
+        "plenum_outer": {
+          "unit": "m",
+          "value": 0.04645443251875772
+        },
+        "port_inner": {
+          "unit": "m",
+          "value": 0.03795443251875772
+        },
+        "port_outer": {
+          "unit": "m",
+          "value": 0.04045443251875772
+        },
+        "supply_hole_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "supply_phase": {
+          "unit": "rad",
+          "value": 0
+        },
+        "width": {
+          "unit": "rad",
+          "value": 0.14
+        }
+      }
+    },
+    {
+      "depends_on": [
+        "upper-coolant-header"
+      ],
+      "frame": "upper-coolant-header",
+      "id": "collector-mount-bolts",
+      "operation": "interface.bolt_pattern",
+      "parameters": {
+        "bolt_circle_radius": {
+          "unit": "m",
+          "value": 0.085
+        },
+        "bolt_hole_radius": {
+          "unit": "m",
+          "value": 0.0032
+        },
+        "count": {
+          "unit": "1",
+          "value": 8
+        },
+        "phase": {
+          "unit": "rad",
+          "value": 0
+        }
+      }
+    },
+    {
+      "depends_on": [
+        "radial-injector"
+      ],
+      "frame": "radial-plate-frame",
+      "id": "injector-mount-bolts",
+      "operation": "interface.bolt_pattern",
+      "parameters": {
+        "bolt_circle_radius": {
+          "unit": "m",
+          "value": 0.085
+        },
+        "bolt_hole_radius": {
+          "unit": "m",
+          "value": 0.0032
+        },
+        "count": {
+          "unit": "1",
+          "value": 8
+        },
+        "phase": {
+          "unit": "rad",
+          "value": 0
+        }
+      }
+    },
+    {
+      "depends_on": [
+        "isolated-dual-manifold"
+      ],
+      "frame": "head-frame",
+      "id": "head-mount-bolts",
+      "operation": "interface.bolt_pattern",
+      "parameters": {
+        "bolt_circle_radius": {
+          "unit": "m",
+          "value": 0.085
+        },
+        "bolt_hole_radius": {
+          "unit": "m",
+          "value": 0.0032
+        },
+        "count": {
+          "unit": "1",
+          "value": 8
+        },
+        "phase": {
+          "unit": "rad",
+          "value": 0
+        }
+      }
+    },
+    {
+      "depends_on": [
+        "injector-mount-bolts"
+      ],
+      "frame": "radial-plate-frame",
+      "id": "gas-joint-groove",
+      "operation": "interface.face_grooves",
+      "parameters": {
+        "count": {
+          "unit": "1",
+          "value": 5
+        },
+        "depth0": {
+          "unit": "m",
+          "value": 0.00127
+        },
+        "depth1": {
+          "unit": "m",
+          "value": 0.00127
+        },
+        "depth2": {
+          "unit": "m",
+          "value": 0.00127
+        },
+        "depth3": {
+          "unit": "m",
+          "value": 0.00127
+        },
+        "depth4": {
+          "unit": "m",
+          "value": 0.00127
+        },
+        "face0": {
+          "unit": "1",
+          "value": -1
+        },
+        "face1": {
+          "unit": "1",
+          "value": -1
+        },
+        "face2": {
+          "unit": "1",
+          "value": -1
+        },
+        "face3": {
+          "unit": "1",
+          "value": -1
+        },
+        "face4": {
+          "unit": "1",
+          "value": 1
+        },
+        "inner_radius0": {
+          "unit": "m",
+          "value": 0.018
+        },
+        "inner_radius1": {
+          "unit": "m",
+          "value": 0.03
+        },
+        "inner_radius2": {
+          "unit": "m",
+          "value": 0.035
+        },
+        "inner_radius3": {
+          "unit": "m",
+          "value": 0.044
+        },
+        "inner_radius4": {
+          "unit": "m",
+          "value": 0.055
+        },
+        "outer_radius0": {
+          "unit": "m",
+          "value": 0.02
+        },
+        "outer_radius1": {
+          "unit": "m",
+          "value": 0.032
+        },
+        "outer_radius2": {
+          "unit": "m",
+          "value": 0.037
+        },
+        "outer_radius3": {
+          "unit": "m",
+          "value": 0.046
+        },
+        "outer_radius4": {
+          "unit": "m",
+          "value": 0.057
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "return-collector",
+      "id": "return-collector",
+      "operation": "pipe.circular",
+      "parameters": {
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "length": {
+          "unit": "m",
+          "value": 0.025
+        },
+        "wall_thickness": {
+          "unit": "m",
+          "value": 0.0012
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "return-elbow-a",
+      "id": "return-elbow-a",
+      "operation": "pipe.elbow",
+      "parameters": {
+        "angle": {
+          "unit": "rad",
+          "value": 1.570796326794897
+        },
+        "bend_radius": {
+          "unit": "m",
+          "value": 0.012
+        },
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "wall_thickness": {
+          "unit": "m",
+          "value": 0.0012
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "return-outward",
+      "id": "return-outward",
+      "operation": "pipe.circular",
+      "parameters": {
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "length": {
+          "unit": "m",
+          "value": 0.02293560503577294
+        },
+        "wall_thickness": {
+          "unit": "m",
+          "value": 0.0012
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "return-elbow-b",
+      "id": "return-elbow-b",
+      "operation": "pipe.elbow",
+      "parameters": {
+        "angle": {
+          "unit": "rad",
+          "value": 1.570796326794897
+        },
+        "bend_radius": {
+          "unit": "m",
+          "value": 0.012
+        },
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "wall_thickness": {
+          "unit": "m",
+          "value": 0.0012
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "return-over-flange",
+      "id": "return-over-flange",
+      "operation": "pipe.circular",
+      "parameters": {
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "length": {
+          "unit": "m",
+          "value": 0.104
+        },
+        "wall_thickness": {
+          "unit": "m",
+          "value": 0.0012
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "return-elbow-c",
+      "id": "return-elbow-c",
+      "operation": "pipe.elbow",
+      "parameters": {
+        "angle": {
+          "unit": "rad",
+          "value": 1.570796326794897
+        },
+        "bend_radius": {
+          "unit": "m",
+          "value": 0.012
+        },
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "wall_thickness": {
+          "unit": "m",
+          "value": 0.0012
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "return-inward",
+      "id": "return-inward",
+      "operation": "pipe.circular",
+      "parameters": {
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "length": {
+          "unit": "m",
+          "value": 0.05935000000000001
+        },
+        "wall_thickness": {
+          "unit": "m",
+          "value": 0.0012
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "return-elbow-d",
+      "id": "return-elbow-d",
+      "operation": "pipe.elbow",
+      "parameters": {
+        "angle": {
+          "unit": "rad",
+          "value": 1.570796326794897
+        },
+        "bend_radius": {
+          "unit": "m",
+          "value": 0.012
+        },
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "wall_thickness": {
+          "unit": "m",
+          "value": 0.0012
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "return-head",
+      "id": "return-head",
+      "operation": "pipe.circular",
+      "parameters": {
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "length": {
+          "unit": "m",
+          "value": 0.025
+        },
+        "wall_thickness": {
+          "unit": "m",
+          "value": 0.0012
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "fuel-supply",
+      "id": "fuel-supply",
+      "operation": "pipe.circular",
+      "parameters": {
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.0035
+        },
+        "length": {
+          "unit": "m",
+          "value": 0.08
+        },
+        "wall_thickness": {
+          "unit": "m",
+          "value": 0.0012
+        }
+      }
+    },
+    {
+      "depends_on": [],
+      "frame": "oxidizer-supply",
+      "id": "oxidizer-supply",
+      "operation": "pipe.circular",
+      "parameters": {
+        "bore_radius": {
+          "unit": "m",
+          "value": 0.004
+        },
+        "length": {
+          "unit": "m",
+          "value": 0.08
+        },
+        "wall_thickness": {
+          "unit": "m",
+          "value": 0.0012
+        }
+      }
+    }
+  ],
+  "frames": [
+    {
+      "id": "world",
+      "origin": [
+        {
+          "unit": "m",
+          "value": 0
+        },
+        {
+          "unit": "m",
+          "value": 0
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": null,
+      "rotation": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "radial-plate-frame",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.3226666666666667
+        },
+        {
+          "unit": "m",
+          "value": 0
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "head-frame",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.3416666666666667
+        },
+        {
+          "unit": "m",
+          "value": 0
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "upper-coolant-header",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.3146666666666667
+        },
+        {
+          "unit": "m",
+          "value": 0
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "lower-coolant-header",
+      "origin": [
+        {
+          "unit": "m",
+          "value": 0.03981437549989808
+        },
+        {
+          "unit": "m",
+          "value": 0
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "return-collector",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.2876666666666667
+        },
+        {
+          "unit": "m",
+          "value": 0.06306439496422706
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "return-elbow-a",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.2626666666666667
+        },
+        {
+          "unit": "m",
+          "value": 0.06306439496422706
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "return-outward",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.2506666666666667
+        },
+        {
+          "unit": "m",
+          "value": 0.07506439496422705
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        0,
+        -1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "return-elbow-b",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.2506666666666667
+        },
+        {
+          "unit": "m",
+          "value": 0.098
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        0,
+        -1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "return-over-flange",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.2626666666666667
+        },
+        {
+          "unit": "m",
+          "value": 0.11
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "return-elbow-c",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.3666666666666666
+        },
+        {
+          "unit": "m",
+          "value": 0.11
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "return-inward",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.3786666666666667
+        },
+        {
+          "unit": "m",
+          "value": 0.098
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "return-elbow-d",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.3786666666666667
+        },
+        {
+          "unit": "m",
+          "value": 0.03865
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "return-head",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.3666666666666667
+        },
+        {
+          "unit": "m",
+          "value": 0.02665
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "fuel-supply",
+      "origin": [
+        {
+          "unit": "m",
+          "value": 0.03981437549989808
+        },
+        {
+          "unit": "m",
+          "value": 0.04180443251875772
+        },
+        {
+          "unit": "m",
+          "value": 0
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "oxidizer-supply",
+      "origin": [
+        {
+          "unit": "m",
+          "value": -0.4216666666666667
+        },
+        {
+          "unit": "m",
+          "value": -0.041
+        },
+        {
+          "unit": "m",
+          "value": 5.021051876504149e-18
+        }
+      ],
+      "parent": "world",
+      "rotation": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "outputs": [
+    "illustrative-sector-cooling",
+    "head-mount-bolts",
+    "gas-joint-groove",
+    "lower-coolant-header",
+    "collector-mount-bolts",
+    "return-collector",
+    "return-elbow-a",
+    "return-outward",
+    "return-elbow-b",
+    "return-over-flange",
+    "return-elbow-c",
+    "return-inward",
+    "return-elbow-d",
+    "return-head",
+    "fuel-supply",
+    "oxidizer-supply"
+  ],
+  "schema": "cosmos.engine-component-model.v1",
+  "source": "User-approved isolated five-groove fit study, recorded in APPROVED_GROOVE_FIT_AND_INTEGRAL_CONCEPT.md. Exact nominal envelopes from PROVISIONAL_SEAL_PROPOSAL.md only; not selected supplier seals, toleranced manufacturing geometry, pressure/leak acceptance or hot-fire approval. Source hydraulic bores, gas volume and prior four-elbow routing are preserved. All channels remain actual cuts; illustrative fluid-domain exports are explicitly disabled.",
+  "source_tolerance": {
+    "unit": "m",
+    "value": 1e-06
+  }
+}

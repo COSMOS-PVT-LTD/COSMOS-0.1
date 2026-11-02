@@ -1,0 +1,27 @@
+{
+  "os": "26.5.2",
+  "machine": "arm64",
+  "python": "3.11.4",
+  "node": "v26.7.0",
+  "chrome": "Google Chrome 154.0.8037.98",
+  "toolVersions": {
+    "@playwright/test": "1.64.0",
+    "axe-core": "4.14.0",
+    "pngjs": "7.0.0",
+    "typescript": "6.0.3"
+  },
+  "viewport": [
+    1440,
+    1000
+  ],
+  "scaledViewport": [
+    1024,
+    768
+  ],
+  "deviceScaleFactor": 1,
+  "workers": 1,
+  "retries": 0,
+  "reducedMotion": "reduce",
+  "browserContexts": "fresh, headless; never user profiles",
+  "source": "Pinned HEAD plus pre-existing dirty checkout; source_before.json checkpoint"
+}

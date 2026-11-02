@@ -101,8 +101,11 @@ WORKBENCH_PAGES: tuple[tuple[WorkbenchDefinition, ...], ...] = (
             title="Visualization and Graphs",
             page=2,
             route="/app/workbench/visualization",
-            status="planned",
-            description="Engineering plots, dashboards, and result visualization.",
+            status="active",
+            description="Source-bound nozzle, cooling and radial benchmark plots; offline exports and Knowledge graph navigation.",
+            design_type="Scientific Data Explorer",
+            validation_state="SOURCE_VIEW_ONLY",
+            domain="visualization",
         ),
     ),
     (

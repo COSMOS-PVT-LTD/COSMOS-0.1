@@ -1,0 +1,156 @@
+{
+  "dark": {
+    "method": "Scrolled element hit-testing and computed opaque foreground/background sRGB contrast; original axe incomplete entries retained",
+    "measurements": [
+      {
+        "target": [
+          "th[scope=\"col\"]:nth-child(3)"
+        ],
+        "text": "Unit",
+        "foreground": [
+          230,
+          239,
+          248
+        ],
+        "background": [
+          16,
+          28,
+          43
+        ],
+        "contrast": 14.772208425734538,
+        "visible": true
+      },
+      {
+        "target": [
+          "tr[aria-rowindex=\"2\"] > td:nth-child(3)"
+        ],
+        "text": "bar",
+        "foreground": [
+          230,
+          239,
+          248
+        ],
+        "background": [
+          16,
+          28,
+          43
+        ],
+        "contrast": 14.772208425734538,
+        "visible": true
+      },
+      {
+        "target": [
+          "tr[aria-rowindex=\"3\"] > td:nth-child(3)"
+        ],
+        "text": "N",
+        "foreground": [
+          230,
+          239,
+          248
+        ],
+        "background": [
+          16,
+          28,
+          43
+        ],
+        "contrast": 14.772208425734538,
+        "visible": true
+      },
+      {
+        "target": [
+          "tr[aria-rowindex=\"4\"] > td:nth-child(3)"
+        ],
+        "text": "1",
+        "foreground": [
+          230,
+          239,
+          248
+        ],
+        "background": [
+          16,
+          28,
+          43
+        ],
+        "contrast": 14.772208425734538,
+        "visible": true
+      }
+    ]
+  },
+  "high-contrast": {
+    "method": "Scrolled element hit-testing and computed opaque foreground/background sRGB contrast; original axe incomplete entries retained",
+    "measurements": [
+      {
+        "target": [
+          "th[scope=\"col\"]:nth-child(3)"
+        ],
+        "text": "Unit",
+        "foreground": [
+          255,
+          255,
+          255
+        ],
+        "background": [
+          8,
+          8,
+          8
+        ],
+        "contrast": 20.027383778150874,
+        "visible": true
+      },
+      {
+        "target": [
+          "tr[aria-rowindex=\"2\"] > td:nth-child(3)"
+        ],
+        "text": "bar",
+        "foreground": [
+          255,
+          255,
+          255
+        ],
+        "background": [
+          8,
+          8,
+          8
+        ],
+        "contrast": 20.027383778150874,
+        "visible": true
+      },
+      {
+        "target": [
+          "tr[aria-rowindex=\"3\"] > td:nth-child(3)"
+        ],
+        "text": "N",
+        "foreground": [
+          255,
+          255,
+          255
+        ],
+        "background": [
+          8,
+          8,
+          8
+        ],
+        "contrast": 20.027383778150874,
+        "visible": true
+      },
+      {
+        "target": [
+          "tr[aria-rowindex=\"4\"] > td:nth-child(3)"
+        ],
+        "text": "1",
+        "foreground": [
+          255,
+          255,
+          255
+        ],
+        "background": [
+          8,
+          8,
+          8
+        ],
+        "contrast": 20.027383778150874,
+        "visible": true
+      }
+    ]
+  }
+}

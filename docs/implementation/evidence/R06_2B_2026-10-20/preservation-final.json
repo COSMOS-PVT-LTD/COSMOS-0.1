@@ -1,0 +1,281 @@
+{
+  "baseline_sha256": "a9d96ca60108dd0e3def0f9e65e3f3678f9249e0b55553f7c1c8c7f4e423570f",
+  "original_files": 4942,
+  "unchanged": 4888,
+  "declared_phase_changes": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "before_sha256": "e206831efa690926b22ba4f405b68c2a9165354df3ad00250b656d1aaa533b2c",
+      "after_sha256": "a12c3c88b6bd08181fe143694afc332a52f7f25a02a4450e5cf0f19931edc327"
+    },
+    {
+      "path": "api/authorization.py",
+      "before_sha256": "aaf321b83fad7a32155026ab1c7b53a5777ecfcfadbd2c893b65c22c3625cf8d",
+      "after_sha256": "5fc2b11a63d525650b7c825f6d7829a7bfd2f7bce7c5b0ca000d52b8348bd99c"
+    },
+    {
+      "path": "api/knowledge_reports.py",
+      "before_sha256": "8aad1a84a936b3808310332842291cebfcbfb5b94dc9ea2fa1a557cb0f510c2f",
+      "after_sha256": "13ca9eda1bb1b312a40ac8a1f7657fb94fed5f0265fefc0a18e6b8fd28df51d1"
+    },
+    {
+      "path": "api/ngg_workbench.py",
+      "before_sha256": "349962787aac0e5e433516c79f65f8414128f55ada4ae6647752f3c669573ce4",
+      "after_sha256": "bdf6afb31b5fa2715c70e59ec6ae331e4c0f6efc13733d69036c1e8998adbcf9"
+    },
+    {
+      "path": "api/propulsion_workflow.py",
+      "before_sha256": "1d4a31653b3a50a7ffb9de47c4bd8060d3cf5733b961cd23b3d5a2a9adf11044",
+      "after_sha256": "37532642e692804cd7e6ac45a4c3b708a4b770e99875c9defeb1b1a74427c720"
+    },
+    {
+      "path": "gui/knowledge_proxy.py",
+      "before_sha256": "fd63c16fcced91a752178ca9c8d7a6f28cf2c76be66aacd1a9023d0b7b975552",
+      "after_sha256": "d4f126f227dfdaf38e5085539a5fa97424dfc5347923c05ff012366e64f8991e"
+    },
+    {
+      "path": "gui/native_window.py",
+      "before_sha256": "0a762eb739002ad8264ec305dd184ddea573e0f08e187da1d932b3fa2f970eb9",
+      "after_sha256": "a4f03407378f307aaed219bf047c23d1bba99400cff0c67ad2cb5fffa98b3d45"
+    },
+    {
+      "path": "gui/server.py",
+      "before_sha256": "ccda4f0e776f6b7a97e202b307a958accb6b9ac48eb02b1a6744784224347e68",
+      "after_sha256": "5ac78019f885aadb1329835739770db436a8f3f6f7526949fa8f592891c3bbce"
+    },
+    {
+      "path": "gui/static/app-shell/adapter.d.ts",
+      "before_sha256": "f89cec69d6605d6d24bce51045b6f72387ef95a350f4b7f5257f67620b7becd7",
+      "after_sha256": "f3ba5b7594566899b991fb172da12df0d7c529b97fa80471a0c2805385ca2792"
+    },
+    {
+      "path": "gui/static/app-shell/adapter.js",
+      "before_sha256": "565c929acd0bba9597f2734781e901f64095c9a5acb25c507caec38553fd2e58",
+      "after_sha256": "2ba382bfa4dfdd164267cfa13f9ed7ce70345653bbed642844f1ce4a6be6d979"
+    },
+    {
+      "path": "gui/static/app-shell/model.d.ts",
+      "before_sha256": "c69012c84ff8203642433578d522b76e5400da4d2a9818d928ca3968f92d01d8",
+      "after_sha256": "046d2004c60c1bbd755d38635690f890303ca03dc07eb63d050013c0ae3545ca"
+    },
+    {
+      "path": "gui/static/app-shell/model.js",
+      "before_sha256": "df20823256aa42ada68c215d805be37509f6651a87a5cae0dd115b89deecc960",
+      "after_sha256": "92201298932f241b045e06604c5c2faf6dab4b0063e2bb98faced313b5823fad"
+    },
+    {
+      "path": "gui/static/app-shell/shell.js",
+      "before_sha256": "6cf843b67d15de38cf8676c6c2ddc44106659f004f5bb0710ed0a80dc362968c",
+      "after_sha256": "ad3d2cecda10596a9d67d60d64a2167856dda3dedb782b2d1be683630aa60182"
+    },
+    {
+      "path": "gui/static/app-shell/styles.css",
+      "before_sha256": "e40319aed7d54991a2b85d287031454b500541645c2885524333553778088a33",
+      "after_sha256": "82f694f09b7c553adf015de3cb74a0487117f2073ae9a536c243e598d8b81dd1"
+    },
+    {
+      "path": "gui/static/comparison/view.js",
+      "before_sha256": "119f9b46f3c3584335d7444d6157b529c0e437abc706b0d9fca9037d36f9a35d",
+      "after_sha256": "5f0aa066a37e8561d3228197c9c9b057c9087f011f1cbf6966f4dfc460658cb4"
+    },
+    {
+      "path": "gui/static/cosmos-api.js",
+      "before_sha256": "c6a151e4ab8317264da8e76529fce2c18642a4152fddc52cccc3cdda136e2efc",
+      "after_sha256": "bffb97cef0650ff30f7c5a447ba2e92264838bdf8d0acd8e8e5b964c08e9575e"
+    },
+    {
+      "path": "gui/static/design-system/components.d.ts",
+      "before_sha256": "8b7a47a0a9e733f164c9334188aef073b8792bf2532457ca90f9147c7534092f",
+      "after_sha256": "07b8855ba11e812966dc0c94b430ee39e97c9aeacd7e0d70e85b59b84394bcee"
+    },
+    {
+      "path": "gui/static/design-system/components.js",
+      "before_sha256": "ee6e7345a75f9bf91bd62374f701f8603f26dd4af83d9318c1c3e077d32a6796",
+      "after_sha256": "4c6703ad315377b074d1ee19177ae96fb9279d8c7c2d9e24eec3ef46cce1e563"
+    },
+    {
+      "path": "gui/static/knowledge-reports/styles.css",
+      "before_sha256": "bfe0a530d04547c8b6843d1d2afe84e5f0e337ceac0aff99a2bc623f8fe8b3de",
+      "after_sha256": "f26a7c67668581159d6d972e11f830b921347e727d1c3e1bdae8672e85bcfc39"
+    },
+    {
+      "path": "gui/static/knowledge-reports/view.js",
+      "before_sha256": "6e9e567cb0143de73bf2586793bebabddc8afffdec35b1b56b9201b217e5e9c2",
+      "after_sha256": "ea5486d3d0a89d49dd98948e93c9971204d485ab607e954e2c63c1ecb7d43801"
+    },
+    {
+      "path": "gui/static/maharshi.css",
+      "before_sha256": "b04a6bfd349d90521384feac536864bb17841fbd1783e9e0fa345b247654029b",
+      "after_sha256": "c905e95a956ad90f8b7cea47a7576969688abcec2ab23a95f7798f8b6122acbb"
+    },
+    {
+      "path": "gui/static/maharshi.js",
+      "before_sha256": "4e348861726a0bdd7e3483220235bca70c407ad067d5771238475dc0ea9aada1",
+      "after_sha256": "f0c0cecc6da3cc2b5f5d5118becc5b7bf54e51d0d45b5b1ce658f4b4a1c458c7"
+    },
+    {
+      "path": "gui/static/ngg/view.js",
+      "before_sha256": "5e85aaca6893193e819eeba2e16a141b14e2282b33459602bcb95f20193636c5",
+      "after_sha256": "ab143acd11f6a92c3aafdf137be0c58f8b2c0d6b191e7f7c596301bb3e183ad6"
+    },
+    {
+      "path": "gui/static/propulsion-suite.css",
+      "before_sha256": "130896d4017cc0dcae1a7e80d81adbd5174cece9a56d9fb3ebe4a03a8639612f",
+      "after_sha256": "d3df897ac6615506079f996b364a8425cc6293f384f3d96df7a5b1ea6621df6b"
+    },
+    {
+      "path": "gui/static/propulsion-suite.js",
+      "before_sha256": "1a5b3ea08cd178c397b976d8188a745ab8d8e5920eb2445f2b96a9cedcff87c6",
+      "after_sha256": "1d8ac6a4611a534f2c3e0a0a5955b5e26370e8444be477b3c27c0ee91522c462"
+    },
+    {
+      "path": "gui/static/rocket-workbench/contracts.d.ts",
+      "before_sha256": "d8db5b66a76ddc6a33465596462bcb6e4fbf08d26ac351448258df79fdb671b9",
+      "after_sha256": "69d2a8642a6ebc0694af39375a3ab833e582fb3d0977d5d563a9e1b2ba1c7951"
+    },
+    {
+      "path": "gui/static/rocket-workbench/styles.css",
+      "before_sha256": "dd7af5335e5361b508aa01f0fcb6477e3ddc1dc799a144df8d87bd76f21b998b",
+      "after_sha256": "31929ecee8ae9362fe5c30b3c22acf342c9baff372405b869c0d81f2cb294755"
+    },
+    {
+      "path": "gui/static/rocket-workbench/view.js",
+      "before_sha256": "07a0d3dcf634bc7d69b064fc8551ea5deaaec4168414dffdbefb18f34ef2d930",
+      "after_sha256": "43372202d1f9a04b1d16e3f6c943fcb3c1242e7e3dc751a32cfe735dab19089c"
+    },
+    {
+      "path": "gui/static/simulation/view.js",
+      "before_sha256": "db53d96f511368387f0f38f36b934d318949133d412765cdaa6cba6531d76ce2",
+      "after_sha256": "718983b3631de628e14cbf4d971033780c1044ce32fb55d582852b7ba3ba9239"
+    },
+    {
+      "path": "gui/static/workbench/knowledge-reports.html",
+      "before_sha256": "2ab2d9df7d82116d33a0443f8a720c7e5af5b7827a547d00b40c22b7e320a1c6",
+      "after_sha256": "f8aed50c3f0aff15abc212451ac4fd05186694f87cb9c263732ec622d9905036"
+    },
+    {
+      "path": "gui/static/workbench/knowledge.html",
+      "before_sha256": "2b5a31b485dacc1ab01311cb12ce2cc905b9ca3de859a7978b555bf507011c31",
+      "after_sha256": "7ddeb9095e039c7396926db5f6d7d4b545152a962662500f663f086d3d467cb7"
+    },
+    {
+      "path": "gui/static/workbench/rocket-engine.html",
+      "before_sha256": "291529b89e6d4ecc41e0856759d45a2784030e3d28e905f8d88e3d0ab985ba09",
+      "after_sha256": "030141457e09bd7b9fad98b0798d427d613b49968acf5603eaff5d8430a12290"
+    },
+    {
+      "path": "gui/workbenches/registry.py",
+      "before_sha256": "1d4270a049bc53ec4ed0874c2968618e5cc376f9f79f4579feb51305d34aff9e",
+      "after_sha256": "6a4fca0e6544da9cd3bff4d6c8412946b96737736646cac6c42b6ed687a39db6"
+    },
+    {
+      "path": "infrastructure/release/security.py",
+      "before_sha256": "be9376f6bd22de8db31548e8018cf095c0cc889b964cb4c9f65935f6fb77d76c",
+      "after_sha256": "cb9ef86b27b01d1bc3b66f1fec8502bba6306e087409680261d347edb0011d08"
+    },
+    {
+      "path": "knowledge/foundation/document_pipeline.py",
+      "before_sha256": "737a424a07a7455ef824cb3f01f162d0dc19c630ecafa1e28d5b2750224b38e3",
+      "after_sha256": "dd3e9f0057354529c8cb1417795eadcb9336802d578d07598f54627eed24190e"
+    },
+    {
+      "path": "knowledge/ingestion_adapters/html.py",
+      "before_sha256": "b7b7513c92743a85902008a0a8d51536b2ecab0ef3f2bdbbe39687792a8ecd83",
+      "after_sha256": "03f46fd0a3025d73a56c4668d2437b0f02f5fe8ca19d0350f1a442e9260fd298"
+    },
+    {
+      "path": "knowledge/ingestion_adapters/normalize.py",
+      "before_sha256": "bcd416115593e066fd22bf84f5a7336b014bb77307cf3aa7a11cc7c0217c4070",
+      "after_sha256": "be6c462d0ea8cd6955b8645e8ce71c387e3c17f51a712088dd4984b558591dd1"
+    },
+    {
+      "path": "knowledge/workspace/backup.py",
+      "before_sha256": "d24569e675017738b63c218b56ec9929560e51fea7a43b8ffa87e43cb837b49d",
+      "after_sha256": "1d1a0a9167b7a223244612e36494cbfc8dcf6101998fae9e513fe86e2743afb2"
+    },
+    {
+      "path": "knowledge/workspace/server.py",
+      "before_sha256": "137180217195a6c9dba8286f21e781b0b126c54fc4d886168010e52f2ee6d6e9",
+      "after_sha256": "55c3fa1476d05e3d4413a7fd34e611fd9e52c4b1b2a4c806013540a4b77e3211"
+    },
+    {
+      "path": "knowledge/workspace/session.py",
+      "before_sha256": "d6d651b80d049021aed3b242e1330b6d6d87a66e0a72b40d334809ef7af01716",
+      "after_sha256": "2168192f33d87107969f37f638db69e7261aa773563292c51090ff9c11d3874b"
+    },
+    {
+      "path": "physics/compressible_flow/moc_nozzle.py",
+      "before_sha256": "5066f66276d8b22025b3a8f349a0279737b3b97ed38b541df8c48fe27e8be25a",
+      "after_sha256": "240d80d134cf47737ff5ecc3487def14f4c0d1a41502980acee6e6d56b5863bf"
+    },
+    {
+      "path": "simulation/workbench.py",
+      "before_sha256": "520c3904be26e112eb18373c4fe7a0dd833d570bc4d02e84ca836d7055fd5d1e",
+      "after_sha256": "fbbbd61e152766bec1488e5b555f6f6a1b87cf7589b63d0ea404319bc0a14a45"
+    },
+    {
+      "path": "systems/contracts/results.py",
+      "before_sha256": "779e1d6294bbc6b7a1fe6b9346f1f6b4ea498acceba2413643ce248b7a82e6b0",
+      "after_sha256": "0c175a002b75fa5e099090f81783ff731d7b49b4923b739f32cb8bbb7f0eadbb"
+    },
+    {
+      "path": "systems/geometry/service.py",
+      "before_sha256": "a735fd03d05a86e795a7bf9e077e2df3b35b37d7e25bb68652f41e57a72ba95a",
+      "after_sha256": "a8a341762ae7932e7a71684bd77032f9ef17717bd4e7c4b17563f14253ba7b48"
+    },
+    {
+      "path": "systems/persistence/design_store.py",
+      "before_sha256": "f06e6d08fefa042fac670a7db0274ee3d95a34f039e0f0fd852fa4eb7e374bf6",
+      "after_sha256": "af0f57acab5540f5840ebc2e866350e0242555de3fe453bbbe3f07c51250c61a"
+    },
+    {
+      "path": "systems/projects/models.py",
+      "before_sha256": "f49e7ffdf02a9fcca6b4cdf8a38c1b35a1e8f24bf4e89adc08a29418be986f0c",
+      "after_sha256": "7ce5dba5546f2c0e86a03ea317adb482abec19f6737d976c63be132d3dd65a96"
+    },
+    {
+      "path": "systems/stages/operating_point.py",
+      "before_sha256": "3f0420ef581122e64c093e39d172c11971e0b29f1733899ce105af8e10396990",
+      "after_sha256": "da9ea8a290f248a30e748ce05e66e809d71911e676d227e10905339b9c96f142"
+    },
+    {
+      "path": "systems/stages/thermochemistry.py",
+      "before_sha256": "da1b697468ab9b9a956cea4bbe2c60172a6c35cc0a0d8b6762c09fb06d629d68",
+      "after_sha256": "d04f9605be07698bd4b6d04672e334eb3dab2ba6a496364f0ed318897f3eb5d1"
+    },
+    {
+      "path": "tests/js/app_shell.test.cjs",
+      "before_sha256": "12d755e9981b3e0fe1df045e7d408440f20018fa81d54ae50fd9c5e303b9cacc",
+      "after_sha256": "72b6a85045ee429b151a6f7af8a36efdc30d904a125d93e5046f842e83b024f2"
+    },
+    {
+      "path": "tests/js/rocket_workbench.test.cjs",
+      "before_sha256": "3f1baf74f55b97482250ac66f2f1ff648d453a9c5b027439a2546e44f9a11c4f",
+      "after_sha256": "36d55c60589140937a03d70aa6ba9aa82326779ec2e7294a3d0d30a35d82530e"
+    },
+    {
+      "path": "tests/ui/app-shell/shell.spec.cjs",
+      "before_sha256": "de6fb579b0492e323eb81a3a3a4f694fc796c55063f86e3db361d06f44446667",
+      "after_sha256": "23098db01e8b13129b465c2a45b2f294e5df0ad6850633a351cb7914d6588a0f"
+    },
+    {
+      "path": "tests/ui/app-shell/type_contracts.ts",
+      "before_sha256": "42e7ecbcc2f8ff2fbb2eef77e862fbd71dcb3caaa50321f8dffd422bdd554aa0",
+      "after_sha256": "14c3964e62c6f60fc2b463b4dbc9d58422097a39ab684f0ccb1cdb3f803fc21f"
+    },
+    {
+      "path": "tests/unit_tests/gui/test_ngg.py",
+      "before_sha256": "804bfbca5c9a7123584f1b7e656a3624b91066b887ea1b152a33ac976a937060",
+      "after_sha256": "85fe589618fde685213018b8048d31c2611f1af523574b5bcd4b60506f022a7e"
+    },
+    {
+      "path": "tests/unit_tests/physics/test_compressible_flow.py",
+      "before_sha256": "940b85e2ea5ebca1fce42bcd2fe6eb946d2cae20b1b71a89a61bf750e02503e6",
+      "after_sha256": "5eac9194b233dc54e39805930207d23e2b62789f8d5ad13691349ba6ea6f5feb"
+    }
+  ],
+  "unexpected_changes": [],
+  "missing": [],
+  "historical_evidence_not_resealed": true,
+  "pass": true
+}

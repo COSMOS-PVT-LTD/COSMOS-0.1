@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "predecessor_sealed_files": 3202,
+  "historical_evidence_unmodified": true,
+  "exact_before_overlay": [
+    ".github/workflows/ci.yml",
+    ".gitignore",
+    "SECURITY.md",
+    "api/authentication.py",
+    "gui/server.py",
+    "gui/static/app.js",
+    "gui/static/rbac.js",
+    "scripts/build_macos_app.sh"
+  ],
+  "P11_seal_sha256": "f0985340381229d2a933451cb4cf5d6ccf118ebb9909e842677b5d0c98920d55"
+}

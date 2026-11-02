@@ -1,0 +1,17 @@
+/* Scope narrow-panel readability to the additive pressure-fed assessment. */
+#managed-pressure-fed, #managed-pressure-fed fieldset, #managed-pressure-fed .ds-grid {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+#managed-pressure-fed { overflow-wrap: anywhere; }
+#managed-pressure-fed input, #managed-pressure-fed select {
+  box-sizing: border-box;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  inline-size: 100%;
+}
+#managed-pressure-fed .pf-table-wrap { max-inline-size: 100%; overflow-x: auto; }
+#managed-pressure-fed table { inline-size: 100%; table-layout: fixed; }
+#managed-pressure-fed th, #managed-pressure-fed td { white-space: normal; overflow-wrap: anywhere; }
+#managed-pressure-fed td:nth-child(2) { font-family: ui-monospace, monospace; }
+#managed-pressure-fed .pf-stream { min-inline-size: 0; }

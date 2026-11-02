@@ -1,0 +1,5 @@
+The following is a diff from the previous accessibility tree for Window: "COSMOS R05.4 — ISOLATED SOFTWARE QA" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 151
++								167 text Exact retained worker status · storage SHA256 6115e5fcb429214984fef8521d09597549ea9a181f142f8628a32f72cbc6e990 · authority freshness is separate
+{"native_run_id":"sim-0a673bdd0cc54666b356a403a525fdfe","status_scope":"captured-worker-inputs; durable dependency applicability is separate","worker_status_json":"{\"dataset_sha256\":\"2c7a2ad80fa4895aa38ce124fbc1e089c3ca5e02271ee5c43e2b938091ef4055\",\"diagnostic\":null,\"events\":[{\"correlation_id\":\"sim-0a673bdd0cc54666b356a403a525fdfe\",\"iteration\":0,\"nor
+The focused UI element is 19 container Active workbench

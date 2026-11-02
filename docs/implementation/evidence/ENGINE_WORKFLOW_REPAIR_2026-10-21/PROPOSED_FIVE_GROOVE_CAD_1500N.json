@@ -1,0 +1,19 @@
+{
+  "scope": "ISOLATED_REVISED_CAD_STUDY_NOT_OWNER_INPUTS_OR_HARDWARE_ACCEPTANCE",
+  "source": "User-approved isolated five-groove fit study, recorded in APPROVED_GROOVE_FIT_AND_INTEGRAL_CONCEPT.md. Exact nominal envelopes from PROVISIONAL_SEAL_PROPOSAL.md only; not selected supplier seals, toleranced manufacturing geometry, pressure/leak acceptance or hot-fire approval. Source hydraulic bores, gas volume and prior four-elbow routing are preserved. All channels remain actual cuts; illustrative fluid-domain exports are explicitly disabled.",
+  "suppressed_mount_feature": "chamber-collar",
+  "export_coolant_domains": false,
+  "pipe_wall_m": 0.0012,
+  "bend_radius_m": 0.012,
+  "stub_length_m": 0.025,
+  "return_outer_center_radius_m": 0.110,
+  "fuel_supply_length_m": 0.080,
+  "oxidizer_supply_length_m": 0.080,
+  "grooves": [
+    {"id":"fuel-inner-groove","part_feature_id":"radial-injector","inner_radius_m":0.018,"outer_radius_m":0.020,"depth_m":0.001270,"face":-1},
+    {"id":"fuel-outer-groove","part_feature_id":"radial-injector","inner_radius_m":0.030,"outer_radius_m":0.032,"depth_m":0.001270,"face":-1},
+    {"id":"lox-inner-groove","part_feature_id":"radial-injector","inner_radius_m":0.035,"outer_radius_m":0.037,"depth_m":0.001270,"face":-1},
+    {"id":"lox-outer-groove","part_feature_id":"radial-injector","inner_radius_m":0.044,"outer_radius_m":0.046,"depth_m":0.001270,"face":-1},
+    {"id":"gas-joint-groove","part_feature_id":"radial-injector","inner_radius_m":0.055,"outer_radius_m":0.057,"depth_m":0.001270,"face":1}
+  ]
+}

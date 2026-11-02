@@ -1,0 +1,14 @@
+{
+  "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "p00_source_drift": [],
+  "original_files_changed": [],
+  "primary_destinations": 7,
+  "legacy_routes_preserved_in_spec": 12,
+  "rocket_stages_preserved_in_spec": 17,
+  "unexpected_out_of_scope_files": [],
+  "browser_invariants_passed": 17,
+  "browser_observation_records": 18,
+  "broken_markdown_links": [],
+  "checked_at_utc": "2026-10-08T11:28:15.975111+00:00",
+  "scope": "P01 prototype/documents only; no production shell/data migration test claimed"
+}

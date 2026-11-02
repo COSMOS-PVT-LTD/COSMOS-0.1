@@ -1,0 +1,138 @@
+<svg width="885" height="532" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 885 532">
+<rect width="885" height="532" x="0" y="0" fill="none"></rect>
+<path d="M112.5317 419.5L849 419.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M112.5317 384.5L849 384.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M112.5317 350.5L849 350.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M112.5317 316.5L849 316.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M112.5317 281.5L849 281.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M112.5317 247.5L849 247.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M112.5317 213.5L849 213.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M112.5317 178.5L849 178.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M112.5317 144.5L849 144.5" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M112.5 144L112.5 419" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M260.5 144L260.5 419" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M407.5 144L407.5 419" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M554.5 144L554.5 419" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M701.5 144L701.5 419" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<path d="M849.5 144L849.5 419" fill="none" stroke="#647f98" stroke-opacity="0.25" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" xml:space="preserve" y="-6.449416160583496" transform="translate(112.5317 129)" fill="#e6eff8">Nozzle contour radius [m] · linear</text>
+<path d="M112.5 419L112.5 144" fill="none" stroke="#a5b7c8" stroke-linecap="round" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" xml:space="preserve" y="6.449416160583496" transform="translate(480.7659 455)" fill="#e6eff8">Axial position [m] · linear</text>
+<path d="M112.5317 419.5L849 419.5" fill="none" stroke="#a5b7c8" stroke-linecap="round" class="zr0-cls-0"></path>
+<path d="M112.5317 419.5L107.5317 419.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M112.5317 384.5L107.5317 384.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M112.5317 350.5L107.5317 350.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M112.5317 316.5L107.5317 316.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M112.5317 281.5L107.5317 281.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M112.5317 247.5L107.5317 247.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M112.5317 213.5L107.5317 213.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M112.5317 178.5L107.5317 178.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M112.5317 144.5L107.5317 144.5" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M112.5 419L112.5 424" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M260.5 419L260.5 424" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M407.5 419L407.5 424" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M554.5 419L554.5 424" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M701.5 419L701.5 424" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<path d="M849.5 419L849.5 424" fill="none" stroke="#a5b7c8" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(104.5317 419)" fill="#e6eff8">0.015</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(104.5317 384.625)" fill="#e6eff8">0.02</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(104.5317 350.25)" fill="#e6eff8">0.025</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(104.5317 315.875)" fill="#e6eff8">0.03</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(104.5317 281.5)" fill="#e6eff8">0.035</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(104.5317 247.125)" fill="#e6eff8">0.04</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(104.5317 212.75)" fill="#e6eff8">0.045</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(104.5317 178.375)" fill="#e6eff8">0.05</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" transform="translate(104.5317 144)" fill="#e6eff8">0.055</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" y="6.449416160583496" transform="translate(112.5317 427)" fill="#e6eff8">0</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" y="6.449416160583496" transform="translate(259.8254 427)" fill="#e6eff8">0.02</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" y="6.449416160583496" transform="translate(407.119 427)" fill="#e6eff8">0.04</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" y="6.449416160583496" transform="translate(554.4127 427)" fill="#e6eff8">0.06</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" y="6.449416160583496" transform="translate(701.7063 427)" fill="#e6eff8">0.08</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" y="6.449416160583496" transform="translate(849 427)" fill="#e6eff8">0.1</text>
+<g clip-path="url(#zr0-c0)">
+<path d="M112.5317 399.4665L114.2834 399.4379L116.033 399.3523L117.7783 399.2098L119.5172 399.0105L121.2477 398.7546L122.9674 398.4426L124.6745 398.0746L126.3668 397.6514L128.0422 397.1732L129.6987 396.6407L131.3343 396.0546L132.947 395.4156L134.5349 394.7244L136.0959 393.9819L137.6282 393.189L147.191 388.0724L156.7903 383.0109L166.4261 378.0045L176.0983 373.0531L185.8071 368.1569L195.5523 363.3157L205.3341 358.5296L215.1523 353.7986L225.007 349.1227L234.8982 344.5019L244.8259 339.9362L254.7901 335.4256L264.7907 330.97L274.8279 326.5696L284.9016 322.2242L295.0117 317.934L305.1583 313.6988L315.3414 309.5187L325.561 305.3936L335.8171 301.3237L346.1097 297.3089L356.4388 293.3492L366.8043 289.4445L377.2064 285.5949L387.6449 281.8005L398.1199 278.0611L408.6315 274.3768L419.1795 270.7476L429.7639 267.1735L440.3849 263.6544L451.0424 260.1905L461.7364 256.7816L472.4668 253.4279L483.2337 250.1292L494.0372 246.8856L504.8771 243.6971L515.7535 240.5637L526.6664 237.4854L537.6158 234.4621L548.6016 231.494L559.624 228.5809L570.6829 225.723L581.7782 222.9201L592.91 220.1723L604.0783 217.4796L615.2831 214.842L626.5244 212.2595L637.8022 209.732L649.1165 207.2597L660.4672 204.8425L671.8545 202.4803L683.2783 200.1732L694.7385 197.9212L706.2352 195.7243L717.7684 193.5825L729.3381 191.4958L740.9443 189.4641L752.587 187.4876L764.2661 185.5661L775.9818 183.6998L787.7339 181.8885L799.5225 180.1323L811.3477 178.4312L823.2092 176.7852L835.1074 175.1943" fill="none" stroke="#83c8ff" stroke-width="2" stroke-linejoin="bevel" class="zr0-cls-2"></path>
+</g>
+<path d="M0 0l736.4683 0l0 20l-736.4683 0Z" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="rgb(0,0,0)" fill-opacity="0" class="zr0-cls-0"></path>
+<g clip-path="url(#zr0-c1)">
+<polygon points="736.5 0 0 0 0 3.8 9.2 3.8 18.4 3.8 27.6 3.8 36.8 3.8 46 3.8 55.2 3.8 64.4 3.8 73.6 3.9 82.9 3.9 92.1 3.9 101.3 3.9 110.5 4 119.7 4 128.9 4.1 138.1 4.1 147.3 4.4 156.5 4.7 165.7 4.9 174.9 5.2 184.1 5.5 193.3 5.8 202.5 6 211.7 6.3 220.9 6.6 230.1 6.8 239.4 7.1 248.6 7.3 257.8 7.6 267 7.8 276.2 8.1 285.4 8.3 294.6 8.5 303.8 8.8 313 9 322.2 9.2 331.4 9.4 340.6 9.7 349.8 9.9 359 10.1 368.2 10.3 377.4 10.5 386.6 10.7 395.9 10.9 405.1 11.1 414.3 11.3 423.5 11.5 432.7 11.7 441.9 11.9 451.1 12.1 460.3 12.3 469.5 12.4 478.7 12.6 487.9 12.8 497.1 12.9 506.3 13.1 515.5 13.3 524.7 13.4 533.9 13.6 543.1 13.7 552.4 13.9 561.6 14 570.8 14.2 580 14.3 589.2 14.5 598.4 14.6 607.6 14.7 616.8 14.9 626 15 635.2 15.1 644.4 15.2 653.6 15.3 662.8 15.5 672 15.6 681.2 15.7 690.4 15.8 699.6 15.9 708.9 16 718.1 16.1 727.3 16.2 736.5 16.3" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="#c0c9e6" fill-opacity="0.2" class="zr0-cls-0"></polygon>
+</g>
+<g clip-path="url(#zr0-c2)">
+<polygon points="736.5 0 0 0 0 3.8 9.2 3.8 18.4 3.8 27.6 3.8 36.8 3.8 46 3.8 55.2 3.8 64.4 3.8 73.6 3.9 82.9 3.9 92.1 3.9 101.3 3.9 110.5 4 119.7 4 128.9 4.1 138.1 4.1 147.3 4.4 156.5 4.7 165.7 4.9 174.9 5.2 184.1 5.5 193.3 5.8 202.5 6 211.7 6.3 220.9 6.6 230.1 6.8 239.4 7.1 248.6 7.3 257.8 7.6 267 7.8 276.2 8.1 285.4 8.3 294.6 8.5 303.8 8.8 313 9 322.2 9.2 331.4 9.4 340.6 9.7 349.8 9.9 359 10.1 368.2 10.3 377.4 10.5 386.6 10.7 395.9 10.9 405.1 11.1 414.3 11.3 423.5 11.5 432.7 11.7 441.9 11.9 451.1 12.1 460.3 12.3 469.5 12.4 478.7 12.6 487.9 12.8 497.1 12.9 506.3 13.1 515.5 13.3 524.7 13.4 533.9 13.6 543.1 13.7 552.4 13.9 561.6 14 570.8 14.2 580 14.3 589.2 14.5 598.4 14.6 607.6 14.7 616.8 14.9 626 15 635.2 15.1 644.4 15.2 653.6 15.3 662.8 15.5 672 15.6 681.2 15.7 690.4 15.8 699.6 15.9 708.9 16 718.1 16.1 727.3 16.2 736.5 16.3" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="#c0c9e6" fill-opacity="0.3" class="zr0-cls-0"></polygon>
+</g>
+<g clip-path="url(#zr0-c3)">
+<polygon points="736.5 0 0 0 0 3.8 9.2 3.8 18.4 3.8 27.6 3.8 36.8 3.8 46 3.8 55.2 3.8 64.4 3.8 73.6 3.9 82.9 3.9 92.1 3.9 101.3 3.9 110.5 4 119.7 4 128.9 4.1 138.1 4.1 147.3 4.4 156.5 4.7 165.7 4.9 174.9 5.2 184.1 5.5 193.3 5.8 202.5 6 211.7 6.3 220.9 6.6 230.1 6.8 239.4 7.1 248.6 7.3 257.8 7.6 267 7.8 276.2 8.1 285.4 8.3 294.6 8.5 303.8 8.8 313 9 322.2 9.2 331.4 9.4 340.6 9.7 349.8 9.9 359 10.1 368.2 10.3 377.4 10.5 386.6 10.7 395.9 10.9 405.1 11.1 414.3 11.3 423.5 11.5 432.7 11.7 441.9 11.9 451.1 12.1 460.3 12.3 469.5 12.4 478.7 12.6 487.9 12.8 497.1 12.9 506.3 13.1 515.5 13.3 524.7 13.4 533.9 13.6 543.1 13.7 552.4 13.9 561.6 14 570.8 14.2 580 14.3 589.2 14.5 598.4 14.6 607.6 14.7 616.8 14.9 626 15 635.2 15.1 644.4 15.2 653.6 15.3 662.8 15.5 672 15.6 681.2 15.7 690.4 15.8 699.6 15.9 708.9 16 718.1 16.1 727.3 16.2 736.5 16.3" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="#c0c9e6" fill-opacity="0.2" class="zr0-cls-0"></polygon>
+</g>
+<g clip-path="url(#zr0-c1)">
+<polyline points="0 3.8 9.2 3.8 18.4 3.8 27.6 3.8 36.8 3.8 46 3.8 55.2 3.8 64.4 3.8 73.6 3.9 82.9 3.9 92.1 3.9 101.3 3.9 110.5 4 119.7 4 128.9 4.1 138.1 4.1 147.3 4.4 156.5 4.7 165.7 4.9 174.9 5.2 184.1 5.5 193.3 5.8 202.5 6 211.7 6.3 220.9 6.6 230.1 6.8 239.4 7.1 248.6 7.3 257.8 7.6 267 7.8 276.2 8.1 285.4 8.3 294.6 8.5 303.8 8.8 313 9 322.2 9.2 331.4 9.4 340.6 9.7 349.8 9.9 359 10.1 368.2 10.3 377.4 10.5 386.6 10.7 395.9 10.9 405.1 11.1 414.3 11.3 423.5 11.5 432.7 11.7 441.9 11.9 451.1 12.1 460.3 12.3 469.5 12.4 478.7 12.6 487.9 12.8 497.1 12.9 506.3 13.1 515.5 13.3 524.7 13.4 533.9 13.6 543.1 13.7 552.4 13.9 561.6 14 570.8 14.2 580 14.3 589.2 14.5 598.4 14.6 607.6 14.7 616.8 14.9 626 15 635.2 15.1 644.4 15.2 653.6 15.3 662.8 15.5 672 15.6 681.2 15.7 690.4 15.8 699.6 15.9 708.9 16 718.1 16.1 727.3 16.2 736.5 16.3" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="none" stroke="#a1aed9" stroke-width="0.5" class="zr0-cls-0"></polyline>
+</g>
+<g clip-path="url(#zr0-c2)">
+<polyline points="0 3.8 9.2 3.8 18.4 3.8 27.6 3.8 36.8 3.8 46 3.8 55.2 3.8 64.4 3.8 73.6 3.9 82.9 3.9 92.1 3.9 101.3 3.9 110.5 4 119.7 4 128.9 4.1 138.1 4.1 147.3 4.4 156.5 4.7 165.7 4.9 174.9 5.2 184.1 5.5 193.3 5.8 202.5 6 211.7 6.3 220.9 6.6 230.1 6.8 239.4 7.1 248.6 7.3 257.8 7.6 267 7.8 276.2 8.1 285.4 8.3 294.6 8.5 303.8 8.8 313 9 322.2 9.2 331.4 9.4 340.6 9.7 349.8 9.9 359 10.1 368.2 10.3 377.4 10.5 386.6 10.7 395.9 10.9 405.1 11.1 414.3 11.3 423.5 11.5 432.7 11.7 441.9 11.9 451.1 12.1 460.3 12.3 469.5 12.4 478.7 12.6 487.9 12.8 497.1 12.9 506.3 13.1 515.5 13.3 524.7 13.4 533.9 13.6 543.1 13.7 552.4 13.9 561.6 14 570.8 14.2 580 14.3 589.2 14.5 598.4 14.6 607.6 14.7 616.8 14.9 626 15 635.2 15.1 644.4 15.2 653.6 15.3 662.8 15.5 672 15.6 681.2 15.7 690.4 15.8 699.6 15.9 708.9 16 718.1 16.1 727.3 16.2 736.5 16.3" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="none" stroke="#8292cc" stroke-width="0.5" class="zr0-cls-0"></polyline>
+</g>
+<g clip-path="url(#zr0-c3)">
+<polyline points="0 3.8 9.2 3.8 18.4 3.8 27.6 3.8 36.8 3.8 46 3.8 55.2 3.8 64.4 3.8 73.6 3.9 82.9 3.9 92.1 3.9 101.3 3.9 110.5 4 119.7 4 128.9 4.1 138.1 4.1 147.3 4.4 156.5 4.7 165.7 4.9 174.9 5.2 184.1 5.5 193.3 5.8 202.5 6 211.7 6.3 220.9 6.6 230.1 6.8 239.4 7.1 248.6 7.3 257.8 7.6 267 7.8 276.2 8.1 285.4 8.3 294.6 8.5 303.8 8.8 313 9 322.2 9.2 331.4 9.4 340.6 9.7 349.8 9.9 359 10.1 368.2 10.3 377.4 10.5 386.6 10.7 395.9 10.9 405.1 11.1 414.3 11.3 423.5 11.5 432.7 11.7 441.9 11.9 451.1 12.1 460.3 12.3 469.5 12.4 478.7 12.6 487.9 12.8 497.1 12.9 506.3 13.1 515.5 13.3 524.7 13.4 533.9 13.6 543.1 13.7 552.4 13.9 561.6 14 570.8 14.2 580 14.3 589.2 14.5 598.4 14.6 607.6 14.7 616.8 14.9 626 15 635.2 15.1 644.4 15.2 653.6 15.3 662.8 15.5 672 15.6 681.2 15.7 690.4 15.8 699.6 15.9 708.9 16 718.1 16.1 727.3 16.2 736.5 16.3" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="none" stroke="#a1aed9" stroke-width="0.5" class="zr0-cls-0"></polyline>
+</g>
+<path d="M-5 -6.0506l81.7964 0l0 25l-81.7964 0Z" transform="translate(17 86.0506)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#b7b9be" stroke-width="0" class="zr0-cls-0"></path>
+<path d="M0 7L25 7" transform="translate(18 85.5)" fill="#000" stroke="#83c8ff" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10" class="zr0-cls-0"></path>
+<path d="M18.1 7A5.6 5.6 0 1 1 18.1 6.9994" transform="translate(18 85.5)" fill="#83c8ff" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:13px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" x="30" y="7" transform="translate(18 85.5)" fill="#e6eff8">Radius</text>
+<path d="M-1 0.5506l71.7964 0l0 12.8988l-71.7964 0Z" transform="translate(18 85.5)" fill="none" class="zr0-cls-3"></path>
+<path d="M0 0l736.4683 0l0 20l-736.4683 0Z" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="none" class="zr0-cls-3"></path>
+<path d="M0 0l736.4683 0l0 20l-736.4683 0Z" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="rgb(135,175,255)" fill-opacity="0.2" class="zr0-cls-0"></path>
+<path d="M0.5 0.5l736 0l0 19l-736 0Z" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#647f98" class="zr0-cls-0"></path>
+<path d="M0 19.5L736.4683 19.5L736.4683 24.5A2 2 0 0 1 734.4683 26.5L2 26.5A2 2 0 0 1 0 24.5L0 19.5Z" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="#8292cc" fill-opacity="0.5" class="zr0-cls-0"></path>
+<path d="M-2.2408 -1.6796C-1.8674 -1.6796 -1.6817 -1.4939 -1.6817 -1.1204L-1.6817 1.1204C-1.6817 1.4939 -1.8674 1.6796 -2.2408 1.6796C-2.6143 1.6796 -2.8 1.4939 -2.8 1.1204L-2.8 -1.1204C-2.8 -1.4939 -2.6143 -1.6796 -2.2408 -1.6796ZM0 -1.6796C0.3735 -1.6796 0.5592 -1.4939 0.5592 -1.1204L0.5592 1.1204C0.5592 1.4939 0.3735 1.6796 0 1.6796C-0.3735 1.6796 -0.5592 1.4939 -0.5592 1.1204L-0.5592 -1.1204C-0.5592 -1.4939 -0.3735 -1.6796 0 -1.6796ZM2.2408 -1.6796C2.6143 -1.6796 2.8 -1.4939 2.8 -1.1204L2.8 1.1204C2.8 1.4939 2.6143 1.6796 2.2408 1.6796C1.8674 1.6796 1.6817 1.4939 1.6817 1.1204L1.6817 -1.1204C1.6796 -1.4939 1.8674 -1.6796 2.2408 -1.6796Z" transform="matrix(1,0,0,-1,483.5659,497.5)" fill="#fff" class="zr0-cls-0"></path>
+<path d="M0 1.628L0 2M0 0L0 0.375M-0.1 0.375L0.1 0.375A0.1 0.1 0 0 1 0.2 0.475L0.2 1.525A0.1 0.1 0 0 1 0.1 1.625L-0.1 1.625A0.1 0.1 0 0 1 -0.2 1.525L-0.2 0.475A0.1 0.1 0 0 1 -0.1 0.375Z" transform="matrix(10,0,0,-10,116.3317,520.5)" fill="#fff" stroke="#c0c9e6" stroke-width="0.1" class="zr0-cls-4"></path>
+<path d="M0 1.628L0 2M0 0L0 0.375M-0.1 0.375L0.1 0.375A0.1 0.1 0 0 1 0.2 0.475L0.2 1.525A0.1 0.1 0 0 1 0.1 1.625L-0.1 1.625A0.1 0.1 0 0 1 -0.2 1.525L-0.2 0.475A0.1 0.1 0 0 1 -0.1 0.375Z" transform="matrix(10,0,0,-10,850.8,520.5)" fill="#fff" stroke="#c0c9e6" stroke-width="0.1" class="zr0-cls-4"></path>
+<path d="M-25 -25l106.8207 0l0 50l-106.8207 0Z" transform="translate(791.1793 31)" fill="none" stroke="#b7b9be" stroke-width="0" class="zr0-cls-0"></path>
+<path d="M0 0l861 0l0 54l-861 0Z" transform="translate(12 8)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr0-cls-0"></path>
+<path d="M-7.5 -4.0086L-0.5431 -4.0086M-4.0086 -0.5431L-4.0086 -7.5M0.8017 -4.0086L7.5 -4.0086L7.5 7.5L-4.0086 7.5L-4.0086 0.8017" transform="translate(791.1793 31)" fill="none" stroke="#e6eff8" class="zr0-cls-5"></path>
+<path d="M-2.7513 -7.5L-5.9524 -4.2989L-2.6984 -1.045M-5.8466 -4.2989L5.9524 -4.2989L5.9524 7.5L-5.8466 7.5L-5.8466 0.6217" transform="translate(819.6317 31)" fill="none" stroke="#e6eff8" class="zr0-cls-5"></path>
+<path d="M-6.9994 0.9083M4.5416 -2.9654L7.1597 -2.9654L7.1597 -5.6904M7.0261 -2.6448C5.9041 -5.6102 2.8051 -7.8543 -0.8549 -7.4536C-4.6485 -7.0261 -7.5872 -3.6867 -7.4536 0.1603M-4.5416 2.9654L-7.1864 2.9654L-7.1864 5.6904M-7.0261 2.6448C-5.9041 5.6102 -2.8051 7.8543 0.8549 7.4536C4.6485 7.0261 7.5872 3.6867 7.4536 -0.1603" transform="translate(848.042 31)" fill="none" stroke="#e6eff8" class="zr0-cls-5"></path>
+<path d="M0 0l773 0l0 20l-773 0Z" transform="translate(12 8)" fill="none" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:16px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;font-weight:bold;" xml:space="preserve" y="10" transform="translate(12 8)" fill="#e6eff8">Nozzle contour radius</text>
+<path d="M0 26l861 0l0 28l-861 0Z" transform="translate(12 8)" fill="none" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" xml:space="preserve" y="33" transform="translate(12 8)" fill="#a5b7c8">Uncertainty: not quantified · source CURRENT</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:system-ui, -apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif;" xml:space="preserve" y="47" transform="translate(12 8)" fill="#a5b7c8">Preliminary model · no physical validation</text>
+<defs >
+<clipPath id="zr0-c0">
+<path d="M111 143l740 0l0 277l-740 0Z" fill="#000" class="zr0-cls-1"></path>
+</clipPath>
+<clipPath id="zr0-c1">
+<path d="M0 0l0 0l0 20l0 0Z" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="#000" class="zr0-cls-1"></path>
+</clipPath>
+<clipPath id="zr0-c2">
+<path d="M0 0l736.4683 0l0 20l-736.4683 0Z" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="#000" class="zr0-cls-1"></path>
+</clipPath>
+<clipPath id="zr0-c3">
+<path d="M736.4683 0l0 0l0 20l0 0Z" transform="matrix(1,0,0,-1,115.3317,520.5)" fill="#000" class="zr0-cls-1"></path>
+</clipPath>
+</defs>
+<style ><![CDATA[
+.zr0-cls-0:hover {
+pointer-events:none;
+}
+.zr0-cls-1:hover {
+cursor:pointer;
+fill:rgba(0,0,0,1);
+}
+.zr0-cls-2:hover {
+cursor:pointer;
+}
+.zr0-cls-3:hover {
+cursor:pointer;
+fill:rgba(0,0,0,0);
+}
+.zr0-cls-4:hover {
+cursor:pointer;
+fill:rgba(255,255,255,1);
+stroke:#8292cc;
+}
+.zr0-cls-5:hover {
+cursor:pointer;
+stroke:#404c76;
+}
+
+]]>
+
+</style>
+</svg>

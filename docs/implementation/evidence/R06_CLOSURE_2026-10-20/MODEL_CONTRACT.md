@@ -1,0 +1,46 @@
+# R06 selected operating-point and thermal/combustion closure contract
+
+User requests implementation, not more planning. Entry HEAD293223ebef190eaa647e67dc581eb186b2b5d987; preserve all dirty work and the preceding `R06_VALIDATION_2026-10-20/source-final.json`. No migration, push, release, hardware operation or physical acceptance. Prior selected direct assessment and core workflow remain unchanged.
+
+## Finite implementation envelope
+
+Implement a downstream immutable **solved candidate**, separate from the frozen upstream workflow stage. Supported cycles remain PRESSURE_FED and GAS_GENERATOR. This is steady quasi-1D, not arbitrary engine CFD or transients. An infinite-area adiabatic equilibrium chamber and adiabatic convergent feed a choked throat and a **non-adiabatic divergent nozzle** with counterflow fuel cooling. This is an explicit thermal-coverage choice, not a claim to solve chamber/convergent wall cooling. No film mass injection in the new quasi-1D model; earlier imposed-film assessments remain usable and distinct. Other cycles, two-phase coolant, shock/separation, maps outside declared windows and unsupported topology must refuse.
+
+All scientific inputs are explicit SI quantities with source/applicability annotations and bounded property/characteristic windows. No successful-result fixtures or engineering numerical defaults are inserted into owner inputs. UI may show an empty schema editor for expert input, but must provide exact input/source/result/history/retry/diagnostics.
+
+### Unknowns and equations
+
+Pressure-fed unknowns: core chamber pressure and oxidizer/fuel mass flows. Source tank pressures are explicit regulated boundaries, not a tank blowdown or pressurant consumption model. Solve both branch pressure equations and the choked core mass-flow equation. Injector/line resistance is explicitly `dp=K*m^2` (K [Pa s2/kg2]); full core fuel passes through cooling before its injector. Cooling pressure drop is recomputed at solved fuel flow.
+
+GG adds shaft speed, GG pressure and both GG branch flows. Pump fits are explicit `dp=a*omega^2-b*m_pump^2` (a [Pa s2/rad2], b [Pa s2/kg2]), with density, efficiency and validity windows. These are supplied characteristic fits, not invented maps. Both pumps feed their core and GG branches. GG injector resistances determine GG O/F, not an imposed core O/F. The GG uses the same CEA HP combustion adapter at its actual pressure/flow ratio, a choked gas throat and perfect-gas total-to-total turbine work. Solve four branch pressures, core and GG throat flow, and shaft power. Exhaust thrust of the GG is not credited. Auxiliary load and shaft/pump/turbine efficiencies are explicit. The declared incompressible constant-Cp liquid enthalpy model is `h-h_ref=Cp*(T-T_ref)+(p-p_ref)/rho`. Adiabatic pump enthalpy rise is `dp/(rho*eta)` and temperature rise `dp*(1/eta-1)/(rho*Cp)`. Both pump work and reference pressure terms enter the chamber/GG enthalpy ledger; no external liquid EOS or phase validity is inferred.
+
+Chamber chemistry is NASA CEA3.3.4 HP, never a replacement chemistry solver. Reference reactant enthalpies come from its database at explicitly supplied in-range reference temperatures. Actual fuel enthalpy increment is independently sourced constant-Cp liquid sensible rise over a declared phase/property range plus internally recovered regenerative heat. Feed enthalpy validity is separately checked; changing liquid database temperature alone is not treated as a heated-liquid EOS. Return energy enters the chamber **once** as `Q_regen/m_core`; CEA receives the augmented total specific enthalpy. Keep native HP enthalpy residual, database fingerprints and species/state provenance.
+
+Frozen chamber composition is calorically perfect during nozzle expansion: `R=R_universal/MW`, `gamma=Cp_frozen/(Cp_frozen-R)`; do not substitute equilibrium gamma with frozen Cp. This local approximation and all temperature/property applicability windows are explicit. Sonic inlet uses perfect-gas critical ratios. Each divergent finite volume solves mass, integrated momentum `mdot*(u2-u1)+Abar*(p2-p1)=0`, and total energy `h02=h01-Qcell/mdot`. EOS eliminates pressure and temperature, giving a quadratic velocity equation; select only its positive supersonic root. This trapezoidal pressure-work approximation requires grid-refinement verification, not exact CEA adiabatic-nozzle parity.
+
+Iterate wall heat/profile/CEA state together: real gas-side state→recovery temperature/Bartz SI correlation with current wall temperature→pressure-enthalpy-consistent constant-property channel calculation→cell heat extraction→heated fuel returned to CEA. Reuse existing channel geometry/correlation/validity, without changing its original routine. The new exact segment energy equation includes frictional heating: `m*Cp*dT/ds=U*P*(Taw-T)-(m/rho)*dp/ds`; gas heat is `m*(Cp*deltaT+deltaP/rho)`, not `m*Cp*deltaT` alone. No empirical formula is implemented in JavaScript. Retain station states, thermal residual history and all independent mass/energy/momentum/pressure/power checks. Regenerative heat must cancel between chamber input and nozzle extraction in a common-reference energy ledger; do not report a zero residual computed by subtracting a value from itself. Independently use CEA product enthalpy and computed gas/coolant energy changes.
+
+### Numerical policy and acceptance
+
+Use an additive domain-neutral bounded damped Newton solver with explicit finite-difference step, bounds, normalized residual tolerances, iteration/evaluation/time budgets and complete accepted history. Invalid trial states can be rejected during line search, never silently replaced with another model. No sign clipping, extrapolation or successful iterate from an exhausted budget. Distinguish execution, termination, numerical convergence, physical admissibility, independent conservation, solution verification and physical validation. Independent residual checks must pass in dimensional units before a solved candidate is usable. A converged nonlinear residual alone is insufficient.
+
+New records reuse R05 input capture before evaluation, exact baseline/hash and method sources, membership/CAS/idempotency/restart, failure retention and original exports. No circular graph edge or mutation of baseline. New candidate values are not automatically installed into the owner's design or relabelled as validated. Failed/nonconvergent calculations publish diagnostics, not an active operating point.
+
+## Verification declared before code
+
+- Independent normalized nonlinear roots, bounded root refusal, domain-rejected trial, singular/stagnant/max-budget failures, complete histories.
+- Hand-derived perfect-gas sonic values, constant-area heated/cooled momentum/energy cases and zero-heat grid refinement against the existing isentropic area-Mach relation.
+- CEA HP reference state and explicit enthalpy perturbation; native converged flag, SI units, frozen-Cp identity, enthalpy residual and database hashes; no fallback on missing/incompatible CEA.
+- Pressure-fed synthetic manufactured solution constructed from chosen flows/pressure, independent resistances and choked throat. GG manufactured map/orifice/throat/power solution with both GG pump withdrawals counted.
+- Two-way feedback demonstrably changes chamber state and gas exit energy as conductance changes; independent whole-loop energy, mass, pressure, momentum and shaft checks; grid/tolerance refinement and no artificial zero-heat credit.
+- Invalid windows/units/Boolean/nonfinite/map/phase/shock cases, no root and max budgets. Existing scientific/test identities retained.
+- Durable HTTP/browser save→run→source/download→restart→stale/foreign/read-only checks. No measurements available: physical NOT_PERFORMED remains mandatory.
+
+## Primary source mappings
+
+- [NASA CEA3.3.4 Python API](https://nasa.github.io/cea/interfaces/python_api.html) and installed pinned binding: HP interface, SI/native conversions, database enthalpy and frozen Cp. [NASA CEA quick start](https://nasa.github.io/cea/quick_start.html).
+- [NASA Glenn mass-flow choking](https://www.grc.nasa.gov/www/k-12/airplane/mflchk.html), [nozzle design](https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/nozzle-design/) and [thrust equation](https://www.grc.nasa.gov/www/k-12/airplane/thrsteq.html): continuity/choking and exit momentum/pressure force. Finite-volume trapezoidal momentum is COSMOS's declared discretization of those conservation equations, not a NASA-certified algorithm.
+- Existing source-mapped `physics/heat_transfer/regenerative.py`, `bartz.py`, `physics/feed/gas_generator.py`: same channel/correlation and efficiency conventions, no equation changes.
+- [NASA power turbine thermodynamics](https://www.grc.nasa.gov/www/k-12/airplane/powtrbth.html), DOE-HDBK-1012/3-92 extended Bernoulli/pump power (preceding R06 source register). Supplied quadratic pump fit coefficients require separate user provenance; no source gives universal coefficients.
+
+Implementation/qualification and physical evidence are separate gates. A bounded selected-cycle software completion decision must list excluded architectures/thermal coverage/pressurant/film models; do not close unrelated backlog boxes by renaming them.

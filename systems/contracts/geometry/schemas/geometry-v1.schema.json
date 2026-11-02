@@ -1,0 +1,1101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:cosmos:ngg:contracts:1.0.0",
+  "title": "COSMOS P06 geometry contracts",
+  "description": "Shape validation only. NGG-json-v1 decoder additionally enforces checksums, SI, right-handed frames, lineage, DAG and publication guards.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/SourceReference"
+    },
+    {
+      "$ref": "#/$defs/SIParameter"
+    },
+    {
+      "$ref": "#/$defs/CoordinateFrame"
+    },
+    {
+      "$ref": "#/$defs/DesignSnapshot"
+    },
+    {
+      "$ref": "#/$defs/GeometryFeature"
+    },
+    {
+      "$ref": "#/$defs/GeometryFeatureGraph"
+    },
+    {
+      "$ref": "#/$defs/GeometryBuildRequest"
+    },
+    {
+      "$ref": "#/$defs/GeometryArtifact"
+    },
+    {
+      "$ref": "#/$defs/NamedSelection"
+    },
+    {
+      "$ref": "#/$defs/GeometryCheck"
+    },
+    {
+      "$ref": "#/$defs/GeometryValidationReport"
+    },
+    {
+      "$ref": "#/$defs/GeometryBuildEvent"
+    },
+    {
+      "$ref": "#/$defs/GeometryBuildRecord"
+    }
+  ],
+  "$defs": {
+    "SourceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_sha256",
+        "contract_type",
+        "ref_id",
+        "schema_version",
+        "source_sha256",
+        "source_uri"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "SourceReference"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "ref_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "source_uri": {
+          "type": "string",
+          "maxLength": 2048
+        },
+        "source_sha256": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "SIParameter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_sha256",
+        "contract_type",
+        "dimension",
+        "kind",
+        "name",
+        "schema_version",
+        "source_ref_id",
+        "unit_symbol",
+        "value_si"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "SIParameter"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "value_si": {
+          "type": "number"
+        },
+        "unit_symbol": {
+          "type": "string",
+          "maxLength": 2048
+        },
+        "dimension": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 7,
+          "uniqueItems": false,
+          "minItems": 7
+        },
+        "source_ref_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "absolute",
+            "interval"
+          ]
+        }
+      }
+    },
+    "CoordinateFrame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_sha256",
+        "contract_type",
+        "frame_id",
+        "handedness",
+        "origin_m",
+        "parent_frame_id",
+        "rotation",
+        "schema_version",
+        "units"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "CoordinateFrame"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "frame_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "parent_frame_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 2048
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "origin_m": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 3,
+          "uniqueItems": false,
+          "minItems": 3
+        },
+        "rotation": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": -1.0000000001,
+            "maximum": 1.0000000001
+          },
+          "maxItems": 9,
+          "uniqueItems": false,
+          "minItems": 9
+        },
+        "units": {
+          "const": "m"
+        },
+        "handedness": {
+          "const": "right"
+        }
+      }
+    },
+    "DesignSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_sha256",
+        "contract_type",
+        "created_at",
+        "frame_id",
+        "frames",
+        "parameters_si",
+        "project_id",
+        "revision_id",
+        "schema_version",
+        "source_refs"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "DesignSnapshot"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "project_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "revision_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "parameters_si": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SIParameter"
+          },
+          "maxItems": 4096,
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "frames": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CoordinateFrame"
+          },
+          "maxItems": 64,
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "frame_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceReference"
+          },
+          "maxItems": 4096,
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "created_at": {
+          "type": "string",
+          "maxLength": 2048,
+          "format": "date-time",
+          "pattern": "(?:Z|\\+00:00)$"
+        }
+      }
+    },
+    "GeometryFeature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_sha256",
+        "contract_type",
+        "dependency_ids",
+        "feature_id",
+        "frame_id",
+        "operation",
+        "parameter_refs",
+        "representation",
+        "schema_version"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "GeometryFeature"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "feature_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "operation": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "parameter_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 2048
+          },
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "dependency_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 2048
+          },
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "frame_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "representation": {
+          "type": "string",
+          "enum": [
+            "analytic_brep",
+            "implicit_field",
+            "tessellated_surface",
+            "faceted_brep"
+          ]
+        }
+      }
+    },
+    "GeometryFeatureGraph": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_sha256",
+        "contract_type",
+        "features",
+        "graph_id",
+        "output_feature_ids",
+        "schema_version",
+        "snapshot_id"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "GeometryFeatureGraph"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "graph_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "snapshot_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GeometryFeature"
+          },
+          "maxItems": 512,
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "output_feature_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 2048
+          },
+          "maxItems": 4096,
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      }
+    },
+    "GeometryBuildRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approximation_profile",
+        "backend_id",
+        "backend_version",
+        "content_sha256",
+        "contract_type",
+        "correlation_id",
+        "export_tolerance_m",
+        "feature_graph_id",
+        "feature_graph_sha256",
+        "frame_id",
+        "output_formats",
+        "representation",
+        "request_id",
+        "schema_version",
+        "snapshot_id",
+        "source_tolerance_m",
+        "voxel_resolution_m"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "GeometryBuildRequest"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "request_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "snapshot_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "feature_graph_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "feature_graph_sha256": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "backend_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "backend_version": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "representation": {
+          "type": "string",
+          "enum": [
+            "analytic_brep",
+            "implicit_field",
+            "tessellated_surface",
+            "faceted_brep"
+          ]
+        },
+        "approximation_profile": {
+          "type": "string",
+          "maxLength": 2048
+        },
+        "source_tolerance_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "export_tolerance_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "voxel_resolution_m": {
+          "anyOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "output_formats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "step",
+              "stl",
+              "glb",
+              "vdb"
+            ]
+          },
+          "maxItems": 4096,
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "frame_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "correlation_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        }
+      }
+    },
+    "GeometryArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approximation_profile",
+        "artifact_id",
+        "backend_id",
+        "backend_version",
+        "content_sha256",
+        "contract_type",
+        "export_tolerance_m",
+        "feature_graph_sha256",
+        "frame_id",
+        "generated_at",
+        "geometry_revision_id",
+        "job_id",
+        "output_format",
+        "representation",
+        "schema_version",
+        "sha256",
+        "size_bytes",
+        "snapshot_id",
+        "source_artifact_sha256",
+        "source_tolerance_m",
+        "storage_uri",
+        "topology_report_id",
+        "units",
+        "voxel_resolution_m"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "GeometryArtifact"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "job_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "geometry_revision_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "snapshot_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "feature_graph_sha256": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "representation": {
+          "type": "string",
+          "enum": [
+            "analytic_brep",
+            "implicit_field",
+            "tessellated_surface",
+            "faceted_brep"
+          ]
+        },
+        "approximation_profile": {
+          "type": "string",
+          "maxLength": 2048
+        },
+        "backend_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "backend_version": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "units": {
+          "const": "m"
+        },
+        "frame_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "source_tolerance_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "export_tolerance_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "voxel_resolution_m": {
+          "anyOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_artifact_sha256": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "sha256": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "output_format": {
+          "type": "string",
+          "enum": [
+            "step",
+            "stl",
+            "glb",
+            "vdb"
+          ]
+        },
+        "storage_uri": {
+          "type": "string",
+          "maxLength": 512,
+          "pattern": "^[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*$",
+          "not": {
+            "pattern": "(^|/)\\.\\.?(/|$)"
+          }
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "topology_report_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "generated_at": {
+          "type": "string",
+          "maxLength": 2048,
+          "format": "date-time",
+          "pattern": "(?:Z|\\+00:00)$"
+        }
+      }
+    },
+    "NamedSelection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_sha256",
+        "contract_type",
+        "entity_refs",
+        "feature_ref",
+        "geometry_revision_id",
+        "mapping_status",
+        "remap_confidence",
+        "schema_version",
+        "semantic_id"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "NamedSelection"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "semantic_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "geometry_revision_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "feature_ref": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "entity_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 2048
+          },
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "remap_confidence": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mapping_status": {
+          "type": "string",
+          "enum": [
+            "exact",
+            "remapped",
+            "unresolved",
+            "ambiguous"
+          ]
+        }
+      }
+    },
+    "GeometryCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "check_id",
+        "content_sha256",
+        "contract_type",
+        "evidence_refs",
+        "limit",
+        "observed",
+        "passed",
+        "schema_version",
+        "unit"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "GeometryCheck"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "check_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "passed": {
+          "type": "boolean"
+        },
+        "observed": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "limit": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "maxLength": 2048
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 2048
+          },
+          "maxItems": 4096,
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      }
+    },
+    "GeometryValidationReport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "acceptance_policy_id",
+        "artifact_id",
+        "checks",
+        "content_sha256",
+        "contract_type",
+        "disposition",
+        "report_id",
+        "reviewer_id",
+        "schema_version"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "GeometryValidationReport"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "report_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GeometryCheck"
+          },
+          "maxItems": 4096,
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "acceptance_policy_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "reviewer_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 2048
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "unverified",
+            "accepted",
+            "rejected"
+          ]
+        }
+      }
+    },
+    "GeometryBuildEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_ids",
+        "code",
+        "content_sha256",
+        "contract_type",
+        "correlation_id",
+        "evidence_refs",
+        "job_id",
+        "message",
+        "progress_fraction",
+        "schema_version",
+        "seq",
+        "stage",
+        "state",
+        "timestamp"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "GeometryBuildEvent"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "job_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "timestamp": {
+          "type": "string",
+          "maxLength": 2048,
+          "format": "date-time",
+          "pattern": "(?:Z|\\+00:00)$"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "validating",
+            "rejected",
+            "queued",
+            "running",
+            "qa",
+            "accepted",
+            "published",
+            "failed",
+            "cancel_requested",
+            "cancelled"
+          ]
+        },
+        "stage": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "progress_fraction": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "code": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 2048
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "message": {
+          "type": "string",
+          "maxLength": 2048
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 2048
+          },
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "artifact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 2048
+          },
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "correlation_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        }
+      }
+    },
+    "GeometryBuildRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifacts",
+        "content_sha256",
+        "contract_type",
+        "events",
+        "feature_graph",
+        "job_id",
+        "named_selections",
+        "reports",
+        "request",
+        "schema_version",
+        "snapshot"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_type": {
+          "const": "GeometryBuildRecord"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "job_id": {
+          "type": "string",
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "request": {
+          "$ref": "#/$defs/GeometryBuildRequest"
+        },
+        "snapshot": {
+          "$ref": "#/$defs/DesignSnapshot"
+        },
+        "feature_graph": {
+          "$ref": "#/$defs/GeometryFeatureGraph"
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GeometryBuildEvent"
+          },
+          "maxItems": 4096,
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GeometryArtifact"
+          },
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "named_selections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NamedSelection"
+          },
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "reports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GeometryValidationReport"
+          },
+          "maxItems": 4096,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

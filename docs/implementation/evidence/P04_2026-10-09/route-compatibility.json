@@ -1,0 +1,74 @@
+[
+  {
+    "workbenchId": "rocket-engine",
+    "route": "/app/workbench/rocket-engine",
+    "status": "active",
+    "http": 200
+  },
+  {
+    "workbenchId": "turbopumps",
+    "route": "/app/workbench/turbopumps",
+    "status": "planned",
+    "http": 200
+  },
+  {
+    "workbenchId": "pid",
+    "route": "/app/workbench/pid",
+    "status": "planned",
+    "http": 200
+  },
+  {
+    "workbenchId": "structures",
+    "route": "/app/workbench/structures",
+    "status": "planned",
+    "http": 200
+  },
+  {
+    "workbenchId": "rocket-staging",
+    "route": "/app/workbench/rocket-staging",
+    "status": "planned",
+    "http": 200
+  },
+  {
+    "workbenchId": "manufacturing",
+    "route": "/app/workbench/manufacturing",
+    "status": "planned",
+    "http": 200
+  },
+  {
+    "workbenchId": "simulation",
+    "route": "/app/workbench/simulation",
+    "status": "planned",
+    "http": 200
+  },
+  {
+    "workbenchId": "visualization",
+    "route": "/app/workbench/visualization",
+    "status": "planned",
+    "http": 200
+  },
+  {
+    "workbenchId": "documentation",
+    "route": "/app/workbench/documentation",
+    "status": "planned",
+    "http": 200
+  },
+  {
+    "workbenchId": "code-comparison",
+    "route": "/app/workbench/code-comparison",
+    "status": "planned",
+    "http": 200
+  },
+  {
+    "workbenchId": "plm",
+    "route": "/app/workbench/plm",
+    "status": "planned",
+    "http": 200
+  },
+  {
+    "workbenchId": "knowledge",
+    "route": "/app/workbench/knowledge",
+    "status": "active",
+    "http": 200
+  }
+]

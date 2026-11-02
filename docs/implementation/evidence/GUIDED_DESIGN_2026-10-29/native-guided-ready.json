@@ -1,0 +1,17 @@
+{
+  "schema": "cosmos.guided-native-smoke.v1",
+  "isolated_root": "/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/cosmos-guided-native-9dx2idh8",
+  "hardware_evidence": false,
+  "review_hash": "d0a6d207c22d7c5aab190738b46eb14381d2a56a7c093d7f3434bef581d73ffa",
+  "completed_state": {
+    "project": "b68a7e00-8847-44a2-9c1b-e4025693a24e",
+    "reviewHash": "d0a6d207c22d7c5aab190738b46eb14381d2a56a7c093d7f3434bef581d73ffa",
+    "jobId": "a0d506be-7237-4408-a874-6281862523aa",
+    "state": "COMPLETED"
+  },
+  "results_text": "3 \u00b7 Calculation \u00b7 COMPLETED\n4 \u00b7 Preliminary results\n\nSaved result for this accepted basis. Physical validation is not performed.\n\nRequested thrust\n1,500 N\nCalculated ideal thrust\n1,500 N\nIdeal specific impulse\n202.5066 s\nSelected O/F\n2.63\nTotal mass flow\n0.7553208 kg/s\nThroat diameter\n0.05938496 m\nExit diameter\n0.07290166 m\nPressure available for all upstream losses\n2,00,000 Pa\nAnalysis\tState\tMeaning\nThermochemistry and performance\tSUCCEEDED\tIdeal CEA equilibrium, not delivered hardware performance\nChamber sizing\tSUCCEEDED\tPreliminary geometry model\nNozzle contour\tSUCCEEDED\tPreliminary geometry model\nCold injector hydraulics\tSUCCEEDED\tCold reference only; no heated regenerative-outlet claim\nFeed pressure screening\tSCREENED\tAvailable minus Pc and injector drop; remaining pressure must cover all actual upstream line/valve/cooling losses, not a solved closure\nMatched cooling and heated feed\tBLOCKED\tRequires matched passage geometry, hot-fluid/phase coverage and thermal boundary data\nCooled wall / pressure joints\tBLOCKED\tRequires temperature/process-specific properties, qualified joint and selected seal basis\nPhysical validation\tBLOCKED\tRequires real measurements, uncertainty and qualified review\nOpen this saved design in Expert Mode\n3D model\n\nNo geometry is inferred from calculation completion. Open existing project CAD below; it may belong to an earlier baseline. New native generation remains paused.\n\nInspect existing project CAD and exact source bindings\nComplete saved result / source identifiers\n",
+  "expert_design_id": "fda24d55-5fdc-5ef5-a2d0-205fbd00ae8a",
+  "history_reopened": true,
+  "native_backend": "webview.platforms.cocoa",
+  "pass": true
+}

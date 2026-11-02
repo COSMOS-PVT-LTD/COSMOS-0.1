@@ -6,6 +6,7 @@ from core.exceptions import InvalidInputError
 from core.quantity import Quantity
 from core.unit import SI
 from physics.compressible_flow.choked_flow import CHOKED_FLOW, choked_mass_flow
+from physics.compressible_flow.external_nozzle import scale_external_nozzle
 from physics.compressible_flow.nozzle_1d import NOZZLE_1D, station_from_area_ratio
 from physics.compressible_flow.thrust_relations import (
     THRUST,
@@ -74,6 +75,10 @@ def run_performance_stage(
         pa = op.ambient_pressure
         if pa is None:
             raise InvalidInputError("performance requires explicit ambient_pressure (zero for vacuum).")
+
+        thermo = design.workflow.current_result("thermochemistry")
+        if thermo is not None and thermo.inputs.get("engine") == "nasa/cea":
+            return _cea_performance(design, thermo, float(at_value), float(eps))
 
         throat = square_metre(float(at_value))
         mw = quantity(float(op.molecular_weight), UNIT_MOLAR_MASS)
@@ -184,3 +189,56 @@ def run_performance_stage(
         )
         design.store_stage_result(stage_id, result)
         return result
+
+
+def _cea_performance(
+    design: PropulsionDesign, thermo: CalculationResult, at: float, eps: float,
+) -> CalculationResult:
+    """Use the CURRENT external station solution, not a second ideal-gas solve."""
+    op = design.operating_point
+    if thermo.inputs.get("expansion_ratio") != eps:
+        raise InvalidInputError("CEA expansion ratio changed; rerun thermochemistry before performance.")
+    row = thermo.outputs["rocket_stations"]["exit"]
+    cstar = Quantity.from_canonical_dict(thermo.outputs["cstar"])
+    pe = Quantity(row["pressure_pa"], SI.get("Pa"))
+    ve = Quantity(row["velocity_m_s"], SI.get("m/s"))
+    assert op.chamber_pressure is not None and op.ambient_pressure is not None
+    scaled = scale_external_nozzle(op.chamber_pressure, op.ambient_pressure, square_metre(at), eps, cstar, ve, pe)
+    overexpanded = op.ambient_pressure.to_si() > pe.to_si()
+    op.mass_flow = scaled.mass_flow
+    op.characteristic_velocity = cstar  # Preserve CEA c*, never recompute from frozen gamma.
+    design.write_derived_slot("nozzle_design", {
+        "throat_area_m2": at, "expansion_ratio": eps, "exit_area_m2": at * eps,
+        "exit_mach": row["mach"], "performance_source": "nasa/cea",
+    })
+    result = make_result(
+        calculation_type="performance.cea_ideal_nozzle", stage_id="performance",
+        status=ResultStatus.CURRENT, model_id="SYS-06.nasa_cea.ideal_nozzle",
+        model_version=thermo.model_version,
+        inputs={
+            "chamber_pressure": op.chamber_pressure.to_canonical_dict(),
+            "ambient_pressure": op.ambient_pressure.to_canonical_dict(),
+            "throat_area_m2": {"value": at, "unit": "m2"},
+            "expansion_ratio": {"value": eps, "unit": "1"},
+            "thermochemistry_result_id": thermo.result_id,
+        },
+        outputs={
+            "mass_flow": scaled.mass_flow.to_canonical_dict(),
+            "exit_mach": {"value": row["mach"], "unit": "1"},
+            "exit_pressure": pe.to_canonical_dict(),
+            "exit_temperature": Quantity(row["temperature_k"], SI.get("K")).to_canonical_dict(),
+            "exit_velocity": ve.to_canonical_dict(), "thrust": scaled.force.to_canonical_dict(),
+            "thrust_coefficient": {"value": scaled.thrust_coefficient, "unit": "1"},
+            "specific_impulse": {"value": scaled.specific_impulse_s, "unit": "s"},
+            "cstar": {"value": cstar.to_si(), "unit": "m/s"},
+        },
+        assumptions=("NASA CEA infinite-area equilibrium rocket nozzle; mdot=Pc At/c*.",),
+        warnings=("Validation: NOT_CLAIMED. Ideal attached 1D flow: no injector, combustion, viscous, divergence or separation losses.",
+                  *(("Overexpanded nozzle: attached-flow applicability UNKNOWN; back-pressure shocks and separation are not modeled.",) if overexpanded else ())),
+        validity=ValidityInfo(status=ValidityState.UNKNOWN if overexpanded else ValidityState.VALID,
+                              checks=("CURRENT CEA solution", "SI momentum and pressure thrust")),
+        verification=VerificationInfo(status="EXTERNAL_SOLVER_CONVERGED"),
+        source=f"NASA CEA {thermo.model_version}; {THRUST.source}", design_revision=design.revision,
+    )
+    design.store_stage_result("performance", result)
+    return result

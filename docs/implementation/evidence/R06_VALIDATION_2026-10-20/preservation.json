@@ -1,0 +1,28 @@
+{
+  "preceding_source_manifest_sha256": "450cabe542930f25808a783018cef482a972b466fb672257314f888a94b85c77",
+  "preceding_sources": 1340,
+  "unchanged": 1335,
+  "declared_edits": [
+    "api/context_projects.py",
+    "api/project_authority.py",
+    "gui/server.py",
+    "gui/static/managed-cycle.css",
+    "gui/static/projects.js"
+  ],
+  "missing": [],
+  "unexpected": [],
+  "old_scientific_core_physics_numerics_changed": [],
+  "new_sources": [
+    "api/propulsion_validation.py",
+    "gui/static/managed-propulsion-validation.js",
+    "systems/projects/propulsion_validation.py",
+    "tests/fixtures/propulsion_validation.py",
+    "tests/integration_tests/gui/test_propulsion_validation_http.py",
+    "tests/js/propulsion_validation.test.cjs",
+    "tests/ui/r06_validation/check_plan.py",
+    "tests/unit_tests/infrastructure/test_propulsion_validation.py",
+    "tests/unit_tests/validation/test_propulsion.py",
+    "validation/propulsion.py"
+  ],
+  "pass": true
+}

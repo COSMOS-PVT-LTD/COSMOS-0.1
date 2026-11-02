@@ -1,0 +1,157 @@
+Browser tab: 6, Title: "COSMOS 0.1 — Rocket Engine Propulsion Suite", URL: "http://127.0.0.1:8790/app/workbench/rocket-engine".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 14, 149, 153, 157, 166, 169, 172
++					178 text IDLE
++				179 text WORKFLOW 00–16
++					180 text 00
++					181 text Design Project
++					182 text PARTIAL
++					183 text NOT_CALCULATED
++					184 text 01
++					185 text Requirements
++					186 text IMPLEMENTED
++					187 text NOT_CALCULATED
++					188 text 02
++					189 text Propellant Definition
++					190 text IMPLEMENTED
++					191 text NOT_CALCULATED
++					192 text 03
++					193 text Engine Cycle
++					194 text NOT IMPLEMENTED
++					195 text NOT_CALCULATED
++					196 text 04
++					197 text Operating Point
++					198 text IMPLEMENTED
++					199 text NOT_CALCULATED
++					200 text 05
++					201 text Thermochemistry
++					202 text PARTIAL
++					203 text NOT_CALCULATED
++					204 text 06
++					205 text Mass Flow / Performance
++					206 text PARTIAL
++					207 text NOT_CALCULATED
++					208 text 07
++					209 text Injector
++					210 text PARTIAL
++					211 text NOT_CALCULATED
++					212 text 08
++					213 text Combustion Chamber
++					214 text PARTIAL
++					215 text NOT_CALCULATED
++					216 text 09
++					217 text Thermal Analysis
++					218 text PARTIAL
++					219 text NOT_CALCULATED
++					220 text 10
++					221 text Cooling System
++					222 text PARTIAL
++					223 text NOT_CALCULATED
++					224 text 11
++					225 text Nozzle
++					226 text PARTIAL
++					227 text NOT_CALCULATED
++					228 text 12
++					229 text Structural Analysis
++					230 text PARTIAL
++					231 text NOT_CALCULATED
++					232 text 13
++					233 text Material Selection
++					234 text PARTIAL
++					235 text NOT_CALCULATED
++					236 text 14
++					237 text Engine Performance Summary
++					238 text IMPLEMENTED
++					239 text NOT_CALCULATED
++					240 text 15
++					241 text System Consistency Check
++					242 text IMPLEMENTED
++					243 text NOT_CALCULATED
++					244 text 16
++					245 text Design Review
++					246 text IMPLEMENTED
++					247 text NOT_CALCULATED
++				    248 text PHYSICS TOOLS
++					249 text GASDYNAMICS
++					250 text Nozzle Flow
++					251 text LIVE
++					252 text THERMAL
++					253 text Heat Transfer & Cooling
++					254 text PARTIAL
++					255 text STRUCTURES
++					256 text Chamber Structures
++					257 text PARTIAL
++					258 text End-to-end propulsion workflow
++					259 text Thermochemistry source
+~					99 pop up button (collapsed, settable) Thermochemistry source, Value: NASA CEA 3.3.4 · equilibrium, ID: wf-thermo-mode, Secondary Actions: Expand
+~							101 (selected) NASA CEA 3.3.4 · equilibrium
++							260 Explicit assumed chamber state
++					261 text Fuel inlet temperature [K] · CEA
+~					103 stepper (settable) Fuel inlet temperature [K] · CEA, ID: wf-fuel-temp
++					262 text Oxidizer inlet temperature [K] · CEA
+~					105 stepper (settable) Oxidizer inlet temperature [K] · CEA, ID: wf-ox-temp
++					263 text Design name
+~					107 text field (settable) Design name, Value: LOX/RP-1 10 kN engine, ID: wf-name
++					264 text Pc [bar]
+~					109 stepper (settable) Pc [bar], ID: wf-pc
++					265 text Thrust [kN]
+~					111 stepper (settable) Thrust [kN], ID: wf-thrust
++					266 text Ambient pressure [Pa] (required)
+~					113 stepper (settable) Ambient pressure [Pa] (required), ID: wf-pa
++					267 text O/F
+~					115 stepper (settable) O/F, ID: wf-of
++					268 text ε (Ae/At)
+~					117 stepper (settable) ε (Ae/At), ID: wf-eps
++					269 text Tc assumed [K]
+~					119 stepper (disabled, settable) Tc assumed [K], ID: wf-tc
++					270 text γ assumed
+~					121 stepper (disabled, settable) γ assumed, ID: wf-gamma
++					271 text MW assumed [kg/mol]
+~					123 stepper (disabled, settable) MW assumed [kg/mol], ID: wf-mw
++					272 text At [m²]
+~					125 stepper (settable) At [m²], ID: wf-at
++					273 text L* [m]
+~					127 stepper (settable) L* [m], ID: wf-lstar
++					274 text Contraction ratio
+~					129 stepper (settable) Contraction ratio, ID: wf-cr
++					275 text Wall t [m]
+~					131 stepper (settable) Wall t [m], ID: wf-twall
++					276 text Outside wall pressure [Pa] (required; 0 for vacuum)
+~					133 stepper (settable) Outside wall pressure [Pa] (required; 0 for vacuum), ID: wf-pout
++					277 text Material temperature [K]
+~					135 stepper (settable) Material temperature [K], ID: wf-tmaterial
++					278 text Gas viscosity [Pa·s]
+~					137 stepper (settable) Gas viscosity [Pa·s], ID: wf-mu
++					279 text Gas conductivity [W/(m·K)]
+~					139 stepper (settable) Gas conductivity [W/(m·K)], ID: wf-k
++					280 text Gas Cp [J/(kg·K)]
+~					141 stepper (settable) Gas Cp [J/(kg·K)], ID: wf-cp
++					281 text Wall temperature [K]
+~					143 stepper (settable) Wall temperature [K], ID: wf-tw
++					282 text Throat curvature radius [m] (optional)
+~					145 stepper (settable) Throat curvature radius [m] (optional), ID: wf-curvature
++					283 text Oxidizer ID
+~					147 pop up button (collapsed, settable) Oxidizer ID, Value: Select oxidizer…, ID: wf-ox, Secondary Actions: Expand
++							284 (selected) Select oxidizer…
++							285 LOX
++					286 text Fuel ID
+~					151 pop up button (collapsed, settable) Fuel ID, Value: Select fuel…, ID: wf-fuel, Secondary Actions: Expand
++							287 (selected) Select fuel…
++							288 LH2
++							289 LCH4
++							290 RP1
++					291 text Material
+~					155 pop up button (collapsed, settable) Material, Value: Select material…, ID: wf-material, Secondary Actions: Expand
++							292 (selected) Select material…
++							293 ofhc_copper (annealed, near 300 K)
++							294 stainless_304 (AISI 304, near 300 K)
++							295 aluminum_6061_t6 (6061-T6, near 300 K)
++							296 inconel_718 (typical aged, near 300 K)
++							297 ti6al4v (Ti-6Al-4V typical, near 300 K)
++				298 text CEA calculates chamber composition, Tc, gamma, MW, c* and ideal nozzle performance using explicit reactant inlet temperatures (no defaults). Assumed mode is separate. Configure 07 Injector, 11 Nozzle and 10 Cooling for preliminary models; their constant-gamma contour stations and constant-property cooling remain approximations. Cycle power balance is deferred. CURRENT means freshness; validation is NOT_CLAIMED.
++				299 text Workflow board appears after a design is opened or created.
+~				159 button (disabled) Export design package, ID: wf-export
++				300 text 0
++				301 text IDLE
++				302 text —
+The focused UI element is 1 AXWebArea COSMOS 0.1 — Rocket Engine Propulsion Suite, URL: 127.0.0.1:8790/app/workbench/rocket-engine

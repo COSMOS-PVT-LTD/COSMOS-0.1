@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="47" time="2.160" timestamp="2026-10-19T15:29:45.906761+05:30" hostname="vaibhavs-MacBook-Air.local"><testcase classname="tests.unit_tests.core.test_core_layer_independence" name="test_import_core_does_not_load_physics" time="0.000" /><testcase classname="tests.unit_tests.core.test_core_layer_independence" name="test_import_core_validation_does_not_load_physics" time="0.000" /><testcase classname="tests.unit_tests.core.test_core_layer_independence" name="test_core_propulsion_wrappers_do_not_load_physics" time="0.000" /><testcase classname="tests.unit_tests.core.test_core_layer_independence" name="test_core_package_has_no_physics_imports_in_source" time="0.019" /><testcase classname="tests.unit_tests.core.test_core_layer_independence" name="test_physics_propulsion_validation_may_import_core_without_cycle" time="0.001" /><testcase classname="tests.unit_tests.api.test_propulsion_catalogs" name="test_propellant_catalog_uses_registry_ids" time="0.001" /><testcase classname="tests.unit_tests.api.test_propulsion_catalogs" name="test_material_catalog_is_not_certified" time="0.000" /><testcase classname="tests.unit_tests.api.test_propulsion_catalogs" name="test_workflow_catalog_exposes_bypass_policy" time="0.000" /><testcase classname="tests.unit_tests.api.test_propulsion_catalogs" name="test_workflow_catalog_uses_stage_00_to_16_order" time="0.000" /><testcase classname="tests.unit_tests.api.test_propulsion_catalogs" name="test_list_clone_and_bar_units" time="0.011"><failure message="physics.thermochemistry.propellants.PropellantNotFoundError: Alias not found: LOX">alias = 'LOX'
+
+    def get_propellant_by_alias(
+        alias: str,
+    ) -&gt; Propellant:
+        """
+        Retrieve propellant by alias.
+    
+        Parameters
+        ----------
+        alias : str
+    
+        Returns
+        -------
+        Propellant
+    
+        Raises
+        ------
+        PropellantNotFoundError
+        """
+    
+        alias_key = _normalize_key(
+            alias,
+        )
+    
+        try:
+    
+            canonical_key = (
+&gt;               _ALIAS_REGISTRY[
+                    alias_key
+                ]
+            )
+E           KeyError: 'lox'
+
+physics/thermochemistry/propellants.py:1049: KeyError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-549/test_list_clone_and_bar_units0')
+
+    def test_list_clone_and_bar_units(tmp_path: Path) -&gt; None:
+        store = DesignStore(tmp_path)
+        design = create_design(name="Unit Engine", store=store)
+        update_requirements(
+            design,
+            {
+                "target_chamber_pressure": {"magnitude": 70, "unit_symbol": "bar"},
+                "target_thrust": {"magnitude": 10, "unit_symbol": "kN"},
+            },
+            store=store,
+        )
+        assert design.requirements.target_chamber_pressure is not None
+        assert design.requirements.target_chamber_pressure.to_si() == 7.0e6
+        assert design.requirements.target_thrust is not None
+        assert design.requirements.target_thrust.to_si() == 10000.0
+&gt;       update_propellants(design, oxidizer_id="LOX", fuel_id="RP1", mixture_ratio=2.6, store=store)
+
+tests/unit_tests/api/test_propulsion_catalogs.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+api/propulsion_workflow.py:290: in update_propellants
+    oxidizer = get_propellant_by_alias(str(oxidizer_id))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+alias = 'LOX'
+
+    def get_propellant_by_alias(
+        alias: str,
+    ) -&gt; Propellant:
+        """
+        Retrieve propellant by alias.
+    
+        Parameters
+        ----------
+        alias : str
+    
+        Returns
+        -------
+        Propellant
+    
+        Raises
+        ------
+        PropellantNotFoundError
+        """
+    
+        alias_key = _normalize_key(
+            alias,
+        )
+    
+        try:
+    
+            canonical_key = (
+                _ALIAS_REGISTRY[
+                    alias_key
+                ]
+            )
+    
+        except KeyError as exc:
+    
+&gt;           raise PropellantNotFoundError(
+                f"Alias not found: "
+                f"{alias}"
+            ) from exc
+E           physics.thermochemistry.propellants.PropellantNotFoundError: Alias not found: LOX
+
+physics/thermochemistry/propellants.py:1056: PropellantNotFoundError</failure></testcase><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[thrust-N-chamber_pressure_pa-Pa-values0-1000.0]" time="0.037" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[thrust-N-ambient_pressure_pa-Pa-values1-100.0]" time="0.032" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[thrust-N-throat_area_m2-m2-values2-1e-05]" time="0.035" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[thrust-N-expansion_ratio-1-values3-0.1]" time="0.034" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[mass_flow-kg/s-chamber_pressure_pa-Pa-values0-1000.0]" time="0.036" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[mass_flow-kg/s-ambient_pressure_pa-Pa-values1-100.0]" time="0.044" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[mass_flow-kg/s-throat_area_m2-m2-values2-1e-05]" time="0.038" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[mass_flow-kg/s-expansion_ratio-1-values3-0.1]" time="0.035" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[specific_impulse-s-chamber_pressure_pa-Pa-values0-1000.0]" time="0.035" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[specific_impulse-s-ambient_pressure_pa-Pa-values1-100.0]" time="0.031" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[specific_impulse-s-throat_area_m2-m2-values2-1e-05]" time="0.034" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[specific_impulse-s-expansion_ratio-1-values3-0.1]" time="0.034" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[exit_velocity-m/s-chamber_pressure_pa-Pa-values0-1000.0]" time="0.035" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[exit_velocity-m/s-ambient_pressure_pa-Pa-values1-100.0]" time="0.030" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[exit_velocity-m/s-throat_area_m2-m2-values2-1e-05]" time="0.034" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_all_declared_parameter_output_pairs_retain_existing_model_values[exit_velocity-m/s-expansion_ratio-1-values3-0.1]" time="0.034" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_existing_model_linear_scaling_units_original_bytes_and_step_refinement[throat_area_m2-m2-values0-1e-05]" time="0.025" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_existing_model_linear_scaling_units_original_bytes_and_step_refinement[chamber_pressure_pa-Pa-values1-1000.0]" time="0.026" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_samples_and_center_stencils_remain_explicit_no_one_sided_fallback" time="0.015" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits0]" time="0.001" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits1]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits2]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits3]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits4]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits5]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits6]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits7]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits8]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits9]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits10]" time="0.000" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_invalid_requests_are_not_inferred_or_defaulted[edits11]" time="0.001" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_spacing_and_cea_refusal_are_not_silent_model_changes" time="0.005" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_centered_difference_step_refinement_against_independent_cubic_function" time="0.011" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_durable_capture_failure_method_drift_and_late_source_edit[failure]" time="0.105" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_durable_capture_failure_method_drift_and_late_source_edit[method-drift]" time="0.064" /><testcase classname="tests.unit_tests.systems_layer.test_propulsion_sensitivity" name="test_durable_capture_failure_method_drift_and_late_source_edit[late-edit]" time="0.086" /><testcase classname="tests.integration_tests.gui.test_sensitivity_projects_http" name="test_exact_saved_sensitivity_restart_plots_replay_stale_and_cross_project" time="0.710"><failure message="AssertionError: {'error': {'action': 'Correct the input or select a valid model range.', 'code': 'PropellantNotFoundError', 'message': 'Alias not found: LOX'}, 'ok': False}&#10;assert 400 == 200">tmp_path = PosixPath('/private/var/folders/fh/plh1tbm12ln_xy_fj6v8xb480000gn/T/pytest-of-vaibhavkumarn/pytest-549/test_exact_saved_sensitivity_r0')
+
+    def test_exact_saved_sensitivity_restart_plots_replay_stale_and_cross_project(tmp_path):
+        root = tmp_path / "application"
+        with running(root) as (_app, base, client):
+            project = new_project(base, client)
+&gt;           original = configured(base, client, project, new_design(base, client, project))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration_tests/gui/test_sensitivity_projects_http.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration_tests/gui/test_project_authority_http.py:122: in configured
+    return request(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;urllib.request.OpenerDirector object at 0x105aa0290&gt;
+base = 'http://127.0.0.1:50036'
+path = '/api/projects/8ff55267-deb9-4c8c-b5f0-f38e2044b270/designs/4b9a144c-9548-530e-81f6-8ae1eead1c5b/save'
+data = {'expected': {'content_hash': 'f87d9b7e0ca2f6112c55197a517d81d15ceda9c17844ffcf4cdbbd9a098cb953', 'version': 1}, 'oper... 'expansion_ratio': 12, 'mixture_ratio': 2.6, 'target_chamber_pressure': {'magnitude': 50, 'unit_symbol': 'bar'}, ...}}
+expected = 200
+
+    def request(client, base, path, data=None, expected=200):
+        payload = json.dumps(data).encode() if data is not None else None
+        try:
+            with client.open(
+                urllib.request.Request(
+                    base + path, data=payload, headers={"Content-Type": "application/json"}
+                ),
+                timeout=15,
+            ) as response:
+                code, body = response.status, json.load(response)
+        except urllib.error.HTTPError as error:
+            code, body = error.code, json.load(error)
+&gt;       assert code == expected, body
+E       AssertionError: {'error': {'action': 'Correct the input or select a valid model range.', 'code': 'PropellantNotFoundError', 'message': 'Alias not found: LOX'}, 'ok': False}
+E       assert 400 == 200
+
+tests/integration_tests/gui/test_project_authority_http.py:37: AssertionError</failure></testcase></testsuite></testsuites>

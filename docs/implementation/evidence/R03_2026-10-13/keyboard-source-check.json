@@ -1,0 +1,20 @@
+{
+  "requestedViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "observedClientViewport": {
+    "width": 1440,
+    "height": 955
+  },
+  "sourceRegion": {
+    "tabIndex": 0,
+    "role": "region",
+    "clientHeight": 384,
+    "scrollHeight": 5094,
+    "pageDownBefore": 0,
+    "pageDownAfter": 364,
+    "focused": true
+  },
+  "scope": "One actual parsed source DTO in the in-app browser; not VoiceOver/native qualification"
+}

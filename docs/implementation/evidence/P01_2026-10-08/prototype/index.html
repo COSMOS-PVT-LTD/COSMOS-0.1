@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>COSMOS P01 — Workflow prototype</title>
+  <link rel="stylesheet" href="prototype.css">
+  <script src="model.js" defer></script>
+  <script src="prototype.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#editor">Skip to task editor</a>
+  <div class="prototype-banner"><strong>P01 · WORKFLOW PROTOTYPE</strong><span>Synthetic data. No solver, CAD worker or production project access.</span><a href="../P01_NAVIGATION_SPEC.md">Navigation specification</a></div>
+  <header class="context">
+    <div><strong class="brand">COSMOS</strong><span id="project-label">No project open</span><span id="revision-label">Example history: r1</span><span id="draft-label" class="badge">DRAFT</span></div>
+    <div class="header-tools">
+      <label>Mode <select id="mode"><option>Guided</option><option selected>Standard</option><option>Expert</option></select></label>
+      <span class="units">Display: SI · prototype</span>
+      <button id="command-open" aria-haspopup="dialog">Commands · Ctrl/⌘ K</button>
+      <button id="reset">Reset example</button>
+    </div>
+  </header>
+  <div class="workspace">
+    <nav class="navigation" aria-label="Workbenches">
+      <p class="eyebrow">Engineering workspace</p>
+      <div id="destinations"></div>
+      <details class="catalog"><summary>All existing workbenches</summary><div id="legacy-catalog"></div><p>Compatibility routes only. No production navigation from this prototype.</p></details>
+      <a href="../../P00_2026-10-08/P00_AUDIT_REPORT.md">As-built capability audit</a>
+    </nav>
+    <main id="editor" tabindex="-1" aria-label="Task editor"></main>
+    <aside id="inspector" aria-label="Contextual inspector"><h2>Context & evidence</h2><div id="inspector-content"></div></aside>
+    <section class="dock" aria-label="Diagnostics and history">
+      <div class="dock-controls">
+        <strong>Diagnostics / activity</strong>
+        <button id="toggle-inspector" aria-controls="inspector" aria-expanded="true">Hide inspector</button>
+        <button id="toggle-dock" aria-controls="activity" aria-expanded="true">Collapse diagnostics</button>
+        <label>Inspector width <select id="inspector-width"><option value="260">260 px</option><option value="320">320 px</option></select></label>
+        <label>Dock height <select id="dock-height"><option value="130">130 px</option><option value="200">200 px</option></select></label>
+        <button id="reset-layout">Restore layout</button>
+      </div>
+      <div id="activity"></div>
+    </section>
+  </div>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+  <dialog id="command-dialog" aria-labelledby="command-title">
+    <h2 id="command-title">Commands</h2><p>Navigate without changing the draft. Escape closes this dialog.</p>
+    <label>Find a destination <input id="command-search" type="search" autocomplete="off"></label>
+    <div id="command-list"></div><button id="command-close">Close commands</button>
+  </dialog>
+  <dialog id="reset-dialog" aria-labelledby="reset-title">
+    <h2 id="reset-title">Reset this synthetic example?</h2><p>This discards this prototype's in-memory drafts, revisions and scripted events. It does not touch production data.</p>
+    <button id="reset-cancel">Keep example</button><button id="reset-confirm">Reset example data</button>
+  </dialog>
+</body>
+</html>

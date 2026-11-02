@@ -1,0 +1,79 @@
+{
+  "phase": "R05",
+  "slice": "R05.1",
+  "date": "2026-10-16",
+  "base_head": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "status": "FOUNDATION_GATE_PASSED_R05_IN_PROGRESS",
+  "architecture_decision": {
+    "id": "ADR-R05-001",
+    "status": "ACCEPTED",
+    "owner_response": "i approve",
+    "approval_question": "Do you approve ADR-R05-001 as proposed so I can begin implementation?"
+  },
+  "verification": {
+    "focused_python": {"passed": 83, "failed": 0, "skipped": 0},
+    "full_python": {"passed": 3105, "failed": 0, "skipped": 74, "seconds": 129.27},
+    "javascript": {"passed": 377, "failed": 0, "skipped": 0},
+    "ruff": "PASS",
+    "mypy": {"status": "PASS", "source_files": 361},
+    "repository_protocol_mypy": "PASS",
+    "preservation_script_ruff": "PASS",
+    "frozen_source_hash_check": "PASS",
+    "diff_whitespace_check": "PASS",
+    "cea_fixture_cache_restored_and_cmp_checked": true,
+    "remote_ci_run": false,
+    "native_project_ui_qualification": false,
+    "device_power_loss_qualification": false
+  },
+  "preservation": {
+    "original_files": 4942,
+    "unchanged": 4892,
+    "declared_edits": 50,
+    "unexpected": 0,
+    "missing": 0,
+    "prior_49_declared_edits_byte_identical": true,
+    "additional_original_file_edit": ".github/workflows/ci.yml",
+    "historical_p_evidence_resealed": false
+  },
+  "implemented": [
+    "typed project, snapshot, head, principal, policy and repository contracts",
+    "pure active-account/global-role/membership/lifecycle policy",
+    "private SQLite schema, rollback journal, foreign keys and immutable record guards",
+    "project metadata, ownership, membership, archive, tombstone and restore",
+    "immutable exact-byte snapshots and existing PropulsionDesign canonical envelope",
+    "separate storage version and input revision",
+    "expected-version-plus-hash CAS and actor-scoped idempotency",
+    "bounded authorized history and project indexes",
+    "private synchronized immutable source files and conservative quota accounting",
+    "coordinator lease primitive, cross-process conflict and SIGKILL storage recovery tests"
+  ],
+  "not_yet_implemented": [
+    "application composition, opt-in feature flag and authenticated project HTTP routes",
+    "managed legacy-write bypass and flag-off guards",
+    "actual propulsion save/recalculation adapters and late-result retention",
+    "historical activation, clone and branch with domain invalidation",
+    "durable geometry, scientific jobs, simulation, comparison and reports adapters",
+    "cross-domain retained lineage, selection, stale impact and deep-link integration",
+    "versioned migrations, package import/export, coherent backup, restore and rollback",
+    "explicit orphan recovery and full crash/cancellation/publication boundary matrix",
+    "native app project/restart/concurrent-client acceptance journey"
+  ],
+  "acceptance": {
+    "r05_1_foundation_gate": "PASS",
+    "ready_for_r05_2": true,
+    "whole_prj_items_marked_complete": [],
+    "whole_r05_complete": false,
+    "production_or_physical_readiness": false,
+    "human_usability_observations_invented": false
+  },
+  "change_control": {
+    "user_data_migrated": false,
+    "live_application_roots_initialized": false,
+    "native_sessions_restarted": false,
+    "scientific_methods_or_defaults_changed": false,
+    "credentials_changed": false,
+    "committed_or_pushed": false,
+    "released": false,
+    "actual_migration_requires_specific_preview_and_confirmation": true
+  }
+}

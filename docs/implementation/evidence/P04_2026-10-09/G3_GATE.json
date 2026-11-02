@@ -1,0 +1,83 @@
+{
+  "gate_id": "G3",
+  "phase": "P04_APP_SHELL",
+  "owner_role": "Integration lead",
+  "reviewer": "Codex integration lead; executed local software evidence",
+  "decision": "PASS_TESTED_DEFAULT_OFF_INTEGRATION_SLICE",
+  "status": "PASS",
+  "authorization": "User requested continue with P04; no new architecture authority inferred",
+  "base_commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "dirty_checkout": true,
+  "date_local": "2026-10-09",
+  "sealed_at_utc": "2026-10-08T19:58:31.092928+00:00",
+  "environment": {
+    "os": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.4",
+    "node": "v26.7.0",
+    "chrome": "154.0.8037.98",
+    "test_tools": {
+      "@playwright/test": "1.64.0",
+      "axe-core": "4.14.0",
+      "typescript": "6.0.3"
+    }
+  },
+  "tests": {
+    "python_passed": 2265,
+    "python_skipped": 5,
+    "focused_p04_python": 31,
+    "javascript": 84,
+    "p04_browser": 26,
+    "legacy_screenshots": 12,
+    "component_screenshots": 19,
+    "existing_propulsion_http_flag_on": 3,
+    "ruff": "PASS",
+    "mypy_files": 318,
+    "typescript_public_contracts": "PASS",
+    "accessibility_new_scope": {
+      "dark": {
+        "violations": 0,
+        "incomplete_rules_retained": 1,
+        "supplementary_contrast_review": "PASS",
+        "rulesPassed": 22
+      },
+      "high-contrast": {
+        "violations": 0,
+        "incomplete_rules_retained": 1,
+        "supplementary_contrast_review": "PASS",
+        "rulesPassed": 22
+      }
+    },
+    "retained_p03_evidence": "PASS"
+  },
+  "preservation": {
+    "checkpoint_files": 1716,
+    "allowed_existing_changes": [
+      "gui/server.py",
+      "gui/static/app.js",
+      "gui/static/propulsion-suite.js"
+    ],
+    "unexpected": [],
+    "scientific_source_changed": false,
+    "cache_fixture_exactly_restored": true
+  },
+  "rollback": {
+    "server_default": "OFF",
+    "opt_in": "COSMOS_NEW_SHELL=1",
+    "route_override": "shell=legacy",
+    "in_place_original_DOM_and_draft_retained": true
+  },
+  "boundaries": [
+    "UI Project preference is not authoritative Project storage",
+    "History is change-event inspection, not immutable historical snapshot restoration",
+    "Existing mutable-store CAS race remains a later persistence gate",
+    "Knowledge queue only; physics/native jobs and cancellation unavailable",
+    "No native production approval, full legacy redesign, remote CI or hardware validation"
+  ],
+  "architecture_changed": false,
+  "scientific_backend_activated": false,
+  "user_server_restarted": false,
+  "committed": false,
+  "pushed": false,
+  "p05_readiness": "READY_FOR_P05_UI_SCOPE_ON_USER_REQUEST",
+  "p05_started": false
+}

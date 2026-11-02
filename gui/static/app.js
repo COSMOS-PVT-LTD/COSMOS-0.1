@@ -12,6 +12,68 @@ const COSMOS = {
   auditPage: 1,
   auditPageSize: 25,
 
+  openDialog(modal, target, onClose) {
+    if (!modal) return;
+    if (this.activeDialog?.modal === modal) return;
+    this.closeDialog(this.activeDialog?.modal);
+    const previousFocus = document.activeElement;
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    const panel = modal.querySelector('[role="dialog"]');
+    panel?.setAttribute("tabindex", "-1");
+    // Inert siblings at each level; overlays may live inside a shared root.
+    const inertStates = [];
+    for (let branch = modal; branch.parentElement; branch = branch.parentElement) {
+      for (const sibling of branch.parentElement.children) {
+        if (sibling === branch || ["SCRIPT", "STYLE", "LINK"].includes(sibling.tagName)) continue;
+        inertStates.push([sibling, sibling.inert]);
+        sibling.inert = true;
+      }
+      if (branch.parentElement === document.body) break;
+    }
+    const focusable = () => [...modal.querySelectorAll('button, input, select, textarea, a[href], [tabindex]')]
+      .filter((el) => !el.disabled && !el.hidden && el.tabIndex >= 0 && el.getClientRects().length);
+    const keyHandler = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        this.closeDialog(modal);
+      } else if (event.key === "Tab") {
+        const items = focusable();
+        const index = items.indexOf(document.activeElement);
+        if (!items.length || index === -1 || (event.shiftKey ? index === 0 : index === items.length - 1)) {
+          event.preventDefault();
+          (event.shiftKey ? items.at(-1) : items[0])?.focus();
+          if (!items.length) panel?.focus();
+        }
+      }
+    };
+    this.activeDialog = {modal, previousFocus, inertStates, keyHandler, onClose};
+    document.addEventListener("keydown", keyHandler, true);
+    (target || focusable()[0] || panel)?.focus({preventScroll: true});
+  },
+
+  closeDialog(modal) {
+    if (!modal) return;
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    const active = this.activeDialog;
+    if (active?.modal !== modal) return;
+    document.removeEventListener("keydown", active.keyHandler, true);
+    active.inertStates.forEach(([element, wasInert]) => { element.inert = wasInert; });
+    this.activeDialog = null;
+    active.onClose?.();
+    if (active.previousFocus?.isConnected) active.previousFocus.focus({preventScroll: true});
+  },
+
+  readUIPreference(key, fallback) {
+    try { return localStorage.getItem(key) || fallback; }
+    catch {
+      console.warn(JSON.stringify({code: "UI_STORAGE_UNAVAILABLE", scope: "legacy-shell"}));
+      return fallback;
+    }
+  },
+
   NAV_ICONS: {
     command: '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>',
     "design-contract": '<svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>',
@@ -203,8 +265,13 @@ const COSMOS = {
       return `<button type="button" class="sidebar-btn${active}${disabled}${planned}" data-nav="${item.id}" data-tip="${item.tip}" ${action} aria-label="${item.label}">${this.navIcon(item.icon)}<span class="nav-label">${item.label}${item.planned ? " (planned)" : ""}</span></button>`;
     };
 
-    const workbenchOpen = localStorage.getItem("cosmos_nav_workbench_open") !== "0";
-    const pythonOpen = localStorage.getItem("cosmos_nav_python_open") !== "0";
+    let workbenchOpen = true, pythonOpen = true;
+    try {
+      workbenchOpen = localStorage.getItem("cosmos_nav_workbench_open") !== "0";
+      pythonOpen = localStorage.getItem("cosmos_nav_python_open") !== "0";
+    } catch {
+      console.warn(JSON.stringify({code: "UI_STORAGE_UNAVAILABLE", scope: "legacy-navigation"}));
+    }
 
     sidebar.innerHTML = `
       <div class="sidebar-group">
@@ -242,7 +309,11 @@ const COSMOS = {
         trigger.setAttribute("aria-expanded", open ? "true" : "false");
         const chevron = trigger.querySelector(".sidebar-chevron");
         if (chevron) chevron.textContent = open ? "▾" : "▸";
-        if (key) localStorage.setItem(`cosmos_nav_${key}_open`, open ? "1" : "0");
+        if (key) try {
+          localStorage.setItem(`cosmos_nav_${key}_open`, open ? "1" : "0");
+        } catch {
+          console.warn(JSON.stringify({code: "UI_STORAGE_UNAVAILABLE", scope: "legacy-navigation"}));
+        }
       });
     });
     sidebar.querySelectorAll(".sidebar-sub-btn[data-hub-lane]").forEach((button) => {
@@ -350,8 +421,8 @@ const COSMOS = {
     if (badge) badge.textContent = user.display_name;
     if (contextPrimary) contextPrimary.textContent = user.display_name;
     const project = typeof this.getProjectContext === "function" ? this.getProjectContext().name : "COSMOS 0.1";
-    const infrastructure = localStorage.getItem("cosmos_infrastructure") || user.team;
-    const loginProfile = localStorage.getItem("cosmos_login_profile") || user.role;
+    const infrastructure = this.readUIPreference("cosmos_infrastructure", user.team);
+    const loginProfile = this.readUIPreference("cosmos_login_profile", user.role);
     if (contextSecondary) {
       contextSecondary.textContent = `${infrastructure} · ${loginProfile}`;
     }
@@ -398,7 +469,7 @@ const COSMOS = {
     const host = document.getElementById("cosmos-global-zones");
     if (!host) return;
     const project = typeof this.getProjectContext === "function" ? this.getProjectContext() : { name: "Default Project" };
-    const infrastructure = localStorage.getItem("cosmos_infrastructure") || "Engineering Workbench";
+    const infrastructure = this.readUIPreference("cosmos_infrastructure", "Engineering Workbench");
     const workspace = window.location.pathname.includes("/workbench/") ? "Workbench" : "Command";
     host.innerHTML = `
       <span class="zone-brand">COSMOS</span>
@@ -450,14 +521,15 @@ const COSMOS = {
       const modal = document.createElement("div");
       modal.className = "profile-modal";
       modal.id = "profile-modal";
+      modal.setAttribute("aria-hidden", "true");
       modal.innerHTML = `
-        <div class="profile-panel">
+        <div class="profile-panel" role="dialog" aria-modal="true" aria-labelledby="profile-title">
           <div class="profile-panel-header">
-            <h2>Employee Profile</h2>
+            <h2 id="profile-title">Employee Profile</h2>
             <button type="button" id="profile-close" class="profile-close" aria-label="Close">✕</button>
           </div>
           <div class="profile-photo-row">
-            <button type="button" class="profile-photo-preview" id="profile-photo-preview" onclick="document.getElementById('profile-photo-input').click()"></button>
+            <button type="button" class="profile-photo-preview" id="profile-photo-preview" aria-label="Choose profile photo" onclick="document.getElementById('profile-photo-input').click()"></button>
             <div>
               <input type="file" id="profile-photo-input" accept="image/jpeg,image/png,image/webp" hidden />
               <p class="profile-hint">Double-click avatar to open profile.</p>
@@ -500,14 +572,13 @@ const COSMOS = {
     } else {
       preview.style.backgroundImage = "";
     }
-    modal.classList.add("open");
     modal.dataset.focus = focusField;
-    const target = document.getElementById(`profile-${focusField}`) || document.getElementById("profile-photo-preview");
-    target?.scrollIntoView({ block: "center", behavior: "smooth" });
+    const target = document.getElementById(`profile-${focusField.replaceAll("_", "-")}`) || document.getElementById("profile-photo-preview");
+    this.openDialog(modal, target);
   },
 
   closeProfileModal() {
-    document.getElementById("profile-modal")?.classList.remove("open");
+    this.closeDialog(document.getElementById("profile-modal"));
   },
 
   async saveProfile() {
@@ -614,6 +685,8 @@ const COSMOS = {
     } catch (err) {
       console.warn("Engineering UX extras failed.", err);
     }
+    // Shell reads must not hold up existing workbench initialization or drafts.
+    if (window.CosmosShellUI) window.CosmosShellUI.mount(this, session);
     return session;
   },
 
@@ -1168,3 +1241,7 @@ const COSMOS = {
 };
 
 window.COSMOS = COSMOS;
+if (typeof window.CosmosInstallRBAC === "function") {
+  window.CosmosInstallRBAC(COSMOS);
+  delete window.CosmosInstallRBAC;
+}

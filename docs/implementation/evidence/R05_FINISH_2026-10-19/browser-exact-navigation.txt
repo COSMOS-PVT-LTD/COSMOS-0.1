@@ -1,0 +1,182 @@
+Browser tab: 3, Title: "COSMOS — Knowledge and Reports", URL: "http://127.0.0.1:8865/app/workbench/knowledge?project=0e22e007-d868-45e1-830d-9ee86346bfae&commit=4a1e125d-3f78-4bb0-b3a2-efa57ae1f019&domain=simulation-benchmark".
+1 AXWebArea COSMOS — Knowledge and Reports, URL: 127.0.0.1:8865/app/workbench/knowledge?project=0e22e007-d868-45e1-830d-9ee86346bfae&commit=4a1e125d-3f78-4bb0-b3a2-efa57ae1f019&domain=simulation-benchmark
+	2 container
+		3 container cosmos-p04-shell
+			4 container
+				5 container Breadcrumbs
+					6 link Description: Projects & Mission, Value: 127.0.0.1:8865/app/projects
+					7 text  / Maharshi Bharadwaj
+				8 text COSMOS · active r— · inspecting current r— · Design: none · Managed project R05 final managed journey — synthetic software only · 0e22e007-d868-45e1-830d-9ee86346bfae
+				9 text Persisted design
+				10 pop up button (collapsed, settable) Description: Persisted design, Value: Choose an existing design, Secondary Actions: Expand
+					11 menu
+						12 (selected) Choose an existing design
+				13 text Inspected revision
+				14 pop up button (disabled, collapsed, settable) Description: Inspected revision, Value: No current persisted revision, Secondary Actions: Expand
+					15 menu
+						16 (disabled) No current persisted revision
+				17 button (expanded) Navigation, Secondary Actions: Collapse
+				18 button (expanded) Inspector, Secondary Actions: Collapse
+				19 button (expanded) Diagnostics, Secondary Actions: Collapse
+				20 checkbox Focus workspace, Value: 0
+				21 button Open commands
+				22 button (collapsed) Workspace controls, Secondary Actions: Expand
+					23 text Workspace controls
+			24 container Description: Project and workbench navigation, ID: p04-left
+				25 container Modern workbenches
+					26 link Description: Projects & Mission, Value: 127.0.0.1:8865/app/projects
+					27 link Description: Rocket Engine, Value: 127.0.0.1:8865/app/workbench/rocket-engine?project=0e22e007-d868-45e1-830d-9ee86346bfae
+					28 link Description: Native Geometry, Value: 127.0.0.1:8865/app/workbench/native-geometry
+					29 link Description: Simulation, Value: 127.0.0.1:8865/app/workbench/simulation
+					30 link Description: Comparison & V&V, Value: 127.0.0.1:8865/app/workbench/comparison
+					31 link Description: Maharshi Knowledge, Value: 127.0.0.1:8865/app/workbench/knowledge
+					32 link Description: Reports & History, Value: 127.0.0.1:8865/app/workbench/reports
+					33 link Description: Visualization and Graphs, Value: 127.0.0.1:8865/app/workbench/visualization
+					34 button (collapsed) All existing workbenches, Secondary Actions: Expand
+						35 text All existing workbenches
+				36 text Navigation maturity follows the existing registry.
+				37 container Project tree
+					38 heading Project tree, Value: 2, ID: ds-7
+						39 text Project tree
+					40 outline Project objects
+						41 row (selected) Owned domain · comparison-assessment
+							42 text Owned domain · comparison-assessment
+						43 row (selectable) Owned domain · comparison-ledger
+							44 text Owned domain · comparison-ledger
+						45 row (selectable) Owned domain · engineering-report
+							46 text Owned domain · engineering-report
+						47 row (selectable) Owned domain · geometry-fixture
+							48 text Owned domain · geometry-fixture
+						49 row (selectable) Owned domain · project-definition
+							50 text Owned domain · project-definition
+						51 row (selectable) Owned domain · simulation-benchmark
+							52 text Owned domain · simulation-benchmark
+			53 splitter Description: Resize navigation, Value: 160
+			54 container Active workbench
+				55 container managed-cross-workbench
+					56 button (expanded) Authoritative project sources and retained activity, Secondary Actions: Collapse
+						57 text Authoritative project sources and retained activity
+					58 text R05 final managed journey — synthetic software only · 0e22e007-d868-45e1-830d-9ee86346bfae · ACTIVE. This managed source pane is authoritative; separate legacy/preview controls do not write these records.
+					59 heading Owned component domains, Value: 4
+						60 text Owned component domains
+					61 button comparison-assessment
+					62 button comparison-ledger
+					63 button engineering-report
+					64 button geometry-fixture
+					65 button project-definition
+					66 button simulation-benchmark
+					67 heading simulation-benchmark · authoritative objects, Value: 4
+						68 text simulation-benchmark · authoritative objects
+					69 button 2361c232-b5de-5092-89be-1ce294c13f90 · saved v1
+					70 heading Owned durable attempts · not global progress, Value: 4
+						71 text Owned durable attempts · not global progress
+					72 text simulation-benchmark · COMPLETED · 537c63b4-bdd2-4c92-9bf4-7703762f682d · selected / inputs current
+					73 button Inspect retained attempt and exact input
+					74 text geometry-fixture · COMPLETED · 0915719b-17c2-4661-96a8-f9131db2ec02 · selected / inputs current
+					75 button Inspect retained attempt and exact input
+					174 text saved v1 · commit 4a1e125d-3f78-4bb0-b3a2-efa57ae1f019 · storage SHA256 14a38932ea4bff681f3bdc864b8d77e2d667a79f57a074a18e9f8f4ccc8b4310 · selected snapshot · upstream current · not engineering acceptance
+					175 link Description: Exact authenticated source API, Value: 127.0.0.1:8865/api/projects/0e22e007-d868-45e1-830d-9ee86346bfae/records/4a1e125d-3f78-4bb0-b3a2-efa57ae1f019
+					78 container Exact managed evidence source preview
+						176 text {"geometry_commit_id":"f1ebfc32-e685-434a-843e-a5f2256fe8bf","geometry_job_id":"0915719b-17c2-4661-96a8-f9131db2ec02","mesh_json":"{\"cell_volumes_m3\":[1.0226538585904276e-09,7.158577010132992e-09,1.9430423313218115e-08,3.7838192767845835e-08,6.23818853740161e-08,9.306150113172882e-08,1.298770400409844e-07,1.7282850210178222e-07,2.219158873141226e-07,2.7713919567800614e-07,3.384984271934312e-07,4.0599358186039946e-07,4.796246596789109e-07,5.593916606489644e-07,6.452945847705584e-07,7.373334320436993e-07],\"cells\":16,\"center_condition\":\"regular-zero-flux\",\"faces_m\":[0.0,0.000625,0.00125,0.001875,0.0025,0.003125,0.00375,0.004375,0.005,0.005625,0.00625,0.006875,0.0075,0.008125,0.00875,0.009375,0.01],\"frame_id\":\"world\",\"geometry_revision_id\":\"geometry-job-24bf1051d7924282bec6d89653e5521d\",\"geometry_sha256\":\"51b587348f953d38310446a1ac23a54adef3eff6f777e6e86f5a7bdc7312448a\",\"geometry_snapshot_id\":\"9fb6024a3ba4c5c4d98b0e75c1a9cbe99bc4bcaabfd26d173ec4f7df4938ef9b\",\"handoff_sha256\":\"06ba1422b30c3f7a5613d44829b9474e7c2b071a81aabb7c416c5994bed03efa\",\"integrity_sha256\":\"f783cf1a7d3d15db47191fcec3d353d1d28b9cd4a5ce44be1d47ff3cbeb6faf6\",\"kind\":\"1d-spherical-finite-volume\",\"material_region\":\"solid-sphere\",\"mesh_sha256\":\"6a528a628bf59d5b9c30271e0838cf2b13bb9da3ccc22b6d688516bdde7b4a18\",\"named_selection\":{\"content_sha256\":\"ffaa3885c7f2dd947fe0127dcab1b6bce6f4600e8f45174b1d7d33ff041ef57f\",\"contract_type\":\"NamedSelection\",\"entity_refs\":[\"radial-outer-shell\"],\"feature_ref\":\"body\",\"geometry_revision_id\":\"geometry-job-24bf1051d7924282bec6d89653e5521d\",\"mapping_status\":\"exact\",\"remap_confidence\":1.0,\"schema_version\":\"1.0.0\",\"semantic_id\":\"outer-surface\"},\"outer_boundary_face\":16,\"production_handoff\":false,\"source_sha256\":\"ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3\",\"units\":\"m\"}","study_json":"{\"content_sha256\":\"7c79dc1596241be70d86f29de35c3c628803da37e4c5eb046e1d8f1e6122ca55\",\"contract_type\":\"StudySnapshot\",\"handoff\":{\"artifact\":{\"approximation_profile\":\"none\",\"artifact_id\":\"artifact-0\",\"backend_id\":\"occt\",\"backend_version\":\"occt-7.8.1.ocp-7.8.1.1.g5v2\",\"content_sha256\":\"1d12a448ed8f6b49cdb8c548acb9501e83fdee99588a48457f1007098187e0a2\",\"contract_type\":\"GeometryArtifact\",\"export_tolerance_m\":1e-06,\"feature_graph_sha256\":\"52ce251edeed922b2a4a3bc6933a153c7e573d61b69579349c4c3eceeece2b16\",\"frame_id\":\"world\",\"generated_at\":\"2026-10-19T03:56:14.107328+00:00\",\"geometry_revision_id\":\"geometry-job-24bf1051d7924282bec6d89653e5521d\",\"job_id\":\"job-24bf1051d7924282bec6d89653e5521d\",\"output_format\":\"step\",\"representation\":\"analytic_brep\",\"schema_version\":\"1.0.0\",\"sha256\":\"51b587348f953d38310446a1ac23a54adef3eff6f777e6e86f5a7bdc7312448a\",\"size_bytes\":2128,\"snapshot_id\":\"9fb6024a3ba4c5c4d98b0e75c1a9cbe99bc4bcaabfd26d173ec4f7df4938ef9b\",\"source_artifact_sha256\":\"ac024c0bcdb3f311e705f13108783ec71aaaf37aaf657f27e9116a4ae56d02d3\",\"source_tolerance_m\":1e-08,\"storage_uri\":\"job-24bf1051d7924282bec6d89653e5521d/export.step\",\"topology_report_id\":\"report-job-24bf1051d7924282bec6d89653e5521d-0\",\"units\":\"m\",\"voxel_resolution_m\":null},\"content_sha256\":\"06ba1422b30c3f7a5613d44829b9474e7c2b071a81aabb7c416c5994bed03efa\",\"contract_type\":\"FixtureHandoff\",\"frame_id\":\"world\",\"geometry_snapshot_id\":\"9fb6024a3ba4c5c4d98b0e75c1a9cbe99bc4bcaabfd26d173ec4f7df4938ef9b\",\"integrity_sha256\":\"f783cf1a7d3d15db47191fcec3d353d1d28b9cd4a5ce44be1d47ff3cbeb6faf6\",\"radius_m\":0.01,\"schema_version\":\"1.0.0\",\"scope\":\"software-sphere-radial-benchmark-only\",\"selection\":{\"content_sha256\":\"ffaa3885c7f2dd947fe0127dcab1b6bce6f4600e8f45174b1d7d33ff041ef57f\",\"contract_type\":\"NamedSelection\",\"entity_refs\":[\"radial-outer-shell\"],\"feature_ref\":\"body\",\"geometry_revision_id\":\"geometry-job-24bf1051d7924282bec6d89653e5521d\",\"mapping_status\":\"exact\",\"remap_confidence\":1.0,\"schema_version\":\"1.0.0\",\"semantic_id\":\"outer-surface\"}},\"model\":\"steady-spherical-conduction-v1\",\"model_sha256\":\"28d9d63738f8c64a778bbd522cf64508351ea28ada67a1970f89ce16b00aa102\",\"schema_version\":\"1.0.0\",\"settings\":{\"cells\":16,\"conductivity_w_m_k\":10.0,\"content_sha256\":\"229796745d573b2e2b9131adff4eba1b5b13688002f917708a3c4eea07aa787b\",\"contract_type\":\"StudySettings\",\"generation_w_m3\":1000000.0,\"max_iterations\":10000,\"relative_residual\":1e-08,\"schema_version\":\"1.0.0\",\"surface_k\":300.0},\"solver_sha256\":\"17723ed167b1eff992ed4ebe4283aba3406409dc8e5759a614cdfbdc8639082e\"}"}
+					177 heading Exact upstream records, Value: 4
+						178 text Exact upstream records
+					179 button Inspect upstream geometry
+					180 button Inspect retained object versions
+					181 button Activate these retained inputs as a new commit
+					182 button Branch these retained inputs as a new identity
+					80 container Exact retained attempt source
+					81 button Inspect retained transfer originals (schema6)
+					82 link Description: Open this managed project, Value: 127.0.0.1:8865/app/projects?project=0e22e007-d868-45e1-830d-9ee86346bfae
+					83 button Refresh durable attempts
+					84 button Read retained project events
+				85 container kr-workbench
+					86 heading Source-aware knowledge and research reports, Value: 1
+						87 text Source-aware knowledge and research reports
+					88 text Local evidence preview. Recorded knowledge approval is not independent engineering acceptance. Physical acceptance and production handoff remain blocked.
+					89 text Knowledge project GLOBAL · report project p07-software-fixtures · active immutable records 0 · independent acceptance pending
+					90 button Reload evidence context, ID: kr-refresh
+					91 checkbox Focus evidence workspace, Value: 0, ID: kr-focus
+					92 link Description: Legacy Maharshi intake, chat and review, Value: 127.0.0.1:8865/app/workbench/knowledge?knowledge=legacy
+					93 link Description: Comparison and V&V, Value: 127.0.0.1:8865/app/workbench/comparison
+					94 tab group Workbench
+						95 tab (selected, settable, boolean) Knowledge sources and claims, Value: 1
+						96 tab (selectable, settable, boolean) Reports and review packages, Value: 0
+					97 button (collapsed) Explore the recorded Knowledge relationship graph, Secondary Actions: Expand
+						98 text Explore the recorded Knowledge relationship graph
+					99 container Evidence navigation
+						100 container Project tree
+							101 heading Project tree, Value: 2, ID: ds-1
+								102 text Project tree
+							103 outline Project objects
+								104 row (selected) Source documents · 0
+									105 text Source documents · 0
+								106 row (selectable) Recorded equations · 0
+									107 text Recorded equations · 0
+								108 row (selectable) Immutable reports · 0
+									109 text Immutable reports · 0
+						110 heading History, Value: 2
+							111 text History
+						112 container
+							113 text Immutable report history
+							114 pop up button (collapsed, settable) Immutable report history, Value: Inspect immutable report, ID: kr-history, Secondary Actions: Expand
+								115 menu
+									116 (selected) Inspect immutable report
+						117 text Inspection does not change engineering inputs. Server restart clears this bounded preview; download packages for retention.
+					118 container Description: Source-aware knowledge, ID: kr-knowledge
+						119 heading Navigate from claim to source, Value: 2
+							120 text Navigate from claim to source
+						121 text No source is invented. Missing originals, review records or assumptions remain explicit. Search filters existing titles and equations; semantic retrieval remains in legacy Maharshi.
+						122 container
+							123 text Contextual knowledge filter
+							124 search text field (settable) Contextual knowledge filter, ID: kr-query
+						125 button Search recorded knowledge, ID: kr-search
+						126 button (disabled) Undo search draft, ID: kr-undo
+						127 button (disabled) Redo search draft, ID: kr-redo
+						128 text Sources 0 · claims 0 · window 0–20; no generated citations.
+						129 button (disabled) Previous 20, ID: kr-prev
+						130 button (disabled) Next 20, ID: kr-next
+						131 container
+							132 text Existing engineering claim
+							133 pop up button (collapsed, settable) Existing engineering claim, Value: No recorded equations, ID: kr-claim, Secondary Actions: Expand
+								134 menu
+									135 (selected) No recorded equations
+						136 button (disabled) Inspect claim, source and review, ID: kr-inspect-claim
+						137 container
+							138 text Existing source document
+							139 pop up button (collapsed, settable) Existing source document, Value: No source documents, ID: kr-source, Secondary Actions: Expand
+								140 menu
+									141 (selected) No source documents
+						142 button (disabled) Inspect source integrity, ID: kr-inspect-source
+						143 text No evidence selected.
+						144 container
+							145 button (expanded) Equation, citation, assumptions, applicability and recorded review, Secondary Actions: Collapse
+								146 text Equation, citation, assumptions, applicability and recorded review
+							147 text No evidence.
+			148 splitter Description: Resize inspector, Value: 180
+			149 container Description: Context inspector, ID: p04-right
+				150 container No inspected design
+					151 heading No inspected design, Value: 2, ID: ds-5
+						152 text No inspected design
+					153 text Select an existing stored design. Project names in browser preferences are not durable Project records.
+			154 splitter Description: Resize diagnostics, Value: 176
+			155 container Description: Diagnostics and retained task activity, ID: p04-bottom
+				156 container
+					157 text No shell read error
+					158 button Refresh domain tasks and history
+				183 heading Domain task queue and retained history, Value: 2
+					184 text Domain task queue and retained history
+				185 text Knowledge jobs are persisted by their service; native/simulation histories are bounded actor sessions, not durable Project authority.
+				186 container No reported jobs in available domains
+					187 heading No reported jobs in available domains, Value: 2, ID: ds-21
+						188 text No reported jobs in available domains
+					189 text Refresh to read actual services. No synthetic job or solver success is invented.
+		166 container cosmos-engineering-root
+			167 container cosmos-recent-panel
+				168 heading RECENT WORKBENCHES, Value: 4
+					169 text RECENT WORKBENCHES
+				170 text None yet
+				171 heading RECENT FILES, Value: 4
+					172 text RECENT FILES
+				173 text None yet
+
+The focused UI element is 1 AXWebArea COSMOS — Knowledge and Reports, URL: 127.0.0.1:8865/app/workbench/knowledge?project=0e22e007-d868-45e1-830d-9ee86346bfae&commit=4a1e125d-3f78-4bb0-b3a2-efa57ae1f019&domain=simulation-benchmark

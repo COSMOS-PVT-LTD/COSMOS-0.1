@@ -1,0 +1,12 @@
+{
+  "scope": "legacy-only settled rasterization; not scientific tolerance",
+  "width": 1440,
+  "height": 1000,
+  "expectedSha256": "73248888d6b40b3a0ca1412edfa396f9565f9d673a13812a96f14928628e6754",
+  "actualSha256": "af72bd12b37fa72a3535c85486e5bb1037bf9c65b04eadf78974860801ce37a0",
+  "differingPixels": 38,
+  "maxChannelDelta": 12,
+  "maxYiqDelta": 63.46233004562338,
+  "minimumPixelmatchThreshold": 0.0424516094694438,
+  "roundedThreshold": 0.0425
+}

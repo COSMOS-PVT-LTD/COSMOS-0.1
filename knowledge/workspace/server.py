@@ -153,12 +153,14 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
                 payload = self._read_json()
                 destination_raw = payload.get("destination")
                 destination = Path(str(destination_raw)) if destination_raw else None
+                if destination is not None:
+                    destination = self._owned_backup_path(destination)
                 archive = self.workspace.backup(destination)
                 self._json(200, {"archive": str(archive), "filename": Path(archive).name})
                 return
             if parsed.path == "/api/restore":
                 payload = self._read_json()
-                self.workspace.restore(str(payload["archive"]))
+                self.workspace.restore(self._owned_backup_path(Path(str(payload["archive"]))))
                 self._json(200, {"restored": True})
                 return
             if parsed.path == "/api/reprocess":
@@ -197,8 +199,28 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
         self._json(404, {"error": "not_found"})
 
     def _apply_role(self) -> None:
+        if getattr(self, "trusted_principal", False):
+            return
         raw = self.headers.get("X-COSMOS-ROLE", self.workspace.role.value)
         self.workspace.role = WorkspaceRole(raw)
+
+    def _owned_backup_path(self, path: Path) -> Path:
+        # Trusted Python callers can choose explicit export paths; HTTP cannot.
+        if self.workspace.root is None:
+            raise ValueError("A durable workspace is required")
+        allowed = self.workspace.root.resolve() / "backups"
+        candidate = allowed / path if not path.is_absolute() else path
+        for component in (candidate, *candidate.parents):
+            # Only OS-owned macOS aliases are allowed, not user-created links.
+            if component.is_symlink() and not (
+                component in {Path("/tmp"), Path("/var")} and component.lstat().st_uid == 0
+                and component.resolve() == Path("/private") / component.name
+            ):
+                raise ValueError("Archive paths cannot contain symlinks")
+        candidate = candidate.resolve()
+        if not candidate.is_relative_to(allowed) or candidate == allowed or candidate.suffix.lower() != ".zip":
+            raise ValueError("Archive paths must be ZIP files inside this workspace's backups directory")
+        return candidate
 
     def _ingest(self) -> None:
         filename, content, fields = _read_multipart(self)
@@ -310,12 +332,26 @@ class WorkspaceRequestHandler(BaseHTTPRequestHandler):
         )
 
     def _read_json(self) -> dict[str, object]:
-        length = int(self.headers.get("Content-Length", "0"))
+        from infrastructure.release.security import MAX_BODY, strict_json
+        lengths = self.headers.get_all("Content-Length", [])
+        if len(lengths) > 1 or self.headers.get_all("Transfer-Encoding", []):
+            raise ValueError("Ambiguous JSON framing")
+        value = lengths[0] if lengths else "0"
+        if len(value) > 8 or not value.isascii() or not value.isdecimal():
+            raise ValueError("Invalid JSON length")
+        length = int(value)
+        if length > MAX_BODY:
+            raise ValueError("JSON exceeds the request size limit")
         raw = self.rfile.read(length) if length else b"{}"
-        payload = json.loads(raw.decode("utf-8") or "{}")
-        if not isinstance(payload, dict):
-            raise TypeError("JSON body must be an object.")
-        return payload
+        if length and len(raw) != length:
+            raise ValueError("Incomplete JSON body")
+        return strict_json(raw)
+
+    def end_headers(self) -> None:
+        if getattr(self, "release_preview", False):
+            from infrastructure.release.security import add_preview_headers
+            add_preview_headers(self)
+        super().end_headers()
 
     def _json(self, status: int, payload: dict[str, object]) -> None:
         body = json.dumps(payload).encode("utf-8")
@@ -378,51 +414,14 @@ def _intake_payload(result: object) -> dict[str, object]:
 
 
 def _read_multipart(handler: BaseHTTPRequestHandler) -> tuple[str, bytes, dict[str, str]]:
-    content_type = handler.headers.get("Content-Type", "")
-    length = int(handler.headers.get("Content-Length", "0"))
-    body = handler.rfile.read(length)
-    if "multipart/form-data" not in content_type:
-        raise ValueError("ingest requires multipart/form-data")
-    boundary = ""
-    for part in content_type.split(";"):
-        part = part.strip()
-        if part.lower().startswith("boundary="):
-            boundary = part.split("=", 1)[1].strip().strip('"')
-    if not boundary:
-        raise ValueError("multipart boundary missing")
-    marker = b"--" + boundary.encode("utf-8")
-    fields: dict[str, str] = {}
-    filename = "upload.bin"
-    content = b""
-    for chunk in body.split(marker):
-        chunk = chunk.lstrip(b"\r\n")
-        if not chunk or chunk in {b"--", b"--\r\n"}:
-            continue
-        if chunk.startswith(b"--"):
-            continue
-        header_blob, _, data = chunk.partition(b"\r\n\r\n")
-        data = data.rstrip(b"\r\n")
-        if data.endswith(b"--"):
-            data = data[:-2]
-        headers = header_blob.decode("utf-8", errors="replace")
-        name = ""
-        part_filename = ""
-        for line in headers.split("\r\n"):
-            if line.lower().startswith("content-disposition:"):
-                for token in line.split(";"):
-                    token = token.strip()
-                    if token.startswith("name="):
-                        name = token.split("=", 1)[1].strip().strip('"')
-                    if token.startswith("filename="):
-                        part_filename = token.split("=", 1)[1].strip().strip('"')
-        if part_filename:
-            filename = part_filename
-            content = data
-        elif name:
-            fields[name] = data.decode("utf-8")
-    if not content:
-        raise ValueError("file field missing")
-    return filename, content, fields
+    from infrastructure.release.security import MAX_BODY
+    from infrastructure.transport.multipart import (
+        PREVIEW_FILE_LIMIT,
+        read_multipart_upload,
+    )
+    if getattr(handler, "release_preview", False):
+        return read_multipart_upload(handler, max_body=MAX_BODY, max_file=PREVIEW_FILE_LIMIT)
+    return read_multipart_upload(handler)
 
 
 def diagnose_startup(root: Path | str) -> dict[str, object]:

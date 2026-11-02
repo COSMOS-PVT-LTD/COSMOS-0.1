@@ -1,0 +1,70 @@
+{
+  "backend": "occt",
+  "boundary": "cancelled-after-qa",
+  "state": "CANCELLED",
+  "selected_attempt": false,
+  "input_current": true,
+  "job_id": "197d04ba-9a26-412c-a523-c00a4cf83457",
+  "record_sha256": "5ea03492c051348e5b6a9ce0119ff1135d29ba916a13a86fa246b496e46ce17e",
+  "stages": [
+    {
+      "sequence": 0,
+      "native_job_id": "job-ffaaf4a672904f1e9a9d6c2f5c98f9ae",
+      "state": "draft",
+      "stage": "draft",
+      "content_hash": "cac80112a4d8744d8ea94d4baa207f3c44c715946d0bcf11c230ca9cf79533ca",
+      "byte_length": 449,
+      "created_at": "2026-10-18T04:53:11.913708+00:00"
+    },
+    {
+      "sequence": 1,
+      "native_job_id": "job-ffaaf4a672904f1e9a9d6c2f5c98f9ae",
+      "state": "validating",
+      "stage": "validating",
+      "content_hash": "54ea58b4797f0f92a09904802bbf26817feea32a91cce975ee0ae4bdcfd2da37",
+      "byte_length": 459,
+      "created_at": "2026-10-18T04:53:11.920025+00:00"
+    },
+    {
+      "sequence": 2,
+      "native_job_id": "job-ffaaf4a672904f1e9a9d6c2f5c98f9ae",
+      "state": "queued",
+      "stage": "queued",
+      "content_hash": "98e88b8d6b6a13b3ee8b39ec7ce0207895ba21f17a672791365383cbdf188a0a",
+      "byte_length": 451,
+      "created_at": "2026-10-18T04:53:11.942747+00:00"
+    },
+    {
+      "sequence": 3,
+      "native_job_id": "job-ffaaf4a672904f1e9a9d6c2f5c98f9ae",
+      "state": "running",
+      "stage": "kernel",
+      "content_hash": "834d8edc7a14f7554746f476a5162f368e85632a525b0b9b6278c8a4eabe2d9f",
+      "byte_length": 452,
+      "created_at": "2026-10-18T04:53:11.954058+00:00"
+    },
+    {
+      "sequence": 4,
+      "native_job_id": "job-ffaaf4a672904f1e9a9d6c2f5c98f9ae",
+      "state": "qa",
+      "stage": "independent_qa",
+      "content_hash": "53daa37e3a2902b6a8ec0aa5758172d6b4a867a3bd5835efa28fb51d9b298940",
+      "byte_length": 455,
+      "created_at": "2026-10-18T04:53:13.999317+00:00"
+    },
+    {
+      "sequence": 5,
+      "native_job_id": "job-ffaaf4a672904f1e9a9d6c2f5c98f9ae",
+      "state": "accepted",
+      "stage": "software_fixture_acceptance",
+      "content_hash": "b2e35768a30d4f35ebe6ce3449f2aea5773ef3cf395cf16548d05134531aaa16",
+      "byte_length": 517,
+      "created_at": "2026-10-18T04:53:19.797443+00:00"
+    }
+  ],
+  "blobs": [],
+  "exact_restart_bytes_verified": true,
+  "software_only": true,
+  "engineering_publication": false,
+  "physical_validation": false
+}

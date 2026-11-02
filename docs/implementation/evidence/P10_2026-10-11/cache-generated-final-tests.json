@@ -1,0 +1,9 @@
+{
+    "created_at": "2026-10-10T19:12:14.113883+00:00",
+    "expires_at": null,
+    "key": "test_key",
+    "metadata": {"fuel": "CH4"},
+    "payload": {"value": 42},
+    "schema_version": "1.0.0",
+    "source": "USER"
+}

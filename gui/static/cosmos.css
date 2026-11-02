@@ -961,7 +961,7 @@ body.cosmos-scrollable { overflow: auto; }
 }
 .cosmos-properties-body {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px 12px;
   margin: 0;
   overflow: auto;
@@ -974,12 +974,15 @@ body.cosmos-scrollable { overflow: auto; }
   letter-spacing: 0.05em;
 }
 .cosmos-properties-body dd { margin: 0; word-break: break-word; }
+.cosmos-properties-body .cosmos-prop-section dt { color: #9fb3c8; }
 
 .cosmos-notifications-list {
   overflow: auto;
   flex: 1;
   display: grid;
   gap: 8px;
+  align-content: start;
+  grid-auto-rows: max-content;
 }
 .cosmos-notification-item {
   border: 1px solid rgba(255,255,255,0.08);

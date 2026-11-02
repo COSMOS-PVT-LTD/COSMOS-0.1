@@ -1,0 +1,121 @@
+{
+  "baseline_sha256": "a9d96ca60108dd0e3def0f9e65e3f3678f9249e0b55553f7c1c8c7f4e423570f",
+  "original_files": 4942,
+  "unchanged": 4920,
+  "declared_phase_changes": [
+    {
+      "path": "api/authorization.py",
+      "before_sha256": "aaf321b83fad7a32155026ab1c7b53a5777ecfcfadbd2c893b65c22c3625cf8d",
+      "after_sha256": "5fc2b11a63d525650b7c825f6d7829a7bfd2f7bce7c5b0ca000d52b8348bd99c"
+    },
+    {
+      "path": "api/ngg_workbench.py",
+      "before_sha256": "349962787aac0e5e433516c79f65f8414128f55ada4ae6647752f3c669573ce4",
+      "after_sha256": "bdf6afb31b5fa2715c70e59ec6ae331e4c0f6efc13733d69036c1e8998adbcf9"
+    },
+    {
+      "path": "gui/knowledge_proxy.py",
+      "before_sha256": "fd63c16fcced91a752178ca9c8d7a6f28cf2c76be66aacd1a9023d0b7b975552",
+      "after_sha256": "d4f126f227dfdaf38e5085539a5fa97424dfc5347923c05ff012366e64f8991e"
+    },
+    {
+      "path": "gui/server.py",
+      "before_sha256": "ccda4f0e776f6b7a97e202b307a958accb6b9ac48eb02b1a6744784224347e68",
+      "after_sha256": "6ca0ca6ccc826cc60d736be337d1c6e541044997b19f726b2dc86f0098d00379"
+    },
+    {
+      "path": "gui/static/maharshi.css",
+      "before_sha256": "b04a6bfd349d90521384feac536864bb17841fbd1783e9e0fa345b247654029b",
+      "after_sha256": "c905e95a956ad90f8b7cea47a7576969688abcec2ab23a95f7798f8b6122acbb"
+    },
+    {
+      "path": "gui/static/maharshi.js",
+      "before_sha256": "4e348861726a0bdd7e3483220235bca70c407ad067d5771238475dc0ea9aada1",
+      "after_sha256": "f0c0cecc6da3cc2b5f5d5118becc5b7bf54e51d0d45b5b1ce658f4b4a1c458c7"
+    },
+    {
+      "path": "gui/static/workbench/knowledge.html",
+      "before_sha256": "2b5a31b485dacc1ab01311cb12ce2cc905b9ca3de859a7978b555bf507011c31",
+      "after_sha256": "7ddeb9095e039c7396926db5f6d7d4b545152a962662500f663f086d3d467cb7"
+    },
+    {
+      "path": "gui/workbenches/registry.py",
+      "before_sha256": "1d4270a049bc53ec4ed0874c2968618e5cc376f9f79f4579feb51305d34aff9e",
+      "after_sha256": "849347f0803c335f16cb139f1477ab957f44f7f4ca03239c19037fa4e2d86672"
+    },
+    {
+      "path": "infrastructure/release/security.py",
+      "before_sha256": "be9376f6bd22de8db31548e8018cf095c0cc889b964cb4c9f65935f6fb77d76c",
+      "after_sha256": "cb9ef86b27b01d1bc3b66f1fec8502bba6306e087409680261d347edb0011d08"
+    },
+    {
+      "path": "knowledge/foundation/document_pipeline.py",
+      "before_sha256": "737a424a07a7455ef824cb3f01f162d0dc19c630ecafa1e28d5b2750224b38e3",
+      "after_sha256": "dd3e9f0057354529c8cb1417795eadcb9336802d578d07598f54627eed24190e"
+    },
+    {
+      "path": "knowledge/ingestion_adapters/html.py",
+      "before_sha256": "b7b7513c92743a85902008a0a8d51536b2ecab0ef3f2bdbbe39687792a8ecd83",
+      "after_sha256": "03f46fd0a3025d73a56c4668d2437b0f02f5fe8ca19d0350f1a442e9260fd298"
+    },
+    {
+      "path": "knowledge/ingestion_adapters/normalize.py",
+      "before_sha256": "bcd416115593e066fd22bf84f5a7336b014bb77307cf3aa7a11cc7c0217c4070",
+      "after_sha256": "be6c462d0ea8cd6955b8645e8ce71c387e3c17f51a712088dd4984b558591dd1"
+    },
+    {
+      "path": "knowledge/workspace/backup.py",
+      "before_sha256": "d24569e675017738b63c218b56ec9929560e51fea7a43b8ffa87e43cb837b49d",
+      "after_sha256": "1d1a0a9167b7a223244612e36494cbfc8dcf6101998fae9e513fe86e2743afb2"
+    },
+    {
+      "path": "knowledge/workspace/server.py",
+      "before_sha256": "137180217195a6c9dba8286f21e781b0b126c54fc4d886168010e52f2ee6d6e9",
+      "after_sha256": "55c3fa1476d05e3d4413a7fd34e611fd9e52c4b1b2a4c806013540a4b77e3211"
+    },
+    {
+      "path": "knowledge/workspace/session.py",
+      "before_sha256": "d6d651b80d049021aed3b242e1330b6d6d87a66e0a72b40d334809ef7af01716",
+      "after_sha256": "2168192f33d87107969f37f638db69e7261aa773563292c51090ff9c11d3874b"
+    },
+    {
+      "path": "physics/compressible_flow/moc_nozzle.py",
+      "before_sha256": "5066f66276d8b22025b3a8f349a0279737b3b97ed38b541df8c48fe27e8be25a",
+      "after_sha256": "240d80d134cf47737ff5ecc3487def14f4c0d1a41502980acee6e6d56b5863bf"
+    },
+    {
+      "path": "systems/contracts/results.py",
+      "before_sha256": "779e1d6294bbc6b7a1fe6b9346f1f6b4ea498acceba2413643ce248b7a82e6b0",
+      "after_sha256": "0c175a002b75fa5e099090f81783ff731d7b49b4923b739f32cb8bbb7f0eadbb"
+    },
+    {
+      "path": "systems/projects/models.py",
+      "before_sha256": "f49e7ffdf02a9fcca6b4cdf8a38c1b35a1e8f24bf4e89adc08a29418be986f0c",
+      "after_sha256": "7ce5dba5546f2c0e86a03ea317adb482abec19f6737d976c63be132d3dd65a96"
+    },
+    {
+      "path": "systems/stages/operating_point.py",
+      "before_sha256": "3f0420ef581122e64c093e39d172c11971e0b29f1733899ce105af8e10396990",
+      "after_sha256": "da9ea8a290f248a30e748ce05e66e809d71911e676d227e10905339b9c96f142"
+    },
+    {
+      "path": "systems/stages/thermochemistry.py",
+      "before_sha256": "da1b697468ab9b9a956cea4bbe2c60172a6c35cc0a0d8b6762c09fb06d629d68",
+      "after_sha256": "d04f9605be07698bd4b6d04672e334eb3dab2ba6a496364f0ed318897f3eb5d1"
+    },
+    {
+      "path": "tests/unit_tests/gui/test_ngg.py",
+      "before_sha256": "804bfbca5c9a7123584f1b7e656a3624b91066b887ea1b152a33ac976a937060",
+      "after_sha256": "85fe589618fde685213018b8048d31c2611f1af523574b5bcd4b60506f022a7e"
+    },
+    {
+      "path": "tests/unit_tests/physics/test_compressible_flow.py",
+      "before_sha256": "940b85e2ea5ebca1fce42bcd2fe6eb946d2cae20b1b71a89a61bf750e02503e6",
+      "after_sha256": "5eac9194b233dc54e39805930207d23e2b62789f8d5ad13691349ba6ea6f5feb"
+    }
+  ],
+  "unexpected_changes": [],
+  "missing": [],
+  "historical_evidence_not_resealed": true,
+  "pass": true
+}

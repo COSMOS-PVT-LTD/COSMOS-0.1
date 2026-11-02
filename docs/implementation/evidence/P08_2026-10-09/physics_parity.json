@@ -1,0 +1,8 @@
+{
+  "pass": true,
+  "cases": 5,
+  "comparison": "exact",
+  "tolerance": 0,
+  "physical_validation": false,
+  "baseline_sha256": "daa1fc9b616c49c6d75f53feab3cf604896b0fda76268090fd251be055fce93a"
+}

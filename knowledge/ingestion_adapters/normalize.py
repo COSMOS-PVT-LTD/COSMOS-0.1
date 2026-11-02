@@ -19,7 +19,13 @@ __all__ = (
     "build_binary_envelope",
     "build_normalized_result_fields",
     "build_structured_text_envelope",
+    "normalize_markdown_text",
 )
+
+
+def normalize_markdown_text(content: str) -> str:
+    """The existing adapter's normalization, shared with its parser consumer."""
+    return "\n".join(line.rstrip() for line in content.replace("\r\n", "\n").split("\n"))
 
 
 def build_structured_text_envelope(payload: dict[str, object]) -> str:

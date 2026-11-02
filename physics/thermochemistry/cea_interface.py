@@ -16,12 +16,16 @@ Description:
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+import math
+from dataclasses import dataclass, field
 from typing import Protocol
 
+from core.dimension import PRESSURE, TEMPERATURE, VELOCITY
 from core.quantity import Quantity
 from physics.exceptions import InsufficientDataError, ThermochemistryError
 from physics.model import ModelIdentity
+from physics.quantities import as_si
+from physics.si import MOLAR_MASS
 from physics.validity import ValidityStatus
 
 __all__ = (
@@ -64,6 +68,7 @@ class CeaRequest:
     chamber_pressure: Quantity
     equilibrium: bool = True
     notes: str = ""
+    expansion_ratio: float | None = None
 
 
 @dataclass(frozen=True, slots=True)
@@ -83,6 +88,10 @@ class ThermochemicalResult:
     validity: ValidityStatus
     engine_name: str
     identity: ModelIdentity = CEA_INTERFACE
+    engine_version: str = "unknown"
+    provenance: dict[str, object] = field(default_factory=dict)
+    # Normalized SI DTOs only; no native solver objects cross this boundary.
+    rocket_stations: dict[str, dict[str, float]] = field(default_factory=dict)
 
 
 class ThermochemistryEngine(Protocol):
@@ -112,7 +121,31 @@ def run_thermochemistry(
             "adapter (for example plugins/nasa_cea) to evaluate "
             f"{request.fuel_id}/{request.oxidizer_id}."
         )
+    pc = as_si(request.chamber_pressure, PRESSURE, "chamber_pressure")
+    if not math.isfinite(pc) or pc <= 0 or not math.isfinite(request.mixture_ratio) or request.mixture_ratio <= 0:
+        raise ThermochemistryError("CEA requires finite positive chamber pressure and O/F.")
+    if request.expansion_ratio is not None and (not math.isfinite(request.expansion_ratio) or request.expansion_ratio <= 1):
+        raise ThermochemistryError("CEA expansion ratio must be finite and greater than one.")
     result = engine.evaluate(request)
-    if result.gamma <= 1.0 or result.gamma > 3.0:
+    if not math.isfinite(result.gamma) or not 1.0 < result.gamma <= 3.0:
         raise ThermochemistryError("External engine returned invalid gamma.")
+    for value, dimension, name in (
+        (result.chamber_temperature, TEMPERATURE, "chamber_temperature"),
+        (result.molar_mass, MOLAR_MASS, "molar_mass"),
+        (result.characteristic_velocity, VELOCITY, "cstar"),
+    ):
+        if value is None:
+            continue
+        magnitude = as_si(value, dimension, name)
+        if not math.isfinite(magnitude) or magnitude <= 0:
+            raise ThermochemistryError(f"External engine returned invalid {name}.")
+    if result.validity is not ValidityStatus.VALID or not result.engine_name.strip():
+        raise ThermochemistryError("External engine did not return a valid, attributed solution.")
+    fractions = result.mole_fractions
+    if (not fractions or any(not name.strip() or not math.isfinite(value) or not 0 <= value <= 1
+                             for name, value in fractions.items())
+            or not math.isclose(sum(fractions.values()), 1, abs_tol=1e-6)):
+        raise ThermochemistryError("External engine returned invalid mole fractions.")
+    if any(not math.isfinite(value) for station in result.rocket_stations.values() for value in station.values()):
+        raise ThermochemistryError("External engine returned non-finite rocket stations.")
     return result

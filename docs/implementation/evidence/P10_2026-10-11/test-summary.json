@@ -1,0 +1,26 @@
+{
+  "python": {
+    "passed": 2685,
+    "skipped": 76
+  },
+  "p10_focused_included_in_python": {
+    "passed": 48,
+    "skipped": 0
+  },
+  "actual_native": {
+    "passed": 4,
+    "skipped": 0
+  },
+  "javascript_passed": 124,
+  "browser_passed": 13,
+  "axe_violations": {
+    "dark": 0,
+    "high-contrast": 0
+  },
+  "physics_parity_cases": 5,
+  "refinement_cases": 4,
+  "ruff": "PASS",
+  "mypy_files": 344,
+  "strict_display_contracts": "PASS",
+  "remote_ci_executed": false
+}

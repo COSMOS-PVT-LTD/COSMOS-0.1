@@ -1,0 +1,47 @@
+{
+  "sbom_schema_valid": true,
+  "components": 182,
+  "python_distributions": 71,
+  "native_files_verified": 99,
+  "predecessor_notices_retained": 27,
+  "notice_sha256": {
+    "P02_2026-10-08/licenses/oneTBB/LICENSE.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "P02_2026-10-08/licenses/cmake/LICENSE_BSD_3": "a39f63ec8a8e9d63ee8fd85eac9eda615995216eff43c500f68c08d4c922bf3f",
+    "P02_2026-10-08/licenses/cmake/LICENSE_Apache_20": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68",
+    "P02_2026-10-08/licenses/PicoGK/LICENSE": "50e6751797c50dedd75ef1b8a0d9e42f5f8472e9fbce91f34718e9f97b0c780a",
+    "P02_2026-10-08/licenses/PicoGKRuntime/LICENSE": "50e6751797c50dedd75ef1b8a0d9e42f5f8472e9fbce91f34718e9f97b0c780a",
+    "P02_2026-10-08/licenses/SkiaSharp.NativeAssets.Win32/LICENSE.txt": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938",
+    "P02_2026-10-08/licenses/ninja/LICENSE_Apache_20": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68",
+    "P02_2026-10-08/licenses/SkiaSharp/LICENSE.txt": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938",
+    "P02_2026-10-08/licenses/SkiaSharp.NativeAssets.macOS/LICENSE.txt": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938",
+    "P02_2026-10-08/licenses/Dear-ImGui/imstb_textedit.h": "a985f5fa0ed97353d493b497961e9eef52082edcd045cf6954b69990ec9d0741",
+    "P02_2026-10-08/licenses/Dear-ImGui/imstb_truetype.h": "88f0a25e27f5eefd6ec50c42fc5fe3026aa8170603efa08aa18d622db8660923",
+    "P02_2026-10-08/licenses/Dear-ImGui/imstb_rectpack.h": "2efa3d5f7d003c19743b15155dad9f46d9f9fc783a18893d703b431d3c990972",
+    "P02_2026-10-08/licenses/Dear-ImGui/LICENSE.txt": "173506a2d6f7fb67990d257fb2507f188690eca39060c39469ae7bef43aae2a3",
+    "P02_2026-10-08/licenses/Dear-ImGui/backends/imgui_impl_opengl3_loader.h": "d3aa3e1f3d23c8c88817832e17d8dd0f2d0b599ae28430067c3fad563b8b7cd5",
+    "P02_2026-10-08/licenses/OpenVDB/LICENSE": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+    "P02_2026-10-08/licenses/OpenVDB/RE-LICENSE_NOTE.txt": "ac78fb9ed20b3276fb7892e81adcc9a1d483feb46a554a4529a40c92779f0744",
+    "P02_2026-10-08/licenses/OpenVDB/openvdb/openvdb/LICENSE": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+    "P02_2026-10-08/licenses/GLFW/LICENSE.md": "149704059b5d0bf551637e50042dd4de9c2cae921021f6636298911e3a5f9462",
+    "P02_2026-10-08/licenses/dotnet-sdk/ThirdPartyNotices.txt": "e7035d738ba828bc7aa7569913bfb89bab6e852fd6e0ce2f5fbc210c9acfefb3",
+    "P02_2026-10-08/licenses/dotnet-sdk/LICENSE.txt": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+    "P02_2026-10-08/licenses/LEAP71_ShapeKernel/LICENSE": "50e6751797c50dedd75ef1b8a0d9e42f5f8472e9fbce91f34718e9f97b0c780a",
+    "P07_2026-10-09/licenses/OCP-7.8.1.1.txt": "a13caea71627202ad33cc4cafafdd18e667e16716488f8d9c568127121fb89fd",
+    "P07_2026-10-09/licenses/OCCT-LGPL-2.1.txt": "e237fa56668030e928551ddd60f05df5fe957f75eab874bbd017e085ed722e7c",
+    "P07_2026-10-09/licenses/PicoGK-Apache-2.0.txt": "50e6751797c50dedd75ef1b8a0d9e42f5f8472e9fbce91f34718e9f97b0c780a",
+    "P07_2026-10-09/licenses/VTK-9.3.1.txt": "11232448be82e0ea2c2c66219c2e36389f42249894070ee10c549ff182fc08b6",
+    "P07_2026-10-09/licenses/OCCT-exception.txt": "04580a884ea6cea294402649ff7b5cbb167d47462d1340a4ed33e550db10a81b",
+    "P07_2026-10-09/licenses/Gmsh-4.15.0.txt": "32085d8c954e2e22dc667c089f360049e8f1af955f946fb0a18f29d70390276a"
+  },
+  "lock_sha256": {
+    "P02_2026-10-08/worker/packages.lock.json": "b216622feb4fd448fba005f7960a160577ae645ec4a6226f13c84083af7b532b",
+    "P03_2026-10-08/tooling/package-lock.json": "8412d288d509e17152652bf1117eeaa6b106af8dd8efea6f3c743f15ba095b6c"
+  },
+  "schema_sha256": {
+    "bom-1.5.schema.json": "067f7824b08653839ea050ae9e09ca48375eadc2652b0e2a299476e7db90335b",
+    "spdx.schema.json": "4f6e2b05c05d26a4f2dc5879fbc2fca94b0a28db46289d0c51345621b71cfbfc",
+    "jsf-0.82.schema.json": "8bae002c25e723db7ee1f26afde680ae1a2b1a8f6b4b4b0fd65dc3becb090aae"
+  },
+  "sbom_sha256": "c78c9ed32ddd18c6cd1d67e29483c1b2e896ba806d4f999766ea18dcb2a1e01e",
+  "distribution_approved": false
+}

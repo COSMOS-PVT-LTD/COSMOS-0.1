@@ -1,0 +1,93 @@
+{
+  "gate_id": "G8_VV",
+  "phase": "P10_COMPARISON_VV",
+  "decision": "SOFTWARE_PASS",
+  "software_pass": true,
+  "date": "2026-10-11",
+  "commit_sha": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "working_tree_evidence": "Dirty-tree baseline, two-file before overlay and artifact_hashes.json; not a published Git revision",
+  "environment": "Local macOS arm64, CPython 3.11.4, actual Chrome, qualified OCCT/PicoGK/Gmsh",
+  "scope": "Small fixed-fixture geometry and steady spherical thermal software comparison preview",
+  "requirement_ids": [
+    "GOV-001",
+    "GOV-003",
+    "GOV-004",
+    "GOV-005",
+    "GOV-007",
+    "GOV-008",
+    "GOV-009",
+    "GOV-010",
+    "G8"
+  ],
+  "commands": [
+    ".venv-remediation/bin/python -m pytest -q",
+    "COSMOS_P10_NATIVE=1 .venv-remediation/bin/python -m pytest tests/integration_tests/validation/test_native_comparison.py -q",
+    "node --test tests/js/*.test.cjs",
+    "NODE_PATH=/private/tmp/cosmos-p03.pfPm6s/node_modules node /private/tmp/cosmos-p03.pfPm6s/node_modules/@playwright/test/cli.js test --config=tests/ui/comparison/playwright.config.cjs",
+    ".venv-remediation/bin/python -m ruff check core knowledge physics numerics systems simulation validation api gui infrastructure plugins tests tools",
+    ".venv-remediation/bin/python -m mypy core physics numerics systems api simulation validation",
+    "node /private/tmp/cosmos-p03.pfPm6s/node_modules/typescript/bin/tsc --noEmit --strict --target ES2020 --module Node16 --moduleResolution Node16 tests/ui/comparison/type_contracts.ts",
+    "PYTHONPATH=. .venv-remediation/bin/python docs/implementation/evidence/P10_2026-10-11/collect_evidence.py; then --retain for final native/receipt reproduction"
+  ],
+  "tests": {
+    "python": {
+      "passed": 2685,
+      "skipped": 76
+    },
+    "p10_focused_included_in_python": {
+      "passed": 48,
+      "skipped": 0
+    },
+    "actual_native": {
+      "passed": 4,
+      "skipped": 0
+    },
+    "javascript_passed": 124,
+    "browser_passed": 13,
+    "axe_violations": {
+      "dark": 0,
+      "high-contrast": 0
+    },
+    "physics_parity_cases": 5,
+    "refinement_cases": 4,
+    "ruff": "PASS",
+    "mypy_files": 344,
+    "strict_display_contracts": "PASS",
+    "remote_ci_executed": false
+  },
+  "test_artifacts": [
+    "python-canonical.xml",
+    "native-canonical.xml",
+    "javascript-canonical.log",
+    "browser-tests.json",
+    "refinement.json",
+    "physics_parity.json",
+    "native-artifact-integrity-final5.json",
+    "receipt-integrity.json",
+    "source_integrity.json",
+    "predecessor_integrity.json",
+    "signoff-report.json"
+  ],
+  "reviewer": "Codex automated software assessment; not qualified independent engineering acceptance",
+  "formal_human_acceptance": false,
+  "experimental_validation": false,
+  "production_handoff": false,
+  "default_enabled": false,
+  "engineering_publication": false,
+  "blockers": {
+    "scoped_software_gate": [],
+    "physical_and_production": [
+      "No compatible measured dataset secured or evaluated",
+      "No qualified independent reviewer acceptance or full uncertainty budget",
+      "G9 packaging, security, operational and remote CI release evidence pending"
+    ]
+  },
+  "limits": [
+    "Output-only uncertainty, not full model/input UQ; unknown remains null",
+    "Fixed geometry/thermal fixtures; no arbitrary CAD/CAE/engine qualification",
+    "Ephemeral storage and preview review intent, not durable signed engineering records"
+  ],
+  "next": "P11_KNOWLEDGE_REPORTS",
+  "p11_readiness": "Research-tool evidence/reporting only",
+  "p11_executed": false
+}

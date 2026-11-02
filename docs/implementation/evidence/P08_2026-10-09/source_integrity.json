@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "original_checkpoint_files": 2291,
+  "modified_existing_paths": [
+    "gui/server.py",
+    "gui/static/app-shell/shell.js",
+    "plugins/geometry/protocol.py",
+    "plugins/geometry/workers/occt_worker.py",
+    "plugins/geometry/workers/step_reader.py",
+    "systems/geometry/service.py",
+    "systems/geometry/step_qa.py",
+    "tests/fixtures/ngg_cases.py"
+  ],
+  "unrelated_edits_preserved": true,
+  "original_p07_seal_archived_and_verified": true,
+  "known_cea_timestamp_restored_exactly": true,
+  "e2e_exact_downloaded_bytes_retained": true,
+  "formal_human_acceptance": false
+}

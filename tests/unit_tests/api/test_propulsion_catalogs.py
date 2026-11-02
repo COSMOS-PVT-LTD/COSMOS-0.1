@@ -38,8 +38,11 @@ def test_material_catalog_is_not_certified() -> None:
 
 def test_workflow_catalog_exposes_bypass_policy() -> None:
     catalog = list_workflow_catalog()
+    operating = next(node for node in catalog["nodes"] if node["stage_id"] == "operating_point")
+    assert any(item["upstream"] == "cycle" for item in operating["dependency_policy"])
     chamber = next(node for node in catalog["nodes"] if node["stage_id"] == "chamber")
-    assert any(item["upstream"] == "injector" for item in chamber["dependency_policy"])
+    assert chamber["dependency_policy"] == []
+    assert any(edge["stage_id"] == "injector" and edge["requirement"] == "INFORMATIONAL" for edge in chamber["dependency_edges"])
 
 
 def test_workflow_catalog_uses_stage_00_to_16_order() -> None:
@@ -53,7 +56,8 @@ def test_workflow_catalog_uses_stage_00_to_16_order() -> None:
     assert catalog["nodes"][0]["stage_id"] == "design_project"
     assert catalog["nodes"][-1]["stage_id"] == "design_review"
     injector = next(node for node in catalog["nodes"] if node["stage_id"] == "injector")
-    assert injector["calculate_supported"] is False
+    assert injector["calculate_supported"] is True
+    assert injector["implementation_status"] == "PARTIAL"
     assert injector["engineering_note"]
 
 

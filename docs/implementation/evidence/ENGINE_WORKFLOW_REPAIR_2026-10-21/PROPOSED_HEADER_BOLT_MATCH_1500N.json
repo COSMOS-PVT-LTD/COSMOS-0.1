@@ -1,0 +1,7 @@
+{
+  "scope": "ISOLATED_GEOMETRY_HYPOTHESIS_NOT_INSTALLED_ENGINE_INPUTS",
+  "source": "Isolated preliminary geometric matching of the existing source collar's actual clearance-hole axes to the upper collector. Reuses the retained eight-hole pattern only; does not select bolt diameter, thread, material, preload, allowable, seal, attachment or pressure rating. Owner engine inputs remain unchanged.",
+  "header_part_id": "upper-coolant-header",
+  "collar_part_id": "chamber-collar",
+  "feature_id": "upper-header-bolts"
+}

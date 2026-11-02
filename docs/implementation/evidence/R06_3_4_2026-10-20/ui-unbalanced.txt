@@ -1,0 +1,466 @@
+Browser tab: 6, Title: "COSMOS — Projects & Mission", URL: "http://127.0.0.1:8869/app/projects?project=9d0b0ca1-a723-40ff-944a-1bfcd18febbb".
+1 AXWebArea COSMOS — Projects & Mission, URL: 127.0.0.1:8869/app/projects?project=9d0b0ca1-a723-40ff-944a-1bfcd18febbb
+	2 container
+		3 container cosmos-p04-shell
+			4 container
+				5 container Breadcrumbs
+					6 link Description: Projects & Mission, Value: 127.0.0.1:8869/app/projects
+					7 text  / COSMOS — Projects & Mission
+				8 text COSMOS · active r— · inspecting current r— · Design: none · Managed project R06 coupled cycle — synthetic software QA only · 9d0b0ca1-a723-40ff-944a-1bfcd18febbb
+				9 text Persisted design
+				10 pop up button (collapsed, settable) Description: Persisted design, Value: Choose an existing design, Secondary Actions: Expand
+					11 menu
+						12 (selected) Choose an existing design
+						13 Synthetic subsystem regression only · r9
+				14 text Inspected revision
+				15 pop up button (disabled, collapsed, settable) Description: Inspected revision, Value: No current persisted revision, Secondary Actions: Expand
+					16 menu
+						17 (disabled) No current persisted revision
+				18 button (collapsed) Navigation, Secondary Actions: Expand
+				19 button (collapsed) Inspector, Secondary Actions: Expand
+				20 button (collapsed) Diagnostics, Secondary Actions: Expand
+				21 checkbox Focus workspace, Value: 0
+				22 button Open commands
+				23 button (collapsed) Workspace controls, Secondary Actions: Expand
+					24 text Workspace controls
+			25 container Active workbench
+				26 button (collapsed) Authoritative project sources and retained activity, Secondary Actions: Expand
+					27 text Authoritative project sources and retained activity
+				28 container project-overview
+					29 heading Projects & Mission, Value: 1
+						30 text Projects & Mission
+					31 text Server-owned projects and immutable saved snapshots. CURRENT means selected freshness, not engineering or physical validation.
+					32 container Create managed project
+						33 container
+							34 text Project title
+							35 text field (settable) Project title
+						36 container
+							37 text Mission / intended-use notes
+							38 text field (settable) Mission / intended-use notes
+						39 button Create project
+					40 container Managed project list
+						41 heading Managed projects, Value: 2
+							42 text Managed projects
+						43 button R06 coupled cycle — synthetic software QA only · ACTIVE
+						44 button First project page
+					45 container Selected managed project
+						46 heading R06 coupled cycle — synthetic software QA only, Value: 2
+							47 text R06 coupled cycle — synthetic software QA only
+						48 text ACTIVE · project v1 · owner USR-35438665bdd7dd0b
+						49 container
+							50 text Cloned project title
+							51 text field (settable) Cloned project title, Value: R06 coupled cycle — synthetic software QA only (inputs clone)
+						52 button Clone editable inputs and retain complete origin archive
+						53 container
+							54 text Project title
+							55 text field (settable) Project title, Value: R06 coupled cycle — synthetic software QA only
+						56 container
+							57 text Mission notes
+							58 text field (settable) Mission notes
+						59 button Save project metadata
+						60 button Archive project
+						61 button (disabled) Restore project
+						62 text Recoverable delete retains snapshots; no permanent purge.
+						63 container
+							64 text Exact project ID to confirm recoverable delete
+							65 text field (settable) Exact project ID to confirm recoverable delete
+						66 button Recoverably delete project
+						67 container
+							68 text New propulsion design name
+							69 text field (settable) New propulsion design name
+						70 button Create propulsion design
+						71 heading Propulsion designs — first 20; no domain jobs are inferred, Value: 3
+							72 text Propulsion designs — first 20; no domain jobs are inferred
+						73 link Description: Download exact project archive (owner only; no credentials), Value: 127.0.0.1:8869/api/projects/9d0b0ca1-a723-40ff-944a-1bfcd18febbb/package?version=1&hash=3d23370089b2b35af1fc0e30abf9a36fcf5458023fdeb359b668f29c741dd0dc
+						74 link Description: Synthetic subsystem regression only · input r9 · saved v1, Value: 127.0.0.1:8869/app/workbench/rocket-engine?project=9d0b0ca1-a723-40ff-944a-1bfcd18febbb&design=ab1ba5fc-e122-5221-9287-9139850eddf9
+						75 container Managed geometry and durable attempts
+							76 heading Managed geometry · software fixtures only, Value: 3
+								77 text Managed geometry · software fixtures only
+							78 text Exact snapshots, graphs, requests, attempts and retained bytes. Storage completion is not engineering publication or physical validation.
+							79 text No geometry editor opened.
+							80 container
+								81 text Fixture operation
+								82 pop up button (collapsed, settable) Description: Fixture operation, Value: sphere, Secondary Actions: Expand
+									83 menu
+										84 (selected) sphere
+										85 union
+										86 difference
+										87 intersection
+										88 self_union
+							89 container
+								90 text Fixture backend
+								91 pop up button (collapsed, settable) Description: Fixture backend, Value: occt, Secondary Actions: Expand
+									92 menu
+										93 (selected) occt
+										94 picogk
+							95 container
+								96 text Declared voxel size in metres
+								97 pop up button (collapsed, settable) Description: Declared voxel size in metres, Value: 0.0005, Secondary Actions: Expand
+									98 menu
+										99 (selected) 0.0005
+										100 0.001
+										101 0.00025
+							102 button Create managed fixture inputs
+							103 button Save geometry input edits
+							104 button (disabled) Build exact saved fixture inputs
+							105 button Discard geometry drafts and reload opened inputs
+							106 button Refresh retained attempts
+							107 text Native build runtime is not configured in this application. Saved sources/history remain available; no solver success is invented.
+							108 heading Managed fixture inputs, Value: 4
+								109 text Managed fixture inputs
+							110 text Exact authorized geometry source API
+							111 container Managed geometry exact source preview
+								112 text Choose an exact source or attempt.
+						113 container Managed studies and solver runs
+							114 heading Managed study/run · spherical software benchmark only, Value: 3
+								115 text Managed study/run · spherical software benchmark only
+							116 text Retains exact study, mesh, model/solver hashes, monitor events and datasets. Execution COMPLETED does not mean numerical convergence, experimental validation or production handoff.
+							117 text No study opened.
+							118 container
+								119 text Exact owned geometry attempt ID for a new study
+								120 text field (settable) Exact owned geometry attempt ID for a new study
+							121 container
+								122 text Conductivity [W/(m·K)]
+								123 text field (settable) Conductivity [W/(m·K)], Value: 10
+							124 container
+								125 text Volumetric generation [W/m³]
+								126 text field (settable) Volumetric generation [W/m³], Value: 1000000
+							127 container
+								128 text Surface temperature [K]
+								129 text field (settable) Surface temperature [K], Value: 300
+							130 container
+								131 text Radial cell count [8,16,32,64]
+								132 text field (settable) Radial cell count [8,16,32,64], Value: 16
+							133 container
+								134 text Relative equation residual tolerance
+								135 text field (settable) Relative equation residual tolerance, Value: 1e-8
+							136 container
+								137 text Maximum solver iterations
+								138 text field (settable) Maximum solver iterations, Value: 10000
+							139 button Create new radial benchmark study with displayed settings
+							140 button Save displayed study settings
+							141 button Run exact saved radial benchmark
+							142 button Discard study drafts and reload
+							143 button Refresh retained solver attempts
+							144 heading Retained studies, Value: 4
+								145 text Retained studies
+							146 text Exact authorized study source API
+							147 container Managed study exact source preview
+								148 text Open a retained study or create one from an exact selected OCCT sphere build.
+						149 button (collapsed) Project requirements and exact selected components, Secondary Actions: Expand
+							150 text Project requirements and exact selected components
+						151 button (collapsed) Managed comparisons and research reports, Secondary Actions: Expand
+							152 text Managed comparisons and research reports
+						153 button (collapsed) Rocket sensitivity — explicit saved preliminary baseline, Secondary Actions: Expand
+							154 text Rocket sensitivity — explicit saved preliminary baseline
+						155 button (collapsed) Pressure-fed assessment — saved preliminary baseline, Secondary Actions: Expand
+							156 text Pressure-fed assessment — saved preliminary baseline
+						157 container managed-cycle
+							158 button (expanded) Coupled pressure-fed / gas-generator design-point assessment, Secondary Actions: Collapse
+								159 text Coupled pressure-fed / gas-generator design-point assessment
+							465 text Calculation receipt retained. Inspect independent balance PASS/FAIL, source currentness and model limitations.
+							161 text Steady prescribed-component design point; actual injector and optional full-core-fuel series cooling; imposed externally conditioned fuel film. No map/speed/combustion-feedback or hardware validation.
+							162 text Actual CURRENT injector required. Series cooling requires matching full core fuel flow and fuel-pump discharge at its inlet. All branch losses are total-head-equivalent at the declared demand, including kinetic/elevation terms. GG pressure is turbine inlet total pressure; no GG-to-turbine line loss. Film conditioning/pressurant are imposed boundaries. Frozen core performance is not thermally recomputed.
+							163 container Explicit SI inputs — no engineering defaults
+								164 text Explicit SI inputs — no engineering defaults
+								165 container
+									166 text Exact saved propulsion baseline
+									167 pop up button (collapsed, settable) Description: Exact saved propulsion baseline, Value: Synthetic subsystem regression only · r9 · 529a9bd8-9c5e-4933-879f-36af2953ce3b, Secondary Actions: Expand
+										168 menu
+											169 Choose exact saved source
+											170 (selected) Synthetic subsystem regression only · r9 · 529a9bd8-9c5e-4933-879f-36af2953ce3b
+								171 container
+									172 text Selected supported cycle
+									173 pop up button (collapsed, settable) Description: Selected supported cycle, Value: GAS_GENERATOR, Secondary Actions: Expand
+										174 menu
+											175 Choose explicitly
+											176 PRESSURE_FED
+											177 (selected) GAS_GENERATOR
+								178 container
+									179 text Regenerative coolant routing
+									180 pop up button (collapsed, settable) Description: Regenerative coolant routing, Value: Full core fuel through retained cooling → injector, Secondary Actions: Expand
+										181 menu
+											182 Choose explicitly
+											183 Explicitly not included
+											184 (selected) Full core fuel through retained cooling → injector
+								185 container
+									186 text Additional film fuel routing
+									187 pop up button (collapsed, settable) Description: Additional film fuel routing, Value: Retained gaseous film, externally conditioned fuel boundary, Secondary Actions: Expand
+										188 menu
+											189 Choose explicitly
+											190 Explicitly no additional film
+											191 (selected) Retained gaseous film, externally conditioned fuel boundary
+								192 container
+									193 text pressure tolerance [Pa]
+									194 text field (settable) Description: pressure tolerance [Pa], Value: 1e-6
+								195 container
+									196 text mass flow tolerance [kg/s]
+									197 text field (settable) Description: mass flow tolerance [kg/s], Value: 1e-10
+								198 container
+									199 text power tolerance [W]
+									200 text field (settable) Description: power tolerance [W], Value: 1e-5
+								201 container
+									202 button (expanded) oxidizer liquid feed and explicit branch controls, Secondary Actions: Collapse
+										203 text oxidizer liquid feed and explicit branch controls
+									204 text oxidizer phase
+									205 pop up button (collapsed, settable) Description: oxidizer phase, Value: Single-phase LIQUID — supplied property assumption, Secondary Actions: Expand
+										206 menu
+											207 Choose explicitly
+											208 (selected) Single-phase LIQUID — supplied property assumption
+									209 text oxidizer density [kg/m3]
+									210 text field (settable) Description: oxidizer density [kg/m3], Value: 1000
+									211 text oxidizer inlet pressure [Pa]
+									212 text field (settable) Description: oxidizer inlet pressure [Pa], Value: 1000000
+									213 text oxidizer outlet pressure [Pa]
+									214 text field (settable) Description: oxidizer outlet pressure [Pa], Value: 6000000
+									215 text oxidizer core loss [Pa]
+									216 text field (settable) Description: oxidizer core loss [Pa], Value: 0
+									217 text oxidizer core control drop [Pa]
+									218 text field (settable) Description: oxidizer core control drop [Pa], Value: 0
+									219 text oxidizer gg loss [Pa]
+									220 text field (settable) Description: oxidizer gg loss [Pa], Value: 0
+									221 text oxidizer gg control drop [Pa]
+									222 text field (settable) Description: oxidizer gg control drop [Pa], Value: 5600000
+									223 text oxidizer external flow [kg/s]
+									224 text field (settable) Description: oxidizer external flow [kg/s], Value: 0
+									225 text oxidizer external sink pressure [Pa]
+									226 text field (settable) Description: oxidizer external sink pressure [Pa], Value: 100000
+									227 text oxidizer external loss [Pa]
+									228 text field (settable) Description: oxidizer external loss [Pa], Value: 0
+									229 text oxidizer external control drop [Pa]
+									230 text field (settable) Description: oxidizer external control drop [Pa], Value: 0
+									231 text oxidizer pump efficiency (GG only) [1]
+									232 text field (settable) Description: oxidizer pump efficiency (GG only) [1], Value: .5
+									233 text oxidizer property/pressure/head-equivalent loss source and applicable flow/temperature
+									234 text field (settable) Description: oxidizer property/pressure/head-equivalent loss source and applicable flow/temperature, Value: Synthetic software QA: imposed single-phase liquid property/pressure and total-head-equivalent loss assumptions, not measured hardware data.
+								235 container
+									236 button (expanded) fuel liquid feed and explicit branch controls, Secondary Actions: Collapse
+										237 text fuel liquid feed and explicit branch controls
+									238 text fuel phase
+									239 pop up button (collapsed, settable) Description: fuel phase, Value: Single-phase LIQUID — supplied property assumption, Secondary Actions: Expand
+										240 menu
+											241 Choose explicitly
+											242 (selected) Single-phase LIQUID — supplied property assumption
+									243 text fuel density [kg/m3]
+									244 text field (settable) Description: fuel density [kg/m3], Value: 800
+									245 text fuel inlet pressure [Pa]
+									246 text field (settable) Description: fuel inlet pressure [Pa], Value: 1000000
+									247 text fuel outlet pressure [Pa]
+									248 text field (settable) Description: fuel outlet pressure [Pa], Value: 8000000
+									249 text fuel core loss [Pa]
+									250 text field (settable) Description: fuel core loss [Pa], Value: 0
+									251 text fuel core control drop [Pa]
+									252 text field (settable) Description: fuel core control drop [Pa], Value: 1632413.3865028478
+									253 text fuel gg loss [Pa]
+									254 text field (settable) Description: fuel gg loss [Pa], Value: 0
+									255 text fuel gg control drop [Pa]
+									256 text field (settable) Description: fuel gg control drop [Pa], Value: 7600000
+									257 text fuel external flow [kg/s]
+									258 text field (settable) Description: fuel external flow [kg/s], Value: 0
+									259 text fuel external sink pressure [Pa]
+									260 text field (settable) Description: fuel external sink pressure [Pa], Value: 100000
+									261 text fuel external loss [Pa]
+									262 text field (settable) Description: fuel external loss [Pa], Value: 0
+									263 text fuel external control drop [Pa]
+									264 text field (settable) Description: fuel external control drop [Pa], Value: 0
+									265 text fuel pump efficiency (GG only) [1]
+									266 text field (settable) Description: fuel pump efficiency (GG only) [1], Value: .5
+									267 text fuel property/pressure/head-equivalent loss source and applicable flow/temperature
+									268 text field (settable) Description: fuel property/pressure/head-equivalent loss source and applicable flow/temperature, Value: Synthetic software QA: imposed single-phase liquid property/pressure and total-head-equivalent loss assumptions, not measured hardware data.
+								269 container
+									270 button (expanded) Gas-generator state, thermochemical energy and shaft assumptions — GG only, Secondary Actions: Collapse
+										271 text Gas-generator state, thermochemical energy and shaft assumptions — GG only
+									272 text GG temperature [K]
+									273 text field (settable) Description: GG temperature [K], Value: 1000
+									274 text GG inlet pressure [Pa]
+									275 text field (settable) Description: GG inlet pressure [Pa], Value: 400000
+									276 text GG outlet pressure [Pa]
+									277 text field (settable) Description: GG outlet pressure [Pa], Value: 100000
+									278 text GG cp [J/kg/K]
+									279 text field (settable) Description: GG cp [J/kg/K], Value: 1000
+									280 text GG inlet specific enthalpy [J/kg]
+									281 text field (settable) Description: GG inlet specific enthalpy [J/kg], Value: 0
+									282 text GG net released energy [J/kg]
+									283 text field (settable) Description: GG net released energy [J/kg], Value: 1000100
+									284 text GG heat loss [W]
+									285 text field (settable) Description: GG heat loss [W], Value: 0
+									286 text GG auxiliary power [W]
+									287 text field (settable) Description: GG auxiliary power [W], Value: 0
+									288 text GG maximum flow [kg/s]
+									289 text field (settable) Description: GG maximum flow [kg/s], Value: 100
+									290 text GG mixture ratio [1]
+									291 text field (settable) Description: GG mixture ratio [1], Value: 1
+									292 text GG gamma [1]
+									293 text field (settable) Description: GG gamma [1], Value: 2
+									294 text GG turbine efficiency [1]
+									295 text field (settable) Description: GG turbine efficiency [1], Value: .8
+									296 text GG shaft efficiency [1]
+									297 text field (settable) Description: GG shaft efficiency [1], Value: .9
+									298 text GG gas-property / efficiency / common-reference energy source
+									299 text field (settable) Description: GG gas-property / efficiency / common-reference energy source, Value: Synthetic ideal-gas and efficiency/energy assumptions for software verification only; not a combustion prediction.
+								300 container
+									301 button (expanded) Externally conditioned additional film branch — when enabled, Secondary Actions: Collapse
+										302 text Externally conditioned additional film branch — when enabled
+									303 text Film sink pressure [Pa]
+									304 text field (settable) Description: Film sink pressure [Pa], Value: 100000
+									305 text Film loss [Pa]
+									306 text field (settable) Description: Film loss [Pa], Value: 0
+									307 text Film control drop [Pa]
+									308 text field (settable) Description: Film control drop [Pa], Value: 7900000
+									309 text Film conditioner and pressure-boundary source
+									310 text field (settable) Description: Film conditioner and pressure-boundary source, Value: Synthetic imposed externally conditioned fuel-gas boundary; phase-change heater/feed system not solved.
+								311 button Run and retain coupled cycle assessment
+								312 button Abandon uncertain cycle command — retain values
+								313 button Discard local cycle draft
+							466 heading Retained coupled-cycle history, Value: 4
+								602 text Retained coupled-cycle history
+							467 button Inspect cycle 282a6115-0044-5be4-ba45-21a2f5d677bd
+							468 button Inspect cycle 29304057-f35a-512b-9104-061749e817f5
+							469 button Inspect cycle 7728274c-a635-5b85-8b02-d032216c3f4e
+							470 heading Captured cycle inputs — may be interrupted or in progress, Value: 5
+								603 text Captured cycle inputs — may be interrupted or in progress
+							471 button Inspect cycle capture 282a6115-0044-5be4-ba45-21a2f5d677bd
+							472 button Inspect cycle capture 29304057-f35a-512b-9104-061749e817f5
+							473 button Inspect cycle capture 7728274c-a635-5b85-8b02-d032216c3f4e
+							474 heading Retained cycle calculation · COMPLETED, Value: 4
+								475 text Retained cycle calculation · COMPLETED
+							476 text CURRENT source/method identities — not hardware acceptance
+							477 text Project 9d0b0ca1-a723-40ff-944a-1bfcd18febbb · commit 3f8b361d-b911-4b75-b84e-174e400089cb · SHA256 7fe59200f0e9b9e40626a368ed2b682f38a4c409f0d8034097d6d4f9c6e04fda
+							478 text Baseline 529a9bd8-9c5e-4933-879f-36af2953ce3b · captured inputs fb01e469-9b8c-4769-aa7c-b1cb05803785
+							479 text UNBALANCED · Steady prescribed-component design-point assessment, not a map/speed/full-network operating-point solver
+							480 text Core thrust 8566.416725215131 N · total withdrawal 3.1621685980442393 kg/s · core-only thrust / total propellant Isp 276.24441110539897 s
+							481 text Physical validation NOT_PERFORMED · upstream workflow cycle not promoted · core thermal feedback FROZEN_CORE_NOT_RECOMPUTED
+							482 heading oxidizer mass/pressure ledger — SI units in field names, Value: 5
+								483 text oxidizer mass/pressure ledger — SI units in field names
+							484 definition list
+								485 container core_flow_kg_s
+									486 text core_flow_kg_s
+								487 text 2.1225033073565784
+								488 container external_flow_kg_s
+									489 text external_flow_kg_s
+								490 text 0
+								491 container film_flow_kg_s
+									492 text film_flow_kg_s
+								493 text 0
+								494 container gg_flow_kg_s
+									495 text gg_flow_kg_s
+								496 text 0.05418443389773176
+								497 container inlet_pressure_pa
+									498 text inlet_pressure_pa
+								499 text 1000000
+								500 container outlet_pressure_pa
+									501 text outlet_pressure_pa
+								502 text 6000000
+								503 container required_core_pressure_pa
+									504 text required_core_pressure_pa
+								505 text 6000000
+								506 container withdrawal_kg_s
+									507 text withdrawal_kg_s
+								508 text 2.17668774125431
+							509 heading fuel mass/pressure ledger — SI units in field names, Value: 5
+								510 text fuel mass/pressure ledger — SI units in field names
+							511 definition list
+								512 container core_flow_kg_s
+									513 text core_flow_kg_s
+								514 text 0.9228275249376428
+								515 container external_flow_kg_s
+									516 text external_flow_kg_s
+								517 text 0
+								518 container film_flow_kg_s
+									519 text film_flow_kg_s
+								520 text 0.0084688979545549
+								521 container gg_flow_kg_s
+									522 text gg_flow_kg_s
+								523 text 0.05418443389773176
+								524 container inlet_pressure_pa
+									525 text inlet_pressure_pa
+								526 text 1000000
+								527 container outlet_pressure_pa
+									528 text outlet_pressure_pa
+								529 text 8000000
+								530 container required_core_pressure_pa
+									531 text required_core_pressure_pa
+								532 text 8000000
+								533 container withdrawal_kg_s
+									534 text withdrawal_kg_s
+								535 text 0.9854808567899294
+							536 text oxidizer.injector_mass · PASS
+							537 text Signed residual -4.440892098500626e-16 kg/s
+							538 text Declared absolute tolerance 1e-10 kg/s
+							539 text oxidizer.injector_pressure · PASS
+							540 text Signed residual 0 Pa
+							541 text Declared absolute tolerance 0.000001 Pa
+							542 text fuel.injector_mass · PASS
+							543 text Signed residual 0 kg/s
+							544 text Declared absolute tolerance 1e-10 kg/s
+							545 text fuel.injector_pressure · PASS
+							546 text Signed residual 0 Pa
+							547 text Declared absolute tolerance 0.000001 Pa
+							548 text cooling.core_fuel_flow · PASS
+							549 text Signed residual 0 kg/s
+							550 text Declared absolute tolerance 1e-10 kg/s
+							551 text cooling.inlet_pressure · PASS
+							552 text Signed residual 0 Pa
+							553 text Declared absolute tolerance 0.000001 Pa
+							554 text cooling.pressure · PASS
+							555 text Signed residual 1.6298145055770874e-9 Pa
+							556 text Declared absolute tolerance 0.000001 Pa
+							557 text cooling.energy · PASS
+							558 text Signed residual 5.820766091346741e-11 W
+							559 text Declared absolute tolerance 0.00001 W
+							560 text shaft.power · PASS
+							561 text Signed residual 3.637978807091713e-12 W
+							562 text Declared absolute tolerance 0.00001 W
+							563 text turbine.energy · PASS
+							564 text Signed residual 0 W
+							565 text Declared absolute tolerance 0.00001 W
+							566 text GG.energy · FAIL
+							567 text Signed residual 10.836886779546353 W
+							568 text Declared absolute tolerance 0.00001 W
+							569 text GG.mass · PASS
+							570 text Signed residual 0 kg/s
+							571 text Declared absolute tolerance 1e-10 kg/s
+							572 text oxidizer.mass · PASS
+							573 text Signed residual -6.938893903907228e-18 kg/s
+							574 text Declared absolute tolerance 1e-10 kg/s
+							575 text oxidizer.core_pressure · PASS
+							576 text Signed residual 0 Pa
+							577 text Declared absolute tolerance 0.000001 Pa
+							578 text oxidizer.GG_pressure · PASS
+							579 text Signed residual 0 Pa
+							580 text Declared absolute tolerance 0.000001 Pa
+							581 text fuel.mass · PASS
+							582 text Signed residual -5.204170427930421e-17 kg/s
+							583 text Declared absolute tolerance 1e-10 kg/s
+							584 text fuel.core_pressure · PASS
+							585 text Signed residual 0 Pa
+							586 text Declared absolute tolerance 0.000001 Pa
+							587 text fuel.GG_pressure · PASS
+							588 text Signed residual 0 Pa
+							589 text Declared absolute tolerance 0.000001 Pa
+							590 text film.pressure · PASS
+							591 text Signed residual 0 Pa
+							592 text Declared absolute tolerance 0.000001 Pa
+							593 button (collapsed) Pump / turbine / shaft power ledger — SI units in field names, Secondary Actions: Expand
+								594 text Pump / turbine / shaft power ledger — SI units in field names
+							595 button Show source-bound normalized residual plot
+							596 link Description: Download original cycle record JSON, Value: 127.0.0.1:8869/api/projects/9d0b0ca1-a723-40ff-944a-1bfcd18febbb/cycle-assessments/7728274c-a635-5b85-8b02-d032216c3f4e/record.json?commit=3f8b361d-b911-4b75-b84e-174e400089cb
+							597 link Description: Download captured cycle inputs JSON, Value: 127.0.0.1:8869/api/projects/9d0b0ca1-a723-40ff-944a-1bfcd18febbb/cycle-assessments/7728274c-a635-5b85-8b02-d032216c3f4e/inputs.json?commit=3f8b361d-b911-4b75-b84e-174e400089cb
+							598 link Description: Download raw signed cycle residual CSV, Value: 127.0.0.1:8869/api/projects/9d0b0ca1-a723-40ff-944a-1bfcd18febbb/cycle-assessments/7728274c-a635-5b85-8b02-d032216c3f4e/residuals.csv?commit=3f8b361d-b911-4b75-b84e-174e400089cb
+							599 link Description: Inspect exact cycle source and upstream baseline, Value: 127.0.0.1:8869/app/projects?project=9d0b0ca1-a723-40ff-944a-1bfcd18febbb&commit=3f8b361d-b911-4b75-b84e-174e400089cb&domain=coupled-cycle-assessment
+							600 button (collapsed) Original cycle canonical source preview, Secondary Actions: Expand
+								601 text Original cycle canonical source preview
+							453 button Refresh cycle history
+		454 button Maharshi Bharadwaj Maharshi, ID: maharshi-module, Help: Maharshi Bharadwaj — click for pop-up, double-click for Knowledge workbench. Drag to move; Shift+wheel or corner handle to resize.
+			455 image Maharshi Bharadwaj
+			456 text Maharshi
+		457 container cosmos-engineering-root
+			458 container cosmos-recent-panel
+				459 heading RECENT WORKBENCHES, Value: 4
+					460 text RECENT WORKBENCHES
+				461 text None yet
+				462 heading RECENT FILES, Value: 4
+					463 text RECENT FILES
+				464 text None yet
+
+The focused UI element is 1 AXWebArea COSMOS — Projects & Mission, URL: 127.0.0.1:8869/app/projects?project=9d0b0ca1-a723-40ff-944a-1bfcd18febbb

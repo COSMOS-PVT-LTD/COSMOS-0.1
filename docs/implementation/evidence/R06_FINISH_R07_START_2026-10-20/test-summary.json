@@ -1,0 +1,24 @@
+{
+  "python": {
+    "tests": 3627,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 93,
+    "passed": 3534
+  },
+  "new_cases": 20,
+  "preceding_cases_missing": [],
+  "skips_are_not_passes": true,
+  "skip_reasons": [
+    "Document contains mappingproxy and is not yet hashable.",
+    "Document hashability will be implemented after the Knowledge Foundation models are completed.",
+    "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence",
+    "Explicit qualified native runtime required; run separately for G8",
+    "Hashability depends on nested immutable models.",
+    "Hashability will be enabled after all Knowledge Foundation models become fully immutable.",
+    "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback",
+    "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG",
+    "Reference/Document hashability not implemented yet."
+  ],
+  "ci_workflow_sha256": "c3148efb727a5fceeb6e0f80edbadebd282bc330cd3076cc081f675a698b9da3"
+}

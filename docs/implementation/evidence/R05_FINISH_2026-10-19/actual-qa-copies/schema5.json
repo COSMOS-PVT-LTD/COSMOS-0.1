@@ -1,0 +1,35 @@
+{
+  "source_root": "/private/tmp/cosmos-r05_4-preview.8ceOjs",
+  "source_schema": 5,
+  "target_schema": 6,
+  "original_metadata_sha256": "9730d58054504c51524aec20f1b3e12b3b35215a3c2e4c5450298189e4cc2286",
+  "original_unchanged": true,
+  "exact_commits": 3,
+  "exact_native_or_solver_attempts": 4,
+  "exact_source_export_blobs": 5,
+  "read_only_authority_reopened": true,
+  "receipt": {
+    "completed": true,
+    "source_manifest_sha256": "1482c53df57fa0f8b9ea57ac79d752dc6e470cb0f4ee293f19b7264644b4554b",
+    "source_schema": 5,
+    "target_schema": 6,
+    "upgrade_explicit": true,
+    "original_root_overwritten": false,
+    "live_switch_performed": false,
+    "verified_inventory": {
+      "usage_bytes": 306171,
+      "referenced_blobs": 95,
+      "unreferenced_blobs": 0,
+      "unreferenced_bytes": 0,
+      "staging_files": 0,
+      "staging_bytes": 0,
+      "unavailable_references": 0,
+      "unreferenced_sample": [],
+      "staging_sample": [],
+      "unavailable_sample": [],
+      "truncated": false,
+      "deletion_performed": false
+    }
+  },
+  "scope": "Actual retained software QA histories; no live owner migration, new physical evidence or whole-app auth backup"
+}

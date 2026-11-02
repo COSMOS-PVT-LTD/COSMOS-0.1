@@ -1,0 +1,42 @@
+/* Existing COSMOS design tokens, progressive disclosure, no new visual system. */
+.guided-modebar { display:flex; gap:1rem; align-items:center; justify-content:space-between; margin:1rem 0; flex-wrap:wrap; }
+.guided-modebar h1 { font-size:1.5rem; margin:0 0 .5rem; }
+.guided-engine { color:var(--ds-text-primary); max-width:74rem; margin:0 auto; }
+.guided-engine [hidden] { display:none !important; }
+.guided-engine section, .guided-engine fieldset { margin:1rem 0; }
+.guided-engine fieldset, .guided-engine details { border:1px solid var(--ds-border-subtle); padding:1rem; border-radius:var(--ds-radius-control); }
+.guided-engine legend { padding:0 .5rem; font-weight:600; }
+.guided-engine details { margin:1rem 0; }
+.guided-engine summary { cursor:pointer; min-height:2rem; }
+.guided-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr)); gap:1.2rem; }
+.guided-grid label { display:flex; flex-direction:column; gap:.5rem; }
+.guided-grid input, .guided-grid select, .guided-project select { min-height:2.6rem; width:100%; box-sizing:border-box; }
+.guided-engine button { margin:.5rem .6rem .5rem 0; min-height:2.5rem; }
+.guided-engine button:focus-visible, .guided-engine a:focus-visible, .guided-engine input:focus-visible, .guided-engine select:focus-visible, .guided-engine summary:focus-visible { outline:3px solid var(--ds-focus-ring); outline-offset:3px; }
+.guided-engine input[type=checkbox] { margin:1rem .5rem 1rem 0; }
+.guided-steps { display:flex; flex-wrap:wrap; gap:1rem 2rem; padding:1rem 1rem 1rem 2rem; background:var(--ds-surface-panel); }
+.guided-steps [aria-current=step] { font-weight:700; text-decoration:underline; text-underline-offset:.3rem; }
+.guided-basis, .guided-metrics { display:grid; grid-template-columns:minmax(9rem,1fr) minmax(12rem,2fr); gap:.7rem 1rem; }
+.guided-basis dd, .guided-metrics dd { margin:0; overflow-wrap:anywhere; }
+.guided-basis dt { text-transform:capitalize; }
+.guided-metrics { background:var(--ds-surface-panel); padding:1rem; font-variant-numeric:tabular-nums; }
+.guided-limit { color:var(--ds-status-warning); border-left:2px solid currentColor; padding-left:.75rem; }
+.guided-engine pre { white-space:pre-wrap; overflow-wrap:anywhere; max-height:24rem; overflow:auto; }
+.guided-engine table { border-collapse:collapse; width:100%; }
+.guided-engine td,.guided-engine th { padding:.7rem; border-bottom:1px solid var(--ds-border-subtle); text-align:left; vertical-align:top; }
+.guided-engine a { display:inline-block; margin:.5rem 0; color:var(--ds-text-primary); text-decoration:underline; }
+body[data-engine-mode=guided] .suite-hero,body[data-engine-mode=guided] .design-context-bar,body[data-engine-mode=guided] .suite-layout,body[data-engine-mode=guided] .p05-navigation,body[data-engine-mode=guided] .p05-taskbar,body[data-engine-mode=guided] .p05-inspection,body[data-engine-mode=guided] .p05-activity { display:none !important; }
+/* Guided Design owns its own project/result context and durable job display.
+   Do not leave a contradictory legacy "No inspected design / No jobs" panel. */
+body[data-engine-mode=guided] .p04-context, body[data-engine-mode=guided] .p04-toolbar,
+body[data-engine-mode=guided] .p04-right, body[data-engine-mode=guided] .p04-bottom,
+body[data-engine-mode=guided] .p04-separator { display:none !important; }
+body[data-engine-mode=guided] .p04-grid { grid-template-columns:12rem minmax(0,1fr); grid-template-rows:minmax(0,1fr); }
+body[data-engine-mode=guided] .p04-workbench { grid-column:2; grid-row:1; }
+body[data-engine-mode=guided] .p04-left { position:static; grid-column:1; width:auto; border-right:1px solid var(--ds-border-subtle); }
+body[data-engine-mode=guided] .content-area { background:var(--ds-surface-canvas); }
+.guided-modebar { padding:.75rem 1rem; margin:0; background:var(--ds-surface-panel); }
+.guided-modebar button { min-height:2.5rem; padding:.4rem .75rem; background:var(--ds-surface-elevated); color:var(--ds-text-primary); border:1px solid var(--ds-border-subtle); border-radius:var(--ds-radius-control); }
+@media(max-width:800px) { body[data-engine-mode=guided] .p04-grid { grid-template-columns:minmax(0,1fr); } body[data-engine-mode=guided] .p04-left { display:none; } body[data-engine-mode=guided] .p04-workbench { grid-column:1; } }
+@media(max-width:650px) { .guided-basis,.guided-metrics { grid-template-columns:1fr; } .guided-engine table { display:block; overflow-x:auto; } }
+@media(forced-colors:active) { .guided-engine { color:CanvasText; } .guided-limit { color:CanvasText; } }

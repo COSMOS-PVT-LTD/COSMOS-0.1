@@ -1,0 +1,142 @@
+Browser tab: 6, Title: "COSMOS 0.1 — Rocket Engine Propulsion Suite", URL: "http://127.0.0.1:8790/app/workbench/rocket-engine?stage=requirements".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 300-680
+~1 AXWebArea COSMOS 0.1 — Rocket Engine Propulsion Suite, URL: 127.0.0.1:8790/app/workbench/rocket-engine?stage=requirements
++				179 text P00 audit methalox fixture
++				180 text REV 5
++				181 text draft
++				182 text Pc 5.00 bar
++				183 text O/F 2.7239
++				184 text Thrust 1.00 kN
++				185 text Propellants — / —
+~				61 pop up button (collapsed, settable) Description: Open saved design, Value: P00 audit methalox fixture · rev 5 · draft, ID: design-picker, Secondary Actions: Expand
++						186 Open a saved design…
++						187 (selected) P00 audit methalox fixture · rev 5 · draft
++				188 text WORKFLOW 00–16
++				189 button 00 Design Project PARTIAL CURRENT
++					190 text 00
++					191 text Design Project
++					192 text PARTIAL
++					193 text CURRENT
++				194 button 01 Requirements IMPLEMENTED NOT_CALCULATED
++					195 text 01
++					196 text Requirements
++					197 text IMPLEMENTED
++					198 text NOT_CALCULATED
++				199 button 02 Propellant Definition IMPLEMENTED NOT_CALCULATED
++					200 text 02
++					201 text Propellant Definition
++					202 text IMPLEMENTED
++					203 text NOT_CALCULATED
++				204 button 03 Engine Cycle NOT IMPLEMENTED NOT_CALCULATED
++					205 text 03
++					206 text Engine Cycle
++					207 text NOT IMPLEMENTED
++					208 text NOT_CALCULATED
++				209 button 04 Operating Point IMPLEMENTED NOT_CALCULATED
++					210 text 04
++					211 text Operating Point
++					212 text IMPLEMENTED
++					213 text NOT_CALCULATED
++				214 button 05 Thermochemistry PARTIAL NOT_CALCULATED
++					215 text 05
++					216 text Thermochemistry
++					217 text PARTIAL
++					218 text NOT_CALCULATED
++				219 button 06 Mass Flow / Performance PARTIAL NOT_CALCULATED
++					220 text 06
++					221 text Mass Flow / Performance
++					222 text PARTIAL
++					223 text NOT_CALCULATED
++				224 button 07 Injector PARTIAL NOT_CALCULATED
++					225 text 07
++					226 text Injector
++					227 text PARTIAL
++					228 text NOT_CALCULATED
++				229 button 08 Combustion Chamber PARTIAL NOT_CALCULATED
++					230 text 08
++					231 text Combustion Chamber
++					232 text PARTIAL
++					233 text NOT_CALCULATED
++				234 button 09 Thermal Analysis PARTIAL NOT_CALCULATED
++					235 text 09
++					236 text Thermal Analysis
++					237 text PARTIAL
++					238 text NOT_CALCULATED
++				239 button 10 Cooling System PARTIAL NOT_CALCULATED
++					240 text 10
++					241 text Cooling System
++					242 text PARTIAL
++					243 text NOT_CALCULATED
++				244 button 11 Nozzle PARTIAL NOT_CALCULATED
++					245 text 11
++					246 text Nozzle
++					247 text PARTIAL
++					248 text NOT_CALCULATED
++				249 button 12 Structural Analysis PARTIAL NOT_CALCULATED
++					250 text 12
++					251 text Structural Analysis
++					252 text PARTIAL
++					253 text NOT_CALCULATED
++				254 button 13 Material Selection PARTIAL NOT_CALCULATED
++					255 text 13
++					256 text Material Selection
++					257 text PARTIAL
++					258 text NOT_CALCULATED
++				259 button 14 Engine Performance Summary IMPLEMENTED NOT_CALCULATED
++					260 text 14
++					261 text Engine Performance Summary
++					262 text IMPLEMENTED
++					263 text NOT_CALCULATED
++				264 button 15 System Consistency Check IMPLEMENTED NOT_CALCULATED
++					265 text 15
++					266 text System Consistency Check
++					267 text IMPLEMENTED
++					268 text NOT_CALCULATED
++				269 button 16 Design Review IMPLEMENTED NOT_CALCULATED
++					270 text 16
++					271 text Design Review
++					272 text IMPLEMENTED
++					273 text NOT_CALCULATED
++				274 text PHYSICS TOOLS
++				275 button GASDYNAMICS Nozzle Flow LIVE
++					276 text GASDYNAMICS
++					277 text Nozzle Flow
++					278 text LIVE
++				279 button THERMAL Heat Transfer & Cooling PARTIAL
++					280 text THERMAL
++					281 text Heat Transfer & Cooling
++					282 text PARTIAL
++				283 button STRUCTURES Chamber Structures PARTIAL
++					284 text STRUCTURES
++					285 text Chamber Structures
++					286 text PARTIAL
+~				92 heading 01 Requirements, Value: 2, ID: suite-module-title
++					287 text 01 Requirements
++				288 text IMPLEMENTED · result NOT_CALCULATED
++				289 text Authoritative targets (Pc, thrust, O/F, expansion). Changing them marks dependents STALE.
++				290 heading Engine definition (requirements), Value: 3
++					291 text Engine definition (requirements)
++				292 container
++					293 text Name
++					294 text field (settable) Name, Value: P00 audit methalox fixture, ID: ed-name
++				295 container
++					296 text Pc [bar]
++					297 stepper (settable, integer) Pc [bar], Value: 5, ID: ed-pc
++				298 container
++					299 text Thrust [kN]
++					300 stepper (settable, integer) Thrust [kN], Value: 1, ID: ed-thrust
++				301 container
++					302 text O/F
++					303 stepper (settable, float) O/F, Value: 2.723900079727173, Details: 2.7239, ID: ed-of
++				304 container
++					305 text Expansion ratio
++					306 stepper (settable, integer) Expansion ratio, Value: 10, ID: ed-eps
++				307 text PARTIAL — saves requirements onto the active design. This is not a cycle or CEA solve.
++				308 button Save requirements
++			309 text SAVED
+Design saved · revision 5. Requirements/selections are applied; other editor inputs are saved drafts until you run the relevant calculation. No solver was run.
++				310 text 0
++				311 text IDLE
++				312 text —
+The focused UI element is 308 button Save requirements

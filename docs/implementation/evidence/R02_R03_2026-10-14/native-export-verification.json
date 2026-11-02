@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "plot_id": "nozzle-contour",
+  "source_sha256": "57835c348b92068ff17a44bbb833b9d6a4339181a21ba696d65f47dab1eb67e8",
+  "source_rows": 81,
+  "exact_series_points": 81,
+  "csv_values_all_matched": true,
+  "svg_units_and_visible_qualification": true,
+  "provenance_source_record_exact": true,
+  "no_physical_validation_claim": true,
+  "files": {
+    "cosmos-r02-native-nozzle.source.json": "00561a03692ac076fe57f96fa8a4b1cfc1024224e6499a39731b43d3a1a58390",
+    "cosmos-r02-native-nozzle.csv": "1c11470927f733ecb296549b02279eee8b31f64c36245a36846f2c9f97eb1e2f",
+    "cosmos-r02-native-nozzle.svg": "577b9f97720f4b59f71056d463dfa46eac7cfa3b5eefb64f605b339a187fe865",
+    "cosmos-r02-native-nozzle.provenance.json": "f2644d9bcaaf6d693521d6a3d2b09e80a528c2f35063d9aa945ce04994e57301"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "scope": "R05.4 first study/run slice source snapshot only",
+  "head": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "dirty_work_preserved": true,
+  "release_or_physical_acceptance": false,
+  "historical_evidence_not_resealed": true,
+  "sources": {
+    "infrastructure/persistence/files.py": {
+      "sha256": "ec127c091a91f6d18ec2547c0ebc76d2f0c18218eb4fe3166d4321c3a6da01fe",
+      "bytes": 9059
+    },
+    "infrastructure/persistence/schema.py": {
+      "sha256": "da46b20701dc19c1a72e27235ded0fd79d892aede1591536e13fbba3d99e0e39",
+      "bytes": 13150
+    },
+    "infrastructure/persistence/sqlite_projects.py": {
+      "sha256": "698eace2276aaf6c88658d115d0a5571c72f563ec832b88b528510a946704625",
+      "bytes": 46851
+    },
+    "infrastructure/persistence/durable_jobs.py": {
+      "sha256": "2771cf6e7a7b2b2f4be11e5c485a296849125a2aaf47a41eed9cf90b3b022755",
+      "bytes": 30189
+    },
+    "infrastructure/persistence/inventory.py": {
+      "sha256": "94b6e7f8357bc47e353f585a6f640c1c54a035b9855dbf3a8e7988192d6a1092",
+      "bytes": 3596
+    },
+    "infrastructure/persistence/study_runtime.py": {
+      "sha256": "a8a2eb715eae0fbc70ca5ece50eae07b88ecf4d9e6070dabbcac3f49ab7b6a1d",
+      "bytes": 1243
+    },
+    "systems/persistence/project_repository.py": {
+      "sha256": "7ccdd23f3306a5bd7c2835d7d460594f63239fd126548d87bb6fe4c3b5952545",
+      "bytes": 8012
+    },
+    "systems/persistence/job_repository.py": {
+      "sha256": "4eea7be15b08404df54b42a655c8bccec148a50e1ed64367c03ecb193a4fc843",
+      "bytes": 3943
+    },
+    "systems/geometry/source_contract.py": {
+      "sha256": "65818afaa238cc57bfa40c5131358453ae164ea51aaa7d158816898272bc2c11",
+      "bytes": 410
+    },
+    "systems/geometry/retained_source.py": {
+      "sha256": "437232614755c303759658b9844c2216f53eec5e1603499904f20c5b26681f6c",
+      "bytes": 4489
+    },
+    "systems/projects/study_authority.py": {
+      "sha256": "82c6043b6c2256b32ae278322b9467306ef8d1392cd6e52233faca8bce6381d4",
+      "bytes": 13680
+    },
+    "simulation/workbench.py": {
+      "sha256": "fbbbd61e152766bec1488e5b555f6f6a1b87cf7589b63d0ea404319bc0a14a45",
+      "bytes": 16658
+    },
+    "simulation/contracts.py": {
+      "sha256": "c6a45eb23ff7a6ff4d5e327175c84b2f3594aa9206065d05a17bb0f36efae2ba",
+      "bytes": 3548
+    },
+    "physics/heat_transfer/spherical_conduction.py": {
+      "sha256": "28d9d63738f8c64a778bbd522cf64508351ea28ada67a1970f89ce16b00aa102",
+      "bytes": 992
+    },
+    "numerics/finite_volume/radial_diffusion.py": {
+      "sha256": "17723ed167b1eff992ed4ebe4283aba3406409dc8e5759a614cdfbdc8639082e",
+      "bytes": 4256
+    },
+    "api/study_projects.py": {
+      "sha256": "de11e8f60d934d30b0c491a09cd88a523f5716aa552499a41e14606a0b7aeeb3",
+      "bytes": 8490
+    },
+    "api/project_authority.py": {
+      "sha256": "219d4bb39ecf5e1f973cc38cc1b71a15d2fb500c88b495ed72b645c397bb701e",
+      "bytes": 20343
+    },
+    "api/geometry_projects.py": {
+      "sha256": "045068798ae39d09eadc367d661f3eff41d6ed6a601cdd49ab857c4134632981",
+      "bytes": 8673
+    },
+    "gui/server.py": {
+      "sha256": "edc4075dd911d6e5dae9208c395ad298e83bb887c9a0a4a9e756ddad979a0850",
+      "bytes": 70676
+    },
+    "gui/static/projects.js": {
+      "sha256": "a11722cc93c72dae98ef35380efe26c98ba3d72a5d6058a7c7c51ebece12b264",
+      "bytes": 39640
+    },
+    "scripts/verify_completion_preservation.py": {
+      "sha256": "e08e05996a51132a4e5bd5a38b742c0f1e2730b96b41ac6460ff5dbb8091ee55",
+      "bytes": 4486
+    },
+    "tests/unit_tests/infrastructure/test_project_authority.py": {
+      "sha256": "7be70a09db39f630334f75da8b6f4fed22ce3973f6e28ad08d2e789c5e08343f",
+      "bytes": 36005
+    },
+    "tests/unit_tests/infrastructure/test_study_lineage.py": {
+      "sha256": "4ed88d259075c2e7688e8dec9b30fadc253fa4053d36d2e76f1cae105dd774dc",
+      "bytes": 11655
+    },
+    "tests/integration_tests/gui/test_study_project_http.py": {
+      "sha256": "fc9527f3f68ada8c3cf9af5352ccc9ad8e1c69614bb3c823a98c24b19d025c51",
+      "bytes": 3602
+    },
+    "tests/integration_tests/geometry/test_managed_study_retention.py": {
+      "sha256": "9d687cf6659a423b85060f8f20a5b6a4f835080fbac6d5f318dd71344db1c108",
+      "bytes": 11340
+    },
+    "tests/js/project_authority.test.cjs": {
+      "sha256": "40509871611fc6a9d5d31988e0cbf612e7f0ba87be9861940c2925f8c2afef51",
+      "bytes": 7495
+    },
+    "tests/ui/r05_4/preview.py": {
+      "sha256": "f2f37a0500c983d9c8165964c487f02d7e0787cc123e730cd1be8fa014a9e4f0",
+      "bytes": 2781
+    }
+  }
+}

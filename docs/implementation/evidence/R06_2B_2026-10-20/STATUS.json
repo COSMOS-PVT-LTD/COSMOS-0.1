@@ -1,0 +1,83 @@
+{
+  "phase": "R06",
+  "status": "PARTIAL",
+  "slice": "R06.2b_managed_pressure_fed_assessment",
+  "slice_status": "PASS_LOCAL_DECLARED_SCOPE",
+  "head": "293223ebef190eaa647e67dc581eb186b2b5d987",
+  "baseline_passed": 122,
+  "new_authority_http_tests_passed": 23,
+  "python": {
+    "passed": 3415,
+    "skipped": 93,
+    "skip_reasons": {
+      "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback": 75,
+      "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG": 2,
+      "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence": 7,
+      "Explicit qualified native runtime required; run separately for G8": 4,
+      "Hashability depends on nested immutable models.": 1,
+      "Reference/Document hashability not implemented yet.": 1,
+      "Document hashability will be implemented after the Knowledge Foundation models are completed.": 1,
+      "Hashability will be enabled after all Knowledge Foundation models become fully immutable.": 1,
+      "Document contains mappingproxy and is not yet hashable.": 1
+    }
+  },
+  "javascript_passed": 408,
+  "new_javascript_tests": 6,
+  "ruff": "PASS",
+  "mypy_source_files": 389,
+  "strict_typescript_consumers": 7,
+  "source_preservation": {
+    "preceding": 912,
+    "unchanged": 907,
+    "declared_edits": [
+      "api/context_projects.py",
+      "api/project_authority.py",
+      "gui/server.py",
+      "gui/static/projects.js",
+      "gui/static/rocket-workbench/view.js"
+    ],
+    "additions": [
+      "api/pressure_fed_projects.py",
+      "gui/static/managed-pressure-fed.css",
+      "gui/static/managed-pressure-fed.js",
+      "systems/projects/pressure_fed.py",
+      "tests/integration_tests/gui/test_pressure_fed_projects_http.py",
+      "tests/js/managed_pressure_fed.test.cjs",
+      "tests/ui/r06_2b/check_exports.py",
+      "tests/ui/r06_2b/preview.py",
+      "tests/unit_tests/infrastructure/test_managed_pressure_fed.py"
+    ]
+  },
+  "old_inventory": {
+    "unchanged": 4888,
+    "declared_changes": 54,
+    "unexpected": 0,
+    "missing": 0
+  },
+  "existing_core_physics_numerics_systems_sources_unchanged": true,
+  "actual_browser_source_downloads_restart": "PASS",
+  "actual_subprocess_kill_after_input_capture": "PASS",
+  "final_example": {
+    "project_id": "80cdb6c3-9adb-4465-877f-21ef8b98840d",
+    "object_id": "1db42afc-1cbb-59ee-af84-eb79841c2b5c",
+    "commit_id": "b8fbffff-a438-455e-a963-88ffec740bfc",
+    "source_sha256": "dca087ea22b78cac3f97d1e9ba705afc8a79314c564042a57817c9224747bd84"
+  },
+  "workflow_cycle_promoted": false,
+  "new_storage_schema_or_dependency": false,
+  "cea_pressure_fed_adapter": "UNSUPPORTED",
+  "pressurant": "IMPOSED_BOUNDARY_ONLY",
+  "actual_injector_cooling_film_diversion_coupling": "NOT_ASSESSED",
+  "native_cocoa_and_human_qualification": "NOT_RUN",
+  "physical_validation": "NOT_PERFORMED",
+  "live_owner_data_changed": false,
+  "commit_push_release": false,
+  "requirements": {
+    "RKT-01": "PARTIAL_PRIOR_SENSITIVITY_SCOPE",
+    "RKT-02": "PARTIAL_SPECIFIED_FLOW_ASSESSMENT",
+    "RKT-03": "PARTIAL_LIQUID_BUDGET_BOUNDARY_ONLY_MANAGED_INTEGRATION_VERIFIED",
+    "RKT-04": "APPROVED_NEXT_GAS_GENERATOR_CONTRACTS",
+    "RKT-08": "OPEN_SUBSYSTEM_COUPLING"
+  },
+  "next": "R06.3 primary-source gas-generator model/reference contracts before pump/turbine/diversion/power implementation"
+}

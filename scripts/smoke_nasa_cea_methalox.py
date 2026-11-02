@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Golden smoke: nasa/cea vs METHLOX-1.5Kn RPA chamber temperature."""
+"""Secondary recorded RPA smoke comparison; not physical validation."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ TC_RPA_K = 3093.3
 
 
 def main() -> int:
-    engine = bind_nasa_cea_engine()
+    engine = bind_nasa_cea_engine(fuel_temperature_k=111.67, oxidizer_temperature_k=90.17)
     result = run_thermochemistry(
         CeaRequest(
             fuel_id="LCH4",

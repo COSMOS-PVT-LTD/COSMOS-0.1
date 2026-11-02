@@ -62,6 +62,11 @@ def launch_native_window(
     require_native_runtime()
     import webview
 
+    # Local source/artifact exports use the native Save dialog. Keep file URL
+    # navigation disabled; downloading evidence does not expose local files.
+    webview.settings["ALLOW_DOWNLOADS"] = True
+    webview.settings["ALLOW_FILE_URLS"] = False
+
     resolved_icon = icon_path
     if resolved_icon is None:
         candidate = Path(__file__).resolve().parent / "assets" / "cosmos_logo.png"
@@ -80,6 +85,7 @@ def launch_native_window(
         easy_drag=False,
         background_color="#04060d",
         text_select=True,
+        confirm_close=True,
     )
 
     def on_loaded() -> None:

@@ -1,0 +1,26 @@
+{
+  "scope": "Node 26 synthetic model validation, decimation, actual ECharts SVG SSR and graph preparation. Not Mac UI latency, browser/native WebGL throughput or aggregate memory.",
+  "source_points": 100000,
+  "source_rows": 100000,
+  "displayed_points": 1992,
+  "validate_ms": 141.649208,
+  "decimate_ms": 16.658625,
+  "echarts_ssr_render_ms": 210.254375,
+  "large_csv_error": "EXPORT_LIMIT",
+  "export_source_points": 10000,
+  "csv_ms": 452.2986249999999,
+  "csv_bytes": 2469917,
+  "svg_ms": 20.66254200000003,
+  "svg_data_url_bytes": 135360,
+  "graph_nodes": 1000,
+  "graph_edges": 5000,
+  "graph_prepare_ms": 12.891292000000021,
+  "oversized_graph_error": "GRAPH_LIMIT",
+  "node_process_memory": {
+    "rss": 206045184,
+    "heapTotal": 177111040,
+    "heapUsed": 135130616,
+    "external": 9472409,
+    "arrayBuffers": 3523796
+  }
+}

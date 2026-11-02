@@ -1,0 +1,10 @@
+{
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "architecture": "arm64",
+  "python": "3.11.4",
+  "cpu_solver_refinement_s": 0.3497887090779841,
+  "ru_maxrss_before": 33619968,
+  "ru_maxrss_after": 34865152,
+  "ru_maxrss_unit": "bytes",
+  "scope": "Python process cumulative maximum RSS, not per-run allocation or whole Chrome/native/GUI peak"
+}

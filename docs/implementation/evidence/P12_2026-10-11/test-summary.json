@@ -1,0 +1,753 @@
+{
+  "baseline": {
+    "passed": 2736,
+    "skipped": 76,
+    "skipped_tests": [
+      {
+        "test": ".tests.contracts.geometry.test_json_schema",
+        "reason": "collection skipped"
+      },
+      {
+        "test": "tests.contracts.ngg.test_worker_schema.test_envelope_schema_is_versioned_strict_and_matches_actual_payload",
+        "reason": "could not import 'jsonschema': No module named 'jsonschema'"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[SourceReference-0]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[SIParameter-1]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[CoordinateFrame-2]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[DesignSnapshot-3]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryFeature-4]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryFeatureGraph-5]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryBuildRequest-6]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryArtifact-7]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[NamedSelection-8]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryCheck-9]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryValidationReport-10]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryBuildEvent-11]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryBuildRecord-12]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[SIParameter-13]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_wire_negative_conformance[checksum]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_wire_negative_conformance[version]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_wire_negative_conformance[duplicate]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_wire_negative_conformance[nonfinite]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_g5_closure.test_genuine_wrong_radius_is_rejected_not_hidden_by_sampling_or_encoding[formats0]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_g5_closure.test_genuine_wrong_radius_is_rejected_not_hidden_by_sampling_or_encoding[formats1]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_boundary.test_actual_pico_native_input_refusal[units-INVALID_UNIT]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_boundary.test_actual_pico_native_input_refusal[stale-STALE_REQUEST]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_boundary.test_actual_pico_native_input_refusal[version-SCHEMA_VERSION]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_boundary.test_actual_pico_native_input_refusal[hash-HASH_MISMATCH]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_boundary.test_missing_native_binary_never_falls_back",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.001-sphere]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.001-union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.001-difference]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.001-intersection]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.001-self_union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.0005-sphere]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.0005-union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.0005-difference]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.0005-intersection]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.0005-self_union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.00025-sphere]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.00025-union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.00025-difference]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.00025-intersection]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.00025-self_union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_raw_subtraction_remains_refused[0.001]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_raw_subtraction_remains_refused[0.0005]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_raw_subtraction_remains_refused[0.00025]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_native_empty_geometry_rejected_without_files[self_difference-picogk]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_native_empty_geometry_rejected_without_files[self_difference-occt]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_native_empty_geometry_rejected_without_files[disjoint_intersection-picogk]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_native_empty_geometry_rejected_without_files[disjoint_intersection-occt]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[sphere]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[difference]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[intersection]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[self_union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[box]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[cylinder]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_and_stl_representation_aware_export",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_native_worker_health_exact_wire_hashes_and_cancel",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_p08_workbench.test_current_actor_snapshot_exchange_reimport_and_tampering_fail_closed",
+        "reason": "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_p08_workbench.test_revision_bounds_no_client_radius_or_unsafe_activation",
+        "reason": "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_actual_geometry_handoff_and_repeated_study",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_actual_nonconvergence_is_not_verification",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_actual_geometry_change_stales_old_result_and_blocks_new_run",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_result_corruption_and_cross_actor_are_refused",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_real_cancellation_retains_no_dataset",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_injected_memory_failure_and_retry_releases_queue",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_actual_source_tamper_refused_before_execution",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.validation.test_native_comparison.test_actual_occt_picogk_cross_kernel_dimensions_and_provenance",
+        "reason": "Explicit qualified native runtime required; run separately for G8"
+      },
+      {
+        "test": "tests.integration_tests.validation.test_native_comparison.test_actual_external_step_import_independent_reader_not_independent_kernel",
+        "reason": "Explicit qualified native runtime required; run separately for G8"
+      },
+      {
+        "test": "tests.integration_tests.validation.test_native_comparison.test_changed_fixture_or_identical_bytes_cannot_compare",
+        "reason": "Explicit qualified native runtime required; run separately for G8"
+      },
+      {
+        "test": "tests.integration_tests.validation.test_native_comparison.test_tampered_captured_export_is_rejected_before_comparison",
+        "reason": "Explicit qualified native runtime required; run separately for G8"
+      },
+      {
+        "test": "tests.unit_tests.knowledge.test_constant.test_constant_hashable",
+        "reason": "Hashability depends on nested immutable models."
+      },
+      {
+        "test": "tests.unit_tests.knowledge.test_dimension.test_dimension_hashable",
+        "reason": "Reference/Document hashability not implemented yet."
+      },
+      {
+        "test": "tests.unit_tests.knowledge.test_engineering_domain.test_engineering_domain_hashable",
+        "reason": "Document hashability will be implemented after the Knowledge Foundation models are completed."
+      },
+      {
+        "test": "tests.unit_tests.knowledge.test_subsystem.test_subsystem_hashable",
+        "reason": "Hashability will be enabled after all Knowledge Foundation models become fully immutable."
+      },
+      {
+        "test": "tests.unit_tests.knowledge.test_unit.test_unit_hashable",
+        "reason": "Document contains mappingproxy and is not yet hashable."
+      }
+    ],
+    "skip_reason_counts": {
+      "collection skipped": 1,
+      "could not import 'jsonschema': No module named 'jsonschema'": 1,
+      "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback": 56,
+      "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG": 2,
+      "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence": 7,
+      "Explicit qualified native runtime required; run separately for G8": 4,
+      "Hashability depends on nested immutable models.": 1,
+      "Reference/Document hashability not implemented yet.": 1,
+      "Document hashability will be implemented after the Knowledge Foundation models are completed.": 1,
+      "Hashability will be enabled after all Knowledge Foundation models become fully immutable.": 1,
+      "Document contains mappingproxy and is not yet hashable.": 1
+    },
+    "artifact": "baseline-tests.xml"
+  },
+  "python": {
+    "passed": 2803,
+    "skipped": 74,
+    "skipped_tests": [
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[SourceReference-0]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[SIParameter-1]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[CoordinateFrame-2]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[DesignSnapshot-3]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryFeature-4]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryFeatureGraph-5]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryBuildRequest-6]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryArtifact-7]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[NamedSelection-8]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryCheck-9]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryValidationReport-10]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryBuildEvent-11]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[GeometryBuildRecord-12]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_retained_golden_wire_and_numeric_bits[SIParameter-13]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_wire_negative_conformance[checksum]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_wire_negative_conformance[version]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_wire_negative_conformance[duplicate]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_dotnet_wire.test_actual_dotnet_wire_negative_conformance[nonfinite]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_g5_closure.test_genuine_wrong_radius_is_rejected_not_hidden_by_sampling_or_encoding[formats0]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_g5_closure.test_genuine_wrong_radius_is_rejected_not_hidden_by_sampling_or_encoding[formats1]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_boundary.test_actual_pico_native_input_refusal[units-INVALID_UNIT]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_boundary.test_actual_pico_native_input_refusal[stale-STALE_REQUEST]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_boundary.test_actual_pico_native_input_refusal[version-SCHEMA_VERSION]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_boundary.test_actual_pico_native_input_refusal[hash-HASH_MISMATCH]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_boundary.test_missing_native_binary_never_falls_back",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.001-sphere]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.001-union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.001-difference]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.001-intersection]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.001-self_union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.0005-sphere]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.0005-union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.0005-difference]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.0005-intersection]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.0005-self_union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.00025-sphere]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.00025-union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.00025-difference]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.00025-intersection]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_three_resolution_conditioned_qa[0.00025-self_union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_raw_subtraction_remains_refused[0.001]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_raw_subtraction_remains_refused[0.0005]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_picogk_raw_subtraction_remains_refused[0.00025]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_native_empty_geometry_rejected_without_files[self_difference-picogk]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_native_empty_geometry_rejected_without_files[self_difference-occt]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_native_empty_geometry_rejected_without_files[disjoint_intersection-picogk]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_native_empty_geometry_rejected_without_files[disjoint_intersection-occt]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[sphere]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[difference]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[intersection]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[self_union]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[box]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_independent_tool_reimport[cylinder]",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_occt_step_and_stl_representation_aware_export",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_native_fixtures.test_native_worker_health_exact_wire_hashes_and_cancel",
+        "reason": "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_p08_workbench.test_current_actor_snapshot_exchange_reimport_and_tampering_fail_closed",
+        "reason": "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_p08_workbench.test_revision_bounds_no_client_radius_or_unsafe_activation",
+        "reason": "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_actual_geometry_handoff_and_repeated_study",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_actual_nonconvergence_is_not_verification",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_actual_geometry_change_stales_old_result_and_blocks_new_run",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_result_corruption_and_cross_actor_are_refused",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_real_cancellation_retains_no_dataset",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_injected_memory_failure_and_retry_releases_queue",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.simulation.test_native_handoff.test_actual_source_tamper_refused_before_execution",
+        "reason": "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence"
+      },
+      {
+        "test": "tests.integration_tests.validation.test_native_comparison.test_actual_occt_picogk_cross_kernel_dimensions_and_provenance",
+        "reason": "Explicit qualified native runtime required; run separately for G8"
+      },
+      {
+        "test": "tests.integration_tests.validation.test_native_comparison.test_actual_external_step_import_independent_reader_not_independent_kernel",
+        "reason": "Explicit qualified native runtime required; run separately for G8"
+      },
+      {
+        "test": "tests.integration_tests.validation.test_native_comparison.test_changed_fixture_or_identical_bytes_cannot_compare",
+        "reason": "Explicit qualified native runtime required; run separately for G8"
+      },
+      {
+        "test": "tests.integration_tests.validation.test_native_comparison.test_tampered_captured_export_is_rejected_before_comparison",
+        "reason": "Explicit qualified native runtime required; run separately for G8"
+      },
+      {
+        "test": "tests.unit_tests.knowledge.test_constant.test_constant_hashable",
+        "reason": "Hashability depends on nested immutable models."
+      },
+      {
+        "test": "tests.unit_tests.knowledge.test_dimension.test_dimension_hashable",
+        "reason": "Reference/Document hashability not implemented yet."
+      },
+      {
+        "test": "tests.unit_tests.knowledge.test_engineering_domain.test_engineering_domain_hashable",
+        "reason": "Document hashability will be implemented after the Knowledge Foundation models are completed."
+      },
+      {
+        "test": "tests.unit_tests.knowledge.test_subsystem.test_subsystem_hashable",
+        "reason": "Hashability will be enabled after all Knowledge Foundation models become fully immutable."
+      },
+      {
+        "test": "tests.unit_tests.knowledge.test_unit.test_unit_hashable",
+        "reason": "Document contains mappingproxy and is not yet hashable."
+      }
+    ],
+    "skip_reason_counts": {
+      "P07 optional native fixtures require explicit P07_NATIVE_CONFIG; no autodetection/fallback": 56,
+      "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG": 2,
+      "Explicit pinned local OCCT runtime required; normal CI must not invent native evidence": 7,
+      "Explicit qualified native runtime required; run separately for G8": 4,
+      "Hashability depends on nested immutable models.": 1,
+      "Reference/Document hashability not implemented yet.": 1,
+      "Document hashability will be implemented after the Knowledge Foundation models are completed.": 1,
+      "Hashability will be enabled after all Knowledge Foundation models become fully immutable.": 1,
+      "Document contains mappingproxy and is not yet hashable.": 1
+    },
+    "artifact": "python-release-final.xml"
+  },
+  "focused": {
+    "passed": 45,
+    "skipped": 0,
+    "skipped_tests": [],
+    "skip_reason_counts": {},
+    "artifact": "focused-final.xml"
+  },
+  "native": {
+    "passed": 67,
+    "skipped": 2,
+    "skipped_tests": [
+      {
+        "test": "tests.integration_tests.geometry.test_p08_workbench.test_current_actor_snapshot_exchange_reimport_and_tampering_fail_closed",
+        "reason": "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG"
+      },
+      {
+        "test": "tests.integration_tests.geometry.test_p08_workbench.test_revision_bounds_no_client_radius_or_unsafe_activation",
+        "reason": "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG"
+      }
+    ],
+    "skip_reason_counts": {
+      "P08 real workbench requires explicit qualified P08_NATIVE_CONFIG": 2
+    },
+    "artifact": "native-final.xml"
+  },
+  "native_p08": {
+    "passed": 2,
+    "skipped": 0,
+    "skipped_tests": [],
+    "skip_reason_counts": {},
+    "artifact": "native-p08.xml"
+  },
+  "javascript_passed": 134,
+  "browser_passed": 7,
+  "native_window": {
+    "pass": true,
+    "actual_native_renderer": true,
+    "browser_fallback": false,
+    "backend": "webview.platforms.cocoa",
+    "document": {
+      "title": "COSMOS 0.1 \u2014 Login",
+      "url": "http://127.0.0.1:8842/",
+      "usernameInput": true,
+      "privateHint": true,
+      "oldSharedPasswordVisible": false
+    },
+    "scope": "Existing desktop native adapter and real Cocoa/WebKit login DOM, not all scientific flows inside the native window"
+  },
+  "mypy_source_files": 351,
+  "typescript_contract_consumers": 7,
+  "science_exact_http_cases": 5,
+  "candidate_remote_ci_executed": false,
+  "note": "Focused tests overlap full suite; native supplemental counts are not added to a unique grand total",
+  "commands": [
+    ".venv-remediation/bin/python -m pytest -q --junitxml=docs/implementation/evidence/P12_2026-10-11/baseline-tests.xml",
+    ".venv-release-p12/bin/python -m pytest -q --junitxml=docs/implementation/evidence/P12_2026-10-11/python-release-final.xml",
+    ".venv-release-p12/bin/python -m pytest -q tests/unit_tests/infrastructure/test_release_hardening.py tests/integration_tests/gui/test_release_preview_http.py",
+    "P07_NATIVE_CONFIG=P12/runtime-config.json COSMOS_P09_NATIVE_CONFIG=P12/runtime-config.json COSMOS_P10_NATIVE=1 .venv-release-p12/bin/python -m pytest -q tests/integration_tests/geometry tests/integration_tests/simulation tests/integration_tests/validation/test_native_comparison.py (expand P12 to absolute phase path)",
+    "P08_NATIVE_CONFIG=P12/runtime-config.json .venv-release-p12/bin/python -m pytest -q tests/integration_tests/geometry/test_p08_workbench.py (expand P12 to absolute phase path)",
+    "/opt/homebrew/bin/node --test tests/js/*.test.cjs",
+    "COSMOS_P12_STATE=<fresh-mktemp-root> COSMOS_P12_APP=<absolute-new-preview-launcher> NODE_PATH=/private/tmp/cosmos-p03.pfPm6s/node_modules /opt/homebrew/bin/node /private/tmp/cosmos-p03.pfPm6s/node_modules/@playwright/test/cli.js test --config tests/ui/release_hardening/playwright.config.cjs",
+    ".venv-release-p12/bin/python tests/ui/release_hardening/native_window_smoke.py --url http://127.0.0.1:8842/ --output <new-evidence-output>",
+    ".venv-release-p12/bin/python -m ruff check core knowledge physics numerics systems simulation validation api gui infrastructure plugins tests tools",
+    ".venv-release-p12/bin/python -m mypy core physics numerics systems api simulation validation knowledge/workspace/evidence_navigation.py infrastructure/release",
+    "/opt/homebrew/bin/node /private/tmp/cosmos-p03.pfPm6s/node_modules/typescript/bin/tsc --strict --noEmit --target ES2022 --lib ES2022,DOM --module Node16 --moduleResolution Node16 tests/ui/{design-system,app-shell,ngg,simulation,comparison,knowledge_reports}/type_contracts.ts tests/ui/rocket-workbench/contract-consumer.ts",
+    ".venv-release-p12/bin/python -m pip check",
+    "pip-audit==2.10.1 --path <preview-site-packages> --strict (separate audit-tools environment)"
+  ],
+  "package": {
+    "pass": true,
+    "source_files": 881,
+    "frozen_files": 26,
+    "local_adhoc_integrity": true,
+    "unsigned_reproduction": true,
+    "standalone": false,
+    "developer_id": false,
+    "notarized": false,
+    "trusted_distribution": false
+  },
+  "inventory": {
+    "pass": true,
+    "components": 208,
+    "installed_distributions": 97,
+    "installed_files_verified": 16721,
+    "native_files_verified": 99,
+    "schema_validated_offline": true,
+    "distribution_approved": false
+  },
+  "provenance": {
+    "pass": true,
+    "report_sha256": "ca2ca5a38390bdf92640b284d5c0430bb7f3119f4e45e85ba46b31e7e274d9ef",
+    "package_sha256": "8dbc2f52c44c003d4b74e5cf7b54acfad4087e9b8fa4bc4a2fd63b83cd77cbf8",
+    "dataset_sha256": "5f4d970f379577e269e303ede096ebebba0ad622a2b7189c9c18b73b5c403e03",
+    "native_source_export_sha_verified": true,
+    "source_renderer_sha_verified": true,
+    "offline_package_reproduction": true,
+    "manifest_files": 3,
+    "invented_sources": false,
+    "physical_validation": false,
+    "independent_acceptance": false,
+    "scope": "Actual qualified OCCT sphere fixture and steady spherical conduction, not rocket/hot-fire qualification"
+  },
+  "hardware": {
+    "os": "macOS 26.5.2",
+    "cpu": "Apple M1",
+    "architecture": "arm64",
+    "memory_bytes": 8589934592,
+    "cpu_cores": 8,
+    "python": "3.11.4"
+  },
+  "phase_status": "PARTIAL",
+  "G9": "BLOCKED",
+  "production_handoff": false
+}

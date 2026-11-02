@@ -6,6 +6,8 @@
   <title>COSMOS 0.1 — Rocket Engine Propulsion Suite</title>
   <link rel="stylesheet" href="/assets/cosmos.css" />
   <link rel="stylesheet" href="/assets/propulsion-suite.css" />
+  <link rel="stylesheet" href="/assets/design-system/tokens.css" />
+  <link rel="stylesheet" href="/assets/guided-engine.css" />
 </head>
 <body class="cosmos-app propulsion-workbench">
   <div class="app-frame page-shell">
@@ -41,11 +43,12 @@
             <strong id="design-context-name">No active design</strong>
             <span id="design-context-revision">REV —</span>
             <span id="design-context-state">NONE</span>
+            <span id="design-context-inputs" role="status" aria-live="polite"></span>
           </div>
           <div class="design-context-metrics">
             <span id="design-context-pc">Pc —</span>
             <span id="design-context-of">O/F —</span>
-            <span id="design-context-thrust">Thrust —</span>
+            <span id="design-context-thrust">Target thrust —</span>
             <span id="design-context-props">Propellants —</span>
           </div>
           <div class="design-context-actions">
@@ -70,7 +73,7 @@
             <div id="suite-forms" class="suite-forms"></div>
             <div class="suite-result-card">
               <h3>Result</h3>
-              <div id="suite-result" class="suite-result">No calculation yet.</div>
+              <div id="suite-result" class="suite-result" role="status" aria-live="polite">No calculation yet.</div>
             </div>
           </section>
         </div>
@@ -83,11 +86,12 @@
     </div>
   </div>
   <script src="/assets/cosmos-api.js"></script>
-  <script src="/assets/rbac.js"></script>
   <script src="/assets/app.js"></script>
+  <script src="/assets/rbac.js"></script>
   <script src="/assets/engineering-ux.js"></script>
   <script src="/assets/maharshi-popup.js"></script>
   <script src="/assets/propulsion-suite.js"></script>
   <script>COSMOS.initPropulsionSuite();</script>
+  <script src="/assets/guided-engine.js"></script>
 </body>
 </html>

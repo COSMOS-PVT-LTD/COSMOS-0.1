@@ -1,0 +1,47 @@
+{
+  "valid_profile_accepted": true,
+  "negative_cases": [
+    {
+      "case": "wrong-policy",
+      "rejected": true,
+      "code": "NOZZLE_RUNTIME_REQUIRED"
+    },
+    {
+      "case": "missing-receipt",
+      "rejected": true,
+      "code": "NOZZLE_QUALIFICATION_REQUIRED"
+    },
+    {
+      "case": "receipt-digest",
+      "rejected": true,
+      "code": "NOZZLE_QUALIFICATION_REQUIRED"
+    },
+    {
+      "case": "worker-path",
+      "rejected": true,
+      "code": "NOZZLE_RUNTIME_REQUIRED"
+    },
+    {
+      "case": "replacement-interpreter",
+      "rejected": true,
+      "code": "NOZZLE_RUNTIME_REQUIRED"
+    },
+    {
+      "case": "changed-source-hash",
+      "rejected": true,
+      "code": "RUNTIME_HASH_MISMATCH"
+    },
+    {
+      "case": "missing-worker-hash",
+      "rejected": true,
+      "code": "NOZZLE_RUNTIME_REQUIRED"
+    },
+    {
+      "case": "fixture-only-config",
+      "rejected": true,
+      "code": "NOZZLE_RUNTIME_REQUIRED"
+    }
+  ],
+  "native_execution_performed": false,
+  "live_data_untouched": true
+}

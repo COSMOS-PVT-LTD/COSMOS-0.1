@@ -1,0 +1,8 @@
+{
+  "gate": "G4",
+  "status": "PASS_RETAINED",
+  "sealed_entries": 71,
+  "artifact_manifest_sha256": "2e84aa31e144eb29292ae762f2a7ac49f00f4a9688d37419d54b8a0ce29c92da",
+  "prior_source_and_evidence_changed": false,
+  "note": "P05 strict scope is historical; its verifier ran before P06. Retained seals checked read-only after additive P06 work."
+}
